@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xml:id="anova_supplement">
+  <title>ANOVA Calculaions</title>
+  <introduction>
+    <p>
+      In today’s digital world, ANOVA calculations are automated by statistical software. So while you are unlikely to carry out ANOVA by hand, familiarity with the underlying mathematics can be useful as you advance onto more complex statistical methods or when you encounter unique data contexts.
+    </p>
+    <p>
+      To see how the calculations for ANOVA are done, we can follow the organization of the ANOVA table. Table 1 collects all of the necessary formulas.
+    </p>
+
+    <table>
+    <title>Formulas for ANOVA calculations</title>
+      <tabular halign="left">
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell>Df</cell>
+          <cell>Sum Sq</cell>
+          <cell>Mean Sq</cell>
+          <cell>F value</cell>
+        </row>
+        <row>
+          <cell>Group</cell>
+          <cell><m>df_{G} = k-1</m></cell>
+          <cell><m>SSG= \sum_{i=1}^k n_{i} (\bar{x_{i}} - \bar{x})^2</m></cell>
+          <cell><m>MSG = \frac{1}{df_{G}} SSG</m></cell>
+          <cell><m>F= \frac{MSG}{MSE}</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell>Residuals</cell>
+          <cell><m>df_{E} = n - k</m></cell>
+          <cell><m>SSE = \sum_{i=1}^k (n_{i}-1) s_{i}^2</m></cell>
+          <cell><m>MSE = \frac{1}{df_{E}} SSE</m></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>Total</cell>
+          <cell><m>df_{T} = n-1</m></cell>
+          <cell><m>SST = \sum_{i=1}^n (x_{i} - \bar{x})^2</m></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+      </tabular>
+    </table>
+    <p>
+      With multiple samples, means, variances, etc., there are a lot of symbols involved here, so let’s do our best to keep them straight. Reading across the rows of the ANOVA table, we have the symbols:
+    </p>
+<!--     <p>
+      <ul>
+        <li>
+          <p>
+          </p>
+        </li>
+        <li>
+          <p>
+          </p>
+        </li>
+        <li>
+          <p>
+          </p>
+        </li>
+        <li>
+          <p>
+          </p>
+        </li>
+        <li>
+          <p>
+          </p>
+        </li>
+        <li>
+          <p>
+          </p>
+        </li>
+        <li>
+          <p>
+          </p>
+        </li>
+        <li>
+          <p>
+          </p>
+        </li>
+        <li>
+          <p>
+          </p>
+        </li>
+        <li>
+          <p>
+          </p>
+        </li>
+      </ul>
+    </p> -->
+    <table>
+    <title>NO NAME FOR NAME</title>
+      <tabular>
+        <row>
+          <cell><m>df</m>: degrees of freedom</cell>
+          <cell><m>n</m>: total number of observations</cell>
+        </row>
+        <row>
+          <cell><m>SS</m>: sum of squares</cell>
+          <cell><m>n_{i}</m>: number of observations in group <m>i</m></cell>
+        </row>
+        <row>
+          <cell><m>MS</m>: mean square</cell>
+          <cell><m>\bar{x_{i}}</m>: the mean of the <m>n_{i}</m> observations in group <m>i</m></cell>
+        </row>
+        <row>
+          <cell><m>F</m>: ratio of variability in the sample means relative to variability within the groups</cell>
+          <cell><m>\bar{x}</m>: the grand mean of all <m>n</m> observations</cell>
+        </row>
+        <row>
+          <cell><m>k</m>: number of groups</cell>
+          <cell><m>s_{i}^2</m>: the variance of the <m>n_{i}</m> observations in group <m>i</m></cell>
+        </row>
+      </tabular>
+    </table>
+    <p>
+      Due to the underlying mathematics, we can also calculate the total sum of squares <m>SST</m> like so:
+    </p>
+    <p>
+      <me>SSG + SSE = SST</me>
+    </p>
+    <p>
+      Before computers became commonplace, statisticians used that fact to double check these complicated calculations.
+    </p>
+    <example>
+      <statement>
+        <p>
+          College departments commonly run multiple lectures of the same introductory course each semester because of high demand. Consider a statistics department that runs three lectures of an introductory statistics course.
+        </p>
+        <table>
+        <title>Individual course grades from classes A, B, and C</title>
+          <tabular halign="center">
+            <row bottom="minor">
+              <cell>Class A</cell>
+              <cell>Class B</cell>
+              <cell>Class C</cell>
+            </row>
+            <row>
+              <cell>90</cell>
+              <cell>87</cell>
+              <cell>95</cell>
+            </row>
+            <row>
+              <cell>87</cell>
+              <cell>85</cell>
+              <cell>93</cell>
+            </row>
+            <row>
+              <cell>88</cell>
+              <cell>80</cell>
+              <cell>90</cell>
+            </row>
+            <row>
+              <cell>78</cell>
+              <cell></cell>
+              <cell>88</cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell></cell>
+              <cell>85</cell>
+            </row>
+          </tabular>
+        </table>
+        <p>
+          We might like to determine whether there are statistically significant differences in first exam scores in these three classes (A, B, and C). Describe appropriate hypotheses to determine whether there are any differences between the three classes.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The hypotheses may be written in the following form:
+        </p>
+        <p>
+          <ul>
+            <li>
+              <p>
+                <m>H_{0}</m>: The average score is identical in all lectures. Any observed difference is due to chance. Notationally, we write <m>\mu_{A} = \mu_{B} = \mu_{C}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>H_{A}</m>: The average score varies by class. We would reject the null hypothesis in favor of the alternative hypothesis if there were larger differences among the class averages than what we might expect from chance alone.
+              </p>
+            </li>
+          </ul>
+        </p>
+        <p>
+          We’ll use the small, hypothetical data set in XREFTable 2 to show how ANOVA calculations work. Let’s carefully work through the calculations in Table 1 one at time. We’ll work in this order:
+            <ul>
+              <li>
+                <p>
+                  Degrees of freedom for Groups <m>df_{G}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Sum of Squares between Groups <m>SSG</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Mean Square between Groups <m>MSG</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Degrees of freedom for Error <m>df_{E}</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Sum of Squared Error <m>SSE</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Mean Square Error <m>MSE</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Totals <m>df_{T}</m> and <m>SST</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>F</m> Statistic and p-value
+                </p>
+              </li>
+            </ul>
+        </p>
+        <p>
+          Remember to refer back to the list of symbols above as needed to keep these calculations straight. All results below are rounded to the nearest hundredth.<fn>To avoid rounding error, a spreadsheet was used for calculations. If you do these calculations <q>by hand,</q> be sure to hold onto as much accuracy as possible as you work.</fn>
+        </p>
+      </solution>
+    </example>
+  </introduction>
+
+  <subsection>
+  <title>Degrees of freedom for Groups <m>df_{G}</m></title>
+    <p>
+      We calculate degrees of freedom for <m>k</m> groups like so: <m>df_{G}=k-1</m>. So in our example, we have <m>k=3</m> groups, and <m>df_{G} = 3-1 =2</m>.
+    </p>
+  </subsection>
+  
+  <subsection>
+  <title>Sum of Squares between Groups <m>SSG</m></title>
+    <p>
+      Statisticians measure variation using squared differences. The sum of squares for the groups <m>SSG</m> measures the differences between the group means <m>\bar{x_{i}}</m> and the grand mean <m>\bar{x}</m> like so:
+    </p>
+    <p>
+      <me>SSG = \sum_{i=1}^k n_{i}(\bar{x_{i}} - \bar{x}^2)</me>
+    </p>
+    <p>
+      With exam scores from classes A, B, and C from Table 2 XREF first we calculate the three classes’ group means:
+    </p>
+    <p>
+      <md>
+        <mrow>\bar{x_{A}}=95.75 &amp; &amp; \bar{x_{B}}=84 &amp; &amp; \bar{x_{C}}=90.2</mrow>
+      </md>
+    </p>
+    <p>
+      We also calculate the grand mean of all <m>n = 12</m> observations:
+    </p>
+    <p>
+      <me>\bar{x}=87.17</me>
+    </p>
+    <p>
+      Then we calculate <m>SSG</m> as follows:
+      <md>
+        <mrow>SSG = \sum_{i=1}^k n_{i}(\bar{x_{i}} - \bar{x}^2)</mrow>
+        <mrow>=n_{A}(\bar{x_{A}} - \bar{x})^2+n_{B}(\bar{x_{B}} - \bar{x})^2+n_{C}(\bar{x_{C}} - \bar{x})^2</mrow>
+        <mrow>=4(85.75 - 87.17)^2 + 3(84.00 - 87.17)^2 + 5(90.20 - 87.17)^2</mrow>
+        <mrow>=84.12</mrow>
+      </md>
+    </p>
+  </subsection>
+
+  <subsection>
+  <title>Mean Square between Groups <m>MSG</m></title>
+    <p>
+      The mean square between groups <m>MSG</m> is calculated using both the groups’ degrees of freedom <m>df_{G}</m> and the sum of squares between groups <m>SSG</m> like so:
+      <me>MSG=\frac{1}{df_{G}}SSG</me>
+    </p>
+    <p>
+      That means that to find the mean square between groups <m>MSG</m>, we simply divide the sum of squares for the groups <m>SSG</m> by the groups’ degrees of freedom <m>df_{G}</m>. In our example we have:
+      <me>MSG=\frac{1}{df_{G}}SSG=\frac{1}{2} \times 84.12=42.06</me>
+    </p>
+    <p>
+      We have completed all of the calculations for the groups, and the <m>MSG</m> provides our measurement of the variation among the sample means. Our goal in ANOVA is to compare that variation between the groups to the variation within the groups. Variation within the groups can be seen as variation among the residuals, i.e. the deviations from the group means. Let’s complete the calculations for that error.
+    </p>
+  </subsection>
+
+  <subsection>
+  <title>Degrees of freedom for Error <m>df_{E}</m></title>
+    <p>
+      Degrees of freedom for residuals are calculated by finding the sum of the degrees of freedom for each of the k samples like so:
+      <md>
+        <mrow>df_{E}=df_{1}+df_{2}+ \ldots +df_{k}</mrow>
+        <mrow>=(n_{1}-1)+(n_{2}-1)+\ldots +(n_{k}-1)</mrow>
+        <mrow>=n-k</mrow>
+      </md>
+    </p>
+    <p>
+      For our example, we have
+      <me>df_{E}=n-k=12-3=9</me>
+    </p>
+  </subsection>
+
+  <subsection>
+  <title>Sum of Squared Errors <m>SSE</m></title>
+    <p>
+      The sum of squared errors <m>SSE</m> is the sum of the squares of the differences between each sample’s observations with each respective sample mean. The calculation is simplified by first finding the variance <m>s_{i}^2</m> of each sample:
+      <md>
+        <mrow>s_{A}^2=28.25 &amp; s_{B}^2=13.00 &amp; s_{C}^2=15.70</mrow>
+      </md>
+    </p>
+    <p>
+      Then we calculate the sum of squared errors like so:
+      <me>SSE=\sum_{i=1}^k (n_{i} - 1)s_{i}^2</me>
+    </p>
+    <p>
+      For our example, we have:
+      <md>
+        <mrow>SSE=\sum_{i=1}^k (n_{i} - 1)s_{i}^2</mrow>
+        <mrow>=(n_{A}-1)s_{A}^2+(n_{B}-1)s_{B}^2+(n_{C}-1)s_{C}^2</mrow>
+        <mrow>=(4 - 1)(28.25)2 + (3 - 1)(13.00)^^2 + (5 - 1)(15.70)^2</mrow>
+        <mrow>=173.55</mrow>
+      </md>
+    </p>
+    <p>
+      Do you see how this calculation produces a sum of squares? (Consider the effect of multiplying the formula for sample variance by one less than the sample size.)
+    </p>
+  </subsection>
+
+  <subsection>
+  <title>Mean Square Error <m>MSE</m></title>
+    <p>
+      With <m>df_{E}</m> and <m>MSE</m> already calculated, computing <m>MSE</m> is simple. Like the mean square for the groups (<m>MSG</m>), the mean square error (<m>MSE</m>) is the ratio of the corresponding sum of squares with the degrees of freedom:
+      <me>MSE=\frac{1}{df_{E}}SSE</me>
+    </p>
+    <p>
+      For our example, we have
+      <me>MSE=\frac{1}{df_{E}}SSE=\frac{1}{9}\times 173/55=19.28</me>
+    </p>
+    <p>
+      We’ve now completed most of the calculations in the XREF ANOVA Table. Let’s turn to the Total row.
+    </p>
+  </subsection>
+
+  <subsection>
+  <title>Totals <m>df_{T}</m> and <m>SST</m></title>
+    <p>
+      We complete the total degrees of freedom (<m>df_{T}</m>) and total sum of squares by finding the sums of the corresponding columns. So our total degrees of freedom are
+      <me>df_{T}=2+9=11</me>
+    </p>
+    <p>
+      and the sum of squares total is
+      <me>SST=SSG+SSE=84.12+173.55=257.67</me>
+    </p>
+    <p>
+      The sum of squares total (SST) can also be calculated like so:
+      <me>SST=\sum_{i=1}^n (x_{i}-\bar{x})^2</me>
+    </p>
+    <p>
+      Notice that this is the difference of all n observations with the grand mean <m>\bar{x}</m>. Calculating <m>SST</m> both as the sum <m>SSG + SSE</m> and as the more complicated calculation above allows us to double check that our ANOVA calculations have been completed correctly. (This was very important back when these calculations were completed by hand.)
+    </p>
+    <p>
+      We now have a nearly-complete ANOVA table (LINK Table 3 below). All that’s left to do is calculate the <m>F</m> statistic and the p-value.
+    </p>
+    <table>
+    <title>ANOVA table for course grades from classes A, B, and C.</title>
+      <tabular>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row halign="right">
+          <cell></cell>
+          <cell>Df</cell>
+          <cell>Sum Sq</cell>
+          <cell>Mean Sq</cell>
+          <cell>F value</cell>
+        </row>
+        <row>
+          <cell halign="left">Classes</cell>
+          <cell halign="right">2</cell>
+          <cell halign="right">84.14</cell>
+          <cell halign="right">42.06</cell>
+          <cell></cell>
+        </row>
+        <row bottom="minor">
+          <cell halign="left">Residuals</cell>
+          <cell halign="right">9</cell>
+          <cell halign="right">173.55</cell>
+          <cell halign="right">19.28</cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell halign="left">Total</cell>
+          <cell halign="right">11</cell>
+          <cell halign="right">257.67</cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+      </tabular>
+    </table>
+  </subsection>
+
+  <subsection>
+  <title><m>F</m> Statistic and p-value</title>
+    <p>
+      We now have comparable measures of variability both between the groups (<m>MSG</m>) and within the groups (<m>MSE</m>). And if variation among group means is simply random, the ratio <m>F = MSG/MSE</m> is typically close to 1.
+    </p>
+    <p>
+      In our example, we have:
+      <me>F=\frac{MSG}{MSE}=\frac{42.06}{19.28}=2.18</me>
+    </p>
+    <table>
+    <title>ANOVA table from GeoGebra</title>
+      <tabular>
+        <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+        <row bottom="minor" halign="right">
+          <cell></cell>
+          <cell>df</cell>
+          <cell>SS</cell>
+          <cell>MS</cell>
+          <cell>F</cell>
+          <cell>P</cell>
+        </row>
+        <row>
+          <cell halign="left">Between Groups</cell>
+          <cell halign="right">2</cell>
+          <cell halign="right">84.1167</cell>
+          <cell halign="right">42.0583</cell>
+          <cell halign="right">2.1811</cell>
+          <cell halign="right">0.1689</cell>
+        </row>
+        <row bottom="minor">
+          <cell halign="left">Within Groups</cell>
+          <cell halign="right">9</cell>
+          <cell halign="right">173.5500</cell>
+          <cell halign="right">19.2833</cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell halign="left">Total</cell>
+          <cell halign="right">11</cell>
+          <cell halign="right">257.6667</cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+      </tabular>
+    </table>
+    <!-- <image></image> -->
+    <p>
+      The p-value is the final entry in the ANOVA table. LINK Table 5 shows how GeoGebra presents its ANOVA output for our class exam scores example.
+    </p>
+    <p>
+      You’ll notice that, depending on technology choice, the ANOVA table’s rows may be labeled differently. The first row may be labeled Groups, Treatments, Between Groups, or Factors. Or it may be labeled to identify which groups’ means are being compared. In our example, that would be the label Classes. The second row may be labeled Residuals, Error, Within Groups, or Effect. While the labels may vary, the layout of the ANOVA table is fairly standard.
+    </p>    
+    <p>
+      Whether we compute these values one at a time or use technology to quickly find the p-value, now we can analyze our hypotheses. In our example, if all three classes in fact have the same average 1st exam score, then the likelihood of observing the differences in average scores between the classes is about 17%. That’s not unlikely, so the observed differences are not statistically significant.
+    </p>
+  </subsection>
+
+
+  <exercises>
+  <title>Exercises</title>
+  
+  <exercise>
+  <title>Diet Plans</title>
+    <statement>
+    <p>
+      Three different diet plans are to be tested for mean weight loss. The entries in the table below are the weight losses for the different plans. Test the hypothesis that all three diet plans have the same mean weight loss by performing ANOVA.<fn>This exercise was adapted from OpenStax Introductory Statistics under its Creative Commons Atttribution License 4.0 license. Download for free at LINK http://cnx.org/contents/30189442-6998-4686-ac05-ed152b91b9de@18.55.</fn>
+    </p>
+    <table>
+    <title></title>
+      <tabular halign="center">
+        <row bottom="minor">
+          <cell>Plan 1</cell>
+          <cell>Plan 2</cell>
+          <cell>Plan 3</cell>
+        </row>
+        <row>
+          <cell>3</cell>
+          <cell>3.5</cell>
+          <cell>8</cell>
+        </row>
+        <row>
+          <cell>4.5</cell>
+          <cell>7</cell>
+          <cell>4</cell>
+        </row>
+        <row>
+          <cell>4</cell>
+          <cell>4.5</cell>
+          <cell>3</cell>
+        </row>
+        <row>
+          <cell>3</cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+      </tabular>
+    </table>
+    </statement>
+    <solution>
+      <p>
+        The hypotheses: <m>H_{0}</m>: All three diet plans result in the same mean weight loss, that is, <m>\mu_{1} = \mu_{2} = \mu_{3}</m>. <m>H_{A}</m>: Mean weight loss differs among at least two of the plans.
+      </p>
+      <p>
+        We can use technology to produce the ANOVA below:
+      </p>
+      <table>
+      <title>ANOVA table for mean weight loss</title>
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor" halign="right">
+            <cell></cell>
+            <cell>Df</cell>
+            <cell>Sum sq</cell>
+            <cell>Mean sq</cell>
+            <cell>F value</cell>
+            <cell>Pr(<m>\gt </m>F)</cell>
+          </row>
+          <row>
+            <cell halign="left">Diet plans</cell>
+            <cell halign="right">2</cell>
+            <cell halign="right">4.5375</cell>
+            <cell halign="right">2.2687</cell>
+            <cell halign="right">0.5214</cell>
+            <cell halign="right">0.5214</cell>
+          </row>
+          <row bottom="minor">
+            <cell halign="left">Residuals</cell>
+            <cell halign="right">7</cell>
+            <cell halign="right">22.1875</cell>
+            <cell halign="right">3.1696</cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell halign="left">Total</cell>
+            <cell halign="right">9</cell>
+            <cell halign="right">26.725</cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+      </table>
+      <p>
+        Or we can perform ANOVA calculations as follows:
+      </p>
+      <p>
+        For 3 diet plans, <m>k=3</m>. So, <m>df_{G}=k-1=3-1=2</m>.
+      </p>
+      <p>
+        Mean weight loss <m>\bar{x}_{i}</m> for each plan:
+        <md>
+          <mrow>\bar{x}_{1}=\frac{3+4.5+4+3}{4}=3.625</mrow>
+          <mrow>\bar{x}_{2}=\frac{3.5+7+4.5}{3}=5</mrow>
+          <mrow>\bar{x}_{3}=\frac{8+4+3}{5}=</mrow>
+        </md>
+      </p>
+      <p>
+        The grand mean is <m>\bar{x}</m>:
+        <me>\bar{x}=\frac{3+4.5+4+3+3.5+7+4.5+8+4+3}{10}=4.45</me>
+      </p>
+      <p>
+        So for the sum of squares between the diet plans <m>SSG</m> we have
+        <me>SSG = 4(3.625 - 4.45)^2 + 3(5 - 4.45)^2 + 3(5 - 4.45)^2 = 4.5375</me>
+      </p>
+      <p>
+        So the mean square between the diet plans <m>MSG</m> is:
+        <me>MSG =\frac{1}{df_{G}}SSG = \frac{4.5375}{2} = 2.2688</me>
+      </p>
+      <p>
+        With 10 total observations among the 3 diet plans, we have <m>df_{E} = n-k = 10−3 = 7</m>. The variance for each plan: <m>s_{i}^2</m> for each plan:
+        <md>
+          <mrow>s_{1}^2=0.5625 &amp; &amp; s_{2}^2=3.25 &amp; &amp; s_{3}^2=7</mrow>
+        </md>
+      </p>
+      <p>
+        So the sum of squared errors <m>SSE</m> is:
+        <me>SSE = (4 - 1)(0.5625) + (3 - 1)(3.25) + (3 - 1)(7) = 22.1875</me>
+      </p>
+      <p>
+        And the mean squared error is:
+        <me>MSG = \frac{1}{df_{E}} SSE = \frac{22.1875}{7}= 3.1696</me>
+      </p>
+      <p>
+        So we have <m>F</m> statistic:
+        <me>F=\frac{MSG}{MSE}=\frac{2.2688}{3.1696}=0.7158</me>
+      </p>
+      <p>
+        Whenever the <m>F</m> statistic is less than 1, we should double check the ANOVA assumptions. Which ANOVA assumption(s) is (are) violated here?
+      </p>
+      <p>
+        For the p-value, we use technology that has the <m>F</m>-distribution <m>X = F_{2,7}</m> to find <m>P(0.7158 \leq X) = 0.5214</m>. That means that the probability is about 0.52 that we’d observe the variation of mean weight loss between our samples <em>if</em> these three diet plans actually produce the same mean weight loss. Such a high p-value throws no doubt on the null hypothesis. We conclude that these data provide no evidence that any of these diet plans produce different mean weight loss.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise>
+  <title>Men's weights</title>
+    <statement>
+    <p>
+      Groups of men from three different areas of the country are to be tested for mean weight. The entries in the table are the weights for the different groups. Test the hypothesis that all three groups of men have the same mean weight by performing ANOVA.<fn>This exercise was adapted from OpenStax Introductory Statistics under its Creative Commons Attribution License 4.0 license. Download for free at LINK http://cnx.org/contents/30189442-6998-4686-ac05-ed152b91b9de@18.55</fn>
+    </p>
+    <table>
+    <title></title>
+      <tabular halign="center">
+        <row bottom="minor">
+          <cell>Group 1</cell>
+          <cell>Group 2</cell>
+          <cell>Group 3</cell>
+        </row>
+        <row>
+          <cell>216</cell>
+          <cell>202</cell>
+          <cell>170</cell>
+        </row>
+        <row>
+          <cell>198</cell>
+          <cell>213</cell>
+          <cell>165</cell>
+        </row>
+        <row>
+          <cell>240</cell>
+          <cell>284</cell>
+          <cell>182</cell>
+        </row>
+        <row>
+          <cell>187</cell>
+          <cell>228</cell>
+          <cell>197</cell>
+        </row>
+        <row>
+          <cell>176</cell>
+          <cell>210</cell>
+          <cell>201</cell>
+        </row>
+      </tabular>
+    </table>
+    </statement>
+    <solution>
+      <p>
+        The hypotheses: <m>H_{0}</m>: In three different areas of the country, the mean men’s weight is the same, that is, <m>\mu_{1} = \mu_{2} = \mu_{3}</m>. <m>H_{A}</m>: Mean men’s weight differs among at least two regions.
+      </p>
+      <p>
+        Technology (or careful calculations) produces the ANOVA below.
+      </p>
+      <table>
+      <title>ANOVA table for mean men’s weight.</title>
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor" halign="right">
+            <cell></cell>
+            <cell>Df</cell>
+            <cell>Sum sq</cell>
+            <cell>Mean sq</cell>
+            <cell>F value</cell>
+            <cell>Pr(>F)</cell>
+          </row>
+          <row>
+            <cell halign="left">Regions</cell>
+            <cell halign="right">2</cell>
+            <cell halign="right">4939.2</cell>
+            <cell halign="right">2469.6</cell>
+            <cell halign="right">3.7416</cell>
+            <cell halign="right">0.0546</cell>
+          </row>
+          <row bottom="minor">
+            <cell halign="left">Residuals</cell>
+            <cell halign="right">12</cell>
+            <cell halign="right">7920.4</cell>
+            <cell halign="right">660.0333</cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell halign="left">Total</cell>
+            <cell halign="right">14</cell>
+            <cell halign="right">12859.6</cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+      </table>
+      <p>
+        That means that the probability is about 0.055 that we’d observe the variation of mean weight between our samples if the mean weight of men in all three regions was the same. This is a fairly low p-value, but it’s not significant at the 0.05 level.
+      </p>
+    </solution>  
+  </exercise>
+
+  <exercise>
+  <title>Class delivery types</title>
+    <statement>
+    <p>
+      Are the means for the final exams the same for all statistics class delivery types? The table below shows the scores on final exams from several randomly selected classes that used the different delivery types. Perform a hypothesis test using ANOVA.<fn>This exercise was adapted from OpenStax Introductory Statistics under its Creative Commons Attribution License 4.0 license. Download for free at LINK http://cnx.org/contents/30189442-6998-4686-ac05-ed152b91b9de@18.55</fn>
+    </p>
+    <table>
+    <title></title>
+      <tabular halign="center">
+        <row bottom="minor">
+          <cell>Online</cell>
+          <cell>Hybrid</cell>
+          <cell>Face-to-face</cell>
+        </row>
+        <row>
+          <cell>72</cell>
+          <cell>83</cell>
+          <cell>80</cell>
+        </row>
+        <row>
+          <cell>84</cell>
+          <cell>73</cell>
+          <cell>78</cell>
+        </row>
+        <row>
+          <cell>77</cell>
+          <cell>84</cell>
+          <cell>84</cell>
+        </row>
+        <row>
+          <cell>80</cell>
+          <cell>81</cell>
+          <cell>81</cell>
+        </row>
+        <row>
+          <cell>81</cell>
+          <cell></cell>
+          <cell>86</cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell></cell>
+          <cell>79</cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell></cell>
+          <cell>82</cell>
+        </row>
+      </tabular>
+    </table>
+    </statement>
+    <solution>
+      <p>
+        The hypotheses: <m>H_{0}</m>: Mean final exam scores are the same for all three class delivery types, that is, <m>\mu_{1} = \mu_{2} = \mu_{3}</m>. <m>H_{A}</m>: Mean final exam scores differ for at least two class delivery types.
+      </p>
+      <p>
+        Technology (or careful calculations) produce the ANOVA table below:
+      </p>
+      <table>
+      <title>ANOVA table for mean final exam scores</title>
+        <tabular>
+          <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor" halign="right">
+              <cell></cell>
+              <cell>Df</cell>
+              <cell>Sum sq</cell>
+              <cell>Mean sq</cell>
+              <cell>F value</cell>
+              <cell>Pr( <m>\gt</m>F)</cell>
+            </row>
+            <row>
+              <cell halign="left">Regions</cell>
+              <cell halign="right">2</cell>
+              <cell halign="right">20.1732</cell>
+              <cell halign="right">10.0866</cell>
+              <cell halign="right">0.6388</cell>
+              <cell halign="right">0.5437</cell>
+            </row>
+            <row bottom="minor">
+              <cell halign="left">Residuals</cell>
+              <cell halign="right">13</cell>
+              <cell halign="right">205.2643</cell>
+              <cell halign="right">15.7896</cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell halign="left">Total</cell>
+              <cell halign="right">15</cell>
+              <cell halign="right">225.4375</cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+          </tabular>
+        </table>
+      <p>
+        Again, the F-statistic is below 1. Which ANOVA assumption(s) was (were) not met?
+      </p>
+      <p>
+        The p-value 0.5437 says that these data provide no evidence of any difference in mean final exam scores among these three class delivery methods.
+      </p>
+    </solution> 
+  </exercise>
+</exercises>
+</section>

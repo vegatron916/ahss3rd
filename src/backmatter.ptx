@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<backmatter xml:id="backmatter" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Appendices</title>
+
+	<xi:include href="./appendix_data_sets_in_text.ptx" />
+	<xi:include href="./appendix_distribution_tables.ptx" />
+	<xi:include href="./appendix_reference.ptx" />
+	<xi:include href="./appendix_inference_guide.ptx" />
+
+</backmatter>

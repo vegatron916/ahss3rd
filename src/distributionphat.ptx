@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xml:id="distributionphat">
+<title>Sampling distribution of a sample proportion</title>
+  <introduction>
+    <p>
+      Often, instead of the number of successes in <m>n</m> trials,
+      we are interested in the <em>proportion</em>
+      of successes in <m>n</m> trials.
+      We can use the sampling distribution of a sample proportion to answer questions such as the following:
+      <ul>
+        <li>
+          <p>
+            Given a fair coin, what is the probability that in 200 tosses you would get greater than 52% Tails just by random variation?<!-- Given a population that is 50% male,
+            what is the probability that a random sample of 200 people would consist of less than 45% males? -->
+          </p>
+        </li>
+        <li>
+          <p>
+            In a particular state, 48% support a controversial measure.
+            When estimating the percent through polling,
+            what is the probability that a random sample of size 200 will mistakenly estimate the percent support to be greater than 50%?
+          </p>
+        </li>
+      </ul>
+    </p>
+  </introduction>
+  <subsection>
+    <objectives>
+    <title>Learning objectives</title>
+      <ul>
+        <li>
+          <p>
+            Describe the center, spread,
+            and shape of the sampling distribution of a sample proportion.
+          </p>
+        </li>
+        <li>
+          <p>
+            Recognize the relationship between the distribution of a sample proportion and the corresponding binomial distribution.
+          </p>
+        </li>
+        <li>
+          <p>
+            Identify and explain the conditions for using normal approximation involving a sample proportion.
+            Recognize that the Central Limit Theorem applies in the case of proportions/counts as well as means/sums.
+          </p>
+        </li>
+        <li>
+          <p>
+            Verify that the conditions for normal approximation are met and carry out normal approximation involving a sample proportion or sample count.
+          </p>
+        </li>
+      </ul>
+    </objectives>
+  </subsection>
+  <subsection>
+    <title>The mean and standard deviation of <m>\hat{p}</m></title>
+    <p>
+      To answer these questions,
+      we investigate the distribution of the sample proportion <m>\hat{p}</m>.
+      In the last section we saw that the <em>number</em>
+      of people with blood type O+ in a random sample of size 40 follows a binomial distribution with <m>n=40</m> and <m>p=0.35</m> that is centered on 14 and has standard deviation 3.0.
+      What does the distribution of the <em>proportion</em>
+      of people with blood type O+ in a sample of size 40 look like?
+      To convert from a count to a proportion,
+      we divide the count (i.e.<nbsp/>number of<nbsp/>yeses) by the sample size,
+      <m>n = 40</m>.
+      For example, 6 becomes <m>8/40 = 0.20</m> as a proportion and 11 becomes <m>11/40 = 0.275</m>.
+    </p>
+    <p>
+      We can find the general formula for the mean
+      (expected value)
+      and standard deviation of a sample proportion <m>\hat{p}</m> using our tools that we've learned so far.
+      To get the sample mean for <m>\hat{p}</m>,
+      we divide the binomial mean <m>\mu_{binomial} = np</m> by <m>n</m>:
+      <md>
+        <mrow>\mu_{\hat{p}} = \frac{\mu_{binomial}}{n} = \frac{np}{n} = p</mrow>
+      </md>
+    </p>
+    <p>
+      As one might expect,
+      the sample proportion <m>\hat{p}</m> is centered on the true proportion <m>p</m>.
+      Likewise, the standard deviation of <m>\hat{p}</m> is equal to the standard deviation of the binomial distribution divided by <m>n</m>:
+      <md>
+        <mrow>\sigma_{\hat{p}} = \frac{\sigma_{binomial}}{n} = \frac{\sqrt{np(1-p)}}{n} = \sqrt{\frac{p(1-p)}{n}}</mrow>
+      </md>
+    </p>
+    <assemblage>
+      <title>Mean and standard deviation of a sample proportion</title>
+      <p>
+        The mean and standard deviation of the sample proportion describe the center and spread of the distribution of all possible sample proportions <m>\hat{p}</m> from a random sample of size <m>n</m> with true population proportion <m>p</m>.
+        <md>
+          <mrow>\mu_{\hat{p}} \amp = p \amp  \sigma_{\hat{p}}\amp = \sqrt{\frac{p(1-p)}{n}}</mrow>
+        </md>
+      </p>
+    </assemblage>
+    <p>
+      In analyses,
+      we think of the formula for the standard deviation of a sample proportion,
+      <m>\sigma_{\hat{p}}</m>,
+      as describing the uncertainty associated with the estimate <m>\hat{p}</m>.
+      That is, <m>\sigma_{\hat{p}}</m> can be thought of as a way to quantify the typical error
+          <idx><h>error</h></idx>
+      in our sample estimate <m>\hat{p}</m> of the true proportion <m>p</m>.
+      Understanding the variability of statistics such as <m>\hat{p}</m> is a central component in the study of statistics.
+    </p>
+    <p>
+      Here, <m>n=40</m> and <m>p=0.35</m>,
+      <m>\sigma_{\hat{p}} = \sqrt{\frac{0.35(1-0.35)}{40}}=0.075</m>.
+      We see in <xref ref="oPositive40prop"></xref>
+      that the distribution of number of people in a sample with blood type O+ out of 40 is equivalent to the distribution of proportion of people in a sample of size 40 with blood type O+, but with a change of scale.
+      Instead of counts along the horizontal axis, we have proportions.
+    </p>
+    <figure xml:id="oPositive40prop">
+      <caption>Two distributions where <m>p=0.35</m> and <m>n=40</m>:  the binomial distribution for the <em>number</em> with blood type O+ and the sampling distribution for the <em>proportion</em> with blood type O+.</caption>
+      <sidebyside>
+      	<image width="70%" source="images/distributions/oPositive40.png" />
+      	<image width="70%" source="images/distributions/oPositive40prop.png" />
+      </sidebyside>
+    </figure>
+    <example>
+      <statement>
+        <p>
+          If the proportion of people in the county with blood type O+ is really 35%, find and interpret the mean and standard deviation of the sample proportion for a random sample of size 400.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The mean of the sample proportion is the population proportion: 0.35.
+          That is, if we took many,
+          many samples and calculated <m>\hat{p}</m>,
+          these values would average out to <m>p = 0.35</m>.
+        </p>
+        <p>
+          The standard deviation of <m>\hat{p}</m> is described by the standard deviation for the proportion:
+          <md>
+            <mrow>\sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}} = \sqrt{\frac{0.35(0.65)}{400}} = 0.024</mrow>
+          </md>
+        </p>
+        <p>
+          The sample proportion will typically be about 0.024 or 2.4% away from the true proportion of <m>p = 0.35</m>.
+          We'll become more rigorous about quantifying how close <m>\hat{p}</m> will tend to be to <m>p</m> in <xref ref="foundationsForInference"></xref>.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection>
+    <title>The Central Limit Theorem</title>
+    <p>
+      The distribution in <xref ref="oPositive40prop"></xref> looks an awful lot like a normal distribution. That is no nomaly; it is a result of a general principle called the <term>Central Limit Theorem</term>.
+    </p>
+      <!-- which states that for large enough <m>n</m>,
+      the sample mean <m>\bar{x}</m> is normally distributed.
+    </p> -->
+    <assemblage>
+    <title>Central Limit Theorem and the Success-Failure Condition</title>
+      <p>
+        When observations are independent and the sample size is sufficiently large, the sample proportion <m>\hat{p}</m> will tend to follow a normal distribution with the following mean and standard deviation:
+        <md>
+          <mrow>\mu_{\hat{p}} \amp = p \amp  \sigma_{\hat{p}}\amp = \sqrt{\frac{p(1-p)}{n}}</mrow>
+        </md>
+      </p>
+      <p>
+        In order for the Central Limit Theorem to hold, the sample size is typically considered sufficiently large when <m>np \geq 10</m> and <m>n(1-p) \geq 10</m>, which is called the <term>success-failure condition</term>.
+      </p>
+    </assemblage>
+
+    <p>
+      The Central Limit Theorem is incredibly important, and it provides a foundation for much of statistics. As we begin applying the Central Limit Theorem, be mindful of the two technical conditions: the observations must be independent, and the sample size must be sufficiently large such that <m>np \geq 10</m> and <m>n(1-p) \geq 10</m>.
+    </p>
+
+    <assemblage>
+      <title>How To Verify Sample Observations Are Independent</title>
+      <p>
+        If the observations are from a random process such as tossing a coin, then they are independent.
+      </p>
+      <p>
+        If the observations are from a random sample with replacement, then they are independent.
+      </p>
+      <p>
+        If the observations are from a simple random sample (without replacement), we can treat them as independent if the sample size is less than 10% of the population size.
+      </p>
+      <p>
+        If a sample is from a seemingly random process, e.g. an occasional error on an assembly line, checking independence is more difficult. In this case, use your best judgement.
+      </p>
+    </assemblage>
+
+    <p>
+      When the sample exceeds 10% of the population size, the methods we discuss tend to overestimate the sampling error slightly versus what we would get using more advanced methods.<fn>For example, we could use what’s called the <term>finite population correction factor</term>: if the sample is of size <m>n</m> and the population size is <m>N</m>, then we can multiple the typical standard deviation formula by <m>\sqrt{\frac{N-n}{n-1}}</m> to obtain a smaller, more precise estimate of the actual standard deviation. When <m>n \lt 0.1 \times N</m>, this correction factor is relatively close to 1.</fn>
+    </p>
+    <p>
+      An interesting question to answer is, <em>what happens when <m>np \lt 10</m> or <m>n(1-p) \lt 10</m></em>? We can simulate drawing samples of different sizes where, say, the true proportion is <m>p = 0.25</m>. Here’s a sample of size 10:
+    </p>
+
+    <p> no, no, yes, yes, no, no, no, no, no, no CENTERED </p>
+
+    <p>
+      In this sample, we observe a sample proportion of yeses of <m>\hat{p}=\frac{2}{10}=0.2</m>. We can simulate many such proportions to understand the sampling distribution for <m>\hat{p}</m> when <m>n = 10</m> and <m>p = 0.25</m>, which we’ve plotted in <xref ref="sampling_10_prop_25p"></xref> alongside a normal distribution with the same mean and variability. These distributions have a number of important differences.
+    </p>
+
+    <table>
+    <title></title>
+      <tabular>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row halign="center" bottom="minor">
+          <cell></cell>
+          <cell>Unimodal?</cell>
+          <cell>Smooth?</cell>
+          <cell>Symmetric?</cell>
+        </row>
+        <row>
+          <cell halign="left">Normal: <m>N(0.25,10.14)</m></cell>
+          <cell halign="center">YES</cell>
+          <cell halign="center">YES</cell>
+          <cell halign="center">YES</cell>
+        </row>
+        <row bottom="minor">
+          <cell halign="left"><m>n=10</m>,<m>p=0.25</m></cell>
+          <cell halign="center">YES</cell>
+          <cell halign="center">NO</cell>
+          <cell halign="center">NO</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      Notice that the success-failure condition was not satisfied when <m>n = 10</m> and <m>p = 0.25</m>:
+    </p>
+
+    <p> <m>np = 10 \times 0.25 - 2.5</m> <m>n(1-p)=10 \times 0.75 = 7.5</m> CENTERED </p>
+
+    <p>
+      This single sampling distribution does not show that the success-failure condition is the perfect guideline, but we have found that the guideline did correctly identify that a normal distribution might not be appropriate.
+    </p>
+
+    <figure xml:id="sampling_10_prop_25p">
+      <caption>Left: simulations of <m>\hat{p}</m> when the sample size is <m>n = 10</m> and the population proportion is <m>p = 0.25</m>. Right: a normal distribution with the same mean (0.25) and standard deviation (0.137).</caption>
+      <image width="73%" source="images/distributions/sampling_10_prop_25p.png" />
+    </figure>
+
+    <p>
+      We can complete several additional simulations, shown in <xref ref="clt_prop_grid_1"></xref> and <xref ref="clt_prop_grid_2"></xref>, and we can see some trends:
+      <ol label="1">
+        <li>
+          <p>
+            When either <m>np</m> or <m>n(1 − p)</m> is small, the distribution is more <term>discrete</term>, i.e. <em>not continuous</em>.
+          </p>
+        </li>
+        <li>
+          <p>
+            When <m>np</m> or <m>n(1 − p)</m> is smaller than 10, the skew in the distribution is more noteworthy.
+          </p>
+        </li>
+        <li>
+          <p>
+            The larger both <m>np</m> <em>and</em> <m>n(1 − p)</m>, the more normal the distribution. This may be a little harder to see for the larger sample size in these plots as the variability also becomes much smaller.
+          </p>
+        </li>
+        <li>
+          <p>
+            When <m>np</m> and <m>n(1 − p)</m> are both very large, the distribution’s discreteness is hardly evident, and the distribution looks much more like a normal distribution.
+          </p>
+        </li>
+      </ol>
+    </p>
+   
+    <p>
+      So far we’ve only focused on the skew and discreteness of the distributions. We haven’t considered how the mean and standard error of the distributions change. Take a moment to look back at the graphs, and pay attention to three things:
+      <ol label="1">
+        <li>
+          <p>
+            The centers of the distribution are always at the population proportion, <m>p</m>, that was used to generate the simulation. Because the sampling distribution for <m>\hat{p}</m> is always centered at the population parameter <m>p</m>, it means the sample proportion <m>\hat{p}</m> is <term>unbiased</term> when the data are independent and drawn from such a population.
+          </p>
+        </li>
+        <li>
+          <p>
+            For a particular population proportion <m>p</m>, the variability in the sampling distribution decreases as the sample size <m>n</m> becomes larger. This will likely align with your intuition: an estimate based on a larger sample size will tend to be more accurate.
+          </p>
+        </li>
+        <li>
+          <p>
+            For a particular sample size, the variability will be largest when <m>p = 0.5</m>. The differences may be a little subtle, so take a close look. This reflects the role of the proportion <m>p</m> in the standard error formula: <m>SE=\sqrt{\frac{p(1-p)}{n}}</m>. The standard error is largest when <m>p = 0.5</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+
+    <p>
+      At no point will the distribution of <m>\hat{p}</m> look <em>perfectly</em> normal, since <m>\hat{p}</m> will always be take discrete values <m>(x/n)</m>. It is always a matter of degree, and we will use the standard success-failure condition with minimums of 10 for <m>np</m> and <m>n(1 − p)</m> as our guideline within this book.
+    </p>
+
+  <assemblage>
+  <title>Three Important Factors About The Distribution Of A Sample Proportion <m>\hat{p}</m></title>
+    <p>
+      When the observations can be considered independent, such as from a random sample of less than 10% of the population, the distribution of the sample proportion can be described as follows.
+      <ol label="1">
+        <li>
+          <p>
+            CENTER: The mean of a sample proportion is <m>p</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            SPREAD: The SD of a sample proportion is <m>\sqrt{\frac{p(1-p)}{n}}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            SHAPE: When <m>np \geq 10M</m> and <m>n(1-p) \geq 10</m>, the sample proportion closely follows a normal distribution.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </assemblage>
+
+    <p>
+      Using these facts, we can now answer the question posed at the beginning of this section.
+    </p>
+
+    <figure xml:id="clt_prop_grid_1">
+      <caption> Sampling distributions for several scenarios of <m>p</m> and <m>n</m>. Rows: <m>p = 0.10</m>, <m>p = 0.20</m>, <m>p = 0.50</m>, <m>p = 0.80</m>, and <m>p = 0.90</m>. Columns: <m>n = 10</m> and <m>n = 25</m>.</caption>
+      <image width="73%" source="images/distributions/clt_prop_grid_1.png" />
+    </figure>
+
+    <figure xml:id="clt_prop_grid_2">
+      <caption>Sampling distributions for several scenarios of <m>p</m> and <m>n</m>. Rows: <m>p = 0.10</m>, <m>p = 0.20</m>, <m>p = 0.50</m>, <m>p = 0.80</m>, and <m>p = 0.90</m>. Columns: <m>n = 50</m>, <m>n = 100</m>, and <m>n = 250</m>.</caption>
+      <image width="73%" source="images/distributions/clt_prop_grid_2.png" />
+    </figure>
+
+  </subsection>
+  <subsection>
+    <title>Normal approximation for the distribution of <m>\hat{p}</m></title>
+    <example>
+      <statement>
+        <p>
+          Find the probability that less than 30% of a random sample of 400 people will be blood type O+ if the population proportion is 35%.
+        </p>
+      </statement>
+      <solution xml:id="smokers">
+        <p>
+          In the previous section we verified that <m>np</m> and <m>n(1-p)</m> are at least 10.
+          The mean of the sample proportion is 0.35 and the standard deviation for the sample proportion is given by <m>\sqrt{\frac{0.35(1-0.35)}{400}}=0.024</m>.
+          We can find a Z-score and use our calculator to find the probability:
+          <md>
+            <mrow>Z \amp = \frac{\hat{p} - \mu_{\hat{p}}}{\sigma_{\hat{p}}} = \frac{0.30 - 0.35}{0.024} = -2.1</mrow>
+            <mrow>P(\amp Z \lt  -2.1) = 0.0179</mrow>
+          </md>
+        </p>
+        <p>
+          We leave it to the reader to construct a figure for this example.
+        </p>
+      </solution>
+    </example>
+    <example>
+      <statement>
+        <p>
+          The probability 0.0179 is the same probability we calculated when we found the probability of getting fewer than 120 with blood type O+ out of 400!
+          Why is this?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Notice that <m>120/400=0.30</m>.
+          Using the binomial distribution to find the probability of fewer than 120 with blood type O+ in the sample is equivalent to using the distribution of <m>\hat{p}</m> to find the probability of a sample proportion less than 0.30.
+        </p>
+      </solution>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          Given a population that is 50% male,
+          what is the probability that a sample of size 200 would have greater than 55% males?
+          Remember to verify that conditions for normal approximation are met.
+          <fn>First, verify the conditions: There is a random sample, and the sample size is much smaller than the population size, so observations can be considered independent. Also, <m>np = 200(0.5) = 100 \ge 10</m> and <m>n(1- p) = 200(0.5) = 100 \ge 10</m>, so the normal approximation is reasonable. Next we find the mean and standard deviation of <m>\hat{p}</m>: <m>\mu_{\hat{p}} = p =0.50</m> and<m> \sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}} =\sqrt{\frac{0.5(0.5)}{200}} = 0.0354</m>. Then we find the <m>Z</m>-score and find the upper tail of the normal distribution: <m>Z=\frac{\hat{p}-\mu_{\hat{p}}}{\sigma_{\hat{p}}}= \frac{0.55-0.5}{0.0354}1.412 \rightarrow P(Z>1.412)=0.07</m>. The probability of getting a sample proportion of 55% or greater is about 0.07.</fn>
+        </p>
+      </statement>
+    </exercise>
+  </subsection>
+  <subsection>
+    <title>Section summary</title>
+    <p>
+      <ul>
+        <li>
+          <p>
+            A <term>Z-score</term> represents the number of standard deviations a value in a data set is above or below the mean. To calculate a Z-score use: <m>Z=\frac{x-\text{mean}}{\text{SD}}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The standard deviation of <m>\hat{p}</m> describes the typical error or distance of the sample proportion from the population proportion. It also tells us how much the sample proportion is likely to vary from one random sample to another.
+          </p>
+        </li>
+        <li>
+          <p>
+            The sampling distribution for the sample proportion <m>\hat{p}</m> for a random sample of size <m>n</m> is identical to the binomial distribution with parameters <m>n</m> and <m></m>, but with a change of scale,
+            i.e. different mean and different SD, but same shape.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            The same <term>success-failure condition</term> for the binomial distribution holds for a sample proportion <m>\hat{p}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Three important facts about the sampling distribution of the sample proportion <m>\hat{p}</m>:
+          </p>
+          <p>
+            <ul>
+              <li>
+                <p>
+                  The mean of a sample proportion is denoted by <m>\mu_{\hat{p}}</m>,
+                  and it is equal to <m>p</m>. (<em>center</em>)
+                </p>
+              </li>
+              <li>
+                <p>
+                  The SD of a sample proportion is denoted by <m>\sigma_{\hat{p}}</m>,
+                  and it is equal to <m>\sqrt{\frac{p(1-p)}{n}}</m>. (<em>spread</em>)
+                </p>
+              </li>
+              <li>
+                <p>
+                  When <m>np\ge 10</m> and <m>n(1-p)\ge 10</m>,
+                  the distribution of the sample proportion will be approximately normal. (<em>shape</em>)
+                </p>
+              </li>
+            </ul>
+        	</p>
+        </li>
+        <li>
+          <p>
+            We use these properties when solving the following type of
+            <term>normal approximation</term>
+            problem involving a sample proportion.
+            <em>Find the probability of getting more / less than <fillin/>% yeses in a sample of size <m>n</m></em>.
+            <ol>
+              <li>
+                <p>
+                  Identify <m>n</m> and <m>p</m>.
+                  Verify than <m>np\ge 10</m> and <m>n(1-p)\ge 10</m>,
+                  which implies that normal approximation is reasonable.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Calculate the Z-score.
+                  Use <m>\mu_{\hat{p}} = p</m> and
+                  <m>\sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}}</m> to standardize the sample proportion.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Find the appropriate area under the normal curve.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </li>
+      </ul>
+    </p>
+  </subsection>
+<exercises>
+<title>Exercises</title>
+  <exercise>
+    <title>Distribution of <m>\hat{p}</m></title><!--  #39 -->
+    <statement>
+      <p>
+        Suppose the true population proportion were <m>p = 0.95</m>.
+        The figure below shows what the distribution of a sample proportion looks like when the sample size is <m>n = 20</m>,
+        <m>n = 100</m>,
+        and <m>n = 500</m>. (a) What does each point (observation) in each of the samples represent? (b) Describe the distribution of the sample proportion,
+        <m>\hat{p}</m>.
+        How does the distribution of the sample proportion change as <m>n</m> becomes larger?
+    </p>
+    <image width="80%" source="images/distributions/eoce-p-hat-simulations-p95.png" />
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Each observation in each of the distributions represents the sample proportion (<m>\hat{p}</m>) from samples of size <m>n = 20</m>, <m>n = 100</m>, and <m>n = 500</m>, respectively.
+            </p>
+          </li>
+          <li>
+            <p>
+              The centers for all three distributions are at 0.95, the true population parameter. When <m>n</m> is small, the distribution is skewed to the left and not smooth. As n increases, the variability of the distribution (standard deviation) decreases, and the shape of the distribution becomes more unimodal and symmetric.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+  <exercise>
+    <title>Distribution of <m>\hat{p}</m></title><!--  #40 -->
+    <statement>
+      <p>
+        Suppose the true population proportion were <m>p = 0.5</m>.
+        The figure below shows what the distribution of a sample proportion looks like when the sample size is <m>n = 20</m>,
+        <m>n = 100</m>, and <m>n = 500</m>.
+        What does each point (observation) in each of the samples represent?
+        Describe how the distribution of the sample proportion,
+        <m>\hat{p}</m>, changes as <m>n</m> becomes larger.
+    </p>
+   	<image width="80%" source="images/distributions/eoce-p-hat-simulations-p5.png" />
+    </statement>
+  </exercise>
+
+  <exercise xml:id="veg_coll_students_CLT">
+    <title>Vegetarian college students</title>
+    <statement>
+      <p>
+        Suppose that 8% of college students are vegetarians.
+        Determine if the following statements are true or false,
+        and explain your reasoning.
+        <ol label="a">
+          <li>
+            <p>
+              The distribution of the sample proportions of vegetarians in random samples of size 60 is approximately normal since <m>n \ge 30</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The distribution of the sample proportions of vegetarian college students in random samples of size 50 is right skewed.
+            </p>
+          </li>
+          <li>
+            <p>
+              A random sample of 125 college students where 12% are vegetarians would be considered unusual.
+            </p>
+          </li>
+          <li>
+            <p>
+              A random sample of 250 college students where 12% are vegetarians would be considered unusual.
+            </p>
+          </li>
+          <li>
+            <p>
+              The standard error would be reduced by one-half if we increased the sample size from 125 to 250.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              False. Doesn't satisfy success-failure condition.
+            </p>
+          </li>
+          <li>
+            <p>
+              True. The success-failure condition is not satisfied. In most samples we would expect <m>\hat{p}</m> to be close to 0.08, the true population proportion. While <m>\hat{p}</m> can be much above 0.08, it is bound below by 0, suggesting it would take on a right skewed shape. Plotting the sampling distribution would confirm this suspicion.
+            </p>
+          </li>
+          <li>
+            <p>
+              False. <m>SE_{\hat{p}} = 0.0243</m>, and <m>\hat{p} = 0.12</m> is only <m>\frac{0.12-0.08}{0.0243} = 1.65</m> SEs away from the mean, which would not be considered unusual.
+            </p>
+          </li>
+          <li>
+            <p>
+              True. <m>\hat{p} = 0.12</m> is 2.32 standard errors away from the mean, which is often considered unusual.
+            </p>
+          </li>
+          <li>
+            <p>
+              False. Decreases the SE by a factor of <m>1/ \sqrt{2}</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="young_americans_CLT_1"><!--  #2 -->
+    <title>Young Americans, Part I</title>
+    <statement>
+      <p>
+        About 77% of young adults think they can achieve the American dream.
+        Determine if the following statements are true or false,
+        and explain your reasoning.<fn>A. Vaughn. <url href="https://www.latimes.com/world/la-xpm-2011-nov-03-la-na-young-adults-20111103-story.html"><q>Poll finds young adults optimistic, but not about money</q></url>. In: <em>Los Angeles Times</em> (2011).</fn>
+        <ol>
+          <li>
+            <p>
+              The distribution of sample proportions of young Americans who think they can achieve the American dream in samples of size 20 is left skewed.
+            </p>
+          </li>
+          <li>
+            <p>
+              The distribution of sample proportions of young Americans who think they can achieve the American dream in random samples of size 40 is approximately normal since <m>n \ge 30</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              A random sample of 60 young Americans where 85% think they can achieve the American dream would be considered unusual.
+            </p>
+          </li>
+          <li>
+            <p>
+              A random sample of 120 young Americans where 85% think they can achieve the American dream would be considered unusual.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <title>Distribution of <m>\hat{p}</m></title>
+    <statement>
+      <sidebyside>
+        <video width="60%" preview="generic" youtube="P9GHqVqrYvg" />
+      </sidebyside>
+      <p>
+        Suppose the true population proportion were <m>p = 0.5</m> and a researcher takes a simple random sample of size <m>n=50</m>.
+        <ol>
+          <li>
+            <p>
+              Find and interpret the standard deviation of the sample proportion <m>\hat{p}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Calculate the probability that the sample proportion will be larger than 0.55 for a random sample of size 50.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>SD_{\hat{p}} = \sqrt{p(1 - p)/n} = 0.0707</m>. This describes the typical distance that the sample proportion will deviate from the true proportion, <m>p = 0.5</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\hat{p}</m> approximately follows <m>N(0.5, 0.0707)</m>. <m>Z = (0.55 - 0.50)/0.0707 \approx 0.71</m>. This corresponds to an upper tail of about 0.2389. That is, <m>P(\hat{p} > 0.55) \approx 0.24</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+  <exercise>
+    <title>Distribution of<m>\hat{p}</m></title><!--  #42 -->
+    <statement>
+      <p>
+        Suppose the true population proportion were <m>p = 0.6</m> and a researcher takes a simple random sample of size <m>n=50</m>.
+        <ol>
+          <li>
+            <p>
+              Find and interpret the standard deviation of the sample proportion <m>\hat{p}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Calculate the probability that the sample proportion will be larger than 0.65 for a random sample of size 50.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <title>Nearsighted children</title><!--  #43 -->
+    <statement>
+      <sidebyside>
+        <video width="60%" preview="generic" youtube="eDzsYb9a1UE" />
+      </sidebyside>
+      <p>
+        It is believed that nearsightedness affects about 8% of all children.
+        We are interested in finding the probability that fewer than 12 out of 200 randomly sampled children will be nearsighted.
+        <ol>
+          <li>
+            <p>
+              Estimate this probability using the normal approximation to the binomial distribution.
+            </p>
+          </li>
+          <li>
+            <p>
+              Estimate this probability using the distribution of the sample proportion.
+            </p>
+          </li>
+          <li>
+            <p>
+              How do your answers from parts (a) and (b) compare?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              First we need to check that the necessary conditions are met. There are <m>200 \times 0.08 = 16 </m> expected successes and <m>200 \times (1 - 0.08) = 184</m> expected failures, therefore the success-failure condition is met. Then the binomial distribution can be approximated by <m>N(\mu = 16, \sigma = 3.84)</m>. <m>P(X \lt 12) = P(Z \lt -1.04) = 0.1492</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Since the success-failure condition is met the sampling distribution of <m>\hat{p} ~ N(\mu = 0.08, \sigma = 0.0192)</m>. <m>P(\hat{p} \lt 0.06)= P(Z \lt -1.04) = 0.1492</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              As expected, the two answers are the same.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+  <exercise>
+    <title>Social network use</title><!--  #44 -->
+    <statement>
+      <p>
+        The Pew Research Center estimates that as of January 2014, 89% of 18-29 year olds in the United States use social networking sites.<fn>Pew Research Center, Washington, D.C. <url href="https://www.pewresearch.org/internet/fact-sheet/social-media/"> Social Networking Fact Sheet,</url> accessed on May 9, 2015.</fn> Calculate the probability that at least 95% of 500 randomly sampled 18-29 year olds use social networking sites.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <title>CLT for proportions, Part 1</title>
+    <statement>
+      <p>
+        Define the term <q>sampling distribution</q> of the sample proportion, and describe how the shape, center, and spread of the sampling distribution change as the sample size increases when <m>p = 0.1</m>.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <title>CLT for proportions, Part 2</title>
+    <statement>
+      <p>
+        Define the term <q>sampling distribution</q> of the sample proportion, and describe how the shape, center, and spread of the sampling distribution change as the sample size increases when <m>p = 0.8</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The sampling distribution is the distribution of sample proportions from samples of the same size randomly sampled from the same population. As the same size increases, the shape of the sampling distribution (when <m>p = 0.1</m>) will go from being rightskewed to being more symmetric and resembling the normal distribution. With larger sample sizes, the spread of the sampling distribution gets smaller. Regardless of the sample size, the center of the sampling distribution is equal to the true mean of that population, provided the sampling isn’t biased
+      </p>
+    </solution>
+  </exercise>
+</exercises>
+
+<!-- <subsection>
+  <title>Chapter Highlights</title>
+  <p>
+    This chapter began by introducing the normal distribution.
+    A common thread that ran through this chapter is the use of the
+    <term>normal approximation</term> in various contexts.
+    The key steps are included for each of the normal approximation scenarios below.
+    <ol>
+      <li>
+        <p>
+          Normal approximation for <term>data</term>: - Verify that population is approximately normal. - Use the given mean <m>\mu</m> and SD <m>\sigma</m> to find the Z-score for the given <m>x</m> value.
+        </p>
+      </li>
+      <li>
+        <p>
+          Normal approximation for a <em>sample mean/sum</em>
+            <idx><h>sample mean</h></idx>
+          :
+            <idx><h>sample sum</h></idx>
+          Verify that population is approximately normal or that <m>n\ge 30</m>.
+          Use <m>\mu_{\bar{x}}=\mu</m> and
+          <m>\sigma_{\bar{x}}=\frac{\sigma}{\sqrt{n}}</m> to find the Z-score for the given/calculated sample mean.
+        </p>
+      </li>
+      <li>
+        <p>
+          Normal approximation for the <term>number of successes</term>
+          (binomial): - Verify that <m>np\ge 10</m> and
+          <m>n(1-p)\ge 10</m>. - Use <m>\mu_{\scriptscriptstyle{X}} = np</m> and
+          <m>\sigma_{\scriptscriptstyle{X}} = \sqrt{np(1-p)}</m> to find the Z-score for the given number of successes.
+        </p>
+      </li>
+      <li>
+        <p>
+          Normal approximation for a <term>sample proportion</term>: - Verify that <m>np\ge 10</m> and
+          <m>n(1-p)\ge 10</m>. - Use <m>\mu_{\hat{p}} = p</m> and
+          <m>\sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}}</m> to find the Z-score for the given sample proportion.
+        </p>
+      </li>
+      <li>
+        <p>
+          Normal approximation for the <term>sum of two independent random variables</term>: - Verify that each random variable is approximately normal. - Use <m>E(X+Y)=E(X)+E(Y)</m> and
+          <m>SD(X+Y)=\sqrt{(SD(X))^2+(SD(Y))^2}</m> to find the Z-score for the given sum.
+        </p>
+      </li>
+    </ol>
+  </p>
+  <p>
+    Cases 1 and 2 apply to <term>numerical</term> variables,
+    while cases 3 and 4 are for <term>categorical</term> yes/no variables.
+    Case 5 applies to both numerical and categorical variables.
+  </p>
+  <p>
+    Note that in the binomial case and in the case of proportions,
+    we never look to see if the <em>population</em> is normal.
+    That would not make sense because the
+    <q>population</q>
+    is simply a bunch of no/yes, 0/1 values and could not possibly be normal.
+  </p>
+  <p>
+    The <term>Central Limit Theorem</term>
+    is the mathematical rule that ensures that when the sample size is sufficiently large,
+    the sample mean/sum and sample proportion/count will be approximately normal.
+  </p>
+</subsection> -->
+</section>

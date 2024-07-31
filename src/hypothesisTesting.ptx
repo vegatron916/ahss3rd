@@ -1,0 +1,1646 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xml:id="hypothesisTesting">
+  <title>Introducing hypothesis testing</title>
+  <introduction>
+    <p>
+          <idx><h>hypothesis testing</h></idx>
+    </p>
+    <p>
+      In an experiment,
+      one treatment reduces cholesterol by 10% while another treatment reduces it by 17%. Is this strong enough evidence that the second treatment is more effective?
+      In this section,
+      we will set up a framework for answering questions such as this and will look at the different types of decision errors that researcher can make when drawing conclusions based on data.
+    </p>
+  </introduction>
+  <subsection>
+    <objectives>
+    <title>Learning objectives</title>
+      <ol>
+        <li>
+          <p>
+            Explain the logic of hypothesis testing,
+            including setting up hypotheses and drawing a conclusion based on the set significance level and the calculated p-value.
+          </p>
+        </li>
+        <li>
+          <p>
+            Set up the null and alternative hypothesis in words and in terms of population parameters.
+          </p>
+        </li>
+        <li>
+          <p>
+            Interpret a p-value in context and recognize how the calculation of the p-value depends upon the direction of the alternative hypothesis.
+          </p>
+        </li>
+        <li>
+          <p>
+            Define and interpret the concept statistically significant.
+          </p>
+        </li>
+        <li>
+          <p>
+            Interpret Type<nbsp/>I, Type<nbsp/>II Error,
+            and power in the context of hypothesis testing.
+          </p>
+        </li>
+        <li>
+          <p>
+            Distinguish between statistically significant and practically significant, and recognize the role that sample size plays here.
+          </p>
+        </li>
+        <li>
+          <p>
+            Understand the two general conditions for when the confidence interval and hypothesis testing procedures apply and explain why these conditions are necessary.
+          </p>
+        </li>
+      </ol>
+    </objectives>
+  </subsection>
+  <subsection>
+    <title>Case study: medical consultant</title>
+    <p>
+          <idx><h>data</h><h>medical consultant</h></idx>
+      People providing an organ for donation sometimes seek the help of a special medical consultant.
+      These consultants assist the patient in all aspects of the surgery,
+      with the goal of reducing the possibility of complications during the medical procedure and recovery.
+      Patients might choose a consultant based in part on the historical complication rate of the consultant's clients.
+    </p>
+    <p>
+      One consultant tried to attract patients by noting the overall complication rate for liver donor surgeries in the US is about 10%, but her clients have had only 9 complications in the 142 liver donor surgeries she has facilitated.
+      She claims this is strong evidence that her work meaningfully contributes to reducing complications
+      (and therefore she should be<nbsp/>hired!).
+    </p>
+    <example>
+      <statement>
+        <p>
+          We will let <m>p</m> represent the true complication rate for liver donors working with this consultant.
+          Calculate the best estimate for <m>p</m> using the data.
+          Label the point estimate as <m>\hat{p}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The sample proportion for the complication rate is 9<nbsp/>complications divided by the 142<nbsp/>surgeries the consultant has worked on:
+          <m>\hat{p} = 9 / 142 = 0.063</m>.
+        </p>
+      </solution>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Is it possible to prove that the consultant's work reduces complications?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          No.
+          The claim implies that there is a causal connection,
+          but the data are observational.
+          For example,
+          maybe patients who can afford a medical consultant can afford better medical care,
+          which can also lead to a lower complication rate.
+        </p>
+      </solution>
+    </example>
+    <example>
+      <statement>
+        <p>
+          While it is not possible to assess the causal claim,
+          it is still possible to ask whether the low complication rate of
+          <m>\hat{p} = 0.063</m> provides evidence that the consultant's true complication rate is different than the US complication rate.
+          Why might we be tempted to immediately conclude that the consultant's true complication rate is different than the US complication rate?
+          Can we draw this conclusion?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Her sample complication rate is <m>\hat{p} = 0.063</m>,
+          which is 0.037 lower than the US complication rate of 10%. However,
+          we cannot yet be sure if the observed difference represents a real difference or is just the result of random variation.
+          We wouldn't expect the sample proportion to be <em>exactly</em> 0.10,
+          even if the truth was that her real complication rate was 0.10.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Setting up the null and alternate hypothesis</title>
+    <p>
+      We can set up two competing hypotheses about the consultant's true complication rate.
+      The first is call the <term>null hypothesis</term>
+      and represents either a skeptical perspective or a perspective of no difference.
+      The second is called the <term>alternative hypothesis</term>
+      (or alternate hypothesis)
+      and represents a new perspective such as the possibility that there has been a change or that there is a treatment effect in an experiment.
+    </p>
+    <assemblage>
+      <title>Null and alternative hypotheses</title>
+      <p>
+        The <term>null hypothesis</term> is abbreviated <m>H_0</m>.
+        It represents a skeptical perspective and is often a claim of no change or no difference.
+      </p>
+      <p>
+        The <term>alternative hypothesis</term>
+        is abbreviated <m>H_A</m>.
+        It is the claim researchers hope to prove or find evidence for,
+        and it often asserts that there has been a change or an effect.
+      </p>
+      <p>
+        Our job as data scientists is to play the skeptic:
+        before we buy into the alternative hypothesis,
+        we need to see strong supporting evidence.
+      </p>
+    </assemblage>
+    <example>
+      <statement>
+        <p>
+          Identify the null and alternative claim regarding the consultant's complication rate.
+        </p>
+      </statement>
+      <solution>
+        <p>
+        <ul>
+          <li>
+            <p>
+              <m>H_{0}</m>: The true complication rate for the consultant's clients is the <em>same as</em>
+              the US complication rate of 10%.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>H_{A}</m>: The true complication rate for the consultant's clients is different than 10%.
+            </p>
+          </li>
+        </ul>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Often it is convenient to write the null and alternative hypothesis in mathematical or numerical terms.
+      To do so, we must first identify the quantity of interest.
+      This quantity of interest is known as the parameter for a hypothesis test.
+    </p>
+    <assemblage>
+      <title>Parameters and point estimates</title>
+        <p>
+          A <term>parameter</term> for a hypothesis test is the
+          <q>true</q>
+          value of the population of interest.
+          When the parameter is a proportion,
+          we call it <m>p</m>.
+        </p>
+        <p>
+          A <term>point estimate</term>
+          is calculated from a sample.
+          When the point estimate is a proportion,
+          we call it <m>\hat{p}</m>.
+        </p>
+    </assemblage>
+    <p>
+      The observed or sample proportion of 0.063 is a point estimate for the true proportion.
+      The parameter in this problem is the true proportion of complications for this consultant's clients.
+      The parameter is unknown,
+      but the null hypothesis is that it equals the overall proportion of complications:
+      <m>p = 0.10</m>.
+      This hypothesized value is called the null value.
+    </p>
+    <assemblage>
+      <title>Null value of a hypothesis test</title>
+      <p>
+        The <term>null value</term> is the value hypothesized for the parameter in <m>H_0</m>,
+        and it is sometimes represented with a subscript 0, e.g. <m>p_0</m> (just like <m>H_0</m>).
+      </p>
+    </assemblage>
+    <p>
+      In the medical consultant case study,
+      the parameter is <m>p</m> and the null value is <m>p_0 = 0.10</m>.
+      We can write the null and alternative hypothesis as numerical statements as follows.
+      <ul>
+        <li>
+          <p>
+            <m>H_0</m>: <m>p=0.10</m> (The complication rate for the consultant's clients is equal to the US complication rate of 10%.)
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>H_A</m>: <m>p \neq 0.10</m> (The complication rate for the consultant's clients is not equal to the US complication rate of 10%.)
+          </p>
+        </li>
+      </ul>
+    </p>
+    <assemblage>
+      <title>Hypothesis testing</title>
+      <p>
+        These hypotheses are part of what is called a
+        <term>hypothesis test</term>.
+        A hypothesis test is a statistical technique used to evaluate competing claims using data.
+        Often times, the null hypothesis takes a stance of
+        <em>no difference</em> or <em>no effect</em>.
+        If the null hypothesis and the data notably disagree,
+        then we will reject the null hypothesis in favor of the alternative hypothesis.
+      </p>
+      <p>
+        Don't worry if you aren't a master of hypothesis testing at the end of this section.
+        We'll discuss these ideas and details many times in this chapter and the two chapters that follow.
+      </p>
+    </assemblage>
+    <p>
+      The null claim is always framed as an equality:
+      it tells us what quantity we should use for the parameter when carrying out calculations for the hypothesis test.
+      There are three choices for the alternative hypothesis,
+      depending upon whether the researcher is trying to prove that the value of the parameter is greater than,
+      less than,
+      or not equal to the null value.
+    </p>
+    <assemblage>
+      <title>Always write the null hypothesis as an equality</title>
+      <p>
+        We will find it most useful if we always list the null hypothesis as an equality (e.g.<nbsp/><m>p = 7</m>) while the alternative always uses an inequality (e.g.
+        <m>p \neq 0.7</m>, <m>p>0.7</m>,
+        or<nbsp/><m>p\lt 0.7</m>).
+      </p>
+    </assemblage>
+    <exercise>
+      <statement>
+        <p>
+          According to the 2010 US Census, 7.6% of residents in the state of Alaska were under 5 years old.
+          A researcher plans to take a random sample of residents from Alaska to test whether or not this is still the case.
+          Write out the hypotheses that the researcher should test in both plain and statistical language.
+          <fn><m>H_{0}: p=0.076</m>; The proportion of residents under 5 years old in Alaska is <em>unchanged</em> from 2010. <m>H_{A}: p \ne 0.076</m>; The proportion of residents under 5 years old in Alaska has changed from 2010. Note that it could have increased or decreased. <url href="https://factfinder.census.gov/faces/nav/jsf/pages/community_facts.xhtml">https://factfinder.census.gov/faces/nav/jsf/pages/community_facts.xhtml</url></fn>
+        </p>
+      </statement>
+    </exercise>
+    <p>
+      When the alternative claim uses a <m>\neq</m>,
+      we call the test a <term>two-sided</term> test,
+      because either extreme provides evidence against <m>H_0</m>.
+      When the alternative claim uses a <m>\lt</m> or a <m>></m>,
+      we call it a <term>one-sided</term> test.
+    </p>
+    <assemblage>
+      <title>One-sided and two-sided tests</title>
+      <p>
+        If the researchers are only interested in showing an increase or a decrease,
+        but not both, use a one-sided test.
+        If the researchers would be interested in any difference from the null value <mdash/> an increase or decrease <mdash/> then the test should be two-sided.
+      </p>
+    </assemblage>
+    <example>
+      <statement>
+        <p>
+          For the example of the consultant's complication rate,
+          we knew that her sample complication rate was 0.063,
+          which was lower than the US complication rate of 0.10.
+          Why did we conduct a two-sided hypothesis test for this setting?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The setting was framed in the context of the consultant being helpful,
+          but what if the consultant actually performed worse than the US complication rate?
+          Would we care?
+          More than ever!
+          Since we care about a finding in either direction,
+          we should run a two-sided<nbsp/>test.
+        </p>
+      </solution>
+    </example>
+    <assemblage>
+      <title>One-sided hypotheses are allowed only <em>before</em> seeing data</title>
+      <p>
+        After observing data,
+        it is tempting to turn a two-sided test into a one-sided test.
+        Avoid this temptation.
+        Hypotheses must be set up <em>before</em> observing the data.
+        If they are not, the test must be two-sided.
+      </p>
+    </assemblage>
+  </subsection>
+  <subsection xml:id="alphadiscussion">
+    <title>Evaluating the hypotheses with a p-value</title>
+    <example>
+      <statement>
+        <p>
+          There were 142 patients in the consultant's sample.
+          If the null claim is true,
+          how many would we expect to have had a complication?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          If the null claim is true,
+          we would expect about 10% of the patients,
+          or about 14.2 to have a complication.
+        </p>
+      </solution>
+    </example>
+    <p>
+      The consultant's complication rate for her 142 clients was 0.063
+      (<m>0.063 \times 142 \approx 9</m>).
+      What is the probability that a sample would produce a number of complications this far from the expected value of 14.2,
+      <em>if her true complication rate were</em> 0.10,
+      that<nbsp/>is, if <m>H_0</m> were true?
+      The probability,
+      which is estimated in <xref ref="MedConsNullNormal"></xref>,
+      is about 0.1754.
+      We call this quantity the <term>p-value</term>.
+    </p>
+    <figure xml:id="MedConsNullNormal">
+      <caption>The shaded area represents the p-value. We observed <m>\hat{p} = 0.063</m>, so any observations smaller than this are at least as extreme relative to the null value, <m>p_0 = 0.1</m>, and so the lower tail is shaded. However, since this is a two-sided test, values above 0.137 are also at least as extreme as 0.063 (relative to 0.1), and so they also contribute to the p-value. The tail areas together total of about 0.1754 when calculated using a simulation technique in <xref ref="calcPValueUsingSimulationSubSection"></xref>.</caption>
+      <image width="70%" source="images/foundations_inference/MedConsNullNormal.png" />
+    </figure>
+    <figure xml:id="sidedness_example_figures">
+      <caption>When the alternative hypothesis takes the form <m>p \lt</m> null value, the p-value is represented by the lower tail. When it takes the form <m>p ></m> null value, the p-value is represented by the upper tail. When using <m>p \neq</m> null value, then the p-value is represented by both tails.</caption>
+      <image width="73%" source="images/foundations_inference/sidedness_example_figures.png" />
+    </figure>
+    <assemblage>
+      <title>Finding and interpreting the p-value</title>
+      <p>
+        We find and interpret the <term>p-value</term><idx><h>hypothesis testing</h><h>p-value</h></idx> according to the nature of the alternative hypothesis.
+      </p>
+      <p>
+      <ul>
+        <li>
+          <p>
+            <m>H_A</m>: parameter <m>></m> null value. The p-value corresponds to the area in the <em>upper</em> tail and is probability of getting a test statistic larger than the observed test statistic if the null hypothesis is true and the probability model is accurate.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>H_A</m>: parameter <m>\lt</m> null value. The p-value corresponds to the area in the <em>lower</em> tail and is the probability of observing a test statistic smaller than the observed test statistic if the null hypothesis is true and the probability model is accurate.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>H_A</m>: parameter <m>\ne</m> null value. The p-value corresponds to the area in <em>both</em> tails and is the probability of observing a test statistic larger in magnitude than the observed test statistic if the null hypothesis is true and the probability model is accurate.
+          </p>
+        </li>
+      </ul>
+      </p>
+      <p>
+        More generally, we can say that the p-value is the probability of getting a test statistic as extreme or more extreme than the observed test statistic in the direction of <m>H_A</m> if the null hypothesis is true and the probability model is accurate.
+      </p>
+      </assemblage>
+    <p>
+      When working with proportions,
+      we can also say that the p-value is the probability of getting a sample proportion as far from or farther from the null proportion in the direction of <m>H_A</m> if the null hypothesis is true and the normal model holds.
+    </p>
+    <p>
+      When the p-value is small, i.e. less than a previously set threshold,
+      we say the results are <term>statistically significant</term>.
+      This means the data provide such strong evidence against <m>H_0</m> that we reject the null hypothesis in favor of the alternative hypothesis.
+      The threshold is called the <term>significance level</term><idx><h>hypothesis testing</h><h>significance level</h></idx>
+          <idx><h>significance level</h></idx>
+      and is represented by <m>\alpha</m>
+      (the Greek letter <em>alpha</em> ).
+      The significance level is typically set to <m>\alpha = 0.05</m>,
+      but can vary depending on the field or the application.
+    </p>
+    <assemblage>
+      <title>Statistical significance</title>
+      <p>
+        If the p-value is less than the significance level <m>\alpha</m> (usually 0.05),
+        we say that the result is <term>statistically significant</term>.
+            <idx><h>hypothesis testing</h><h>statistically significant</h></idx>
+        We reject <m>H_0</m>,
+        and we have strong evidence favoring<nbsp/><m>H_A</m>.
+      </p>
+      <p>
+        If the p-value is greater than the significance level <m>\alpha</m>,
+        we say that the result is not statistically significant.
+        We do not reject <m>H_0</m>, and we do not have strong evidence for <m>H_A</m>.
+      </p>
+    </assemblage>
+    <p>
+      Recall that the null claim is the claim of no difference.
+      If we reject <m>H_0</m>, we are asserting that there is a real difference.
+      If we do not reject <m>H_0</m>,
+      we are saying that the null claim is reasonable,
+      but we are not saying that the null claim has been proven.
+    </p>
+    <exercise xml:id="plainLanguageExplanationOfHTConclusionForLiverDonorSurgicalConsultant">
+      <statement>
+        <p>
+          Because the p-value is 0.1754,
+          which is larger than the significance level 0.05,
+          we do not reject the null hypothesis.
+          Explain what this means in the context of the problem using plain language.
+          <fn>The data do not provide evidence that the consultant's complication rate is significantly lower or higher than the US complication rate of 10%.</fn>
+        </p>
+      </statement>
+    </exercise>
+    <example>
+      <statement>
+        <p>
+          In the previous exercise, we did not reject <m>H_0</m>.
+          This means that we did not disprove the null claim.
+          Is this equivalent to proving the null claim is<nbsp/>true?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          No.
+          We did not prove that the consultant's complication rate is <em>exactly</em>
+          equal to 10%. Recall that the test of hypothesis starts by
+          <em>assuming the null claim is true</em>.
+          That<nbsp/>is, the test proceeds as an argument by contradiction.
+          <em>If the null claim is true</em>,
+          there is a 0.1754 chance of seeing sample data as divergent from 10% as we saw in our sample.
+          Because 0.1754 is large,
+          it is within the realm of chance error,
+          and we cannot say the null hypothesis is unreasonable.
+          <fn>The p-value is a conditional probability. It is <m>P(\text{getting data at least as divergent from the null value as we observed } | H_{0} \text{ is true})</m>. It is NOT <m>P(H_{0} \text{ is true } | \text { we got data this divergent from the null value})</m>.</fn>
+        </p>
+      </solution>
+    </example>
+    <assemblage>
+      <title>Double negatives can sometimes be used in statistics</title>
+      <p>
+        In many statistical explanations, we use double negatives.
+        For instance, we might say that the null hypothesis is
+        <em>not implausible</em>
+        or we <em>failed to reject</em> the null hypothesis.
+        Double negatives are used to communicate that while we are not rejecting a position,
+        we are also not saying that we know it to be true.
+      </p>
+    </assemblage>
+    <example>
+      <statement>
+        <p>
+          Does the conclusion in <xref ref="plainLanguageExplanationOfHTConclusionForLiverDonorSurgicalConsultant"></xref>
+          ensure that there is no real association between the surgical consultant's work and the risk of complications?
+          Explain.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          No.
+          It is possible that the consultant's work is associated with a lower or higher risk of complications.
+          If this was the case,
+          the sample may have been too small to reliable detect this effect.
+              <idx><h>data</h><h>medical consultant</h></idx>
+        </p>
+      </solution>
+    </example>
+    <example>
+      <statement>
+        <p>
+          An experiment was conducted where study participants were randomly divided into two groups.
+          Both were given the opportunity to purchase a DVD, but one half was reminded that the money,
+          if not spent on the DVD, could be used for other purchases in the future,
+          while the other half was not.
+          The half that was reminded that the money could be used on other purchases was 20% less likely to continue with a DVD purchase.
+          We determined that such a large difference would only occur about 1-in-150 times if the reminder actually had no influence on student decision-making.
+          What is the p-value in this study?
+          Was the result statistically significant?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The p-value was 0.006
+          (about 1/150).
+          Since the p-value is less than 0.05,
+          the data provide statistically significant evidence that US college students were actually influenced by the reminder.
+        </p>
+      </solution>
+    </example>
+    <assemblage>
+      <title>What's so special about 0.05?</title>
+      <p>
+        We often use a threshold of 0.05 to determine whether a result is statistically significant.
+        But why 0.05?
+        Maybe we should use a bigger number,
+        or maybe a smaller number.
+        If you're a little puzzled,
+        that probably means you're reading with a critical eye <mdash/> good job!
+        We've made a video to help clarify
+        <em>why 0.05</em>: 
+      </p>
+      <p>
+        <url href="https://www.openintro.org/book/stat/why05/">www.openintro.org/why05</url>
+      </p>
+      <p>
+        Sometimes it's a good idea to deviate from the standard.
+        We'll discuss when to choose a threshold different than 0.05 in <xref ref="significanceLevel"></xref>.
+      </p>
+    </assemblage>
+    <p>
+      Statistical inference is the practice of making decisions and conclusions from data in the context of uncertainty.
+      Just as a confidence interval may occasionally fail to capture the true value of the parameter,
+      a test of hypothesis may occasionally lead us to an incorrect conclusion.
+      While a given data set may not always lead us to a correct conclusion,
+      statistical inference gives us tools to control and evaluate how often these errors occur.
+    </p>
+  </subsection>
+  <subsection xml:id="calcPValueUsingSimulationSubSection">
+    <title>Calculating the p-value by simulation (special topic)</title>
+    <p>
+      When conditions for the applying a normal model are met,
+      we use a normal model to find the p-value of a test of hypothesis.
+      In the complication rate example,
+      the distribution is not normal.
+      It is, however, <em>binomial</em>,
+      because we are interested in how many out of 142 patients will have complications.
+    </p>
+    <p>
+      We could calculate the p-value of this test using binomial probabilities.
+      A more general approach, though,
+      for calculating p-values when a normal model does not apply is to use what is known as <term>simulation</term>.
+      While performing this procedure is outside of the scope of the course,
+      we provide an example here in order to better understand the concept of a p-value.
+    </p>
+    <p>
+      We simulate 142 new patients to see what result might happen if the complication rate really is 0.10.
+      To do this, we could use a deck of cards.
+      Take one red card, nine black cards, and mix them up.
+      If the cards are well-shuffled,
+      drawing the top card is one way of simulating the chance a patient has a complication if the true rate is 0.10:
+      if the card is red, we say the patient had a complication,
+      and if it is black then we say they did not have a complication.
+      If we repeat this process 142 times and compute the proportion of simulated patients with complications,
+      <m>\hat{p}_{sim}</m>,
+      then this simulated proportion is exactly a draw from the null distribution.
+    </p>
+    <p>
+      There were 12 simulated cases with a complication and 130 simulated cases without a complication:
+      <m>\hat{p}_{sim} = 12 / 142 = 0.085</m>.
+    </p>
+    <p>
+      One simulation isn't enough to get a sense of the null distribution,
+      so we repeated the simulation 10,000 times using a<nbsp/>computer.
+      <xref ref="MedConsNullSim"></xref>
+      shows the null distribution from these 10,000 simulations.
+      The simulated proportions that are less than or equal to <m>\hat{p}=0.063</m> are shaded.
+      There were 0.0877 simulated sample proportions with <m>\hat{p}_{sim} \leq 0.063</m>,
+      which represents a fraction 0.0877 of our simulations:
+      <md>
+        <mrow>\text{ left tail } = \frac{\text{Number of observed simulations with } \hat{p}_{sim}\leq\text{ 0.063}}{10000} = \frac{877}{10000} = 0.0877</mrow>
+      </md>
+    </p>
+    <p>
+      However, this is not our p-value!
+      Remember that we are conducting a two-sided test,
+      so we should double the one-tail area to get the p-value:<fn>
+      This doubling approach is preferred even when the distribution isn't symmetric,
+      as in this case.
+      </fn>
+      <md>
+        <mrow>\text{ p-value }  = 2 \times \text{ left tail }  = 2 \times 0.0877 = 0.1754</mrow>
+      </md>
+    </p>
+    <figure xml:id="MedConsNullSim">
+      <caption>The null distribution for <m>\hat{p}</m>, created from 10,000 simulated studies. The left tail contains 8.77% of the simulations. For a two-sided test, we double the tail area to get the p-value. This doubling accounts for the observations we might have observed in the upper tail, which are also at least as extreme (relative to 0.10) as what we observed, <m>\hat{p} = 0.063</m>.</caption>
+      <image width="80%" source="images/foundations_inference/MedConsNullSim.png" />
+    </figure>
+  </subsection>
+  <subsection>
+    <title>Hypothesis testing: a five step process</title>
+    <p>
+      Use a hypothesis test to <em>test</em>
+      <m>H_0</m> versus <m>H_A</m> at a particular
+      <em>signficance level</em>, <m>\alpha</m>.
+    </p>
+    <assemblage>
+      <title>(AP exam tip) When carrying out a hypothesis test procedure, follow these five steps:</title>
+      <p>
+      <ul>
+        <li>
+          <p>
+            <em>Identify</em>: Identify the hypotheses and the significance level.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Choose</em>: Choose the appropriate test procedure and identify it by name.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Check</em>: Check that the conditions for the test procedure are met.
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Calculate</em>: Calculate the test statistic and the p-value.
+            <md>
+              <mrow>\text{ test statistic }  = \frac{\text{ point estimate }  - \text{ null value } }{SE\ \text{ of estimate } }</mrow>
+            </md>
+          </p>
+        </li>
+        <li>
+          <p>
+            <em>Conclude</em>: Compare the p-value to the significance level to determine whether to reject <m>H_0</m> or not reject <m>H_0</m>.
+            Draw a conclusion in the context of <m>H_A</m>.
+          </p>
+        </li>
+      </ul>
+      </p>
+    </assemblage>
+  </subsection>
+  <subsection>
+    <title>Decision errors</title>
+    <p>
+          <idx><h>hypothesis testing</h><h>decision errors</h></idx>
+      The hypothesis testing framework is a very general tool, and we often use it without a second thought.
+      If a person makes a somewhat unbelievable claim,
+      we are initially skeptical.
+      However, if there is sufficient evidence that supports the claim,
+      we set aside our skepticism.
+      The hallmarks of hypothesis testing are also found in the US court system.
+    </p>
+    <example>
+      <statement>
+        <p>
+          A US court considers two possible claims about a defendant:
+          she is either innocent or guilty.
+          If we set these claims up in a hypothesis framework,
+          which would be the null hypothesis and which the alternative?
+        </p>
+      </statement>
+      <solution xml:id="hypTestCourtExample">
+        <p>
+          The jury considers whether the evidence is so convincing (strong) that there is evidence beyond a reasonable doubt of the person's guilt.
+          That is, the starting assumption
+          (null hypothesis)
+          is that the person is innocent until evidence is presented that convinces the jury that the person is guilty
+          (alternative hypothesis).
+          In statistics, our evidence comes in the form of data,
+          and we use the significance level to decide what is beyond a reasonable doubt.
+        </p>
+      </solution>
+    </example>
+    <p>
+      Jurors examine the evidence to see whether it convincingly shows a defendant is guilty.
+      Notice that a jury finds a defendant either guilty or not guilty.
+      They either reject the null claim or they do not reject the null claim.
+      They never prove the null claim, that is,
+      they never find the defendant innocent.
+      If a jury finds a defendant <em>not guilty</em>,
+      this does not necessarily mean the jury is confident in the person's innocence.
+      They are simply not convinced of the alternative that the person is guilty.
+    </p>
+    <p>
+      This is also the case with hypothesis testing:
+      <em>even if we fail to reject the null hypothesis,
+      we typically do not accept the null hypothesis as truth</em>.
+      Failing to find strong evidence for the alternative hypothesis is not equivalent to providing evidence that the null hypothesis is true.
+    </p>
+    <p>
+      Hypothesis tests are not flawless.
+      Just think of the court system:
+      innocent people are sometimes wrongly convicted and the guilty sometimes walk free.
+      Similarly, data can point to the wrong conclusion.
+      However, what distinguishes statistical hypothesis tests from a court system is that our framework allows us to quantify and control how often the data lead us to the incorrect conclusion.
+    </p>
+    <p>
+      There are two competing hypotheses:
+      the null and the alternative.
+      In a hypothesis test, we make a statement about which one might be true,
+      but we might choose incorrectly.
+      There are four possible scenarios in a hypothesis test,
+      which are summarized in <xref ref="fourHTScenarios"></xref>.
+    </p>
+    <table xml:id="fourHTScenarios">
+      <title>Four different scenarios for hypothesis tests.</title>
+      <tabular halign="center">
+        <row>
+          <cell></cell>
+          <cell></cell>
+          <cell bottom="minor" colspan="2"><alert>Test conclusion</alert></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell bottom="minor"></cell>
+          <cell bottom="minor">do not reject <m>H_0</m></cell>
+          <cell bottom="minor">reject <m>H_0</m> in favor of <m>H_A</m></cell>
+        </row>
+        <row>
+          <cell><alert>Truth</alert></cell>
+          <cell><m>H_0</m> true</cell>
+          <cell>correct conclusion</cell>
+          <cell>Type I Error</cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell bottom="minor"><m>H_A</m> true</cell>
+          <cell bottom="minor">Type II Error</cell>
+          <cell bottom="minor">correct conclusion</cell>
+        </row>
+      </tabular>
+    </table>
+    <assemblage>
+      <title>Type<nbsp/>I and Type<nbsp/>II Errors</title>
+      <p>
+        A <term>Type<nbsp/>I Error</term>
+        is rejecting <m>H_0</m> when <m>H_0</m> is actually true.
+        When we reject the null hypothesis,
+        it is possible that we make a Type<nbsp/>I Error.
+      </p>
+      <p>
+        A <term>Type<nbsp/>II Error</term>
+        is failing to reject <m>H_0</m> when <m>H_A</m> is actually true.
+        When we did not reject the null hypothesis,
+        it is possible that we make a Type<nbsp/>II Error.
+      </p>
+    </assemblage>
+    <example>
+      <statement>
+        <p>
+          In a US court,
+          the defendant is either innocent (<m>H_0</m>) or guilty
+          (<m>H_A</m>).
+          What does a Type I Error represent in this context?
+          What does a Type II Error represent?
+          <xref ref="fourHTScenarios"></xref> may be useful.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          If the court makes a Type I Error,
+          this means the defendant is innocent (<m>H_0</m> true) but wrongly convicted.
+          A<nbsp/>Type<nbsp/>II Error means the court failed to reject <m>H_0</m> (i.e. failed to convict the person) when they were in fact guilty
+          (<m>H_A</m> true).
+        </p>
+      </solution>
+    </example>
+    <example>
+      <statement>
+        <p>
+          How could we reduce the Type<nbsp/>I Error rate in US courts?
+          What influence would this have on the Type<nbsp/>II Error rate?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          To lower the Type<nbsp/>I Error rate,
+          we might raise our standard for conviction from
+          <q>beyond a reasonable doubt</q>
+          to
+          <q>beyond a conceivable doubt</q>
+          so fewer people would be wrongly convicted.
+          However, this would also make it more difficult to convict the people who are actually guilty,
+          so we would make more Type<nbsp/>II Errors.
+        </p>
+      </solution>
+    </example>
+    <exercise xml:id="howToReduceType2ErrorsInUSCourts">
+      <statement>
+        <p>
+          How could we reduce the Type<nbsp/>II Error rate in US courts?
+          What influence would this have on the Type<nbsp/>I Error rate?
+          <fn>To lower the Type<nbsp/>II Error rate,
+          we want to convict more guilty people.
+          We could lower the standards for conviction from
+          <q>beyond a reasonable doubt</q>
+          to
+          <q>beyond a little doubt</q>. Lowering the bar for guilt will also result in more wrongful convictions,
+          raising the Type<nbsp/>I Error rate.</fn>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          A group of women bring a class action lawsuit that claims discrimination in promotion rates.
+          What would a Type<nbsp/>I Error represent in this context?
+          <fn>We must first identify which is the null hypothesis and which is the alternative. The alternative hypothesis is the one that bears the burden of proof, so the null hypothesis is that there was no discrimination and the alternative hypothesis is that there was discrimination. Making a Type I Error in this context would mean that in fact there was no discrimination, even though we concluded that women were discriminated against. Notice that this does not necessarily mean something was wrong with the data or that we made a computational mistake. Sometimes data simply point us to the wrong conclusion, which is why scientific studies are often repeated to check initial findings.</fn>
+        </p>
+      </statement>
+    </exercise>
+    <p>
+          <idx><h>hypothesis testing</h><h>decision errors</h></idx>
+    </p>
+    <p>
+      These examples provide an important lesson:
+      if we reduce how often we make one type of error,
+      we generally make more of the other type.
+    </p>
+  </subsection>
+  <subsection xml:id="significanceLevel">
+    <title>Choosing a significance level</title>
+    <p>
+          <idx><h>hypothesis testing</h><h>significance level</h></idx>
+          <idx><h>significance level</h></idx>
+    </p>
+    <p>
+      If <m>H_0</m> is true,
+      what is the probability that we will incorrectly reject it?
+      In hypothesis testing,
+      we perform calculations under the premise that <m>H_0</m> is true,
+      and we reject <m>H_0</m> if the p-value is smaller than the significance level <m>\alpha</m>.
+      That is, <m>\alpha</m> <em>is</em>
+      the probability of making a Type<nbsp/>I Error.
+      The choice of what to make <m>\alpha</m> is not arbitrary.
+      It depends on the gravity of the consequences of a Type<nbsp/>I Error.
+    </p>
+    <assemblage>
+      <title>Relationship between Type<nbsp/>I and Type<nbsp/>II Errors</title>
+      <p>
+        The probability of a Type<nbsp/>I Error is called <m>\alpha</m> and corresponds to the significance level of a test.
+        The probability of a Type<nbsp/>II Error is called <m>\beta</m>.
+        As we make <m>\alpha</m> smaller,
+        <m>\beta</m> typically gets larger, and vice versa.
+      </p>
+    </assemblage>
+    <example>
+      <statement>
+        <p>
+          If making a Type<nbsp/>I Error is especially dangerous or especially costly,
+          should we choose a smaller significance level or a higher significance level?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Under this scenario,
+          we want to be very cautious about rejecting the null hypothesis,
+          so we demand very strong evidence before we are willing to reject the null hypothesis.
+          Therefore, we want a smaller significance level,
+          maybe <m>\alpha = 0.01</m>.
+        </p>
+      </solution>
+    </example>
+    <example>
+      <statement>
+        <p>
+          If making a Type<nbsp/>II Error is especially dangerous or especially costly,
+          should we choose a smaller significance level or a higher significance level?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We should choose a higher significance level (e.g. 0.10).
+          Here we want to be cautious about failing to reject <m>H_0</m> when the null is actually false.
+        </p>
+      </solution>
+    </example>
+    <assemblage>
+      <title>Significance levels should reflect consequences of errors</title>
+      <p>
+        The significance level selected for a test should reflect the real-world consequences associated with making a Type<nbsp/>I or Type<nbsp/>II Error.
+        If a Type<nbsp/>I Error is very dangerous,
+        make <m>\alpha</m> smaller.
+      </p>
+    </assemblage>
+    <p>
+          <idx><h>hypothesis testing</h><h>significance level</h></idx>
+          <idx><h>significance level</h></idx>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Statistical power of a hypothesis test</title>
+    <p>
+      When the alternative hypothesis is true,
+      the probability of <em>not</em>
+      making a Type<nbsp/>II Error is called <term>power</term>.
+      It is common for researchers to perform a power analysis
+          <idx><h>power analysis</h></idx>
+      to ensure their study collects enough data to detect the effects they anticipate finding.
+      As you might imagine, if the effect they care about is small or subtle,
+      then if the effect is real,
+      the researchers will need to collect a large sample size in order to have a good chance of detecting the effect.
+      However, if they are interested in large effect,
+      they need not collect as much data.
+    </p>
+    <p>
+      The Type<nbsp/>II Error rate <m>\beta</m> and the magnitude of the error for a point estimate are controlled by the sample size.
+      As the sample size <m>n</m> goes up,
+      the Type<nbsp/>II Error rate goes down, and power goes up.
+      Real differences from the null value,
+      even large ones, may be difficult to detect with small samples.
+      However, if we take a very large sample,
+      we might find a statistically significant difference but the size of the difference might be so small that it is of no practical value.
+    </p>
+    <p>
+          <idx><h>hypothesis testing</h></idx>
+    </p>
+  </subsection>
+
+  <subsection>
+  <title>Statistical significance versus practical significance</title>
+    <p>
+      When the sample size becomes larger, point estimates become more precise and any real differences in the mean and null value become easier to detect and recognize. Even a very small difference would likely be detected if we took a large enough sample. Sometimes researchers will take such large samples that even the slightest difference is detected. While we still say that difference is <term>statistically significant</term>, it might not be <term>practically significant</term>.
+    </p>
+    <p>
+      Statistically significant differences are sometimes so minor that they are not practically relevant. This is especially important to research: if we conduct a study, we want to focus on finding a meaningful result. We don’t want to spend lots of money finding results that hold no practical value.
+    </p>
+    <p>
+      The role of a data scientist in conducting a study often includes planning the size of the study. The data scientist might first consult experts or scientific literature to learn what would be the smallest meaningful difference from the null value. She also would obtain some reasonable estimate for the standard deviation. With these important pieces of information, she would choose a sufficiently large sample size so that the power for the meaningful difference is perhaps 80% or 90%. While larger sample sizes may still be used, she might advise against using them in some cases, especially in sensitive areas of research.
+    </p>
+  </subsection>
+
+  <subsection>
+  <title>Statistical significance versus a real difference</title>
+    <p>
+      When a result is statistically significant at the <m>\alpha= 0.05</m> level, we have evidence that the result is real. However, when there is no difference or effect, we can expect that 5% of the time the test conclusion will lead to a Type I Error and incorrectly reject the null hypothesis. Therefore we must beware of what is called p-hacking, in which researchers may test many, many hypotheses and then publish the ones that come out statistically significant. As we noted, we can expect 5% of the results to be significant when the null hypothesis is true and there really is no difference or effect.<fn>The problem is even greater than p-hacking. In what has been called the <q>reproducibility crisis</q>, researchers have failed to reproduce a large proportion of results that were found significant and were published in scientific journals. This problem highlights the importance of research that reproduces earlier work rather than taking the word of a single study.</fn>
+    </p>
+
+  </subsection>
+
+  <subsection>
+  <title>When to retreat</title>
+    <p>
+      We must point out that statistical tools rely on conditions. When the conditions are not met, these tools are unreliable and drawing conclusions from them is treacherous. The conditions for these tools typically come in two forms.
+      <ul>
+        <li>
+          <p>
+            <em>The individual observations must be independent.</em> A random sample from less than 10% of the population ensures the observations are independent. In experiments, we generally require that subjects are randomized into groups. If independence fails, then advanced techniques must be used, and in some such cases, inference may not be possible.
+          </p>
+        </li>
+        <li>
+          <p>
+            Other conditions focus on sample size and skew. For example, in <xref ref="foundationsForInference"></xref> we looked at the success-failure condition and sample size condition for when <m>\hat{p}</m> and <m>\bar{x}</m> will follow a nearly normal distribution.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      Verification of conditions for statistical tools is always necessary. When conditions are not satisfied for a given statistical technique, it is necessary to investigate new methods that are appropriate for the data.
+    </p>
+    <p>
+      Finally, we caution that there may be no inference tools helpful when considering data that include unknown biases, such as convenience samples. For this reason, there are books, courses, and researchers devoted to the techniques of sampling and experimental design. See <xref ref="basicExampleOfStentsAndStrokes"></xref>, <xref ref="dataBasics"></xref> and <xref ref="overviewOfDataCollectionPrinciples"></xref> for basic principles of data collection
+    </p>
+  </subsection>
+
+  <subsection>
+    <title>Section summary</title>
+    <p>
+    <ul>
+      <li>
+        <p>
+          A <term>hypothesis test</term> is a statistical technique used to evaluate competing claims based on data.
+        </p>
+      </li>
+      <li>
+        <p>
+          The competing claims are called <term>hypotheses</term>
+          and are often about population parameters (e.g.
+          <m>\mu</m> and <m>p</m>); they are never about sample statistics.
+          <ul>
+            <li>
+              <p>
+                The <term>null hypothesis</term> is abbreviated <m>H_0</m>.
+                It represents a skeptical perspective or a perspective of no difference or <em>no change</em>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The <term>alternative hypothesis</term>
+                is abbreviated <m>H_A</m>.
+                It represents a new perspective or a perspective of a real difference or change.
+                Because the alternative hypothesis is the stronger claim,
+                it bears the burden of proof.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          The <term>logic of a hypothesis test</term>:
+            <idx><h>hypothesis test</h><h>logic of</h></idx>
+          In a hypothesis test, we begin by
+          <em>assuming that the null hypothesis is true</em>.
+          Then, we calculate how unlikely it would be to get a sample value as extreme as we actually got in our sample,
+          assuming that the null value is correct.
+          If this likelihood is too small,
+          it casts doubt on the null hypothesis and provides evidence for the alternative hypothesis.
+        </p>
+      </li>
+      <li>
+        <p>
+          We set a <term>significance level</term>, denoted <m>\alpha</m>,
+          which represents the threshold below which we will reject the null hypothesis.
+          The most common significance level is <m>\alpha = 0.05</m>.
+          If we require more evidence to reject the null hypothesis,
+          we use a smaller <m>\alpha</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          After verifying that the relevant
+          <term>conditions are met</term>,
+          we can calculate the test statistic.
+          The <term>test statistic</term> tells us <em>how many</em>
+          standard errors the point estimate
+          (sample value)
+          is from the null value (i.e. the value hypothesized for the parameter in the null hypothesis).
+          When investigating a single mean or proportion or a difference of means or proportions,
+          the test statistic is calculated as:
+          <m>\frac{\text{ point estimate } -\text{ null value } }{SE \text{ of estimate } }</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          After the test statistic, we calculate the p-value.
+          We find and interpret the p-value according to the nature of the alternative hypothesis.
+          The three possibilities are:
+          <ul>
+            <li>
+              <p>
+                <m>H_A</m>: parameter <m>></m> null value.
+                The p-value corresponds to the area in the <em>upper tail</em>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>H_A</m>: parameter <m>\lt</m> null value.
+                The p-value corresponds to the area in the <em>lower tail</em>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>H_A</m>: parameter <m>\ne</m> null value.
+                The p-value corresponds to the area in <em>both tails</em>.
+              </p>
+            </li>
+          </ul>
+        </p>
+        <p>
+          The <term>p-value</term> is the probability of getting a test statistic as extreme or more extreme than the observed test statistic in the direction of <m>H_A</m> if the null hypothesis is true and the probability model is accurate.
+       </p>
+      </li>
+      <li>
+        <p>
+          The conclusion or decision of a hypothesis test is based on whether the p-value is smaller or larger than the preset significance level <m>\alpha</m>.
+          <ul>
+            <li>
+              <p>
+                When the p-value <m>\lt \alpha</m>,
+                we say the results are <term>statistically significant</term>
+                at the <m>\alpha</m> level and we have evidence of a real difference or change.
+                The observed difference is beyond what would have been expected from chance variation alone.
+                This leads us to reject <m>H_0</m> and gives us evidence for <m>H_A</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                When the p-value <m>> \alpha</m>,
+                we say the results are not statistically significant at the <m>\alpha</m> level and we do not have evidence of a real difference or change.
+                The observed difference was within the realm of expected chance variation.
+                This leads us to not reject <m>H_0</m> and does not give us evidence for <m>H_A</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <!-- <li>
+        <p>
+          AP exam tip:  A full hypothesis test includes the following steps.
+          <ol>
+            <li>
+              <p>
+                <em>Identify</em>: Identify the hypotheses and the significance level.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Choose</em>: Choose the appropriate test procedure and identify it by name.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Check</em>: Check that the conditions for the test procedure are met.
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Calculate</em>: Calculate the test statistic and the p-value.
+                <md>
+                  <mrow>\text{ test statistic }  = \frac{\text{ point estimate }  - \text{ null value } }{SE\ \text{ of estimate } }</mrow>
+                </md>
+              </p>
+            </li>
+            <li>
+              <p>
+                <em>Conclude</em>: Compare the p-value to the significance level to determine whether to reject <m>H_0</m> or not reject <m>H_0</m>.
+                Draw a conclusion in the context of <m>H_A</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li> -->
+      <li>
+        <p>
+          <em>Decision errors</em>.
+            <idx><h>decision errors</h></idx>
+        In a hypothesis test,
+          there are two types of decision errors that could be made.
+          These are called Type I and Type II Errors.
+          <ul>
+            <li>
+              <p>
+                A <term>Type I Error</term> is rejecting <m>H_0</m>,
+                when <m>H_0</m> is actually true.
+                We commit a Type I Error if we call a result significant when there is <em>no</em>
+                real difference or effect.
+                P(Type I error) = <m>\alpha</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                A <term>Type II Error</term>
+                is not rejecting <m>H_0</m>,
+                when <m>H_A</m> is actually true.
+                We commit a Type II Error if we call a result not significant when there <em>is</em>
+                a real difference or effect.
+                P(Type II error) = <m>\beta</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The probability of a Type I Error (<m>\alpha</m>) and a Type II Error (<m>\beta</m>) are
+                <em>inversely related</em>.
+                Decreasing <m>\alpha</m> makes <m>\beta</m> larger;
+                increasing <m>\alpha</m> makes <m>\beta</m> smaller.
+              </p>
+            </li>
+            <li>
+              <p>
+                Once a decision is made, only one of the two types of errors is possible.
+                If the test rejects <m>H_0</m>,
+                for example, only a Type I Error is possible.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          The power of a test.
+          <ul>
+            <li>
+              <p>
+                When a particular <m>H_A</m> is true,
+                the probability of not making a Type II Error is called <term>power</term>.
+                Power <m>= 1 - \beta</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The power of a test is the probability of detecting an effect of a particular size when it is present.
+              </p>
+            </li>
+            <li>
+              <p>
+                Increasing the significance level decreases the probability of a TypeII Error and increases power.
+                <m>\alpha \uparrow, \beta \downarrow, \text{ power } \uparrow</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                For a fixed <m>\alpha</m>,
+                increasing the sample size <m>n</m> makes it easier to detect an effect and therefore decreases the probability of a Type II Error and increases power.
+                <m>n \uparrow, \beta \downarrow, \text{ power } \uparrow</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+           A small percent of the time (<m>\alpha</m>), a significant result will not be a real result. If many tests are run, a small percent of them will produce significant results due to chance alone.<fn>Similarly, if many confidence intervals are constructed, a small percent <m>(100 - C%)</m> of them will fail to capture a true value due to chance alone. A value outside the confidence interval is not an <em>impossible value</em>.</fn>
+        </p>
+      </li>
+      <li>
+        <p>
+          With a very large sample, a significant result may point to a result that is real but <em>not practically significant</em>. That is, the difference detected may be so small as to be unimportant or meaningless.
+        </p>
+      </li>
+      <li>
+        <p>
+          The inference procedures in this book all require two broad conditions to be met. The first is that some type of <em>random sampling</em> or <em>random assignment</em> must be involved. The second condition focuses on sample size and skew to determine whether the point estimate follows the intended distribution.
+        </p>
+      </li>
+    </ul>
+    </p>
+  </subsection>
+<exercises>
+  <title>Exercises</title>
+  <exercise>
+    <title>Identify hypotheses, Part I</title><!--  #13 -->
+    <statement>
+      <p>
+        Write the null and alternative hypotheses in words and then symbols for each of the following situations.
+        <ol>
+          <li>
+            <p>
+              A tutoring company would like to understand if most students tend to improve their grades
+              (or not)
+              after they use their services.
+              They sample 200 of the students who used their service in the past year and ask them if their grades have improved or declined from the previous year.
+            </p>
+          </li>
+          <li>
+            <p>
+              Employers at a firm are worried about the effect of March Madness,
+              a basketball championship held each spring in the US, on employee productivity.
+              They estimate that on a regular business day employees spend on average 15 minutes of company time checking personal email,
+              making personal phone calls, etc.
+              They also collect data on how much company time employees spend on such non-business activities during March Madness.
+              They want to determine if these data provide convincing evidence that employee productivity changed during March Madness.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>H_{0} : p = 0.5</m> (Neither a majority nor minority of students' grades improved) <m>H_{A} : p \ne 0.5</m> (Either a majority or a minority of students' grades improved)
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>H_{0} : \mu = 15</m> (The average amount of company time each employee spends not working is 15 minutes for March Madness.) <m>H_{A} : p \ne 15</m> (The average amount of company time each employee spends not working is different than 15 minutes for March Madness.)
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+  <exercise xml:id="identify_hypotheses_prop_and_mean_2"><!--  #14 -->
+    <title>Identify hypotheses, Part II</title>
+    <statement>
+      <p>
+        Write the null and alternative hypotheses in words and using symbols for each of the following situations.
+        <ol>
+          <li>
+            <p>
+              Since 2008, chain restaurants in California have been required to display calorie counts of each menu item.
+              Prior to menus displaying calorie counts,
+              the average calorie intake of diners at a restaurant was 1100 calories.
+              After calorie counts started to be displayed on menus,
+              a nutritionist collected data on the number of calories consumed at this restaurant from a random sample of diners.
+              Do these data provide convincing evidence of a difference in the average calorie intake of a diners at this restaurant?
+            </p>
+          </li>
+          <li>
+            <p>
+              The state of Wisconsin would like to understand the fraction of its adult residents that consumed alcohol in the last year,
+              specifically if the rate is different from the national rate of 70%. To help them answer this question,
+              they conduct a random sample of 852 residents and ask them about their alcohol consumption.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="online_communication_prop_ht_errors"><!--  #15 -->
+    <title>Online communication</title>
+    <statement>
+      <p>
+        A study suggests that 60% of college student spend 10<nbsp/>or more hours per week communicating with others online.
+        You believe that this is incorrect and decide to collect your own sample for a hypothesis test.
+        You randomly sample 160 students from your dorm and find that 70% spent 10<nbsp/>or more hours a week communicating with others online.
+        A<nbsp/>friend of yours,
+        who offers to help you with the hypothesis test,
+        comes up with the following set of hypotheses.
+        Indicate any errors you see.
+        <md>
+          <mrow>H_0\amp : \hat{p} \lt  0.6</mrow>
+          <mrow>H_A\amp : \hat{p} > 0.7</mrow>
+        </md>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        (1) The hypotheses should be about the population proportion <m>(p)</m>, not the sample proportion. (2) The null hypothesis should have an equal sign. (3) The alternative hypothesis should have a not equals sign, and (4) it should reference the null value, <m>p_{0} = 0.6</m>, not the observed sample proportion. The correct way to set up these hypotheses is: <m>H_{0} : p = 0.6</m> and <m>H_{A} : p \ne 0.6</m>.
+      </p>
+    </solution>
+  </exercise>
+  <exercise xml:id="married_at_25_prop_ht_errors"><!--  #16 -->
+    <title>Married at 25</title>
+    <statement>
+      <p>
+        A study suggests that the 25% of 25 year olds have gotten married.
+        You believe that this is incorrect and decide to collect your own sample for a hypothesis test.
+        From a random sample of 25 year olds in census data with size 776,
+        you find that 24% of them are married.
+        A friend of yours offers to help you with setting up the hypothesis test and comes up with the following hypotheses.
+        Indicate any errors you see.
+        <md>
+          <mrow>H_0\amp : \hat{p} = 0.24</mrow>
+          <mrow>H_A\amp : \hat{p} \neq 0.24</mrow>
+        </md>
+      </p>
+    </statement>
+  </exercise>
+  
+  <!-- <exercise xml:id="minimum_wage_prop_1">
+    <title>Minimum wage, Part 1</title>
+    <statement>
+      <p>
+        Do a majority of US adults believe raising the minimum wage will help the economy,
+        or is there a majority who do not believe this?
+        A Rasmussen Reports survey of 1,000 US adults found that 42% believe it will help the economy.<fn>Rasmussen Reports survey, <url href="https://www.rasmussenreports.com/public_content/business/jobs_employment/april_2019/most_favor_minimum_wage_of_10_50_or_higher">Most Favor Minimum Wage of $10.50 Or Higher</url>, April 16, 2019</fn> Conduct an appropriate hypothesis test to help answer the research question.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Set up hypotheses. <m>H_{0}: p = 0.5</m>, <m>H_{A}: p \ne 0.5</m>. We will use a significance level of <m>\alpha = 0.05</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Check conditions: simple random sample gets us independence, and the success-failure conditions is satisfied since <m>0.42 \times 1000 = 420</m> and <m>(1-0.42) \times 1000 = 580</m> are both at least 10.
+            </p>
+          </li>
+          <li>
+            <p>
+              Next, we calculate: <m>SE = \sqrt{0.5(1 - 0.5)/1000} = 0.016</m>. <m>Z = \frac{0.42 - 0.5}{0.016} = -5</m>, which has a one-tail area of about 0.0000003, so the p-value is twice this one-tail area at 0.0000006.
+            </p>
+          </li>
+          <li>
+            <p>
+              Make a conclusion: Because the p-value is less than <m>\alpha = 0:05</m>, we reject the null hypothesis and conclude that the fraction of US adults who believe raising the minimum wage will help the economy is not 50%. Because the observed value is less than 50% and we have rejected the null hypothesis, we can conclude that this belief is held by fewer than 50% of US adults. (For reference, the survey also explores support for changing the minimum wage, which is a different question than if it will help the economy.)
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise> -->
+<!--   <exercise xml:id="univ_students_enough_sleep">
+    <title>Getting enough sleep</title>
+    <statement>
+      <p>
+        400 students were randomly sampled from a large university,
+        and 289 said they did not get enough sleep.
+        Conduct a hypothesis test to check whether this represents a statistically significant difference from 50%, and use a significance level of 0.01.
+      </p>
+    </statement>
+  </exercise> -->
+<!--   <exercise xml:id="backwards_prop_1">
+    <title>Working backwards, Part I</title>
+    <statement>
+      <p>
+        You are given the following hypotheses:
+        <md>
+          <mrow>H_0\amp : p = 0.3</mrow>
+          <mrow>H_A\amp : p \ne 0.3</mrow>
+        </md>
+      </p>
+      <p>
+        We know the sample size is 90.
+        For what sample proportion would the p-value be equal to 0.05?
+        Assume that all conditions necessary for inference are satisfied.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        If the p-value is 0.05, this means the test statistic would be either <m>Z = -1.96</m> or <m>Z = 1.96</m>. We'll show the calculations for <m>Z = 1.96</m>. Standard error: <m>SE = \sqrt{0.3(1-0.3)/90} = 0.048</m>. Finally, set up the test statistic formula and solve for <m>\hat{p}: 1.96 = \frac{\hat{p} - 0.3}{0.048} \rightarrow \hat{p} = 0.394</m> Alternatively, if <m>Z = -1.96</m> was used: <m>\hat{p} = 0.206</m>.
+      </p>
+    </solution>
+  </exercise> -->
+<!--   <exercise xml:id="backwards_prop_2">
+    <title>Working backwards, Part II</title>
+    <statement>
+      <p>
+        You are given the following hypotheses:
+        <md>
+          <mrow>H_0\amp : p = 0.9</mrow>
+          <mrow>H_A\amp : p \ne 0.9</mrow>
+        </md>
+      </p>
+      <p>
+        We know that the sample size is 1,429.
+        For what sample proportion would the p-value be equal to 0.01?
+        Assume that all conditions necessary for inference are satisfied.
+      </p>
+    </statement>
+  </exercise> -->
+
+   <exercise>
+    <title>Unemployment and relationship problems</title>
+    <statement>
+      <p>
+        A USA Today/Gallup poll asked a group of unemployed and underemployed Americans if they have had major problems in their relationships with their spouse or another close family member as a result of not having a job (if unemployed) or not having a full-time job (if underemployed). 27% of the 1,145 unemployed respondents and 25% of the 675 underemployed respondents said they had major problems in relationships as a result of their employment status.
+        <ol>
+          <li>
+            <p>
+              What are the hypotheses for evaluating if the proportions of unemployed and underemployed people who had relationship problems were different?
+            </p>
+          </li>
+          <li>
+            <p>
+              The p-value for this hypothesis test is approximately 0.35. Explain what this means in context of the hypothesis test and the data.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <ol label="a">
+        <li>
+          <p>
+            <m>H_{0}: p_{unemp}=p_{underemp}</m>: The proportions of unemployed and underemployed people whoare having relationship problems are equal. <m>H_{0}: p_{unemp} \neq p_{underemp}</m>: The proportions of unemployed and underemployed people who are having relationship problems are different.
+          </p>
+        </li>
+        <li>
+          <p>
+            If in fact the two population proportions are equal, the probability of observing at least a 2% difference between the sample proportions is approximately 0.35. Since this is a high probability we fail to reject the null hypothesis. The data do not provide convincing evidence that the proportion of of unemployed and underemployed people who are having relationship problems are different.
+          </p>
+        </li>
+      </ol>
+    </solution>
+  </exercise>
+
+    <exercise xml:id="prop_which_higher_found_inf"><!--  #24 -->
+    <title>Which is higher?</title>
+    <statement>
+      <p>
+        In each part below,
+        there is a value of interest and two scenarios (I and II).
+        For each part,
+        report if the value of interest is larger under scenario I, scenario II, or whether the value is equal under the scenarios.
+        <ol>
+          <li>
+            <p>
+              The standard error of <m>\hat{p}</m> when (I) <m>n = 125</m> or (II) <m>n = 500</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The margin of error of a confidence interval when the confidence level is (I) 90% or (II) 80%.
+            </p>
+          </li>
+          <li>
+            <p>
+              The p-value for a Z-statistic of 2.5 calculated based on a (I) sample with <m>n = 500</m> or based on a (II) sample with <m>n = 1000</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The probability of making a Type 2 Error when the alternative hypothesis is true and the significance level is (I) 0.05 or (II) 0.10.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="errors_fibromyalgia"><!--  #23 -->
+    <title>Testing for Fibromyalgia</title>
+    <statement>
+      <p>
+        A patient named Diana was diagnosed with Fibromyalgia,
+        a long-term syndrome of body pain,
+        and was prescribed anti-depressants.
+        Being the skeptic that she is, Diana didn't initially believe that anti-depressants would help her symptoms.
+        However after a couple months of being on the medication she decides that the anti-depressants are working,
+        because she feels like her symptoms are in fact getting better.
+        <ol>
+          <li>
+            <p>
+              Write the hypotheses in words for Diana's skeptical position when she started taking the anti-depressants.
+            </p>
+          </li>
+          <li>
+            <p>
+              What is a Type 1 Error in this context?
+            </p>
+          </li>
+          <li>
+            <p>
+              What is a Type 2 Error in this context?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>H_{0}</m>: Anti-depressants do not affect the symptoms of Fibromyalgia. <m>HA</m>: Anti-depressants do affect the symptoms of Fibromyalgia (either helping or harming).
+            </p>
+          </li>
+          <li>
+            <p>
+              Concluding that anti-depressants either help or worsen Fibromyalgia symptoms when they actually do neither.
+            </p>
+          </li>
+          <li>
+            <p>
+              Concluding that anti-depressants do not affect Fibromyalgia symptoms when they actually do.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+</exercises>
+
+<subsection>
+<title>Chapter Highlights</title>
+  <p>
+    Statistical inference is the practice of making decisions from data in the context of uncertainty.
+    In this chapter, we introduced two frameworks for inference:
+    <em>confidence intervals</em>
+        <idx><h>confidence interval</h></idx>
+    and <em>hypothesis tests</em>.
+        <idx><h>hypothesis test</h></idx>
+  </p>
+  <p>
+    <ul>
+      <li>
+        <p>
+          Confidence intervals are used for <em>estimating</em>
+          unknown population parameters by providing an
+          <em>interval of reasonable values</em>
+          for the unknown parameter with a certain level of confidence.
+        </p>
+      </li>
+      <li>
+        <p>
+          Hypothesis tests are used to assess how reasonable a <em>particular</em>
+          value is for an unknown population parameter by providing
+          <em>degrees of evidence</em> against that value.
+        </p>
+      </li>
+      <li>
+        <p>
+          The results of confidence intervals and hypothesis tests are,
+          generally speaking, <em>consistent</em>.<fn>
+          In the context of proportions there will be a small range of cases where this is not true.
+          This is because when working with proportions,
+          the <m>SE</m> used for confidence intervals and the <m>SE</m> used for tests are slightly different,
+          as we will see in the next chapter.
+          </fn> That is:
+        </p>
+        <p>
+        <ul>
+          <li>
+            <p>
+              Values that fall <em>inside</em>
+              a 95% confidence interval
+              (implying they are reasonable)
+              will <em>not be rejected</em> by a test at the 5% significance level
+              (implying they are reasonable),
+              and vice-versa.
+            </p>
+          </li>
+          <li>
+            <p>
+              Values that fall <em>outside</em>
+              a 95% confidence interval
+              (implying they are not reasonable)
+              will <em>be rejected</em> by a test at the 5% significance level
+              (implying they are not reasonable),
+              and vice-versa.
+            </p>
+          </li>
+          <li>
+            <p>
+              When the confidence level and the significance level add up to 100%, the conclusions of the two procedures are consistent.
+            </p>
+          </li>
+        </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          Many values fall inside of a confidence interval and will not be rejected by a hypothesis test.
+          <q>Not rejecting <m>H_0</m></q>
+          is NOT equivalent to <em>accepting</em> <m>H_0</m>.
+          When we
+          <q>do not reject <m>H_0</m></q>, we are asserting that the null value is <em>reasonable</em>,
+          not that the parameter is exactly
+          <em>equal to</em> the null value.
+        </p>
+      </li>
+      <li>
+        <p>
+          For a 95% confidence interval, 95% is not the probability that the true value lies inside the confidence interval
+          (it either does or it doesn't).
+          Likewise, for a hypothesis test,
+          <m>\alpha</m> is not the probability that <m>H_0</m> is true
+          (it either is or it isn't).
+          In both frameworks,
+          the probability is about what would happen in a random sample,
+          not about what is true of the population.
+        </p>
+      </li>
+      <li>
+        <p>
+          The confidence interval procedures and hypothesis tests described in this book should not be applied unless particular conditions
+          (described in more detail in the following chapters)
+          are met.
+          If these procedures are applied when the conditions are not met,
+          the results may be unreliable and misleading.
+        </p>
+      </li>
+    </ul>
+    </p>
+    <p>
+      While a given data set may not always lead us to a correct conclusion,
+      statistical inference gives us tools to
+      <em>control and evaluate how often errors occur</em>.
+    </p>
+  </subsection>
+</section>

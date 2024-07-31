@@ -1,0 +1,1519 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xml:id="pairedData">
+  <title>Inference for paired data</title>
+  <introduction>
+    <p>
+          <idx><h>paired data</h></idx>
+          <idx><h>data</h><h>textbooks</h></idx>
+    </p>
+    <p>
+      When we have two observations on each person or each case,
+      we can answer questions such as the following:
+      <ul>
+        <li>
+          <p>
+            Do students do better on reading or writing sections of standardized tests?
+          </p>
+        </li>
+        <li>
+          <p>
+            How do the number of days with temperature above 90<quantity><unit base="degreeFahrenheit"/></quantity> compare between 1948 and 2018?
+          </p>
+        </li>
+        <li>
+          <p>
+            Are Amazon textbook prices lower than the college bookstore prices?
+            If so, how much lower, on average?
+          </p>
+        </li>
+      </ul>
+    </p>
+  </introduction>
+  <subsection>
+    <objectives>
+    <title>Learning objectives</title>
+      <ol>
+        <li>
+          <p>
+            Distinguish between paired and unpaired data.
+          </p>
+        </li>
+        <li>
+          <p>
+            Recognize that inference procedures for paired data use the same one-sample <m>t</m>-procedures as in the previous section,
+            and that these procedures are applied to the <em>differences</em>
+            of the paired observations.
+          </p>
+        </li>
+        <li>
+          <p>
+            Carry out a complete hypothesis test for paired differences.
+          </p>
+        </li>
+        <li>
+          <p>
+            Carry out a complete confidence interval procedure for paired differences.
+          </p>
+        </li>
+      </ol>
+    </objectives>
+  </subsection>
+  <subsection>
+    <title>Paired observations and samples</title>
+    <p>
+          <idx><h>paired data</h></idx>
+          <idx><h>data</h><h>textbooks</h></idx>
+    </p>
+    <p>
+      In the previous edition of this textbook,
+      we found that Amazon prices were, on average,
+      lower than those of the UCLA Bookstore for UCLA courses in 2010.
+      It's been several years,
+      and many stores have adapted to the online market,
+      so we wondered, how is the UCLA Bookstore doing today?
+    </p>
+    <p>
+      We sampled 201 UCLA courses.
+      Of those, 68 required books that could be found on Amazon.
+      A<nbsp/>portion of the data set from these courses is shown in <xref ref="textbooksDF"></xref>,
+      where prices are in U.S. dollars.
+    </p>
+    <table xml:id="textbooksDF">
+      <title>Five cases of the <c>textbooks</c> data set.</title>
+      <tabular>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell halign="left">subject</cell>
+          <cell halign="left">course_number</cell>
+          <cell halign="center">bookstore</cell>
+          <cell halign="center">amazon</cell>
+          <cell halign="center">price_difference</cell>
+        </row>
+        <row>
+          <cell halign="right">1</cell>
+          <cell halign="left">American Indian Studies</cell>
+          <cell halign="left">M10</cell>
+          <cell halign="center">47.97</cell>
+          <cell halign="center">47.45</cell>
+          <cell halign="center">0.52</cell>
+        </row>
+        <row>
+          <cell halign="right">2</cell>
+          <cell halign="left">Anthropology</cell>
+          <cell halign="left">2</cell>
+          <cell halign="center">14.26</cell>
+          <cell halign="center">13.55</cell>
+          <cell halign="center">0.71</cell>
+        </row>
+        <row>
+          <cell halign="right">3</cell>
+          <cell halign="left">Arts and Architecture</cell>
+          <cell halign="left">10</cell>
+          <cell halign="center">13.50</cell>
+          <cell halign="center">12.53</cell>
+          <cell halign="center">0.97</cell>
+        </row>
+        <row>
+          <cell halign="right"><m>\vdots</m></cell>
+          <cell halign="left"><m>\vdots</m></cell>
+          <cell halign="left"><m>\vdots</m></cell>
+          <cell halign="center"><m>\vdots</m></cell>
+          <cell halign="center"><m>\vdots</m></cell>
+          <cell halign="center"><m>\vdots</m></cell>
+        </row>
+        <row>
+          <cell halign="right">67</cell>
+          <cell halign="left">Korean</cell>
+          <cell halign="left">1</cell>
+          <cell halign="center">24.96</cell>
+          <cell halign="center">23.79</cell>
+          <cell halign="center">1.17</cell>
+        </row>
+        <row bottom="minor">
+          <cell halign="right">68</cell>
+          <cell halign="left">Jewish Studies</cell>
+          <cell halign="left">M10</cell>
+          <cell halign="center">35.96</cell>
+          <cell halign="center">32.40</cell>
+          <cell halign="center">3.56</cell>
+        </row>
+      </tabular>
+    </table>
+    <p>
+      Each textbook has two corresponding prices in the data set:
+      one for the UCLA Bookstore and one for Amazon.
+      Therefore, each textbook price from the UCLA bookstore has a natural correspondence with a textbook price from Amazon.
+      When two sets of observations have this special correspondence,
+      they are said to be <term>paired</term>.
+    </p>
+    <assemblage>
+      <title>Paired data</title>
+      <p>
+        Two sets of observations are <em>paired</em>
+        if each observation in one set has a special correspondence or connection with exactly one observation in the other data set.
+      </p>
+    </assemblage>
+    <p>
+      To analyze paired data,
+      it is often useful to look at the difference in outcomes of each pair of observations.
+      In the <c>textbook</c> data set,
+      we look at the differences in prices,
+      which is represented as the <c>diff</c> variable.
+      Here, for each book, the differences are taken as
+      <md>
+        <mrow>\text{ UCLA Bookstore price }  - \text{ Amazon price }</mrow>
+      </md>
+    </p>
+    <p>
+      It is important that we always subtract using a consistent order;
+      here Amazon prices are always subtracted from UCLA prices.
+      A histogram of these differences is shown in <xref ref="diffInTextbookPricesF18"></xref>.
+      Using differences between paired observations is a common and useful way to analyze paired data.
+    </p>
+    <figure xml:id="diffInTextbookPricesF18">
+      <caption>Histogram of the difference in price for
+      each book sampled.
+      These data are very strongly skewed<!-- <idx><h>skew</h><h>example: very strong</h></idx> -->. Explore this data set on <url href="https://public.tableau.com/profile/openintro#!/vizhome/Chapter7_7/Fig7_10">Tableau Public</url>.</caption>
+      <image width="65%" source="images/inference_means/diffInTextbookPricesF18.png" />
+    </figure>
+    <exercise>
+      <statement>
+        <p>
+          The first difference shown in <xref ref="textbooksDF"></xref> is computed as:
+          <m>47.97 - 47.45 = 0.52</m>.
+          What does this difference tell us about the price for this textbook on Amazon versus the UCLA bookstore?
+          <fn>The difference is taken as UCLA Bookstore price - Amazon price. Because the difference is positive, it tells us that the UCLA Bookstore price was <em>greater</em> for this textbook. In fact, it was $0.52, or 52 cents, more expensive at the UCLA bookstore than on Amazon.</fn>
+        </p>
+      </statement>
+    </exercise>
+  </subsection>
+  <subsection xml:id="htForDiffInUCLAAndAmazonTextbookPrices">
+    <title>Hypothesis tests for paired data</title>
+    <p>
+      To analyze a paired data set,
+      we simply analyze the differences.
+      We can use the same <m>t</m>-distribution techniques we applied in the last section.
+    </p>
+    <table xml:id="textbooksSummaryStats">
+      <title>Summary statistics for the price differences.
+      There were 68 books, so there are 68
+      differences.</title>
+      <tabular halign="center">
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>n_{\text{diff}}</m></cell>
+          <cell></cell>
+          <cell><m>\bar{x}_{\text{diff}}</m></cell>
+          <cell></cell>
+          <cell><m>s_{\text{diff}}</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell>68</cell>
+          <cell></cell>
+          <cell>3.58</cell>
+          <cell></cell>
+          <cell>13.42</cell>
+        </row>
+      </tabular>
+    </table>
+    <p>
+      We will set up and implement a hypothesis test to determine whether,
+      on average,
+      there is a difference in textbook prices between Amazon and the UCLA bookstore.
+      We are considering two scenarios:
+      there is no difference in prices or there is some difference in prices.
+      <ul>
+        <li>
+          <p>
+            <m>\mu_{\text{diff}}=0</m>.
+            On average, there is no difference in textbook prices.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\mu_{\text{diff}} \neq 0</m>.
+            On average, there is some difference in textbook prices.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      Can the <m>t</m>-distribution be used for this application?
+      The observations are based on a random sample from a large population,
+      so independence is reasonable.
+      While the distribution of the data is very strongly skewed,
+      we do have <m>n = 68</m> observations.
+      This sample size is large enough that we do not have to worry about whether the population distribution for difference in price might be nearly normal or not.
+      Because the conditions are satisfied,
+      we can use the <m>t</m>-distribution to this setting.
+    </p>
+    <p>
+      We compute the standard error associated with
+      <m>\bar{x}_{\text{diff}}</m> using the standard deviation of the differences (<m>s_{\text{diff}} = 13.42</m>) and the number of differences (<m>n_{\text{diff}} = 68</m>):
+      <md>
+        <mrow>SE_{\bar{x}_{\text{diff}}} = \frac{s_{\text{diff}}}{\sqrt{n_{\text{diff}}}} = \frac{13.42}{\sqrt{68}} = 1.63</mrow>
+      </md>
+    </p>
+    <p>
+      Next we compute the test statistic.
+      The point estimate is the observed value of <m>\bar{x}_{\text{diff}}</m>.
+      The null value is the value hypothesized under the null hypothesis.
+      Here, the null hypothesis is that the true mean of the differences is 0.
+      <md>
+        <mrow>T = \frac{\text{ point estimate }  - \text{ null value } } {SE \text{ of estimate } } = \frac{3.58- 0}{1.63} = 2.20</mrow>
+      </md>
+    </p>
+    <p>
+      The degrees of freedom are <m>df = 68 - 1 = 67</m>.
+      To visualize the p-value,
+      the sampling distribution of
+      <m>\bar{x}_{\text{diff}}</m> is drawn as though <m>H_0</m> is true.
+      This is shown in <xref ref="textbooksF18HTTails"></xref>.
+      Because this is a two-sided test,
+      the p-value corresponds to the area in both tails.
+      Using statistical software, we find the area in the tails to be 0.0312.
+    </p>
+    <p>
+      Because the p-value of 0.0312 is less than 0.05, we reject the null hypothesis.
+      We have evidence that, on average,
+      there is a difference in textbook prices.
+      In particular, we can say that,
+      on average, Amazon prices are lower than the UCLA Bookstore prices for UCLA course textbooks.
+    </p>
+    <figure xml:id="textbooksF18HTTails">
+      <caption>Sampling distribution for the mean difference in book prices, if the true average difference is zero.</caption>
+      <image width="65%" source="images/inference_means/textbooksF18HTTails.png" />
+    </figure>
+    <example>
+      <statement>
+        <p>
+          We have evidence to conclude Amazon is,
+          on average, less expensive.
+          Does this mean that UCLA students should always buy their books on Amazon?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          No.
+          The fact that Amazon is, on average, less expensive,
+          does not imply that it is less expensive for
+          <em>every</em> textbook.
+          Examining the distribution shown in <xref ref="diffInTextbookPricesF18"></xref>,
+          we see that there are certainly a handful of cases where Amazon prices are much lower than the UCLA Bookstore's, which suggests it is worth checking Amazon or other online sites before purchasing.
+          However, in many cases the Amazon price is <em>above</em>
+          what the UCLA Bookstore charges,
+          and most of the time the price isn't that different.
+        </p>
+      </solution>
+    </example>
+    <p>
+      For reference, this is a very different result from what we
+      (the authors)
+      had seen in a similar data set from 2010.
+      At that time, Amazon prices were almost uniformly lower than those of the UCLA Bookstore's and by a large margin,
+      making the case to use Amazon over the UCLA Bookstore quite compelling at that time.
+    </p>
+    <p>
+          <idx><h>data</h><h>textbooks</h></idx>
+          <idx><h>paired data</h></idx>
+    </p>
+    <assemblage>
+      <title>Hypothesis test for paired data</title>
+      <p>
+        To carry out a complete hypothesis test to test the claim that a mean of differences <m>\mu_{\text{diff}}</m> is equal to 0,
+      </p>
+      <p>
+        <em>Identify</em>: Identify the hypotheses and the significance level,
+        <m>\alpha</m>.
+        <ul>
+          <li>
+            <p>
+              <m>H_0</m>: <m>\mu_{\text{diff}} = 0</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>H_A</m>: <m>\mu_{\text{diff}} \ne 0</m>; <m>H_A</m>:
+              <m>\mu_{\text{diff}} > 0</m>; or <m>H_A</m>:
+              <m>\mu_{\text{diff}} \lt 0</m>
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        <em>Choose</em>: Choose the appropriate test procedure and identify it by name.
+        <ul>
+          <li>
+            <p>
+              Here we choose the <term>matched pairs <m>t</m>-test</term>.
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        <em>Check</em>: Check conditions for the sampling distribution of <m>\bar{x}_{\text{diff}}</m> to be nearly normal.
+        <ol label="1">
+          <li>
+            <p>
+              Independence: Data come from one random sample (with paired data) or from a randomized matched pairs experiment. When sampling without replacement, check that the sample size is less than 10% of the population size.
+            </p>
+          </li>
+          <li>
+            <p>
+              Lar: ge sample or normal population: <m>n_{\text{diff}}\ge 30</m> or population of diffs is nearly normal. If the number of differences is less than 30 and the distribution of the population of differences is unknown, check for strong skew or outliers in the sample differences. If neither is found, then the condition that the population of differences is nearly normal is considered reasonable.
+            </p>
+          </li>
+        </ol>
+      </p>
+      <p>
+        <em>Calculate</em>: Calculate the <m>t</m>-statistic, <m>df</m>,
+        and p-value.
+      </p>
+      <p>
+      <ul>
+        <li>
+          <p>
+            <m>T = \frac{\text{point estimate} - \text{null value} }{SE \text{ of estimate } }</m>,
+            <m>df=n_{\text{diff}} -1</m>
+          </p>
+          <p>
+          <ul>
+            <li>
+              <p>
+                point estimate:
+                the sample mean of differences <m>\bar{x}_{\text{diff}}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>SE</m> of estimate:
+                <m>\frac{s_{\text{diff}} }{\sqrt{n_{\text{diff}} }}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                null value: <m>0</m>
+              </p>
+            </li>
+          </ul>
+          </p>
+        </li>
+        </ul>
+        </p>
+        <p>
+          p-value = (based on the <m>t</m>-statistic, the <m>df</m>,
+          and the direction of <m>H_A</m>)
+        </p>
+      <p>
+        <em>Conclude</em>: Compare the p-value to <m>\alpha</m>,
+        and draw a conclusion in context.
+        <ul>
+          <li>
+            <p>
+              If the p-value is <m>\lt \alpha</m>, reject <m>H_0</m>;
+              there is sufficient evidence that [<m>H_A</m> in context].
+            </p>
+          </li>
+          <li>
+            <p>
+              If the p-value is <m>> \alpha</m>, do not reject <m>H_0</m>;
+              there is not sufficient evidence that [<m>H_A</m> in context].
+            </p>
+          </li>
+        </ul>
+      </p>
+    </assemblage>
+    
+    <example>
+      <statement>
+        <p>
+          An SAT preparation company claims that its students' scores improve by over 100 points on average after their course.
+          A consumer group would like to evaluate this claim,
+          and they collect data on a random sample of 30 students who took the class.
+          Each of these students took the SAT before and after taking the company's course,
+          so we have a difference in scores for each student.
+          We will examine these differences <m>x_1=57</m>,
+          <m>x_2=133</m>, ..., <m>x_{30}=140</m> as a sample to evaluate the company's claim.
+          The distribution of the differences,
+          shown in <xref ref="satImprovementHTDataHistogramrepeat"></xref>,
+          has a mean of 135.9 and a standard deviation of 82.2.
+          Do these data provide convincing evidence to back up the company's claim?
+          Use the five step framework to organize your work.
+        </p>
+        <figure xml:id="satImprovementHTDataHistogramrepeat">
+          <caption>SAT score after course - SAT score before course.</caption>
+          <image width="45%" source="images/inference_means/satImprovementHTDataHistogram.png" />
+        </figure>
+      </statement>
+      <solution>
+      	<p>
+        	<alert>Identify</alert>: We will test the following hypotheses at the <m>\alpha=0.05</m> level:
+        </p>
+      <p>
+        <m>H_0</m>: <m>\mu_{\text{diff}} = 100</m>.
+        Student scores improve by 100 points, on average.
+      </p>
+      <p>
+        <m>H_A</m>: <m>\mu_{\text{diff}} > 100</m>.
+        Student scores improve by more than 100 points, on average.
+      </p>
+      <p>
+        Here, <m>diff =\text{ SAT score after course - SAT score before course }</m>.
+      </p>
+      <p>
+        <alert>Choose</alert>: Because we have paired data and the parameter to be estimated is a mean of differences,
+        we will a 1-sample <m>t</m>-test with paired data.
+      </p>
+      <p>
+        <alert>Check</alert>: We have a random sample of students and have paired data on them. We will assume that this sample of size 30 represents less than 10% of the total population of such students. Finally, the number of differences is <m>n_{\text{diff}}=30 \ge 30</m>,
+        so we can proceed with the 1-sample <m>t</m>-test.
+      </p>
+      <p>
+        <alert>Calculate</alert>: We will calculate the test statistic,
+        <m>df</m>,
+        and p-value.
+        <md>
+          <mrow>T = \frac{\text{ point estimate }  - \text{ null value } }{SE \text{ of estimate } }</mrow>
+        </md>
+      </p>
+      <p>
+        The point estimate is the sample mean of differences:
+        <m>\bar{x}_{\text{diff}} = 135.9</m>
+      </p>
+      <p>
+        The <m>SE</m> of the sample mean of differences is:
+        <m>\frac{s_{\text{diff}} }{\sqrt{n_{\text{diff}} }} = \frac{82.2}{\sqrt{30}} = 15.0</m>
+      </p>
+      <p>
+        Since this is essentially a one sample <m>t</m>-test,
+        the degrees of freedom is <m>n_{\textit{diff}}-1</m>.
+        <md>
+          <mrow>T = \frac{135.9-100}{\frac{82.2}{\sqrt{30}}} = \frac{135.9-100}{15.0}=2.4 \qquad df=30-1=29</mrow>
+        </md>
+      </p>
+      <p>
+        The p-value is the area to the right of 2.4 under the <m>t</m>-distribution with 29 degrees of freedom.
+        The p-value = 0.012.
+      </p>
+      <p>
+        <alert>Conclude</alert>: p-value <m>=0.012 \lt \alpha</m> so we reject the null hypothesis.
+        The data provide convincing evidence to support the company's claim that students' scores improve by more than 100 points,
+        on average,
+        following the class.
+      </p>
+    </solution>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          Because we found evidence to support the company's claim,
+          does this mean that a student will score more than 100 points higher on the SAT if they take the class than if they do not take the class?
+          <fn>No. First, this is an observational study, so we cannot make a causal conclusion. Maybe SAT test takers tend to improve their score over time even if they don't take this SAT class. Secondly, students' scores improved by more than 100 points on average. That does not imply that each student improved by more than 100 points. With a sample standard deviation of 82.2 and a mean of 135.9, some students did worse after the SAT class. This can be verified by <xref ref="satImprovementHTDataHistogram3"></xref></fn>
+        </p>
+        <p>
+              <idx><h>data</h><h>SAT prep company</h></idx>
+        </p>
+      </statement>
+    </exercise>
+  </subsection>
+  <subsection xml:id="matchedpairsttest">
+    <title>Technology: The 1-Sample <m>t</m>-Test With Paired Data</title>
+    <p>
+      When carrying out a 1-sample <m>t</m>-test with paired data, make sure to use the sample <em>differences</em> or the summary statistics for the <em>differences</em>.
+    </p>
+    <assemblage xml:id="paired_means_ht_ti">
+    <title>TI-83/84: 1-Sample T-Test With Paired Data</title>
+      <p>
+        Use <c>STAT</c>, <c>TESTS</c>, <c>T-Test</c>.
+        <ol>
+          <li>
+            <p>
+              Choose <c>STAT</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Right arrow to <c>TESTS</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Down arrow and choose <c>2:T-Test</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose <c>Data</c> if you have all the data or <c>Stats</c> if you have the mean and standard deviation.
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <m>\mu_{0}</m> be the null or hypothesized value of <m>\mu_{\text{diff}}</m>.
+              <ul>
+                <li>
+                  <p>
+                    If you choose <c>Data</c>,
+                    let <c>List</c> be <c>L3</c> or the list in which you entered the differences,
+                    and let <c>Freq</c> be <c>1</c>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    If you choose <c>Stats</c>,
+                    enter the mean,
+                    <m>SD</m>,
+                    and sample size of the differences.
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose <m>\ne</m>,
+              <m>\lt</m>, or <m>\gt</m> to correspond to <m>H_A</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose <c>Calculate</c> and hit <c>ENTER</c>,
+              which returns:
+            </p>
+              <tabular>
+                <row>
+                  <cell><c>t</c></cell>
+                  <cell>t statistic</cell>
+                </row>
+                <row>
+                  <cell><c>p</c></cell>
+                  <cell>p-value</cell>
+                </row>
+                <row>
+                  <cell><m>\bar{x}</m></cell>
+                  <cell>the sample mean of the differences</cell>
+                </row>
+                <row>
+                  <cell><c>Sx</c></cell>
+                  <cell>the sample <m>SD</m> of the differences</cell>
+                </row>
+                <row>
+                  <cell><c>n</c></cell>
+                  <cell>the sample size of the differences</cell>
+                </row>
+              </tabular>
+          </li>
+        </ol>
+      </p>
+    </assemblage>
+    <assemblage xml:id="paired_means_ht_casio">
+      <title>Casio fx-9750GII: 1-Sample T-Test With Paired Data</title>
+      <p>
+      <ol>
+        <li>
+          <p>
+            Compute the paired differences of the observations.
+          </p>
+        </li>
+        <li>
+          <p>
+            Using the computed differences,
+            follow the instructions for a 1-sample <m>t</m>-test
+          </p>
+        </li>
+      </ol>
+      </p>
+    </assemblage>
+  </subsection>
+  <subsection xml:id="ciMeanOfDifferences">
+    <title>Confidence intervals for the mean of a difference</title>
+    <p>
+      In the previous examples, we carried out a matched pairs <m>t</m>-test,
+      where the null hypothesis was that the true average of the paired differences is zero.
+      Sometimes we want to estimate the true average of paired differences with a confidence interval,
+      and we use a <em>1-sample <m>t</m>-interval</em> with paired data.
+          <idx><h>confidence interval</h><h>matched pairs</h></idx>
+      Consider again the table summarizing data on: UCLA Bookstore price <m>-</m> Amazon price,
+      for each of the 68 books sampled.
+    </p>
+    <table xml:id="textbooksSummaryStats1">
+      <title>Summary statistics for the price differences. There were 68 books, so there are 68.</title>
+      <tabular halign="center">
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>n_{\text{diff}}</m></cell>
+          <cell></cell>
+          <cell><m>\bar{x}_{\text{diff}}</m></cell>
+          <cell></cell>
+          <cell><m>s_{\text{diff}}</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell>68</cell>
+          <cell></cell>
+          <cell>3.58</cell>
+          <cell></cell>
+          <cell>13.42</cell>
+        </row>
+      </tabular>
+    </table>
+    <p>
+      We construct a 95% confidence interval for the average price difference between books at the UCLA Bookstore and on Amazon.
+      Conditions have already verified, namely,
+      that we have paired data from a random sample and that the number of differences is at least 30.
+      We must find the critical value, <m>t^{\star}</m>.
+      Since <m>df = 67</m> is not on the <m>t</m>-table,
+      round the <m>df</m> down to 60 to get a
+      <m>t^{\star}</m> of 2.00 for 95% confidence.
+      (See <xref ref="matchedpairstint"></xref>
+      for how to get a more precise interval using a calculator.)
+      Plugging the <m>t^{\star}</m> value, point estimate,
+      and standard error into the confidence interval formula,
+      we<nbsp/>get:
+      <md>
+        <mrow>\text{ point estimate }  \ \amp \pm\ t^{\star}\times SE\ \text{ of estimate } \to 3.58 \ <!-- \amp --> \pm\ 2.00 \times \frac{13.42}{\sqrt{68}} \to (0.33, 6.83)</mrow>
+      </md>
+    </p>
+    <p>
+      We are 95% confident that the UCLA bookstore is, on average,
+      between $0.33 and $6.83 more expensive than Amazon for UCLA course books.
+      This interval does not contain zero,
+      so it is consistent with the earlier hypothesis test that <em>rejected</em>
+      the null hypothesis that the average difference was 0.
+      Because our interval is entirely above 0, we have evidence that the true average difference is greater than zero.
+      Unlike the hypothesis test,
+      the confidence interval gives us a good idea of how much more expensive the UCLA bookstore might be,
+      on average.
+    </p>
+    <p>
+          <idx><h>data</h><h>textbooks</h></idx>
+          <idx><h>paired data</h></idx>
+    </p>
+    <example>
+      <statement>
+        <p>
+          Based on the interval,
+          can we say that 95% of the books cost between $0.33 and $6.83 more at the UCLA Bookstore than on Amazon?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          No.
+          This interval is attempting to estimate the <em>average</em>
+          difference with 95% confidence.
+          It is not attempting to capture 95% of the values.
+          A quick look at <xref ref="diffInTextbookPricesF18"></xref>
+          shows that much less than 95% of the differences fall between $0.32 and $6.84.
+        </p>
+        <p>
+              <idx><h>data</h><h>SAT prep company</h></idx>
+        </p>
+      </solution>
+    </example>
+    <assemblage>
+      <title>Constructing a confidence interval for a mean of differences</title>
+      <p>
+        To carry out a complete confidence interval procedure to estimate a mean of differences <m>\mu_{\text{diff}}</m>,
+      </p>
+      <p>
+        <em>Identify</em>: Identify the parameter and the confidence level, C%.
+        <ul>
+          <li>
+            <p>
+              The parameter will be a mean of differences,
+              e.g. the true mean of the differences in county population
+              (year 2018 <m>-</m> year 2017).
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        <em>Choose</em>: Choose the appropriate interval procedure and identify it by name.
+        <ul>
+          <li>
+            <p>
+              Here we choose the <term>1-sample <m>t</m>-interval</term> with paired data.
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        <em>Check</em>: Check conditions for the sampling distribution of <m>\bar{x}_{\text{diff}}</m> to be nearly normal.
+        <ol label="1">
+          <li>
+            <p>
+               Independence: Data come from one random sample (with paired data) or from a randomized matched pairs experiment. When sampling without replacement, check that the sample size is less than 10% of the population size.
+            </p>
+          </li>
+          <li>
+            <p>
+               Large sample or normal population: <m>n_{\text{diff}}\ge 30</m> or population of diffs is nearly normal. - If the number of differences is less than 30 and the distribution of the population of differences is unknown, check for strong skew or outliers in the sample differences. If neither is found, then the condition that the population of differences is nearly normal is considered reasonable.
+            </p>
+          </li>
+        </ol>
+      </p>
+      <p>
+        <em>Calculate</em>: Calculate the confidence interval and record it in interval form.
+      </p>
+      <p>
+      <ul>
+        <li>
+          <p>
+            <m>\text{ point estimate } \ \pm\ t^{\star} \times SE\ \text{ of estimate }</m>,
+            <m>df</m>:
+            <m>n_{\text{diff}} - 1</m>
+          </p>
+          <p>
+          <ul>
+            <li>
+              <p>
+                point estimate:
+                the sample mean of differences <m>\bar{x}_{\text{diff}}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>SE</m> of estimate:
+                <m>\frac{s_{\text{diff}}}{\sqrt{n_{\text{diff}}}}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>t^{\star}</m>: use a <m>t</m>-table at row
+                <m>df = n_{\textit{diff}} - 1</m> and confidence level C
+              </p>
+            </li>
+          </ul>
+          </p>
+        </li>
+        <li>
+          <p>
+            (<fillin/>, <fillin/>)
+          </p>
+        </li>
+      </ul>
+      </p>
+      <p>
+        <em>Conclude</em>: Interpret the interval and,
+        if applicable, draw a conclusion in context.
+        <ul>
+          <li>
+            <p>
+              We are C% confident that the true
+              <em>mean of the differences in</em>
+              [...] is between <fillin/> and <fillin/>.
+              If applicable,
+              draw a conclusion based on whether the interval is entirely above,
+              is entirely below, or contains the value 0.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </assemblage>
+    <example>
+      <statement>
+        <p>
+          An SAT preparation company claims that its students' scores improve by over 100 points on average after their course.
+          A consumer group would like to evaluate this claim,
+          and they collect data on a random sample of 30 students who took the class.
+          Each of these students took the SAT before and after taking the company's course,
+          so we have a difference in scores for each student.
+          We will examine these differences <m>x_1=57</m>,
+          <m>x_2=133</m>, ..., <m>x_{30}=140</m> as a sample to evaluate the company's claim.
+          The distribution of the differences,
+          shown in <xref ref="satImprovementHTDataHistogram3"></xref>,
+          has a mean of 135.9 and a standard deviation of 82.2.
+          Construct a confidence interval to estimate the true average increase in SAT after taking the company's course.
+          Is there evidence at the 95% confidence level that students score an average of more than 100 points higher after the class?
+          Use the five step framework to organize your work.
+        </p>
+      </statement>
+      <solution>
+      <p>
+        <alert>Identify</alert>: The parameter we want to estimate is <m>\mu_{\text{diff}}</m>,
+        the true change in SAT score after taking the company's course.
+        Here, <m>{\text{diff}}</m> = <m>{\text{ SAT score after course } - \text{ SAT score before course } }</m>.
+        We will estimate this parameter at the 95% confidence level.
+      </p>
+      <p>
+        <alert>Choose</alert>: Because we have paired data and the parameter to be estimated is a mean of differences,
+        we will use a 1-sample <m>t</m>-interval with paired data.
+      </p>
+      <p>
+        <alert>Check</alert>: We have a random sample of students with paired observations on them. We will assume that these 30 students represent less than 10% of the total number of such students. Finally, the number of differences is <m>n_{\text{diff}}=30\ge 30</m>, so we can proceed with the 1-sample <m>t</m>-interval.
+      </p>
+      <p>
+        <alert>Calculate</alert>: We will calculate the confidence interval as follows.
+        <md>
+          <mrow>\text{ point estimate } \ \pm\ t^{\star} \times SE\ \text{ of estimate }</mrow>
+        </md>
+      </p>
+      <p>
+        The point estimate is the sample mean of differences:
+        <m>\bar{x}_{\text{diff}} = 135.9</m>
+      </p>
+      <p>
+        The <m>SE</m> of the sample mean of differences is:
+        <m>\frac{s_{\text{diff}}}{\sqrt{n_{\text{diff}}}} = \frac{82.2}{\sqrt{30}}=15.0</m>
+      </p>
+      <p>
+        We find <m>t^{\star}</m> for the one sample case using the <m>t</m>-table at row
+        <m>df = n -1</m> and confidence level C%. For a 95% confidence level and
+        <m>df = 30 - 1 = 29</m>, <m>t^{\star} = 2.045</m>.
+      </p>
+      <p>
+        The 95% confidence interval is given by:
+        <md>
+          <mrow>135.9 \ \pm\  \amp 2.045\times  \frac{82.2}{\sqrt{30}}  \qquad df = 15</mrow>
+          <mrow>135.9 \ \pm\  \amp 2.045\times 15.0</mrow>
+          <mrow>=(10\amp 5.2,\ 166.6)</mrow>
+        </md>
+      </p>
+      <p>
+        <alert>Conclude</alert>: We are 95% confident that the true <em>average</em>
+        increase in SAT score following the company's course is between 105.2 points to 166.6 points.
+        There is sufficient evidence that students score greater than 100 points higher,
+        on average,
+        after the company's course because the entire interval is above 100.
+      </p>
+      </solution>
+    </example>
+    <figure xml:id="satImprovementHTDataHistogram3">
+      <caption>SAT score after course - SAT score before course.</caption>
+      <image width="45%" source="images/inference_means/satImprovementHTDataHistogram.png" />
+    </figure>
+    <exercise>
+      <statement>
+        <p>
+          Based on the interval (105.2, 166.6), calculated previously,
+          can we say that 95% of student scores increased between 105.2 and 166.6 points after taking the company's course?
+          <fn>No. This interval is attempting to capture the average increase. It is not attempting to capture 95% of the increases. Looking at <xref ref="satImprovementHTDataHistogramrepeat"></xref>, we see that only a small percent had increases between 105.2 and 166.6.</fn>
+        </p>
+        <p>
+              <idx><h>data</h><h>SAT prep company</h></idx>
+        </p>
+      </statement>
+    </exercise>
+  </subsection>
+  <subsection xml:id="matchedpairstint">
+    <title>Technology: the 1-sample <m>t</m>-interval with paired data</title>
+    <assemblage xml:id="paired_means_ci_ti">
+      <title>TI-83/84: 1-Sample T-Interval With Paired Data</title>
+      <p>
+        Use <c>STAT</c>, <c>TESTS</c>, <c>TInterval</c>.
+        <ol>
+          <li>
+            <p>
+              Choose <c>STAT</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Right arrow to <c>TESTS</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Down arrow and choose <c>8:TInterval</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose <c>Data</c> if you have all the data or <c>Stats</c> if you have the mean and standard deviation.
+              <ul>
+                <li>
+                  <p>
+                    If you choose <c>Data</c>,
+                    let <c>List</c> be <c>L3</c> or the list in which you entered the differences (don't forget to enter the differences!) and let <c>Freq</c> be <c>1</c>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    If you choose <c>Stats</c>,
+                    enter the mean,
+                    <m>SD</m>,
+                    and sample size of the differences.
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <c>C-Level</c> be the desired confidence level.
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose <c>Calculate</c> and hit <c>ENTER</c>,
+              which returns:
+            </p>
+              <tabular>
+                <row>
+                  <cell>(<fillin/>,<fillin/>)</cell>
+                  <cell>the confidence interval for the mean of the differences</cell>
+                </row>
+                <row>
+                  <cell><m>\bar{x}</m></cell>
+                  <cell>the sample mean of the differences</cell>
+                </row>
+                <row>
+                  <cell><c>Sx</c></cell>
+                  <cell>the sample <m>SD</m> of the differences</cell>
+                </row>
+                <row>
+                  <cell><c>n</c></cell>
+                  <cell>the number of differences in the sample</cell>
+                </row>
+              </tabular>
+          </li>
+        </ol>
+      </p>
+    </assemblage>
+    <assemblage xml:id="paired_means_ci_casio">
+      <title>Casio fx-9750GII: 1-Sample T-Interval With Paired Data</title>
+      <p>
+      <ol>
+        <li>
+          <p>
+            Compute the paired differences of the observations.
+          </p>
+        </li>
+        <li>
+          <p>
+            Using the computed differences,
+            follow the instructions for a 1-sample <m>t</m>-interval.
+          </p>
+        </li>
+      </ol>
+    </p>
+    </assemblage>
+    <exercise>
+      <statement>
+        <p>
+          In our UCLA textbook example,
+          we had 68 paired differences.
+          Because <m>df=67</m> was not on our <m>t</m>-table,
+          we rounded the <m>df</m> down to 60.
+          This gave us a 95% confidence interval (0.325, 6.834).
+          Use a calculator to find the more exact 95% confidence interval based on 67 degrees of freedom.
+          How different is it from the one we calculated based on 60 degrees of freedom?
+          <fn>Choose <c>TInterval</c> or equivalent. We do not have all the data, so choose <c>Stats</c> on a TI or <c>Var</c> on a Casio. Enter <c>x</c> <m>= 3.58</m> and <c>Sx</c> <m>= 13.42</m>. Let <c>n</c> <m>= 68</m> and <c>C-Level</c> <m>= 0.95</m>. This should give the interval (0.332, 6.828). The intervals are equivalent when rounded to two decimal places.</fn>
+        </p>
+        <tabular halign="center">
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>n_{\text{diff}}</m></cell>
+            <cell></cell>
+            <cell><m>\bar{x}_{\text{diff}}</m></cell>
+            <cell></cell>
+            <cell><m>s_{\text{diff}}</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell>68</cell>
+            <cell></cell>
+            <cell>3.58</cell>
+            <cell></cell>
+            <cell>13.42</cell>
+          </row>
+        </tabular>
+      </statement>
+    </exercise>
+  </subsection>
+  <subsection>
+    <title>Section summary</title>
+    <p>
+    <ul>
+      <li>
+        <p>
+          Paired data can come from a random sample or a matched pairs experiment. With paired data,
+          we are often interested in whether the <em>difference</em>
+          is positive, negative, or zero.
+          For example,
+          the difference of paired data from a matched pairs experiment tells us whether one treatment did better, worse,
+          or the same as the other treatment for each subject.
+        </p>
+      </li>
+      <li>
+        <p>
+          We use the notation <m>\bar{x}_{\text{diff}}</m> to represent the mean of the sample differences.
+          Likewise, <m>s_{\text{diff}}</m> is the standard deviation of the sample differences,
+          and <m>n_{\text{diff}}</m> is the number of sample differences.
+        </p>
+      </li>
+      <li>
+        <p>
+          To carry out inference on paired data,
+          we first find all of the sample differences.
+          Then, we perform a one-sample procedure using the <em>differences</em>.
+          For this reason,
+          the confidence interval and hypothesis test with paired data use the same one-sample <m>t</m>-procedures,
+          where the degrees of freedom is given by <m>n_{\text{diff}}-1</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          When there is paired data and the parameter of interest is a mean of the differences:
+          <ul>
+            <li>
+              <p>
+                Estimate <m>\mu_{\text{diff}}</m> at the C% confidence level using a
+                <term>1-sample <m>t</m>-interval</term> with paired data.
+              </p>
+            </li>
+            <li>
+              <p>
+                Test <m>H_0</m>:
+                <m>\mu_{\text{diff}}=0</m> at the <m>\alpha</m> significance level using a
+                <term>1-sample <m>t</m>-test</term> with paired data.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          The one-sample <m>t</m>-interval and and <m>t</m>-test  with paired data require the sampling distribution for <m>\bar{x}_{diff}</m> to be nearly normal. For this reason, we must check that the following conditions are met.
+          <ol label="1">
+            <li>
+              <p>
+                Independence: Data should come from one random sample (with paired observations) or from a randomized matched pairs experiment. If sampling without replacement, check that the sample size is less than 10% of the population size.
+              </p>
+            </li>
+            <li>
+              <p>
+                Large sample or normal population: <m>n_{\text{diff}}\ge 30</m> or population of differences nearly normal. If the number of differences is less than 30 and it is not known that the population of differences is nearly normal, we argue that the population of differences could be nearly normal if there is no strong skew or outliers in the sample differences.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          When the conditions are met,
+          we calculate the confidence interval and the test statistic as we did in the previous section.
+          Here, our data is a list of differences.
+          <ul>
+            <li>
+              <p>
+                Confidence interval: <m>\text{ point estimate } \ \pm\ t^{\star} \times SE\ \text{ of estimate }</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Test statistic:
+                <m>T = \frac{\text{point estimate} - \text{null value} }{SE \text{ of estimate } }</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <p>
+          Here the point estimate is the mean of sample differences:
+        <m>\bar{x}_{\text{diff}}</m>.
+        </p>
+        <p>
+          The <m>SE</m> of estimate is the <m>SE</m> of a mean of sample differences:
+          <m>\frac{s_{\textit{diff}}}{\sqrt{n_{\text{diff}}}}</m>.
+        </p>
+        <p>
+          The degrees of freedom is given by <m>df = n_{\textit{diff}}-1</m>.
+        </p>
+      </li>
+    </ul>
+  </p>
+  </subsection>
+
+  <exercises>
+    <title>Exercises</title>
+  <exercise xml:id="air_quality_shortened"><!--  #15 -->
+    <title>Air quality</title>
+    <statement>
+      <p>
+        Air quality measurements were collected in a random sample of 25 country capitals in 2013,
+        and then again in the same cities in 2014.
+        We would like to use these data to compare average air quality between the two years.
+        Should we use a paired or non-paired test?
+        Explain your reasoning.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Paired, data are recorded in the same cities at two different time points. The temperature in a city at one point is not independent of the temperature in the same city at another time point.
+      </p>
+    </solution>
+  </exercise>
+  <exercise xml:id="tf_paired"><!--  #16 -->
+    <title>True / False: paired</title>
+    <statement>
+      <p>
+        Determine if the following statements are true or false.
+        If false, explain.
+        <ol>
+          <li>
+            <p>
+              In a paired analysis we first take the difference of each pair of observations,
+              and then we do inference on these differences.
+            </p>
+          </li>
+          <li>
+            <p>
+              Two data sets of different sizes cannot be analyzed as paired data.
+            </p>
+          </li>
+          <li>
+            <p>
+              Consider two sets of data that are paired with each other.
+              Each observation in one data set has a natural correspondence with exactly one observation from the other data set.
+            </p>
+          </li>
+          <li>
+            <p>
+              Consider two sets of data that are paired with each other.
+              Each observation in one data set is subtracted from the average of the other data set's observations.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="paired_or_not_1"><!--  #17 -->
+    <title>Paired or not? Part I</title>
+    <statement>
+      <p>
+        In each of the following scenarios,
+        determine if the data are paired.
+        <ol>
+          <li>
+            <p>
+              Compare pre-
+              (beginning of semester)
+              and post-test
+              (end of semester)
+              scores of students.
+            </p>
+          </li>
+          <li>
+            <p>
+              Assess gender-related salary gap by comparing salaries of randomly sampled men and women.
+            </p>
+          </li>
+          <li>
+            <p>
+              Compare artery thicknesses at the beginning of a study and after 2 years of taking Vitamin E for the same group of patients.
+            </p>
+          </li>
+          <li>
+            <p>
+              Assess effectiveness of a diet regimen by comparing the before and after weights of subjects.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Since it's the same students at the beginning and the end of the semester, there is a pairing between the datasets, for a given student their beginning and end of semester grades are dependent.
+            </p>
+          </li>
+          <li>
+            <p>
+              Since the subjects were sampled randomly, each observation in the men's group does not have a special correspondence with exactly one observation in the other (women's) group.
+            </p>
+          </li>
+          <li>
+            <p>
+              Since it's the same subjects at the beginning and the end of the study, there is a pairing between the datasets, for a subject student their beginning and end of semester artery thickness are dependent.
+            </p>
+          </li>
+          <li>
+            <p>
+              Since it's the same subjects at the beginning and the end of the study, there is a pairing between the datasets, for a subject student their beginning and end of semester weights are dependent.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+  <exercise xml:id="paired_or_not_2"><!--  #18 -->
+    <title>Paired or not? Part II</title>
+    <statement>
+      <p>
+        In each of the following scenarios,
+        determine if the data are paired.
+        <ol>
+          <li>
+            <p>
+              We would like to know if Intel's stock and Southwest Airlines' stock have similar rates of return.
+              To find out, we take a random sample of 50 days,
+              and record Intel's and Southwest's stock on those same days.
+            </p>
+          </li>
+          <li>
+            <p>
+              We randomly sample 50 items from Target stores and note the price for each.
+              Then we visit Walmart and collect the price for each of those same 50 items.
+            </p>
+          </li>
+          <li>
+            <p>
+              A school board would like to determine whether there is a difference in average SAT scores for students at one high school versus another high school in the district.
+              To check, they take a simple random sample of 100 students from each high school.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="global_warming_v2_1"><!--  #19 -->
+    <title>Global warming, Part I</title>
+    <statement>
+      <p>
+        Let's consider a limited set of climate data,
+        examining temperature differences in 1948 vs 2018.
+        We randomly sampled 197 locations from the National Oceanic and Atmospheric Administration's (NOAA) historical data,
+        where the data was available for both years of interest.
+        We want to know:
+        were there more days with temperatures exceeding 90<quantity><unit base="degreeFahrenheit"/></quantity> in 2018 or 1948?<fn>NOAA, <url href="www.ncdc.noaa.gov/cdo-web/datasets">www.ncdc.noaa.gov/cdo-web/datasets</url>, April 24, 2019.</fn> The difference in number of days exceeding 90<quantity><unit base="degreeFahrenheit"/></quantity>
+        (number of days in 2018 - number of days in 1948)
+        was calculated for each of the 197 locations.
+        The average of these differences was 2.9 days with a standard deviation of 17.2 days.
+        We are interested in determining whether these data provide strong evidence that there were more days in 2018 that exceeded 90<quantity><unit base="degreeFahrenheit"/></quantity> from NOAA's weather stations.
+      </p>
+      <image width="50%" source="images/inference_means/global_warming_v2_1_diffs.png" />
+      <p>
+        <ol>
+          <li>
+            <p>
+              Is there a relationship between the observations collected in 1948 and 2018?
+              Or are the observations in the two groups independent?
+              Explain.
+            </p>
+          </li>
+          <li>
+            <p>
+              Write hypotheses for this research in symbols and in words.
+            </p>
+          </li>
+          <li>
+            <p>
+              Check the conditions required to complete this test.
+              A histogram of the differences is given to the right.
+            </p>
+          </li>
+          <li>
+            <p>
+              Calculate the test statistic and find the p-value.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use <m>\alpha = 0.05</m> to evaluate the test,
+              and interpret your conclusion in context.
+            </p>
+          </li>
+          <li>
+            <p>
+              What type of error might we have made?
+              Explain in context what the error means.
+            </p>
+          </li>
+          <li>
+            <p>
+              Based on the results of this hypothesis test, would you expect a confidence interval for the average difference between the number of days exceeding 90°F from 1948 and 2018 to include 0? Explain your reasoning.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              For each observation in one data set, there is exactly one specially corresponding observation in the other data set for the same geographic location. The data are paired. <!-- Let <m>diff = 2018 - 1948</m>. -->
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>H_{0}: \mu_{diff} = 0</m> (There is no difference in average number of days exceeding 90<quantity><unit base="degreeFahrenheit" /></quantity> in 1948 and 2018 for NOAA stations.) <m>H_{A}: \mu_{diff} \neq 0</m> (There is a difference.)
+            </p>
+          </li>
+          <li>
+            <p>
+              Locations were randomly sampled, so independence is reasonable. The sample size is at least 30, so we're just looking for particularly extreme outliers: none are present (the observation off left in the histogram would be considered a clear outlier, but not a particularly extreme one). Therefore, the conditions are satisfied.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>SE = 17.2/ \sqrt{197} = 1.23</m>. <m>T = \frac{2.9-0}{1.23} = 2.36</m> with degrees of freedom <m>df = 197-1 = 196</m>. This leads to a p-value of about 0.019.
+            </p>
+          </li>
+          <li>
+            <p>
+              Since the p-value is less than 0.05, we reject <m>H_{0}</m>. The data provide strong evidence that NOAA stations observed more 90<quantity><unit base="degreeFahrenheit"/></quantity> days in 2018 than in 1948.
+            </p>
+          </li>
+          <li>
+            <p>
+              Type 1 Error, since we may have incorrectly rejected <m>H_{0}</m>. This error would mean that NOAA stations did not actually observe a decrease, but the sample we took just so happened to make it appear that this was the case.
+            </p>
+          </li>
+          <li>
+            <p>
+              No, since we rejected <m>H_{0}</m>, which had a null value of 0.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+  <exercise xml:id="hs_beyond_1"><!--  #20 -->
+    <title>High School and Beyond, Part I</title>
+    <statement>
+      <p>
+        The National Center of Education Statistics conducted a survey of high school seniors,
+        collecting test data on reading,
+        writing, and several other subjects.
+        Here we examine a simple random sample of 200 students from this survey.
+        Side-by-side box plots of reading and writing scores as well as a histogram of the differences in scores are shown below.
+      </p>
+      <sidebyside>
+        <image width="50%" source="images/inference_means/hs_beyond_read_write_box.png" />
+        <image width="50%" source="images/inference_means/hs_beyond_diff_hist.png" />
+      </sidebyside>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Is there a clear difference in the average reading and writing scores?
+            </p>
+          </li>
+          <li>
+            <p>
+              Are the reading and writing scores of each student independent of each other?
+            </p>
+          </li>
+          <li>
+            <p>
+              Create hypotheses appropriate for the following research question:
+              is there an evident difference in the average scores of students in the reading and writing exam?
+            </p>
+          </li>
+          <li>
+            <p>
+              Check the conditions required to complete this test.
+            </p>
+          </li>
+          <li>
+            <p>
+              The average observed difference in scores is <m>\bar{x}_{read-write} = -0.545</m>,
+              and the standard deviation of the differences is 8.887 points.
+              Do these data provide convincing evidence of a difference between the average scores on the two exams?
+            </p>
+          </li>
+          <li>
+            <p>
+              What type of error might we have made?
+              Explain what the error means in the context of the application.
+            </p>
+          </li>
+          <li>
+            <p>
+              Based on the results of this hypothesis test,
+              would you expect a confidence interval for the average difference between the reading and writing scores to include 0?
+              Explain your reasoning.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="global_warming_v2_2"><!--  #21 -->
+    <title>Global warming, Part II</title>
+    <statement>
+      <p>
+        We considered the change in the number of days exceeding 90<quantity><unit base="degreeFahrenheit"/></quantity> from 1948 and 2018 at 197 randomly sampled locations from the NOAA database in <xref ref="global_warming_v2_1"></xref>.
+        The mean and standard deviation of the reported differences are 2.9 days and 17.2 days. Calculate a 90% confidence interval for the average difference between number of days exceeding 90°F between 1948 and 2018. Does the confidence interval provide convincing evidence that there were more days exceeding 90°F in 2018 than in 1948 at NOAA stations? Include all steps of the Identify, Choose, Check, Calculate, Conclude framework.
+        <!-- <ol>
+          <li>
+            <p>
+              Calculate a 90% confidence interval for the average difference between number of days exceeding 90<quantity><unit base="degreeFahrenheit"/></quantity> between 1948 and 2018.
+              We've already checked the conditions for you.
+            </p>
+          </li>
+          <li>
+            <p>
+              Interpret the interval in context.
+            </p>
+          </li>
+          <li>
+            <p>
+              Does the confidence interval provide convincing evidence that there were more days exceeding 90<quantity><unit base="degreeFahrenheit"/></quantity> in 2018 than in 1948 at NOAA stations?
+              Explain.
+            </p>
+          </li>
+        </ol> -->
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Identify: we want to estimate the average difference in number of days exceeding 90<quantity><unit base="degreeFahrenheit"/></quantity> for (2018-1948) with 90% confidence. Choose: 1-sample tinterval with paired data. Check <m>n_{diff}=197 \ge 30</m> and the locations are randomly sampled. Calculate: average <m>SE_{diff}=1.23</m> and <m>df=196</m>. <m>t^{*} \approx 1.65</m>. <m>2.9 \pm 1.65 \times 1.23 \rightarrow (0.87, 4.93)</m>. Conclude: We are 90% confident that there was an increase of 0.87 to 4.93 in the average difference of days that hit 90<quantity><unit base="degreeFahrenheit"/></quantity> in 2018 relative to 1948 for NOAA stations. We have evidence that the average difference of days that hit 90<quantity><unit base="degreeFahrenheit"/></quantity> increased, because the interval is entirely above 0.
+      </p>
+    </solution>
+  </exercise>
+  <exercise xml:id="hs_beyond_2"><!--  #22 -->
+    <title>High school and beyond, Part II</title>
+    <statement>
+      <p>
+        We considered the differences between the reading and writing scores of a random sample of 200 students who took the High School and Beyond Survey in <xref ref="hs_beyond_1"></xref>.
+        The mean and standard deviation of the differences are <m>\bar{x}_{read-write} = -0.545</m> and 8.887 points.
+        <ol>
+          <li>
+            <p>
+              Calculate a 95% confidence interval for the average difference between the reading and writing scores of all students.
+            </p>
+          </li>
+          <li>
+            <p>
+              Interpret this interval in context.
+            </p>
+          </li>
+          <li>
+            <p>
+              Does the confidence interval provide convincing evidence that there is a real difference in the average scores?
+              Explain.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+</exercises>
+</section>

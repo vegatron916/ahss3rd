@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xml:id="chapter_two_exercises">
+<title>Chapter exercises</title>
+
+<p></p> <!-- This makes the file schema compliant. Why? -->
+
+<exercises>
+  <exercise>
+    <title>Make-up exam</title> 
+    <statement>
+   	<sidebyside>
+      <video width="60%" preview="generic" youtube="_tkXliDLL_o" />
+    </sidebyside>
+      <p>
+        In a class of 25 students, 24 of them took an exam in class and 1 student took a make-up exam the following day. The professor graded the first batch of 24 exams and found an average score of 74 points with a standard deviation of 8.9 points. The student who took the make-up the following day scored 64 points on the exam.
+      </p>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Does the new student's score increase or decrease the average score?
+            </p>
+          </li>
+          <li>
+            <p>
+              What is the new average?
+            </p>
+          </li>
+          <li>
+            <p>
+              Does the new student's score increase or decrease the standard deviation of the scores?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Decrease: the new score is smaller than the mean of the 24 previous scores.
+            </p>
+          </li>
+          <li>
+            <p>
+              Calculate a weighted mean. Use a weight of 24 for the old mean and 1 for the new mean: <m>(24\times 74 + 1\times64)/(24+1) = 73.6</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The new score is more than 1 standard deviation away from the previous mean, so increase.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise>
+  <title>Infant mortality</title>
+    <statement>
+      <p>
+        The infant mortality rate is defined as the number of infant deaths per 1,000 live births. This rate is often used as an indicator of the level of health in a country. The relative frequency histogram below shows the distribution of estimated infant death rates for 224 countries in 2014.<fn>CIA Factbook, <url href="https://www.cia.gov/library/publications/the-world-factbook/rankorder/rankorderguide.html"> Country Comparison, 2014.</url></fn>
+      </p>
+      <sidebyside widths="50% 40%">
+        <p>
+          <ol label="a)">
+            <li>
+              <p>
+                Estimate Q1, the median, and Q3 from the histogram.
+              </p>
+            </li>
+            <li>
+              <p>
+                Would you expect the mean of this data set to be smaller or larger than the median? Explain your reasoning.
+              </p>
+            </li>
+          </ol>
+        </p>
+        <image source="images/summarizing/country_infMort.png" />
+      </sidebyside>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <title>TV watchers</title>
+    <statement>
+      <p>
+        Students in an AP Statistics class were asked how many hours of television they watch per week (including online streaming). This sample yielded an average of 4.71 hours, with a standard deviation of 4.18 hours. Is the distribution of number of hours students watch television weekly symmetric? If not, what shape would you expect this distribution to have? Explain your reasoning.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        No, we would expect this distribution to be right skewed. There are two reasons for this: (1) there is a natural boundary at 0 (it is not possible to watch less than 0 hours of TV), (2) the standard deviation of the distribution is very large compared to the mean.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise>
+  <title>A new statistic</title>
+    <statement>
+      <p>
+        The statistic <m>\frac{\bar{x}}{median}</m> can be used as a measure of skewness. Suppose we have a distribution where all observations are greater than 0, <m>x_{i} \gt 0</m>. What is the expected shape of the distribution under the following conditions? Explain your reasoning.
+        <ol>
+          <li>
+            <p>
+              <m>\frac{\bar{x}}{median} = 1</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\frac{\bar{x}}{median} \lt  1</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\frac{\bar{x}}{median} \gt 1</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise>
+  <title>Oscar winners</title>
+    <statement>
+      <p>
+        The first Oscar awards for best actor and best actress were given out in 1929. The histograms below show the age distribution for all of the best actor and best actress winners from 1929 to 2018. Summary statistics for these distributions are also provided. Compare the distributions of ages of best actor and actress winners<fn>Oscar winners from 1929-2018, data up to 2009 from the <url href="https://ww2.amstat.org/publications/jse/jse_data_archive.htm"> Journal of Statistics Education data archive</url> and for more current data from <url href="https://www.wikipedia.org/"> wikipedia.org/</url></fn>
+      </p>
+      <image width="70%" source="images/summarizing/oscars_winners_hist.png" />
+      <sidebyside widths="45% 45%">
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell>Best Actress</cell>
+          </row>
+          <row>
+            <cell halign="center">Mean</cell>
+            <cell halign="center">36.2</cell>
+          </row>
+          <row>
+            <cell halign="center">SD</cell>
+            <cell halign="center">11.9</cell>
+          </row>
+          <row>
+            <cell halign="center">n</cell>
+            <cell halign="center">92</cell>
+          </row>
+        </tabular>
+
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell>Best Actor</cell>
+          </row>
+          <row>
+            <cell halign="center">Mean</cell>
+            <cell halign="center">43.8</cell>
+          </row>
+          <row>
+            <cell halign="center">SD</cell>
+            <cell halign="center">8.83</cell>
+          </row>
+          <row>
+            <cell halign="center">n</cell>
+            <cell halign="center">92</cell>
+          </row>
+        </tabular>
+      </sidebyside>
+    </statement> 
+    <solution>
+      <p>
+        The distribution of ages of best actress winners are right skewed with a median around 30 years. The distribution of ages of best actress winners is also right skewed, though less so, with a median around 40 years. The difference between the peaks of these distributions suggest that best actress winners are typically younger than best actor winners. The ages of best actress winners are more variable than the ages of best actor winners. There are potential outliers on the higher end of both of the distributions.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <title>Exam scores</title>
+    <statement>
+      <p>
+        The average on a history exam (scored out of 100 points) was 85, with a standard deviation of 15. Is the distribution of the scores on this exam symmetric? If not, what shape would you expect this distribution to have? Explain your reasoning.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <title>Stats scores</title>
+    <statement>
+      <p>
+        Below are the final exam scores of twenty introductory statistics students.
+      </p>
+      <tabular>
+        <row>
+          <cell>57</cell>
+          <cell>66</cell>
+          <cell>69</cell>
+          <cell>71</cell>
+          <cell>72</cell>
+          <cell>73</cell>
+          <cell>74</cell>
+          <cell>77</cell>
+          <cell>78</cell>
+          <cell>78</cell>
+          <cell>79</cell>
+          <cell>81</cell>
+          <cell>81</cell>
+          <cell>82</cell>
+          <cell>83</cell>
+          <cell>83</cell>
+          <cell>88</cell>
+          <cell>89</cell>
+          <cell>94</cell>
+        </row>
+      </tabular>
+      <p>
+        Create a box plot of the distribution of these scores.
+        The five number summary provided below may be useful.
+      </p>
+      <tabular>
+        <row bottom="minor" halign="center">
+          <cell>Min</cell>
+          <cell>Q1</cell>
+          <cell>Q2 (Median)</cell>
+          <cell>Q3</cell>
+          <cell>Max</cell>
+        </row>
+        <row halign="center">
+          <cell>57</cell>
+          <cell>72.5</cell>
+          <cell>78.5</cell>
+          <cell>82.5</cell>
+          <cell>94</cell>
+        </row>
+      </tabular>
+    </statement>
+    <solution>
+      <image width="70%" source="images/summarizing/stats_scores_boxplot.png" />
+    </solution>
+  </exercise>
+
+  <exercise xml:id="NYMarathon">
+  <title>Marathon winners</title>
+    <statement>
+      <p>
+        The histogram and box plots below show the distribution of finishing times for male and female winners of the New York Marathon between 1970 and 1999.
+      </p>
+      <image width="70%" source="images/summarizing/marathon_winners_hist_box.png" />
+      <p>
+        <ol>
+          <li>
+            <p>
+              What features of the distribution are apparent in the histogram and not the box plot? What features are apparent in the box plot but not in the histogram?
+            </p>
+          </li>
+          <li>
+            <p>
+              What may be the reason for the bimodal distribution? Explain.
+            </p>
+          </li>
+          <li>
+            <p>
+              Compare the distribution of marathon times for men and women based on the box plot shown below.
+          	</p>
+            <image width="53%" source="images/summarizing/marathon_winners_gender_box.png" />
+          </li>
+          <li>
+            <p>
+              The time series plot shown below is another way to look at these data. Describe what is visible in this plot but not in the others.
+            </p>
+          </li>
+        </ol>
+      </p>
+     <sidebyside>
+      <image width="73%" source="images/summarizing/marathon_winners_time_series.png" />
+    </sidebyside>
+    </statement>
+  </exercise>
+  <exercise>
+  <title>Birth Weight</title>
+    <statement>
+      <p>
+        In a large study of birth weight of newborns,
+        the weights of 23,419 newborn boys were recorded.
+        The distribution of weights was approximately normal with a mean of 7.44 lbs (3376 grams) and a standard deviation of 1.33 lbs (603 grams).
+        The government classifies a newborn as having low birth weight if the weight is less than 5.5 pounds.<fn><url href="www.biomedcentral.com/1471-2393/8/5">www.biomedcentral.com/1471-2393/8/5</url></fn>
+        <ol label="a">
+          <li>
+            <p>
+              What percent of these newborns had a low birth weight?
+            </p>
+          </li>
+          <li>
+            <p>
+              Approximately what percent of these babies weighed greater than 10 pounds?
+            </p>
+          </li>
+          <li>
+            <p>
+              Approximately <em>how many</em> of these newborns weighed greater than 10 pounds?
+            </p>
+          </li>
+          <li>
+            <p>
+              How much would a newborn have to weigh in order to be at the 90th percentile among this group?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol label="a">
+            <li>
+              <p>
+                <m>Z=\frac{5.5-7.44}{1.33}= -1.49</m>; <m>P(Z \lt -1.49) = 0.068</m>. Approximately 6.8% of the newborns were of low birth weight.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>Z=\frac{10-7.44}{1.33}= 1.925</m>. Using a lower bound of 2 and an upper bound of 5, we get <m>P(Z \gt 1.925) = 0.027</m>. Approximately 2.7% of the newborns weighed over 10 pounds.
+              </p>
+            </li>
+            <li>
+              <p>
+                 Approximately 2.7% of the newborns weighed over 10 pounds. Because there were 23,419 of them, about <m>0.027 \times 23419 \approx 632</m> weighed greater than 10 pounds.
+              </p>
+            </li>
+            <li>
+              <p>
+                Because we have the percentile, this is the inverse problem. To get the Z-score, use the inverse normal option with 0.90 to get <m>Z=1.28</m>. Then solve for <m>x</m> in <m>1.28=Z=\frac{x-7.44}{1.33}</m> to get <m>x=9.15</m>. To be at the 90th percentile among this group, a newborn would have to weigh 9.15 pounds.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise>
+    <title>Auto insurance premiums</title><!--  #49 -->
+      <statement>
+        <p>
+          Suppose a newspaper article states that the distribution of auto insurance premiums for residents of California is approximately normal with a mean of $1,650. The article also states that 25% of California residents pay more than $1,800.
+          <ol>
+            <li>
+              <p>
+                What is the <m>Z</m>-score that corresponds to the top 25% (or the <m>75^{\text{th}}</m> percentile) of the standard normal distribution?
+              </p>
+            </li>
+            <li>
+              <p>
+                What is the mean insurance cost? What is the cutoff for the <m>75^{\text{th}}</m> percentile?
+              </p>
+            </li>
+            <li>
+              <p>
+                Identify the standard deviation of insurance premiums in California.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+<!--       <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                <m>Z=0.67</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\mu=$1650</m>, <m>x=$1800</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>0.67=\frac{1800-1650}{\sigma} \rightarrow \sigma = $233.88</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution> -->
+    </exercise>
+
+    <exercise xml:id="speeding">
+    <title>Speeding on the I-5, Part I</title><!--  #46 -->
+      <statement>
+        <p>
+          The distribution of passenger vehicle speeds traveling on the Interstate 5 Freeway (I-5) in California is nearly normal with a mean of 72.6 miles/hour and a standard deviation of 4.78 miles/hour.<fn>S. Johnson and D. Murray. <url href="http://www.trb.org/AnnualMeeting2010/AnnualMeeting2010.aspx"><q>Empirical Analysis of Truck and Automobile Speeds on Rural Interstates: Impact of Posted Speed Limits</q>.</url> In: <em>Transportation Research Board 89th Annual Meeting.</em> 2010.</fn>
+          <ol>
+            <li>
+              <p>
+                What percent of passenger vehicles travel slower than 80 miles/hour?
+              </p>
+            </li>
+            <li>
+              <p>
+                What percent of passenger vehicles travel between 60 and 80 miles/hour?
+              </p>
+            </li>
+            <li>
+              <p>
+                How fast do the fastest 5% of passenger vehicles travel?
+              </p>
+            </li>
+            <li>
+              <p>
+                The speed limit on this stretch of the I-5 is 70 miles/hour. Approximate what percentage of the passenger vehicles travel above the speed limit on this stretch of the I-5.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol label="a">
+            <li>
+              <p>
+                93.94%.
+              </p>
+            </li>
+            <li>
+              <p>
+                93.53%.
+              </p>
+            </li>
+            <li>
+              <p>
+                80.49 miles/hour.
+              </p>
+            </li>
+            <li>
+              <p>
+                70.54%.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise>
+    <title>Heights of 10 year olds, Part I</title>
+      <statement>
+        <p>
+          Heights of 10 year olds, regardless of gender, closely follow a normal distribution with mean 55 inches and standard deviation 6 inches.
+          <ol>
+            <li>
+              <p>
+                What is the probability that a randomly chosen 10 year old is shorter than 48 inches?
+              </p>
+            </li>
+            <li>
+              <p>
+                What is the probability that a randomly chosen 10 year old is between 60 and 65 inches?
+              </p>
+            </li>
+            <li>
+              <p>
+                If the tallest 10% of the class is considered <q>very tall</q>, what is the height cutoff for <q>very tall</q>?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
+</section>

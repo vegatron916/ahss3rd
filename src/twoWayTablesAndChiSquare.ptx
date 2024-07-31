@@ -1,0 +1,2125 @@
+<?xml version="1.0" encoding="UTF-8" ?><section xml:id="twoWayTablesAndChiSquare">
+  <title>Chi-square tests for two-way tables</title>
+  <introduction>
+    <p>
+      We encounter two-way tables in this section,
+      and we learn about two new and closely related chi-square tests.
+      We will answer questions such as the following:
+      <ul>
+        <li>
+          <p>
+            Does the phrasing of the question affect how likely sellers are to disclose problems with a product?
+          </p>
+        </li>
+        <li>
+          <p>
+            Is gender associated with whether Facebook users know how to adjust their privacy settings?
+          </p>
+        </li>
+        <li>
+          <p>
+            Is political affiliation associated with support for the use of full body scans at airports?
+          </p>
+        </li>
+      </ul>
+    </p>
+  </introduction>
+  <subsection>
+    <objectives>
+    <title>Learning objectives</title>
+      <ol>
+        <li>
+          <p>
+            Calculate the expected counts and degrees of freedom for a chi-square test involving a two-way table.
+          </p>
+        </li>
+        <li>
+          <p>
+            State and verify whether or not the conditions for a chi-square test for a two-way table are met.
+          </p>
+        </li>
+        <li>
+          <p>
+            Explain the difference between the chi-square test of homogeneity and chi-square test of independence.
+          </p>
+        </li>
+        <li>
+          <p>
+            Carry out a complete hypothesis test for homogeneity and for independence.
+          </p>
+        </li>
+      </ol>
+    </objectives>
+  </subsection>
+  <subsection>
+    <title>Introduction</title>
+    <p>
+      Google is constantly running experiments to test new search algorithms.
+      For example, Google might test three algorithms using a sample of 10,000 google.com search queries.
+      <xref ref="googleSearchAlgorithmByAlgorithmOnly"></xref>
+      shows an example of 10,000 queries split into three algorithm groups.<fn>
+      Google regularly runs experiments in this manner to help improve their search engine.
+      It is entirely possible that if you perform a search and so does your friend,
+      that you will have different search results.
+      While the data presented in this section resemble what might be encountered in a real experiment,
+      these data are simulated.
+      </fn> The group sizes were specified before the start of the experiment to be 5000 for the current algorithm and 2500 for each test algorithm.
+    </p>
+    <table xml:id="googleSearchAlgorithmByAlgorithmOnly">
+      <title>Experiment breakdown of test subjects into three search groups.</title>
+      <tabular>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>Search algorithm</cell>
+          <cell></cell>
+          <cell halign="center">current</cell>
+          <cell halign="center">test 1</cell>
+          <cell halign="center">test 2</cell>
+          <cell></cell>
+          <cell halign="center">Total</cell>
+        </row>
+        <row bottom="minor">
+          <cell>Counts</cell>
+          <cell></cell>
+          <cell halign="center">5000</cell>
+          <cell halign="center">2500</cell>
+          <cell halign="center">2500</cell>
+          <cell></cell>
+          <cell halign="center">10000</cell>
+        </row>
+      </tabular>
+    </table>
+    <example>
+      <statement>
+        <p>
+          What is the ultimate goal of the Google experiment?
+          What are the null and alternative hypotheses, in regular words?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The ultimate goal is to see whether there is a difference in the performance of the algorithms.
+          The hypotheses can be described as the following:
+          <ul>
+            <li>
+              <p>
+                <m>H_{0}</m>: The algorithms each perform equally well.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>H_{A}</m>: The algorithms do not perform equally well.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </solution>
+    </example>
+    <p>
+      In this experiment, the explanatory variable is the search algorithm.
+      However, an outcome variable is also needed.
+      This outcome variable should somehow reflect whether the search results align with the user's interests.
+      One possible way to quantify this is to determine whether (1)<nbsp/>there was no new,
+      related search, and the user clicked one of the links provided,
+      or (2)<nbsp/>there was a new,
+      related search performed by the user.
+      Under scenario<nbsp/>(1),
+      we might think that the user was satisfied with the search results.
+      Under scenario<nbsp/>(2),
+      the search results probably were not relevant,
+      so the user tried a second search.
+    </p>
+    <p>
+      <xref ref="googleSearchAlgorithmByAlgorithmAndPerformanceWithTotals"></xref>
+      provides the results from the experiment.
+      These data are very similar to the count data in <xref ref="oneWayChiSquare"></xref>.
+      However, now the different combinations of two variables are binned in a <em>two-way</em> table.
+      In examining these data,
+      we want to evaluate whether there is strong evidence that at least one algorithm is performing better than the others.
+      To do so, we apply a chi-square test to this two-way table.
+      The ideas of this test are similar to those ideas in the one-way table case.
+      However, degrees of freedom and expected counts are computed a little differently than before.
+    </p>
+    <table xml:id="googleSearchAlgorithmByAlgorithmAndPerformanceWithTotals">
+      <title>Results of the Google search algorithm experiment.</title>
+      <tabular>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell colspan="3" halign="center">Search algorithm</cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell halign="center">current</cell>
+          <cell halign="center">test 1</cell>
+          <cell halign="center">test 2</cell>
+          <cell></cell>
+          <cell halign="center">Total</cell>
+        </row>
+        <row>
+          <cell>No new search</cell>
+          <cell></cell>
+          <cell halign="center">3511</cell>
+          <cell halign="center">1749</cell>
+          <cell halign="center">1818</cell>
+          <cell></cell>
+          <cell halign="center">7078</cell>
+        </row>
+        <row bottom="minor">
+          <cell>New search</cell>
+          <cell></cell>
+          <cell halign="center">1489</cell>
+          <cell halign="center">751</cell>
+          <cell halign="center">682</cell>
+          <cell></cell>
+          <cell halign="center">2922</cell>
+        </row>
+        <row bottom="minor">
+          <cell>Total</cell>
+          <cell></cell>
+          <cell halign="center">5000</cell>
+          <cell halign="center">2500</cell>
+          <cell halign="center">2500</cell>
+          <cell></cell>
+          <cell halign="center">10000</cell>
+        </row>
+      </tabular>
+    </table>
+    <assemblage>
+      <title>What is so different about one-way tables and two-way tables?</title>
+      <p>
+        A one-way table describes counts for each outcome in a single variable.
+        A two-way table describes counts for <em>combinations</em>
+        of outcomes for two variables.
+        When we consider a two-way table,
+        we often would like to know, are these variables related in any way?
+      </p>
+    </assemblage>
+    <p>
+      The hypothesis test for this Google experiment is really about assessing whether there is statistically significant evidence that the choice of the algorithm affects whether a user performs a second search.
+      In other words,
+      the goal is to check whether the three search algorithms perform differently.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Expected counts in two-way tables</title>
+    <example>
+      <statement>
+        <p>
+          From the experiment,
+          we estimate the proportion of users who were satisfied with their initial search
+          (no new search)
+          as <m>7078/10000 = 0.7078</m>.
+          If there really is no difference among the algorithms and 70.78% of people are satisfied with the search results,
+          how many of the 5000 people in the
+          <q>current algorithm</q>
+          group would be expected to not perform a new search?
+        </p>
+      </statement>
+      <solution xml:id="googleExampleComputingTheExpectedNumberOfCurrentGroupWithNoNewSearch">
+        <p>
+          About 70.78% of the 5000 would be satisfied with the initial search:
+          <me>
+            0.7078\times 5000 = 3539\text{ users }
+          </me>
+        </p>
+        <p>
+          That is, if there was no difference between the three groups,
+          then we would expect 3539 of the current algorithm users not to perform a new search.
+        </p>
+      </solution>
+    </example>
+    <exercise xml:id="googleExampleComputingTheExpectedNumberOfNewAlgGroupWithNoNewSearch">
+      <statement>
+        <p>
+          Using the same rationale described in <xref ref="googleExampleComputingTheExpectedNumberOfCurrentGroupWithNoNewSearch"></xref>,
+          about how many users in each test group would not perform a new search if the algorithms were equally helpful?
+          <fn>We would expect <m>0.7078*2500 = 1769.5</m>.
+          It is okay that this is a fraction.</fn>
+        </p>
+      </statement>
+    </exercise>
+    <p>
+      We can compute the expected number of users who would perform a new search for each group using the same strategy employed in <xref ref="googleExampleComputingTheExpectedNumberOfCurrentGroupWithNoNewSearch"></xref>
+      and <xref ref="googleExampleComputingTheExpectedNumberOfNewAlgGroupWithNoNewSearch"></xref>.
+      These expected counts were used to construct <xref ref="googleSearchAlgorithmByAlgorithmAndPerformanceWithExpectedCounts"></xref>,
+      which is the same as <xref ref="googleSearchAlgorithmByAlgorithmAndPerformanceWithTotals"></xref>,
+      except now the expected counts have been added in parentheses.
+    </p>
+    <table xml:id="googleSearchAlgorithmByAlgorithmAndPerformanceWithExpectedCounts">
+      <title>The observed counts and the <em>(expected counts)</em>.</title>
+      <tabular>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row bottom="minor">
+          <cell>Search algorithm</cell>
+          <cell>current</cell>
+          <cell></cell>
+          <cell></cell>
+          <cell>test 1</cell>
+          <cell></cell>
+          <cell></cell>
+          <cell>test 2</cell>
+          <cell></cell>
+          <cell></cell>
+          <cell>Total</cell>
+        </row>
+        <row>
+          <cell>No new search</cell>
+          <cell>3511</cell>
+          <cell><em>(3539)</em></cell>
+          <cell></cell>
+          <cell>1749</cell>
+          <cell><em>(1769.5)</em></cell>
+          <cell></cell>
+          <cell>1818</cell>
+          <cell><em>(1769.5)</em></cell>
+          <cell></cell>
+          <cell>7078</cell>
+        </row>
+        <row bottom="minor">
+          <cell>New search</cell>
+          <cell>1489</cell>
+          <cell><em>(1461)</em></cell>
+          <cell></cell>
+          <cell>751</cell>
+          <cell><em>(730.5)</em></cell>
+          <cell></cell>
+          <cell>682</cell>
+          <cell><em>(730.5)</em></cell>
+          <cell></cell>
+          <cell>2922</cell>
+        </row>
+        <row bottom="minor">
+          <cell>Total</cell>
+          <cell>5000</cell>
+          <cell></cell>
+          <cell></cell>
+          <cell>2500</cell>
+          <cell></cell>
+          <cell></cell>
+          <cell>2500</cell>
+          <cell></cell>
+          <cell></cell>
+          <cell>10000</cell>
+        </row>
+      </tabular>
+    </table>
+    <p>
+      The examples and exercises above provided some help in computing expected counts.
+      In general, expected counts for a two-way table may be computed using the row totals,
+      column totals, and the table total.
+      For instance, if there was no difference between the groups,
+      then about 70.78% of each column should be in the first row:
+      <md>
+        <mrow>0.7078\times (\text{ column 1 total } ) \amp = 3539</mrow>
+        <mrow>0.7078\times (\text{ column 2 total } ) \amp = 1769.5</mrow>
+        <mrow>0.7078\times (\text{ column 3 total } ) \amp = 1769.5</mrow>
+      </md>
+    </p>
+    <p>
+      Looking back to how the fraction 0.7078 was computed <mdash/> as the fraction of users who did not perform a new search (<m>7078/10000</m>) <mdash/> these three expected counts could have been computed as
+      <md>
+        <mrow>\left(\frac{\text{ row 1 total } }{\text{ table total } }\right)\text{ (column 1 total) }  \amp = 3539</mrow>
+        <mrow>\left(\frac{\text{ row 1 total } }{\text{ table total } }\right)\text{ (column 2 total) }  \amp = 1769.5</mrow>
+        <mrow>\left(\frac{\text{ row 1 total } }{\text{ table total } }\right)\text{ (column 3 total) }  \amp = 1769.5</mrow>
+      </md>
+    </p>
+    <p>
+      This leads us to a general formula for computing expected counts in a two-way table when we would like to test whether there is strong evidence of an association between the column variable and row variable.
+    </p>
+    <assemblage>
+      <title>Computing expected counts in a two-way table</title>
+      <p>
+        To identify the expected count for the <m>i^{th}</m> row and <m>j^{th}</m> column, compute
+        <me>
+          \text{ Expected Count } _{\text{ row } i,\text{ col } j} = \frac{(\text{ row \(i\) total } ) \times  (\text{ column \(j\) total } )}{\text{ table total } }
+        </me>
+      </p>
+    </assemblage>
+  </subsection>
+  <subsection>
+    <title>The chi-square test for homogeneity for two-way tables</title>
+    <p>
+      The chi-square test statistic for a two-way table is found the same way it is found for a one-way table.
+      For each table count, compute
+      <md>
+        <mrow>\amp \text{ General formula } \amp  \amp \frac{(\text{ observed count }  - \text{ expected count } )^2}{\text{ expected count } }</mrow>
+        <mrow>\amp \text{ Row 1, Col 1 } \amp  \amp \frac{(3511 - 3539)^2}{3539} = 0.222</mrow>
+        <mrow>\amp \text{ Row 1, Col 2 } \amp  \amp \frac{(1749 - 1769.5)^2}{1769.5} = 0.237</mrow>
+        <mrow>\amp  \hspace{9mm}\vdots \amp  \amp \hspace{13mm}\vdots</mrow>
+        <mrow>\amp \text{ Row 2, Col 3 } \amp  \amp \frac{(682 - 730.5)^2}{730.5} = 3.220</mrow>
+      </md>
+    </p>
+    <p>
+      Adding the computed value for each cell gives the chi-square test statistic <m>\chi^2</m>:
+      <me>
+        \chi^2 = 0.222 + 0.237 + \dots + 3.220 = 6.120
+      </me>
+    </p>
+    <p>
+      Just like before,
+      this test statistic follows a chi-square distribution.
+      However, the degrees of freedom is computed a little differently for a two-way table.<fn>
+      Recall: in the one-way table,
+      the degrees of freedom was the number of groups minus 1.
+      </fn> For two way tables,
+      the degrees of freedom is equal to
+      <md>
+        <mrow>df = \text{ (number of rows - 1) } \times \text{ (number of columns - 1) }</mrow>
+      </md>
+    </p>
+    <p>
+      In our example, the degrees of freedom is
+      <md>
+        <mrow>df = (2-1)\times (3-1) = 2</mrow>
+      </md>
+    </p>
+    <p>
+      If the null hypothesis is true (i.e. the algorithms are equally useful),
+      then the test statistic <m>\chi^2 = 6.12</m> closely follows a chi-square distribution with 2 degrees of freedom.
+      Using this information, we can compute the p-value for the test,
+      which is depicted in <xref ref="googleHTForDiffAlgPerformancePValue"></xref>.
+    </p>
+    <assemblage>
+      <title>Computing degrees of freedom for a two-way table</title>
+      <p>
+        When using the chi-square test to a two-way table, we use
+        <me>
+          df = (R-1)\times (C-1)
+        </me>
+        where <m>R</m> is the number of rows in the table and <m>C</m> is the number of columns.
+      </p>
+    </assemblage>
+    <assemblage>
+      <title>Use two-proportion methods for 2-by-2 contingency tables</title>
+      <p>
+        When analyzing 2-by-2 contingency tables,
+        use the two-proportion methods introduced in <xref ref="differenceOfTwoProportions"></xref>.
+      </p>
+    </assemblage>
+    <figure xml:id="googleHTForDiffAlgPerformancePValue">
+      <caption>Computing the p-value for the Google hypothesis test.</caption>
+      <image width="60%" source="images/inference_props/googleHTForDiffAlgPerformancePValue.png" />
+    </figure>
+    <assemblage>
+      <title>Conditions for the chi-square test for homogeneity</title>
+      <p>
+        There are two conditions that must be checked before performing a chi-square test of homogeneity.
+        If these conditions are not met,
+        this test should not be used.
+      </p>
+      <p>
+        <alert> Independence.</alert> Data should be come from multiple independent random samples or from a randomized experiment with multiple treatments. Data can then be organized into a twoway table. When sampling without replacement, the sample size should be less than 10% of the population size for each sample.
+       </p>
+       <p>
+       	 <alert>Large Expected Counts.</alert> All of the cells in the two-way table must have at least 5 expected cases under the assumption that the null hypothesis is true.
+        </p>
+    </assemblage>
+    <example>
+      <statement>
+        <p>
+          Compute the p-value and draw a conclusion about whether the search algorithms have different performances.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Here, found that the degrees of freedom for this <m>3\times 2</m> table is 2.
+          The p-value corresponds to the area under the chi-square curve with 2 degrees of freedom to the
+          <em>right</em> of <m>\chi^2=6.120</m>.
+          Using a calculator, we find that the p-value = 0.047.
+          Using an <m>\alpha=0.05</m> significance level, we reject <m>H_0</m>.
+          That is, the data provide convincing evidence that there is some difference in performance among the algorithms.
+              <idx><h>data</h><h>search algorithm</h></idx>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Notice that the conclusion of the test is that there is some difference in performance among the algorithms.
+      This chi-square test does not tell us <em>which</em>
+      algorithm performed better than the others.
+      To answer this question,
+      we could compare the relevant proportions or construct bar graphs.
+      The proportion that resulted in the new search can be calculated as
+      <md>
+        <mrow>\text{ current: }  \frac{1489}{5000} = 0.298 \amp \text{ test 1: }  \frac{751}{2500} = 0.300 \amp \text{ test 2: }  \frac{682}{2500} = 0.136</mrow>
+      </md>.
+    </p>
+    <p>
+      This suggests that the current algorithm and test 1 algorithm performed better than the test 2 algorithm;
+      however, to formally test this specific claim we would need to use a test that includes a multiple comparisons correction,
+      which is beyond the scope of this textbook.
+    </p>
+    <p>
+      A careful reader may have noticed that when there are exactly 2 random samples or treatments and the counts can be arranged in a <m>2\times 2</m> table,
+      both a chi-square test for homogeneity <em>and</em>
+      a 2-proportion Z-test could apply.
+      In this case,
+      the chi-square test for homogeneity and the two-sided 2-proportion Z-test are equivalent,
+      meaning that they produce the same p-value.<fn>
+      Sometimes the success-failure condition for the Z-test is weakened to require the number of successes and failures to be at least 5, making it consistent with the chi-square condition that expected counts must at least 5.
+      </fn>
+    </p>
+    <assemblage>
+    <title><m>\chi^2</m> Test For Homogeneity</title>
+      <p>
+        When there are multiple samples or treatments and we are comparing the distribution of a categorical variable across several groups,
+        e.g. comparing the distribution of rural/urban/suburban dwellers among 4 states,
+      </p>
+      <p>
+        <em>Identify</em>: Identify the hypotheses and the significance level,
+        <m>\alpha</m>.
+        <ul>
+          <li>
+            <p>
+              <m>H_0</m>: The distribution of [...] is the same for each population/treatment.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>H_A</m>: The distribution of [...] is not the same for each population/treatment.
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        <em>Choose</em>: Choose the correct test procedure and identify it by name.
+        <ul>
+          <li>
+            <p>
+              Here we choose the <em><m>\chi^2</m> test of homogeneity</em><idx><h>chi-square test of homogeneity@<m>\chi^2</m> test of homogeneity</h></idx>.
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        <em>Check</em>: Check that the test statistic follows a chi-square distribution.
+        <ol label="1">
+          <li>
+            <p>
+              Independence: Data come from multiple random samples or from a randomized experiment with multiple treatments. When sampling without replacement, the sample size should be less than 10% of the population size for each sample.
+            </p>
+          </li>
+          <li>
+            <p>
+              Expected counts: All expected counts are <m>\ge 5</m> (calculate and record expected counts).
+            </p>
+          </li>
+        </ol>
+      </p>
+      <p>
+        <em>Calculate</em>: Calculate the <m>\chi^2</m>-statistic,
+        <m>df</m>,
+        and p-value.
+        <ul>
+          <li>
+            <p>
+              test statistic:
+              <m>\chi^2 =\sum{ \frac{\text{(observed} - \text{expected} )^2}{\text{ expected } }}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>df = (\# \text{ of rows } - 1) \times (\# \text{ of columns } - 1)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              p-value = (area to the <em>right</em>
+              of <m>\chi^2</m>-statistic with the appropriate <m>df</m>)
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        <em>Conclude</em>: Compare the p-value to <m>\alpha</m>,
+        and draw a conclusion in context.
+        <ul>
+          <li>
+            <p>
+              If the p-value is <m>\lt \alpha</m>, reject <m>H_0</m>;
+              there is sufficient evidence that [<m>H_A</m> in context].
+            </p>
+          </li>
+          <li>
+            <p>
+              If the p-value is <m>> \alpha</m>, do not reject <m>H_0</m>;
+              there is not sufficient evidence that [<m>H_A</m> in context].
+            </p>
+          </li>
+        </ul>
+      </p>
+    </assemblage>
+    <example>
+      <statement>
+        <p>
+          In an experiment<!-- <fn><url href="https://www.acrwebsite.org/volumes/1012889/volumes/v40/NA-40">https://www.acrwebsite.org/volumes/1012889/volumes/v40/NA-40</url></fn> -->,
+          each individual was asked to be a seller of an iPod (a product commonly used to store music on before smart phones).
+          The participant received $10 + 5% of the sale price for participating.
+          The iPod they were selling had frozen twice in the past inexplicitly but otherwise worked fine.
+          Unbeknownst to the participants who were the sellers in the study,
+          the buyers were collaborating with the researchers to evaluate the influence of different questions on the likelihood of getting the sellers to disclose the past issues with the iPod.
+          The scripted buyers started with
+          <q>Okay, I guess I'm supposed to go first.
+          So you've had the iPod for 2 years ...</q>
+          and ended with one of three questions:
+          <ul>
+            <li>
+              <p>
+                General: What can you tell me about it?
+              </p>
+            </li>
+            <li>
+              <p>
+                Positive Assumption: It doesn't have any problems, does it?
+              </p>
+            </li>
+            <li>
+              <p>
+                Negative Assumption: What problems does it have?
+              </p>
+            </li>
+          </ul>
+        </p>
+        <p>
+          The outcome variable is whether the participant discloses or hides the problem with the iPod.
+        </p>
+        <tabular>
+          <row>
+            <cell></cell>
+            <cell></cell>
+            <cell halign="center" bottom="minor" colspan="2"><em>Question Type</em></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell bottom="minor"></cell>
+            <cell halign="center" bottom="minor">General</cell>
+            <cell halign="center" bottom="minor">Positive Assump.</cell>
+            <cell halign="center" bottom="minor">Negative Assump.</cell>
+          </row>
+          <row>
+            <cell><em>Response</em></cell>
+            <cell>Disclose</cell>
+            <cell halign="center">2</cell>
+            <cell halign="center">23</cell>
+            <cell halign="center">36</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell bottom="minor">Hide</cell>
+            <cell halign="center" bottom="minor">71</cell>
+            <cell halign="center" bottom="minor">50</cell>
+            <cell halign="center" bottom="minor">37</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>Total</cell>
+            <cell halign="center">73</cell>
+            <cell halign="center">73</cell>
+            <cell halign="center">73</cell>
+          </row>
+        </tabular>
+        <p>
+          Does the phrasing of the question affect how likely individuals are to disclose the problems with the iPod?
+          Carry out an appropriate test at the 0.05 significance level.
+        </p>
+      </statement>
+        <solution>
+        	<p>
+        		<em>Identify</em>: We will test the following hypotheses at the <m>\alpha=0.05</m> significance level.
+        	</p>
+        	<p>
+        		<m>H_0</m>: The likelihood of disclosing the problem is the same for each question type.
+        	</p>
+        	<p>
+        		<m>H_A</m>: The likelihood of disclosing the problem is not the same for each question type.
+        	</p>
+        	<p>
+        		<em>Choose</em>: We want to know if the distribution of disclose/hide is the same for each of the three question types,
+        		so we want to carry out a chi-square test for homogeneity.
+        	</p>
+        	<p>
+        		<em>Check</em>: This is an experiment in which there were three randomly allocated treatments.
+        		Here a treatment corresponds to a question type.
+        		All values in the table of expected counts are <m>\ge</m> 5.
+        		Table of expected counts:
+        	</p>
+          <tabular>
+          	<row>
+	            <cell></cell>
+	            <cell></cell>
+	            <cell halign="center" bottom="minor" colspan="3"><em>Question Type</em></cell>
+  	        </row>
+  	        <row>
+  	            <cell></cell>
+  	            <cell bottom="minor"></cell>
+  	            <cell halign="center" bottom="minor">General</cell>
+  	            <cell halign="center" bottom="minor">Positive Assump.</cell>
+  	            <cell halign="center" bottom="minor">Negative Assump.</cell>
+  	        </row>
+  	        <row>
+  	            <cell><em>Response</em></cell>
+  	            <cell>Disclose</cell>
+  	            <cell halign="center">20.3</cell>
+  	            <cell halign="center">20.3</cell>
+  	            <cell halign="center">20.3</cell>
+  	        </row>
+  	        <row>
+  	            <cell></cell>
+  	            <cell bottom="minor">Hide</cell>
+  	            <cell halign="center" bottom="minor">52.7</cell>
+  	            <cell halign="center" bottom="minor">52.7</cell>
+  	            <cell halign="center" bottom="minor">52.7</cell>
+  	        </row>
+<!--   	        <row>
+  	            <cell></cell>
+  	            <cell>Total</cell>
+  	            <cell halign="center">73</cell>
+  	            <cell halign="center">73</cell>
+  	            <cell halign="center">73</cell>
+  	        </row> -->
+	        </tabular>
+	        <p>
+            	<em>Calculate</em>: Using technology,
+            	we get <m>\chi^2 = 40.1</m>
+            </p>
+            <p>
+            	<m>df = (\# \text{ of rows } - 1) \times (\# \text{ of columns } - 1) = 2\times 1 = 2</m>
+            </p>
+            <p>
+            	The p-value is the area under the chi-square curve with 2 degrees of freedom to the right of <m>\chi^2=40.1</m>.
+            	Thus, the p-value is almost 0.
+            </p>
+            <p>
+            	<em>Conclude</em>: Because the p-value <m>\approx</m> 0 <m>\lt \alpha</m>, we reject <m>H_0</m>.
+            	We have strong evidence that the likelihood of disclosing the problem is not the same for each question type.
+          	</p>
+        </solution>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          If an error was made in the test in the previous example,
+          would it have been a Type I error or a Type II error?<fn>In this test, the p-value was less than <m>\alpha</m>,
+          so we rejected <m>H_0</m>.
+          If <m>H_0</m> is in fact true,
+          and we reject it, that would be committing a Type I error.
+          We could not have made a Type II error,
+          because a Type II error involves not rejecting <m>H_0</m>.</fn>
+        </p>
+      </statement>
+    </exercise>
+  </subsection>
+  <subsection>
+    <title>The chi-square test of independence for two-way tables</title>
+    <p>
+      Often, instead of having separate random samples or treatments,
+      we have just one sample and we want to look at the association between two variables.
+      When these two variables are categorical,
+      we can arrange the responses in a two-way table.
+    </p>
+    <p>
+      In <xref ref="probability"></xref>
+      we looked at independence in the context of probability.
+      Here we look at independence in the context of inference.
+      We want to know if any observed association is due to random chance or if there is evidence of a real association in the population that the sample was taken from.
+      To answer this, we use a chi-square test for independence.
+      The chi-square test of independence applies when there is only one random sample and there are two categorical variables.
+      The null claim is always that the two variables are independent,
+      while the alternate claim is that the variables are dependent.
+    </p>
+    <p>
+          <idx><h>data</h><h>approval ratings</h></idx>
+    </p>
+    <example xml:id="hypothesisTestSetupForPewResearchPollOnApprovalRatingsForChiSquareSection">
+      <statement>
+        <p>
+          <xref ref="pewResearchPollOnApprovalRatingsForChiSquareSectionExampleAndExercises"></xref>
+          summarizes the results of a Pew Research poll<fn><url href="https://www.people-press.org/2012/03/14/romney-leads-gop-contest-trails-in-matchup-with-obama/">https://www.people-press.org/2012/03/14/romney-leads-gop-contest-trails-in-matchup-with-obama/</url></fn>.
+          A random sample of adults in the U.S. was taken,
+          and each was asked whether they approved or disapproved of the job being done by President Obama, Democrats in Congress,
+          and Republicans in Congress.
+          The results are shown in <xref ref="pewResearchPollOnApprovalRatingsForChiSquareSectionExampleAndExercises"></xref>.
+          We would like to determine if the three groups and the approval ratings are associated.
+          What are appropriate hypotheses for such a test?
+        </p>
+      </statement>
+      <solution>
+        <p>
+        <ul>
+          <li>
+            <p>
+              <m>H_{0}</m> The group and their ratings are independent.
+              (There is no difference in approval ratings between the three groups.)
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>H_{A}</m> The group and their ratings are dependent.
+              (There is some difference in approval ratings between the three groups,
+              e.g. perhaps Obama's approval differs from Democrats in Congress.)
+            </p>
+          </li>
+        </ul>
+        </p>
+      </solution>
+    </example>
+    <table xml:id="pewResearchPollOnApprovalRatingsForChiSquareSectionExampleAndExercises">
+      <title>Pew Research poll results of a March 2012 poll.</title>
+      <tabular>
+        <row>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell colspan="2" halign="center" bottom="minor">Congress</cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell halign="center">Obama</cell>
+          <cell halign="center">Democrats</cell>
+          <cell halign="center">Republicans</cell>
+          <cell></cell>
+          <cell halign="center">Total</cell>
+        </row>
+        <row>
+          <cell>Approve</cell>
+          <cell></cell>
+          <cell halign="center">842</cell>
+          <cell halign="center">736</cell>
+          <cell halign="center">541</cell>
+          <cell></cell>
+          <cell halign="center">2119</cell>
+        </row>
+        <row bottom="minor">
+          <cell>Disapprove</cell>
+          <cell></cell>
+          <cell halign="center">616</cell>
+          <cell halign="center">646</cell>
+          <cell halign="center">842</cell>
+          <cell></cell>
+          <cell halign="center">2104</cell>
+        </row>
+        <row bottom="minor">
+          <cell>Total</cell>
+          <cell></cell>
+          <cell halign="center">1458</cell>
+          <cell halign="center">1382</cell>
+          <cell halign="center">1383</cell>
+          <cell></cell>
+          <cell halign="center">4223</cell>
+        </row>
+      </tabular>
+    </table>
+    <assemblage>
+      <title>Conditions for the chi-square test of independence</title>
+      <p>
+        There are two conditions that must be checked before performing a chi-square test of independence.
+        If these conditions are not met,
+        this test should not be used.
+      </p>
+      <p>
+        <alert>Independence.</alert> The data must be arrived at by taking one random sample. When sampling without replacement from a finite population, the sample size should be less than 10% of the population size. After the data is collected, it is separated and categorized according to two variables and can be organized into a two-way table.
+      </p>
+      <p>
+        <alert>Large Expected Counts.</alert> All of the cells in the two-way table must have at least 5 expected cases assuming the null hypothesis is true.
+      </p>
+    </assemblage>
+    <example>
+      <statement>
+        <p>
+          First, we observe that the data came from a random sample of adults in the U.S. Next,
+          let's compute the expected values that correspond to <xref ref="pewResearchPollOnApprovalRatingsForChiSquareSectionExampleAndExercises"></xref>,
+          if the null hypothesis is true, that is,
+          if group and rating are independent.
+      	</p>
+      </statement>
+          <solution>
+          	<p>
+          		The expected count for row one,
+          		column one is found by multiplying the row one total (2119) and column one total (1458),
+          		then dividing by the table total (4223):
+          		<m>\frac{2119\times 1458}{4223} = 731.6</m>.
+          		Similarly for the first column and the second row:
+          		<m>\frac{2104\times 1458}{4223} = 726.4</m>.
+          		Repeating this process,
+          		we get the expected counts:
+        	</p>
+        	<tabular>
+	          <row bottom="minor">
+	            <cell></cell>
+	            <cell halign="center">Obama</cell>
+	            <cell halign="center">Congr. Dem.</cell>
+	            <cell halign="center">Congr. Rep.</cell>
+	          </row>
+	          <row>
+	            <cell>Approve</cell>
+	            <cell halign="center">731.6</cell>
+	            <cell halign="center">693.5</cell>
+	            <cell halign="center">694.0</cell>
+	          </row>
+	          <row bottom="minor">
+	            <cell>Disapprove</cell>
+	            <cell halign="center">726.4</cell>
+	            <cell halign="center">688.5</cell>
+	            <cell halign="center">689.0</cell>
+	          </row>
+	        </tabular>
+		    </solution>
+    	</example>
+    <p>
+      The table above gives us the number we would expect for each of the six combinations if group and rating were really independent.
+      Because all of the expected counts are at least 5 and there is one random sample,
+      we can carry out the chi-square test for independence.
+    </p>
+    <p>
+      The chi-square test of independence and the chi-square test of homogeneity both involve counts in a two-way table.
+      The chi-square statistic and the degrees of freedom are calculated in the same way.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Calculate the chi-square statistic.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We calculate <m>\frac{(\text{ obs }  - \text{ exp } )^2}{\text{ exp } }</m> for each of the six cells in the table.
+          Adding the results of each cell gives the chi-square test statistic.
+          <md>
+            <mrow>\chi^2 =\amp  \sum{\frac{(\text{ obs }  - \text{ exp } )^2}{\text{ exp } }}</mrow>
+            <mrow>=\amp  \frac{(842-731.6)^2}{731.6} +\cdots</mrow>
+            <mrow>=\amp  16.7 + \cdots  = 106.4</mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Find the p-value for the test and state the appropriate conclusion.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We must first find the degrees of freedom for this chi-square test.
+          Because there are 2 rows and 3 columns,
+          the degrees of freedom is <m>df=(2-1)\times (3-1) = 2</m>.
+          We find the area to the right of
+          <m>\chi^2=106.4</m> under the chi-square curve with <m>df=2</m>.
+          The p-value is extremely small,
+          much less than 0.01, so we reject <m>H_0</m>.
+          We have evidence that the three groups and their approval ratings are dependent.
+        </p>
+      </solution>
+    </example>
+    <assemblage>
+      <title><m>\chi^2</m> test for independence</title>
+      <p>
+        When there is one sample and we are looking for association or dependence between two categorical variables,
+        e.g. testing for an association between gender and political party,
+      </p>
+      <p>
+        <em>Identify</em>: Identify the hypotheses and the significance level,
+        <m>\alpha</m>.
+        <ul>
+          <li>
+            <p>
+              <m>H_0</m>: [variable 1] and [variable 2] are independent.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>H_A</m>: [variable 1] and [variable 2] are dependent.
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        <em>Choose</em>: Choose the correct test procedure and identify it by name.
+        <ul>
+          <li>
+            <p>
+              Here we choose the <em><m>\chi^2</m> test of independence</em><idx><h>chi-square test of independence@<m>\chi^2</m> test of independence</h></idx>.
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        <em>Check</em>: Check that the test statistic follows a chi-square distribution.
+        <ol label="1">
+          <li>
+            <p>
+              Independence: Data come from one random sample. If sampling without replacement, check that the sample size is less than 10% of the population size.
+            </p>
+          </li>
+          <li>
+            <p>
+              Expected Counts: All expected counts are <m>\ge 5</m>
+              (calculate and record expected counts).
+            </p>
+          </li>
+        </ol>
+      </p>
+      <p>
+        <em>Calculate</em>: Calculate the <m>\chi^2</m>-statistic,
+        <m>df</m>,
+        and p-value.
+        <ul>
+          <li>
+            <p>
+              test statistic:
+              <m>\chi^2 =\sum{ \frac{\text{(observed} - \text{expected} )^2}{\text{ expected } }}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>df = (\# \text{ of rows } - 1) \times (\# \text{ of columns } - 1)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              p-value = (area to the <em>right</em>
+              of <m>\chi^2</m>-statistic with the appropriate <m>df</m>)
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        <em>Conclude</em>: Compare the p-value to <m>\alpha</m>,
+        and draw a conclusion in context.
+        <ul>
+          <li>
+            <p>
+              If the p-value is <m>\lt \alpha</m>, reject <m>H_0</m>;
+              there is sufficient evidence that [<m>H_A</m> in context].
+            </p>
+          </li>
+          <li>
+            <p>
+              If the p-value is <m>> \alpha</m>, do not reject <m>H_0</m>;
+              there is not sufficient evidence that [<m>H_A</m> in context].
+            </p>
+          </li>
+        </ul>
+      </p>
+    </assemblage>
+    <example xml:id="genZ">
+      <statement>
+        <p>
+          A 2021 Pew Research poll asked a random sample of U.S. residents their generation and whether they have personally taken action to help address climate change within the last year. The data are shown below.
+        </p>
+        <tabular>
+          <row>
+            <cell></cell>
+            <cell></cell>
+            <cell colspan="2" bottom="minor" halign="center"><em>Response</em></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell bottom="minor"></cell>
+            <cell bottom="minor" halign="center">Took Action</cell>
+            <cell bottom="minor" halign="center">Didn't Take Action</cell>
+            <cell bottom="minor" halign="center">Total</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell halign="left">Gen Z</cell>
+            <cell halign="right">292</cell>
+            <cell halign="right">620</cell>
+            <cell halign="right">912</cell>
+          </row>
+          <row>
+            <cell><em>Generation</em></cell>
+            <cell halign="left">Millenial</cell>
+            <cell halign="right">885</cell>
+            <cell halign="right">2,275</cell>
+            <cell halign="right">3,160</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell halign="left">Gen X</cell>
+            <cell halign="right">809</cell>
+            <cell halign="right">2,709</cell>
+            <cell halign="right">3,518</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell halign="left" bottom="minor">Boomer &amp; older</cell>
+            <cell bottom="minor" halign="right">1,276</cell>
+            <cell bottom="minor" halign="right">4,798</cell>
+            <cell bottom="minor" halign="right">6,074</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell halign="right">Total</cell>
+            <cell halign="right">3,262</cell>
+            <cell halign="right">10,402</cell>
+            <cell halign="right">13,664</cell>
+          </row>
+        </tabular>
+        <p>
+          We can see that the percent in the sample from each generation that took action vary: 32% for Gen Z, 28% for Millenial, 23% for Gen X, and 21% for Boomer &amp;older. However, could this be due to random variation based on who happened to end up in the sample? Carry out an appropriate test at the 0.05 significance level to see if there is an association between generation and taking action to help address climate change.
+        </p>
+      </statement>
+        <solution>
+          <p>
+            <em>Identify</em>: We will test the following hypotheses at the <m>\alpha=0.05</m> significance level.
+          </p>
+          <p>
+            <m>H_0</m>: Generation and taking action to help address climate change are independent.
+          </p>
+          <p>
+            <m>H_A</m>: Generation and taking action to help address climate change are dependent.
+          </p>
+          <p>
+            <em>Choose</em>: Two variables were recorded on the respondents: generation and whether or not they have taken action to help address climate change within the last year. We want to know if these variables are associated / dependent, so we will carry out a chi-square test for independence.
+          </p>
+          <p>
+            <em>Check</em>: According to the problem, there was one random sample taken. We note that the population of U.S. residents is much larger than 10 times the sample size of 13,664. Also, all values in the table of expected counts are <m>\ge</m> 5. Table of expected counts:
+          </p>
+        <tabular>
+          <row>
+            <cell></cell>
+            <cell></cell>
+            <cell colspan="2" bottom="minor" halign="center"><em>Response</em></cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell bottom="minor"></cell>
+            <cell bottom="minor" halign="center">Took Action</cell>
+            <cell bottom="minor" halign="center">Didn't Take Action</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell halign="left">Gen Z</cell>
+            <cell halign="right">217.72</cell>
+            <cell halign="right">694.28</cell>
+          </row>
+          <row>
+            <cell><em>Generation</em></cell>
+            <cell halign="left">Millenial</cell>
+            <cell halign="right">754.39</cell>
+            <cell halign="right">2405.60</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell halign="left">Gen X</cell>
+            <cell halign="right">839.85</cell>
+            <cell halign="right">2678.10</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell halign="left" bottom="minor">Boomer &amp; older</cell>
+            <cell bottom="minor" halign="right">1450.00</cell>
+            <cell bottom="minor" halign="right">4624.00</cell>
+          </row>
+        </tabular>
+          <p>
+              <em>Calculate</em>: Using technology,
+              we get <m>\chi^2 = 91.9</m>.
+              The degrees of freedom for this test is given by:
+              <m>df = (\# \text{ of rows } - 1) \times (\# \text{ of columns } - 1) = 3\times 1 = 3</m>
+            </p>
+            <p>
+              The p-value is the area under the chi-square curve with 3 degrees of freedom to the right of <m>\chi^2=91.9</m>.
+              Thus,
+              the p-value <m>=8.46\times10^{-20} \approx 0</m>.
+            </p>
+            <p>
+              <em>Conclude</em>: Because the p-value <m>\approx 0 \lt \alpha</m>,
+              we reject <m>H_0</m>.
+              We have sufficient evidence that generation and taking action to help address climate change are dependent
+          </p>
+        </solution>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          In context, interpret the p-value of the test in the previous example.<fn>The p-value in this test corresponds to the area to the right of <m>\chi^2=91.9</m> under the chi-square curve with 3 degrees of freedom. Assuming the probability model is true and assuming the null hypothesis is true, i.e. that generation and response really are independent, there is close to a 0% probability of getting a <m>\chi^2</m>-statistic as large or larger than 91.9. Equivalently, it is the probability of our observed counts being this different from the expected counts, relative to the expected counts, if the null is true and the model holds. Because the p-value is so small, we reject the null hypothesis</fn>
+        </p>
+      </statement>
+    </exercise>
+<!--     <example xml:id="facebookprivacy">
+      <statement>
+        <p>
+          A 2011 survey asked 806 randomly sampled adult Facebook users about their Facebook privacy settings.
+          One of the questions on the survey was, <q>Do you know how to adjust your Facebook privacy settings to control what people can and cannot see?</q> The responses are cross-tabulated based on gender.
+        </p>
+        <tabular>
+          <row>
+            <cell></cell>
+            <cell></cell>
+            <cell colspan="2" bottom="minor" halign="center"><em>Gender</em></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell bottom="minor"></cell>
+            <cell bottom="minor" halign="center">Male</cell>
+            <cell bottom="minor" halign="center">Female</cell>
+            <cell bottom="minor" halign="center">Total</cell>
+          </row>
+          <row>
+            <cell><em>Response</em></cell>
+            <cell>Yes</cell>
+            <cell halign="center">288</cell>
+            <cell halign="center">378</cell>
+            <cell halign="center">666</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>No</cell>
+            <cell halign="center">61</cell>
+            <cell halign="center">62</cell>
+            <cell halign="center">123</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell bottom="minor">Not sure</cell>
+            <cell bottom="minor" halign="center">10</cell>
+            <cell bottom="minor" halign="center">7</cell>
+            <cell bottom="minor" halign="center">17</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>Total</cell>
+            <cell halign="center">359</cell>
+            <cell halign="center">447</cell>
+            <cell halign="center">806</cell>
+          </row>
+        </tabular>
+        <p>
+          Carry out an appropriate test at the 0.10 significance level to see if there is an association between gender and knowing how to adjust Facebook privacy settings to control what people can and cannot see.
+        </p>
+      </statement>
+        <solution>
+        	<p>
+            	<em>Identify</em>: We will test the following hypotheses at the <m>\alpha=0.10</m> significance level.
+            </p>
+            <p>
+            	<m>H_0</m>: Gender and knowing how to adjust Facebook privacy settings are independent.
+            </p>
+            <p>
+            	<m>H_A</m>: Gender and knowing how to adjust Facebook privacy settings are dependent.
+            </p>
+            <p>
+            	<em>Choose</em>: Two variables were recorded on the respondents:
+            	gender and response to the question regarding privacy settings.
+            	We want to know if these variables are associated / dependent,
+            	so we will carry out a chi-square test of independence.
+            </p>
+            <p>
+            	<em>Check</em>: According to the problem,
+				there was one random sample taken.
+				All values in the table of expected counts are <m>\ge</m> 5.
+				Table of expected counts:
+          	</p>
+        <tabular>
+          <row>
+            <cell></cell>
+            <cell></cell>
+            <cell colspan="2" bottom="minor" halign="center"><em>Gender</em></cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell bottom="minor"></cell>
+            <cell bottom="minor" halign="center">Male</cell>
+            <cell bottom="minor" halign="center">Female</cell>
+          </row>
+          <row>
+            <cell><em>Response</em></cell>
+            <cell>Yes</cell>
+            <cell halign="center">296.64</cell>
+            <cell halign="center">369.36</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell>No</cell>
+            <cell halign="center">54.785</cell>
+            <cell halign="center">68.215</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell bottom="minor">Not sure</cell>
+            <cell bottom="minor" halign="center">7.572</cell>
+            <cell bottom="minor" halign="center">9.428</cell>
+          </row>
+        </tabular>
+        	<p>
+            	<em>Calculate</em>: Using technology,
+            	we get <m>\chi^2 = 3.13</m>.
+            	The degrees of freedom for this test is given by:
+            	<m>df = (\# \text{ of rows } - 1) \times (\# \text{ of columns } - 1) = 2\times 1 = 2</m>
+            </p>
+            <p>
+            	The p-value is the area under the chi-square curve with 2 degrees of freedom to the right of <m>\chi^2=3.13</m>.
+            	Thus,
+            	the p-value = 0.209.
+            </p>
+            <p>
+            	<em>Conclude</em>: Because the p-value = 0.209 <m>> \alpha</m>,
+            	we do not reject <m>H_0</m>.
+            	We do not have sufficient evidence that gender and knowing how to adjust Facebook privacy settings are dependent.
+          </p>
+        </solution>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          In context, interpret the p-value of the test in the previous example.<fn>The p-value in this test corresponds to the area to the right of
+          <m>\chi^2 = 3.13</m> under the chi-square curve with 2 degrees of freedom.
+          It is the probability of getting a <m>\chi^2</m>-statistic larger than 3.13 if <m>H_0</m> were true and assuming a chi-square model with 2 degrees of freedom holds.
+          Equivalently,
+          it is the probability of our observed counts being this different from the expected counts,
+          relative to the expected counts,
+          if gender and response really are independent
+          (and the model holds).</fn>
+        </p>
+      </statement>
+    </exercise> -->
+  </subsection>
+  <subsection xml:id="calcchisq2way">
+    <title>Calculator: chi-square test for two-way tables</title>
+    <assemblage xml:id="chi_entering_data_ti">
+      <title>TI-83/84: Entering data into a two-way table</title>
+      <p>
+      <ol>
+        <li>
+          <p>
+            Hit <c>2ND</c> <m>x^{-1}</m> (i.e. <c>MATRIX</c>).
+          </p>
+        </li>
+        <li>
+          <p>
+            Right arrow to <c>EDIT</c>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Hit <c>1</c> or <c>ENTER</c> to select matrix <c>A</c>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Enter the dimensions by typing #rows, <c>ENTER</c>, #columns, <c>ENTER</c>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Enter the data from the two-way table.
+          </p>
+        </li>
+      </ol>
+  	</p>
+    <sidebyside>
+        <video width="60%" preview="generic" youtube="qAJ-KGOzmn4" />
+    </sidebyside>
+    </assemblage>
+    <assemblage xml:id="chi_homog_ind_ti">
+      <title>Chi-square test of homogeneity and independence</title>
+      <p>
+        Use <c>STAT</c>, <c>TESTS</c>,
+        <m>\chi^2</m><c>-Test</c>.
+        <ol>
+          <li>
+            <p>
+              First enter two-way table data as described in the previous box.
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose <c>STAT</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Right arrow to <c>TESTS</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Down arrow and choose <c>C:</c><m>\chi^2</m><c>-Test</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Down arrow, choose <c>Calculate</c>,
+              and hit <c>ENTER</c>,
+              which returns
+            </p>
+              <tabular>
+                <row>
+                  <cell><m>\chi^2</m></cell>
+                  <cell>chi-square test statistic</cell>
+                </row>
+                <row>
+                  <cell><c>p</c></cell>
+                  <cell>p-value</cell>
+                </row>
+                <row>
+                  <cell><c>df</c></cell>
+                  <cell>degrees of freedom</cell>
+                </row>
+              </tabular>
+          </li>
+        </ol>
+      </p>
+      <sidebyside>
+        <video width="60%" preview="generic" youtube="qAJ-KGOzmn4" />
+      </sidebyside>
+    </assemblage>
+    <assemblage xml:id="chi_expected_counts_homog_ind_ti">
+      <title>Chi-square test of homogeneity and independence</title>
+      <p>
+        TI-83/84: Finding the expected counts
+        <ol>
+          <li>
+            <p>
+              First enter two-way table data as described previously.
+            </p>
+          </li>
+          <li>
+            <p>
+              Carry out the chi-square test of homogeneity or independence as described in previous box.
+            </p>
+          </li>
+          <li>
+            <p>
+              Hit <c>2ND</c> <m>x^{-1}</m> (i.e. <c>MATRIX</c>).
+            </p>
+          </li>
+          <li>
+            <p>
+              Right arrow to <c>EDIT</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Hit <c>2</c> to see matrix <c>B</c>. This matrix contains the expected counts.
+            </p>
+          </li>
+        </ol>
+      </p>
+      <sidebyside>
+        <video width="60%" preview="generic" youtube="qAJ-KGOzmn4" />
+      </sidebyside>
+    </assemblage>
+    <assemblage xml:id="chi_test_casio">
+      <title>Casio fx-9750GII: Chi-square test of homogeneity and independence</title>
+      <p>
+      <ol>
+        <li>
+          <p>
+            Navigate to <c>STAT</c> (<c>MENU</c> button,
+            then hit the <c>2</c> button or select <c>STAT</c>).
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose the <c>TEST</c> option (<c>F3</c> button).
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose the <c>CHI</c> option (<c>F3</c> button).
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose the <c>2WAY</c> option (<c>F2</c> button).
+          </p>
+        </li>
+        <li>
+          <p>
+            Enter the data into a matrix:
+            <ul>
+              <li>
+                <p>
+                  Hit <m>\triangleright</m><c>MAT</c> (<c>F2</c> button).
+                </p>
+              </li>
+              <li>
+                <p>
+                  Navigate to a matrix you would like to use (e.g. <c>Mat C</c>) and hit <c>EXE</c>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Specify the matrix dimensions: <c>m</c> is for rows, <c>n</c> is for columns.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Enter the data.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Return to the test page by hitting <c>EXIT</c> twice.
+                </p>
+              </li>
+            </ul>
+          </p>
+        </li>
+        <li>
+          <p>
+            Enter the <c>Observed</c> matrix that was used by hitting <c>MAT</c> (<c>F1</c> button) and the matrix letter (e.g.<nbsp/><c>C</c>).
+          </p>
+        </li>
+        <li>
+          <p>
+            Enter the <c>Expected</c> matrix where the expected values will be stored (e.g.<nbsp/><c>D</c>).
+          </p>
+        </li>
+        <li>
+          <p>
+            Hit the <c>EXE</c> button,
+            which returns
+          </p>
+            <tabular>
+              <row>
+                <cell><m>\chi^2</m></cell>
+                <cell>chi-square test statistic</cell>
+              </row>
+              <row>
+                <cell><c>p</c></cell>
+                <cell>p-value</cell>
+              </row>
+              <row>
+                <cell><c>df</c></cell>
+                <cell>degrees of freedom</cell>
+              </row>
+            </tabular>
+        </li>
+        <li>
+          <p>
+            To see the expected values of the matrix,
+            go to <m>\triangleright</m><c>MAT</c> (<c>F6</c> button) and select the corresponding matrix.
+          </p>
+        </li>
+      </ol>
+  	</p>
+    <sidebyside>
+        <video width="60%" preview="generic" youtube="H0NWHFc0w0o" />
+    </sidebyside>
+    </assemblage>
+    <exercise>
+      <statement>
+        <p>
+          Use <xref ref="pewResearchPollOnApprovalRatingsForChiSquareSectionExampleAndExercises"></xref>,
+          reproduced below,
+          and a calculator to find the expected values and the <m>\chi^2</m>-statistic,
+          <m>df</m>,
+          and p-value for the chi-square test for independence.
+        </p>
+        <tabular>
+        <row>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell colspan="2" halign="center" bottom="minor">Congress</cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell halign="center">Obama</cell>
+          <cell halign="center">Democrats</cell>
+          <cell halign="center">Republicans</cell>
+          <cell></cell>
+          <cell halign="center">Total</cell>
+        </row>
+        <row>
+          <cell>Approve</cell>
+          <cell></cell>
+          <cell halign="center">842</cell>
+          <cell halign="center">736</cell>
+          <cell halign="center">541</cell>
+          <cell></cell>
+          <cell halign="center">2119</cell>
+        </row>
+        <row bottom="minor">
+          <cell>Disapprove</cell>
+          <cell></cell>
+          <cell halign="center">616</cell>
+          <cell halign="center">646</cell>
+          <cell halign="center">842</cell>
+          <cell></cell>
+          <cell halign="center">2104</cell>
+        </row>
+        <row bottom="minor">
+          <cell>Total</cell>
+          <cell></cell>
+          <cell halign="center">1458</cell>
+          <cell halign="center">1382</cell>
+          <cell halign="center">1383</cell>
+          <cell></cell>
+          <cell halign="center">4223</cell>
+        </row>
+      </tabular>
+      </statement>
+    </exercise>
+  </subsection>
+  <subsection>
+    <title>Section summary</title>
+    <p>
+    <ul>
+      <li>
+        <p>
+          When there are two categorical variables, rather than one,
+          the data must be arranged in a <term>two-way table</term>.
+          <!-- and a <m>\chi^2</m> test of homogeneity or a <m>\chi^2</m> test of independence is appropriate. -->
+        </p>
+      </li>
+<!--       <li>
+        <p>
+          These tests use the same <m>\chi^2</m>-statistic as the chi-square goodness of fit test,
+          but instead of number of categories <m>-</m> 1, the
+          <term>degrees of freedom</term>
+          is (<m>\# \text{ of rows } - 1)\times (\# \text{ of columns } -1</m>).
+          All expected counts must be at least 5.
+        </p>
+      </li> -->
+      <li>
+        <p>
+          When working with a two-way table,
+          the <term>expected count</term> for each row,column combination is calculated as:
+          expected count = <m>\frac{(\text{row total})\times (\text{column total} )}{\text{table total} }</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          When categorical data are arranged in a two way table, use the <m>\chi^2</m> test for homogeneity or the <m>\chi^2</m> test for independence. These tests are almost identical; the differences lie in the data collection method and in the hypotheses.
+        </p>
+      </li>
+      <li>
+        <p>
+          When there are <em>multiple samples or treatments</em>
+          and we are comparing the distribution of a categorical variable across several groups,
+          e.g. comparing the distribution of rural/urban/suburban dwellers among 4 states,
+          the hypotheses can often be written as follows:
+          <ul>
+            <li>
+              <p>
+                <m>H_0</m>: The distribution of [...] is the same for each population/treatment.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>H_A</m>: The distribution of [...] is not the same for each population/treatment.
+              </p>
+            </li>
+          </ul>
+          We test these hypotheses at the <m>\alpha</m> significance level using a <em><m>\chi^2</m> test of homogeneity</em><idx><h>chi-square test of homogeneity@<m>\chi^2</m> test of homogeneity</h></idx>.
+        </p>
+      </li>
+      <li>
+        <p>
+          When there is <em>one random sample</em>
+          and we are looking for association or dependence between two categorical variables,
+          e.g. testing for an association between gender and political party,
+          the hypotheses can be written as:
+          <ul>
+            <li>
+              <p>
+                <m>H_0</m>: [variable 1] and [variable 2] are independent.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>H_A</m>: [variable 1] and [variable 2] are dependent.
+              </p>
+            </li>
+          </ul>
+          We test these hypotheses at the <m>\alpha</m> significance level using a <em><m>\chi^2</m> test of independence</em><idx><h>chi-square test of independence@<m>\chi^2</m> test of independence</h></idx>.
+        </p>
+      </li>
+      <li>
+        <p>
+          In addition to the independence/random condition, all expected counts must be at least 5 for the test statistic to follow a chi-square distribution.
+        </p>
+      </li>
+      <li>
+        <p>
+          The chi-square statistic and associated <m>df</m> are found as follows:
+          <ul>
+            <li>
+              <p>
+                test statistic:
+                <m>\chi^2 =\sum{ \frac{\text{(observed} - \text{expected})^2}{\text{ expected } }}</m>
+              </p>
+            </li>
+            <li>
+            	<p>
+            		<m>df =</m> (# of rows <m>-</m> 1)(# of cols <m>-</m> 1)
+            	</p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          The p-value is the area to the <em>right</em>
+          of <m>\chi^2</m>-statistic under the chi-square curve with the appropriate <m>df</m>.
+        </p>
+      </li>
+    </ul>
+    </p>
+  </subsection>
+  <exercises>
+    <title>Exercises</title>
+  <exercise xml:id="quitters_chisq_independence"><!--  #35 -->
+    <title>Quitters</title>
+    <statement>
+      <p>
+        Does being part of a support group affect the ability of people to quit smoking?
+        A county health department enrolled 300 smokers in a randomized experiment. 150 participants were assigned to a group that used a nicotine patch and met weekly with a support group;
+        the other 150 received the patch and did not meet with a support group.
+        At the end of the study, 40 of the participants in the patch plus support group had quit smoking while only 30 smokers had quit in the other group.
+        <ol>
+          <li>
+            <p>
+              Create a two-way table presenting the results of this study.
+            </p>
+          </li>
+          <li>
+            <p>
+            	Answer each of the following questions under the null hypothesis that being part of a support group does not affect the ability of people to quit smoking,
+            	and indicate whether the expected values are higher or lower than the observed values.
+            	<ol label="i">
+              		<li>
+              			<p>
+              				How many subjects in the <q>patch + support</q> group would you expect to quit?
+              			</p>
+              		</li>
+              		<li>
+              			<p>
+              				How many subjects in the <q>patch only</q> group would you expect to not quit?
+              			</p>
+              		</li>
+              	</ol>
+            </p>
+        	</li>
+    	</ol>
+		</p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Two-way table:
+            </p>
+            <tabular>
+              <row>
+                <cell></cell>
+                <cell colspan="2" bottom="minor" halign="center"><em>Quit</em></cell>
+                <cell></cell>
+              </row>
+              <row bottom="minor">
+                <cell><em>Treatment</em></cell>
+                <cell halign="center">Yes</cell>
+                <cell halign="center">No</cell>
+                <cell halign="center">Total</cell>
+              </row>
+              <row>
+                <cell>Patch + support group</cell>
+                <cell halign="center">40</cell>
+                <cell halign="center">110</cell>
+                <cell halign="center">150</cell>
+              </row>
+              <row bottom="minor">
+                <cell>Only patch</cell>
+                <cell halign="center">30</cell>
+                <cell halign="center">120</cell>
+                <cell halign="center">150</cell>
+              </row>
+              <row bottom="minor">
+                <cell>Total</cell>
+                <cell halign="center">70</cell>
+                <cell halign="center">230</cell>
+                <cell halign="center">300</cell>
+              </row>
+            </tabular>
+          </li>
+          <li>
+            <p>
+              <ol label="i">
+                <li>
+                  <p>
+                    <m>E_{row_{1},col_{1}} = \frac{(\text{row 1 total})\times(\text{col 1 total})}{\text{table total}} = 35</m>. This is lower than the observed value.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>E_{row_{2},col_{2}} = \frac{(\text{row 2 total})\times(\text{col 2 total})}{\text{table total}} = 115</m>. This is lower than the observed value.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+  <exercise xml:id="full_body_scan_chisq_indep"><!--  #36 -->
+    <title>Full body scan, Part II</title>
+    <statement>
+      <p>
+        A news article reports that <q>Americans have differing views on two potentially inconvenient and invasive practices that airports could implement to uncover potential terrorist attacks.</q> This news piece was based on a survey conducted among a random sample of 1,137 adults nationwide, where one of the questions on the survey was <q>Some airports are now using ‘full-body’ digital x-ray machines to electronically screen passengers in airport security lines. Do you think these new x-ray machines should or should not be used at airports?</q> Below is a summary of responses based on party affiliation.<fn>43S. Condon. <q><url href="https://www.cbsnews.com/news/poll-4-in-5-support-full-body-airport-scanners/">Poll: 4 in 5 Support Full-Body Airport Scanners</url></q>. In: CBS News (2010).</fn> The differences in each political group may be due to chance. Complete the following computations under the null hypothesis of independence between an individual’s party affiliation and his support of full-body scans. It may be useful to first add on an extra column for row totals before proceeding with the computations.
+      </p>
+      <tabular>
+        <row>
+          <cell></cell>
+          <cell></cell>
+          <cell colspan="3" halign="center" bottom="minor"><em>Party Affiliation</em></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell bottom="minor"></cell>
+          <cell halign="center" bottom="minor">Republican</cell>
+          <cell halign="center" bottom="minor">Democrat</cell>
+          <cell halign="center" bottom="minor">Independent</cell>
+        </row>
+        <row>
+          <cell><em>Answer</em></cell>
+          <cell>Should</cell>
+          <cell halign="center">264</cell>
+          <cell halign="center">299</cell>
+          <cell halign="center">351</cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell>Should not</cell>
+          <cell halign="center">38</cell>
+          <cell halign="center">55</cell>
+          <cell halign="center">77</cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell bottom="minor">Don't know/No answer</cell>
+          <cell halign="center" bottom="minor">16</cell>
+          <cell halign="center" bottom="minor">15</cell>
+          <cell halign="center" bottom="minor">22</cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell>Total</cell>
+          <cell halign="center">318</cell>
+          <cell halign="center">369</cell>
+          <cell halign="center">450</cell>
+        </row>
+      </tabular>
+      <p>
+      <ol>
+        <li>
+          <p>
+            How many Republicans would you expect to not support the use of full-body scans?
+          </p>
+        </li>
+        <li>
+          <p>
+            How many Democrats would you expect to support the use of full- body scans?
+          </p>
+        </li>
+        <li>
+          <p>
+            How many Independents would you expect to not know or not answer?
+          </p>
+        </li>
+      </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="offshore_drilling_chisq_indep"><!--  #37 -->
+    <title>Offshore drilling, Part III</title>
+    <statement>
+      <sidebyside>
+        <video width="60%" preview="generic" youtube="lpFYHCgXlg0" />
+      </sidebyside>
+      <p>
+        A survey asked 827 randomly sampled registered voters in California <q>Do you support? Or do you oppose? Drilling for oil and natural gas off the Coast of California? Or do you not know enough to say?</q> Below is the distribution of responses, separated based on whether or not the respondent has a college degree.<fn>Survey USA, <url href="https://www.surveyusa.com/client/PollReport.aspx?g=d525bd62-80d2-4884-86a1-8c48ad920150">Election Poll #16804</url>, data collected July 8-11, 2010.</fn> Complete a chi-square test for these data to test whether there is an association between opinions regarding offshore drilling for oil and having a college degree. Include all steps of the Identify, Choose, Check, Calculate, Conclude framework.
+      </p>
+      <tabular>
+        <row>
+          <cell></cell>
+          <cell colspan="2" bottom="minor" halign="center"><em>College Grad</em></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell halign="center">Yes</cell>
+          <cell halign="center">No</cell>
+        </row>
+        <row>
+          <cell>Support</cell>
+          <cell halign="center">154</cell>
+          <cell halign="center">132</cell>
+        </row>
+        <row>
+          <cell>Oppose</cell>
+          <cell halign="center">180</cell>
+          <cell halign="center">126</cell>
+        </row>
+        <row bottom="minor">
+          <cell>Do not know</cell>
+          <cell halign="center">104</cell>
+          <cell halign="center">131</cell>
+        </row>
+        <row>
+          <cell>Total</cell>
+          <cell halign="center">438</cell>
+          <cell halign="center">389</cell>
+        </row>
+      </tabular>
+    </statement>
+    <solution>
+      <p>
+        <m>H_{0}:</m> The opinion of college grads and non-grads is not different on the topic of drilling for oil and natural gas off the coast of California. <m>H_{A}:</m> Opinions regarding the drilling for oil and natural gas off the coast of California has an association with earning a college degree.
+        <md>
+          <mrow>E_{row_{1},col_{1}}=151.5 \amp \amp E_{row_{1},col_{2}}=134.5</mrow>
+          <mrow>E_{row_{2},col_{1}}=162.1 \amp \amp E_{row_{2},col_{2}}=143.9</mrow>
+          <mrow>E_{row_{3},col_{1}}= 124.5\amp \amp E_{row_{3},col_{2}}=110.5</mrow>
+        </md>
+      </p>
+      <p>
+        Independence: The samples are both random, unrelated, and from less than 10% of the population, so independence between observations is reasonable. Sample size: All expected counts are at least 5. <m>\chi^2 = 11.47, df = 2 \rightarrow \text{p-value } = 0.003</m>. Since the p-value <m>&lt; \alpha</m>, we reject <m>H_{0}</m>. There is strong evidence that there is an association between support for off-shore drilling and having a college degree.
+      </p>
+    </solution>
+  </exercise>
+  <exercise xml:id="parasitic_worm_chisq"><!--  #38 -->
+    <title>Parasitic worm</title>
+    <statement>
+      <p>
+        Lymphatic filariasis is a disease caused by a parasitic worm. Complications of the disease can lead to extreme swelling and other complications. Here we consider results from a randomized experiment that compared three different drug treatment options to clear people of the this parasite, which people are working to eliminate entirely. The results for the second year of the study are given below:<fn>Christopher King et al. <url href="https://www.nejm.org/doi/full/10.1056/NEJMoa1706854"><q>A Trial of a Triple-Drug Treatment for Lymphatic Filariasis</q></url>. In: <em>New England Journal of Medicine</em> 379 (2018), pp. 1801-1810.</fn>
+      </p>
+      <tabular>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell halign="center">Clear at Year 2</cell>
+          <cell halign="center">Not Clear at Year 2</cell>
+        </row>
+        <row>
+          <cell>Three drugs</cell>
+          <cell halign="center">52</cell>
+          <cell halign="center">2</cell>
+        </row>
+        <row>
+          <cell>Two drugs</cell>
+          <cell halign="center">31</cell>
+          <cell halign="center">24</cell>
+        </row>
+        <row bottom="minor">
+          <cell>Two drugs annually</cell>
+          <cell halign="center">42</cell>
+          <cell halign="center">14</cell>
+        </row>
+      </tabular>
+      <p>
+      <ol>
+        <li xml:id="parasitic_worm_chisq_hyp">
+          <p>
+            Set up hypotheses for evaluating whether there is any difference in the performance of the treatments,
+            and also check conditions.
+          </p>
+        </li>
+        <li>
+          <p>
+            Statistical software was used to run a chi-square test,
+            which output:
+            <md>
+              <mrow>\amp X^2 = 23.7 \amp \amp df = 2 \amp \amp \text{ p-value }  = \text{ 7.2e-6 }</mrow>
+            </md>
+            Use these results to evaluate the hypotheses from part (a),
+            and provide a conclusion in the context of the problem.
+          </p>
+        </li>
+      </ol>
+      </p>
+    </statement>
+  </exercise>
+</exercises>
+  <subsection>
+  	<title>Chapter Highlights</title>
+  	<p>
+    	<em>Calculating</em> a confidence interval or a test statistic and p-value are generally done with statistical software.
+    	It is important,
+    	then, 
+    	to focus not on the calculations, 
+    	but rather on
+	    <ol label="1">
+	    	<li>
+	        	<p>
+	        		choosing the correct procedure
+	        	</p>
+		    </li>
+		    <li>
+		        <p>
+		        	understanding when the procedures do or do not apply, and
+		        </p>
+		    </li>
+		    <li>
+		       	<p>
+		        	interpreting the results.
+		        </p>
+		    </li>
+	    </ol>
+  	</p>
+  	<p>
+    	Choosing the correct procedure requires understanding the <em>type of data</em> and the <em>method of data collection</em>.
+    	All of the inference procedures in <xref ref="inferenceForCategoricalData"></xref> are for categorical variables.
+    	Here we list the five tests encountered in this chapter and when to use them.
+  	</p>
+  	<p>
+	<ul>
+		<li>
+  			<p>
+    			<term>1-proportion Z-test</term>
+  			</p>
+        <p>
+  			<ul>
+        		<li>
+          			<p>
+           				<em>1 random sample</em>, a yes/no variable
+          			</p>
+        		</li>
+		        <li>
+		        	<p>
+		            	Compare the sample proportion to a fixed / hypothesized proportion.
+		        	</p>
+		        </li>
+    		</ul>
+        </p>
+    	</li>
+    	<li>
+      		<p>
+        		<term>2-proportion Z-test</term>
+        	</p>
+        	<p>
+        	<ul>
+	        	<li>
+	            	<p>
+	              		<em>2 independent random samples or randomly allocated treatments</em>
+	            	</p>
+	          	</li>
+	          	<li>
+	            	<p>
+	              		Compare two populations or treatments to each other with respect to one yes/no variable;
+	              		e.g. comparing the proportion over age 65 in two distinct populations.
+	            	</p>
+	          	</li>
+        	</ul>
+      		</p>
+    	</li>
+    	<li>
+      		<p>
+      			<em><m>\chi^2</m> goodness of fit test</em><idx><h>chi-square goodness of fit test@<m>\chi^2</m> goodness of fit test</h></idx>
+      		</p>
+      		<p>
+	        <ul>
+	        	<li>
+	            	<p>
+	              		<em>1 random sample</em>,
+	              		a categorical variable (generally at least three categories)
+	            	</p>
+	          	</li>
+	          	<li>
+	            	<p>
+	            		Compare the distribution of a categorical variable to a fixed or known population distribution;
+	            		e.g. looking at distribution of color among M&amp;M's.
+	            	</p>
+	          	</li>
+	        </ul>
+      		</p>
+	    </li>
+	    <li>
+      		<p>
+        		<em><m>\chi^2</m> test of homogeneity</em><idx><h>chi-square test of homogeneity@<m>\chi^2</m> test of homogeneity</h></idx>:
+        	</p>
+        	<p>
+        	<ul>
+        		<li>
+            		<p>
+              			<em>2 or more independent random samples or randomly allocated treatments</em>
+            		</p>
+          		</li>
+          		<li>
+            		<p>
+            			Compare the distribution of a categorical variable across several populations or treatments;
+            			e.g. party affiliation over various years,
+            			or patient improvement compared over 3 treatments.
+            		</p>
+          		</li>
+        	</ul>
+      		</p>
+    	</li>
+    	<li>
+      		<p>
+        		<em><m>\chi^2</m> test of independence</em><idx><h>chi-square test of independence@<m>\chi^2</m> test of independence</h></idx>
+        	</p>
+        	<p>
+        	<ul>
+        		<li>
+            		<p>
+              			<em>1 random sample</em>, 2 categorical variables
+            		</p>
+          		</li>
+          		<li>
+            		<p>
+            			Determine if, in a single population,
+            			there is an association between two categorical variables;
+            			e.g. grade level and favorite class.
+            		</p>
+          		</li>
+        	</ul>
+      		</p>
+    	</li>
+  	</ul>
+  </p>
+  <p>
+    Even when the data and data collection method correspond to a particular test,
+    we must <em>verify that conditions are met</em>
+    to see if the assumptions of the test are reasonable.
+    All of the inferential procedures of this chapter require some type of random sample or process.
+    In addition,
+    the 1-proportion Z-test/interval and the 2-proportion Z-test/interval require that the success-failure condition is met and the three <m>\chi^2</m> tests require that all expected counts are at least 5.
+  </p>
+  <p>
+    Finally, understanding and communicating the logic of a test and being able to accurately <em>interpret</em>
+    a confidence interval or p-value are essential.
+    For a refresher on this, review Chapter 5: Foundations for inference.
+  </p>
+</subsection>
+</section>

@@ -1,0 +1,2156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xml:id="singleProportion">
+  <title>Inference for a single proportion</title>
+  <introduction>
+    <p>
+      In this section,
+      we will apply the inferential procedures introduced in <xref ref="foundationsForInference"></xref>
+      to the context of a single proportion,
+      and we will explore how to do sample size calculations for data collection purposes.
+      We will answer questions such as the following:
+      <ul>
+        <li>
+          <p>
+            Do greater than half of adults in the U.S. oppose nuclear energy?
+          </p>
+        </li>
+        <li>
+          <p>
+            What percent of adults in the U.S. approve of the way the Supreme Court is handling its job?
+          </p>
+        </li>
+        <li>
+          <p>
+            What is the standard error is associated with this estimate?
+          </p>
+        </li>
+        <li>
+          <p>
+            How do we construct a confidence interval for this value?
+          </p>
+        </li>
+        <li>
+          <p>
+            What sample size is required to estimate this within a 3% margin of error using a 95% confidence level?
+          </p>
+        </li>
+      </ul>
+    </p>
+  </introduction>
+  <subsection>
+    <objectives>
+    <title>Learning objectives</title>
+      <ol>
+        <li>
+          <p>
+            State and verify whether or not the conditions for inference on a proportion using a normal distribution are met.
+          </p>
+        </li>
+        <li>
+          <p>
+            Recognize that the success-failure condition and the standard error calculation are different for the test and for the confidence interval and explain why this is the case.
+          </p>
+        </li>
+        <li>
+          <p>
+            Carry out a complete hypothesis test and confidence interval procedure for a single proportion.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the minimum sample size needed to estimate a proportion with C% confidence and a margin of error no greater than a certain value.
+          </p>
+        </li>
+        <li>
+          <p>
+            Recognize that margin of error calculations only measure sampling error,
+            and that other types of errors may be present.
+          </p>
+        </li>
+      </ol>
+    </objectives>
+  </subsection>
+  <subsection>
+    <title>Distribution of a sample proportion (review)</title>
+    <p>
+      The distribution of a sample proportion,
+      such as the distribution of all possible values for the proportion of people who share a particular opinion in a poll,
+      was introduced in <xref ref="distributionphat"></xref>.
+      When the sampling distribution of a sample proportion,
+      <m>\hat{p}</m>, is approximately normal,
+      we can use confidence intervals and hypothesis tests based on a normal distribution.
+      We call these Z-intervals and Z-tests for short.
+      Here, we review the conditions necessary for a sample proportion to be modeled using a normal distribution.
+    </p>
+    <assemblage>
+    <title>Conditions for the sampling distribution of <m>\hat{p}</m> being nearly normal</title>
+      <p>
+        The sampling distribution of a sample proportion,
+        <m>\hat{p}</m>,
+        based on a random sample of size <m>n</m> from a population with a true proportion <m>p</m>,
+        is nearly normal when
+        <ol>
+          <li>
+            <p>
+              the sample observations are independent and
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>np\geq 10</m> and <m>n(1-p)\geq 10</m>.
+              This is called the <term>success-failure condition</term>.
+            </p>
+          </li>
+        </ol>
+      </p>
+      <p>
+        If these conditions are met,
+        then the sampling distribution of <m>\hat{p}</m> is nearly normal with mean
+        <m>\mu_{\hat{p}}=p</m> and standard deviation <m>\sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}}</m>.
+            <idx><h>standard error</h><h>single proportion</h></idx>
+      </p>
+    </assemblage>
+  </subsection>
+  <subsection>
+    <title>Checking conditions for inference using a normal distribution</title>
+    <p>
+      We can use a normal model for inference for a proportion when the observations are independent and the sampling distribution of the sample proportion is nearly normal.
+      We check that these assumptions are reasonable by verifying the following conditions.
+    </p>
+    <p>
+      <ul>
+        <li>
+          <p>
+            <alert>Independent.</alert>  Observations can be considered independent when the data are collected from a <em>random process</em>,
+            such as tossing a coin,
+            or from a <em>random sample</em>.
+            Without a random sample or process,
+            the standard error formula would not apply,
+            and it is unclear to what population the inference would apply.
+            When sampling without replacement from a finite population,
+            the observations can be considered independent when sampling less than 10% of the population.
+            <fn>When sampling without replacement and sampling greater than 10% of the population,
+            a modified standard error formula should be used.</fn>
+          </p>
+        </li>
+        <li>
+          <p>
+            <alert>Nearly normal sampling distribution.</alert> We saw in <xref ref="distributionphat"></xref> that the sampling distribution of a sample proportion will be nearly normal when the success-failure condition is met,
+            i.e. when the expected number of success and failures are both at least 10.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      In our examples, we generally sample from large populations,
+      such as the United States.
+      In these cases,
+      we do not explicitly verify that the sample size is less than 10% of the population size.
+      However, in borderline cases,
+      one should remember to check this condition as well to ensure that the standard error estimate is reasonable.
+    </p>
+  </subsection>
+  <subsection xml:id="confIntForPropSection">
+    <title>Confidence intervals for a proportion</title>
+    <p>
+          <idx><h>data</h><h>supreme court</h></idx>
+          <idx><h>point estimate</h><h>single proportion</h></idx>
+    </p>
+    <p>
+      The Gallup organization began measuring the public's view of the Supreme Court's job performance in 2000,
+      and has measured it every year since then with the question: <q>Do you approve or disapprove of the way the Supreme Court is handling its job?</q>. In 2018,
+      the Gallup poll randomly sampled 1,033 adults in the U.S. and found that 53% of them approved.<fn><url href="https://news.gallup.com/poll/237269/supreme-court-approval-highest-2009.aspx">https://news.gallup.com/poll/237269/supreme-court-approval-highest-2009.aspx</url></fn> We know that 53% is just a point estimate.
+      What range of values are reasonable estimates for the percent of the population that approved of the job the Supreme Court is doing?
+      We can use the confidence interval procedure introduced in the previous chapter to answer this question,
+      but first we must clearly identify the parameter we're trying to estimate and be sure that a Z-interval will be appropriate.
+      The following examples walk through the various steps for carrying out a confidence interval procedure using the Gallup poll data.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Identify the population of interest and the parameter of interest for the Gallup poll about the U.S. Supreme Court.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Gallup sampled from U.S. adults,
+          therefore the population of interest,
+          and the population to which we can make an inference, is U.S. adults.
+          We know the percent of the sample that said they approve of the job the Supreme Court is doing.
+          However, we do not know what percent of the population would approve.
+          The parameter of interest, which is unknown,
+          is the percent of <em>all</em> U.S. adults that approve of the job the Supreme Court is doing.
+          This is the quantity that we seek to estimate with the confidence interval.
+        </p>
+      </solution>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Can the sample proportion <m>\hat{p}</m> be modeled using a normal distribution?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          In order to construct a Z-interval,
+          the sample statistic must be able to be modeled using a normal distribution.
+          Gallup took a random sample, so the first condition
+          (the independence condition)
+          is satisfied.
+          We must also test the second condition
+          (the success-failure condition)
+          to ensure that the sample size is large enough for the central limit theorem to apply.
+          The success-failure condition is met when <m>np</m> and <m>n(1-p)</m> are at least 10.
+          Since <m>p</m> is always unknown when constructing a confidence interval for <m>p</m>,
+          we use the sample proportion <m>\hat{p}</m> to check this condition.
+          Here we have:
+          <md>
+            <mrow>n\hat{p} = 1033(0.53) = 547\text{ (“successes”) }</mrow>
+            <mrow>n(1-\hat{p}) = 1033(1 - 0.53) = 486\text{ (“failures”) }</mrow>
+          </md>
+        </p>
+        <p>
+          The second condition is satisfied since 547 and 486 are both at least 10.
+          With the two conditions satisfied,
+          we can model the sample proportion <m>\hat{p}</m> using a normal model and we can construct a Z-interval.
+        </p>
+      </solution>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Calculate the point estimate and the <m>SE</m> of the estimate.
+        </p>
+      </statement>
+      <solution xml:id="supremeCourtCISEExample">
+        <p>
+          The point estimate for the unknown parameter <m>p</m>
+          (the proportion of all U.S. adults)
+          who approve of the job the Supreme Court is doing) is the sample proportion.
+          The point estimate here is <m>\hat{p} = 0.53</m>.
+        </p>
+        <p>
+          Because the point estimate is the sample proportion,
+          the <m>SE</m> of the estimate is the <m>SE</m> of <m>\hat{p}</m>.
+          In <xref ref="distributionphat"></xref>,
+          we learned that the formula for the standard deviation of <m>\hat{p}</m> is
+          <md>
+            <mrow>\sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}}</mrow>
+          </md>
+        </p>
+        <p>
+          The proportion <m>p</m> is unknown,
+          so we use the sample proportion <m>\hat{p}</m> to find the <m>SE</m> of <m>\hat{p}</m>.
+          <md>
+            <mrow>SE = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}</mrow>
+          </md>
+        </p>
+        <p>
+          Here <m>\hat{p}=0.53</m> and <m>n=1,033</m>,
+          so the <m>SE</m> of the sample proportion is:
+          <md>
+            <mrow>SE = \sqrt{\frac{0.53(1-0.53)}{1033}}=0.016</mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Construct a 90% confidence interval for <m>p</m>,
+          the proportion of all U.S. adults that approve of the job the Supreme Court is doing.
+        </p>
+      </statement>
+      <solution xml:id="x90CIForJobSupremeCourtDoingExample">
+        <p>
+          Recall that the general form of a confidence interval is:
+          <md>
+            <mrow>\text{ point estimate } \pm\ \text{ critical value }  \times SE\ \text{ of estimate }</mrow>
+          </md>
+        </p>
+        <p>
+          We have already found the point estimate and the <m>SE</m> of the estimate.
+          Because we previously verified that <m>\hat{p}</m> can be modeled using a normal distribution,
+          the critical value is a <m>z^{\star}</m>.
+          The <m>z^{\star}</m> value can be found in the <m>t</m>-table in <xref ref="tDistributionTable_section"></xref>,
+          using the bottom row (<m>\infty</m>),
+          where the column corresponds to the confidence level.
+          Here the confidence level is 90%, so <m>z^{\star}</m>=1.65.
+          We can now construct the 90% confidence interval as follows.
+          <md>
+            <mrow>\text{ point estimate } \pm\amp  z^{\star} \times SE\ \text{ of estimate }</mrow>
+            <mrow>0.53 \pm\amp  1.65 \times 0.016</mrow>
+            <mrow>= (0.504, 0.556)</mrow>
+          </md>
+        </p>
+        <p>
+          We are 90% confident that the true proportion of U.S. adults who approve of the job the Supreme Court is doing is between 0.504 and .556.
+        </p>
+      </solution>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Based on the interval,
+          is there evidence that more than half of U.S. adults approve of the job the Supreme Court is doing?
+        </p>
+      </statement>
+      <solution xml:id="JobSupremeCourtDoingEvidenceExample">
+        <p>
+          The 90% confidence interval (0.504, 0.556) provides an interval of reasonable values for the parameter.
+          The value 0.50 is not in the interval,
+          therefore can be considered unreasonable.
+          Because the <em>entire</em> interval is above 0.50, we do have evidence,
+          at the 90% confidence level, that more than half of U.S. adults
+          (at the time of this poll)
+          approve of the job the Supreme Court is doing.
+        </p>
+      </solution>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Do we have evidence at the 95% confidence level that more than half of U.S. adults approve of the job the Supreme Court is doing?
+        </p>
+      </statement>
+      <solution xml:id="JobSupremeCourtDoingWrapUpExample">
+        <p>
+          First, we observe that a 95% confidence interval will be <em>wider</em>
+          than a 90% confidence interval.
+          For a 95% Z-interval, <m>z^{\star}=1.96</m>.
+          The 95% confidence interval is:
+          <md>
+            <mrow>\amp 0.53 \pm\  1.96 \times 0.016</mrow>
+            <mrow>\amp = (0.499, 0.561)</mrow>
+          </md>
+        </p>
+        <p>
+          Now, we see that 0.50 is just barely inside the interval,
+          making it within the range of reasonable values.
+          Therefore, we do not have evidence,
+          at the 95% confidence level, that more than half of U.S. adults
+          (at the time of this poll)
+          approve of the job the Supreme Court is doing.
+        </p>
+        <p>
+          Notice that we come to a different conclusion based on different confidence levels,
+          which may feel a little jarring.
+          However, this will happen with real data,
+          and it highlights why it is important to be explicit in identifying the confidence level being used.
+        </p>
+      </solution>
+    </example>
+    <p>
+      Having worked through this example,
+      we now summarize the steps for constructing a confidence interval for a proportion using the five step framework introduce in Chapter 5.
+    </p>
+    <assemblage>
+      <title>Constructing a confidence interval for a proportion</title>
+      <p>
+        To carry out a complete confidence interval procedure to estimate a single proportion <m>p</m>,
+      </p>
+      <p>
+        <em>Identify</em>: Identify the parameter and the confidence level, C%.
+        <ul>
+          <li>
+            <p>
+              The parameter will be a population proportion,
+              e.g. the proportion of all U.S. adults that approve of the job the Supreme Court is doing.
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        <em>Choose</em>: Choose the correct interval procedure and identify it by name.
+        <ul>
+          <li>
+            <p>
+              Here we choose the <term>1-proportion Z-interval</term>.
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        <em>Check</em>: Check conditions for the sampling distribution of <m>\hat{p}</m> to be nearly normal.
+        <ol label="1">
+          <li>
+            <p>
+              Data come from a random sample or random process.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>n\hat{p}\ge 10</m> and
+              <m>n(1-\hat{p})\ge 10</m> (Make sure to plug in numbers.)
+            </p>
+          </li>
+        </ol>
+      </p>
+      <p>
+        <em>Calculate</em>: Calculate the confidence interval and record it in interval form.
+      </p>
+      <p>
+      <ul>
+        <li>
+          <p>
+            <m>\text{ point estimate } \pm\ z^{\star} \times SE\ \text{ of estimate }</m>
+          </p>
+          <p>
+          <ul>
+            <li>
+              <p>
+                point estimate: the sample proportion <m>\hat{p}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>SE</m> of estimate: <m>\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>z^{\star}</m>:
+                use a <m>t</m>-table at row <m>\infty</m> and confidence level C
+              </p>
+            </li>
+          </ul>
+          </p>
+        </li>
+        <li>
+          <p>
+            (<fillin/>,<fillin/>)
+          </p>
+        </li>
+      </ul>
+      </p>
+      <p>
+        <em>Conclude</em>: Interpret the interval and,
+        if applicable, draw a conclusion in context.
+        <ul>
+          <li>
+            <p>
+              We are C% confident that the true <em>proportion</em> of [...] is between <fillin/> and <fillin/>.
+              If applicable,
+              draw a conclusion based on whether the interval is entirely above,
+              is entirely below, or contains the value of interest.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </assemblage>
+    <example xml:id="IntelligentLife">
+      <statement>
+        <p>
+          A February 2018 Marist Poll reports: <q>Many Americans (68%) think there is intelligent life on other planets.</q> The results were based on a random sample of 1,033 adults in the U.S. Does this poll provide evidence at the 95% confidence level that greater than half of all U.S. adults think there is intelligent life on other planets?
+          Carry out a confidence interval procedure to answer this question.
+          Use the five step framework to organize your work.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <em>Identify</em>: First we identify the parameter of interest.
+          Here the parameter is the true proportion of U.S. adults that think there is intelligent life on other planets.
+          We will estimate this at the 95% confidence level.
+        </p>
+        <p>
+          <em>Choose</em>: Because the parameter to be estimated is a single proportion,
+          we will use a 1-proportion Z-interval.
+        </p>
+        <p>
+          <em>Check</em>: We must check that a Z-interval is appropriate,
+          meaning that the sample proportion can be modeled using a normal distribution.
+          The problem states that the data come from a random sample.
+          Also, we must check the success-failure condition.
+          Here, we have that <m>1033(.68)\ge 10</m> and <m>1033(1-0.68)\ge 10</m>.
+          Both conditions are met so we can proceed with a 1-proportion Z-interval.
+        </p>
+        <p>
+          <em>Calculate</em>: We will calculate the interval:
+          <md>
+            <mrow>\text{ point estimate } \ \pm\ z^{\star} \times SE\ \text{ of estimate }</mrow>
+          </md>
+        </p>
+        <p>
+          The point estimate is the sample proportion:
+          <m>\hat{p} = 0.68</m>
+        </p>
+        <p>
+          The <m>SE</m> of the sample proportion is:
+          <m>\sqrt{\frac{\hat{p}(1-\hat{p})}{n}} = \sqrt{\frac{0.68(1-0.68)}{1033}}=0.015</m>.
+        </p>
+        <p>
+          <m>z^{\star}</m> is found using the <m>t</m>-table at row <m>\infty</m> and confidence level C%.
+        </p>
+        <p>
+          For a 95% confidence level, <m>z^{\star}</m> = 1.96.
+        </p>
+        <p>
+          The 95% confidence interval is given by:
+          <md>
+            <mrow>0.68 \pm\  \amp 1.96 \times \sqrt{\frac{0.68(1-0.68)}{1033}}</mrow>
+            <mrow>0.68 \pm\  \amp 1.96 \times 0.015</mrow>
+            <mrow>= (0.651, 0.709)</mrow>
+          </md>
+        </p>
+        <p>
+          <em>Conclude</em>: We are 95% confident that the true <em>proportion</em>
+          of U.S. adults that think there is intelligent life on other planets is between 0.651 and 0.709.
+          Because the entire interval is above 0.5 we have evidence that greater than half of all U.S. adults think there is intelligent life on other planets.
+        </p>
+      </solution>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          True or False: There is a 95% probability that between 65.1% and 70.9% of U.S. adults think that there is intelligent life on other planets.<fn>False.
+          The true percent of U.S. adults that think there is intelligent life on other planets either falls in that interval or it doesn't.
+          A correct interpretation of the confidence level would be that if we were to repeat this process over and over,
+          about 95% of the 95% confidence intervals constructed would contain the true value.</fn>
+        </p>
+      </statement>
+    </exercise>
+  </subsection>
+  <subsection xml:id="x1PropZInt">
+    <title>Calculator:  the 1-proportion Z-interval</title>
+    <p>
+      A calculator can be helpful for evaluating the final interval in the Calculate step.
+      However, it should not be used as a substitute for understanding.
+    </p>
+    <assemblage xml:id="one_proportion_ci_ti">
+    <title>TI-83/84: 1-proportion Z-interval</title>
+      <p>
+        Use <c>STAT</c>, <c>TESTS</c>, <c>1-PropZInt</c>.
+        <ol>
+          <li>
+            <p>
+              Choose <c>STAT</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Right arrow to <c>TESTS</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Down arrow and choose <c>A:1-PropZInt</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <c>x</c> be the
+              <em>number</em> of yeses
+              (must be an integer).
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <c>n</c> be the sample size.
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <c>C-Level</c> be the desired confidence level.
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose <c>Calculate</c> and hit <c>ENTER</c>,
+              which returns
+            </p>
+              <tabular>
+                <row>
+                  <cell>(<fillin/>,<fillin/>)</cell>
+                  <cell>the confidence interval</cell>
+                </row>
+                <row>
+                  <cell><m>\hat{p}</m></cell>
+                  <cell>the sample proportion</cell>
+                </row>
+                <row>
+                  <cell><c>n</c></cell>
+                  <cell>the sample size</cell>
+                </row>
+              </tabular>
+          </li>
+        </ol>
+      </p>
+      <sidebyside>
+        <video width="60%" preview="generic" youtube="Lpv-lTyJuco" />
+      </sidebyside>
+    </assemblage>
+    <assemblage xml:id="one_proportion_ci_casio">
+      <title>Casio fx-9750GII: 1-proportion Z-interval</title>
+      <p>
+      <ol>
+        <li>
+          <p>
+            Navigate to <c>STAT</c> (<c>MENU</c> button,
+            then hit the <c>2</c> button or select <c>STAT</c>).
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose the <c>INTR</c> option (<c>F4</c> button).
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose the <c>Z</c> option (<c>F1</c> button).
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose the <c>1-P</c> option (<c>F3</c> button).
+          </p>
+        </li>
+        <li>
+          <p>
+            Specify the interval details:
+            <ul>
+              <li>
+                <p>
+                  Confidence level of interest for <c>C-Level</c>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Enter the number of successes, <c>x</c>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Enter the sample size, <c>n</c>.
+                </p>
+              </li>
+            </ul>
+          </p>
+        </li>
+        <li>
+          <p>
+            Hit the <c>EXE</c> button,
+            which returns
+          </p>
+          <tabular>
+            <row>
+              <cell><c>Left</c>, <c>Right</c></cell>
+              <cell>ends of the confidence interval</cell>
+            </row>
+            <row>
+              <cell><m>\hat{p}</m></cell>
+              <cell>sample proportion</cell>
+            </row>
+            <row>
+              <cell><c>n</c></cell>
+              <cell>sample size</cell>
+            </row>
+          </tabular>
+        </li>
+      </ol>
+    </p>
+    <sidebyside>
+    	<video width="60%" preview="generic" youtube="ZnTrk_j4mZE" />
+    </sidebyside>
+    </assemblage>
+    <exercise>
+      <statement>
+        <p>
+          Using a calculator,
+          evaluate the confidence interval from <xref ref="IntelligentLife"></xref>.
+          Recall that we wanted to find a 95% confidence interval for the proportion of U.S. adults who think there is intelligent life on other planets.
+          The sample percent was 68% and the sample size was 1,033.<fn>Navigate to the 1-proportion Z-interval on the calculator. To find <c>x</c>, the number of yes responses in the sample,
+          we multiply the sample proportion by the sample size. Here <m>0.68 \times 1033 = 702.44</m>. We must round this to an integer, so we use <c>x</c><m> = 702</m>. Also, <c>n</c> <m>=1033</m> and <c>C-Level</c> <m>= 0.95</m>. The calculator output of <m>(0.651, 0.708)</m> matches our previously computed interval of <m>(0.651, 0.709)</m> with minor rounding difference.</fn>
+        </p>
+      </statement>
+    </exercise>
+  </subsection>
+  <subsection xml:id="moeproportion">
+    <title>Choosing a sample size when estimating a proportion</title>
+    <p>
+          <idx><h>margin of error</h></idx>
+    </p>
+    <p>
+      Planning a sample size before collecting data is important.
+      If we collect too little data,
+      the standard error of our point estimate may be so large that the estimate is not very useful.
+      On the other hand,
+      collecting data in some contexts is time-consuming and expensive,
+      so we don't want to waste resources on collecting more data than we need.
+    </p>
+    <p>
+      When considering the sample size,
+      we want to put an upper bound on the margin of error.
+      Recall that the <term>margin of error</term>
+      is measured as the distance between the point estimate and the lower or upper bound of a confidence interval.
+    </p>
+    <assemblage>
+      <title>Margin of error</title>
+      <p>
+        The margin of error of a confidence interval is given by:
+        <md>
+          <mrow>\text{ critical value }  \ \times SE \text{ of estimate }</mrow>
+        </md>
+      </p>
+      <p>
+        The margin of error tells us with a given confidence level how far off we expect our point estimate to be from the true value.
+      </p>
+    </assemblage>
+    <example>
+      <statement>
+        <p>
+          Suppose we are conducting a university survey to determine whether students support a $200 per year increase in fees to pay for a new football stadium.
+          Find the smallest sample size <m>n</m> so that the margin of error of the point estimate <m>\hat{p}</m> will be no larger than 0.04 when using a 95% confidence level.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Because we are working with proportions,
+          the critical value is a <m>z^{\star}</m> value.
+          We want the margin of error to be less than or equal to 0.04, so we have:
+          <md>
+            <mrow>z^{\star}\times \sqrt{\frac{p(1-p)}{n}} \leq 0.04</mrow>
+          </md>
+        </p>
+        <p>
+          There are two unknowns in the inequality:
+          <m>p</m> and <m>n</m>.
+          If we have an estimate of <m>p</m>,
+          perhaps from a similar survey, we could use that value.
+          If we have no such estimate, we must use some other value for <m>p</m>.
+          It turns out that the margin of error is largest when <m>p</m> is 0.5, so we typically use this
+          <em>worst case estimate</em>
+          of <m>p</m> = 0.5 if no other estimate is available.
+          <md>
+            <mrow>1.96\times \sqrt{\frac{0.5(1-0.5)}{n}} \amp \leq 0.04</mrow>
+            <mrow>1.96^2\times \frac{0.5(1-0.5)}{n} \amp \leq 0.04^2</mrow>
+            <mrow>1.96^2\times \frac{0.5(1-0.5)}{0.04^2} \amp \leq n</mrow>
+            <mrow>600.25 \amp \leq n</mrow>
+            <mrow>n=601</mrow>
+          </md>
+        </p>
+        <p>
+          The sample size must be an integer and we round up because <m>n</m> must be greater than or equal to 600.25.
+          We need at least 601 participants to ensure the sample proportion is within 0.04 of the true proportion with 95% confidence.
+        </p>
+      </solution>
+    </example>
+    <p>
+      No estimate of the true proportion is required in sample size computations for a proportion.
+      However, if we have a reliable estimate of the proportion,
+      we should use it in place of the worst case estimate of 0.5.
+    </p>
+    <p>
+          <idx><h>data</h><h>Congress approval rating</h></idx>
+    </p>
+    <example>
+      <statement>
+        <p>
+          A recent estimate of Congress' approval rating was 17%<fn><url href="https://news.gallup.com/poll/237176/snapshot-congressional-job-approval-july.aspx">https://news.gallup.com/poll/237176/snapshot-congressional-job-approval-july.aspx</url></fn>. If another poll were taken,
+          what minimum sample size does this estimate suggest should be used to have a margin of error no greater than 0.04 with 95% confidence?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We complete the same computations as before,
+          except now we use <m>0.17</m> instead of <m>0.5</m> for <m>p</m>:
+          <md>
+            <mrow>1.96\times \sqrt{\frac{0.17(1-0.17)}{n}} \amp \leq 0.04</mrow>
+            <mrow>n \amp \geq 338.8</mrow>
+            <mrow>n \amp = 339</mrow>
+          </md>
+        </p>
+        <p>
+          If the true proportion is 0.17,
+          then 339 is the minimum sample size that will ensure a margin of error no greater than 0.04 with 95% confidence.
+        </p>
+        <p>
+              <idx><h>data</h><h>Congress approval rating</h></idx>
+        </p>
+      </solution>
+    </example>
+    <assemblage>
+      <title>Identify a sample size for a particular margin of error</title>
+      <p>
+        When estimating a single proportion,
+        we find the minimum sample size <m>n</m> needed to achieve a margin of error no greater than <m>m</m> with a specified confidence level as follows:
+        <md>
+          <mrow>z^{\star}\times \sqrt{\frac{p(1-p)}{n}} \leq m</mrow>
+        </md>
+        where <m>z^{\star}</m> depends on the confidence level.
+        If no reliable estimate of <m>p</m> exists, use <m>p = 0.5</m>.
+      </p>
+    </assemblage>
+    <exercise>
+      <statement>
+        <p>
+          All other things being equal,
+          what would we have to do to the sample size in order to halve the margin of error (decrease it by a factor of 2)?<fn>To decrease the error, we would need to increase the sample size. We note that <m>\sqrt{n}</m> is in the denominator of the <em>SE</em> formula, so we would have to <em>quadruple</em> the sample size in order to decrease the <em>SE</em> by a factor of 2. The margin of error as well as the width of the confidence interval is proportional <m>\frac{1}{\sqrt{n}}</m>.</fn>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          A manager is about to oversee the mass production of a new tire model in her factory,
+          and she would like to estimate the proportion of these tires that will be rejected through quality control.
+          The quality control team has previously found that about 6.2% of tires fail inspection.
+          <ol label="a">
+            <li>
+              <p>
+                How many tires should the manager examine to estimate the failure rate of the new tire model to within 2% with a 90% confidence level?<fn>The <m>z^{\star}</m> corresponding to a 90% confidence level is 1.645. Since we have an estimate for <m>p</m> of 6.2%, we use it. So we have: <m>1.645 \times \sqrt{\frac{(0.062)(1-0.062)}{n}} \le 0.02</m>. Rearranging for <m>n</m> gives: <m>n \ge 393.4</m>, so she should use <m>n = 394</m>.</fn>
+              </p>
+            </li>
+            <li>
+              <p>
+                What if the estimate of <m>p</m> is 1.7% rather than 6.2%?<fn>Substituting 0.017 for <m>p</m> gives an <m>n</m> of 114. We can note that in this case <m>n \times p = 114 \times 0.017 \lt 10</m>. Since
+                the success-failure condition is not met, the use of <m>z^{\star} = 1.645</m> based on a normal model is not appropriate. We would
+                need additional methods than what we've covered so far to get a good estimate for the minimum sample size in this scenario.</fn>
+                  <idx><h>margin of error</h></idx>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
+  </subsection>
+  <subsection xml:id="htForPropSection">
+    <title>Hypothesis testing for a proportion</title>
+    <p>
+      While a confidence interval provides a range of reasonable values for an unknown parameter,
+      a hypothesis test evaluates a specific claim.
+      In a hypothesis test,
+      we set up competing hypotheses and find degrees of evidence against the null hypothesis.
+    </p>
+    <example xml:id="TooheyTestNameAndConditionExample">
+      <statement>
+        <p>
+          Deborah Toohey is running for Congress,
+          and her campaign manager claims she has more than 50% support from the district's electorate.
+          A newspaper collects a random sample of 500 likely voters in the district and estimates Toohey's support to be 52%.
+          <ol label="a">
+            <li>
+              <p>
+                Identify the null and the alternative hypothesis.
+                What value should we use as the null value, <m>p_{0}</m>?
+              </p>
+            </li>
+            <li>
+              <p>
+                Can we model <m>\hat{p}</m> using a normal model?
+                Check the conditions.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <answer>
+        <p>
+          (a) The alternative hypothesis,
+          the one that bears the burden of proof,
+          argues that Toohey has more than 50% support.
+          Therefore, <m>H_A</m> will be one-sided and the null value will be <m>p_0 = 0.5</m>.
+          So we have <m>H_0</m>: <m>p = 0.5</m> and <m>H_A</m>: <m>p > 0.5</m>.
+          Note that the hypotheses are about a population parameter.
+          The hypotheses are never about the sample.
+        </p>
+        <p>
+          (b) First, we observe that the problem states that a random sample was chosen.
+          Next, we check the success-failure condition.
+          Because we assume that <m>p = p_0</m> for the calculations of the hypothesis test,
+          we use the hypothesized value <m>p_0</m> rather than the sample value <m>\hat{p}</m> when verifying the success-failure condition.
+          <md>
+            <mrow>np_0 \amp \geq 10  \rightarrow  500(0.5) \geq 10</mrow>
+            <mrow>n(1-p_0) \amp \geq 10  \rightarrow  500(1-0.5) \geq 10</mrow>
+          </md>
+        </p>
+        <p>
+          The conditions for a normal model are met.
+        </p>
+      </answer>
+    </example>
+    <p>
+      In <xref ref="foundationsForInference"></xref>,
+      we saw that the general form of the test statistic for a hypothesis test takes the following form:
+      <md>
+        <mrow>\text{ test statistic }  = \frac{\text{ point estimate }  - \text{ null value } }{SE \text{ of estimate } }</mrow>
+      </md>
+    </p>
+    <p>
+      When the conditions for a normal model are met:
+      <ul>
+        <li>
+          <p>
+            We use Z as the test statistic and call the test a Z-test.
+          </p>
+        </li>
+        <li>
+          <p>
+            The point estimate is the sample proportion <m>\hat{p}</m>
+            (just like for a confidence interval).
+          </p>
+        </li>
+        <li>
+          <p>
+            Since we compute the test statistic assuming the null hypothesis
+            (that <m>p = p_0</m>)
+            is true, we compute the standard error of the sample proportion using the null value <m>p_0</m>.
+            <md>
+              <mrow>SE = \sqrt{\frac{p_0(1-p_0)}{n}}</mrow>
+            </md>
+          </p>
+        </li>
+      </ul>
+    </p>
+    <assemblage>
+      <title>Confidence intervals versus hypothesis tests for a single proportion</title>
+      <p>
+        1-proportion Z-interval
+        <md>
+          <mrow>\text{ Check: }  n\hat{p}\ge 10 \text{ and } n(1-\hat{p})\ge 10 \qquad SE = \sqrt{\frac{\ \hat{p}(1-\hat{p})\ }{n}}</mrow>
+        </md>
+      </p>
+      <p>
+        1-proportion Z-test
+        <md>
+          <mrow>\text{ Check: }   np_0\ge 10 \text{ and }  n(1-p_0)\ge 10 \qquad SE = \sqrt{\frac{\ p_0(1-p_0)\ }{n}}</mrow>
+        </md>
+      </p>
+    </assemblage>
+    <example xml:id="TooheyInferenceExample">
+      <statement>
+        <p>
+          (Continues previous example).
+          Deborah Toohey's campaign manager claimed she has more than 50% support from the district's electorate.
+          A newspaper poll finds that 52% of 500 likely voters who were sampled support Toohey.
+          Does this provide convincing evidence for the claim by Toohey's manager at the 5% significance level?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We will use a one-sided test with the following hypotheses:
+          <ul>
+            <li>
+              <p>
+                <m>p = 0.5</m>.
+                Toohey's support is 50%.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>p > 0.5</m>.
+                Toohey's manager is correct, and her support is higher than 50%.
+              </p>
+            </li>
+          </ul>
+        </p>
+        <p>
+          We will use a significance level of <m>\alpha = 0.05</m> for the test.
+          We can compute the standard error as
+          <md>
+            <mrow>SE = \sqrt{\frac{p_0 (1 - p_0) }{n}} = \sqrt{\frac{ 0.5 (1 - 0.5 )}{500}} = 0.022</mrow>
+          </md>
+        </p>
+        <p>
+          The test statistic can be computed as:
+          <md>
+            <mrow>Z =  \frac{\text{ point estimate }  - \text{ null value } }{SE \text{ of estimate } } = \frac{0.52 - 0.50}{0.022} = 0.89</mrow>
+          </md>
+        </p>
+        <p>
+          Because the alternative hypothesis uses a greater than sign (<m>></m>),
+          this is an upper-tail test.
+          We find the area under the standard normal curve to the
+          <em>right</em> of <m>Z=0.89</m>.
+          A figure featuring the p-value is shown in <xref ref="pValueForCampaignManagerClaimOfMoreThan50PercentSupport"></xref> as the shaded region.
+        </p>
+      </solution>
+    </example>
+    <figure xml:id="pValueForCampaignManagerClaimOfMoreThan50PercentSupport">
+      <caption>Sampling distribution of the sample proportion if the null hypothesis is true for <xref ref="TooheyInferenceExample"></xref>. The p-value for the test is shaded.</caption>
+      <image width="65%" source="images/inference_props/pValueForCampaignManagerClaimOfMoreThan50PercentSupport.png" />
+    </figure>
+    <p>
+      Using a table or a calculator,
+      we find the p-value is 0.19.
+      This p-value of 0.19 is greater than <m>\alpha = 0.05</m>,
+      so we do not reject <m>H_0</m>.
+      That is, we do not have sufficient evidence to support Toohey's campaign manager's claims that she has more than 50% support within the district.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Based on the result above,
+          do we have evidence that Toohey's support equals 50%?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          No.
+          In a hypothesis test we look for degrees of evidence
+          <em>against</em> the null hypothesis.
+          We cannot ever prove the null hypothesis directly.
+          The value 0.5 is reasonable, but many other values are reasonable as well.
+          There are many values that would not get rejected by this test.
+        </p>
+      </solution>
+    </example>
+    <p>
+      We now summarize the steps for carrying out a hypothesis test for a proportion using the five step framework introduced in the previous chapter.
+    </p>
+    <assemblage>
+      <title>Hypothesis testing for a proportion</title>
+      <p>
+        To carry out a complete hypothesis test to test the claim that a single proportion <m>p</m> is equal to a null value <m>p_0</m>,
+      </p>
+      <p>
+        <em>Identify</em>: Identify the hypotheses and the significance level,
+        <m>\alpha</m>.
+        <ul>
+          <li>
+            <p>
+              <m>H_0</m>: <m>p = p_0</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>H_A</m>: <m>p \ne p_0</m>; <m>H_A</m>:
+              <m>p > p_0</m>; or <m>H_A</m>: <m>p \lt p_0</m>
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        <em>Choose</em>: Choose the correct test procedure and identify it by name.
+        <ul>
+          <li>
+            <p>
+              Here we choose the <term>1-proportion Z-test</term>.
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        <em>Check</em>: Check conditions for the sampling distribution of <m>\hat{p}</m> to be nearly normal.
+        <ul>
+          <li>
+            <p>
+              Data come from a random sample.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>np_0\geq10</m> and <m>n(1-p_0)\geq10</m> (Make sure to plug in numbers.)
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        <em>Calculate</em>: Calculate the Z-statistic and p-value.
+      </p>
+      <p>
+      <ul>
+        <li>
+          <p>
+            <m>Z = \frac{\text{ point estimate } - \text{ null value } }{SE \text{ of estimate } }</m>
+          </p>
+          <p>
+          <ul>
+            <li>
+              <p>
+                point estimate: the sample proportion <m>\hat{p}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>SE</m> of estimate: <m>\sqrt{\frac{\ p_0(1-p_0)\ }{n}}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                null value: <m>p_0</m>
+              </p>
+            </li>
+          </ul>
+          </p>
+        </li>
+        <li>
+          <p>
+            p-value = (based on the Z-statistic and the direction of <m>H_A</m>)
+          </p>
+        </li>
+      </ul>
+      </p>
+      <p>
+        <em>Conclude</em>: Compare the p-value to <m>\alpha</m>,
+        and draw a conclusion in context.
+        <ul>
+          <li>
+            <p>
+              If the p-value is <m>\lt \alpha</m>, reject <m>H_0</m>;
+              there is sufficient evidence that [<m>H_A</m> in context].
+            </p>
+          </li>
+          <li>
+            <p>
+              If the p-value is <m>> \alpha</m>, do not reject <m>H_0</m>;
+              there is not sufficient evidence that [<m>H_A</m> in context].
+            </p>
+          </li>
+        </ul>
+      </p>
+    </assemblage>
+    <example xml:id="NuclearEnergy">
+      <statement>
+        <p>
+          A Gallup poll conducted in March of 2016 found that 54% of respondents oppose nuclear energy<fn><url href="https://news.gallup.com/poll/190064/first-time-majority-oppose-nuclear-energy.aspx">https://news.gallup.com/poll/190064/first-time-majority-oppose-nuclear-energy.aspx</url></fn>.
+          This was the first time since Gallup first asked the question in 1994 that a majority of respondents said they oppose nuclear energy.
+          The survey was based on telephone interviews from a random sample of 1,019 adults in the United States.
+          Does this poll provide evidence that greater than half of U.S. adults oppose nuclear energy?
+          Carry out an appropriate test at the 0.10 significance level.
+          Use the five step framework to organize your work.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <em>Identify</em>: We will test the following hypotheses at the <m>\alpha=10\%</m> significance level.
+        </p>
+        <p>
+          <m>H_0</m>: <m>p = 0.5</m>
+        </p>
+        <p>
+          <m>H_A</m>: <m>p > 0.5</m> Greater than half of all U.S. adults oppose nuclear energy.
+        </p>
+        <p>
+          Note: <m>p>0.5</m> is what we want to find evidence for;
+          this bears the burden of proof,
+          so this corresponds to <m>H_A</m>.
+        </p>
+        <p>
+          <em>Choose</em>: Because the hypotheses are about a single proportion,
+          we choose the 1-proportion Z-test.
+        </p>
+        <p>
+          <em>Check</em>: We must verify that the sample proportion can be modeled using a normal distribution.
+          The problem states that the data come from a random sample.
+          Also, <m>1019(0.5)\geq10</m> and
+          <m>1019(1-0.5)\geq10</m> so both conditions are met.
+          (Remember to use the hypothesized proportion,
+          not the sample proportion, when checking the conditions for this test.)
+        </p>
+        <p>
+          <em>Calculate</em>: We will calculate the Z-statistic and the p-value.
+          <md>
+            <mrow>Z = \frac{\text{ point estimate }  - \text{ null value } }{SE \text{ of estimate } }</mrow>
+          </md>
+        </p>
+        <p>
+          The point estimate is the sample proportion:
+          <m>\hat{p} = 0.54</m>.
+        </p>
+        <p>
+          The value hypothesized for the parameter in <m>H_0</m> is the null value:
+          <m>p_0 = 0.5</m>
+        </p>
+        <p>
+          The <m>SE</m> of the sample proportion,
+          assuming <m>H_0</m> is true, is:
+          <m>\sqrt{\frac{p_0(1-p_0)}{n}}= \sqrt{\frac{0.5(1-0.5)}{1019}}</m>
+          <md>
+            <mrow>Z = \frac{0.54 - 0.5}{\sqrt{\frac{0.5(1-0.5)}{1019}}} = 2.5</mrow>
+          </md>
+        </p>
+        <p>
+          Because <m>H_A</m> uses a greater than sign (<m>></m>),
+          meaning that it is an upper-tail test,
+          the p-value is the area to the <em>right</em>
+          of <m>Z=2.5</m> under the standard normal curve.
+          This area can be found using a normal table or a calculator.
+          The area or p-value = <m>0.006</m>.
+        </p>
+        <p>
+          <em>Conclude</em>: The p-value of 0.006 is
+          <m>\lt 0.10</m>, so we reject <m>H_0</m>;
+          there is sufficient evidence that greater than half of U.S. adults oppose nuclear energy
+          (as of March 2016).
+        </p>
+      </solution>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          In context, interpret the p-value of 0.006 from the previous example.<fn>Assuming the normal model is accurate, there is a 0.006 probability of getting a test statistic greater than 2.5 <em>if <m>H_0</m> were true</em>, that is, if the true proportion of U.S. adults that oppose nuclear energy really is 0.5. Note: We start by assuming <m>H_0</m> is true, that <m>p</m> really equals 0.5. Then, assuming this, we estimate the probability of getting a sample proportion of 0.54 or larger by finding the area under the standard normal curve to the right of 2.5. This probability
+          is very small, which casts doubt on the null hypothesis and leads us to reject it.</fn>
+        </p>
+      </statement>
+    </exercise>
+  </subsection>
+  <subsection xml:id="x1propZtest">
+    <title>Calculator:  the 1-proportion Z-test</title>
+    <p>
+      A calculator can be useful for evaluating the test statistic and computing the p-value.
+    </p>
+    <assemblage xml:id="one_proportion_ht_ti">
+    <title>TI-83/84: 1-proportion Z-test</title>
+      <p>
+        Use <c>STAT</c>, <c>TESTS</c>, <c>1-PropZTest</c>.
+        <ol>
+          <li>
+            <p>
+              Choose <c>STAT</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Right arrow to <c>TESTS</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Down arrow and choose <c>5:1-PropZTest</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <m>p_0</m> be the null or hypothesized value of p.
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <c>x</c> be the
+              <em>number</em> of yeses
+              (must be an integer).
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <c>n</c> be the sample size.
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose <m>\ne</m>, <m>\lt</m>,
+              or <m>></m> to correspond to <m>H_A</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose <c>Calculate</c> and hit <c>ENTER</c>,
+              which returns
+            </p>
+            <tabular>
+              <row>
+                <cell><c>z</c></cell>
+                <cell>Z-statistic</cell>
+              </row>
+              <row>
+                <cell><c>p</c></cell>
+                <cell>p-value</cell>
+              </row>
+              <row>
+                <cell><m>\hat{p}</m></cell>
+                <cell>the sample proportion</cell>
+              </row>
+              <row>
+                <cell><c>n</c></cell>
+                <cell>the sample size</cell>
+              </row>
+            </tabular>
+          </li>
+        </ol>
+      </p>
+      <sidebyside>
+        <video width="60%" preview="generic" youtube="-OjbnQGIA3Y" />
+      </sidebyside>
+    </assemblage>
+    <assemblage xml:id="one_proportion_ht_casio">
+      <title>Casio fx-9750GII: 1-proportion Z-test</title>
+      <p>
+        The steps closely match those of the 1-proportion confidence interval.
+        <ol>
+          <li>
+            <p>
+              Navigate to <c>STAT</c> (<c>MENU</c> button,
+              then hit the <c>2</c> button or select <c>STAT</c>).
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose the <c>TEST</c> option (<c>F3</c> button).
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose the <c>Z</c> option (<c>F1</c> button).
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose the <c>1-P</c> option (<c>F3</c> button).
+            </p>
+          </li>
+          <li>
+            <p>
+              Specify the test details:
+              <ul>
+                <li>
+                  <p>
+                    Specify the sidedness of the test using the <c>F1</c>, <c>F2</c>,
+                    and <c>F3</c> keys.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Enter the null value, <c>p0</c>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Enter the number of successes, <c>x</c>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Enter the sample size, <c>n</c>.
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </li>
+          <li>
+            <p>
+              Hit the <c>EXE</c> button,
+              which returns
+            </p>
+            <tabular>
+              <row>
+                <cell><c>z</c></cell>
+                <cell>Z-statistic</cell>
+              </row>
+              <row>
+                <cell><c>p</c></cell>
+                <cell>p-value</cell>
+              </row>
+              <row>
+                <cell><m>\hat{p}</m></cell>
+                <cell>the sample proportion</cell>
+              </row>
+              <row>
+                <cell><c>n</c></cell>
+                <cell>the sample size</cell>
+              </row>
+            </tabular>
+          </li>
+        </ol>
+      </p>
+      <sidebyside>
+        <video width="60%" preview="generic" youtube="ZnTrk_j4mZE" />
+      </sidebyside>
+    </assemblage>
+    <exercise>
+      <statement>
+        <p>
+          Using a calculator,
+          find the test statistic and p-value for the earlier <xref ref="NuclearEnergy"></xref>.
+          Recall that we were looking for evidence that more than half of U.S. adults oppose nuclear energy.
+          The sample percent was 54%, and the sample size was 1019.<fn>Navigate to the 1-proportion Z-test on the calculator. Let <c>p0</c><m> = 0.5</m>. To find <c>x</c>, do <m>0.54 \times 1019 = 550.26</m>. This needs to be an integer, so round to the closest integer. Here <c>x</c> <m>= 550</m>. Also, <c>n</c> <m>= 1019</m>. We are looking for evidence
+          that greater than half oppose, so choose <c> > p0</c>. When we do <c>Calculate</c>, we get the test statistic: <c>Z = 2.64</c> and the p-value: <c>p = 0.006</c>.</fn>
+        </p>
+      </statement>
+    </exercise>
+  </subsection>
+  <subsection>
+    <title>Section summary</title>
+    <p>
+      Most of the confidence interval procedures and hypothesis tests of this book involve:
+      a <term>point estimate</term>,
+      the <term>standard error</term> of the point estimate,
+      and an assumption about the <term>shape of the sampling distribution</term> of the point estimate.
+      In this section,
+      we explore inference when the parameter of interest is a <em>proportion</em>.
+    </p>
+    <p>
+    <ul>
+      <li>
+        <p>
+          We use the sample proportion <m>\hat{p}</m> as the <em>point estimate</em>
+          for the unknown population proportion <m>p</m>.
+          The sampling distribution of <m>\hat{p}</m> is approximately normal when the success-failure condition is met and the observations are independent.
+          The observations can generally be considered independent when the data is collected from a random sample or come from a stable,
+          random process analogous to flipping a coin.
+          When the sampling distribution of <m>\hat{p}</m> is normal,
+          the standardized test statistic also follows a
+          <term>normal</term> distribution.
+        </p>
+      </li>
+      <li>
+        <p>
+          When verifying the success-failure condition and calculating the <m>SE</m>,
+        </p>
+        <p>
+        <ul>
+          <li>
+            <p>
+              use the <em>sample</em> proportion <m>\hat{p}</m> for the confidence interval, but
+            </p>
+          </li>
+          <li>
+            <p>
+              use the <em>null/hypothesized</em>
+              proportion <m>p_0</m> for the hypothesis test.
+            </p>
+          </li>
+        </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          When there is one sample and the parameter of interest is a single proportion:
+          <ul>
+            <li>
+              <p>
+                Estimate <m>p</m> at the C% confidence level using a
+                <term>1-proportion Z-interval</term>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Test <m>H_0</m>:
+                <m>p=p_0</m> at the <m>\alpha</m> significance level using a
+                <term>1-proportion Z-test</term>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          !!!The first condition for the one proportion Z-interval and Z-test is the same.
+          The second one is different because of the use of the null proportion for the test.
+          <ol label="1">
+            <li>
+              <p>
+                Independence: The data should come from a random sample or random process. When  sampling without replacement, check that the sample size is less than 10% of the population size
+              </p>
+            </li>
+            <li>
+              <p>
+                Success-failure for Interval: <m>n\hat{p}\ge 10</m> and <m>n(1-\hat{p})\ge 10</m>.
+              </p>
+              <p>
+                Success-failure for Test: assuming <m>H_{0}:p=p_{0}</m> is true: <m>np_0\ge 10</m> and <m>n(1-p_0)\ge 10</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          When the conditions are met,
+          we calculate the confidence interval and the test statistic as follows.
+          <ul>
+            <li>
+              <p>
+                Confidence interval: <m>\text{ point estimate } \ \pm\ z^{\star} \times SE\ \text{ of estimate }</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Test statistic:
+                <m>Z = \frac{\text{ point estimate } - \text{ null value } }{SE \text{ of estimate } }</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Here the point estimate is the sample proportion <m>\hat{p}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The <m>SE</m> of estimate is the <m>SE</m> of the sample proportion.
+                <ul>
+                  <li>
+                    <p>
+                      For an Interval, use <m>SE=\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}</m>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      For a Test with <m>H_{0}:p=p_{0}</m>, use <m>SE=\sqrt{\frac{p_{0}(1-p_{0})}{n}}</m>
+                    </p>
+                  </li>
+                </ul>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          The <term>margin of error</term> (<m>ME</m>) for a one-sample confidence interval for a proportion is <m>z^{\star}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}</m>,
+          which is proportional to <m>\frac{1}{\sqrt{n}}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          To find the <term>minimum sample size</term>
+          needed to estimate a proportion with a given confidence level and a given margin of error,
+          <m>m</m>,
+          set up an inequality of the form:
+          <md>
+            <mrow>z^{\star}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\lt m</mrow>
+          </md>
+          <m>z^{\star}</m> depends on the desired confidence level.
+          Unless a particular proportion is given in the problem,
+          use <m>\hat{p}=0.5</m>. We solve for the sample size <m>n</m>.
+          The final answer should be an <em>integer</em>,
+          since <m>n</m> refers to a number of people or things.
+        </p>
+      </li>
+    </ul>
+    </p>
+  </subsection>
+  <exercises>
+    <!-- <title>Exercises</title>
+  <exercise xml:id="veg_coll_students_CLT">
+    <title>Vegetarian college students</title>
+    <statement>
+      <p>
+        Suppose that 8% of college students are vegetarians.
+        Determine if the following statements are true or false,
+        and explain your reasoning.
+        <ol>
+          <li>
+            <p>
+              The distribution of the sample proportions of vegetarians in random samples of size 60 is approximately normal since <m>n \ge 30</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The distribution of the sample proportions of vegetarian college students in random samples of size 50 is right skewed.
+            </p>
+          </li>
+          <li>
+            <p>
+              A random sample of 125 college students where 12% are vegetarians would be considered unusual.
+            </p>
+          </li>
+          <li>
+            <p>
+              A random sample of 250 college students where 12% are vegetarians would be considered unusual.
+            </p>
+          </li>
+          <li>
+            <p>
+              The standard error would be reduced by one-half if we increased the sample size from 125 to 250.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+    	<p>
+        <ol>
+          <li>
+            <p>
+              False. Doesn't satisfy success-failure condition.
+            </p>
+          </li>
+          <li>
+            <p>
+              True. The success-failure condition is not satisfied. In most samples we would expect <m>\hat{p}</m> to be close to 0.08, the true population proportion. While <m>\hat{p}</m> can be much above 0.08, it is bound below by 0, suggesting it would take on a right skewed shape. Plotting the sampling distribution would confirm this suspicion.
+            </p>
+          </li>
+          <li>
+            <p>
+              False. <m>SE_{\hat{p}} = 0.0243</m>, and <m>\hat{p} = 0.12</m> is only <m>\frac{0.12-0.08}{0.0243} = 16</m> SEs away from the mean, which would not be considered unusual.
+            </p>
+          </li>
+          <li>
+            <p>
+              True. <m>\hat{p} = 0.12</m> is 2.32 standard errors away from the mean, which is often considered unusual.
+            </p>
+          </li>
+          <li>
+            <p>
+              False. Decreases the SE by a factor of <m>1/ \sqrt{2}</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise> -->
+<!--   <exercise xml:id="young_americans_CLT_1">
+    <title>Young Americans, Part I</title>
+    <statement>
+      <p>
+        About 77% of young adults think they can achieve the American dream.
+        Determine if the following statements are true or false,
+        and explain your reasoning.<fn>A. Vaughn. <url href="https://www.latimes.com/world/la-xpm-2011-nov-03-la-na-young-adults-20111103-story.html"><q>Poll finds young adults optimistic, but not about money</q></url>. In: <em>Los Angeles Times</em> (2011).</fn>
+        <ol>
+          <li>
+            <p>
+              The distribution of sample proportions of young Americans who think they can achieve the American dream in samples of size 20 is left skewed.
+            </p>
+          </li>
+          <li>
+            <p>
+              The distribution of sample proportions of young Americans who think they can achieve the American dream in random samples of size 40 is approximately normal since <m>n \ge 30</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              A random sample of 60 young Americans where 85% think they can achieve the American dream would be considered unusual.
+            </p>
+          </li>
+          <li>
+            <p>
+              A random sample of 120 young Americans where 85% think they can achieve the American dream would be considered unusual.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise> -->
+  <exercise xml:id="orange_tabbies_CLT"><!--  #3 -->
+    <title>Orange tabbies</title>
+    <statement>
+      <p>
+        Suppose that 90% of orange tabby cats are male.
+        Determine if the following statements are true or false,
+        and explain your reasoning.
+        <ol>
+          <li>
+            <p>
+              The distribution of sample proportions of random samples of size 30 is left skewed.
+            </p>
+          </li>
+          <li>
+            <p>
+              Using a sample size that is 4 times as large will reduce the standard error of the sample proportion by one-half.
+            </p>
+          </li>
+          <li>
+            <p>
+              The distribution of sample proportions of random samples of size 140 is approximately normal.
+            </p>
+          </li>
+          <li>
+            <p>
+              The distribution of sample proportions of random samples of size 280 is approximately normal.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              True. See the reasoning of <xref ref="veg_coll_students_CLT" />, part b.
+            </p>
+          </li>
+          <li>
+            <p>
+              True. We take the square root of the sample size in the SE formula.
+            </p>
+          </li>
+          <li>
+            <p>
+              True. The independence and success-failure conditions are satisfied.
+            </p>
+          </li>
+          <li>
+            <p>
+              True. The independence and success-failure conditions are satisfied.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+  <exercise xml:id="young_americans_CLT_2"><!--  #4 -->
+    <title>Young Americans, Part II</title>
+    <statement>
+      <p>
+        About 25% of young Americans have delayed starting a family due to the continued economic slump.
+        Determine if the following statements are true or false,
+        and explain your reasoning.<fn>Demos.org. <url href="https://www.demos.org/research/state-young-america-poll"><q>The State of Young America: The Poll</q></url>. In: <em>Demos</em> (2011).</fn>
+        <ol>
+          <li>
+            <p>
+              The distribution of sample proportions of young Americans who have delayed starting a family due to the continued economic slump in random samples of size 12 is right skewed.
+            </p>
+          </li>
+          <li>
+            <p>
+              In order for the distribution of sample proportions of young Americans who have delayed starting a family due to the continued economic slump to be approximately normal,
+              we need random samples where the sample size is at least 40.
+            </p>
+          </li>
+          <li>
+            <p>
+              A random sample of 50 young Americans where 20% have delayed starting a family due to the continued economic slump would be considered unusual.
+            </p>
+          </li>
+          <li>
+            <p>
+              A random sample of 150 young Americans where 20% have delayed starting a family due to the continued economic slump would be considered unusual.
+            </p>
+          </li>
+          <li>
+            <p>
+              Tripling the sample size will reduce the standard error of the sample proportion by one-third.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="gender_equality"><!--  #5 -->
+    <title>Gender equality</title>
+    <statement>
+      <p>
+        The General Social Survey asked a random sample of 1,390 Americans the following question:
+        <q>On the whole,
+        do you think it should or should not be the government's responsibility to promote equality between men and women?</q>
+        82% of the respondents said it
+        <q>should be</q>. At a 95% confidence level, this sample has 2% margin of error.
+        Based on this information,
+        determine if the following statements are true or false,
+        and explain your reasoning.<fn>National Opinion Research Center, <url href="http://gss.norc.org/get-the-data">General Social Survey</url>, 2018.</fn>
+        <ol>
+          <li>
+            <p>
+              We are 95% confident that between 80% and 84% of Americans in this sample think it's the government's responsibility to promote equality between men and women.
+            </p>
+          </li>
+          <li>
+            <p>
+              We are 95% confident that between 80% and 84% of all Americans think it's the government's responsibility to promote equality between men and women.
+            </p>
+          </li>
+          <li>
+            <p>
+              If we considered many random samples of 1,390 Americans,
+              and we calculated 95% confidence intervals for each, 95% of these intervals would include the true population proportion of Americans who think it's the government's responsibility to promote equality between men and women.
+            </p>
+          </li>
+          <li>
+            <p>
+              In order to decrease the margin of error to 1%, we would need to quadruple
+              (multiply by 4)
+              the sample size.
+            </p>
+          </li>
+          <li>
+            <p>
+              Based on this confidence interval,
+              there is sufficient evidence to conclude that a majority of Americans think it's the government's responsibility to promote equality between men and women.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              False. A confidence interval is constructed to estimate the population proportion, not the sample proportion.
+            </p>
+          </li>
+          <li>
+            <p>
+              True. 95% CI: <m>82\% \pm 2\%</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              True. By the definition of the confidence level.
+            </p>
+          </li>
+          <li>
+            <p>
+              True. Quadrupling the sample size decreases the SE and ME by a factor of <m>1/ \sqrt{4}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              True. The 95% CI is entirely above 50%.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+  <exercise xml:id="elderly_drivers_CI_concept"><!--  #6 -->
+    <title>Elderly drivers</title>
+    <statement>
+      <p>
+        The Marist Poll published a report stating that 66% of adults nationally think licensed drivers should be required to retake their road test once they reach 65 years of age.
+        It was also reported that interviews were conducted on 1,018 American adults,
+        and that the margin of error was 3% using a 95% confidence level.<fn>Marist Poll, <url href="http://maristpoll.marist.edu/34-road-rules-re-testing-drivers-at-age-65/#sthash.sClZnB2I.dpbs">Road Rules: Re-Testing Drivers at Age 65?</url>, March 4, 2011.</fn>
+        <ol>
+          <li>
+            <p>
+              Verify the margin of error reported by The Marist Poll.
+            </p>
+          </li>
+          <li>
+            <p>
+              Based on a 95% confidence interval,
+              does the poll provide convincing evidence that <em>more than</em>
+              70% of the population think that licensed drivers should be required to retake their road test once they turn 65?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="fireworks_CI_concept"><!--  #7 -->
+  <title>Fireworks on July <em><m>4^{th}</m> </em></title>
+    <statement>
+      <p>
+        A local news outlet reported that 56% of 600 randomly sampled Kansas residents planned to set off fireworks on July <m>4^{th}</m>.
+        Determine the margin of error for the 56% point estimate using a 95% confidence level.<fn>Survey USA, <url href="http://www.surveyusa.com/client/PollReport.aspx?g=9f76df27-701b-4223-bf0f-3a6027b80321">News Poll #19333</url>, data collected on June 27, 2012.</fn>
+      </p>
+    </statement>
+    <solution>
+    	<p>
+    		With a random sample, independence is satisfied. The success-failure condition is also satisfied. <m>ME=z^{*} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} = 1.96 \sqrt{\frac{0.56 \times 0.44}{600}} = 0.0397 \approx 4\%</m>
+    	</p>
+    </solution>
+  </exercise>
+  <exercise xml:id="greece_life_rating_CI"><!--  #8 -->
+    <title>Life rating in Greece</title>
+    <statement>
+      <p>
+        Greece has faced a severe economic crisis since the end of 2009.
+        A Gallup poll surveyed 1,000 randomly sampled Greeks in 2011 and found that 25% of them said they would rate their lives poorly enough to be considered
+        <q>suffering</q>.<fn>Gallup World, <url href="https://news.gallup.com/poll/153869/One-Suffering-Worldwide.aspx">More Than One in 10 <q>Suffering</q> Worldwide</url>, data collected throughout 2011.</fn>
+        <ol>
+          <li>
+            <p>
+              Describe the population parameter of interest.
+              What is the value of the point estimate of this parameter?
+            </p>
+          </li>
+          <li>
+            <p>
+              Check if the conditions required for constructing a confidence interval based on these data are met.
+            </p>
+          </li>
+          <li>
+            <p>
+              Construct a 95% confidence interval for the proportion of Greeks who are
+              <q>suffering</q>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Without doing any calculations,
+              describe what would happen to the confidence interval if we decided to use a higher confidence level.
+            </p>
+          </li>
+          <li>
+            <p>
+              Without doing any calculations,
+              describe what would happen to the confidence interval if we used a larger sample.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="study_abroad_CI_decision"><!--  #9 -->
+    <title>Study abroad</title>
+    <statement>
+      <p>
+        A survey on 1,509 high school seniors who took the SAT and who completed an optional web survey shows that 55% of high school seniors are fairly certain that they will participate in a study abroad program in college.<fn>studentPOLL, <url href="https://www.acenet.edu/Documents/2008-Student-Poll.pdf">College-Bound Students' Interests in Study Abroad and Other International Learning Activities</url>, January 2008.</fn>
+        <ol>
+          <li>
+            <p>
+              Is this sample a representative sample from the population of all high school seniors in the US? Explain your reasoning.
+            </p>
+          </li>
+          <li>
+            <p>
+              Let's suppose the conditions for inference are met.
+              Even if your answer to part (a) indicated that this approach would not be reliable,
+              this analysis may still be interesting to carry out
+              (though not report).
+              Construct a 90% confidence interval for the proportion of high school seniors
+              (of those who took the SAT)
+              who are fairly certain they will participate in a study abroad program in college,
+              and interpret this interval in context.
+            </p>
+          </li>
+          <li>
+            <p>
+              What does
+              <q>90% confidence</q>
+              mean?
+            </p>
+          </li>
+          <li>
+            <p>
+              Based on this interval,
+              would it be appropriate to claim that the majority of high school seniors are fairly certain that they will participate in a study abroad program in college?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              No. The sample only represents student who took the SAT, and this was also an online survey.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(0.5289, 0.5711)</m>. We are 90% confident that 53% to 57% of high school seniors who took the SAT are fairly certain that they will participate in a study abroad program in college.
+            </p>
+          </li>
+          <li>
+            <p>
+              90% of such random samples would produce a 90% confidence interval that includes the true proportion.
+            </p>
+          </li>
+          <li>
+            <p>
+              Yes. The interval lies entirely above 50%.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+  <exercise xml:id="legalize_marijuana_CI_decision"><!--  #10 -->
+    <title>Legalization of marijuana, Part I</title>
+    <statement>
+      <p>
+        The General Social Survey asked 1,578 US residents:
+        <q>Do you think the use of marijuana should be made legal,
+        or not?</q>
+        61% of the respondents said it should be made legal.<fn></fn>National Opinion Research Center, <url href="http://gss.norc.org/get-the-data">General Social Survey, 2018</url>.
+        <ol>
+          <li>
+            <p>
+              Is 61% a sample statistic or a population parameter?
+              Explain.
+            </p>
+          </li>
+          <li>
+            <p>
+              Construct a 95% confidence interval for the proportion of US residents who think marijuana should be made legal,
+              and interpret it in the context of the data.
+            </p>
+          </li>
+          <li>
+            <p>
+              A critic points out that this 95% confidence interval is only accurate if the statistic follows a normal distribution,
+              or if the normal model is a good approximation.
+              Is this true for these data?
+              Explain.
+            </p>
+          </li>
+          <li>
+            <p>
+              A news piece on this survey's findings states,
+              <q>Majority of Americans think marijuana should be legalized.</q>
+              Based on your confidence interval,
+              is this news piece's statement justified?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="national_health_plan_HT"><!--  #11 -->
+    <title>National Health Plan, Part I</title>
+    <statement>
+      <p>
+        A <em>Kaiser Family Foundation</em>
+        poll for US adults in 2019 found that 79% of Democrats, 55% of Independents,
+        and 24% of Republicans supported a generic
+        <q>National Health Plan</q>. There were 347 Democrats, 298 Republicans,
+        and 617 Independents surveyed.<fn>Kaiser Family Foundation, <url href="https://www.kff.org/health-reform/poll-finding/kff-health-tracking-poll-january-2019/">The Public On Next Steps For The ACA And Proposals To Expand Coverage</url>, data collected between Jan 9-14, 2019.</fn>
+        <ol>
+          <li>
+            <p>
+              A political pundit on TV claims that a majority of Independents support a National Health Plan.
+              Do these data provide strong evidence to support this type of statement?
+            </p>
+          </li>
+          <li>
+            <p>
+              Would you expect a confidence interval for the proportion of Independents who oppose the public option plan to include 0.5?
+              Explain.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              We want to check for a majority (or minority), so we use the following hypotheses:
+              <md>
+                <mrow>H_{0}: p =0.5 \amp \amp H_{A}: p \ne 0.5</mrow>
+              </md>
+              We have a sample proportion of <m>\hat{p} = 0.55</m> and a sample size of <m>n = 617</m> independents.
+            </p>
+            <p>
+              Since this is a random sample, independence is satisfied. The success-failure condition is also satisfied: <m>617 \times 0.5</m> and <m> 617 \times (1-0.5)</m> are both at least 10 (we use the null proportion <m>p_{0} = 0.5</m> for this check in a one-proportion hypothesis test).
+            </p>
+            <p>
+              Therefore, we can model <m>\hat{p}</m> using a normal distribution with a standard error of
+              <md>
+                <mrow>SE= \sqrt{\frac{p(1-p)}{n}} = 0.02</mrow>
+              </md>
+              (We use the null proportion <m>p_{0} = 0.5</m> to compute the standard error for a one-proportion hypothesis test.) Next, we compute the test statistic:
+              <md>
+                <mrow>Z=\frac{0.55-0.5}{0.02}=2.5</mrow>
+              </md>
+              This yields a one-tail area of 0.0062, and a p-value of <m>2 \times 0.0062 = 0.0124</m>.
+            </p>
+            <p>
+              Because the p-value is smaller than 0.05, we reject the null hypothesis. We have strong evidence that the support is different from 0.5, and since the data provide a point estimate above 0.5, we have strong evidence to support this claim by the TV pundit.
+            </p>
+          </li>
+          <li>
+            <p>
+              No. Generally we expect a hypothesis test and a confidence interval to align, so we would expect the confidence interval to show a range of plausible values entirely above 0.5. However, if the confidence level is misaligned (e.g. a 99% confidence level and a <m>\alpha = 0.05</m> significance level), then this is no longer generally true.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+  <exercise xml:id="college_worth_it_HT_CI"><!--  #12 -->
+    <title>Is college worth it? Part I</title>
+    <statement>
+      <p>
+        Among a simple random sample of 331 American adults who do not have a four-year college degree and are not currently enrolled in school, 48% said they decided not to go to college because they could not afford school.<fn>Pew Research Center Publications, <url href="https://www.pewsocialtrends.org/2011/05/15/is-college-worth-it/">Is College Worth It?</url>, data collected between March 15-29, 2011.</fn>
+        <ol>
+          <li>
+            <p>
+              A newspaper article states that only a minority of the Americans who decide not to go to college do so because they cannot afford it and uses the point estimate from this survey as evidence.
+              Conduct a hypothesis test to determine if these data provide strong evidence supporting this statement.
+            </p>
+          </li>
+          <li>
+            <p>
+              Would you expect a confidence interval for the proportion of American adults who decide not to go to college because they cannot afford it to include 0.5?
+              Explain.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="taste_test_HT_2_sided"><!--  #13 -->
+  <title>Taste test</title>
+    <statement>
+    	<sidebyside>
+      	<video width="60%" preview="generic" youtube="TICHc59wAA4" />
+      </sidebyside>
+      <p>
+        Some people claim that they can tell the difference between a diet soda and a regular soda in the first sip.
+        A researcher wanting to test this claim randomly sampled 80 such people.
+        He then filled 80 plain white cups with soda,
+        half diet and half regular through random assignment,
+        and asked each person to take one sip from their cup and identify the soda as diet or regular. 53 participants correctly identified the soda.
+        <ol>
+          <li>
+            <p>
+              Do these data provide strong evidence that these people are any better or worse than random guessing at telling the difference between diet and regular soda?
+            </p>
+          </li>
+          <li>
+            <p>
+              Interpret the p-value in this context.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+    	<p>
+        <ol>
+          <li>
+            <p>
+              Identify: <m>H_{0} : p = 0.5</m>. <m>H_{A} : p \ne 0.5</m>. Choose: 1-proportionZ-test. Check: Independence (random sample, <m>\lt \%</m> of population) is satisfied, as is the success-failure conditions (using <m>p_{0} = 0.5</m>, we expect 40 successes and 40 failures). <m>Z = 2.91 \rightarrow \text{p-value} = 0.0018</m>. Conlcude: Since the p-value <m>\lt 0.05</m>, we reject the null hypothesis. The data provide strong evidence that the rate of correctly identifying a soda for these people is significantly better than just by random guessing.
+            </p>
+          </li>
+          <li>
+            <p>
+              The p-value represents the following conditional probability: <m>P(\hat{p} \gt 0.6625 | p=0.5)</m>. If in fact people cannot tell the difference between diet and regular soda and they randomly guess, the probability of getting a random sample of 80 people where 66.25% (53/80) or higher identify a soda correctly would be 0.0018.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+  <exercise xml:id="college_worth_it_CI_sample_size"><!--  #14 -->
+    <title>Is college worth it? Part II</title>
+    <statement>
+      <p>
+        <xref ref="college_worth_it_HT_CI"></xref> presents the results of a poll where 48% of 331 Americans who decide to not go to college do so because they cannot afford it.
+        <ol>
+          <li>
+            <p>
+              Calculate a 90% confidence interval for the proportion of Americans who decide to not go to college because they cannot afford it,
+              and interpret the interval in context.
+            </p>
+          </li>
+          <li>
+            <p>
+              Suppose we wanted the margin of error for the 90% confidence level to be about 1.5%. How large of a survey would you recommend?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="national_health_plan_CI_sample_size_replaced"><!--  #15 -->
+    <title>National Health Plan, Part II</title>
+    <statement>
+      <p>
+        <xref ref="national_health_plan_HT"></xref>
+        presents the results of a poll evaluating support for a generic
+        <q>National Health Plan</q>
+        in the US in 2019, reporting that 55% of Independents are supportive.
+        If we wanted to estimate this number to within 1% with 90% confidence,
+        what would be an appropriate sample size?
+      </p>
+    </statement>
+    <solution>
+    	<p>
+    		Since a sample proportion (<m>\hat{p} = 0.55</m>) is available, we use this for the sample size calculations. The margin of error for a 90% confidence interval is <m>1.6449 \times SE = 1.6449 \times \sqrt{\frac{p(1-p)}{n}}</m>. We want this to be less than 0.01, where we use <m>\hat{p}</m> in place of <m>p</m>:
+    		<md>
+    			<mrow>1.6449 \times \sqrt{\frac{0.55(1-0.55)}{n}} \lt 0.01</mrow>
+    			<mrow>1.6449^2 \frac{0.55(1-0.55)}{0.01^2} \lt n</mrow>
+    		</md>
+    		From this, we get that <m>n</m> must be at least 6697.
+    	</p>
+    </solution>
+  </exercise>
+  <exercise xml:id="legalize_marijuana_CI_sample_size"><!--  #16 -->
+    <title>Legalize Marijuana, Part II</title>
+    <statement>
+      <p>
+        As discussed in <xref ref="legalize_marijuana_CI_decision"></xref>,
+        the General Social Survey reported a sample where about 61% of US residents thought marijuana should be made legal.
+        If we wanted to limit the margin of error of a 95% confidence interval to 2%, about how many Americans would we need to survey?
+      </p>
+    </statement>
+  </exercise>
+</exercises>
+</section>

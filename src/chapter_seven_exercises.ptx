@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xml:id="chapter_seven_exercises">
+<title>Chapter exercises</title>
+
+<p></p> <!-- This makes the file schema compliant. Why? -->
+
+<exercises>
+  <exercise xml:id="gaming_and_distracted_eating_exercise">
+  <title>Gaming and distracted eating, Part I</title><!--  #33 -->
+    <statement>
+      <p>
+        A group of researchers are interested in the possible effects of distracting stimuli during eating, such as an increase or decrease in the amount of food consumption. To test this hypothesis, they monitored food intake for a group of 44 patients who were randomized into two equal groups. The treatment group ate lunch while playing solitaire, and the control group ate lunch without any added distractions. Patients in the treatment group ate 52.1 grams of biscuits, with a standard deviation of 45.1 grams, and patients in the control group ate 27.1 grams of biscuits, with a standard deviation of 26.4 grams. Do these data provide convincing evidence that the average food intake (measured in amount of biscuits consumed) is different for the patients in the treatment group? Assume that conditions for inference are satisfied.<fn>R.E. Oldham-Cooper et al. <url href="https://watermark.silverchair.com/308.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAAlowggJWBgkqhkiG9w0BBwagggJHMIICQwIBADCCAjwGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMzXqD3LISruO0wVNQAgEQgIICDY-UiKHIL_8PsBRfk_fG5XO1UOSt_O6mJlu1eETHjuUvuqqwEJYY3W4wlVURB5OMMMsRn6sEQf4MXXVrsTVvkkAJ2MMP7HEiXSxvJ1E4qmTwPwuAalWU0KhtHiXNFrN4_BAVVfAyQme5b4b3iKI3OVkaqYkMAePDhpY6gAbrljS_nG5EOK0L7Lu5YaCB6WEppLKoY3a2H8t0L2OtzuhH8VfPm6JdnOUQH_424UB_sUJu6MljpNq6XSr42fsriIXEeEfNNLkmoeH7vwVG3qJlSOFR0zUWcxGJ8PZmNBi5EL-UCllV9qm9sreKl6kKJXOUEV9MrL_ya45ZA_yxUO_Ko_Z1Vvln4AaTtkFoeqMYgkoOO3Oasr9aXo14YQ_wowz-_z2z_XDWPJdqRPc-g2vC1eLmUQTJnJC4eHbUMBKnqehYFm9MI9-sqxF4eNt6lO_jDr4CKscZHZMFFSlQ47HkFmA2J2AxqtTwXDOdG-98RmlceQIoL1toeLWQvYA2O7ceu-xGylAvsK-WQyjw2vbz4L315VPIH9qPxd85jSxCxNAZeezBq4DH67I9V6Vd7CGOJm9fgg6cxzbeqRcFyW27__Y6PxsFCP_6UoeXXIDwg2VfzNsdWkmUCh_0PTmNhgCYsjBPqoTbIRrCV9pCzwyGhkHqfyDlP1IOigcSq59_z7nT1IrD6X7daOK7OPtKig"><q>Playing a computer game during lunch affects fullness, memory for lunch, and later snack intake</q></url>. In: <em>The American Journal of Clinical Nutrition</em> 93.2 (2011), p. 308.</fn>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <m>H_{0} : \mu_{T} = \mu_{C}</m>. <m>H_{A} : \mu_{T} \ne \mu_{C}</m>. <m>T = 2.24</m>, <m>df = 21 \rightarrow \text{p-value } = 0.036</m>. Since <m>\text{p-value } &lt; 0.05</m>, reject <m>H_{0}</m>. The data provide strong evidence that the average food consumption by the patients in the treatment and control groups are different. Furthermore, the data indicate patients in the distracted eating (treatment) group consume more food than patients in the control group.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise><!--  #34 -->
+  <title>Gaming and distracted eating, Part II</title>
+    <statement>
+      <p>
+        The researchers from <xref ref="gaming_and_distracted_eating_exercise"></xref> also investigated the effects of being distracted by a game on how much people eat. The 22 patients in the treatment group who ate their lunch while playing solitaire were asked to do a serial-order recall of the food lunch items they ate. The average number of items recalled by the patients in this group was 4. 9, with a standard deviation of 1.8. The average number of items recalled by the patients in the control group (no distraction) was 6.1, with a standard deviation of 1.8. Do these data provide strong evidence that the average number of food items recalled by the patients in the treatment and control groups are different?
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise><!--  #35 -->
+  <title>Sample size and pairing</title>
+    <statement>
+      <p>
+        Determine if the following statement is true or false, and if false, explain your reasoning: If comparing means of two groups with equal sample sizes, always use a paired test.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        False. While it is true that paired analysis requires equal sample sizes, only having the equal sample sizes isn't, on its own, sufficient for doing a paired test. Paired tests require that there be a special correspondence between each pair of observations in the two groups.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise><!--  #36 -->
+  <title>College credits</title>
+    <statement>
+      <p>
+      	A college counselor is interested in estimating how many credits a student typically enrolls in each semester. The counselor decides to randomly sample 100 students by using the registrar's database of students. The histogram below shows the distribution of the number of credits taken by these students. Sample statistics for this distribution are also provided.
+      </p>
+      <sidebyside widths="45% 45%">
+      	<image source="images/inference_means/college_credits_hist.png" />
+      	<tabular>
+      		<row>
+      			<cell halign="left" right="minor">Min</cell>
+      			<cell halign="right">8</cell>
+      		</row>
+      		<row>
+      			<cell halign="left" right="minor">Q1</cell>
+      			<cell halign="right">13</cell>
+      		</row>
+      		<row>
+      			<cell halign="left" right="minor">Median</cell>
+      			<cell halign="right">14</cell>
+      		</row>
+      		<row>
+      			<cell halign="left" right="minor">Mean</cell>
+      			<cell halign="right">13.65</cell>
+      		</row>
+      		<row>
+      			<cell halign="left" right="minor">SD</cell>
+      			<cell halign="right">1.91</cell>
+      		</row>
+      		<row>
+      			<cell halign="left" right="minor">Q3</cell>
+      			<cell halign="right">15</cell>
+      		</row>
+      		<row>
+      			<cell halign="left" right="minor">Max</cell>
+      			<cell halign="right">18</cell>
+      		</row>
+      	</tabular>
+      </sidebyside>
+      <p>
+        <ol>
+          <li>
+            <p>
+              What is the point estimate for the average number of credits taken per semester by students at this college? What about the median?
+            </p>
+          </li>
+          <li>
+            <p>
+              What is the point estimate for the standard deviation of the number of credits taken per semester by students at this college? What about the IQR?
+            </p>
+          </li>
+          <li>
+            <p>
+            	Is a load of 16 credits unusually high for this college? What about 18 credits? Explain your reasoning.
+            </p>
+          </li>
+          <li>
+            <p>
+            	The college counselor takes another random sample of 100 students and this time finds a sample mean of 14.02 units. Should she be surprised that this sample statistic is slightly different than the one from the original sample? Explain your reasoning.
+            </p>
+          </li>
+          <li>
+            <p>
+            	The sample means given above are point estimates for the mean number of credits taken by all students at that college. What measures do we use to quantify the variability of this estimate? Compute this quantity using the data from the original sample.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise><!--  #37 -->
+  <title>Hen eggs</title>
+    <statement>
+      <p>
+      	The distribution of the number of eggs laid by a certain species of hen during their breeding period has a mean of 35 eggs with a standard deviation of 18.2. Suppose a group of researchers randomly samples 45 hens of this species, counts the number of eggs laid during their breeding period, and records the sample mean. They repeat this 1,000 times, and build a distribution of sample means.
+        <ol>
+          <li>
+            <p>
+              What is this distribution called?
+            </p>
+          </li>
+          <li>
+            <p>
+              Would you expect the shape of this distribution to be symmetric, right skewed, or left skewed? Explain your reasoning.
+            </p>
+          </li>
+          <li>
+            <p>
+            	Calculate the variability of this distribution and state the appropriate term used to refer to this value.
+            </p>
+          </li>
+          <li>
+            <p>
+            	Suppose the researchers' budget is reduced and they are only able to collect random samples of 10 hens. The sample mean of the number of eggs is recorded, and we repeat this 1,000 times, and build a new distribution of sample means. How will the variability of this new distribution compare to the variability of the original distribution?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              We are building a distribution of sample statistics, in this case the sample mean. Such a distribution is called a sampling distribution.
+            </p>
+          </li>
+          <li>
+            <p>
+              Because we are dealing with the distribution of sample means, we need to check to see if the Central Limit Theorem applies. Our sample size is greater than 30, and we are told that random sampling is employed. With these conditions met, we expect that the distribution of the sample mean will be nearly normal and therefore symmetric.
+            </p>
+          </li>
+          <li>
+            <p>
+              Because we are dealing with a sampling distribution, we measure its variability with the standard error. <m>SE = 18.2/ \sqrt{45} = 2.713</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              The sample means will be more variable with the smaller sample size.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise><!--  #38 -->
+  <title>Forest management</title>
+    <statement>
+      <p>
+        Forest rangers wanted to better understand the rate of growth for younger trees in the park. They took measurements of a random sample of 50 young trees in 2009 and again measured those same trees in 2019. The data below summarize their measurements, where the heights are in feet:
+      </p>
+    	<tabular halign="center">
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+    		<row bottom="minor">
+    			<cell></cell>
+    			<cell>2009</cell>
+    			<cell>2010</cell>
+    			<cell>Differences</cell>
+    		</row>
+    		<row>
+    			<cell><m>\bar{x}</m></cell>
+    			<cell>12.0</cell>
+    			<cell>24.5</cell>
+    			<cell>12.5</cell>
+    		</row>
+    		<row>
+    			<cell><m>s</m></cell>
+    			<cell>3.5</cell>
+    			<cell>9.5</cell>
+    			<cell>7.2</cell>
+    		</row>
+    		<row bottom="minor">
+    			<cell><m>n</m></cell>
+    			<cell>50</cell>
+    			<cell>50</cell>
+    			<cell>50</cell>
+    		</row>
+    	</tabular>
+      <p>
+    		Construct a 99% confidence interval for the average growth of (what had been) younger trees in the park over 2009-2019.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise><!--  #39 -->
+  <title>Exclusive relationships</title>
+    <statement>
+      <p>
+      	A survey conducted on a reasonably random sample of 203 undergraduates asked, among many other questions, about the number of exclusive relationships these students have been in. The histogram below shows the distribution of the data from this sample. The sample average is 3.2 with a standard deviation of 1.97.
+      </p>
+      <image width="50%" source="images/inference_means/exclusive_relationships_rel_hist.png" />
+      <p>
+	      Estimate the average number of exclusive relationships Duke students have been in using a 90% confidence interval and interpret this interval in context. Check any conditions required for inference, and note any assumptions you must make as you proceed with your calculations and conclusions.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Independence: it is a random sample, so we can assume that the students in this sample are independent of each other with respect to number of exclusive relationships they have been in. Notice that there are no students who have had no exclu-sive relationships in the sample, which suggests some student responses are likely missing (perhaps only positive values were reported). The sample size is at least 30, and there are no particularly extreme outliers, so the normality condition is reasonable. 90% CI: <m>(2.97, 3.43)</m>. We are 90% confident that undergraduate students have been in 2.97 to 3.43 exclusive relationships, on average.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="age_at_first_marriage_exercise"><!--  #40 -->
+  <title>Age at first marriage, Part I</title>
+    <statement>
+      <p>
+      	The National Survey of Family Growth conducted by the Centers for Disease Control gathers information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men's and women's health. One of the variables collected on this survey is the age at first marriage. The histogram below shows the distribution of ages at first marriage of 5,534 randomly sampled women between 2006 and 2010. The average age at first marriage among these women is 23.44 with a standard deviation of 4.72.<fn>Centers for Disease Control and Prevention, <url href="https://www.cdc.gov/nchs/nsfg/index.htm?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fnchs%">National Survey of Family Growth, 2010.</url></fn>
+      </p>
+      <image width="50%" source="images/inference_means/age_at_first_marriage_intro_hist.png"/>
+      <p>
+        Estimate the average age at first marriage of women using a 95% confidence interval, and interpret this interval in context. Discuss any relevant assumptions.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise><!--  #41 -->
+  <title>Online communication</title>
+    <statement>
+      <p>
+        A study suggests that the average college student spends 10 hours per week communicating with others online. You believe that this is an underestimate and decide to collect your own sample for a hypothesis test. You randomly sample 60 students from your dorm and find that on average they spent 13.5 hours a week communicating with others online. A friend of yours, who offers to help you with the hypothesis test, comes up with the following set of hypotheses. Indicate any errors you see.
+      </p>
+      <p>
+      	<md>
+      		<mrow>H_{0}:\bar{x}\lt 10 \text{ hours}</mrow>
+      		<mrow>H_{A}:\bar{x}\gt 13.5 \text{ hours}</mrow>
+      	</md>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        First, the hypotheses should be about the population mean (<m>\mu</m>), not the sample mean. Second, the null hypothesis should have an equal sign and the alternative hypothesis should be about the null hypothesized value, not the observed sample mean. The correct way to set up these hypotheses is shown below:
+        <md>
+          <mrow>H_{0}: \mu = 10 \text{hours}</mrow>
+          <mrow>H_{A}: \mu \ne 10 \text{hours}</mrow>
+        </md>
+        A two-sided test allows us to consider the possibility that the data show us something that we would find surprising.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise>
+  <title>Age <!--  #42 -->at first marriage, Part II</title>
+    <statement>
+      <p>
+        <xref ref="age_at_first_marriage_exercise"></xref> presents the results of a 2006 - 2010 survey showing that the average age of women at first marriage is 23.44. Suppose a social scientist thinks this value has changed since the survey was taken. Below is how she set up her hypotheses. Indicate any errors you see.
+      </p>
+      <p>
+      	<md>
+      		<mrow>H_{0}:\bar{x}\neq 23.44 \text{ years old}</mrow>
+      		<mrow>H_{A}:\bar{x} = 23.44 \text{ years old}</mrow>
+      	</md>
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="friday_13th_traffic">
+    <title>Friday the 13th, Part I</title>
+    <statement>
+      <p>
+        In the early 1990's, researchers in the UK collected data on traffic flow,
+        number of shoppers,
+        and traffic accident related emergency room admissions on Friday the <m>13^{th}</m> and the previous Friday, Friday the <m>6^{th}</m>.
+        The histograms below show the distribution of number of cars passing by a specific intersection on Friday the <m>6^{th}</m> and Friday the <m>13^{th}</m> for many such date pairs.
+        Also given are some sample statistics,
+        where the difference is the number of cars on the 6th minus the number of cars on the 13th.<fn>T.J. Scanlon et al. <url href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1697765/pdf/bmj00052-0013.pdf"><q>Is Friday the 13th Bad For Your Health?</q></url> In: <em>BMJ</em> 307 (1993), pp. 1584-1586.</fn>
+      </p>
+      <sidebyside>
+        <image width="95%" source="images/inference_means/friday_13th_traffic_hist.png" />
+      </sidebyside>
+      <tabular halign="center">
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell><m>6^{th}</m></cell>
+          <cell><m>13^{th}</m></cell>
+          <cell>Diff.</cell>
+        </row>
+        <row>
+          <cell><m>\bar{x}</m></cell>
+          <cell>128,385</cell>
+          <cell>126,550</cell>
+          <cell>1,835</cell>
+        </row>
+        <row>
+          <cell><m>s</m></cell>
+          <cell>7,259</cell>
+          <cell>7,664</cell>
+          <cell>1,176</cell>
+        </row>
+        <row bottom="minor">
+          <cell><m>n</m></cell>
+          <cell>10</cell>
+          <cell>10</cell>
+          <cell>10</cell>
+        </row>
+      </tabular>
+      <p>
+      <ol>
+        <li>
+          <p>
+            Are there any underlying structures in these data that should be considered in an analysis?
+            Explain.
+          </p>
+        </li>
+        <li>
+          <p>
+            What are the hypotheses for evaluating whether the number of people out on Friday the <m>6^{th}</m> is different than the number out on Friday the <m>13^{th}</m>?
+          </p>
+        </li>
+        <li>
+          <p>
+            Check conditions to carry out the hypothesis test from part (b).
+          </p>
+        </li>
+        <li>
+          <p>
+            Calculate the test statistic and the p-value.
+          </p>
+        </li>
+        <li>
+          <p>
+            What is the conclusion of the hypothesis test?
+          </p>
+        </li>
+        <li>
+          <p>
+            Interpret the p-value in this context.
+          </p>
+        </li>
+        <li>
+          <p>
+            What type of error might have been made in the conclusion of your test?
+            Explain.
+          </p>
+        </li>
+      </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              These data are paired. For example, the Friday the 13th in say, September 1991, would probably be more similar to the Friday the 6th in September 1991 than to Friday the 6th in another month or year.
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <m> \mu_{diff} = \mu_{sixth} - \mu_{thirteenth}</m>. <m>H_{0} : \mu_{diff} = 0</m>. <m>H_{A} : \mu_{diff} \ne 0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Independence: The months selected are not random. However, if we think these dates are roughly equivalent to a simple random sample of all such Friday 6th/13th date pairs, then independence is reasonable. To proceed, we must make this strong assumption, though we should note this assumption in any reported results. Normality: With fewer than 10 observations, we would need to see clear outliers to be concerned. There is a borderline outlier on the right of the histogram of the differences, so we would want to report this in formal analysis results.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>T = 4.93</m> for <m>df = 10 - 1 = 9 \rightarrow  \text{p-value } = 0.001</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Since <m>\text{p-value } \lt 0.05</m>, reject <m>H_{0}</m>. The data provide strong evidence that the average number of cars at the intersection is higher on Friday the <m>6^{th}</m> than on Friday the <m>13^{th}</m>. (We should exercise caution about generalizing the interpretation to all intersections or roads.)
+            </p>
+          </li>
+          <li>
+            <p>
+              If the average number of cars passing the intersection actually was the same on Friday the <m>6^{th}</m> and <m>13^{th}</m>, then the probability that we would observe a test statistic so far from zero is less than 0.01.
+            </p>
+          </li>
+          <li>
+            <p>
+              We might have made a Type 1 Error, i.e. incorrectly rejected the null hypothesis.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+  <exercise xml:id="friday_13th_accident">
+    <title>Friday the 13th, Part II</title>
+    <statement>
+      <p>
+        The Friday the 13<m>^{th}</m> study reported in <xref ref="friday_13th_traffic"></xref>
+        also provides data on traffic accident related emergency room admissions.
+        The distributions of these counts from Friday the 6<m>^{th}</m> and Friday the 13<m>^{th}</m> are shown below for six such paired dates along with summary statistics.
+        You may assume that conditions for inference are met.
+      </p>
+      <sidebyside>
+        <image width="70%" source="images/inference_means/friday_13th_accident_hist.png" />
+      </sidebyside>
+      <sidebyside widths="45% 45%">
+        <image width="65%" source="images/inference_means/friday_13th_accident_hist_diff.png" />
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell halign="center">6<m>^{th}</m></cell>
+            <cell halign="center">13<m>^{th}</m></cell>
+            <cell halign="center">diff</cell>
+          </row>
+          <row>
+            <cell halign="left">Mean</cell>
+            <cell halign="center">7.5</cell>
+            <cell halign="center">10.83</cell>
+            <cell halign="center">-3.33</cell>
+          </row>
+          <row>
+            <cell halign="left">SD</cell>
+            <cell halign="center">3.33</cell>
+            <cell halign="center">3.6</cell>
+            <cell halign="center">3.01</cell>
+          </row>
+          <row bottom="minor">
+            <cell halign="left">n</cell>
+            <cell halign="center">6</cell>
+            <cell halign="center">6</cell>
+            <cell halign="center">6</cell>
+          </row>
+        </tabular>
+      </sidebyside>
+      <p>
+      <ol>
+        <li>
+          <p>
+            Conduct a hypothesis test to evaluate if there is a difference between the average numbers of traffic accident related emergency room admissions between Friday the 6<m>^{th}</m> and Friday the 13<m>^{th}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Calculate a 95% confidence interval for the difference between the average numbers of traffic accident related emergency room admissions between Friday the 6<m>^{th}</m> and Friday the 13<m>^{th}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The conclusion of the original study states,
+            <q>Friday 13th is unlucky for some.
+            The risk of hospital admission as a result of a transport accident may be increased by as much as 52%. Staying at home is recommended.</q>
+            Do you agree with this statement?
+            Explain your reasoning.
+          </p>
+        </li>
+      </ol>
+    </p>
+    </statement>
+    <!-- <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>H_{0} : \mu_{diff} = 0</m>. <m>H_{A} : \mu_{diff} \ne 0</m>. <m>T = -2.71</m>. <m>df = 5</m>. <m>\text{p-value } = 0.042</m>. Since <m>\text{p-value } &lt; 0.05</m>, reject <m>H_{0}</m>. The data provide strong evidence that the average number of traffic accident related emergency room admissions are different between Friday the <m>6^{th}</m> and Friday the <m>13^{th}</m>. Furthermore, the data indicate that the direction of that difference is that accidents are lower on Friday the <m>6^{th}</m> relative to Friday the <m>13^{th}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>(-6.49, -0.17)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              This is an oservational study, not an experiment, so we cannot so easily infer a causal intervention implied by this statement. It is true that there is a difference. However, for example, this does not mean that a responsible adult going out on Friday the <m>13^{th}</m> has a higher chance of harm than on any other night.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution> -->
+  </exercise>
+</exercises>
+</section>

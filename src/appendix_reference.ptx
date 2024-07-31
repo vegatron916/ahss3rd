@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<appendix xml:id="appendix_reference">
+<title>Calculator reference, Formulas, and Inference guide</title>
+
+<section>
+<title>Calculator reference</title>
+<p>
+	Instructions for the <url href="https://www.youtube.com/playlist?list=PLkIselvEzpM7N8zVRRUl7V8aTdoTsJ919">TI-83/84</url> and the <url href="https://www.youtube.com/playlist?list=PLkIselvEzpM7xx4WIYydlxRFRiA_kPDxf">Casio fx-9750GII</url>, and their associated videos.
+</p>
+<p>
+	<ul>
+		<li>
+			<p>
+				Summarizing 1-variable statistics
+				<ul>
+					<li>
+						<p>
+							Entering data: <xref ref="entering_data_ti" text="title"><!-- TI calculator --></xref> and <xref ref="entering_data_casio" text="title"><!-- Casio calculator --></xref>
+						</p>
+					</li>
+					<li>
+						<p>
+							Calculating summary statistics: <xref ref="summary_stats_ti" text="title"><!-- TI calculator --></xref> and <xref ref="summary_stats_and_boxplot_casio" text="title"><!-- Casio calculator --></xref>
+						</p>
+					</li>
+					<li>
+						<p>
+							Drawing a box plot: <xref ref="boxplot_ti" text="title"><!-- TI calculator --></xref> and <xref ref="summary_stats_and_boxplot_casio" text="title"><!-- Casio calculator --></xref>
+						</p>
+					</li>
+				</ul>
+			</p>
+		</li>
+		<li>
+			<p>
+				Finding normal probabilities
+				<ul>
+					<li>
+						<p>
+							Finding area under the normal curve: <xref ref="normal_dist_ti" text="title"><!-- TI calculator --></xref> and <xref ref="normal_dist_casio" text="title"><!-- Casio calculator --></xref>
+						</p>
+					</li>
+					<li>
+						<p>
+							Finding a Z-score that corresponds to a percentile: <xref ref="normal_percentile_ti" text="title"><!-- TI calculator --></xref> and <xref ref="normal_percentile_casio" text="title"><!-- Casio calculator --></xref>
+						</p>
+					</li>
+				</ul>
+			</p>
+		</li>
+		<li>
+			<p>
+				Binomial probabilities
+				<ul>
+					<li>
+						<p>
+							Computing the binomial coeffcient: <xref ref="binomial_coefficient_ti" text="title"><!-- TI calculator --></xref> and <xref ref="binomial_coefficient_casio" text="title"><!-- Casio calculator --></xref>
+						</p>
+					</li>
+					<li>
+						<p>
+							Computing the binomial formula: <xref ref="binomial_formula_ti" text="title"><!-- TI calculator --></xref> and <xref ref="binomial_formula_pdf_cdf_casio" text="title"><!-- Casio calculator --></xref>
+						</p>
+					</li>
+					<li>
+						<p>
+							Computing cumulative binomial probabilities: <xref ref="binomial_formula_cdf_ti" text="title"><!-- TI calculator --></xref> and <xref ref="binomial_formula_pdf_cdf_casio" text="title"><!-- Casio calculator --></xref>
+						</p>
+					</li>
+				</ul>
+			</p>
+		</li>
+		<li>
+			<p>
+				Inference for a single proportion
+				<ul>
+					<li>
+						<p>
+							1-proportion Z-interval: <xref ref="one_proportion_ci_ti" text="title"><!-- TI calculator --></xref> and <xref ref="one_proportion_ci_casio" text="title"><!-- Casio calculator --></xref>
+						</p>
+					</li>
+					<li>
+						<p>
+							1-proportion Z-test: <xref ref="one_proportion_ht_ti" text="title"><!-- TI calculator --></xref> and <xref ref="one_proportion_ht_casio" text="title"><!-- Casio calculator --></xref>
+						</p>
+					</li>
+				</ul>
+			</p>
+		</li>
+		<li>
+			<p>
+				Inference for a difference of proportions
+				<ul>
+					<li>
+						<p>
+							2-proportion Z-interval: <xref ref="two_proportion_ci_ti" text="title"><!-- TI calculator --></xref> and <xref ref="two_proportion_ci_casio" text="title"><!-- Casio calculator --></xref>
+						</p>
+					</li>
+					<li>
+						<p>
+							2-proportion Z-test: <xref ref="two_proportion_ht_ti" text="title"><!-- TI calculator --></xref> and <xref ref="two_proportion_ht_casio" text="title"><!-- Casio calculator --></xref>
+						</p>
+					</li>
+				</ul>
+			</p>
+		</li>
+		<li>
+			<p>
+				Chi-square for one-way tables
+				<ul>
+					<li>
+						<p>
+							Finding area under chi-square curve: <xref ref="chi_upper_tail_prob_ti" text="title"><!-- TI calculator --></xref> and <xref ref="chi_upper_tail_prob_casio" text="title"><!-- Casio calculator --></xref>
+						</p>
+					</li>
+					<li>
+						<p>
+							Chi-square goodness of fit test: <xref ref="gof_ti" text="title"><!-- TI calculator --></xref> and <xref ref="gof_casio" text="title"><!-- Casio calculator --></xref>
+						</p>
+					</li>
+				</ul>
+			</p>
+		</li>
+		<li>
+			<p>
+				Chi-square for two-way tables
+				<ul>
+					<li>
+						<p>
+							Entering data in a two-way table: <xref ref="chi_entering_data_ti" text="title"><!-- TI calculator --></xref> and <xref ref="chi_test_casio" text="title"><!-- Casio calculator --></xref>
+						</p>
+					</li>
+					<li>
+						<p>
+							Chi-square test of homogeneity and independence: <xref ref="chi_homog_ind_ti" text="title"><!-- TI calculator --></xref> and <xref ref="chi_test_casio" text="title"><!-- Casio calculator --></xref>
+						</p>
+					</li>
+					<li>
+						<p>
+							Finding the expected counts: <xref ref="chi_expected_counts_homog_ind_ti" text="title"><!-- TI calculator --></xref> and <xref ref="chi_test_casio" text="title"><!-- Casio calculator --></xref>
+						</p>
+					</li>
+				</ul>
+			</p>
+		</li>
+		<li>
+			<p>
+				Inference for a single mean
+				<ul>
+					<li>
+						<p>
+							1-sample t-test: <xref ref="one_mean_ht_ti" text="title"><!-- TI calculator --></xref> and <xref ref="one_mean_ht_casio" text="title"><!-- Casio calculator --></xref>
+						</p>
+					</li>
+					<li>
+						<p>
+							1-sample t-interval: <xref ref="one_mean_ci_ti" text="title"><!-- TI calculator --></xref> and <xref ref="one_mean_ci_casio" text="title"><!-- Casio calculator --></xref>
+						</p>
+					</li>
+				</ul>
+			</p>
+		</li>
+		<li>
+			<p>
+				Inference for a mean of differences
+				<ul>
+					<li>
+						<p>
+							1-sample t-test with paired data: <xref ref="paired_means_ht_ti" text="title"><!-- TI calculator --></xref> and <xref ref="paired_means_ht_casio" text="title"><!-- Casio calculator --></xref>
+						</p>
+					</li>
+					<li>
+						<p>
+							1-sample t-interval with paired data: <xref ref="paired_means_ci_ti" text="title"><!-- TI calculator --></xref> and <xref ref="paired_means_ci_casio" text="title"><!-- Casio calculator --></xref>
+						</p>
+					</li>
+				</ul>
+			</p>
+		</li>
+		<li>
+			<p>
+				Inference for a difference of means
+				<ul>
+					<li>
+						<p>
+							2-sample t-test: <xref ref="two_means_ht_ti" text="title"><!-- TI calculator --></xref> and <xref ref="two_means_ht_casio" text="title"><!-- Casio calculator --></xref>
+						</p>
+					</li>
+					<li>
+						<p>
+							2-sample t-interval: <xref ref="two_means_ci_ti" text="title"><!-- TI calculator --></xref> and <xref ref="two_means_ci_casio" text="title"><!-- Casio calculator --></xref>
+						</p>
+					</li>
+				</ul>
+			</p>
+		</li>
+		<li>
+			<p>
+				The least squares regression line
+				<ul>
+					<li>
+						<p>
+							Finding the y-intercept, slope, <m>r</m>, and <m>R^2</m>: <xref ref="line_fitting_ti" text="title"><!-- TI calculator --></xref>, <xref ref="line_fitting_diagnostic_ti" text="title"><!-- TI calculator diagnostic help --></xref> and <xref ref="line_fitting_casio" text="title"><!-- Casio calculator --></xref>
+						</p>
+					</li>
+					<li>
+						<p>
+							What to do if you get Dim Mismatch: <xref ref="dimension_mismatch_ti" text="title"><!-- TI calculator --></xref>
+						</p>
+					</li>
+				</ul>
+			</p>
+		</li>
+		<li>
+			<p>
+				Inference for the slope of a regression line
+				<ul>
+					<li>
+						<p>
+							t-interval for the slope: see Graphing Calculator Guides at <url href="openintro.org/ahss">openintro.org/ahss</url>
+						</p>
+					</li>
+					<li>
+						<p>
+							t-test for the slope: see Graphing Calculator Guides at <url href="openintro.org/ahss">openintro.org/ahss</url>
+						</p>
+					</li>
+				</ul>
+			</p>
+		</li>
+	</ul>
+</p>
+</section>
+
+<!-- <section>
+	<title>Formulas</title>
+
+	<p>
+		MORE TO COME
+	</p>
+</section> -->
+
+<section xml:id="appendix_inference_guide">
+<title>Inference guide</title>
+	<sidebyside>
+		<image width="95%" source="images/appendix/inference_guide1.png" />
+	</sidebyside>
+	<sidebyside>
+		<image width="95%" source="images/appendix/inference_guide2.png" />
+	</sidebyside>
+</section>
+</appendix>

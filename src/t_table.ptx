@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="tDistributionTable_section">
+<title><m>t</m> Probability Table</title>
+<p></p>
+  <figure>
+    <caption>Three <m>t</m> distributions</caption>
+    <image width="95%" source="images/appendix/tTails.png"/>
+  </figure>
+<table xml:id="tDistributionTable">
+<title></title>
+  <tabular>
+  <row bottom="minor" halign="right">
+    <cell right="minor" colspan="2">one tail</cell>
+    <cell>0.100</cell>
+    <cell>0.050</cell>
+    <cell>0.025</cell>
+    <cell>0.010</cell>
+    <cell>0.005</cell>
+  </row>
+  <row halign="right">
+  	<cell>df</cell>
+    <cell right="minor">1</cell>
+    <cell>3.08</cell>
+    <cell>6.31</cell>
+    <cell>12.71</cell>
+    <cell>31.82</cell>
+    <cell>63.66</cell>
+  </row>
+  <row halign="right">
+  	<cell></cell>
+    <cell right="minor">2</cell>
+    <cell>1.89</cell>
+    <cell>2.92</cell>
+    <cell>4.30</cell>
+    <cell>6.96</cell>
+    <cell>9.92</cell>
+  </row>
+  <row halign="right">
+  	<cell></cell>
+    <cell right="minor">3</cell>
+    <cell>1.64</cell>
+    <cell>2.35</cell>
+    <cell>3.18</cell>
+    <cell>4.54</cell>
+    <cell>5.84</cell>
+  </row>
+  <row halign="right">
+  	<cell></cell>
+    <cell right="minor">4</cell>
+    <cell>1.53</cell>
+    <cell>2.13</cell>
+    <cell>2.78</cell>
+    <cell>3.75</cell>
+    <cell>4.60</cell>
+  </row>
+  <row bottom="minor" halign="right">
+  	<cell></cell>
+    <cell right="minor">5</cell>
+    <cell>1.48</cell>
+    <cell>2.02</cell>
+    <cell>2.57</cell>
+    <cell>3.36</cell>
+    <cell>4.03</cell>
+  </row>
+  <row halign="right">
+  	<cell></cell>
+    <cell right="minor">6</cell>
+    <cell>1.44</cell>
+    <cell>1.94</cell>
+    <cell>2.45</cell>
+    <cell>3.14</cell>
+    <cell>3.71</cell>
+  </row>
+  <row halign="right">
+  	<cell></cell>
+    <cell right="minor">7</cell>
+    <cell>1.41</cell>
+    <cell>1.89</cell>
+    <cell>2.36</cell>
+    <cell>3.00</cell>
+    <cell>3.50</cell>
+  </row>
+  <row halign="right">
+  	<cell></cell>
+    <cell right="minor">8</cell>
+    <cell>1.40</cell>
+    <cell>1.86</cell>
+    <cell>2.31</cell>
+    <cell>2.90</cell>
+    <cell>3.36</cell>
+  </row>
+  <row halign="right">
+  	<cell></cell>
+    <cell right="minor">9</cell>
+    <cell>1.38</cell>
+    <cell>1.83</cell>
+    <cell>2.26</cell>
+    <cell>2.82</cell>
+    <cell>3.25</cell>
+  </row>
+  <row bottom="minor" halign="right">
+  	<cell></cell>
+    <cell right="minor">10</cell>
+    <cell>1.37</cell>
+    <cell>1.81</cell>
+    <cell>2.23</cell>
+    <cell>2.76</cell>
+    <cell>3.17</cell>
+  </row>
+  <row halign="right">
+  	<cell></cell>
+  	<cell right="minor">11</cell>
+  	<cell>1.36</cell>
+  	<cell>1.80</cell>
+  	<cell>2.20</cell>
+  	<cell>2.72</cell>
+  	<cell>3.11</cell>
+  </row>
+  <row halign="right">
+  	<cell></cell>
+    <cell right="minor">12</cell>
+    <cell>1.36</cell>
+    <cell>1.78</cell>
+    <cell>2.18</cell>
+    <cell>2.68</cell>
+    <cell>3.05</cell>
+  </row>
+  <row halign="right">
+  	<cell></cell>
+    <cell right="minor">13</cell>
+    <cell>1.35</cell>
+    <cell>1.77</cell>
+    <cell>2.16</cell>
+    <cell>2.65</cell>
+    <cell>3.01</cell>
+  </row>
+  <row halign="right">
+  	<cell></cell>
+    <cell right="minor">14</cell>
+    <cell>1.35</cell>
+    <cell>1.76</cell>
+    <cell>2.14</cell>
+    <cell>2.62</cell>
+    <cell>2.98</cell>
+  </row>
+  <row bottom="minor" halign="right">
+  	<cell></cell>
+    <cell right="minor">15</cell>
+    <cell>1.34</cell>
+    <cell>1.75</cell>
+    <cell>2.13</cell>
+    <cell>2.60</cell>
+    <cell>2.95</cell>
+  </row>
+  <row halign="right">
+  	<cell></cell>
+    <cell right="minor">16</cell>
+    <cell>1.34</cell>
+    <cell>1.75</cell>
+    <cell>2.12</cell>
+    <cell>2.58</cell>
+    <cell>2.92</cell>
+  </row>
+  <row halign="right">
+  	<cell></cell>
+    <cell right="minor">17</cell>
+    <cell>1.33</cell>
+    <cell>1.74</cell>
+    <cell>2.11</cell>
+    <cell>2.57</cell>
+    <cell>2.90</cell>
+  </row>
+  <row halign="right">
+  	<cell></cell>
+    <cell right="minor">18</cell>
+    <cell>1.33</cell>
+    <cell>1.73</cell>
+    <cell>2.10</cell>
+    <cell>2.55</cell>
+    <cell>2.88</cell>
+  </row>
+  <row halign="right">
+  	<cell></cell>
+    <cell right="minor">19</cell>
+    <cell>1.33</cell>
+    <cell>1.73</cell>
+    <cell>2.09</cell>
+    <cell>2.54</cell>
+    <cell>2.86</cell>
+  </row>
+  <row bottom="minor" halign="right">
+  	<cell></cell>
+    <cell right="minor">20</cell>
+    <cell>1.33</cell>
+    <cell>1.72</cell>
+    <cell>2.09</cell>
+    <cell>2.53</cell>
+    <cell>2.85</cell>
+  </row>
+  <row halign="right">
+  	<cell></cell>
+    <cell right="minor">21</cell>
+    <cell>1.32</cell>
+    <cell>1.72</cell>
+    <cell>2.08</cell>
+    <cell>2.52</cell>
+    <cell>2.83</cell>
+  </row>
+  <row halign="right">
+  	<cell></cell>
+    <cell right="minor">22</cell>
+    <cell>1.32</cell>
+    <cell>1.72</cell>
+    <cell>2.07</cell>
+    <cell>2.51</cell>
+    <cell>2.82</cell>
+  </row>
+  <row halign="right">
+  	<cell></cell>
+    <cell right="minor">23</cell>
+    <cell>1.32</cell>
+    <cell>1.71</cell>
+    <cell>2.07</cell>
+    <cell>2.50</cell>
+    <cell>2.81</cell>
+  </row>
+  <row halign="right">
+  	<cell></cell>
+    <cell right="minor">24</cell>
+    <cell>1.32</cell>
+    <cell>1.71</cell>
+    <cell>2.06</cell>
+    <cell>2.49</cell>
+    <cell>2.80</cell>
+  </row>
+  <row bottom="minor" halign="right">
+  	<cell></cell>
+    <cell right="minor">25</cell>
+    <cell>1.32</cell>
+    <cell>1.71</cell>
+    <cell>2.06</cell>
+    <cell>2.49</cell>
+    <cell>2.79</cell>
+  </row>
+  <row halign="right">
+  	<cell></cell>
+    <cell right="minor">26</cell>
+    <cell>1.31</cell>
+    <cell>1.71</cell>
+    <cell>2.06</cell>
+    <cell>2.48</cell>
+    <cell>2.78</cell>
+  </row>
+  <row halign="right">
+  	<cell></cell>
+    <cell right="minor">27</cell>
+    <cell>1.31</cell>
+    <cell>1.70</cell>
+    <cell>2.05</cell>
+    <cell>2.47</cell>
+    <cell>2.77</cell>
+  </row>
+  <row halign="right">
+  	<cell></cell>
+    <cell right="minor">28</cell>
+    <cell>1.31</cell>
+    <cell>1.70</cell>
+    <cell>2.05</cell>
+    <cell>2.47</cell>
+    <cell>2.76</cell>
+  </row>
+  <row halign="right">
+  	<cell></cell>
+    <cell right="minor">29</cell>
+    <cell>1.31</cell>
+    <cell>1.70</cell>
+    <cell>2.05</cell>
+    <cell>2.46</cell>
+    <cell>2.76</cell>
+  </row>
+  <row bottom="minor" halign="right">
+  	<cell></cell>
+    <cell right="minor">30</cell>
+    <cell>1.31</cell>
+    <cell>1.70</cell>
+    <cell>2.04</cell>
+    <cell>2.46</cell>
+    <cell>2.75</cell>
+  </row>
+    <row bottom="minor" halign="center">
+    	<cell></cell>
+      <cell right="minor">Confidence level C</cell>
+      <cell>80%</cell>
+      <cell>90%</cell>
+      <cell>95%</cell>
+      <cell>98%</cell>
+      <cell>99%</cell>
+    </row>
+  </tabular>
+</table>
+
+<figure>
+  <caption>Three <m>t</m> distributions</caption>
+  <image width="80%" source="images/appendix/tTails.png"/>
+</figure>
+
+<table>
+<title></title>
+  <tabular>
+    <row bottom="minor" halign="right">
+      <cell right="minor" colspan="2">one tail</cell>
+      <cell>0.100</cell>
+      <cell>0.050</cell>
+      <cell>0.025</cell>
+      <cell>0.010</cell>
+      <cell>0.005</cell>
+    </row>
+    <row halign="right">
+    	<cell>df</cell>
+      <cell right="minor">31</cell>
+      <cell>1.31</cell>
+      <cell>1.70</cell>
+      <cell>2.04</cell>
+      <cell>2.45</cell>
+      <cell>2.74</cell>
+    </row>
+    <row halign="right">
+    	<cell></cell>
+      <cell right="minor">32</cell>
+      <cell>1.31</cell>
+      <cell>1.69</cell>
+      <cell>2.04</cell>
+      <cell>2.45</cell>
+      <cell>2.74</cell>
+    </row>
+    <row halign="right">
+    	<cell></cell>
+      <cell right="minor">33</cell>
+      <cell>1.31</cell>
+      <cell>1.69</cell>
+      <cell>2.03</cell>
+      <cell>2.44</cell>
+      <cell>2.73</cell>
+    </row>
+    <row halign="right">
+    	<cell></cell>
+      <cell right="minor">34</cell>
+      <cell>1.31</cell>
+      <cell>1.69</cell>
+      <cell>2.03</cell>
+      <cell>2.44</cell>
+      <cell>2.73</cell>
+    </row>
+    <row bottom="minor" halign="right">
+    	<cell></cell>
+      <cell right="minor">35</cell>
+      <cell>1.31</cell>
+      <cell>1.69</cell>
+      <cell>2.03</cell>
+      <cell>2.44</cell>
+      <cell>2.72</cell>
+    </row>
+    <row halign="right">
+    	<cell></cell>
+      <cell right="minor">36</cell>
+      <cell>1.31</cell>
+      <cell>1.69</cell>
+      <cell>2.03</cell>
+      <cell>2.43</cell>
+      <cell>2.72</cell>
+    </row>
+    <row halign="right">
+    	<cell></cell>
+      <cell right="minor">37</cell>
+      <cell>1.30</cell>
+      <cell>1.69</cell>
+      <cell>2.03</cell>
+      <cell>2.43</cell>
+      <cell>2.72</cell>
+    </row>
+    <row halign="right">
+    	<cell></cell>
+      <cell right="minor">38</cell>
+      <cell>1.30</cell>
+      <cell>1.69</cell>
+      <cell>2.02</cell>
+      <cell>2.43</cell>
+      <cell>2.71</cell>
+    </row>
+    <row halign="right">
+    	<cell></cell>
+      <cell right="minor">39</cell>
+      <cell>1.30</cell>
+      <cell>1.68</cell>
+      <cell>2.02</cell>
+      <cell>2.43</cell>
+      <cell>2.71</cell>
+    </row>
+    <row bottom="minor" halign="right">
+    	<cell></cell>
+      <cell right="minor">40</cell>
+      <cell>1.30</cell>
+      <cell>1.68</cell>
+      <cell>2.02</cell>
+      <cell>2.42</cell>
+      <cell>2.70</cell>
+    </row>
+    <row halign="right">
+    	<cell></cell>
+      <cell right="minor">41</cell>
+      <cell>1.30</cell>
+      <cell>1.68</cell>
+      <cell>2.02</cell>
+      <cell>2.42</cell>
+      <cell>2.70</cell>
+    </row>
+    <row halign="right">
+    	<cell></cell>
+      <cell right="minor">42</cell>
+      <cell>1.30</cell>
+      <cell>1.68</cell>
+      <cell>2.02</cell>
+      <cell>2.42</cell>
+      <cell>2.70</cell>
+    </row>
+    <row halign="right">
+    	<cell></cell>
+      <cell right="minor">43</cell>
+      <cell>1.30</cell>
+      <cell>1.68</cell>
+      <cell>2.02</cell>
+      <cell>2.42</cell>
+      <cell>2.70</cell>
+    </row>
+    <row halign="right">
+    	<cell></cell>
+      <cell right="minor">44</cell>
+      <cell>1.30</cell>
+      <cell>1.68</cell>
+      <cell>2.02</cell>
+      <cell>2.41</cell>
+      <cell>2.69</cell>
+    </row>
+    <row bottom="minor" halign="right">
+    	<cell></cell>
+      <cell right="minor">45</cell>
+      <cell>1.30</cell>
+      <cell>1.68</cell>
+      <cell>2.01</cell>
+      <cell>2.41</cell>
+      <cell>2.69</cell>
+    </row>
+    <row halign="right">
+    	<cell></cell>
+      <cell right="minor">46</cell>
+      <cell>1.30</cell>
+      <cell>1.68</cell>
+      <cell>2.01</cell>
+      <cell>2.41</cell>
+      <cell>2.69</cell>
+    </row>
+    <row halign="right">
+    	<cell></cell>
+      <cell right="minor">47</cell>
+      <cell>1.30</cell>
+      <cell>1.68</cell>
+      <cell>2.01</cell>
+      <cell>2.41</cell>
+      <cell>2.68</cell>
+    </row>
+    <row halign="right">
+    	<cell></cell>
+      <cell right="minor">48</cell>
+      <cell>1.30</cell>
+      <cell>1.68</cell>
+      <cell>2.01</cell>
+      <cell>2.41</cell>
+      <cell>2.68</cell>
+    </row>
+    <row halign="right">
+    	<cell></cell>
+      <cell right="minor">49</cell>
+      <cell>1.30</cell>
+      <cell>1.68</cell>
+      <cell>2.01</cell>
+      <cell>2.40</cell>
+      <cell>2.68</cell>
+    </row>
+    <row bottom="minor" halign="right">
+    	<cell></cell>
+      <cell right="minor">50</cell>
+      <cell>1.30</cell>
+      <cell>1.68</cell>
+      <cell>2.01</cell>
+      <cell>2.40</cell>
+      <cell>2.68</cell>
+    </row>
+    <row halign="right">
+    	<cell></cell>
+      <cell right="minor">60</cell>
+      <cell>1.30</cell>
+      <cell>1.67</cell>
+      <cell>2.00</cell>
+      <cell>2.39</cell>
+      <cell>2.66</cell>
+    </row>
+    <row halign="right">
+    	<cell></cell>
+      <cell right="minor">70</cell>
+      <cell>1.29</cell>
+      <cell>1.67</cell>
+      <cell>1.99</cell>
+      <cell>2.38</cell>
+      <cell>2.65</cell>
+    </row>
+    <row halign="right">
+    	<cell></cell>
+      <cell right="minor">80</cell>
+      <cell>1.29</cell>
+      <cell>1.66</cell>
+      <cell>1.99</cell>
+      <cell>2.37</cell>
+      <cell>2.64</cell>
+    </row>
+    <row halign="right">
+    	<cell></cell>
+      <cell right="minor">90</cell>
+      <cell>1.29</cell>
+      <cell>1.66</cell>
+      <cell>1.99</cell>
+      <cell>2.37</cell>
+      <cell>2.63</cell>
+    </row>
+    <row bottom="minor" halign="right">
+    	<cell></cell>
+      <cell right="minor">100</cell>
+      <cell>1.29</cell>
+      <cell>1.66</cell>
+      <cell>1.98</cell>
+      <cell>2.36</cell>
+      <cell>2.63</cell>
+    </row>
+    <row halign="right">
+    	<cell></cell>
+      <cell right="minor">150</cell>
+      <cell>1.29</cell>
+      <cell>1.66</cell>
+      <cell>1.98</cell>
+      <cell>2.35</cell>
+      <cell>2.61</cell>
+    </row>
+    <row halign="right">
+    	<cell></cell>
+      <cell right="minor">200</cell>
+      <cell>1.29</cell>
+      <cell>1.65</cell>
+      <cell>1.97</cell>
+      <cell>2.35</cell>
+      <cell>2.60</cell>
+    </row>
+    <row halign="right">
+    	<cell></cell>
+      <cell right="minor">300</cell>
+      <cell>1.28</cell>
+      <cell>1.65</cell>
+      <cell>1.97</cell>
+      <cell>2.34</cell>
+      <cell>2.59</cell>
+    </row>
+    <row halign="right">
+    	<cell></cell>
+      <cell right="minor">400</cell>
+      <cell>1.28</cell>
+      <cell>1.65</cell>
+      <cell>1.97</cell>
+      <cell>2.34</cell>
+      <cell>2.59</cell>
+    </row>
+    <row halign="right">
+    	<cell></cell>
+      <cell right="minor">500</cell>
+      <cell>1.28</cell>
+      <cell>1.65</cell>
+      <cell>1.96</cell>
+      <cell>2.33</cell>
+      <cell>2.59</cell>
+    </row>
+    <row bottom="minor" halign="right">
+    	<cell></cell>
+      <cell right="minor"><m>\infty</m></cell>
+      <cell>1.28</cell>
+      <cell>1.65</cell>
+      <cell>1.96</cell>
+      <cell>2.33</cell>
+      <cell>2.58</cell>
+    </row>
+    <row bottom="minor" halign="center">
+      <cell></cell>
+      <cell right="minor">Confidence level C</cell>
+      <cell>80%</cell>
+      <cell>90%</cell>
+      <cell>95%</cell>
+      <cell>98%</cell>
+      <cell>99%</cell>
+    </row>
+  </tabular>
+</table>
+</section>

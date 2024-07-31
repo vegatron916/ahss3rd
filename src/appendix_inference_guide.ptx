@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<appendix xml:id="appendix_inference_guide" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Calculator reference, Formulas, and Inference guide</title>
+
+<sidebyside>
+	<image width="95%" source="images/appendix/inference_guide1.png" />
+</sidebyside>
+<sidebyside>
+	<image width="95%" source="images/appendix/inference_guide2.png" />
+</sidebyside>
+</appendix>

@@ -1,0 +1,918 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xml:id="lin_reg_supplement">
+  <title>More inference for linear regression</title>
+  <subsection>
+  <title>Confidence interval for the slope of a regression line</title>
+    <p>
+      Consider LINK Figure 1 relating Elmhurst College aid and student family income. The equation for the least squares regression line along with the regression summary are shown in the following statistical software output:
+    </p>
+    <pre>
+      The regression equation is
+
+      aid = 24.31933 - 0.04307 family_income
+
+      Predictor Conf SE Coef T P
+      Constant 24.31933  1.29145 18.831 \lt FIX 2e-16
+      family_income -0.04307 0.01081 -3.985 0.000229
+      S = 4.783 R-Sq = 24.86% R-Sq(adj) = 23.29%
+    </pre>
+    <p>
+      The low p-value in the family income row, <m>P = 0.000229</m>, communicates that there is indeed correlation between family income and financial aid at this college, as we’d expect. The slope of the regression equation, <m>b_{1} = -0.04307</m> tells us that for each increase of $1,000 in family income, the model predicts that the corresponding financial aid award decreases by $43.07 on average.
+    </p>
+    <example>
+      <statement>
+        <p>
+          The average decrease of $43.07 is a point estimate <m>b_{1}</m> based on a sample of <m>n = 50</m> randomly selected students. Construct a 95% confidence interval (CI) to give an interval estimate of the genuine average decrease (BIG B_1 beta?), and interpret the meaningnof the CI in context.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          This CI is called a <em>t-interval for the slope of the regression line</em>. The quickest way to check the assumptions for inference is to look at the residual plot for the Elmhurst data. Since we see that data pairs are randomly scattered around the regression line in LINK Figure 1, we can proceed.
+        </p>
+<!--         <image>
+
+        </image> -->
+        <p>
+          We need a CI of this form:
+          <md>
+            <mrow>\text{point estimate}\pm t_{df}^{*} \times \text{SE of estimate}</mrow>
+          </md>
+        </p>
+        <p>
+          with <m>t^{*}</m> determined by both our confidence level and the degrees of freedom of our regression model. Here, we have point estimate <m>b_{1}</m> so the CI takes form:
+          <md>
+            <mrow>b_{1} \pm t_{df}^{*} \times SE_{b_{1}}</mrow>
+          </md>
+        </p>
+        <p>
+          The regression summary provides the slope (<m>b_{1} = -0.04307</m>) and its standard error <m>(SE_{b_{1}} = 0.01081)</m>. With <m>n = 50</m>, we have <m>n-2 = 48</m> degrees of freedom. Using either technology or a <m>t</m>-table, we find that with 95% confidence and <m>df = 48</m>, the multiplier for <m>SE_{b_{1}}</m> is <m>t_{48}^{*}=2.01</m>. So we have the CI
+          <md>
+            <mrow>-0.04307 \pm 2.01 \times 0.01081 \rightarrow -0.04307 \pm 0.0217.</mrow>
+          </md>
+        </p>
+        <p>
+          Calculating the bounds for the CI, we have lower bound <m>-0.04307-0.0217 = -0.06477</m> and upper bound <m>-0.04307 + 0.0217 = -0.02137</m>.
+        </p>
+        <p>
+          Now we can interpret the meaning of this CI in context. The lower bound -0.06477 represents an aid decrease of $64.77 for each $1,000 increase in family income. Now we carefully state our conclusion: We estimate with 95% confidence that for each $1,000 increase in family income, the average decrease in financial aid is between $21.37 and $64.77.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection>
+  <title>Prediction interval for a response value</title>
+    <p>
+      Suppose that a student named Cam is planning to attend Elmhurst College this coming fall. Cam would be curious about how much financial aid they are likely to receive based on their family’s income of $52,000. The linear regression model gives a point estimate of Cam’s aid award:
+      <md>
+        <mrow>\hat{y}= 24.31933 - 0.04307(52) = 22.07969 \text{(in thousands)}</mrow>
+      </md>
+    </p>
+    <p>
+      For Cam’s family income <m>x^{*} = 52</m>, or $52,000, the regression model predicts an aid award of <m>y^{*} = 22.07969</m>, or about $22,080. Here we’ve marked both the predictor and the response4 variables with a star to indicate our focus on one specific value of the predictor variable, a $52,000 family income.
+    </p>
+    <p>
+      But we know that our regression model is based on a sample of n = 50 students, and that this estimate would be (at least a little) different if we had generated the regression model from a different sample of Elmhurst students.
+    </p>
+    <p>
+      Expecting such sample variation, and confident that our sample data meets the assumptions for inference, we can construct a confidence interval to give an interval estimate of Cam’s expected aid. Here, the population parameter of interest is the unknown, specific aid award Cam should expect based on their family’s income. We can calculate a 95% CI for that expected aid. This CI is called a <em>prediction interval for a response value</em>.
+    </p>
+    <p>
+      Like many intervals for measurements, this prediction interval takes the form:
+      <md>
+        <mrow>\text{point estimate}\pm t_{df}^{*} \times \text{SE of estimate}</mrow>
+      </md>
+    </p>
+    <p>
+      For a chosen predictor value <m>x^{*}</m>, our point estimate is <m>\hat{y}^{*}=b_{0}+b_{1}x^{*}</m>. We find <m>t_{df}^{*}</m> using the <m>t</m>-distribution with <m>n - 2</m> degrees of freedom. And the formula for the standard error of <m>\hat{y}^{*}</m> is
+      <md>
+        <mrow>SE=\sqrt{s_{e}^2+\frac{s_{e}^2}{n}+(SE_{b_{1}})^2 \times (x^{*}-\bar{x})^2}</mrow>
+      </md>
+      where <m>s_{e}^2</m> is the variance of the residuals.<fn>Statistical software regression output usually includes the standard deviation of the residuals, often denoted as <m>S</m>. Square that value for <m>s_{e}^2</m></fn>
+    </p>
+    <p>
+      This standard error formula is complicated, and a detailed description of its meaning is left to a more advanced statistics course. Here at the introductory statistics level, we should at least have some sense of why there are three (increasingly complicated) terms involved in this SE calculation.
+      <ul>
+        <li>
+          <p>
+            <m>s_{e}^2</m>: While estimating variation for a particular response <m>\hat{y}^{*}</m> to a chosen <m>x^{*}</m>, this term represents the uncertainty associated with the residuals, the deviations between observed values and the line itself.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\frac{s_{e}^2}{n}</m>: Each particular response <m>\hat{y}^{*}</m> for each particular predictor <m>x^{*}</m> contributes its share to the total variance of the residuals — this share is represented by the term <m>\frac{s_{e}^2}{n}</m>, which is the average contribution to the variance of the residuals from one data pair.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(SE_{b_{1}})^2 \times (x^{*}-\bar{x})^2</m>: The linear regression model is anchored at the point <m>(\bar{x}, \bar{y})</m> and as we choose values further and from the mean <m>x^{*}</m>, we should become less and confident in our predictions <m>\hat{y}</m> for the response variable. This decreasing confidence in the accuracy of the model’s predictions as we get further from the <q>middle</q> of the scatterplot is captured by the term <m>(SE_{b_{1}})^2 \times (x^{*}-\bar{x})^2</m>, which increases in magnitude as our choice of <m>x^{*}</m> gets further from the predictor variable’s mean <m>\bar{x}</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      The reasoning above is quite complicated, and understanding why these calculations make sense requires deep study. Don’t be concerned if the explanations above aren’t intuitive or even entirely understood. Let’s return to Cam’s family to illustrate the process.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Construct a 95% prediction interval to estimate the amount of aid Elmhurst will award to Cam, whose family earns $52,000 per year.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We need to construct a prediction interval for a response value. Here, the predicted response value is Cam’s Elmhurst gift aid, <m>\hat{y}^{*}</m>, considering their family’s income of $52,000, or <m>x^{*}=52</m> for the linear regression model.
+        </p>
+        <p>
+          Whenever we construct a prediction interval, we should check that the conditions for fitting the model are met. Since the residuals for the Elmhurst aid vs. income data appear to have no pattern, we can assume that the residuals follow a normal distribution and proceed.
+        </p>
+        <p>
+          The 95% prediction interval is a CI for a measurement, so it takes the form:
+            <md>
+              <mrow>\text{point estimate} \pm t_{df}^{*} \times \text{SE of estimate}</mrow>
+            </md>
+          </p>
+          <p>
+            Substituting our point estimate <m>\hat{y}^{*}</m> and its SE we have:
+            <md>
+              <mrow>\hat{y}^{*} \pm t_{df}^{*} \times \sqrt{s_{e}^2+\frac{s_{e}^2}{n}+(SE_{b_{1}})^2 \times (x^{*}-\bar{x})^2}</mrow>
+            </md>
+          </p>
+          <p>
+            In LINK Example 1, we calculated the point estimate of Cam’s gift aid: <m>\hat{y}^{*}=b_{0}+b_{1}x^{*}= 22.07969</m>. Using technology or a t-table, we also determined that with <m>df = 50 - 2 =48</m>, a 95% confidence level requires <m>t_{48}^{*} = 2.011</m> for its SE multiplier.
+          </p>
+          <p>
+            The Elmhurst data regression summary provides the SD of the residuals <m>s_{e}</m> (denoted by <m>S</m> in our summary above CAN I LINK TO A PRE TABLE) and the SE of the slope <m>SE_{b_{1}}</m>. Both need to be squared for prediction interval calculations:
+            <md>
+              <mrow>s_{e}^2=(4.783)^2 SE_{b_{1}}^2=(0.01081)^2</mrow>
+            </md>
+          </p>
+          <p>
+            Last, we need the mean family income from the Elmhurst data set, <m>\bar{x} = 101.779</m>. With all of these values, we carefully calculate<fn>Calculations were performed using a spreadsheet to minimize rounding error. If you check these calculations <q>by hand,</q> you will notice error in the third decimal place.</fn> Cam’s aid prediction interval:
+            <md>
+              <mrow>\hat{y}^{*} \pm t_{df}^{*} \times \sqrt{s_{e}^2+\frac{s_{e}^2}{n}+(SE_{b_{1}})^2 \times (x^{*}-\bar{x})^2}</mrow>
+              <mrow>22.0796 \pm 2.011 \times \sqrt{(4.783)^2+\frac{(4.783)^2}{50}+(0.01081)^2 \times (52-101.779)^2}</mrow>
+              <mrow>22.0796 \pm 2.011 \times 4.860</mrow>
+              <mrow>22.0796 \pm 9.772</mrow>
+            </md>
+          </p>
+          <p>
+            Which yields a 95% prediction interval of <m>(12.308, 31.851)</m>. So we can predict with 95% confidence that Cam’s family can expect Elmhurst to offer between $12,308 and $31,851 in gift aid. Equivalently, we could predict with 95% confidence that Cam’s family can expect Elmhurst to offer gift aid of about $22,080 with a margin of error of $9,772.
+          </p>
+          <p>
+            Cam’s prediction interval has a huge margin of error. With a range of nearly $20,000, this prediction interval may not help Cam much with their financial planning.
+          </p>
+        </solution>
+    </example>
+
+  </subsection>
+
+  <subsection>
+  <title>Confidence interval for the mean response value</title>
+    <p>
+      We know from the Central Limit Theorem that ITAL? mean values are more predictable than individual measurements. So if Cam and their family consider the mean amount of aid that Elmhurst offers families earning $52,000 per year, then they can expect a smaller margin of error. Suppose that Cam would like to estimate the mean financial aid award for all prospective Elmhurst students whose families earn $52,000 per year. In addition to the point estimate, we can also construct a <em>confidence interval for the mean response</em> value at a specific family income using the following formula:
+      <md>
+        <mrow>\hat{y}^{*} \pm t_{df}^{*} \times \sqrt{\frac{s_{e}^2}{n}+(SE_{b_{1}})^2 \times (x^{*}-\bar{x})^2}</mrow>
+      </md>
+      where <m>\hat{y}^{*}=b_{0}+b_{1}x^{*}</m> is he predicted response for a chosen predictor value <m>x^{*}</m>.
+    </p>
+    <p>
+      Wait. Doesn’t that CI look familiar? A lot like the prediction interval for a specific response value? The CI we use to estimate mean response to a chosen <m>x^{*}</m> stated above uses the same point estimate <m>\hat{y}^{*}</m> as our prediction interval for a specific response value. That makes sense because a linear regression model predicts the mean response <m>\hat{y}</m> for any chosen x-value, but we usually read that response as a specific prediction.
+    </p>
+    <p>
+      See the difference between the prediction interval for a specific value and the confidence interval for the mean response? The SE for the confidence interval for the mean response value lacks the term, <m>s_{e}^2</m>, that accounts for variation among all of the residuals. Since we’re considering the ITAL? mean response for one input, we do not need to include the variance of all the residuals <m>s_{e}^2</m> here.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Construct a 95% confidence interval for the mean amount of aid Elmhurst will award to students whose families earn $52,000 per year.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The Elmhurst student aid data meets the conditions for inference. Remember that random scatter of data pairs around the regression line—no patterns there.
+        </p>
+        <p>
+          In our work for LINK Example 2 above, we collected all of the values we need. So we can quickly calculate the 95% CI for the mean response:
+          <md>
+            <mrow>\hat{y}^{*} \pm t_{df}^{*} \times \sqrt{\frac{s_{e}^2}{n}+(SE_{b_{1}})^2 \times (x^{*}-\bar{x})^2}</mrow>
+            <mrow>22.0796 \pm 2.011 \times \sqrt{\frac{(4.783)^2}{50}+(0.01081)^2 \times (52-101.779)^2}</mrow>
+            <mrow>22.0796 \pm 2.011 \times 0.864</mrow>
+            <mrow>22.0796 \pm 1.738</mrow>
+          </md>
+        </p>
+        <p>
+          The 95% CI is <m>(20.342, 23.817)</m>. Again we have a point estimate of $22,080, but the margin of error for the mean response is only $1,738. Cam and their family can be 95% confident that the mean gift aid award for Elmhurst students whose families’ incomes are $52,000 is between $20,342 and $23,817.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection>
+  <title>Regression response CIs and extrapolation</title>
+    <p>
+      Now that we can, for any chosen predictor value <m>x^{\star}</m>, estimate both a specific response to <m>x^{\star}</m> with a prediction interval or the mean response to <m>x^{\star}</m> with a CI, we can get a better sense of the utility of the regression model.
+    </p>
+    <table>
+    <title>95% prediction intervals for gift aid (in 1,000s of dollars) for students at varying levels of family income.</title>
+      <tabular>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row bottom="minor">
+          <cell halign="right"><m>x^{\star}</m></cell>
+          <cell halign="left"><m>\hat{y}^{\star} \pm ME</m></cell>
+          <cell halign="center">95% prediction interval</cell>
+        </row>
+        <row>
+          <cell halign="right"><m>0</m></cell>
+          <cell halign="left"><m>24.3\pm 10.0</m></cell>
+          <cell halign="center"><m>(14.4, 34.3)</m></cell>
+        </row>
+        <row>
+          <cell halign="right"><m>52</m></cell>
+          <cell halign="left"><m>22.1 \pm 9.8</m></cell>
+          <cell halign="center"><m>(12.3, 31.9)</m></cell>
+        </row>
+        <row>
+          <cell halign="right"><m>100</m></cell>
+          <cell halign="left"><m>20.0 \pm 9.7</m></cell>
+          <cell halign="center"><m>(10.3, 29.7)</m></cell>
+        </row>
+        <row>
+          <cell halign="right"><m>250</m></cell>
+          <cell halign="left"><m>13.6 \pm 10.2</m></cell>
+          <cell halign="center"><m>(3.3, 23.8)</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell halign="right"><m>500</m></cell>
+          <cell halign="left"><m>2.8 \pm 13.0</m></cell>
+          <cell halign="center"><m>(-10.2, 15.8)</m></cell>
+        </row>
+      </tabular>
+    </table>
+    <table>
+    <title>95% CIs for mean gift aid (in 1,000s of dollars) awarded to all Elmhurst students whose families have the indicated income level.</title>
+      <tabular>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row bottom="minor">
+          <cell halign="right"><m>x^{\star}</m></cell>
+          <cell halign="left"><m>\hat{y}^{\star} \pm ME</m></cell>
+          <cell halign="center">95% CI for mean resp.</cell>
+        </row>
+        <row>
+          <cell halign="right"><m>0</m></cell>
+          <cell halign="left"><m>24.3 \pm 2.6</m></cell>
+          <cell halign="center"><m>(21.7, 26.9)</m></cell>
+        </row>
+        <row>
+          <cell halign="right"><m>52</m></cell>
+          <cell halign="left"><m>22.1 \pm 1.7</m></cell>
+          <cell halign="center"><m>(20.3, 23.8)</m></cell>
+        </row>
+        <row>
+          <cell halign="right"><m>100</m></cell>
+          <cell halign="left"><m>20.0 \pm 1.4</m></cell>
+          <cell halign="center"><m>(18.7, 21.4)</m></cell>
+        </row>
+        <row>
+          <cell halign="right"><m>250</m></cell>
+          <cell halign="left"><m>13.6 \pm 3.5</m></cell>
+          <cell halign="center"><m>(10.1, 17.0)</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell halign="right"><m>500</m></cell>
+          <cell halign="left"><m>2.8 \pm 8.8</m></cell>
+          <cell halign="center"><m>(-6.0, 11.5)</m></cell>
+        </row>
+      </tabular>
+    </table>
+    <p>
+      Let’s use both inference techniques to estimate both specific gift aid amounts and mean gift aid amounts for Elmhurst students with these family incomes:
+      <ul>
+        <li>
+          <p>
+            $0: the lowest possible family income
+          </p>
+        </li>
+        <li>
+          <p>
+            $52,000: about the median US income (like Cam’s family)
+          </p>
+        </li>
+        <li>
+          <p>
+            $100,000: close to the mean family income for the sample of 50 Elmhurst students
+          </p>
+        </li>
+        <li>
+          <p>
+            $250,000: near the maximum family income from the sample
+          </p>
+        </li>
+        <li>
+          <p>
+            $500,000: an income significantly greater than any family’s income in the sample
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      The results are summarized in LINK Table 2 and LINK Table 3. We can see that in both tables, the margin of error increases as the income level gets further from the mean income for the Elmhurst sample data, $101,800.
+    </p>
+    <p>
+      The further away our chosen incomes are from the mean, the larger our intervals become. For family income $500,000, both intervals include negative values, which make absolutely no sense in this situation. The $500,000 example illustrates why extrapolation can be treacherous. The Elmhurst aid vs. income regression model estimates the mean gift aid fairly well, but not for incomes which are far above those incomes in the 50-student sample.
+    </p>
+    <p>
+      We can get a visual sense of how these interval estimates change for different <m>x</m>-values from LINK Figure 4. Looking at the Confidence and Prediction bands, it might seem like it’s just a better idea to estimate the mean response rather than to predict a specific response. But we should remember that it’s important to estimate using the interval that makes sense for the question at hand.
+    </p>
+    <p>
+      If Cam is curious about how much gift aid they can expect based on their family income, Cam should stick with the prediction interval. As we calculated in LINK Example 2, Cam can be 95% confident that Elmhurst will award them between $12,308 and $31,851 in gift aid. But if Cam wants to consider the average gift aid awarded to all students with the same family income as Cam’s family, then Cam should consider the confidence interval for mean response, which we calculated in LINK Example 3, again with 95% confidence, to be between $20,342 and $23,817. Looking at LINK Figure 4, can you see both these intervals?
+    </p>
+ <!--    <IMAGE>
+    </IMAGE> -->
+    <assemblage>
+    <title>Prediction interval for a response value</title>
+      <p>
+        <ol label="1">
+          <li>
+            <p>
+              State the name of the CI being used.
+              <ul>
+                <li>
+                  <p>
+                    Prediction interval for a response value.
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </li>
+          <li>
+            <p>
+              Verify conditions.
+              <ul>
+                <li>
+                  <p>
+                    The residual plot has no pattern.
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </li>
+          <li>
+            <p>
+              Plug in the numbers and write the interval in the form:
+              <md>
+                <mrow>\text{point estimate} \pm t^{\star} \times \text{SE of estimate}</mrow>
+              </md>
+            </p>
+            <p>
+              Estimating a specific response value for chosen predictor value <m>x^{\star}</m>,
+              <ul>
+                <li>
+                  <p>
+                    The point estimate is <m>\hat{y}^{\star}</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>df=n-2</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The critical value <m>t^{\star}</m> can be found using technology or on the <m>t</m>-table at row <m>df=n-2</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>SE=\sqrt{s_{e}^2+\frac{s_{e}^2}{n}+(SE_{b_{1}})^2 \times (x^{\star}-\bar{x})^2}</m>
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </li>
+          <li>
+            <p>
+              Evaluate the CI and write in the form <m>(<fillin/>, <fillin/>)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Interpret the interval. A generic statement: <q>We are [XX]% confident that this interval contains the specific response <m>y^{\star}</m> corresponding to <m>x^{\star}</m>.</q>
+            </p>
+          </li>
+          <li>
+            <p>
+              State a meaningful conclusion to the original question, including context details as needed.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </assemblage>
+    <assemblage>
+    <title></title>
+      <p>
+        <ol label="1">
+          <li>
+            <p>
+              State the name of the CI being used.
+              <ul>
+                <li>
+                  <p>
+                    Confidence interval for the mean response value.
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </li>
+          <li>
+            <p>
+              Verify conditions.
+              <ul>
+                <li>
+                  <p>
+                    The residual plot has no pattern.
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </li>
+          <li>
+            <p>
+              Plug in the numbers and write the interval in the form:
+              <md>
+                <mrow>\text{point estimate} \pm t^{*} \times \text{SE of estimate}</mrow>
+              </md>
+            </p>
+            <p>
+              Estimating the mean response value for chosen predictor value <m>x^{*}</m>
+              <ul>
+                <li>
+                  <p>
+                    The point estimate is <m>\hat{y}^{*}</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>df=n-2</m>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    The critical value <m>t^{*}</m> can be found using technology or on the <m>t</m>-table at row <m>df=n-2</m>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\sqrt{\frac{s_{e}^2}{n}+(SE_{b_{1}})^2 \times (x^{*} - \bar{x})^2}</m>
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </li>
+          <li>
+            <p>
+              Evaluate the CI and write in the form <m>(<fillin/>, <fillin/>)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Interpret the interval. A generic statement: <q>We are [XX]% confident that this interval contains the mean response value predicted by the regression model to the value <m>x^{*}</m>.</q>
+            </p>
+          </li>
+          <li>
+            <p>
+              State a meaningful conclusion to the original question, including context details as needed.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </assemblage>
+  </subsection>
+  
+<exercises>
+<title>Exercises</title>
+  <exercise>
+  <title>Murders and poverty, Part IV</title>
+    <statement>
+      <p>
+        Exercise 8.29 (OpenIntro AHSS) presents data examining the relationship between poverty and murder. Among 20 randomly selected metropolitan areas, <m>\bar{x}= 19.720\%</m> is the mean percentage of people living in poverty. Regression output for predicting annual murders from percentage living in poverty is shown below.
+      </p>
+      <table>
+        <title>UN-NAMED</title>
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor" halign="right">
+            <cell></cell>
+            <cell>Estimate</cell>
+            <cell>Std. Error</cell>
+            <cell>t value</cell>
+            <cell><m>Pr(>|t|)</m></cell>
+          </row>
+          <row halign="right">
+            <cell>(Intercept)</cell>
+            <cell>-29.901</cell>
+            <cell>7.789</cell>
+            <cell>-3.839</cell>
+            <cell>0.001</cell>
+          </row>
+          <row bottom="minor" halign="right">
+            <cell>poverty%</cell>
+            <cell>2.559</cell>
+            <cell>0.390</cell>
+            <cell>6.562</cell>
+            <cell>0.000</cell>
+          </row>
+          <row>
+            <cell><m>s=5.512</m></cell>
+            <cell></cell>
+            <cell><m>R^2=70.52\%</m></cell>
+            <cell></cell>
+            <cell><m>R_{adj}^2=68.89\%</m></cell>
+          </row>
+        </tabular>
+      </table>
+      <p>
+        Find a 95% prediction interval for the annual murders per million in a metropolitan area with
+        <ol label="a">
+          <li>
+            <p>
+              9% of the population living in poverty (like Washington, D.C.)<fn></fn>
+            </p>
+          </li>
+          <li>
+            <p>
+              9% of the population living in poverty (like Washington, D.C.)
+            </p>
+          </li>
+          <li>
+            <p>
+              40% of the population living in poverty (like Detroit, Michigan)<fn></fn>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  <solution>
+    <p>
+      <ol label="a">
+        <li>
+          <p>
+            <md>
+              <mrow>SE=\sqrt{(5.512)^2+\frac{(5.512)^2}{20}+(0.390)^2\times (9-20.570)^2}=7.03</mrow>
+            </md>
+          </p>
+          <p>
+            The prediction interval is <m>−6.87 \pm 14.763</m>, or <m>(−21.63, 7.89)</m>. With 95% confidence, the regression model predicts fewer than 7.9 murders per million for a metropolitan area with 9% of its people living in poverty. (We haven’t stated the lower bound for this interval, since <q>−22 murders per million</q> makes no sense.)
+          </p>
+        </li>
+        <li>
+          <p>
+            <md>
+              <mrow>SE=\sqrt{(5.512)^2+\frac{(5.512)^2}{20}+(0.390)^2\times (15-20.570)^2}=5.94</mrow>
+            </md>
+          </p>
+          <p>
+            The prediction interval is <m>8.48 \pm 12.481</m>, or <m>(−4.00, 20.96)</m>. When a metropolitan area has 15% of its people living in poverty, we can say with 95% confidence, the regression model predicts 8.48 murders per million with a margin of error of 12.48 murders per million. (Notice the lower bound will be negative here, too.)
+          </p>
+        </li>
+        <li>
+          <p>
+            <md>
+              <mrow>SE=\sqrt{(5.512)^2+\frac{(5.512)^2}{20}+(0.390)^2\times (40-20.570)^2}=9.72</mrow>
+            </md>
+          </p>
+          <p>
+            The 95% prediction interval is <m>72.46 \pm 20.419</m>, or <m>(52.04, 92.88)</m>. With 95% confidence, the regression model predicts between 52.0 and 92.9 murders per million for a metropolitan area with 40% of its people living in poverty.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </solution>
+  </exercise>
+
+  <exercise>
+  <title>Murders and poverty, Part V</title>
+    <statement>
+      <p>
+        Find a 95% confidence interval for the mean annual murders per million in a metropolitan area with
+      </p>
+      <p>
+        <ol label="a">
+          <li>
+            <p>
+              9% of the population living in poverty (like Washington, D.C.)
+            </p>
+          </li>
+          <li>
+            <p>
+              15% of the population living in poverty (the average poverty rate for US cities)
+            </p>
+          </li>
+          <li>
+            <p>
+              40% of the population living in poverty (like Detroit, Michigan)
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol label="a">
+          <li>
+            <p>
+              <md>
+                <mrow>SE=\sqrt{\frac{(5.512)^2}{20}+(0.390)^2\times (9-20.570)^2}=4.36</mrow>
+              </md>
+            </p>
+            <p>
+              The confidence interval is <m>−6.87 \pm 9.157</m>, or <m>(−16.03, 2.29)</m>. With 95% confidence, the regression model predicts that the mean number of murders per million for metropolitan areas with 9% of people living in poverty will be fewer than 2.3 murders per million.
+            </p>
+          </li>
+          <li>
+            <p>
+              <md>
+                <mrow>SE=\sqrt{\frac{(5.512)^2}{20}+(0.390)^2\times (15-20.570)^2}=2.22</mrow>
+              </md>
+            </p>
+            <p>
+              5% confidence interval is <m>8.48\pm4.654</m>, or <m>(3.83, 13.14)</m>. With 95% confidence, the regression model predicts that the mean number of murders per million for metropolitan areas with 15% of people living in poverty will be between 3.8 and 13.1 murders per million.
+            </p>
+          </li>
+          <li>
+            <p>
+              <md>
+                <mrow>SE=\sqrt{\frac{(5.512)^2}{20}+(0.390)^2\times (40-20.570)^2}=8.00</mrow>
+              </md>
+            </p>
+            <p>
+              The 95% confidence interval is <m>72.46 \pm 16.817</m>, or <m>(55.64, 89.28)</m>. With 95% confidence, the regression model predicts that the mean number of murders per million for metropolitan areas with 40% of people living in poverty will be between 55.6 and 89.3 murders per million.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise>
+  <title>Murders and poverty, Part VI</title>
+    <statement>
+      <p>
+        In 2014, there were 105 murders in Washington, D.C., or 165.7 murders per million.<fn>LINK</fn> Washington, D.C., has a low poverty rate of 9%.
+      </p>
+      <p>
+        <ol label="a">
+          <li>
+            <p>
+              Use the regression model to calculate the residual for Washington, D.C., in 2014. Describe the meaning of the residual.
+            </p>
+          </li>
+          <li>
+            <p>
+              Does Washington, D.C.’s prediction interval from LINK Exercise 0.1(a) capture its genuine number of murders per million from 2014?
+            </p>
+          </li>
+          <li>
+            <p>
+              Does the confidence interval for the mean annual murders per million for metropolitan areas with 9% poverty from LINK Exercise 0.2 capture Washington, D.C.’s genuine number of murders per million from 2014?
+            </p>
+          </li>
+          <li>
+            <p>
+              Why do you think that this linear regression model succeeds or fails to capture the actual data from Washington, D.C. in 2014?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol label="a">
+          <li>
+            <p>
+              The residual calculation for Washington, D.C. is
+                <md>
+                  <mrow>residual = 165.7 − (−6.87) = 172.57</mrow>
+                </md>
+            </p>
+            <p>
+              That means that there were about 173 more murders per million in Washington, D.C., in 2014 than this regression model predicts.
+            </p>
+          </li>
+          <li>
+            <p>
+              Washington, D.C.’s prediction interval, <m>(−21.63, 7.89)</m>, does not capture its genuine number of murders, about 166 per million, from 2014. (It’s not even close.)
+            </p>
+          </li>
+          <li>
+            <p>
+              The confidence interval for the mean annual murders per million for metropolitan areas with 9% poverty, <m>(−16.03, 2.29)</m>, does not capture Washington, D.C.’s 173 murders per million from 2014.
+            </p>
+          </li>
+          <li>
+            <p>
+              The regression model uses many cities to capture a general trend. In 2014, Washington, D.C., was outstanding both for its low poverty rate and its high number of murders per million. This kind of outlier won’t be predicted by a linear regression model
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise>
+  <title>Cats, Part III</title>
+    <statement>
+      <p>
+        Exercise 8.30 (OpenIntro AHSS) presents regression output from a model for predicting the heart weight (in g) of cats from their body weight (in kg). The model is based on data from a sample of 144 domestic cats with mean weight <m>\bar{x} = 2.724 kg</m>. The regression output is provided below:
+      </p>
+      <table>
+      <title> NOT NAMED</title>
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor" halign="right">
+            <cell></cell>
+            <cell>Estimate</cell>
+            <cell>Std. Error</cell>
+            <cell>t value</cell>
+            <cell><m>Pr(>|t|)</m></cell>
+          </row>
+          <row halign="right">
+            <cell>(Intercept)</cell>
+            <cell>-0.357</cell>
+            <cell>0.692</cell>
+            <cell>-0.515</cell>
+            <cell>0.607</cell>
+          </row>
+          <row bottom="minor" halign="right">
+            <cell>body wt</cell>
+            <cell>4.034</cell>
+            <cell>0.250</cell>
+            <cell>16.119</cell>
+            <cell>0.000</cell>
+          </row>
+          <row>
+            <cell><m>s=1.452</m></cell>
+            <cell></cell>
+            <cell><m>R^2=64.66\%</m></cell>
+            <cell></cell>
+            <cell><m>R_{adj}^2=64.41\%</m></cell>
+          </row>
+        </tabular>
+      </table>
+      <p>
+        <ol label="a">
+          <li>
+            <p>
+              5.5 kg (the weight of this writer’s cat, Dale)
+            </p>
+          </li>
+          <li>
+            <p>
+               9 kg (the weight of a very large, healthy cat)
+            </p>
+          </li>
+          <li>
+            <p>
+              21 kg (the weight of the heaviest known cat)
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol label="a">
+          <li>
+            <p>
+              <md>
+                <mrow>SE=\sqrt{(1.452)^2+\frac{(1.452)^2}{144}+(0.25)^2\times (5.5-2.724)^2}=1.61</mrow>
+              </md>
+            </p>
+            <p>
+              The prediction interval is <m>21.83 \pm 3.191</m>, or <m>(18.64, 25.02)</m>. With 95% confidence, the regression model predicts that a 5.5 kg (body weight) cat’s heart will weigh between 18.6g and 25.0g.
+            </p>
+          </li>
+          <li>
+            <p>
+              <md>
+                <mrow>SE=\sqrt{(1.452)^2+\frac{(1.452)^2}{144}+(0.25)^2\times (9-2.724)^2}=2.14</mrow>
+              </md>
+            </p>
+            <p>
+              The 95% prediction interval is <m>35.95 \pm 4.233</m>, or <m>(31.72, 40.18)</m>. With 95% confidence, the regression model predicts that a 9 kg (body weight) cat’s heart will weigh between 31.7 g and 40.2g.
+            </p>
+          </li>
+          <li>
+            <p>
+              <md>
+                <mrow>SE=\sqrt{(1.452)^2+\frac{(1.452)^2}{144}+(0.25)^2\times (21-2.724)^2}=4.80</mrow>
+              </md>
+            </p>
+            <p>
+              The 95% prediction interval is <m>84.36 \pm 9.481</m>, or <m>(74.88, 93.84)</m>. With 95% confidence, the regression model predicts that a 21 kg (body weight) cat’s heart will weigh between 74.9g and 93.8g.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise>
+  <title>Cats, Part IV</title>
+    <statement>
+      <p>
+        Refer again to the regression output for the model that predicts cats’ heart weights (in g) from the weights (in kg) provided above in LINK Exercise 0.4.
+      </p>
+      <p>
+        <ol label="a">
+          <li>
+            <p>
+              5.5 kg (the weight of this writer’s cat, Dale)
+            </p>
+          </li>
+          <li>
+            <p>
+               9 kg (the weight of a very large, healthy cat)
+            </p>
+          </li>
+          <li>
+            <p>
+              21 kg (the weight of the heaviest known cat)
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol label="a">
+          <li>
+            <p>
+              <md>
+                <mrow>SE=\sqrt{\frac{(1.452)^2}{144}+(0.25)^2\times (5.5-2.724)^2}=0.70</mrow>
+              </md>
+            </p>
+            <p>
+              The confidence interval is <m>21.83 \pm 1.393</m>, or <m>(20.44, 23.22)</m>. With 95% confidence, the regression model predicts that the mean heart weight of cats with body weight 5.5 kg is between 20.4 g and 23.2 g.
+            </p>
+          </li>
+          <li>
+            <p>
+              <md>
+                <mrow>SE=\sqrt{\frac{(1.452)^2}{144}+(0.25)^2\times (9-2.724)^2}=1.57</mrow>
+              </md>
+            </p>
+            <p>
+              The 95% confidence interval is <m>35.95 \pm 3.111</m>, or <m>(32.84, 39.06)</m>. With 95% confidence, the regression model predicts that the mean heart weight of cats with body weight 9 kg is between 32.8 g and 39.1 g.
+            </p>
+          </li>
+          <li>
+            <p>
+              <md>
+                <mrow>SE=\sqrt{\frac{(1.452)^2}{144}+(0.25)^2\times (21-2.724)^2}=4.57</mrow>
+              </md>
+            </p>
+            <p>
+              The 95% confidence interval is <m>84.36 \pm 9.036</m>, or <m>(75.32, 93.39)</m>. With 95% confidence, the regression model predicts that the mean heart weight of cats with body weight 5.5 kg is between 75.3 g and 93.4 g.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise>
+  <title>Cats, Part V</title>
+    <statement>
+      <p>
+        Consider the prediction intervals from  LINK Exercise 0.4 and the confidence intervals from LINK Exercise 0.5. Should we trust that all of those intervals are accurate? (If you don’t know where to start, do a little online research to find out what range of cats’ heart weights are reasonable.)
+      </p>
+    </statement>
+    <solution>
+      <p>
+        An online search for <q>cat heart weight</q> reveals that healthy cat hearts typically weigh less than <m>20 g</m> (and less than <m>40 g</m> for cats with heart conditions). That means that many of these intervals are outside the realm of possibility. Since our choices for cat body weight are outside the weights in the data set, this is no surprise. Extrapolating using a linear regression model to <m>x</m>-values outside the data set usually gives bad predictions.
+      </p>
+    </solution>
+  </exercise>
+</exercises>
+</section>

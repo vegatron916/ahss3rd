@@ -1,0 +1,2124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xml:id="theTDistributionForTheDifferenceOfTwoMeans">
+<title>Inference for the difference of two means</title>
+  <introduction>
+    <p>
+      Often times we wish to compare two groups to each other to answer questions such as the following:
+      <ul>
+        <li>
+          <p>
+            Does treatment using embryonic stem cells (ESCs) help improve heart function following a heart attack?
+          </p>
+        </li>
+        <li>
+          <p>
+            Is there convincing evidence that newborns from mothers who smoke have a different average birth weight than newborns from mothers who don't smoke?
+          </p>
+        </li>
+        <li>
+          <p>
+            Is there statistically significant evidence that one variation of an exam is harder than another variation?
+          </p>
+        </li>
+        <li>
+          <p>
+            Are faculty willing to pay someone named
+            <q>John</q>
+            more than someone named
+            <q>Jennifer</q>? If so, how much more?
+          </p>
+        </li>
+      </ul>
+    </p>
+  </introduction>
+  <subsection>
+    <objectives>
+    <title>Learning objectives</title>
+      <ol>
+        <li>
+          <p>
+            Determine when it is appropriate to use a paired <m>t</m>-procedure versus a two-sample <m>t</m>-procedure.
+          </p>
+        </li>
+        <li>
+          <p>
+            State and verify whether or not the conditions for inference on the difference of two means using the <m>t</m>-distribution are met.
+          </p>
+        </li>
+        <li>
+          <p>
+            Be able to use a calculator or other software to find the degrees of freedom associated with a two-sample <m>t</m>-procedure.
+          </p>
+        </li>
+        <li>
+          <p>
+            Carry out a complete confidence interval procedure for the difference of two means.
+          </p>
+        </li>
+        <li>
+          <p>
+            Carry out a complete hypothesis test for the difference of two means.
+          </p>
+        </li>
+      </ol>
+    </objectives>
+  </subsection>
+  <subsection xml:id="differenceOfTwoMeans">
+    <title>Sampling distribution for the difference of two means</title>
+    <p>
+      In this section we are interested in comparing the means of two independent groups. We want to estimate how far apart <m>\mu_{1}</m> and <m>\mu_{2}</m> are and test whether their difference is zero or not. Before we perform inference for the difference of means, let’s review the sampling distribution for <m>\bar{x}_{1} - \bar{x}_{2}</m>, which will be used as the point estimate for <m>\mu_{1} - \mu_{2}</m>. We know from <xref ref="sampling_diff"></xref>Section 4.3 that when the independence condition is satisfied, the sampling distribution for <m>\bar{x}_{1} - \bar{x}_{2}</m> is centered on <m>\mu_{1} - \mu_{2}</m> and has standard deviation of
+      <md>
+        <mrow>
+          \sigma_{\bar{x}_{1} -\bar{x}_{2}} =\sqrt{\frac{\sigma_{1}^2}{n_{1}} + \frac{\sigma_{2}^2}{n_{2}}}
+        </mrow>
+      </md>
+    </p>
+    <p>
+      When the individual population standard deviations are unknown, we estimate the standard deviation of <m>\bar{x}_{1} - \bar{x}_{2}</m> using the Standard Error, abbreviated <em>SE</em>, by plugging in the sample standard deviations as our best guesses of the population standard deviations:
+      <md>
+        <mrow>
+          SE_{\bar{x}_{1} - \bar{x}_{2}} = \sqrt{\frac{s_{1}^2}{n_{1}} + \frac{\s_{2}^2}{n_{2}}}
+        </mrow>
+      </md>
+    </p>
+    <p>
+      The difference of two sample means <m>\bar{x}_{1} - \bar{x}_{2}</m> follows a nearly normal distribution when certain conditions are met. First, the sampling distribution for each sample mean must be nearly normal, and second, the observations must be independent, both within and between groups. Under these two conditions, the sampling distribution for <m>\bar{x}_{1} - \bar{x}_{2}</m> may be well approximated using the normal model.
+    </p>
+  </subsection>
+<!--     Previously we explored the sampling distribution for the difference of two proportions.
+      Here we consider the sampling distribution for the difference of two means.
+      We are interested in the distribution of <m>\bar{x}_1-\bar{x}_2</m>.
+      We know that it is centered on <m>\mu_1-\mu_2</m>.
+      The standard deviation for the difference can be found as follows.
+      <md>
+        <mrow>SD_{\bar{x}_{1} - \bar{x}_{2}} \amp = \sqrt{\left(SD_{\bar{x}_{1}}\right)^2 +\left(SD_{\bar{x}_{2}}\right)^2 }</mrow>
+        <mrow>\amp = \sqrt{\left(\frac{\sigma_{1}}{\sqrt{n_1}}\right)^2 + \left(\frac{\sigma_{2}}{\sqrt{n_2}}\right)^2 }</mrow>
+        <mrow>\amp = \sqrt{\frac{\sigma_{1}^2}{n_{1}} + \frac{\sigma_{2}^2}{n_{2}}}</mrow>
+      </md>
+    </p>
+    <p>
+      Finally, we are interested in the shape of the sampling distribution of <m>\bar{x}_1-\bar{x}_2</m>.
+      It will be nearly normal when the sampling distribution of each of
+      <m>\bar{x}_1</m> and <m>\bar{x}_2</m> are nearly normal.
+    </p>
+  </subsection> -->
+  <subsection>
+    <title>Checking conditions for inference on a difference of means</title>
+    <p>
+      When comparing two means,
+      we carry out inference on a difference of means, <m>\mu_1-\mu_2</m>.
+      We will use the <m>t</m>-distribution just as we did when carrying out inference on a single mean.
+      The assumptions are that the observations are independent,
+      both between groups and within groups and that the sampling distribution of <m>\bar{x}_1-\bar{x}_2</m> is nearly normal.
+      We check whether these assumptions are reasonable by verifying the following conditions.
+    </p>
+    <p>
+      <alert>Independent.</alert> Observations can be considered independent when the data are collected from two independent random samples or,
+      in the context of experiments,
+      from two randomly assigned treatments.
+      Randomly assigning subjects to treatments is equivalent to randomly assigning treatments to subjects.
+    </p>
+    <p>
+      <alert>Nearly normal sampling distribution.</alert>
+      The sampling distribution of <m>\bar{x}_1-\bar{x}_2</m> will be nearly normal when the sampling distribution of <m>\bar{x}_1</m> and of <m>\bar{x}_2</m> are nearly normal,
+      that is when both population distributions are nearly normal or both sample sizes are at least 30.
+    </p>
+    <p>
+      As before, if the sample sizes are small and the population distributions are not known to be nearly normal,
+      we look at the data for excessive skew or outliers.
+      If we do no find excessive skew or outliers in either group,
+      we consider the assumption that the populations are nearly normal to be reasonable.
+    </p>
+  </subsection>
+  <subsection xml:id="summaryStatsForJohnJenniferStudy">
+    <title>Confidence intervals for a difference of means</title>
+    <p>
+      What's in a name?
+      Are employers more likely to offer interviews or higher pay to prospective employees when the name on a resume suggests the candidate is a man versus a woman?
+      This is a challenging question to tackle,
+      because employers are influenced by many aspects of a resume.
+      Thinking back to <xref ref="introductionToData"></xref> on data collection,
+      we could imagine a host of confounding factors associated with name and gender.
+      How could we possibly isolate just the factor of name?
+      We would need an experiment in which name was the only variable and everything else was held constant.
+    </p>
+    <p>
+      Researchers at Yale carried out precisely this experiment.
+      Their results were published in the Proceedings of the National Academy of Sciences (PNAS).<fn><url href="https://www.pnas.org/content/109/41/16474">https://www.pnas.org/content/109/41/16474</url>
+      </fn> The researchers sent out resumes to faculty at academic institutions for a lab manager position.
+      The resumes were identical,
+      except that on half of them the applicant's name was John and on the other half,
+      the applicant's name was Jennifer.
+      They wanted to see if faculty,
+      specifically faculty trained in conducting scientifically objective research,
+      held implicit gender biases.
+    </p>
+    <p>
+      Unlike in the matched pairs scenario,
+      each faculty member received only one resume.
+      We are interested in comparing the mean salary offered to John relative to the mean salary offered to Jennifer.
+      Instead of taking the average of a set of paired differences,
+      we find the average of each group separately and take their difference.
+      Let
+      <md>
+        <mrow>\bar{x}_1:\amp  \text{ mean salary offered to John }</mrow>
+        <mrow>\bar{x}_2: \amp \text{ mean salary offered to Jennifer }</mrow>
+      </md>
+    </p>
+    <p>
+      We will use <m>\bar{x}_1 - \bar{x}_2</m> as our point estimate for <m>\mu_1-\mu_2</m>.
+      The data is given in the table below.
+    </p>
+    <tabular>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell halign="center"><m>n</m></cell>
+        <cell halign="center"><m>\bar{x}</m></cell>
+        <cell halign="center"><m>s</m></cell>
+      </row>
+      <row>
+        <cell>John</cell>
+        <cell halign="center">63</cell>
+        <cell halign="center">$30,238</cell>
+        <cell halign="center">$5,567</cell>
+      </row>
+      <row bottom="minor">
+        <cell>Jennifer</cell>
+        <cell halign="center">64</cell>
+        <cell halign="center">$26,508</cell>
+        <cell halign="center">$7,247</cell>
+      </row>
+    </tabular>
+    <p>
+      We can calculate the difference as
+      <md>
+        <mrow>\bar{x}_1-\bar{x}_2 = 30238 - 26508 = 3730</mrow>
+      </md>.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Interpret the point estimate 3730.
+          Why might we want to construct a confidence interval?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The average salary offered to John was $3,730 higher than the average salary offered to Jennifer.
+          Because there is randomness in which faculty ended up in the John group and which faculty ended up in the Jennifer group,
+          we want to see if the difference of $3,730 is beyond what could be expected by random variation.
+          In order to answer this,
+          we will first want to calculate the <m>SE</m> for the difference of sample means.
+        </p>
+      </solution>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Calculate and interpret the <m>SE</m> for the difference of sample means.
+        </p>
+      </statement>
+      <solution>
+        <p>
+        <md>
+          <mrow>SE = \sqrt{\frac{s_{1}^2}{n_{1}} + \frac{s_{2}^2}{n_{2}}} = \sqrt{\frac{(5567)^2}{63} + \frac{(7247)^2}{64}} = 1151</mrow>
+        </md>
+        </p>
+        <p>
+          Using samples of size <m>n_{1}</m> and <m>n_{2}</m>, the typical error when using <m>\bar{x}_{1}-\bar_{x}_{2}</m> to estimate <m>\mu_1-\mu_2</m>,
+          the real difference in mean salary that the faculty would offer John versus Jennifer,
+          is $1151.
+        </p>
+      </solution>
+    </example>
+    <p>
+      We see that the difference of sample means of $3,730 is more than 3 <m>SE</m> above 0, which makes us think that the difference being 0 is unreasonable.
+      We would like to construct a 95% confidence interval for the theoretical difference in mean salary that would be offered to John versus Jennifer.
+      For this, we need the degrees of freedom associated with a two-sample <m>t</m>-interval.
+    </p>
+    <p>
+      For the one-sample <m>t</m>-procedure,
+      the degrees of freedom is given by the simple expression <m>n-1</m>,
+      where <m>n</m> is the sample size.
+      For the two-sample <m>t</m>-procedures, however,
+      there is a complex formula for calculating the degrees of freedom,
+      which is based on the two sample sizes and the two sample standard deviations.
+      In practice,
+      we find the degrees of freedom using software or a calculator
+      (see <xref ref="x2SampTint"></xref>).
+      If this is not possible,
+      the alternative is to use the smaller of <m>n_1-1</m> and <m>n_2-1</m>.
+    </p>
+    <assemblage>
+      <title>Degrees of freedom for two-sample T-procedures</title>
+      <p>
+        Use statistical software or a calculator to compute the degrees of freedom for two-sample <m>t</m>-procedures . If this is not possible,
+        use the smaller of <m>n_1-1</m> and <m>n_2-1</m>.
+      </p>
+    </assemblage>
+    <example>
+      <statement>
+        <p>
+          Verify that conditions are met for a two-sample <m>t</m>-test.
+          Then, construct the 95% confidence interval for the difference of means.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We noted previously that this is an experiment and that the two treatments
+          (name Jennifer and name John)
+          were randomly assigned.
+          Also, both sample sizes are well over 30,
+          so the distribution of <m>\bar{x}_1-\bar{x}_2</m> is nearly normal.
+          Using a calculator, we find that <m>df= 118.1</m>.
+          Since 118.1 is not on the <m>t</m>-table,
+          we round the degrees of freedom down to 100.<fn>Using technology, we get a more precise interval, based on 118.1 <m>df</m>: <m>(1461, 5999)</m>.</fn> Using a <m>t</m>-table at row <m>df=100</m> with 95% confidence,
+          we get a <m>t^{\star}</m> = 1.984.
+          We calculate the confidence interval as follows.
+          <md>
+            <mrow>\text{ point estimate }  \amp \pm \ t^{\star}\times SE \text{ of estimate }</mrow>
+            <mrow>3730\ \amp \pm \ 1.984\times 1151</mrow>
+            <mrow>= 3730\ \amp \pm \ 2284</mrow>
+            <mrow>= (1446\amp , 6014)</mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
+    <p>
+      Based on this interval,
+      we are 95% confident that the true difference in mean salary that these faculty would offer John versus Jennifer is between $1,495 and $6,055.
+      That is, we are 95% confident that the mean salary these faculty would offer John for a lab manager position is between $1,446 and $6,014 <em>more</em>
+      than the mean salary they would offer Jennifer for the position.
+    </p>
+    <p>
+      The results of these studies and others like it are alarming and disturbing.<fn>
+      A similar study sent out identical resumes with different names to investigate the importance of perceived race.
+      Resumes with a name commonly perceived to be for a White person (e.g.
+      Emily) were 50% more likely to receive a callback than the same resume with a name commonly perceived to be for a Black person (e.g.
+      Lakisha). <xref ref="appendix_data_sets_in_text"></xref> - see <c>resume</c> data set.</fn> One aspect that makes this bias so difficult to address is that the experiment,
+      as well-designed as it was,
+      cannot send us much signal about <em>which</em>
+      faculty are discriminating.
+      Each faculty member received only one of the resumes.
+      A faculty member that offered
+      <q>Jennifer</q>
+      a very low salary may have also offered
+      <q>John</q>
+      a very low salary.
+    </p>
+    <p>
+      We might imagine an experiment in which each faculty received both resumes,
+      so that we could compare how much they would offer a Jennifer versus a John.
+      However, the matched pairs scenario is clearly not possible in this case,
+      because what makes the experiment work is that the resumes are
+      <em>exactly the same</em> except for the name.
+      An employer would notice something fishy if they received two identical resumes.
+      It is only possible to say that overall,
+      the faculty were willing to offer John more money for the lab manager position than Jennifer.
+      Finding proof of bias for individual cases is a persistent challenge in enforcing anti-discrimination laws.
+    </p>
+    <assemblage>
+      <title>Constructing a confidence interval for the difference of two means</title>
+      <p>
+        To carry out a complete confidence interval procedure to estimate the difference of two means <m>\mu_1 - \mu_2</m>,
+      </p>
+      <p>
+        <alert>Identify</alert>: Identify the parameter and the confidence level, C%.
+        <ul>
+          <li>
+            <p>
+              The parameter will be a difference of means,
+              e.g. the true difference in mean cholesterol reduction
+              (mean treatment A <m>-</m> mean treatment B).
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        <alert>Choose</alert>: Choose the appropriate interval procedure and identify it by name.
+        <ul>
+          <li>
+            <p>
+              Here we choose the <term>2-sample <m>t</m>-interval</term>.
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        <alert>Check</alert>: Check conditions for the sampling distribution of <m>\bar{x}_1-\bar{x}_2</m> to be nearly normal.
+        <ol label="1">
+          <li>
+            <p>
+              Independence: Data come from 2 independent random samples or from a randomized experiment with 2 treatments. When sampling without replacement, check that the sample size is less than 10% of the population size for each sample.
+            </p>
+          </li>
+          <li>
+            <p>
+              Large samples or normal populations: <m>n_1\ge 30</m> and <m>n_2\ge 30</m> or both population distributions are nearly normal. If the sample sizes are less than 30 and the population distributions are unknown, check for strong skew or outliers in either data set. If neither is found, the condition that both population distributions are nearly normal is considered reasonable.
+            </p>
+          </li>
+        </ol>
+      </p>
+      <p>
+        <alert>Calculate</alert>: Calculate the confidence interval and record it in interval form.
+      </p>
+      <p>
+      <ul>
+        <li>
+          <p>
+            <m>\text{ point estimate } \ \pm \ t^{\star} \times SE\ \text{ of estimate }</m>,
+            <m>df</m>:
+            use calculator or other technology
+          </p>
+          <p>
+          <ul>
+            <li>
+              <p>
+                point estimate:
+                the difference of sample means <m>\bar{x}_1 - \bar{x}_2</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>SE</m> of estimate: <m>\sqrt{\frac{s^2_1}{n_1}+\frac{s^2_2}{n_2}}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>t^{\star}</m>:
+                use a <m>t</m>-table at row <m>df</m> and confidence level C
+              </p>
+            </li>
+            <li>
+              <p>
+                (<fillin/>, <fillin/>)
+              </p>
+            </li>
+          </ul>
+          </p>
+        </li>
+      </ul>
+      </p>
+      <p>
+        <alert>Conclude</alert>: Interpret the interval and,
+        if applicable, draw a conclusion in context.
+        <ul>
+          <li>
+            <p>
+              We are C% confident that the true
+              <em>difference in mean</em>
+              [...] is between <fillin/> and <fillin/>.
+              If applicable,
+              draw a conclusion based on whether the interval is entirely above,
+              is entirely below, or contains the value 0.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </assemblage>
+    <example xml:id="summaryStatsForTwoVersionsOfExams2nd">
+      <statement>
+        <p>
+          An instructor decided to run two slight variations of the same exam.
+          Prior to passing out the exams,
+          she shuffled the exams together to ensure each student received a random version.
+          Summary statistics for how students performed on these two exams are shown in <xref ref="summaryStatsForTwoVersionsOfExams2nd"></xref>.
+          Anticipating complaints from students who took Version B, she would like to evaluate whether the difference observed in the groups is so large that it provides convincing evidence that Version B was more difficult
+          (on average)
+          than Version A. Use a 95% confidence interval to estimate the difference in average score:
+          version A - version B.
+        </p>
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell halign="left">Version</cell>
+            <cell halign="right"><m>n</m></cell>
+            <cell halign="right"><m>\bar{x}</m></cell>
+            <cell halign="right"><m>s</m></cell>
+            <cell halign="right">min</cell>
+            <cell halign="right">max</cell>
+          </row>
+          <row>
+            <cell halign="left">A</cell>
+            <cell halign="right">30</cell>
+            <cell halign="right">79.4</cell>
+            <cell halign="right">14</cell>
+            <cell halign="right">45</cell>
+            <cell halign="right">100</cell>
+          </row>
+          <row bottom="minor">
+            <cell halign="left">B</cell>
+            <cell halign="right">30</cell>
+            <cell halign="right">74.1</cell>
+            <cell halign="right">20</cell>
+            <cell halign="right">32</cell>
+            <cell halign="right">100</cell>
+          </row>
+        </tabular>
+      </statement>
+        <solution>
+          <p>
+            <alert>Identify</alert>: The parameter we want to estimate is <m>\mu_{1}-\mu_2</m>,
+            which is the true average score under Version A <m>-</m> the true average score under Version B. We will estimate this parameter at the 95% confidence level.
+          </p>
+          <p>
+            <alert>Choose</alert>: Because we are comparing two means,
+            we will use a 2-sample <m>t</m>-interval.
+          </p>
+          <p>
+            <alert>Check</alert>: The data was collected from a randomized experiment with two treatments: Version A and Version B of test. The 10% condition does not need to be checked here since we are not sampling from a population. There were 30 students in each group, so the condition that both group sizes are at least 30 is met.
+          </p>
+          <p>
+            <alert>Calculate</alert>: We will calculate the confidence interval as follows.
+            <md>
+              <mrow>\text{ point estimate } \ \pm\ t^{\star} \times SE\ \text{ of estimate }</mrow>
+            </md>
+          </p>
+          <p>
+            The point estimate is the difference of sample means:
+            <md>
+              <mrow>\bar{x}_1-\bar{x}_2 = 79.4 - 74.1 = 5.3</mrow>
+            </md>
+          </p>
+          <p>
+            The <m>SE</m> of a difference of sample means is:
+            <md>
+              <mrow>\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}} = \sqrt{\frac{14^2}{30} + \frac{20^2}{30}} = 4.46</mrow>
+            </md>
+          </p>
+          <p>
+            In order to find the critical value <m>t^{\star}</m>,
+            we must first find the degrees of freedom.
+            Using a calculator, we find <m>df=51.9</m>.
+            We round down to 50, and using a <m>t</m>-table at row <m>df = 50</m> and confidence level 95%, we get <m>t^{\star} = 2.009</m>.
+          </p>
+          <p>
+            The 95% confidence interval is given by:
+            <md>
+              <mrow>(79.4 - 74.1) \ \pm\  \amp 2.009\times \sqrt{\frac{14^2}{30} + \frac{20^2}{30}}   \qquad df = 45.97</mrow>
+              <mrow>5.3 \ \pm\  \amp 2.009\times 4.46</mrow>
+              <mrow>=(-3\amp .66,\ 14.26)</mrow>
+            </md>
+          </p>
+          <p>
+            <alert>Conclude</alert>: We are 95% confident that the true difference in average score between Version A and Version B is between -2.5 and 13.1 points.
+            Because the interval contains both positive and negative values,
+            the data do not convincingly show that one exam version is more difficult than the other,
+            and the teacher should not be convinced that she should add points to the Version B exam scores.
+          </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection xml:id="x2SampTint">
+    <title>Technology: the 2-sample <m>t</m>-interval</title>
+    <assemblage xml:id="two_means_ci_ti">
+    <title>TI-83/84: 2-sample T-interval</title>
+      <p>
+        Use <c>STAT</c>, <c>TESTS</c>, <c>2-SampTInt</c>.
+        <ol>
+          <li>
+            <p>
+              Choose <c>STAT</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Right arrow to <c>TESTS</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Down arrow and choose <c>0:2-SampTTInt</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose <c>Data</c> if you have all the data or <c>Stats</c> if you have the means and standard deviations.
+              <ul>
+                <li>
+                  <p>
+                    If you choose Data,
+                    let <c>List1</c> be <c>L1</c> or the list that contains sample 1 and let <c>List2</c> be <c>L2</c> or the list that contains sample 2
+                    (don't forget to enter the data!).
+                    Let <c>Freq1</c> and <c>Freq2</c> be <c>1</c>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    If you choose <c>Stats</c>,
+                    enter the mean, SD, and sample size for sample 1 and for sample 2.
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <c>C-Level</c> be the desired confidence level and let <c>Pooled</c> be <c>No</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose <c>Calculate</c> and hit <c>ENTER</c>,
+              which returns:
+            </p>
+              <tabular>
+                <row>
+                  <cell>(<fillin/>,<fillin/>)</cell>
+                  <cell>the confidence interval</cell>
+                  <cell><nbsp/><nbsp/></cell>
+                  <cell><c>Sx1</c></cell>
+                  <cell>SD of sample 1</cell>
+                </row>
+                <row>
+                  <cell><c>df</c></cell>
+                  <cell>degrees of freedom</cell>
+                  <cell></cell>
+                  <cell><c>Sx2</c></cell>
+                  <cell>SD of sample 2</cell>
+                </row>
+                <row>
+                  <cell><m>\bar{x}_1</m></cell>
+                  <cell>mean of sample 1</cell>
+                  <cell></cell>
+                  <cell><c>n1</c></cell>
+                  <cell>size of sample 1</cell>
+                </row>
+                <row>
+                  <cell><m>\bar{x}_2</m></cell>
+                  <cell>mean of sample 2</cell>
+                  <cell></cell>
+                  <cell><c>n2</c></cell>
+                  <cell>size of sample 2</cell>
+                </row>
+              </tabular>
+          </li>
+        </ol>
+      </p>
+      <sidebyside>
+        <video width="60%" preview="generic" youtube="4U947MCMTtY" />
+      </sidebyside>
+    </assemblage>
+    <assemblage xml:id="two_means_ci_casio">
+      <title>Casio fx-9750GII: 2-sample T-interval</title>
+      <p>
+      <ol>
+        <li>
+          <p>
+            Navigate to <c>STAT</c> (<c>MENU</c> button,
+            then hit the <c>2</c> button or select <c>STAT</c>).
+          </p>
+        </li>
+        <li>
+          <p>
+            If necessary, enter the data into a list.
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose the <c>INTR</c> option (<c>F4</c> button).
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose the <c>t</c> option (<c>F2</c> button).
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose the <c>2-S</c> option (<c>F2</c> button).
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose either the <c>Var</c> option (<c>F2</c>) or enter the data in using the <c>List</c> option.
+          </p>
+        </li>
+        <li>
+          <p>
+            Specify the test details:
+            <ul>
+              <li>
+                <p>
+                  Confidence level of interest for <c>C-Level</c>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  If using the <c>Var</c> option,
+                  enter the summary statistics for each group.
+                  If using <c>List</c>,
+                  specify the lists and leave <c>Freq</c> values at <c>1</c>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Choose whether to pool the data or not.
+                </p>
+              </li>
+            </ul>
+          </p>
+        </li>
+        <li>
+          <p>
+            Hit the <c>EXE</c> button,
+            which returns
+          </p>
+            <tabular>
+              <row>
+                <cell><c>Left</c>, <c>Right</c></cell>
+                <cell>ends of the confidence interval</cell>
+              </row>
+              <row>
+                <cell><c>df</c></cell>
+                <cell>degrees of freedom</cell>
+              </row>
+              <row>
+                <cell><m>\bar{x}1</m>, <m>\bar{x}2</m></cell>
+                <cell>sample means</cell>
+              </row>
+              <row>
+                <cell><c>sx1</c>, <c>sx2</c></cell>
+                <cell>sample standard deviations</cell>
+              </row>
+              <row>
+                <cell><c>n1</c>, <c>n2</c></cell>
+                <cell>sample sizes</cell>
+              </row>
+            </tabular>
+        </li>
+      </ol>
+    </p>
+    <sidebyside>
+      <video width="60%" preview="generic" youtube="g_ullo550lg" />
+    </sidebyside>
+    </assemblage>
+    <exercise>
+      <statement>
+        <p>
+          Use the data below and a calculator to find a 95% confidence interval for the difference in average scores between Version A and Version B of the exam from the previous example.<fn>Choose <c>2-SampTInt</c> or equivalent. Because we have the summary statistics rather than all of the data, choose <c>Stats</c>. Let <c>x1</c><m>=79.41</m>, <c>Sx1</c><m>=14</m>, <c>n1</c><m>=30</m>, <c>x2</c><m>=74.1</m>, <c>Sx2</c><m> = 20</m>, and <c>n2</c> <m>= 30</m>. The interval is (-3.6, 14.2) with <m>df = 51.9</m>.</fn>
+        </p>
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell halign="left">Version</cell>
+            <cell halign="right"><m>n</m></cell>
+            <cell halign="right"><m>\bar{x}</m></cell>
+            <cell halign="right"><m>s</m></cell>
+            <cell halign="right">min</cell>
+            <cell halign="right">max</cell>
+          </row>
+          <row>
+            <cell halign="left">A</cell>
+            <cell halign="right">30</cell>
+            <cell halign="right">79.4</cell>
+            <cell halign="right">14</cell>
+            <cell halign="right">45</cell>
+            <cell halign="right">100</cell>
+          </row>
+          <row bottom="minor">
+            <cell halign="left">B</cell>
+            <cell halign="right">30</cell>
+            <cell halign="right">74.1</cell>
+            <cell halign="right">20</cell>
+            <cell halign="right">32</cell>
+            <cell halign="right">100</cell>
+          </row>
+        </tabular>
+      </statement>
+    </exercise>
+  </subsection>
+  <subsection>
+    <title>Hypothesis testing for the difference of two means</title>
+    <p>
+          <idx><h>data</h><h>baby_smoke</h></idx>
+    </p>
+    <p>
+      Four cases from a data set called <c>ncbirths</c>,
+      which represents mothers and their newborns in North Carolina,
+      are shown in <xref ref="babySmokeDF"></xref>.
+      We are particularly interested in two variables: <c>weight</c> and <c>smoke</c>.
+      The <c>weight</c> variable represents the weights of the newborns and the <c>smoke</c> variable describes which mothers smoked during pregnancy.
+      We would like to know,
+      is there convincing evidence that newborns from mothers who smoke have a different average birth weight than newborns from mothers who don't smoke?
+      The smoking group includes a random sample of 50 cases and the nonsmoking group contains a random sample of 100 cases,
+      represented in <xref ref="babySmokePlotOfTwoGroupsToExamineSkew"></xref>.
+    </p>
+    <table xml:id="babySmokeDF">
+      <title>Four cases from the <c>ncbirths</c> data set. The value
+      <q>NA</q>, shown for the first two entries of the first variable, indicates pieces of data that are missing.</title>
+      <tabular>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell halign="right">fAge</cell>
+          <cell halign="right">mAge</cell>
+          <cell halign="right">weeks</cell>
+          <cell halign="right">weight</cell>
+          <cell halign="left">sex</cell>
+          <cell halign="left">smoke</cell>
+        </row>
+        <row>
+          <cell halign="right">1</cell>
+          <cell halign="right">NA</cell>
+          <cell halign="right">13</cell>
+          <cell halign="right">37</cell>
+          <cell halign="right">5.00</cell>
+          <cell halign="left">female</cell>
+          <cell halign="left">nonsmoker</cell>
+        </row>
+        <row>
+          <cell halign="right">2</cell>
+          <cell halign="right">NA</cell>
+          <cell halign="right">14</cell>
+          <cell halign="right">36</cell>
+          <cell halign="right">5.88</cell>
+          <cell halign="left">female</cell>
+          <cell halign="left">nonsmoker</cell>
+        </row>
+        <row>
+          <cell halign="right">3</cell>
+          <cell halign="right">19</cell>
+          <cell halign="right">15</cell>
+          <cell halign="right">41</cell>
+          <cell halign="right">8.13</cell>
+          <cell halign="left">male</cell>
+          <cell halign="left">smoker</cell>
+        </row>
+        <row>
+          <cell halign="right"><m>\vdots</m></cell>
+          <cell halign="right"><m>\vdots</m></cell>
+          <cell halign="right"><m>\vdots</m></cell>
+          <cell halign="right"><m>\vdots</m></cell>
+          <cell halign="left"><m>\vdots</m></cell>
+          <cell halign="left"><m>\vdots</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell halign="right">150</cell>
+          <cell halign="right">45</cell>
+          <cell halign="right">50</cell>
+          <cell halign="right">36</cell>
+          <cell halign="right">9.25</cell>
+          <cell halign="left">female</cell>
+          <cell halign="left">nonsmoker</cell>
+        </row>
+      </tabular>
+    </table>
+    <figure xml:id="babySmokePlotOfTwoGroupsToExamineSkew">
+      <caption>The top panel represents birth weights for infants whose mothers smoked. The bottom panel represents the birth weights for infants whose mothers who did not smoke. The distributions exhibit moderate-to-strong and strong<nbsp/>skew, respectively.<!-- <idx><h>skew</h><h>example: strong</h></idx> -->
+      </caption>
+      <image width="63%" source="images/inference_means/babySmokePlotOfTwoGroupsToExamineSkew.png" />
+    </figure>
+    <example>
+      <statement>
+        <p>
+          Set up appropriate hypotheses to evaluate whether there is a relationship between a mother smoking and average birth weight.
+        </p>
+      </statement>
+      <solution xml:id="babySmokeHTForWeight">
+        <p>
+          Let <m>\mu_{1}</m> represent the mean for mothers that did smoke and <m>\mu_2</m> represent the mean for mothers that did not smoke.
+          We will take the difference as:
+          smoker <m>-</m> nonsmoker.
+          The null hypothesis represents the case of no difference between the groups.
+          <ul>
+            <li>
+              <p>
+                <m>H_{0}: \mu_{1} - \mu_{2} = 0</m>.
+                There is no difference in average birth weight for newborns from mothers who did and did not smoke.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>H_{A}: \mu_{1} - \mu_{2} \neq 0</m>.
+                There is some difference in average newborn weights from mothers who did and did not smoke.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </solution>
+    </example>
+    <p>
+      We check the two conditions necessary to use the <m>t</m>-distribution to the difference in sample means. (1)<nbsp/>Because the data come from a sample,
+      we need there to be two independent random samples.
+      In fact, there was only one random sample,
+      but it is reasonable that the two groups here are independent of each other,
+      so we will consider the assumption of independence reasonable. (2)<nbsp/>The sample sizes of 50 and 100 are well over 30,
+      so we do not worry about the distributions of the original populations.
+      Since both conditions are satisfied,
+      the difference in sample means may be modeled using a <m>t</m>-distribution.
+    </p>
+    <table xml:id="summaryStatsOfBirthWeightForNewbornsFromSmokingAndNonsmokingMothers">
+      <title>Summary statistics for the <c>ncbirths</c> data set.</title>
+      <tabular>
+        <row bottom="minor">
+          <cell></cell>
+          <cell halign="right"><c>smoker</c></cell>
+          <cell halign="right"><c>nonsmoker</c></cell>
+        </row>
+        <row>
+          <cell halign="left">mean</cell>
+          <cell halign="right">6.78</cell>
+          <cell halign="right">7.18</cell>
+        </row>
+        <row>
+          <cell halign="left">st. dev.</cell>
+          <cell halign="right">1.43</cell>
+          <cell halign="right">1.60</cell>
+        </row>
+        <row bottom="minor">
+          <cell halign="left">samp. size</cell>
+          <cell halign="right">50</cell>
+          <cell halign="right">100</cell>
+        </row>
+      </tabular>
+    </table>
+    <example>
+      <statement>
+        <p>
+          We will use the summary statistics in <xref ref="summaryStatsOfBirthWeightForNewbornsFromSmokingAndNonsmokingMothers"></xref> for this exercise.
+        </p>
+        <p>
+          (a)<nbsp/>What is the point estimate of the population difference,
+          <m>\mu_{1} - \mu_{2}</m>? (b)<nbsp/>Compute the standard error of the point estimate from part (a).
+        </p>
+      </statement>
+      <solution>
+        <p>
+          (a)<nbsp/>The point estimate is the difference of sample means:
+          <m>\bar{x}_{1} - \bar{x}_{2} = 6.78-7.18=-0.40</m> pounds.
+        </p>
+        <p>
+          (b)<nbsp/>The standard error for a difference of sample means is calculated analogously to the standard deviation for a difference of sample means.
+          <md>
+            <mrow>SE = \sqrt{\frac{s_1^2}{n_1} + \frac{s_1^2}{n_1}} = \sqrt{\frac{1.43^2}{100} + \frac{1.60^2}{50}} = 0.26 \text{ pounds }</mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
+    <example xml:id="babySmokeHTForWeightComputePValueAndEvalHT">
+      <statement>
+        <p>
+          Compute the test statistic.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We have already found the point estimate and the <m>SE</m> of estimate.
+          The null hypothesis is that the two means are equal,
+          or that their difference equals 0.
+          The null value for the difference, therefore is<nbsp/>0.
+          We now have everything we need to compute the test statistic.
+          <md>
+            <mrow>T = \frac{\text{ point estimate }  - \text{ null value } }{SE \text{ of estimate } } = \frac{\ 0.40 - 0\ }{0.26} = 1.54</mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Draw a picture to represent the p-value for this hypothesis test,
+          then calculate the p-value.
+        </p>
+      </statement>
+      <solution xml:id="pictureOfPValueForEstimateOfDiffOfMeansOfBirthWeights">
+        <p>
+          To depict the p-value,
+          we draw the distribution of the point estimate as though <m>H_0</m> were true and shade areas representing at least as much evidence against <m>H_0</m> as what was observed.
+          Both tails are shaded because it is a two-sided test.
+        </p>
+        <image width="50%" source="images/inference_means/distOfDiffOfSampleMeansForBWOfBabySmokeData.png" />
+        <p>
+          We saw previously that the degrees of freedom can be found using software or using the smaller of <m>n_1-1</m> and <m>n_2-1</m>.
+          If we use <m>50-1=49</m> degrees of freedom,
+          we find that the area in the upper tail is 0.065.
+          The p-value is twice this, or <m>2\times 0.065= 0.130</m>.
+          See <xref ref="x2SampTtest"></xref>
+          for a shortcut to compute the degrees of freedom and p-value on a calculator.
+        </p>
+      </solution>
+    </example>
+    <example>
+      <statement>
+        <p>
+          What can we conclude from this p-value?
+          Use a significance level of <m>\alpha=0.05</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          This p-value of 0.130 is larger the significance level of 0.05,
+          so we do not reject the null hypothesis.
+          There is not sufficient evidence to say there is a difference in average birth weight of newborns from North Carolina mothers who did smoke during pregnancy and newborns from North Carolina mothers who did not smoke during pregnancy.
+        </p>
+      </solution>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Does the conclusion to <xref ref="babySmokeHTForWeightComputePValueAndEvalHT"></xref>
+          mean that smoking and average birth weight are unrelated?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Not necessarily.
+          It is possible that there is some difference but that we did not detect it.
+          The result must be considered in light of other evidence and research.
+          In fact, larger data sets do tend to show that women who smoke during pregnancy have smaller newborns.
+        </p>
+      </solution>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          If we made an error in our conclusion,
+          which type of error could we have made: Type I or Type II? <fn>Since we did not reject <m>H_0</m>,
+          it is possible that we made a Type II Error.
+          It is possible that there is some difference but that we did not detect it.</fn>
+        </p>
+      </statement>
+    </exercise>
+    <exercise xml:id="babySmokeHTIDingHowToDetectDifferences">
+      <statement>
+        <p>
+          If we made a Type II Error and there is a difference,
+          what could we have done differently in data collection to be more likely to detect the difference?<fn>We could have collected more data.
+          If the sample sizes are larger,
+          we tend to have a better shot at finding a difference if one exists.
+          In other words,
+          increasing the sample size increases the power of the test.</fn>
+        </p>
+      </statement>
+    </exercise>
+    <p>
+          <idx><h>data</h><h>baby_smoke</h></idx>
+    </p>
+    <assemblage>
+      <title>Hypothesis test for the difference of two means</title>
+      <p>
+        To carry out a complete hypothesis test to test the claim that two means <m>\mu_1</m> and <m>\mu_2</m> are equal to each other,
+      </p>
+      <p>
+        <alert>Identify</alert>: Identify the hypotheses and the significance level,
+        <m>\alpha</m>.
+        <ul>
+          <li>
+            <p>
+              <m>H_0</m>: <m>\mu_1=\mu_2</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>H_A</m>: <m>\mu_1\ne \mu_2</m>; <m>H_A</m>:
+              <m>\mu_1>\mu_2</m>; or <m>H_A</m>:
+              <m>\mu_1\lt \mu_2</m>
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        <alert>Choose</alert>: Choose the appropriate test procedure and identify it by name.
+        <ul>
+          <li>
+            <p>
+              Here we choose the <term>2-sample <m>t</m>-test</term>.
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        <alert>Check</alert>: Check conditions for the sampling distribution of <m>\bar{x}_1-\bar{x}_2</m> to be nearly normal.
+        <ol label="1">
+          <li>
+            <p>
+              Independence: Data come from 2 independent random samples or from a randomized experiment with 2 treatments. When sampling without replacement, check that the sample size is less than 10% of the population size for each sample.
+            </p>
+          </li>
+          <li>
+            <p>
+              Large samples or normal populations: <m>n_1\ge 30</m> and <m>n_2\ge 30</m> or both population distributions are nearly normal. If the sample sizes are less than 30 and the population distributions are unknown, check for excessive skew or outliers in either data set.
+              If neither is found, the condition that both population distributions are nearly normal is considered reasonable.
+            </p>
+          </li>
+        </ol>
+      </p>
+      <p>
+        <alert>Calculate</alert>: Calculate the <m>t</m>-statistic, <m>df</m>,
+        and p-value.
+      </p>
+      <p>
+      <ul>
+        <li>
+          <p>
+            <m>T = \frac{\text{point estimate} - \text{null value} }{SE \text{ of estimate } }</m> <m>df</m>:
+            use calculator or other technology
+          </p>
+          <p>
+          <ul>
+            <li>
+              <p>
+                point estimate:
+                the difference of sample means <m>\bar{x}_1 - \bar{x}_2</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>SE</m> of estimate: <m>\sqrt{\frac{s^2_1}{n_1}+\frac{s^2_2}{n_2}}</m>
+              </p>
+            </li>
+          </ul>
+          </p>
+        </li>
+        <li>
+          <p>
+            p-value = (based on the <m>t</m>-statistic, the <m>df</m>,
+            and the direction of <m>H_A</m>)
+          </p>
+        </li>
+      </ul>
+      </p>
+      <p>
+        <alert>Conclude</alert>: Compare the p-value to <m>\alpha</m>,
+        and draw a conclusion in context.
+        <ul>
+          <li>
+            <p>
+              If the p-value is <m>\lt \alpha</m>, reject <m>H_0</m>;
+              there is sufficient evidence that [<m>H_A</m> in context].
+            </p>
+          </li>
+          <li>
+            <p>
+              If the p-value is <m>> \alpha</m>, do not reject <m>H_0</m>;
+              there is not sufficient evidence that [<m>H_A</m> in context].
+            </p>
+          </li>
+        </ul>
+      </p>
+    </assemblage>
+<!--     <p>
+      <idx><h>data</h><h>stem cells, heart function</h></idx>
+    </p> -->
+    <example xml:id="exerciseToEvaluteWhetherESCsAreHelpfulInImprovingHeartFunctionInSheep">
+      <statement>
+        <p>
+          Do embryonic stem cells (ESCs) help improve heart function following a heart attack?
+          The following table and figure summarize results from an experiment to test ESCs in sheep that had a heart attack.
+        </p>
+        <sidebyside>
+          <image width="95%" source="images/inference_means/stemCellTherapyForHearts.png" />
+        </sidebyside>
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor" halign="right">
+            <cell></cell>
+            <cell><m>n</m></cell>
+            <cell><m>\bar{x}</m></cell>
+            <cell><m>s</m></cell>
+          </row>
+          <row>
+            <cell halign="left">ESCs</cell>
+            <cell halign="right">9</cell>
+            <cell halign="right">3.50</cell>
+            <cell halign="right">5.17</cell>
+          </row>
+          <row bottom="minor">
+            <cell halign="left">control</cell>
+            <cell halign="right">9</cell>
+            <cell halign="right">-4.33</cell>
+            <cell halign="right">2.76</cell>
+          </row>
+        </tabular>
+        <p>
+          Each of these sheep was randomly assigned to the ESC or control group,
+          and the change in their hearts' pumping capacity was measured.
+          A positive value generally corresponds to increased pumping capacity,
+          which suggests a stronger recovery.
+          The sample data is also graphed.
+          Use the given information and an appropriate statistical test to answer the research question.
+        </p>
+      </statement>
+      <solution>
+          <p>
+            <alert>Identify</alert>: Let <m>\mu_1</m> be the mean percent change for sheep that receive ESC and let <m>\mu_2</m> be the mean percent change for sheep in the control group.
+            We will use an <m>\alpha=0.05</m> significance level.
+          </p>
+          <p>
+            <m>H_0</m>: <m>\mu_{1} - \mu_{2} = 0</m>.
+            The stem cells do not improve heart pumping function.
+          </p>
+          <p>
+            <m>H_A</m>: <m>\mu_{1} - \mu_{2} > 0</m>.
+            The stem cells do improve heart pumping function.
+          </p>
+          <p>
+            <alert>Choose</alert>: Because we are hypothesizing about a difference of means we choose the 2-sample <m>t</m>-test.
+          </p>
+          <p>
+            <alert>Check</alert>: The data come from a randomized experiment with two treatment groups: ESC and control. Because this is an experiment, we do not need to check the 10% condition. The group sizes are small, but the data show no excessive skew or outliers, so the assumption that the population distributions are nearly normal is reasonable.
+          </p>
+          <p>
+            <alert>Calculate</alert>: We will calculate the <m>t</m>-statistic and the p-value.
+            <md>
+              <mrow>T = \frac{\text{ point estimate }  - \text{ null value } }{SE \text{ of estimate } }</mrow>
+            </md>
+          </p>
+          <p>
+            The point estimate is the difference of sample means:
+            <md>
+              <mrow>\bar{x}_{1} - \bar{x}_{2}=3.50 - (-4.33) = 7.83</mrow>
+            </md>
+          </p>
+          <p>
+            The <m>SE</m> of a difference of sample means:
+            <m>\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}= \sqrt{\frac{(5.17)^2}{9} + \frac{(2.76)^2}{9}} = 1.95</m>
+            <md>
+              <mrow>T = \frac{3.50 - (-4.33) - 0}{\sqrt{\frac{(5.17)^2}{9} + \frac{(2.76)^2}{9}} } = \frac{7.83 - 0}{1.95} = 4.01</mrow>
+            </md>
+          </p>
+          <p>
+            Because <m>H_A</m> is an upper tail test ( <m>></m> ), the p-value corresponds to the area to the right of <m>t=4.01</m> with the appropriate degrees of freedom.
+            Using a calculator, we find get <m>df=12.2</m> and p-value
+            <m>= 8.4\times 10^{-4}=0.00084</m>. 
+          </p>
+          <p>
+            <alert>Conclude</alert>: The p-value is much less than 0.05,
+            so we reject the null hypothesis.
+            There is sufficient evidence that embryonic stem cells improve the heart's pumping function in sheep that have suffered a heart attack.
+          </p>
+        </solution>
+    </example>
+  </subsection>
+  <subsection xml:id="x2SampTtest">
+    <title>Technology: the 2-sample <m>t</m>-test</title>
+    <assemblage xml:id="two_means_ht_ti">
+    <title>TI-83/84: 2-sample T-test</title>
+      <p>
+        Use <c>STAT</c>, <c>TESTS</c>, <c>2-SampTTest</c>.
+        <ol>
+          <li>
+            <p>
+              Choose <c>STAT</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Right arrow to <c>TESTS</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose <c>4:2-SampTTest</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose <c>Data</c> if you have all the data or <c>Stats</c> if you have the means and standard deviations.
+              <ul>
+                <li>
+                  <p>
+                    If you choose <c>Data</c>,
+                    let <c>List1</c> be <c>L1</c> or the list that contains sample 1 and let <c>List2</c> be <c>L2</c> or the list that contains sample 2
+                    (don't forget to enter the data!).
+                    Let <c>Freq1</c> and <c>Freq2</c> be <c>1</c>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    If you choose <c>Stats</c>,
+                    enter the mean, SD, and sample size for sample 1 and for sample 2
+                  </p>
+                </li>
+              </ul>
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose <m>\ne</m>, <m>\lt</m>,
+              or <m>\gt</m> to correspond to <m>H_A</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <c>Pooled</c> be <c>NO</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose <c>Calculate</c> and hit <c>ENTER</c>,
+              which returns:
+            </p>
+              <tabular>
+                <row>
+                  <cell><c>t</c></cell>
+                  <cell>t statistic</cell>
+                  <cell></cell>
+                  <cell><c>Sx1</c></cell>
+                  <cell>SD of sample 1</cell>
+                </row>
+                <row>
+                  <cell><c>p</c></cell>
+                  <cell>p-value</cell>
+                  <cell></cell>
+                  <cell><c>Sx2</c></cell>
+                  <cell>SD of sample 2</cell>
+                </row>
+                <row>
+                  <cell><c>df</c></cell>
+                  <cell>degrees of freedom</cell>
+                  <cell></cell>
+                  <cell><c>n1</c></cell>
+                  <cell>size of sample 1</cell>
+                </row>
+                <row>
+                  <cell><m>\bar{x}_1</m></cell>
+                  <cell>mean of sample 1</cell>
+                  <cell></cell>
+                  <cell>n2</cell>
+                  <cell>size of sample 2</cell>
+                </row>
+                <row>
+                  <cell><m>\bar{x}_2</m></cell>
+                  <cell>mean of sample 2</cell>
+                </row>
+              </tabular>
+          </li>
+        </ol>
+      </p>
+      <sidebyside>
+        <video width="60%" preview="generic" youtube="abuOuncWUJk" />
+      </sidebyside>
+    </assemblage>
+    <assemblage xml:id="two_means_ht_casio">
+      <title>Casio fx-9750GII: 2-sample T-test</title>
+      <p>
+      <ol>
+        <li>
+          <p>
+            Navigate to <c>STAT</c> (<c>MENU</c> button,
+            then hit the <c>2</c> button or select <c>STAT</c>).
+          </p>
+        </li>
+        <li>
+          <p>
+            If necessary, enter the data into a list.
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose the <c>TEST</c> option (<c>F3</c> button).
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose the <c>t</c> option (<c>F2</c> button).
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose the <c>2-S</c> option (<c>F2</c> button).
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose either the <c>Var</c> option (<c>F2</c>) or enter the data in using the <c>List</c> option.
+          </p>
+        </li>
+        <li>
+          <p>
+            Specify the test details:
+            <ul>
+              <li>
+                <p>
+                  Specify the sidedness of the test using the <c>F1</c>, <c>F2</c>,
+                  and <c>F3</c> keys.
+                </p>
+              </li>
+              <li>
+                <p>
+                  If using the <c>Var</c> option,
+                  enter the summary statistics for each group.
+                  If using <c>List</c>,
+                  specify the lists and leave <c>Freq</c> values at <c>1</c>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Choose whether to pool the data or not.
+                </p>
+              </li>
+            </ul>
+          </p>
+        </li>
+        <li>
+          <p>
+            Hit the <c>EXE</c> button,
+            which returns
+          </p>
+            <tabular>
+              <row>
+                <cell><m>\mu1 - \mu2</m></cell>
+                <cell>alt. hypothesis</cell>
+                <cell></cell>
+                <cell><m>\bar{x}1</m>, <m>\bar{x}2</m></cell>
+                <cell>sample means</cell>
+              </row>
+              <row>
+                <cell><c>t</c></cell>
+                <cell>t statistic</cell>
+                <cell></cell>
+                <cell><c>sx1</c>, <c>sx2</c></cell>
+                <cell>sample standard deviations</cell>
+              </row>
+              <row>
+                <cell><c>p</c></cell>
+                <cell>p-value</cell>
+                <cell></cell>
+                <cell><c>n1</c>, <c>n2</c></cell>
+                <cell>sample sizes</cell>
+              </row>
+              <row>
+                <cell><c>df</c></cell>
+                <cell>degrees of freedom</cell>
+              </row>
+            </tabular>
+        </li>
+      </ol>
+    </p>
+    <sidebyside>
+      <video width="60%" preview="generic" youtube="g_ullo550lg" />
+    </sidebyside>
+    </assemblage>
+    <exercise>
+      <statement>
+        <p>
+          Use the data below and a calculator to find the test statistics and p-value for a one-sided test,
+          testing whether there is evidence that embryonic stem cells (ESCs) help improve heart function for sheep that have experienced a heart attack.<fn>Choose <c>2-SampTTest</c> or equivalent. Because we have the summary statistics rather than all of the data, choose <c>Stats</c>. Let <c>x1</c><m>=3.50</m>, <c>Sx1</c><m>=5.17</m>, <c>n1</c><m>=9</m>, <c>x2</c><m>=-4.33</m>, <c>Sx2</c><m> = 2.76</m>, and <c>n2</c><m> = 9</m>. We get <c>t</c><m> = 4.01</m>, and the p-value <c>p</c> <m>= 8.4 \times 10^{-4}= 0.00084</m>. The degrees of freedom for the test is <c>df</c> <m>= 12.2</m>.</fn>
+        </p>
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor" halign="right">
+            <cell></cell>
+            <cell><m>n</m></cell>
+            <cell><m>\bar{x}</m></cell>
+            <cell><m>s</m></cell>
+          </row>
+          <row>
+            <cell halign="left">ESCs</cell>
+            <cell halign="right">9</cell>
+            <cell halign="right">3.50</cell>
+            <cell halign="right">5.17</cell>
+          </row>
+          <row bottom="minor">
+            <cell halign="left">control</cell>
+            <cell halign="right">9</cell>
+            <cell halign="right">-4.33</cell>
+            <cell halign="right">2.76</cell>
+          </row>
+        </tabular>
+      </statement>
+    </exercise>
+  </subsection>
+  <subsection>
+    <title>Section summary</title>
+    <p>
+    <ul>
+      <li>
+        <p>
+          This section introduced inference for a difference of means,
+          which is distinct from inference for a mean of differences.
+          To calculate a difference of means,
+          <m>\bar{x}_1-\bar{x}_2</m>,
+          we first calculate the mean of each group,
+          then we take the difference between those two numbers.
+          To calculate a mean of difference,
+          <m>\bar{x}_{\text{diff}}</m>,
+          we first calculate all of the differences,
+          then we find the mean of those differences.
+        </p>
+      </li>
+      <li>
+        <p>
+          Inference for a difference of means is based on the <m>t</m>-distribution.
+          The degrees of freedom is complicated to calculate and we rely on a calculator or other software to calculate this.<fn>
+          If this is not available, one can use <m>df=min(n_1-1, n_2-1)</m>.
+          </fn>
+        </p>
+      </li>
+      <li>
+        <p>
+          When there are two samples or treatments and the parameter of interest is a difference of means:
+          <ul>
+            <li>
+              <p>
+                Estimate <m>\mu_1-\mu_2</m> at the C% confidence level using a
+                <term>2-sample t-interval</term>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Test <m>H_0</m>: <m>\mu_1-\mu_2=0</m> at the <m>\alpha</m> significance level using a
+                <term>2-sample t-test</term> .
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          The 2-sample t-test and t-interval require the sampling distribution for <m>\bar{x}_{1}-\bar{x}_{2}</m> to be nearly normal. For this reason we must check that the following conditions are met.
+          <ol label="1">
+            <li>
+              <p>
+                Independence: The data should come from 2 independent random samples or from a randomized experiment with 2 treatments. When sampling without replacement, check that the sample size is less than 10% of the population size for each sample.
+              </p>
+            </li>
+            <li>
+              <p>
+                Large samples or normal populations: <m>n_1\ge 30</m> and <m>n_2\ge 30</m> or both population distributions are nearly normal. If the sample sizes are less than 30 and it is not known that both population distributions are nearly normal, check for excessive skew or outliers in the data. If neither exists, the condition that both population distributions could be nearly normal is considered reasonable.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          When the conditions are met,
+          we calculate the confidence interval and the test statistic as follows.
+          <ul>
+            <li>
+              <p>
+                Confidence interval:<nbsp/> <m>\text{ point estimate } \ \pm\ t^{\star} \times SE\ \text{ of estimate }</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Test statistic:
+                <m>T = \frac{\text{point estimate} - \text{null value} }{SE \text{ of estimate } }</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+        <p>
+          Here the point estimate is the difference of sample means:
+          <m>\bar{x}_1-\bar{x}_2</m>.
+        </p>
+        <p>
+          The <m>SE</m> of estimate is the <m>SE</m> of a difference of sample means:
+          <m>\sqrt{\frac{s^2_1}{n_1}+\frac{s^2_2}{n_2}}</m>.
+        </p>
+        <p>
+          Find and record the <m>df</m> using a calculator or other software.
+        </p>
+      </li>
+    </ul>
+    </p>
+  </subsection>
+  <exercises>
+    <title>Exercises</title>
+  
+  <exercise xml:id="diamonds_1"><!--  #24 -->
+  <title>Diamonds, Part I</title>
+    <statement>
+      <p>
+        Prices of diamonds are determined by what is known as the 4 Cs:
+        cut, clarity, color, and carat weight.
+        The prices of diamonds go up as the carat weight increases,
+        but the increase is not smooth.
+        For example,
+        the difference between the size of a 0.99 carat diamond and a 1 carat diamond is undetectable to the naked human eye,
+        but the price of a 1 carat diamond tends to be much higher than the price of a 0.99 diamond.
+        In this question we use two random samples of diamonds, 0.99 carats and 1 carat,
+        each sample of size 23, and compare the average prices of the diamonds.
+        In order to be able to compare equivalent units,
+        we first divide the price for each diamond by 100 times its weight in carats.
+        That is, for a 0.99 carat diamond,
+        we divide the price by 99.
+        For a 1 carat diamond, we divide the price by 100.
+        The distributions and some sample statistics are shown below.<fn>H. Wickham. <url href="http://had.co.nz/ggplot2/book">ggplot2: elegant graphics for data analysis.</url> Springer New York, 2009.</fn>
+      </p>
+      <p>
+        Conduct a hypothesis test to evaluate if there is a difference between the
+        average standardized prices of 0.99 and 1 carat diamonds. Make sure to state
+        your hypotheses clearly, check relevant conditions, and interpret your results
+        in context of the data.
+      </p>
+      <sidebyside widths="45% 45%">
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell halign="center">0.99 carats</cell>
+            <cell halign="center">1 carat</cell>
+          </row>
+          <row>
+            <cell halign="left">Mean</cell>
+            <cell halign="center">$44.51</cell>
+            <cell halign="center">$56.81</cell>
+          </row>
+          <row>
+            <cell halign="left">SD</cell>
+            <cell halign="center">$13.32</cell>
+            <cell halign="center">$16.13</cell>
+          </row>
+          <row bottom="minor">
+            <cell halign="left">n</cell>
+            <cell halign="center">23</cell>
+            <cell halign="center">23</cell>
+          </row>
+        </tabular>
+        <image source="images/inference_means/diamonds_box.png" />
+      </sidebyside>
+    </statement>
+    <solution>
+      <p>
+        Identify: <m>H_{0}: \mu_{0.99} = \mu_{1}</m> and <m>H_{A}: µ_{0.99} \neq \mu_{1}</m>; Let <m>\alpha = 0.05</m>. Choose: 2-sample t-test. Check: Independence: Both samples are random and represent less than 10% of their respective populations. Also, we have no reason to think that the 0.99 carats are not independent of the 1 carat diamonds since they are both sampled randomly. Normal populations: The sample distributions are not very skewed, hence we find it reasonable that the underlying population distributions are nearly normal. Calculate: <m>T = −2.82</m>, <m>df = 42.5</m>, <m>\text{p-value} = 0.007</m>. Conclude: Since <m>\text{p-value} \lt 0.05</m>, reject <m>H_{0}</m>. The data provide convincing evidence that the average standardized price of 0.99 carats and 1 carat diamondsare different.
+      </p>
+    </solution>
+  </exercise>
+  
+  <exercise xml:id="diamonds_2"><!--  #26 -->
+    <title>Diamonds, Part II</title>
+    <statement>
+      <p>
+        In <xref ref="diamonds_1"></xref>,
+        we discussed diamond prices
+        (standardized by weight)
+        for diamonds with weights 0. 99 carats and 1 carat.
+        See the table for summary statistics,
+        and then construct a 95% confidence interval for the average difference between the standardized prices of 0.99 and 1 carat diamonds.
+        You may assume the conditions for inference are met.
+      </p>
+      <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell halign="center">0.99 carats</cell>
+            <cell halign="center">1 carat</cell>
+          </row>
+          <row>
+            <cell halign="left">Mean</cell>
+            <cell halign="center">$44.51</cell>
+            <cell halign="center">$56.81</cell>
+          </row>
+          <row>
+            <cell halign="left">SD</cell>
+            <cell halign="center">$13.32</cell>
+            <cell halign="center">$16.13</cell>
+          </row>
+          <row bottom="minor">
+            <cell halign="left">n</cell>
+            <cell halign="center">23</cell>
+            <cell halign="center">23</cell>
+          </row>
+        </tabular>
+    </statement>
+  </exercise>
+  <exercise xml:id="chick_wts_linseed_horsebean"><!--  #27 -->
+  <title>Chicken diet and weight, Part I</title>
+    <statement>
+      <sidebyside>
+        <video width="60%" preview="generic" youtube="eeeWNM7g6lY" />
+      </sidebyside>
+      <p>
+        Chicken farming is a multi-billion dollar industry,
+        and any methods that increase the growth rate of young chicks can reduce consumer costs while increasing company profits,
+        possibly by millions of dollars.
+        An experiment was conducted to measure and compare the effectiveness of various feed supplements on the growth rate of chickens.
+        Newly hatched chicks were randomly allocated into six groups,
+        and each group was given a different feed supplement.
+        Below are some summary statistics from this data set along with box plots showing the distribution of weights by feed type.<fn><url href="https://stat.ethz.ch/R-manual/R-patched/library/datasets/html/chickwts.html">Chicken Weights by Feed Type</url>, from the datasets package in R.</fn>
+      </p>
+      <tabular>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row halign="center" bottom="minor">
+          <cell></cell>
+          <cell>Mean</cell>
+          <cell>SD</cell>
+          <cell>n</cell>
+        </row>
+        <row>
+          <cell halign="left">casein</cell>
+          <cell halign="center">323.58</cell>
+          <cell halign="center">64.43</cell>
+          <cell halign="center">12</cell>
+        </row>
+        <row>
+          <cell halign="left">horsebean</cell>
+          <cell halign="center">160.20</cell>
+          <cell halign="center">38.63</cell>
+          <cell halign="center">10</cell>
+        </row>
+        <row>
+          <cell halign="left">linseed</cell>
+          <cell halign="center">218.75</cell>
+          <cell halign="center">52.24</cell>
+          <cell halign="center">12</cell>
+        </row>
+        <row>
+          <cell halign="left">meatmeal</cell>
+          <cell halign="center">276.91</cell>
+          <cell halign="center">64.90</cell>
+          <cell halign="center">11</cell>
+        </row>
+        <row>
+          <cell halign="left">soybean</cell>
+          <cell halign="center">246.43</cell>
+          <cell halign="center">54.13</cell>
+          <cell halign="center">14</cell>
+        </row>
+        <row bottom="minor">
+          <cell halign="left">sunflower</cell>
+          <cell halign="center">328.92</cell>
+          <cell halign="center">48.84</cell>
+          <cell halign="center">12</cell>
+        </row>
+      </tabular>
+      <sidebyside>
+        <image width="65%" source="images/inference_means/chick_wts_box.png" />
+      </sidebyside>
+      <ol>
+        <li>
+          <p>
+            Describe the distributions of weights of chickens that were fed linseed and horsebean.
+          </p>
+        </li>
+        <li>
+          <p>
+            Do these data provide strong evidence that the average weights of chickens that were fed linseed and horsebean are different?
+            Use a 5% significance level.
+          </p>
+        </li>
+        <li>
+          <p>
+            What type of error might we have committed?
+            Explain.
+          </p>
+        </li>
+        <li>
+          <p>
+            Would your conclusion change if we used <m>\alpha = 0.01</m>?
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Chicken fed linseed weighed an average of 218.75 grams while those fed horsebean weighed an average of 160.20 grams. Both distributions are relatively symmetric with no apparent outliers. There is more variability in the weights of chicken fed linseed.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>H_{0} : \mu_{ls} = \mu_{hb}</m>. <m>H_{A} : \mu_{ls} \ne \mu_{hb}</m>. We leave the conditions to you to consider. <m>T = 3.02</m>, <m>df = min(11, 9) = 9 \rightarrow \text{p-value } = 0.014</m>. Since <m>\text{p-value } &lt; 0.05</m>, reject <m>H_{0}</m>. The data provide strong evidence that there is a significant difference between the average weights of chickens that were fed linseed and horsebean.
+            </p>
+          </li>
+          <li>
+            <p>
+              Type 1 Error, since we rejected <m>H_{0}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Yes, since <m>\text{p-value } > 0.01</m>, we would not have rejected <m>H_{0}</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+  <exercise xml:id="fuel_eff_city"><!--  #28 -->
+    <title>Fuel efficiency of manual and automatic cars, Part I</title>
+    <statement>
+      <p>
+        Each year the US Environmental Protection Agency (EPA) releases fuel economy data on cars manufactured in that year.
+        Below are summary statistics on fuel efficiency
+        (in miles/gallon)
+        from random samples of cars with manual and automatic transmissions.
+        Do these data provide strong evidence of a difference between the average fuel efficiency of cars with manual and automatic transmissions in terms of their average city mileage?
+        Assume that conditions for inference are satisfied.<fn>U.S. Department of Energy, <url href="https://www.fueleconomy.gov/feg/download.shtml">Fuel Economy Data, 2012 Datafile.</url></fn>
+      </p>
+      <sidebyside widths="45% 45%">
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell halign="center" colspan="2">City MPG</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell halign="center">Automatic</cell>
+            <cell halign="center">Manual</cell>
+          </row>
+          <row>
+            <cell>Mean</cell>
+            <cell halign="center">16.12</cell>
+            <cell halign="center">19.85</cell>
+          </row>
+          <row>
+            <cell>SD</cell>
+            <cell halign="center">3.58</cell>
+            <cell halign="center">4.51</cell>
+          </row>
+          <row bottom="minor">
+            <cell>n</cell>
+            <cell halign="center">26</cell>
+            <cell halign="center">26</cell>
+          </row>
+        </tabular>
+        <image source="images/inference_means/fuel_eff_city_box.png" />
+      </sidebyside>
+    </statement>
+  </exercise>
+  <exercise xml:id="chick_wts_casein_soybean"><!--  #29-->
+    <title>Chicken diet and weight, Part II</title>
+    <statement>
+      <p>
+        Casein is a common weight gain supplement for humans.
+        Does it have an effect on chickens?
+        Using data provided in <xref ref="chick_wts_linseed_horsebean"></xref>,
+        test the hypothesis that the average weight of chickens that were fed casein is different than the average weight of chickens that were fed soybean.
+        If your hypothesis test yields a statistically significant result,
+        discuss whether or not the higher average weight of chickens can be attributed to the casein diet.
+        Assume that conditions for inference are satisfied.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <m>H_{0} : \mu_{C} = \mu_{S}</m>. <m>H_{A} : \mu_{C} \ne \mu_{S}</m>. <m>T = 3.27</m>, <m>df = 11 \rightarrow \text{p-value } = 0.007</m>. Since <m>\text{p-value } &lt; 0.05</m>, reject <m>H_{0}</m>. The data provide strong evidence that the average weight of chickens that were fed casein is different than the average weight of chickens that were fed soybean (with weights from casein being higher). Since this is a randomized experiment, the observed difference can be attributed to the diet.
+      </p>
+    </solution>
+  </exercise>
+  <exercise xml:id="fuel_eff_hway"><!--  #30 -->
+    <title>Fuel efficiency of manual and automatic cars, Part II</title>
+    <statement>
+      <p>
+        The table provides summary statistics on highway fuel economy of the same 52 cars from <xref ref="fuel_eff_city"></xref>.
+        Use these statistics to calculate a 98% confidence interval for the difference between average highway mileage of manual and automatic cars,
+        and interpret this interval in the context of the data.<fn>U.S. Department of Energy, <url href="https://www.fueleconomy.gov/feg/download.shtml">Fuel Economy Data, 2012 Datafile.</url></fn>
+      </p>
+      <sidebyside widths="45% 45%">
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell halign="center" colspan="2">Hwy MPG</cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell halign="center">Automatic</cell>
+            <cell halign="center">Manual</cell>
+          </row>
+          <row>
+            <cell>Mean</cell>
+            <cell halign="center">22.92</cell>
+            <cell halign="center">27.88</cell>
+          </row>
+          <row>
+            <cell>SD</cell>
+            <cell halign="center">5.29</cell>
+            <cell halign="center">5.01</cell>
+          </row>
+          <row bottom="minor">
+            <cell>n</cell>
+            <cell halign="center">26</cell>
+            <cell halign="center">26</cell>
+          </row>
+        </tabular>
+        <image source="images/inference_means/fuel_eff_hway_box.png" />
+      </sidebyside>
+    </statement>
+  </exercise>
+  <exercise xml:id="prison_isolation_T"><!--  #31 -->
+    <title>Prison isolation experiment, Part I</title>
+    <statement>
+      <p>
+        Subjects from Central Prison in Raleigh, NC, volunteered for an experiment involving an
+        <q>isolation</q>
+        experience.
+        The goal of the experiment was to find a treatment that reduces subjects' psychopathic deviant T scores.
+        This score measures a person's need for control or their rebellion against control,
+        and it is part of a commonly used mental health test called the Minnesota Multiphasic Personality Inventory (MMPI) test.
+        The experiment had three treatment groups:
+        <ol label="1">
+          <li>
+            <p>
+              Four hours of sensory restriction plus a 15 minute
+              <q>therapeutic</q>
+              tape advising that professional help is available.
+            </p>
+          </li>
+          <li>
+            <p>
+              Four hours of sensory restriction plus a 15 minute
+              <q>emotionally neutral</q>
+              tape on training hunting dogs.
+            </p>
+          </li>
+          <li>
+            <p>
+              Four hours of sensory restriction but no taped message.
+            </p>
+          </li>
+        </ol>
+      </p>
+      <p>
+        Forty-two subjects were randomly assigned to these treatment groups,
+        and an MMPI test was administered before and after the treatment.
+        Distributions of the differences between pre and post treatment scores (pre - post) are shown below,
+        along with some sample statistics.
+        Use this information to independently test the effectiveness of each treatment.
+        Make sure to clearly state your hypotheses, check conditions,
+        and interpret results in the context of the data.<fn><url href="https://stat.duke.edu/resources/datasets/prison-isolation">Prison isolation experiment, stat.duke.edu/resources/datasets/prison-isolation.</url></fn>
+      </p>
+      <image width="90%" source="images/inference_means/prison_isolation_hist.png" />
+      <tabular>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell halign="right">Tr 1</cell>
+          <cell halign="right">Tr 2</cell>
+          <cell halign="right">Tr 3</cell>
+        </row>
+        <row>
+          <cell halign="left">Mean</cell>
+          <cell halign="right">6.21</cell>
+          <cell halign="right">2.86</cell>
+          <cell halign="right">-3.21</cell>
+        </row>
+        <row>
+          <cell halign="left">SD</cell>
+          <cell halign="right">12.3</cell>
+          <cell halign="right">7.94</cell>
+          <cell halign="right">8.57</cell>
+        </row>
+        <row bottom="minor">
+          <cell halign="left">n</cell>
+          <cell halign="right">14</cell>
+          <cell halign="right">14</cell>
+          <cell halign="right">14</cell>
+        </row>
+      </tabular>
+    </statement>
+    <solution>
+      <p>
+        Let <m>\mu_{diff} = \mu_{pre}-\mu_{post}</m>. <m>H_{0}: \mu_{diff} = 0:</m> Treatment has no effect. <m>H_{A}: \mu_{diff} \neq 0</m>. Treatment has an effect on P.D.T. scores, either positive or negative. Conditions: The subjects are randomly assigned to treatments, so independence within and between groups is satisfied. All three sample sizes are smaller than 30, so we look for clear outliers. There is a borderline outlier in the first treatment group. Since it is borderline, we will proceed, but we should report this caveat with any results. For all three groups: <m>df = 13</m>. <m>T_{1} = 1.89 \rightarrow (\text{p-value } = 0.081</m>, <m>T_{2} = 1.35 \rightarrow (\text{p-value } = 0.200)</m>, <m>T_{3} = -1.40 \rightarrow (\text{p-value } = 0.185)</m>. We do not reject the null hypothesis for any of these groups. As earlier noted, there is some uncertainty about if the method applied is reasonable for the first group.
+      </p>
+    </solution>
+  </exercise>
+  <exercise xml:id="tf_compare_means"><!--  #32 -->
+    <title>True / False: comparing means</title>
+    <statement>
+      <p>
+        Determine if the following statements are true or false,
+        and explain your reasoning for statements you identify as false.
+        <ol>
+          <li>
+            <p>
+              When comparing means of two samples where <m>n_1 = 20</m> and <m>n_2 = 40</m>,
+              we can use the normal model for the difference in means since <m>n_2 \ge 30</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              As the degrees of freedom increases,
+              the <m>t</m>-distribution approaches normality.
+            </p>
+          </li>
+          <li>
+            <p>
+              We use a pooled standard error for calculating the standard error of the difference between means when sample sizes of groups are equal to each other.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+</exercises>
+
+<subsection>
+  <title>Chapter Highlights</title>
+    <p>
+      We've reviewed a wide set of inference procedures over the last 3 chapters.
+      Let's revisit each and discuss the similarities and differences among them.
+      The following confidence intervals and tests are structurally the same <mdash/> they all involve inference on a population parameter,
+      where that parameter is a proportion,
+      a difference of proportions,
+      a mean, a mean of differences, or a difference of means.
+    <ul>
+      <li>
+        <p>
+          1-proportion <m>z</m>-test/interval
+        </p>
+      </li>
+      <li>
+        <p>
+          2-proportion <m>z</m>-test/interval
+        </p>
+      </li>
+      <li>
+        <p>
+          1-sample <m>t</m>-test/interval
+        </p>
+      </li>
+      <li>
+        <p>
+          1-sample <m>t</m>-test/interval with paired data
+        </p>
+      </li>
+      <li>
+        <p>
+          2-sample <m>t</m>-test/interval
+        </p>
+      </li>
+    </ul>
+  </p>
+  <p>
+    The above inferential procedures all involve a
+    <term>point estimate</term>,
+    a <term>standard error</term> of the estimate,
+    and an assumption about the <term>shape of the sampling distribution</term> of the point estimate.
+  </p>
+  <p>
+    From <xref ref="inferenceForCategoricalData"></xref>,
+    the <m>\chi^2</m> tests and their uses are as follows:
+    <ul>
+      <li>
+        <p>
+          <m>\chi^2</m> goodness of fit - compares a categorical variable to a known/fixed distribution.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\chi^2</m> test of homogeneity - compares a categorical variable across multiple groups.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\chi^2</m> test of independence - looks for association between two categorical variables.
+        </p>
+      </li>
+    </ul>
+  </p>
+  <p>
+    <m>\chi^2</m> is a measure of <em>overall</em>
+    deviation between observed values and expected values.
+    These tests stand apart from the others because when using <m>\chi^2</m> there is not a parameter of interest.
+    For this reason there are no confidence intervals using <m>\chi^2</m>.
+    Also, for <m>\chi^2</m> tests,
+    the hypotheses are usually written in words,
+    because they are about the <em>distribution</em>
+    of one or more categorical variables,
+    not about a single parameter.
+  </p>
+  <p>
+    While formulas and conditions vary,
+    all of these procedures follow the same basic logic and process.
+    <ul>
+      <li>
+        <p>
+          For a confidence interval,
+          identify the parameter to be estimated and the confidence level.
+          For a hypothesis test,
+          identify the hypotheses to be tested and the significance level.
+        </p>
+      </li>
+      <li>
+        <p>
+          Choose the correct procedure.
+        </p>
+      </li>
+      <li>
+        <p>
+          Check that both conditions for its use are met.
+        </p>
+      </li>
+      <li>
+        <p>
+          Calculate the confidence interval or the test statistic and p-value,
+          as well as the <m>df</m> if applicable.
+        </p>
+      </li>
+      <li>
+        <p>
+          Interpret the results and draw a conclusion based on the data.
+        </p>
+      </li>
+    </ul>
+  </p>
+  <p>
+    For a summary of these hypothesis test and confidence interval procedures
+    (including one more that we will encounter in <xref ref="inferenceForLinearRegression"></xref>),
+    see the <xref ref="appendix_inference_guide">Inference Guide</xref>.
+  </p>
+</subsection>
+</section>

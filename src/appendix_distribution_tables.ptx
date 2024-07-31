@@ -1,0 +1,3430 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<appendix xml:id="appendix_distribution_tables" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Distribution Tables</title>
+
+<xi:include href="random_number_table.ptx" />
+<xi:include href="z_table.ptx" />
+<xi:include href="t_table.ptx" />
+<xi:include href="chi_square_table.ptx" />
+
+</appendix>
+<!-- 
+<section>
+<title>Random Number Table</title>
+
+<tabular>
+  <row>
+    <cell><em>Row</em></cell>
+    <cell>1-5</cell>
+    <cell></cell>
+    <cell>6-10</cell>
+    <cell></cell>
+    <cell>11-15</cell>
+    <cell></cell>
+    <cell>16-20</cell>
+    <cell></cell>
+    <cell>21-25</cell>
+    <cell></cell>
+    <cell>26-30</cell>
+    <cell></cell>
+    <cell>31-35</cell>
+    <cell></cell>
+    <cell>36-40</cell>
+  </row>
+  <row bottom="minor">
+    <cell colspan="16"></cell>
+  </row>
+  <row>
+    <cell>1</cell>
+    <cell>44394</cell>
+    <cell></cell>
+    <cell>76100</cell>
+    <cell></cell>
+    <cell>85973</cell>
+    <cell></cell>
+    <cell>26853</cell>
+    <cell></cell>
+    <cell>07080</cell>
+    <cell></cell>
+    <cell>91603</cell>
+    <cell></cell>
+    <cell>00476</cell>
+    <cell></cell>
+    <cell>19681</cell>
+  </row>
+  <row>
+    <cell>2</cell>
+    <cell>61578</cell>
+    <cell></cell>
+    <cell>75037</cell>
+    <cell></cell>
+    <cell>54792</cell>
+    <cell></cell>
+    <cell>74216</cell>
+    <cell></cell>
+    <cell>31952</cell>
+    <cell></cell>
+    <cell>31235</cell>
+    <cell></cell>
+    <cell>31258</cell>
+    <cell></cell>
+    <cell>57886</cell>
+  </row>
+  <row>
+    <cell>3</cell>
+    <cell>18529</cell>
+    <cell></cell>
+    <cell>73285</cell>
+    <cell></cell>
+    <cell>95291</cell>
+    <cell></cell>
+    <cell>49606</cell>
+    <cell></cell>
+    <cell>67174</cell>
+    <cell></cell>
+    <cell>95905</cell>
+    <cell></cell>
+    <cell>33679</cell>
+    <cell></cell>
+    <cell>75811</cell>
+  </row>
+  <row>
+    <cell>4</cell>
+    <cell>81238</cell>
+    <cell></cell>
+    <cell>18321</cell>
+    <cell></cell>
+    <cell>71085</cell>
+    <cell></cell>
+    <cell>08284</cell>
+    <cell></cell>
+    <cell>39318</cell>
+    <cell></cell>
+    <cell>31434</cell>
+    <cell></cell>
+    <cell>26173</cell>
+    <cell></cell>
+    <cell>07440</cell>
+  </row>
+  <row>
+    <cell>5</cell>
+    <cell>11173</cell>
+    <cell></cell>
+    <cell>58878</cell>
+    <cell></cell>
+    <cell>25516</cell>
+    <cell></cell>
+    <cell>15058</cell>
+    <cell></cell>
+    <cell>48639</cell>
+    <cell></cell>
+    <cell>52723</cell>
+    <cell></cell>
+    <cell>95864</cell>
+    <cell></cell>
+    <cell>89673</cell>
+  </row>
+  <row bottom="minor">
+    <cell colspan="16"></cell>
+  </row>
+  <row>
+    <cell>6</cell>
+    <cell>96737</cell>
+    <cell></cell>
+    <cell>95194</cell>
+    <cell></cell>
+    <cell>14419</cell>
+    <cell></cell>
+    <cell>22202</cell>
+    <cell></cell>
+    <cell>92867</cell>
+    <cell></cell>
+    <cell>73525</cell>
+    <cell></cell>
+    <cell>94382</cell>
+    <cell></cell>
+    <cell>29927</cell>
+  </row>
+  <row>
+    <cell>7</cell>
+    <cell>63514</cell>
+    <cell></cell>
+    <cell>55066</cell>
+    <cell></cell>
+    <cell>65162</cell>
+    <cell></cell>
+    <cell>96016</cell>
+    <cell></cell>
+    <cell>91723</cell>
+    <cell></cell>
+    <cell>21160</cell>
+    <cell></cell>
+    <cell>24285</cell>
+    <cell></cell>
+    <cell>33264</cell>
+  </row>
+  <row>
+    <cell>8</cell>
+    <cell>35087</cell>
+    <cell></cell>
+    <cell>57036</cell>
+    <cell></cell>
+    <cell>10001</cell>
+    <cell></cell>
+    <cell>39424</cell>
+    <cell></cell>
+    <cell>50536</cell>
+    <cell></cell>
+    <cell>77380</cell>
+    <cell></cell>
+    <cell>45042</cell>
+    <cell></cell>
+    <cell>48180</cell>
+  </row>
+  <row>
+    <cell>9</cell>
+    <cell>00148</cell>
+    <cell></cell>
+    <cell>73933</cell>
+    <cell></cell>
+    <cell>49369</cell>
+    <cell></cell>
+    <cell>32403</cell>
+    <cell></cell>
+    <cell>53850</cell>
+    <cell></cell>
+    <cell>16291</cell>
+    <cell></cell>
+    <cell>93619</cell>
+    <cell></cell>
+    <cell>27557</cell>
+  </row>
+  <row>
+    <cell>10</cell>
+    <cell>28999</cell>
+    <cell></cell>
+    <cell>76232</cell>
+    <cell></cell>
+    <cell>32637</cell>
+    <cell></cell>
+    <cell>95697</cell>
+    <cell></cell>
+    <cell>63679</cell>
+    <cell></cell>
+    <cell>54506</cell>
+    <cell></cell>
+    <cell>11299</cell>
+    <cell></cell>
+    <cell>94294</cell>
+  </row>
+  <row bottom="minor">
+    <cell colspan="16"></cell>
+  </row>
+  <row>
+    <cell>11</cell>
+    <cell>37911</cell>
+    <cell></cell>
+    <cell>50834</cell>
+    <cell></cell>
+    <cell>10927</cell>
+    <cell></cell>
+    <cell>74075</cell>
+    <cell></cell>
+    <cell>26558</cell>
+    <cell></cell>
+    <cell>42311</cell>
+    <cell></cell>
+    <cell>36483</cell>
+    <cell></cell>
+    <cell>71820</cell>
+  </row>
+  <row>
+    <cell>12</cell>
+    <cell>33624</cell>
+    <cell></cell>
+    <cell>82379</cell>
+    <cell></cell>
+    <cell>03625</cell>
+    <cell></cell>
+    <cell>58336</cell>
+    <cell></cell>
+    <cell>27390</cell>
+    <cell></cell>
+    <cell>00586</cell>
+    <cell></cell>
+    <cell>06344</cell>
+    <cell></cell>
+    <cell>89625</cell>
+  </row>
+  <row>
+    <cell>13</cell>
+    <cell>93282</cell>
+    <cell></cell>
+    <cell>63059</cell>
+    <cell></cell>
+    <cell>10830</cell>
+    <cell></cell>
+    <cell>89432</cell>
+    <cell></cell>
+    <cell>26917</cell>
+    <cell></cell>
+    <cell>31555</cell>
+    <cell></cell>
+    <cell>51793</cell>
+    <cell></cell>
+    <cell>18718</cell>
+  </row>
+  <row>
+    <cell>14</cell>
+    <cell>57429</cell>
+    <cell></cell>
+    <cell>71933</cell>
+    <cell></cell>
+    <cell>80329</cell>
+    <cell></cell>
+    <cell>56521</cell>
+    <cell></cell>
+    <cell>97594</cell>
+    <cell></cell>
+    <cell>92651</cell>
+    <cell></cell>
+    <cell>14819</cell>
+    <cell></cell>
+    <cell>86546</cell>
+  </row>
+  <row>
+    <cell>15</cell>
+    <cell>65029</cell>
+    <cell></cell>
+    <cell>24328</cell>
+    <cell></cell>
+    <cell>06826</cell>
+    <cell></cell>
+    <cell>61448</cell>
+    <cell></cell>
+    <cell>54760</cell>
+    <cell></cell>
+    <cell>09351</cell>
+    <cell></cell>
+    <cell>73930</cell>
+    <cell></cell>
+    <cell>99564</cell>
+  </row>
+  <row bottom="minor">
+    <cell colspan="16"></cell>
+  </row>
+  <row>
+    <cell>16</cell>
+    <cell>14779</cell>
+    <cell></cell>
+    <cell>23173</cell>
+    <cell></cell>
+    <cell>97183</cell>
+    <cell></cell>
+    <cell>59835</cell>
+    <cell></cell>
+    <cell>69580</cell>
+    <cell></cell>
+    <cell>94653</cell>
+    <cell></cell>
+    <cell>55095</cell>
+    <cell></cell>
+    <cell>80666</cell>
+  </row>
+  <row>
+    <cell>17</cell>
+    <cell>52072</cell>
+    <cell></cell>
+    <cell>12187</cell>
+    <cell></cell>
+    <cell>35360</cell>
+    <cell></cell>
+    <cell>82925</cell>
+    <cell></cell>
+    <cell>44923</cell>
+    <cell></cell>
+    <cell>44532</cell>
+    <cell></cell>
+    <cell>18251</cell>
+    <cell></cell>
+    <cell>96991</cell>
+  </row>
+  <row>
+    <cell>18</cell>
+    <cell>76282</cell>
+    <cell></cell>
+    <cell>91849</cell>
+    <cell></cell>
+    <cell>17138</cell>
+    <cell></cell>
+    <cell>59554</cell>
+    <cell></cell>
+    <cell>35476</cell>
+    <cell></cell>
+    <cell>67007</cell>
+    <cell></cell>
+    <cell>02484</cell>
+    <cell></cell>
+    <cell>10122</cell>
+  </row>
+  <row>
+    <cell>19</cell>
+    <cell>46561</cell>
+    <cell></cell>
+    <cell>33015</cell>
+    <cell></cell>
+    <cell>04577</cell>
+    <cell></cell>
+    <cell>02178</cell>
+    <cell></cell>
+    <cell>32915</cell>
+    <cell></cell>
+    <cell>35912</cell>
+    <cell></cell>
+    <cell>48974</cell>
+    <cell></cell>
+    <cell>92985</cell>
+  </row>
+  <row>
+    <cell>20</cell>
+    <cell>70623</cell>
+    <cell></cell>
+    <cell>36097</cell>
+    <cell></cell>
+    <cell>48780</cell>
+    <cell></cell>
+    <cell>06921</cell>
+    <cell></cell>
+    <cell>60683</cell>
+    <cell></cell>
+    <cell>22461</cell>
+    <cell></cell>
+    <cell>36175</cell>
+    <cell></cell>
+    <cell>61281</cell>
+  </row>
+  <row bottom="minor">
+    <cell colspan="16"></cell>
+  </row>
+  <row>
+    <cell>21</cell>
+    <cell>03605</cell>
+    <cell></cell>
+    <cell>08541</cell>
+    <cell></cell>
+    <cell>17546</cell>
+    <cell></cell>
+    <cell>85790</cell>
+    <cell></cell>
+    <cell>48413</cell>
+    <cell></cell>
+    <cell>69382</cell>
+    <cell></cell>
+    <cell>89785</cell>
+    <cell></cell>
+    <cell>80206</cell>
+  </row>
+  <row>
+    <cell>22</cell>
+    <cell>46147</cell>
+    <cell></cell>
+    <cell>07603</cell>
+    <cell></cell>
+    <cell>92057</cell>
+    <cell></cell>
+    <cell>87609</cell>
+    <cell></cell>
+    <cell>52670</cell>
+    <cell></cell>
+    <cell>96255</cell>
+    <cell></cell>
+    <cell>96660</cell>
+    <cell></cell>
+    <cell>83167</cell>
+  </row>
+  <row>
+    <cell>23</cell>
+    <cell>09547</cell>
+    <cell></cell>
+    <cell>77804</cell>
+    <cell></cell>
+    <cell>95099</cell>
+    <cell></cell>
+    <cell>22158</cell>
+    <cell></cell>
+    <cell>53279</cell>
+    <cell></cell>
+    <cell>23161</cell>
+    <cell></cell>
+    <cell>72675</cell>
+    <cell></cell>
+    <cell>92804</cell>
+  </row>
+  <row>
+    <cell>24</cell>
+    <cell>12899</cell>
+    <cell></cell>
+    <cell>05005</cell>
+    <cell></cell>
+    <cell>86667</cell>
+    <cell></cell>
+    <cell>72331</cell>
+    <cell></cell>
+    <cell>09114</cell>
+    <cell></cell>
+    <cell>28187</cell>
+    <cell></cell>
+    <cell>97404</cell>
+    <cell></cell>
+    <cell>26750</cell>
+  </row>
+  <row>
+    <cell>25</cell>
+    <cell>21223</cell>
+    <cell></cell>
+    <cell>38353</cell>
+    <cell></cell>
+    <cell>56970</cell>
+    <cell></cell>
+    <cell>48965</cell>
+    <cell></cell>
+    <cell>58371</cell>
+    <cell></cell>
+    <cell>02697</cell>
+    <cell></cell>
+    <cell>61417</cell>
+    <cell></cell>
+    <cell>54746</cell>
+  </row>
+  <row bottom="minor">
+    <cell colspan="16"></cell>
+  </row>
+  <row>
+    <cell>26</cell>
+    <cell>35770</cell>
+    <cell></cell>
+    <cell>35697</cell>
+    <cell></cell>
+    <cell>32281</cell>
+    <cell></cell>
+    <cell>53514</cell>
+    <cell></cell>
+    <cell>10854</cell>
+    <cell></cell>
+    <cell>16778</cell>
+    <cell></cell>
+    <cell>56447</cell>
+    <cell></cell>
+    <cell>46965</cell>
+  </row>
+  <row>
+    <cell>27</cell>
+    <cell>04243</cell>
+    <cell></cell>
+    <cell>65817</cell>
+    <cell></cell>
+    <cell>81819</cell>
+    <cell></cell>
+    <cell>64381</cell>
+    <cell></cell>
+    <cell>83509</cell>
+    <cell></cell>
+    <cell>44316</cell>
+    <cell></cell>
+    <cell>56316</cell>
+    <cell></cell>
+    <cell>47742</cell>
+  </row>
+  <row>
+    <cell>28</cell>
+    <cell>56989</cell>
+    <cell></cell>
+    <cell>05587</cell>
+    <cell></cell>
+    <cell>79995</cell>
+    <cell></cell>
+    <cell>36598</cell>
+    <cell></cell>
+    <cell>02316</cell>
+    <cell></cell>
+    <cell>81627</cell>
+    <cell></cell>
+    <cell>50104</cell>
+    <cell></cell>
+    <cell>47720</cell>
+  </row>
+  <row>
+    <cell>29</cell>
+    <cell>53233</cell>
+    <cell></cell>
+    <cell>48698</cell>
+    <cell></cell>
+    <cell>59304</cell>
+    <cell></cell>
+    <cell>63566</cell>
+    <cell></cell>
+    <cell>25352</cell>
+    <cell></cell>
+    <cell>03322</cell>
+    <cell></cell>
+    <cell>29938</cell>
+    <cell></cell>
+    <cell>82306</cell>
+  </row>
+  <row>
+    <cell>30</cell>
+    <cell>20232</cell>
+    <cell></cell>
+    <cell>30909</cell>
+    <cell></cell>
+    <cell>77126</cell>
+    <cell></cell>
+    <cell>50041</cell>
+    <cell></cell>
+    <cell>96500</cell>
+    <cell></cell>
+    <cell>24033</cell>
+    <cell></cell>
+    <cell>77422</cell>
+    <cell></cell>
+    <cell>20150</cell>
+  </row>
+  <row bottom="minor">
+    <cell colspan="16"></cell>
+  </row>
+</tabular>
+
+<tabular>
+<row>
+  <cell><em>Row</em></cell>
+  <cell>1-5</cell>
+  <cell></cell>
+  <cell>6-10</cell>
+  <cell></cell>
+  <cell>11-15</cell>
+  <cell></cell>
+  <cell>16-20</cell>
+  <cell></cell>
+  <cell>21-25</cell>
+  <cell></cell>
+  <cell>26-30</cell>
+  <cell></cell>
+  <cell>31-35</cell>
+  <cell></cell>
+  <cell>36-40</cell>
+</row>
+<row bottom="minor">
+    <cell colspan="16"></cell>
+</row>
+<row>
+  <cell>31</cell>
+  <cell>85882</cell>
+  <cell></cell>
+  <cell>59541</cell>
+  <cell></cell>
+  <cell>14275</cell>
+  <cell></cell>
+  <cell>15866</cell>
+  <cell></cell>
+  <cell>27467</cell>
+  <cell></cell>
+  <cell>60143</cell>
+  <cell></cell>
+  <cell>92033</cell>
+  <cell></cell>
+  <cell>22771</cell>
+</row>
+<row>
+  <cell>32</cell>
+  <cell>33055</cell>
+  <cell></cell>
+  <cell>24722</cell>
+  <cell></cell>
+  <cell>67250</cell>
+  <cell></cell>
+  <cell>27831</cell>
+  <cell></cell>
+  <cell>11114</cell>
+  <cell></cell>
+  <cell>84858</cell>
+  <cell></cell>
+  <cell>18231</cell>
+  <cell></cell>
+  <cell>85739</cell>
+</row>
+<row>
+  <cell>33</cell>
+  <cell>25994</cell>
+  <cell></cell>
+  <cell>89263</cell>
+  <cell></cell>
+  <cell>58632</cell>
+  <cell></cell>
+  <cell>08784</cell>
+  <cell></cell>
+  <cell>15774</cell>
+  <cell></cell>
+  <cell>27699</cell>
+  <cell></cell>
+  <cell>32181</cell>
+  <cell></cell>
+  <cell>52967</cell>
+</row>
+<row>
+  <cell>34</cell>
+  <cell>19103</cell>
+  <cell></cell>
+  <cell>95173</cell>
+  <cell></cell>
+  <cell>74832</cell>
+  <cell></cell>
+  <cell>68762</cell>
+  <cell></cell>
+  <cell>66983</cell>
+  <cell></cell>
+  <cell>16051</cell>
+  <cell></cell>
+  <cell>92092</cell>
+  <cell></cell>
+  <cell>72066</cell>
+</row>
+<row>
+  <cell>35</cell>
+  <cell>85452</cell>
+  <cell></cell>
+  <cell>51441</cell>
+  <cell></cell>
+  <cell>22086</cell>
+  <cell></cell>
+  <cell>47481</cell>
+  <cell></cell>
+  <cell>41880</cell>
+  <cell></cell>
+  <cell>98791</cell>
+  <cell></cell>
+  <cell>33532</cell>
+  <cell></cell>
+  <cell>10453</cell>
+</row>
+<row bottom="minor">
+    <cell colspan="16"></cell>
+</row>
+<row>
+  <cell>36</cell>
+  <cell>41523</cell>
+  <cell></cell>
+  <cell>69102</cell>
+  <cell></cell>
+  <cell>02604</cell>
+  <cell></cell>
+  <cell>00209</cell>
+  <cell></cell>
+  <cell>76159</cell>
+  <cell></cell>
+  <cell>99621</cell>
+  <cell></cell>
+  <cell>96573</cell>
+  <cell></cell>
+  <cell>59154</cell>
+</row>
+<row>
+  <cell>37</cell>
+  <cell>90311</cell>
+  <cell></cell>
+  <cell>26961</cell>
+  <cell></cell>
+  <cell>31394</cell>
+  <cell></cell>
+  <cell>43019</cell>
+  <cell></cell>
+  <cell>18521</cell>
+  <cell></cell>
+  <cell>54000</cell>
+  <cell></cell>
+  <cell>75983</cell>
+  <cell></cell>
+  <cell>46462</cell>
+</row>
+<row>
+  <cell>38</cell>
+  <cell>32669</cell>
+  <cell></cell>
+  <cell>76156</cell>
+  <cell></cell>
+  <cell>46877</cell>
+  <cell></cell>
+  <cell>86814</cell>
+  <cell></cell>
+  <cell>42652</cell>
+  <cell></cell>
+  <cell>74313</cell>
+  <cell></cell>
+  <cell>86128</cell>
+  <cell></cell>
+  <cell>95406</cell>
+</row>
+<row>
+  <cell>39</cell>
+  <cell>11155</cell>
+  <cell></cell>
+  <cell>77427</cell>
+  <cell></cell>
+  <cell>61695</cell>
+  <cell></cell>
+  <cell>16162</cell>
+  <cell></cell>
+  <cell>36682</cell>
+  <cell></cell>
+  <cell>27559</cell>
+  <cell></cell>
+  <cell>22972</cell>
+  <cell></cell>
+  <cell>20061</cell>
+</row>
+<row>
+  <cell>40</cell>
+  <cell>11132</cell>
+  <cell></cell>
+  <cell>57408</cell>
+  <cell></cell>
+  <cell>61007</cell>
+  <cell></cell>
+  <cell>97390</cell>
+  <cell></cell>
+  <cell>17122</cell>
+  <cell></cell>
+  <cell>53132</cell>
+  <cell></cell>
+  <cell>26189</cell>
+  <cell></cell>
+  <cell>21875</cell>
+</row>
+<row bottom="minor">
+    <cell colspan="16"></cell>
+</row>
+<row>
+  <cell>41</cell>
+  <cell>70967</cell>
+  <cell></cell>
+  <cell>21786</cell>
+  <cell></cell>
+  <cell>00053</cell>
+  <cell></cell>
+  <cell>32893</cell>
+  <cell></cell>
+  <cell>67681</cell>
+  <cell></cell>
+  <cell>81911</cell>
+  <cell></cell>
+  <cell>56693</cell>
+  <cell></cell>
+  <cell>15162</cell>
+</row>
+<row>
+  <cell>42</cell>
+  <cell>29013</cell>
+  <cell></cell>
+  <cell>28494</cell>
+  <cell></cell>
+  <cell>80802</cell>
+  <cell></cell>
+  <cell>38490</cell>
+  <cell></cell>
+  <cell>02808</cell>
+  <cell></cell>
+  <cell>54605</cell>
+  <cell></cell>
+  <cell>20490</cell>
+  <cell></cell>
+  <cell>19681</cell>
+</row>
+<row>
+  <cell>43</cell>
+  <cell>56896</cell>
+  <cell></cell>
+  <cell>71763</cell>
+  <cell></cell>
+  <cell>66787</cell>
+  <cell></cell>
+  <cell>16331</cell>
+  <cell></cell>
+  <cell>40798</cell>
+  <cell></cell>
+  <cell>22111</cell>
+  <cell></cell>
+  <cell>28907</cell>
+  <cell></cell>
+  <cell>81975</cell>
+</row>
+<row>
+  <cell>44</cell>
+  <cell>70658</cell>
+  <cell></cell>
+  <cell>25121</cell>
+  <cell></cell>
+  <cell>34292</cell>
+  <cell></cell>
+  <cell>99044</cell>
+  <cell></cell>
+  <cell>46390</cell>
+  <cell></cell>
+  <cell>86503</cell>
+  <cell></cell>
+  <cell>31601</cell>
+  <cell></cell>
+  <cell>82444</cell>
+</row>
+<row>
+  <cell>45</cell>
+  <cell>52392</cell>
+  <cell></cell>
+  <cell>67742</cell>
+  <cell></cell>
+  <cell>59495</cell>
+  <cell></cell>
+  <cell>16864</cell>
+  <cell></cell>
+  <cell>68170</cell>
+  <cell></cell>
+  <cell>95937</cell>
+  <cell></cell>
+  <cell>35545</cell>
+  <cell></cell>
+  <cell>84861</cell>
+</row>
+<row bottom="minor">
+    <cell colspan="16"></cell>
+</row>
+<row>
+  <cell>46</cell>
+  <cell>20741</cell>
+  <cell></cell>
+  <cell>67232</cell>
+  <cell></cell>
+  <cell>26971</cell>
+  <cell></cell>
+  <cell>27680</cell>
+  <cell></cell>
+  <cell>63048</cell>
+  <cell></cell>
+  <cell>95634</cell>
+  <cell></cell>
+  <cell>02828</cell>
+  <cell></cell>
+  <cell>22125</cell>
+</row>
+<row>
+  <cell>47</cell>
+  <cell>92549</cell>
+  <cell></cell>
+  <cell>56918</cell>
+  <cell></cell>
+  <cell>97969</cell>
+  <cell></cell>
+  <cell>92789</cell>
+  <cell></cell>
+  <cell>77949</cell>
+  <cell></cell>
+  <cell>70181</cell>
+  <cell></cell>
+  <cell>53477</cell>
+  <cell></cell>
+  <cell>68179</cell>
+</row>
+<row>
+  <cell>48</cell>
+  <cell>75084</cell>
+  <cell></cell>
+  <cell>02966</cell>
+  <cell></cell>
+  <cell>94937</cell>
+  <cell></cell>
+  <cell>04316</cell>
+  <cell></cell>
+  <cell>46782</cell>
+  <cell></cell>
+  <cell>03863</cell>
+  <cell></cell>
+  <cell>69626</cell>
+  <cell></cell>
+  <cell>24665</cell>
+</row>
+<row>
+  <cell>49</cell>
+  <cell>00063</cell>
+  <cell></cell>
+  <cell>53920</cell>
+  <cell></cell>
+  <cell>96953</cell>
+  <cell></cell>
+  <cell>16190</cell>
+  <cell></cell>
+  <cell>31447</cell>
+  <cell></cell>
+  <cell>63494</cell>
+  <cell></cell>
+  <cell>92765</cell>
+  <cell></cell>
+  <cell>38345</cell>
+</row>
+<row>
+  <cell>50</cell>
+  <cell>74807</cell>
+  <cell></cell>
+  <cell>86955</cell>
+  <cell></cell>
+  <cell>23214</cell>
+  <cell></cell>
+  <cell>84688</cell>
+  <cell></cell>
+  <cell>83291</cell>
+  <cell></cell>
+  <cell>12324</cell>
+  <cell></cell>
+  <cell>16325</cell>
+  <cell></cell>
+
+  <cell>81121</cell>
+</row>
+<row bottom="minor">
+    <cell colspan="16"></cell>
+</row>
+<row>
+  <cell>51</cell>
+  <cell>18186</cell>
+  <cell></cell>
+  <cell>13179</cell>
+  <cell></cell>
+  <cell>77206</cell>
+  <cell></cell>
+  <cell>57798</cell>
+  <cell></cell>
+  <cell>31333</cell>
+  <cell></cell>
+  <cell>69795</cell>
+  <cell></cell>
+  <cell>12667</cell>
+  <cell></cell>
+  <cell>31973</cell>
+</row>
+<row>
+  <cell>52</cell>
+  <cell>70135</cell>
+  <cell></cell>
+  <cell>99944</cell>
+  <cell></cell>
+  <cell>49928</cell>
+  <cell></cell>
+  <cell>79410</cell>
+  <cell></cell>
+  <cell>28233</cell>
+  <cell></cell>
+  <cell>83809</cell>
+  <cell></cell>
+  <cell>61091</cell>
+  <cell></cell>
+  <cell>47342</cell>
+</row>
+<row>
+  <cell>53</cell>
+  <cell>88043</cell>
+  <cell></cell>
+  <cell>90662</cell>
+  <cell></cell>
+  <cell>37325</cell>
+  <cell></cell>
+  <cell>41709</cell>
+  <cell></cell>
+  <cell>36888</cell>
+  <cell></cell>
+  <cell>28368</cell>
+  <cell></cell>
+  <cell>73822</cell>
+  <cell></cell>
+  <cell>10085</cell>
+</row>
+<row>
+  <cell>54</cell>
+  <cell>48258</cell>
+  <cell></cell>
+  <cell>76775</cell>
+  <cell></cell>
+  <cell>71829</cell>
+  <cell></cell>
+  <cell>85903</cell>
+  <cell></cell>
+  <cell>32278</cell>
+  <cell></cell>
+  <cell>03244</cell>
+  <cell></cell>
+  <cell>62429</cell>
+  <cell></cell>
+  <cell>11652</cell>
+</row>
+<row>
+  <cell>55</cell>
+  <cell>56399</cell>
+  <cell></cell>
+  <cell>28764</cell>
+  <cell></cell>
+  <cell>50930</cell>
+  <cell></cell>
+  <cell>63066</cell>
+  <cell></cell>
+  <cell>17125</cell>
+  <cell></cell>
+  <cell>47910</cell>
+  <cell></cell>
+  <cell>84486</cell>
+  <cell></cell>
+  <cell>85522</cell>
+</row>
+<row bottom="minor">
+    <cell colspan="16"></cell>
+</row>
+<row>
+  <cell>56</cell>
+  <cell>10879</cell>
+  <cell></cell>
+  <cell>94293</cell>
+  <cell></cell>
+  <cell>64826</cell>
+  <cell></cell>
+  <cell>35152</cell>
+  <cell></cell>
+  <cell>98776</cell>
+  <cell></cell>
+  <cell>96947</cell>
+  <cell></cell>
+  <cell>01132</cell>
+  <cell></cell>
+  <cell>84264</cell>
+</row>
+<row>
+  <cell>57</cell>
+  <cell>16355</cell>
+  <cell></cell>
+  <cell>60561</cell>
+  <cell></cell>
+  <cell>42182</cell>
+  <cell></cell>
+  <cell>17140</cell>
+  <cell></cell>
+  <cell>84048</cell>
+  <cell></cell>
+  <cell>32917</cell>
+  <cell></cell>
+  <cell>85483</cell>
+  <cell></cell>
+  <cell>68557</cell>
+</row>
+<row>
+  <cell>58</cell>
+  <cell>51190</cell>
+  <cell></cell>
+  <cell>14326</cell>
+  <cell></cell>
+  <cell>62013</cell>
+  <cell></cell>
+  <cell>10370</cell>
+  <cell></cell>
+  <cell>40045</cell>
+  <cell></cell>
+  <cell>64064</cell>
+  <cell></cell>
+  <cell>88484</cell>
+  <cell></cell>
+  <cell>08559</cell>
+</row>
+<row>
+  <cell>59</cell>
+  <cell>18762</cell>
+  <cell></cell>
+  <cell>84505</cell>
+  <cell></cell>
+  <cell>25892</cell>
+  <cell></cell>
+  <cell>90869</cell>
+  <cell></cell>
+  <cell>74228</cell>
+  <cell></cell>
+  <cell>53749</cell>
+  <cell></cell>
+  <cell>64947</cell>
+  <cell></cell>
+  <cell>95937</cell>
+</row>
+<row>
+  <cell>60</cell>
+  <cell>19150</cell>
+  <cell></cell>
+  <cell>85525</cell>
+  <cell></cell>
+  <cell>97008</cell>
+  <cell></cell>
+  <cell>81293</cell>
+  <cell></cell>
+  <cell>49517</cell>
+  <cell></cell>
+  <cell>41430</cell>
+  <cell></cell>
+  <cell>80339</cell>
+  <cell></cell>
+  <cell>20915</cell>
+</row>
+<row bottom="minor">
+    <cell colspan="16"></cell>
+</row>
+<row>
+  <cell>61</cell>
+  <cell>14294</cell>
+  <cell></cell>
+  <cell>08263</cell>
+  <cell></cell>
+  <cell>56326</cell>
+  <cell></cell>
+  <cell>04922</cell>
+  <cell></cell>
+  <cell>36882</cell>
+  <cell></cell>
+  <cell>89658</cell>
+  <cell></cell>
+  <cell>54217</cell>
+  <cell></cell>
+  <cell>90500</cell>
+</row>
+<row>
+  <cell>62</cell>
+  <cell>25913</cell>
+  <cell></cell>
+  <cell>60850</cell>
+  <cell></cell>
+  <cell>62974</cell>
+  <cell></cell>
+  <cell>06866</cell>
+  <cell></cell>
+  <cell>20111</cell>
+  <cell></cell>
+  <cell>38797</cell>
+  <cell></cell>
+  <cell>23664</cell>
+  <cell></cell>
+  <cell>21828</cell>
+</row>
+<row>
+  <cell>63</cell>
+  <cell>37278</cell>
+  <cell></cell>
+  <cell>97201</cell>
+  <cell></cell>
+  <cell>24337</cell>
+  <cell></cell>
+  <cell>49224</cell>
+  <cell></cell>
+  <cell>27299</cell>
+  <cell></cell>
+  <cell>28363</cell>
+  <cell></cell>
+  <cell>33961</cell>
+  <cell></cell>
+  <cell>59307</cell>
+</row>
+<row>
+  <cell>64</cell>
+  <cell>63837</cell>
+  <cell></cell>
+  <cell>80459</cell>
+  <cell></cell>
+  <cell>74548</cell>
+  <cell></cell>
+  <cell>93999</cell>
+  <cell></cell>
+  <cell>12775</cell>
+  <cell></cell>
+  <cell>81754</cell>
+  <cell></cell>
+  <cell>89349</cell>
+  <cell></cell>
+  <cell>23516</cell>
+</row>
+<row>
+  <cell>65</cell>
+  <cell>64551</cell>
+  <cell></cell>
+  <cell>65984</cell>
+  <cell></cell>
+  <cell>88299</cell>
+  <cell></cell>
+  <cell>61960</cell>
+  <cell></cell>
+  <cell>63880</cell>
+  <cell></cell>
+  <cell>41251</cell>
+  <cell></cell>
+  <cell>45278</cell>
+  <cell></cell>
+  <cell>80827</cell>
+</row>
+<row bottom="minor">
+    <cell colspan="16"></cell>
+</row>
+<row>
+  <cell>66</cell>
+  <cell>89928</cell>
+  <cell></cell>
+  <cell>97374</cell>
+  <cell></cell>
+  <cell>29847</cell>
+  <cell></cell>
+  <cell>35633</cell>
+  <cell></cell>
+  <cell>34776</cell>
+  <cell></cell>
+  <cell>65913</cell>
+  <cell></cell>
+  <cell>73208</cell>
+  <cell></cell>
+  <cell>25336</cell>
+</row>
+<row>
+  <cell>67</cell>
+  <cell>49108</cell>
+  <cell></cell>
+  <cell>79853</cell>
+  <cell></cell>
+  <cell>18853</cell>
+  <cell></cell>
+  <cell>40762</cell>
+  <cell></cell>
+  <cell>56218</cell>
+  <cell></cell>
+  <cell>98369</cell>
+  <cell></cell>
+  <cell>99315</cell>
+  <cell></cell>
+  <cell>99585</cell>
+</row>
+<row>
+  <cell>68</cell>
+  <cell>81354</cell>
+  <cell></cell>
+  <cell>69478</cell>
+  <cell></cell>
+  <cell>05333</cell>
+  <cell></cell>
+  <cell>57344</cell>
+  <cell></cell>
+  <cell>38877</cell>
+  <cell></cell>
+  <cell>02876</cell>
+  <cell></cell>
+  <cell>30826</cell>
+  <cell></cell>
+  <cell>59710</cell>
+</row>
+<row>
+  <cell>69</cell>
+  <cell>63308</cell>
+  <cell></cell>
+  <cell>04271</cell>
+  <cell></cell>
+  <cell>90756</cell>
+  <cell></cell>
+  <cell>98409</cell>
+  <cell></cell>
+  <cell>67880</cell>
+  <cell></cell>
+  <cell>15732</cell>
+  <cell></cell>
+  <cell>40799</cell>
+  <cell></cell>
+  <cell>70823</cell>
+</row>
+<row>
+  <cell>70</cell>
+  <cell>24368</cell>
+  <cell></cell>
+  <cell>25294</cell>
+  <cell></cell>
+  <cell>60570</cell>
+  <cell></cell>
+  <cell>71072</cell>
+  <cell></cell>
+  <cell>37576</cell>
+  <cell></cell>
+  <cell>71774</cell>
+  <cell></cell>
+  <cell>19587</cell>
+  <cell></cell>
+  <cell>38440</cell>
+</row>
+<row bottom="minor">
+    <cell colspan="16"></cell>
+</row>
+<row>
+  <cell>71</cell>
+  <cell>85617</cell>
+  <cell></cell>
+  <cell>05799</cell>
+  <cell></cell>
+  <cell>69763</cell>
+  <cell></cell>
+  <cell>50889</cell>
+  <cell></cell>
+  <cell>99515</cell>
+  <cell></cell>
+  <cell>36317</cell>
+  <cell></cell>
+  <cell>72949</cell>
+  <cell></cell>
+  <cell>27502</cell>
+</row>
+<row>
+  <cell>72</cell>
+  <cell>12557</cell>
+  <cell></cell>
+  <cell>39890</cell>
+  <cell></cell>
+  <cell>04807</cell>
+  <cell></cell>
+  <cell>49466</cell>
+  <cell></cell>
+  <cell>29763</cell>
+  <cell></cell>
+  <cell>72937</cell>
+  <cell></cell>
+  <cell>39541</cell>
+  <cell></cell>
+  <cell>64381</cell>
+</row>
+<row>
+  <cell>73</cell>
+  <cell>06607</cell>
+  <cell></cell>
+  <cell>02387</cell>
+  <cell></cell>
+  <cell>74363</cell>
+  <cell></cell>
+  <cell>75934</cell>
+  <cell></cell>
+  <cell>88791</cell>
+  <cell></cell>
+  <cell>35938</cell>
+  <cell></cell>
+  <cell>92553</cell>
+  <cell></cell>
+  <cell>92335</cell>
+</row>
+<row>
+  <cell>74</cell>
+  <cell>78809</cell>
+  <cell></cell>
+  <cell>28121</cell>
+  <cell></cell>
+  <cell>09576</cell>
+  <cell></cell>
+  <cell>60199</cell>
+  <cell></cell>
+  <cell>93428</cell>
+  <cell></cell>
+  <cell>86836</cell>
+  <cell></cell>
+  <cell>74682</cell>
+  <cell></cell>
+  <cell>29020</cell>
+</row>
+<row>
+  <cell>75</cell>
+  <cell>25180</cell>
+  <cell></cell>
+  <cell>36730</cell>
+  <cell></cell>
+  <cell>12967</cell>
+  <cell></cell>
+  <cell>18565</cell>
+  <cell></cell>
+  <cell>68906</cell>
+  <cell></cell>
+  <cell>90287</cell>
+  <cell></cell>
+  <cell>14317</cell>
+  <cell></cell>
+  <cell>94668</cell>
+</row>
+  <row bottom="minor">
+    <cell colspan="16"></cell>
+  </row>
+</tabular>
+</section>
+end of enormous table for random numbers
+
+<section xml:id="normal_prob_table">
+<title>Normal Probability Table</title>
+  <p>
+    The area to the left of <m>Z</m> represents the percentile of the observation. The normal probability table always lists percentiles.
+          To find the area to the right, calculate 1 minus the area to the left.
+          For additional details about working with the normal distribution and the normal probability table, see <xref ref="normalDist"></xref>.
+        </p>
+
+<tabular>
+<row>
+  <cell></cell>
+  <cell></cell>
+  <cell></cell>
+  <cell colspan="4">Second decimal place of <m>Z</m></cell>
+  <cell></cell>
+  <cell></cell>
+  <cell></cell>
+  <cell></cell>
+</row>
+<row>
+  <cell>0.09</cell>
+  <cell>0.08</cell>
+  <cell>0.07</cell>
+  <cell>0.06</cell>
+  <cell>0.05</cell>
+  <cell>0.04</cell>
+  <cell>0.03</cell>
+  <cell>0.02</cell>
+  <cell>0.01</cell>
+  <cell>0.00</cell>
+  <cell><m>Z</m></cell>
+</row>
+<row>
+  <cell>0.0002</cell>
+  <cell>0.0003</cell>
+  <cell>0.0003</cell>
+  <cell>0.0003</cell>
+  <cell>0.0003</cell>
+  <cell>0.0003</cell>
+  <cell>0.0003</cell>
+  <cell>0.0003</cell>
+  <cell>0.0003</cell>
+  <cell>0.0003</cell>
+  <cell><m>-3.4</m></cell>
+</row>
+<row>
+  <cell>0.0003</cell>
+  <cell>0.0004</cell>
+  <cell>0.0004</cell>
+  <cell>0.0004</cell>
+  <cell>0.0004</cell>
+  <cell>0.0004</cell>
+  <cell>0.0004</cell>
+  <cell>0.0005</cell>
+  <cell>0.0005</cell>
+  <cell>0.0005</cell>
+  <cell><m>-3.3</m></cell>
+</row>
+<row>
+  <cell>0.0005</cell>
+  <cell>0.0005</cell>
+  <cell>0.0005</cell>
+  <cell>0.0006</cell>
+  <cell>0.0006</cell>
+  <cell>0.0006</cell>
+  <cell>0.0006</cell>
+  <cell>0.0006</cell>
+  <cell>0.0007</cell>
+  <cell>0.0007</cell>
+  <cell><m>-3.2</m></cell>
+</row>
+<row>
+  <cell>0.0007</cell>
+  <cell>0.0007</cell>
+  <cell>0.0008</cell>
+  <cell>0.0008</cell>
+  <cell>0.0008</cell>
+  <cell>0.0008</cell>
+  <cell>0.0009</cell>
+  <cell>0.0009</cell>
+  <cell>0.0009</cell>
+  <cell>0.0010</cell>
+  <cell><m>-3.1</m></cell>
+</row>
+<row>
+  <cell>0.0010</cell>
+  <cell>0.0010</cell>
+  <cell>0.0011</cell>
+  <cell>0.0011</cell>
+  <cell>0.0011</cell>
+  <cell>0.0012</cell>
+  <cell>0.0012</cell>
+  <cell>0.0013</cell>
+  <cell>0.0013</cell>
+  <cell>0.0013</cell>
+  <cell><m>-3.0</m></cell>
+</row>
+<row>
+  <cell>0.0014</cell>
+  <cell>0.0014</cell>
+  <cell>0.0015</cell>
+  <cell>0.0015</cell>
+  <cell>0.0016</cell>
+  <cell>0.0016</cell>
+  <cell>0.0017</cell>
+  <cell>0.0018</cell>
+  <cell>0.0018</cell>
+  <cell>0.0019</cell>
+  <cell><m>-2.9</m></cell>
+</row>
+<row>
+  <cell>0.0019</cell>
+  <cell>0.0020</cell>
+  <cell>0.0021</cell>
+  <cell>0.0021</cell>
+  <cell>0.0022</cell>
+  <cell>0.0023</cell>
+  <cell>0.0023</cell>
+  <cell>0.0024</cell>
+  <cell>0.0025</cell>
+  <cell>0.0026</cell>
+  <cell><m>-2.8</m></cell>
+</row>
+<row>
+  <cell>0.0026</cell>
+  <cell>0.0027</cell>
+  <cell>0.0028</cell>
+  <cell>0.0029</cell>
+  <cell>0.0030</cell>
+  <cell>0.0031</cell>
+  <cell>0.0032</cell>
+  <cell>0.0033</cell>
+  <cell>0.0034</cell>
+  <cell>0.0035</cell>
+  <cell><m>-2.7</m></cell>
+</row>
+<row>
+  <cell>0.0036</cell>
+  <cell>0.0037</cell>
+  <cell>0.0038</cell>
+  <cell>0.0039</cell>
+  <cell>0.0040</cell>
+  <cell>0.0041</cell>
+  <cell>0.0043</cell>
+  <cell>0.0044</cell>
+  <cell>0.0045</cell>
+  <cell>0.0047</cell>
+  <cell><m>-2.6</m></cell>
+</row>
+<row>
+  <cell>0.0048</cell>
+  <cell>0.0049</cell>
+  <cell>0.0051</cell>
+  <cell>0.0052</cell>
+  <cell>0.0054</cell>
+  <cell>0.0055</cell>
+  <cell>0.0057</cell>
+  <cell>0.0059</cell>
+  <cell>0.0060</cell>
+  <cell>0.0062</cell>
+  <cell><m>-2.5</m></cell>
+</row>
+<row>
+  <cell>0.0064</cell>
+  <cell>0.0066</cell>
+  <cell>0.0068</cell>
+  <cell>0.0069</cell>
+  <cell>0.0071</cell>
+  <cell>0.0073</cell>
+  <cell>0.0075</cell>
+  <cell>0.0078</cell>
+  <cell>0.0080</cell>
+  <cell>0.0082</cell>
+  <cell><m>-2.4</m></cell>
+</row>
+<row>
+  <cell>0.0084</cell>
+  <cell>0.0087</cell>
+  <cell>0.0089</cell>
+  <cell>0.0091</cell>
+  <cell>0.0094</cell>
+  <cell>0.0096</cell>
+  <cell>0.0099</cell>
+  <cell>0.0102</cell>
+  <cell>0.0104</cell>
+  <cell>0.0107</cell>
+  <cell><m>-2.3</m></cell>
+</row>
+<row>
+  <cell>0.0110</cell>
+  <cell>0.0113</cell>
+  <cell>0.0116</cell>
+  <cell>0.0119</cell>
+  <cell>0.0122</cell>
+  <cell>0.0125</cell>
+  <cell>0.0129</cell>
+  <cell>0.0132</cell>
+  <cell>0.0136</cell>
+  <cell>0.0139</cell>
+  <cell><m>-2.2</m></cell>
+</row>
+<row>
+  <cell>0.0143</cell>
+  <cell>0.0146</cell>
+  <cell>0.0150</cell>
+  <cell>0.0154</cell>
+  <cell>0.0158</cell>
+  <cell>0.0162</cell>
+  <cell>0.0166</cell>
+  <cell>0.0170</cell>
+  <cell>0.0174</cell>
+  <cell>0.0179</cell>
+  <cell><m>-2.1</m></cell>
+</row>
+<row>
+  <cell>0.0183</cell>
+  <cell>0.0188</cell>
+  <cell>0.0192</cell>
+  <cell>0.0197</cell>
+  <cell>0.0202</cell>
+  <cell>0.0207</cell>
+  <cell>0.0212</cell>
+  <cell>0.0217</cell>
+  <cell>0.0222</cell>
+  <cell>0.0228</cell>
+  <cell><m>-2.0</m></cell>
+</row>
+<row>
+  <cell>0.0233</cell>
+  <cell>0.0239</cell>
+  <cell>0.0244</cell>
+  <cell>0.0250</cell>
+  <cell>0.0256</cell>
+  <cell>0.0262</cell>
+  <cell>0.0268</cell>
+  <cell>0.0274</cell>
+  <cell>0.0281</cell>
+  <cell>0.0287</cell>
+  <cell><m>-1.9</m></cell>
+</row>
+<row>
+  <cell>0.0294</cell>
+  <cell>0.0301</cell>
+  <cell>0.0307</cell>
+  <cell>0.0314</cell>
+  <cell>0.0322</cell>
+  <cell>0.0329</cell>
+  <cell>0.0336</cell>
+  <cell>0.0344</cell>
+  <cell>0.0351</cell>
+  <cell>0.0359</cell>
+  <cell><m>-1.8</m></cell>
+</row>
+<row>
+  <cell>0.0367</cell>
+  <cell>0.0375</cell>
+  <cell>0.0384</cell>
+  <cell>0.0392</cell>
+  <cell>0.0401</cell>
+  <cell>0.0409</cell>
+  <cell>0.0418</cell>
+  <cell>0.0427</cell>
+  <cell>0.0436</cell>
+  <cell>0.0446</cell>
+  <cell><m>-1.7</m></cell>
+</row>
+<row>
+  <cell>0.0455</cell>
+  <cell>0.0465</cell>
+  <cell>0.0475</cell>
+  <cell>0.0485</cell>
+  <cell>0.0495</cell>
+  <cell>0.0505</cell>
+  <cell>0.0516</cell>
+  <cell>0.0526</cell>
+  <cell>0.0537</cell>
+  <cell>0.0548</cell>
+  <cell><m>-1.6</m></cell>
+</row>
+<row>
+  <cell>0.0559</cell>
+  <cell>0.0571</cell>
+  <cell>0.0582</cell>
+  <cell>0.0594</cell>
+  <cell>0.0606</cell>
+  <cell>0.0618</cell>
+  <cell>0.0630</cell>
+  <cell>0.0643</cell>
+  <cell>0.0655</cell>
+  <cell>0.0668</cell>
+  <cell><m>-1.5</m></cell>
+</row>
+<row>
+  <cell>0.0681</cell>
+  <cell>0.0694</cell>
+  <cell>0.0708</cell>
+  <cell>0.0721</cell>
+  <cell>0.0735</cell>
+  <cell>0.0749</cell>
+  <cell>0.0764</cell>
+  <cell>0.0778</cell>
+  <cell>0.0793</cell>
+  <cell>0.0808</cell>
+  <cell><m>-1.4</m></cell>
+</row>
+<row>
+  <cell>0.0823</cell>
+  <cell>0.0838</cell>
+  <cell>0.0853</cell>
+  <cell>0.0869</cell>
+  <cell>0.0885</cell>
+  <cell>0.0901</cell>
+  <cell>0.0918</cell>
+  <cell>0.0934</cell>
+  <cell>0.0951</cell>
+  <cell>0.0968</cell>
+  <cell><m>-1.3</m></cell>
+</row>
+<row>
+  <cell>0.0985</cell>
+  <cell>0.1003</cell>
+  <cell>0.1020</cell>
+  <cell>0.1038</cell>
+  <cell>0.1056</cell>
+  <cell>0.1075</cell>
+  <cell>0.1093</cell>
+  <cell>0.1112</cell>
+  <cell>0.1131</cell>
+  <cell>0.1151</cell>
+  <cell><m>-1.2</m></cell>
+</row>
+<row>
+  <cell>0.1170</cell>
+  <cell>0.1190</cell>
+  <cell>0.1210</cell>
+  <cell>0.1230</cell>
+  <cell>0.1251</cell>
+  <cell>0.1271</cell>
+  <cell>0.1292</cell>
+  <cell>0.1314</cell>
+  <cell>0.1335</cell>
+  <cell>0.1357</cell>
+  <cell><m>-1.1</m></cell>
+</row>
+<row>
+  <cell>0.1379</cell>
+  <cell>0.1401</cell>
+  <cell>0.1423</cell>
+  <cell>0.1446</cell>
+  <cell>0.1469</cell>
+  <cell>0.1492</cell>
+  <cell>0.1515</cell>
+  <cell>0.1539</cell>
+  <cell>0.1562</cell>
+  <cell>0.1587</cell>
+  <cell><m>-1.0</m></cell>
+</row>
+<row>
+  <cell>0.1611</cell>
+  <cell>0.1635</cell>
+  <cell>0.1660</cell>
+  <cell>0.1685</cell>
+  <cell>0.1711</cell>
+  <cell>0.1736</cell>
+  <cell>0.1762</cell>
+  <cell>0.1788</cell>
+  <cell>0.1814</cell>
+  <cell>0.1841</cell>
+  <cell><m>-0.9</m></cell>
+</row>
+<row>
+  <cell>0.1867</cell>
+  <cell>0.1894</cell>
+  <cell>0.1922</cell>
+  <cell>0.1949</cell>
+  <cell>0.1977</cell>
+  <cell>0.2005</cell>
+  <cell>0.2033</cell>
+  <cell>0.2061</cell>
+  <cell>0.2090</cell>
+  <cell>0.2119</cell>
+  <cell><m>-0.8</m></cell>
+</row>
+<row>
+  <cell>0.2148</cell>
+  <cell>0.2177</cell>
+  <cell>0.2206</cell>
+  <cell>0.2236</cell>
+  <cell>0.2266</cell>
+  <cell>0.2296</cell>
+  <cell>0.2327</cell>
+  <cell>0.2358</cell>
+  <cell>0.2389</cell>
+  <cell>0.2420</cell>
+  <cell><m>-0.7</m></cell>
+</row>
+<row>
+  <cell>0.2451</cell>
+  <cell>0.2483</cell>
+  <cell>0.2514</cell>
+  <cell>0.2546</cell>
+  <cell>0.2578</cell>
+  <cell>0.2611</cell>
+  <cell>0.2643</cell>
+  <cell>0.2676</cell>
+  <cell>0.2709</cell>
+  <cell>0.2743</cell>
+  <cell><m>-0.6</m></cell>
+</row>
+<row>
+  <cell>0.2776</cell>
+  <cell>0.2810</cell>
+  <cell>0.2843</cell>
+  <cell>0.2877</cell>
+  <cell>0.2912</cell>
+  <cell>0.2946</cell>
+  <cell>0.2981</cell>
+  <cell>0.3015</cell>
+  <cell>0.3050</cell>
+  <cell>0.3085</cell>
+  <cell><m>-0.5</m></cell>
+</row>
+<row>
+  <cell>0.3121</cell>
+  <cell>0.3156</cell>
+  <cell>0.3192</cell>
+  <cell>0.3228</cell>
+  <cell>0.3264</cell>
+  <cell>0.3300</cell>
+  <cell>0.3336</cell>
+  <cell>0.3372</cell>
+  <cell>0.3409</cell>
+  <cell>0.3446</cell>
+  <cell><m>-0.4</m></cell>
+</row>
+<row>
+  <cell>0.3483</cell>
+  <cell>0.3520</cell>
+  <cell>0.3557</cell>
+  <cell>0.3594</cell>
+  <cell>0.3632</cell>
+  <cell>0.3669</cell>
+  <cell>0.3707</cell>
+  <cell>0.3745</cell>
+  <cell>0.3783</cell>
+  <cell>0.3821</cell>
+  <cell><m>-0.3</m></cell>
+</row>
+<row>
+  <cell>0.3859</cell>
+  <cell>0.3897</cell>
+  <cell>0.3936</cell>
+  <cell>0.3974</cell>
+  <cell>0.4013</cell>
+  <cell>0.4052</cell>
+  <cell>0.4090</cell>
+  <cell>0.4129</cell>
+  <cell>0.4168</cell>
+  <cell>0.4207</cell>
+  <cell><m>-0.2</m></cell>
+</row>
+<row>
+  <cell>0.4247</cell>
+  <cell>0.4286</cell>
+  <cell>0.4325</cell>
+  <cell>0.4364</cell>
+  <cell>0.4404</cell>
+  <cell>0.4443</cell>
+  <cell>0.4483</cell>
+  <cell>0.4522</cell>
+  <cell>0.4562</cell>
+  <cell>0.4602</cell>
+  <cell><m>-0.1</m></cell>
+</row>
+<row>
+  <cell>0.4641</cell>
+  <cell>0.4681</cell>
+  <cell>0.4721</cell>
+  <cell>0.4761</cell>
+  <cell>0.4801</cell>
+  <cell>0.4840</cell>
+  <cell>0.4880</cell>
+  <cell>0.4920</cell>
+  <cell>0.4960</cell>
+  <cell>0.5000</cell>
+  <cell><m>-0.0</m></cell>
+</row>
+<row>
+  <cell colspan="11"><m>^*</m>For <m>Z \leq -3.50</m>, the probability is less than or equal to <m>0.0002</m>.</cell>
+</row>
+</tabular>
+
+<tabular>
+  <row>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell colspan="4">Second decimal place of <m>Z</m></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+  </row>
+  <row>
+    <cell><m>Z</m></cell>
+    <cell>0.00</cell>
+    <cell>0.01</cell>
+    <cell>0.02</cell>
+    <cell>0.03</cell>
+    <cell>0.04</cell>
+    <cell>0.05</cell>
+    <cell>0.06</cell>
+    <cell>0.07</cell>
+    <cell>0.08</cell>
+    <cell>0.09</cell>
+  </row>
+  <row bottom="medium">
+    <cell colspan="11"></cell>
+  </row>
+<row>
+  <cell>0.0</cell>
+  <cell>0.5000</cell>
+  <cell>0.5040</cell>
+  <cell>0.5080</cell>
+  <cell>0.5120</cell>
+  <cell>0.5160</cell>
+  <cell>0.5199</cell>
+  <cell>0.5239</cell>
+  <cell>0.5279</cell>
+  <cell>0.5319</cell>
+  <cell>0.5359</cell>
+</row>
+<row>
+  <cell>0.1</cell>
+  <cell>0.5398</cell>
+  <cell>0.5438</cell>
+  <cell>0.5478</cell>
+  <cell>0.5517</cell>
+  <cell>0.5557</cell>
+  <cell>0.5596</cell>
+  <cell>0.5636</cell>
+  <cell>0.5675</cell>
+  <cell>0.5714</cell>
+  <cell>0.5753</cell>
+</row>
+<row>
+  <cell>0.2</cell>
+  <cell>0.5793</cell>
+  <cell>0.5832</cell>
+  <cell>0.5871</cell>
+  <cell>0.5910</cell>
+  <cell>0.5948</cell>
+  <cell>0.5987</cell>
+  <cell>0.6026</cell>
+  <cell>0.6064</cell>
+  <cell>0.6103</cell>
+  <cell>0.6141</cell>
+</row>
+<row>
+  <cell>0.3</cell>
+  <cell>0.6179</cell>
+  <cell>0.6217</cell>
+  <cell>0.6255</cell>
+  <cell>0.6293</cell>
+  <cell>0.6331</cell>
+  <cell>0.6368</cell>
+  <cell>0.6406</cell>
+  <cell>0.6443</cell>
+  <cell>0.6480</cell>
+  <cell>0.6517</cell>
+</row>
+<row>
+  <cell>0.4</cell>
+  <cell>0.6554</cell>
+  <cell>0.6591</cell>
+  <cell>0.6628</cell>
+  <cell>0.6664</cell>
+  <cell>0.6700</cell>
+  <cell>0.6736</cell>
+  <cell>0.6772</cell>
+  <cell>0.6808</cell>
+  <cell>0.6844</cell>
+  <cell>0.6879</cell>
+</row>
+  <row bottom="medium">
+    <cell colspan="11"></cell>
+  </row>
+<row>
+  <cell>0.5</cell>
+  <cell>0.6915</cell>
+  <cell>0.6950</cell>
+  <cell>0.6985</cell>
+  <cell>0.7019</cell>
+  <cell>0.7054</cell>
+  <cell>0.7088</cell>
+  <cell>0.7123</cell>
+  <cell>0.7157</cell>
+  <cell>0.7190</cell>
+  <cell>0.7224</cell>
+</row>
+<row>
+  <cell>0.6</cell>
+  <cell>0.7257</cell>
+  <cell>0.7291</cell>
+  <cell>0.7324</cell>
+  <cell>0.7357</cell>
+  <cell>0.7389</cell>
+  <cell>0.7422</cell>
+  <cell>0.7454</cell>
+  <cell>0.7486</cell>
+  <cell>0.7517</cell>
+  <cell>0.7549</cell>
+</row>
+<row>
+  <cell>0.7</cell>
+  <cell>0.7580</cell>
+  <cell>0.7611</cell>
+  <cell>0.7642</cell>
+  <cell>0.7673</cell>
+  <cell>0.7704</cell>
+  <cell>0.7734</cell>
+  <cell>0.7764</cell>
+  <cell>0.7794</cell>
+  <cell>0.7823</cell>
+  <cell>0.7852</cell>
+</row>
+<row>
+  <cell>0.8</cell>
+  <cell>0.7881</cell>
+  <cell>0.7910</cell>
+  <cell>0.7939</cell>
+  <cell>0.7967</cell>
+  <cell>0.7995</cell>
+  <cell>0.8023</cell>
+  <cell>0.8051</cell>
+  <cell>0.8078</cell>
+  <cell>0.8106</cell>
+  <cell>0.8133</cell>
+</row>
+<row>
+  <cell>0.9</cell>
+  <cell>0.8159</cell>
+  <cell>0.8186</cell>
+  <cell>0.8212</cell>
+  <cell>0.8238</cell>
+  <cell>0.8264</cell>
+  <cell>0.8289</cell>
+  <cell>0.8315</cell>
+  <cell>0.8340</cell>
+  <cell>0.8365</cell>
+  <cell>0.8389</cell>
+</row>
+  <row bottom="medium">
+    <cell colspan="11"></cell>
+  </row>
+<row>
+  <cell>1.0</cell>
+  <cell>0.8413</cell>
+  <cell>0.8438</cell>
+  <cell>0.8461</cell>
+  <cell>0.8485</cell>
+  <cell>0.8508</cell>
+  <cell>0.8531</cell>
+  <cell>0.8554</cell>
+  <cell>0.8577</cell>
+  <cell>0.8599</cell>
+  <cell>0.8621</cell>
+</row>
+<row>
+  <cell>1.1</cell>
+  <cell>0.8643</cell>
+  <cell>0.8665</cell>
+  <cell>0.8686</cell>
+  <cell>0.8708</cell>
+  <cell>0.8729</cell>
+  <cell>0.8749</cell>
+  <cell>0.8770</cell>
+  <cell>0.8790</cell>
+  <cell>0.8810</cell>
+  <cell>0.8830</cell>
+</row>
+<row>
+  <cell>1.2</cell>
+  <cell>0.8849</cell>
+  <cell>0.8869</cell>
+  <cell>0.8888</cell>
+  <cell>0.8907</cell>
+  <cell>0.8925</cell>
+  <cell>0.8944</cell>
+  <cell>0.8962</cell>
+  <cell>0.8980</cell>
+  <cell>0.8997</cell>
+  <cell>0.9015</cell>
+</row>
+<row>
+  <cell>1.3</cell>
+  <cell>0.9032</cell>
+  <cell>0.9049</cell>
+  <cell>0.9066</cell>
+  <cell>0.9082</cell>
+  <cell>0.9099</cell>
+  <cell>0.9115</cell>
+  <cell>0.9131</cell>
+  <cell>0.9147</cell>
+  <cell>0.9162</cell>
+  <cell>0.9177</cell>
+</row>
+<row>
+  <cell>1.4</cell>
+  <cell>0.9192</cell>
+  <cell>0.9207</cell>
+  <cell>0.9222</cell>
+  <cell>0.9236</cell>
+  <cell>0.9251</cell>
+  <cell>0.9265</cell>
+  <cell>0.9279</cell>
+  <cell>0.9292</cell>
+  <cell>0.9306</cell>
+  <cell>0.9319</cell>
+</row>
+  <row bottom="medium">
+    <cell colspan="11"></cell>
+  </row>
+<row>
+  <cell>1.5</cell>
+  <cell>0.9332</cell>
+  <cell>0.9345</cell>
+  <cell>0.9357</cell>
+  <cell>0.9370</cell>
+  <cell>0.9382</cell>
+  <cell>0.9394</cell>
+  <cell>0.9406</cell>
+  <cell>0.9418</cell>
+  <cell>0.9429</cell>
+  <cell>0.9441</cell>
+</row>
+<row>
+  <cell>1.6</cell>
+  <cell>0.9452</cell>
+  <cell>0.9463</cell>
+  <cell>0.9474</cell>
+  <cell>0.9484</cell>
+  <cell>0.9495</cell>
+  <cell>0.9505</cell>
+  <cell>0.9515</cell>
+  <cell>0.9525</cell>
+  <cell>0.9535</cell>
+  <cell>0.9545</cell>
+</row>
+<row>
+  <cell>1.7</cell>
+  <cell>0.9554</cell>
+  <cell>0.9564</cell>
+  <cell>0.9573</cell>
+  <cell>0.9582</cell>
+  <cell>0.9591</cell>
+  <cell>0.9599</cell>
+  <cell>0.9608</cell>
+  <cell>0.9616</cell>
+  <cell>0.9625</cell>
+  <cell>0.9633</cell>
+</row>
+<row>
+  <cell>1.8</cell>
+  <cell>0.9641</cell>
+  <cell>0.9649</cell>
+  <cell>0.9656</cell>
+  <cell>0.9664</cell>
+  <cell>0.9671</cell>
+  <cell>0.9678</cell>
+  <cell>0.9686</cell>
+  <cell>0.9693</cell>
+  <cell>0.9699</cell>
+  <cell>0.9706</cell>
+</row>
+<row>
+  <cell>1.9</cell>
+  <cell>0.9713</cell>
+  <cell>0.9719</cell>
+  <cell>0.9726</cell>
+  <cell>0.9732</cell>
+  <cell>0.9738</cell>
+  <cell>0.9744</cell>
+  <cell>0.9750</cell>
+  <cell>0.9756</cell>
+  <cell>0.9761</cell>
+  <cell>0.9767</cell>
+</row>
+  <row bottom="medium">
+    <cell colspan="11"></cell>
+  </row>
+<row>
+  <cell>2.0</cell>
+  <cell>0.9772</cell>
+  <cell>0.9778</cell>
+  <cell>0.9783</cell>
+  <cell>0.9788</cell>
+  <cell>0.9793</cell>
+  <cell>0.9798</cell>
+  <cell>0.9803</cell>
+  <cell>0.9808</cell>
+  <cell>0.9812</cell>
+  <cell>0.9817</cell>
+</row>
+<row>
+  <cell>2.1</cell>
+  <cell>0.9821</cell>
+  <cell>0.9826</cell>
+  <cell>0.9830</cell>
+  <cell>0.9834</cell>
+  <cell>0.9838</cell>
+  <cell>0.9842</cell>
+  <cell>0.9846</cell>
+  <cell>0.9850</cell>
+  <cell>0.9854</cell>
+  <cell>0.9857</cell>
+</row>
+<row>
+  <cell>2.2</cell>
+  <cell>0.9861</cell>
+  <cell>0.9864</cell>
+  <cell>0.9868</cell>
+  <cell>0.9871</cell>
+  <cell>0.9875</cell>
+  <cell>0.9878</cell>
+  <cell>0.9881</cell>
+  <cell>0.9884</cell>
+  <cell>0.9887</cell>
+  <cell>0.9890</cell>
+</row>
+<row>
+  <cell>2.3</cell>
+  <cell>0.9893</cell>
+  <cell>0.9896</cell>
+  <cell>0.9898</cell>
+  <cell>0.9901</cell>
+  <cell>0.9904</cell>
+  <cell>0.9906</cell>
+  <cell>0.9909</cell>
+  <cell>0.9911</cell>
+  <cell>0.9913</cell>
+  <cell>0.9916</cell>
+</row>
+<row>
+  <cell>2.4</cell>
+  <cell>0.9918</cell>
+  <cell>0.9920</cell>
+  <cell>0.9922</cell>
+  <cell>0.9925</cell>
+  <cell>0.9927</cell>
+  <cell>0.9929</cell>
+  <cell>0.9931</cell>
+  <cell>0.9932</cell>
+  <cell>0.9934</cell>
+  <cell>0.9936</cell>
+</row>
+  <row bottom="medium">
+    <cell colspan="11"></cell>
+  </row>
+<row>
+  <cell>2.5</cell>
+  <cell>0.9938</cell>
+  <cell>0.9940</cell>
+  <cell>0.9941</cell>
+  <cell>0.9943</cell>
+  <cell>0.9945</cell>
+  <cell>0.9946</cell>
+  <cell>0.9948</cell>
+  <cell>0.9949</cell>
+  <cell>0.9951</cell>
+  <cell>0.9952</cell>
+</row>
+<row>
+  <cell>2.6</cell>
+  <cell>0.9953</cell>
+  <cell>0.9955</cell>
+  <cell>0.9956</cell>
+  <cell>0.9957</cell>
+  <cell>0.9959</cell>
+  <cell>0.9960</cell>
+  <cell>0.9961</cell>
+  <cell>0.9962</cell>
+  <cell>0.9963</cell>
+  <cell>0.9964</cell>
+</row>
+<row>
+  <cell>2.7</cell>
+  <cell>0.9965</cell>
+  <cell>0.9966</cell>
+  <cell>0.9967</cell>
+  <cell>0.9968</cell>
+  <cell>0.9969</cell>
+  <cell>0.9970</cell>
+  <cell>0.9971</cell>
+  <cell>0.9972</cell>
+  <cell>0.9973</cell>
+  <cell>0.9974</cell>
+</row>
+<row>
+  <cell>2.8</cell>
+  <cell>0.9974</cell>
+  <cell>0.9975</cell>
+  <cell>0.9976</cell>
+  <cell>0.9977</cell>
+  <cell>0.9977</cell>
+  <cell>0.9978</cell>
+  <cell>0.9979</cell>
+  <cell>0.9979</cell>
+  <cell>0.9980</cell>
+  <cell>0.9981</cell>
+</row>
+<row>
+  <cell>2.9</cell>
+  <cell>0.9981</cell>
+  <cell>0.9982</cell>
+  <cell>0.9982</cell>
+  <cell>0.9983</cell>
+  <cell>0.9984</cell>
+  <cell>0.9984</cell>
+  <cell>0.9985</cell>
+  <cell>0.9985</cell>
+  <cell>0.9986</cell>
+  <cell>0.9986</cell>
+</row>
+  <row bottom="medium">
+    <cell colspan="11"></cell>
+  </row>
+<row>
+  <cell>3.0</cell>
+  <cell>0.9987</cell>
+  <cell>0.9987</cell>
+  <cell>0.9987</cell>
+  <cell>0.9988</cell>
+  <cell>0.9988</cell>
+  <cell>0.9989</cell>
+  <cell>0.9989</cell>
+  <cell>0.9989</cell>
+  <cell>0.9990</cell>
+  <cell>0.9990</cell>
+</row>
+<row>
+  <cell>3.1</cell>
+  <cell>0.9990</cell>
+  <cell>0.9991</cell>
+  <cell>0.9991</cell>
+  <cell>0.9991</cell>
+  <cell>0.9992</cell>
+  <cell>0.9992</cell>
+  <cell>0.9992</cell>
+  <cell>0.9992</cell>
+  <cell>0.9993</cell>
+  <cell>0.9993</cell>
+</row>
+<row>
+  <cell>3.2</cell>
+  <cell>0.9993</cell>
+  <cell>0.9993</cell>
+  <cell>0.9994</cell>
+  <cell>0.9994</cell>
+  <cell>0.9994</cell>
+  <cell>0.9994</cell>
+  <cell>0.9994</cell>
+  <cell>0.9995</cell>
+  <cell>0.9995</cell>
+  <cell>0.9995</cell>
+</row>
+<row>
+  <cell>3.3</cell>
+  <cell>0.9995</cell>
+  <cell>0.9995</cell>
+  <cell>0.9995</cell>
+  <cell>0.9996</cell>
+  <cell>0.9996</cell>
+  <cell>0.9996</cell>
+  <cell>0.9996</cell>
+  <cell>0.9996</cell>
+  <cell>0.9996</cell>
+  <cell>0.9997</cell>
+</row>
+<row>
+  <cell>3.4</cell>
+  <cell>0.9997</cell>
+  <cell>0.9997</cell>
+  <cell>0.9997</cell>
+  <cell>0.9997</cell>
+  <cell>0.9997</cell>
+  <cell>0.9997</cell>
+  <cell>0.9997</cell>
+  <cell>0.9997</cell>
+  <cell>0.9997</cell>
+  <cell>0.9998</cell>
+</row>
+  <row bottom="medium">
+    <cell colspan="11"></cell>
+  </row>
+  <row>
+    <cell colspan="11"><m>^*</m>For <m>Z \geq 3.50</m>, the probability is greater than or equal to <m>0.9998</m>.</cell>
+  </row>
+</tabular>
+</section>
+
+<section xml:id="tDistributionTable_section">
+<title><m>t</m> Probability Table</title>
+<p>
+  Intro stuff
+  </p>
+
+<tabular xml:id="tDistributionTable">
+  <row>
+    <cell>one tail</cell>
+    <cell>0.100</cell>
+    <cell>0.050</cell>
+    <cell>0.025</cell>
+    <cell>0.010</cell>
+    <cell>0.005</cell>
+  </row>
+  <row bottom="minor">
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+  </row>
+  <row>
+    <cell>df 1</cell>
+    <cell>3.08</cell>
+    <cell>6.31</cell>
+    <cell>12.71</cell>
+    <cell>31.82</cell>
+    <cell>63.66</cell>
+  </row>
+  <row>
+    <cell>2</cell>
+    <cell>1.89</cell>
+    <cell>2.92</cell>
+    <cell>4.30</cell>
+    <cell>6.96</cell>
+    <cell>9.92</cell>
+  </row>
+  <row>
+    <cell>3</cell>
+    <cell>1.64</cell>
+    <cell>2.35</cell>
+    <cell>3.18</cell>
+    <cell>4.54</cell>
+    <cell>5.84</cell>
+  </row>
+  <row>
+    <cell>4</cell>
+    <cell>1.53</cell>
+    <cell>2.13</cell>
+    <cell>2.78</cell>
+    <cell>3.75</cell>
+    <cell>4.60</cell>
+  </row>
+  <row>
+    <cell>5</cell>
+    <cell>1.48</cell>
+    <cell>2.02</cell>
+    <cell>2.57</cell>
+    <cell>3.36</cell>
+    <cell>4.03</cell>
+  </row>
+  <row bottom="minor">
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+  </row>
+  <row>
+    <cell>6</cell>
+    <cell>1.44</cell>
+    <cell>1.94</cell>
+    <cell>2.45</cell>
+    <cell>3.14</cell>
+    <cell>3.71</cell>
+  </row>
+  <row>
+    <cell>7</cell>
+    <cell>1.41</cell>
+    <cell>1.89</cell>
+    <cell>2.36</cell>
+    <cell>3.00</cell>
+    <cell>3.50</cell>
+  </row>
+  <row>
+    <cell>8</cell>
+    <cell>1.40</cell>
+    <cell>1.86</cell>
+    <cell>2.31</cell>
+    <cell>2.90</cell>
+    <cell>3.36</cell>
+  </row>
+  <row>
+    <cell>9</cell>
+    <cell>1.38</cell>
+    <cell>1.83</cell>
+    <cell>2.26</cell>
+    <cell>2.82</cell>
+    <cell>3.25</cell>
+  </row>
+  <row>
+    <cell>10</cell>
+    <cell>1.37</cell>
+    <cell>1.81</cell>
+    <cell>2.23</cell>
+    <cell>2.76</cell>
+    <cell>3.17</cell>
+  </row>
+  <row bottom="minor">
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+  </row>
+<row>
+  <cell>11</cell>
+  <cell>1.36</cell>
+  <cell>1.80</cell>
+  <cell>2.20</cell>
+  <cell>2.72</cell>
+  <cell>3.11</cell>
+</row>
+<row>
+  <cell>12</cell>
+  <cell>1.36</cell>
+  <cell>1.78</cell>
+  <cell>2.18</cell>
+  <cell>2.68</cell>
+  <cell>3.05</cell>
+</row>
+<row>
+  <cell>13</cell>
+  <cell>1.35</cell>
+  <cell>1.77</cell>
+  <cell>2.16</cell>
+  <cell>2.65</cell>
+  <cell>3.01</cell>
+</row>
+<row>
+  <cell>14</cell>
+  <cell>1.35</cell>
+  <cell>1.76</cell>
+  <cell>2.14</cell>
+  <cell>2.62</cell>
+  <cell>2.98</cell>
+</row>
+<row>
+  <cell>15</cell>
+  <cell>1.34</cell>
+  <cell>1.75</cell>
+  <cell>2.13</cell>
+  <cell>2.60</cell>
+  <cell>2.95</cell>
+</row>
+  <row bottom="minor">
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+  </row>
+<row>
+  <cell>16</cell>
+  <cell>1.34</cell>
+  <cell>1.75</cell>
+  <cell>2.12</cell>
+  <cell>2.58</cell>
+  <cell>2.92</cell>
+</row>
+<row>
+  <cell>17</cell>
+  <cell>1.33</cell>
+  <cell>1.74</cell>
+  <cell>2.11</cell>
+  <cell>2.57</cell>
+  <cell>2.90</cell>
+</row>
+<row>
+  <cell>18</cell>
+  <cell>1.33</cell>
+  <cell>1.73</cell>
+  <cell>2.10</cell>
+  <cell>2.55</cell>
+  <cell>2.88</cell>
+</row>
+<row>
+  <cell>19</cell>
+  <cell>1.33</cell>
+  <cell>1.73</cell>
+  <cell>2.09</cell>
+  <cell>2.54</cell>
+  <cell>2.86</cell>
+</row>
+<row>
+  <cell>20</cell>
+  <cell>1.33</cell>
+  <cell>1.72</cell>
+  <cell>2.09</cell>
+  <cell>2.53</cell>
+  <cell>2.85</cell>
+</row>
+  <row bottom="minor">
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+  </row>
+<row>
+  <cell>21</cell>
+  <cell>1.32</cell>
+  <cell>1.72</cell>
+  <cell>2.08</cell>
+  <cell>2.52</cell>
+  <cell>2.83</cell>
+</row>
+<row>
+  <cell>22</cell>
+  <cell>1.32</cell>
+  <cell>1.72</cell>
+  <cell>2.07</cell>
+  <cell>2.51</cell>
+  <cell>2.82</cell>
+</row>
+<row>
+  <cell>23</cell>
+  <cell>1.32</cell>
+  <cell>1.71</cell>
+  <cell>2.07</cell>
+  <cell>2.50</cell>
+  <cell>2.81</cell>
+</row>
+<row>
+  <cell>24</cell>
+  <cell>1.32</cell>
+  <cell>1.71</cell>
+  <cell>2.06</cell>
+  <cell>2.49</cell>
+  <cell>2.80</cell>
+</row>
+<row>
+  <cell>25</cell>
+  <cell>1.32</cell>
+  <cell>1.71</cell>
+  <cell>2.06</cell>
+  <cell>2.49</cell>
+  <cell>2.79</cell>
+</row>
+  <row bottom="minor">
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+  </row>
+<row>
+  <cell>26</cell>
+  <cell>1.31</cell>
+  <cell>1.71</cell>
+  <cell>2.06</cell>
+  <cell>2.48</cell>
+  <cell>2.78</cell>
+</row>
+<row>
+  <cell>27</cell>
+  <cell>1.31</cell>
+  <cell>1.70</cell>
+  <cell>2.05</cell>
+  <cell>2.47</cell>
+  <cell>2.77</cell>
+</row>
+<row>
+  <cell>28</cell>
+  <cell>1.31</cell>
+  <cell>1.70</cell>
+  <cell>2.05</cell>
+  <cell>2.47</cell>
+  <cell>2.76</cell>
+</row>
+<row>
+  <cell>29</cell>
+  <cell>1.31</cell>
+  <cell>1.70</cell>
+  <cell>2.05</cell>
+  <cell>2.46</cell>
+  <cell>2.76</cell>
+</row>
+<row>
+  <cell>30</cell>
+  <cell>1.31</cell>
+  <cell>1.70</cell>
+  <cell>2.04</cell>
+  <cell>2.46</cell>
+  <cell>2.75</cell>
+</row>
+  <row bottom="minor">
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+  </row>
+  <row>
+    <cell>Confidence level C</cell>
+    <cell>80%</cell>
+    <cell>90%</cell>
+    <cell>95%</cell>
+    <cell>98%</cell>
+    <cell>99%</cell>
+  </row>
+  <row bottom="minor">
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+  </row>
+</tabular>
+
+<tabular>
+  <row>
+    <cell>one tail</cell>
+    <cell>0.100</cell>
+    <cell>0.050</cell>
+    <cell>0.025</cell>
+    <cell>0.010</cell>
+    <cell>0.005</cell>
+  </row>
+  <row bottom="minor">
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+  </row>
+<row>
+  <cell>df 31</cell>
+  <cell>1.31</cell>
+  <cell>1.70</cell>
+  <cell>2.04</cell>
+  <cell>2.45</cell>
+  <cell>2.74</cell>
+</row>
+<row>
+  <cell>32</cell>
+  <cell>1.31</cell>
+  <cell>1.69</cell>
+  <cell>2.04</cell>
+  <cell>2.45</cell>
+  <cell>2.74</cell>
+</row>
+<row>
+  <cell>33</cell>
+  <cell>1.31</cell>
+  <cell>1.69</cell>
+  <cell>2.03</cell>
+  <cell>2.44</cell>
+  <cell>2.73</cell>
+</row>
+<row>
+  <cell>34</cell>
+  <cell>1.31</cell>
+  <cell>1.69</cell>
+  <cell>2.03</cell>
+  <cell>2.44</cell>
+  <cell>2.73</cell>
+</row>
+<row>
+  <cell>35</cell>
+  <cell>1.31</cell>
+  <cell>1.69</cell>
+  <cell>2.03</cell>
+  <cell>2.44</cell>
+  <cell>2.72</cell>
+</row>
+  <row bottom="minor">
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+  </row>
+<row>
+  <cell>36</cell>
+  <cell>1.31</cell>
+  <cell>1.69</cell>
+  <cell>2.03</cell>
+  <cell>2.43</cell>
+  <cell>2.72</cell>
+</row>
+<row>
+  <cell>37</cell>
+  <cell>1.30</cell>
+  <cell>1.69</cell>
+  <cell>2.03</cell>
+  <cell>2.43</cell>
+  <cell>2.72</cell>
+</row>
+<row>
+  <cell>38</cell>
+  <cell>1.30</cell>
+  <cell>1.69</cell>
+  <cell>2.02</cell>
+  <cell>2.43</cell>
+  <cell>2.71</cell>
+</row>
+<row>
+  <cell>39</cell>
+  <cell>1.30</cell>
+  <cell>1.68</cell>
+  <cell>2.02</cell>
+  <cell>2.43</cell>
+  <cell>2.71</cell>
+</row>
+<row>
+  <cell>40</cell>
+  <cell>1.30</cell>
+  <cell>1.68</cell>
+  <cell>2.02</cell>
+  <cell>2.42</cell>
+  <cell>2.70</cell>
+</row>
+  <row bottom="minor">
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+  </row>
+<row>
+  <cell>41</cell>
+  <cell>1.30</cell>
+  <cell>1.68</cell>
+  <cell>2.02</cell>
+  <cell>2.42</cell>
+  <cell>2.70</cell>
+</row>
+<row>
+  <cell>42</cell>
+  <cell>1.30</cell>
+  <cell>1.68</cell>
+  <cell>2.02</cell>
+  <cell>2.42</cell>
+  <cell>2.70</cell>
+</row>
+<row>
+  <cell>43</cell>
+  <cell>1.30</cell>
+  <cell>1.68</cell>
+  <cell>2.02</cell>
+  <cell>2.42</cell>
+  <cell>2.70</cell>
+</row>
+<row>
+  <cell>44</cell>
+  <cell>1.30</cell>
+  <cell>1.68</cell>
+  <cell>2.02</cell>
+  <cell>2.41</cell>
+  <cell>2.69</cell>
+</row>
+<row>
+  <cell>45</cell>
+  <cell>1.30</cell>
+  <cell>1.68</cell>
+  <cell>2.01</cell>
+  <cell>2.41</cell>
+  <cell>2.69</cell>
+</row>
+  <row bottom="minor">
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+  </row>
+<row>
+  <cell>46</cell>
+  <cell>1.30</cell>
+  <cell>1.68</cell>
+  <cell>2.01</cell>
+  <cell>2.41</cell>
+  <cell>2.69</cell>
+</row>
+<row>
+  <cell>47</cell>
+  <cell>1.30</cell>
+  <cell>1.68</cell>
+  <cell>2.01</cell>
+  <cell>2.41</cell>
+  <cell>2.68</cell>
+</row>
+<row>
+  <cell>48</cell>
+  <cell>1.30</cell>
+  <cell>1.68</cell>
+  <cell>2.01</cell>
+  <cell>2.41</cell>
+  <cell>2.68</cell>
+</row>
+<row>
+  <cell>49</cell>
+  <cell>1.30</cell>
+  <cell>1.68</cell>
+  <cell>2.01</cell>
+  <cell>2.40</cell>
+  <cell>2.68</cell>
+</row>
+<row>
+  <cell>50</cell>
+  <cell>1.30</cell>
+  <cell>1.68</cell>
+  <cell>2.01</cell>
+  <cell>2.40</cell>
+  <cell>2.68</cell>
+</row>
+  <row bottom="minor">
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+  </row>
+<row>
+  <cell>60</cell>
+  <cell>1.30</cell>
+  <cell>1.67</cell>
+  <cell>2.00</cell>
+  <cell>2.39</cell>
+  <cell>2.66</cell>
+</row>
+<row>
+  <cell>70</cell>
+  <cell>1.29</cell>
+  <cell>1.67</cell>
+  <cell>1.99</cell>
+  <cell>2.38</cell>
+  <cell>2.65</cell>
+</row>
+<row>
+  <cell>80</cell>
+  <cell>1.29</cell>
+  <cell>1.66</cell>
+  <cell>1.99</cell>
+  <cell>2.37</cell>
+  <cell>2.64</cell>
+</row>
+<row>
+  <cell>90</cell>
+  <cell>1.29</cell>
+  <cell>1.66</cell>
+  <cell>1.99</cell>
+  <cell>2.37</cell>
+  <cell>2.63</cell>
+</row>
+<row>
+  <cell>100</cell>
+  <cell>1.29</cell>
+  <cell>1.66</cell>
+  <cell>1.98</cell>
+  <cell>2.36</cell>
+  <cell>2.63</cell>
+</row>
+  <row bottom="minor">
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+  </row>
+<row>
+  <cell>150</cell>
+  <cell>1.29</cell>
+  <cell>1.66</cell>
+  <cell>1.98</cell>
+  <cell>2.35</cell>
+  <cell>2.61</cell>
+</row>
+<row>
+  <cell>200</cell>
+  <cell>1.29</cell>
+  <cell>1.65</cell>
+  <cell>1.97</cell>
+  <cell>2.35</cell>
+  <cell>2.60</cell>
+</row>
+<row>
+  <cell>300</cell>
+  <cell>1.28</cell>
+  <cell>1.65</cell>
+  <cell>1.97</cell>
+  <cell>2.34</cell>
+  <cell>2.59</cell>
+</row>
+<row>
+  <cell>400</cell>
+  <cell>1.28</cell>
+  <cell>1.65</cell>
+  <cell>1.97</cell>
+  <cell>2.34</cell>
+  <cell>2.59</cell>
+</row>
+<row>
+  <cell>500</cell>
+  <cell>1.28</cell>
+  <cell>1.65</cell>
+  <cell>1.96</cell>
+  <cell>2.33</cell>
+  <cell>2.59</cell>
+</row>
+<row>
+  <cell><m>\infty</m></cell>
+  <cell>1.28</cell>
+  <cell>1.65</cell>
+  <cell>1.96</cell>
+  <cell>2.33</cell>
+  <cell>2.58</cell>
+</row>
+  <row bottom="minor">
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+  </row>
+<row>
+    <cell>Confidence level C</cell>
+    <cell>80%</cell>
+    <cell>90%</cell>
+    <cell>95%</cell>
+    <cell>98%</cell>
+    <cell>99%</cell>
+  </row>
+  <row bottom="minor">
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+    <cell></cell>
+  </row>
+</tabular>
+</section>
+
+<section xml:id="chiSquareProbabilityTable_section">
+<title>Chi-Square Probability Table</title>
+<introduction></introduction>
+<p>
+  Intro stuff
+</p>
+
+<tabular xml:id="chiSquareProbabilityTable">
+  <row bottom="minor">
+    <cell colspan="9"></cell>
+  </row>
+  <row>
+    <cell>Upper tail</cell>
+    <cell>0.3</cell>
+    <cell>0.2</cell>
+    <cell>0.1</cell>
+    <cell>0.05</cell>
+    <cell>0.02</cell>
+    <cell>0.01</cell>
+    <cell>0.005</cell>
+    <cell>0.001</cell>
+  </row>
+  <row bottom="minor">
+    <cell colspan="9"></cell>
+  </row>
+<row>
+  <cell>df 1</cell>
+  <cell>1.07</cell>
+  <cell>1.64</cell>
+  <cell>2.71</cell>
+  <cell>3.84</cell>
+  <cell>5.41</cell>
+  <cell>6.63</cell>
+  <cell>7.88</cell>
+  <cell>10.83</cell>
+</row>
+<row>
+  <cell>2</cell>
+  <cell>2.41</cell>
+  <cell>3.22</cell>
+  <cell>4.61</cell>
+  <cell>5.99</cell>
+  <cell>7.82</cell>
+  <cell>9.21</cell>
+  <cell>10.60</cell>
+  <cell>13.82</cell>
+</row>
+<row>
+  <cell>3</cell>
+  <cell>3.66</cell>
+  <cell>4.64</cell>
+  <cell>6.25</cell>
+  <cell>7.81</cell>
+  <cell>9.84</cell>
+  <cell>11.34</cell>
+  <cell>12.84</cell>
+  <cell>16.27</cell>
+</row>
+<row>
+  <cell>4</cell>
+  <cell>4.88</cell>
+  <cell>5.99</cell>
+  <cell>7.78</cell>
+  <cell>9.49</cell>
+  <cell>11.67</cell>
+  <cell>13.28</cell>
+  <cell>14.86</cell>
+  <cell>18.47</cell>
+</row>
+<row>
+  <cell>5</cell>
+  <cell>6.06</cell>
+  <cell>7.29</cell>
+  <cell>9.24</cell>
+  <cell>11.07</cell>
+  <cell>13.39</cell>
+  <cell>15.09</cell>
+  <cell>16.75</cell>
+  <cell>20.52</cell>
+</row>
+  <row bottom="minor">
+    <cell colspan="9"></cell>
+  </row>
+<row>
+  <cell>6</cell>
+  <cell>7.23</cell>
+  <cell>8.56</cell>
+  <cell>10.64</cell>
+  <cell>12.59</cell>
+  <cell>15.03</cell>
+  <cell>16.81</cell>
+  <cell>18.55</cell>
+  <cell>22.46</cell>
+</row>
+<row>
+  <cell>7</cell>
+  <cell>8.38</cell>
+  <cell>9.80</cell>
+  <cell>12.02</cell>
+  <cell>14.07</cell>
+  <cell>16.62</cell>
+  <cell>18.48</cell>
+  <cell>20.28</cell>
+  <cell>24.32</cell>
+</row>
+<row>
+  <cell>8</cell>
+  <cell>9.52</cell>
+  <cell>11.03</cell>
+  <cell>13.36</cell>
+  <cell>15.51</cell>
+  <cell>18.17</cell>
+  <cell>20.09</cell>
+  <cell>21.95</cell>
+  <cell>26.12</cell>
+</row>
+<row>
+  <cell>9</cell>
+  <cell>10.66</cell>
+  <cell>12.24</cell>
+  <cell>14.68</cell>
+  <cell>16.92</cell>
+  <cell>19.68</cell>
+  <cell>21.67</cell>
+  <cell>23.59</cell>
+  <cell>27.88</cell>
+</row>
+<row>
+  <cell>10</cell>
+  <cell>11.78</cell>
+  <cell>13.44</cell>
+  <cell>15.99</cell>
+  <cell>18.31</cell>
+  <cell>21.16</cell>
+  <cell>23.21</cell>
+  <cell>25.19</cell>
+  <cell>29.59</cell>
+</row>
+  <row bottom="minor">
+    <cell colspan="9"></cell>
+  </row>
+<row>
+  <cell>11</cell>
+  <cell>12.90</cell>
+  <cell>14.63</cell>
+  <cell>17.28</cell>
+  <cell>19.68</cell>
+  <cell>22.62</cell>
+  <cell>24.72</cell>
+  <cell>26.76</cell>
+  <cell>31.26</cell>
+</row>
+<row>
+  <cell>12</cell>
+  <cell>14.01</cell>
+  <cell>15.81</cell>
+  <cell>18.55</cell>
+  <cell>21.03</cell>
+  <cell>24.05</cell>
+  <cell>26.22</cell>
+  <cell>28.30</cell>
+  <cell>32.91</cell>
+</row>
+<row>
+  <cell>13</cell>
+  <cell>15.12</cell>
+  <cell>16.98</cell>
+  <cell>19.81</cell>
+  <cell>22.36</cell>
+  <cell>25.47</cell>
+  <cell>27.69</cell>
+  <cell>29.82</cell>
+  <cell>34.53</cell>
+</row>
+<row>
+  <cell>14</cell>
+  <cell>16.22</cell>
+  <cell>18.15</cell>
+  <cell>21.06</cell>
+  <cell>23.68</cell>
+  <cell>26.87</cell>
+  <cell>29.14</cell>
+  <cell>31.32</cell>
+  <cell>36.12</cell>
+</row>
+<row>
+  <cell>15</cell>
+  <cell>17.32</cell>
+  <cell>19.31</cell>
+  <cell>22.31</cell>
+  <cell>25.00</cell>
+  <cell>28.26</cell>
+  <cell>30.58</cell>
+  <cell>32.80</cell>
+  <cell>37.70</cell>
+</row>
+  <row bottom="minor">
+    <cell colspan="9"></cell>
+  </row>
+<row>
+  <cell>16</cell>
+  <cell>18.42</cell>
+  <cell>20.47</cell>
+  <cell>23.54</cell>
+  <cell>26.30</cell>
+  <cell>29.63</cell>
+  <cell>32.00</cell>
+  <cell>34.27</cell>
+  <cell>39.25</cell>
+</row>
+<row>
+  <cell>17</cell>
+  <cell>19.51</cell>
+  <cell>21.61</cell>
+  <cell>24.77</cell>
+  <cell>27.59</cell>
+  <cell>31.00</cell>
+  <cell>33.41</cell>
+  <cell>35.72</cell>
+  <cell>40.79</cell>
+</row>
+<row>
+  <cell>18</cell>
+  <cell>20.60</cell>
+  <cell>22.76</cell>
+  <cell>25.99</cell>
+  <cell>28.87</cell>
+  <cell>32.35</cell>
+  <cell>34.81</cell>
+  <cell>37.16</cell>
+  <cell>42.31</cell>
+</row>
+<row>
+  <cell>19</cell>
+  <cell>21.69</cell>
+  <cell>23.90</cell>
+  <cell>27.20</cell>
+  <cell>30.14</cell>
+  <cell>33.69</cell>
+  <cell>36.19</cell>
+  <cell>38.58</cell>
+  <cell>43.82</cell>
+</row>
+<row>
+  <cell>20</cell>
+  <cell>22.77</cell>
+  <cell>25.04</cell>
+  <cell>28.41</cell>
+  <cell>31.41</cell>
+  <cell>35.02</cell>
+  <cell>37.57</cell>
+  <cell>40.00</cell>
+  <cell>45.31</cell>
+</row>
+  <row bottom="minor">
+    <cell colspan="9"></cell>
+  </row>
+<row>
+  <cell>25</cell>
+  <cell>28.17</cell>
+  <cell>30.68</cell>
+  <cell>34.38</cell>
+  <cell>37.65</cell>
+  <cell>41.57</cell>
+  <cell>44.31</cell>
+  <cell>46.93</cell>
+  <cell>52.62</cell>
+</row>
+<row>
+  <cell>30</cell>
+  <cell>33.53</cell>
+  <cell>36.25</cell>
+  <cell>40.26</cell>
+  <cell>43.77</cell>
+  <cell>47.96</cell>
+  <cell>50.89</cell>
+  <cell>53.67</cell>
+  <cell>59.70</cell>
+</row>
+<row>
+  <cell>40</cell>
+  <cell>44.16</cell>
+  <cell>47.27</cell>
+  <cell>51.81</cell>
+  <cell>55.76</cell>
+  <cell>60.44</cell>
+  <cell>63.69</cell>
+  <cell>66.77</cell>
+  <cell>73.40</cell>
+</row>
+<row>
+  <cell>50</cell>
+  <cell>54.72</cell>
+  <cell>58.16</cell>
+  <cell>63.17</cell>
+  <cell>67.50</cell>
+  <cell>72.61</cell>
+  <cell>76.15</cell>
+  <cell>79.49</cell>
+  <cell>86.66</cell>
+</row>
+  <row bottom="minor">
+    <cell colspan="9"></cell>
+  </row>
+</tabular>
+</section>
+</appendix> -->

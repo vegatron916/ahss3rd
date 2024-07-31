@@ -1,0 +1,1711 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xml:id="binomialForm">
+  <title>Binomial Distribution</title>
+  <introduction>
+    <p>
+      What is the probability of exactly 50 heads in 100 coin tosses?
+      Or the probability of randomly sampling 12 people and having more than 9 of them identify as male?
+      If the probability of a defective part is 1%, how many defective items would we expect in a random shipment of 200 of those parts? We can model these scenarios and answer these questions using the binomial distribution.
+    </p>
+  </introduction>
+  <subsection>
+    <title>Learning objectives</title>
+    <p>
+    <ol>
+      <li>
+        <p>
+          Calculate the number of possible scenarios for obtaining <m>x</m> successes in <m>n</m> trials.
+        </p>
+      </li>
+      <li>
+        <p>
+          Determine whether a scenario is binomial or not.
+        </p>
+      </li>
+      <li>
+        <p>
+          Calculate the probabilities of the possible values of a binomial random variable using the binomial formula
+        </p>
+       <!--  <p>
+          Calculate the probability of obtaining exactly <m>x</m> successes in <m>n</m> independent trials.
+        </p> -->
+      </li>
+      <li>
+        <p>
+          Recognize that the binomial formula uses the special Addition Rule for mutually exclusive events.
+        </p>
+      </li>
+      <li>
+        <p>
+          Find probabilities of the form <q>at least</q> or <q>at most</q> by applying the binomial formula multiple times.
+        </p>
+      </li>
+      <li>
+        <p>
+          Calculate and interpret the mean (expected value) and standard deviation of the number of successes in <em>n</em> binomial trials.
+        </p>
+      </li>
+      <li>
+        <p>
+          Determine whether a binomial distribution can be modeled as approximately normal. If so, use normalapproximation to estimate cumulative binomial probabilities.
+        </p>
+      </li>
+    </ol>
+	</p>
+  </subsection>
+  <subsection>
+    <title>Introducing the binomial formula</title>
+    <!-- <p>
+      Many health insurance plans in the United States have a deductible,
+      where the insured individual is responsible for costs up to the deductible,
+      and then the costs above the deductible are shared between the individual and insurance company for the remainder of the year.
+    </p> -->
+    <p>
+      <!-- Suppose a health insurance company found that 70% of the people they insure stay below their deductible in any given year. -->
+      
+      Let’s again imagine ourselves back at the insurance agency where 70% of individuals do not exceed their deductible.
+      Each people can be thought of as a <term>trial</term>.
+      We label a trial a <term>success</term>
+      if the individual healthcare costs do not exceed the deductible.
+      We label a trial a <term>failure</term>
+      if the individual healthcare costs do exceed her deductible.
+      Because 70% of the individuals will not hit their deductible,
+      we denote the <term>probability of a success</term>
+      as <m>p = 0.7</m>.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Suppose the insurance agency is considering a random sample of four individuals they insure.
+          What is the chance exactly one of them will exceed the deductible and the other three will not?
+          Let's call the four people Ariana (<m>A</m>), Brittany (<m>B</m>), Carlton (<m>C</m>),
+          and Damian (<m>D</m>) for convenience.
+        </p>
+      </statement>
+      <solution xml:id="insureOneOfFourExceedsDeductible">
+        <p>
+          Let's consider a scenario where one person exceeds the deductible:
+          <md>
+            <mrow>\amp P(A=\text{exceed, } B= \text{not, } C=\text{not, } D= \text{not} )</mrow>
+            <mrow>\amp  = P(A=\text{exceed} )\ P(B=\text{not} )\ P(C=\text{not} )\ P(D=\text{not} )</mrow>
+            <mrow>\amp  =  (0.3)(0.7)(0.7) (0.7)</mrow>
+            <mrow>\amp  = (0.7)^3 (0.3)^1</mrow>
+            <mrow>\amp  = 0.103</mrow>
+          </md>
+        </p>
+        <p>
+          But there are three other scenarios: Brittany, Carlton,
+          or Damian could have been the one to exceed the deductible.
+          In each of these cases,
+          the probability is again <m>(0.7)^3 (0.3)^1</m>.
+          These four scenarios exhaust all the possible ways that exactly one of these four people could have exceeded the deductible,
+          so the total probability is <m>4 \times (0.7)^3 (0.3)^1 =0.412</m>.
+        </p>
+      </solution>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          Verify that the scenario where Brittany is the only one to exceed the deductible has probability <m>(0.7)^3 (0.3)^1</m>.
+          <fn><m>P(A= \text{not, } B= \text{exceed, } C=\text{not, } D=\text{not}) =(0.7)(0.3)(0.7)(0.7)=(0.7)^3(0.3)^1</m></fn>
+        </p>
+      </statement>
+    </exercise>
+    <p>
+      The binomial distribution describes the probability of having exactly <m>x</m> successes in <m>n</m> independent trials with probability of a success <m>p</m>
+      (in <xref ref="insureOneOfFourExceedsDeductible">Example</xref>,
+      <m>n=4</m>,
+      <m>x=3</m>, <m>p=0.7</m>).
+      We would like to determine the probabilities associated with the binomial distribution more generally,
+      i.e. we want a formula where we can use <m>n</m>, <m>x</m>,
+      and <m>p</m> to obtain the probability.
+      To do this, we reexamine each part of <xref ref="insureOneOfFourExceedsDeductible">Example</xref>.
+    </p>
+    <p>
+      There were four individuals who could have been the one to exceed the deductible,
+      and each of these four scenarios had the same probability.
+      Thus, we could identify the final probability as
+      <md>
+        <mrow>[ \text{number of scenarios}] \times P(\text{single scenario} )</mrow>
+      </md>
+    </p>
+    <p>
+      The first component of this equation is the number of ways to arrange the <m>x=3</m> successes among the <m>n=4</m> trials.
+      The second component is the probability of any of the four
+      (equally probable)
+      scenarios.
+    </p>
+    <p>
+      Consider <m>P(\text{single scenario})</m> under the general case of <m>x</m> successes and <m>n-x</m> failures in the <m>n</m> trials.
+      In any such scenario,
+      we apply the Multiplication Rule for independent events:
+      <md>
+        <mrow>p^x (1 - p)^{n - x}</mrow>
+      </md>
+    </p>
+    <p>
+      This is our general formula for <m>P(\text{single scenario})</m>.
+    </p>
+    <p>
+      Secondly, we introduce the <term>binomial coefficient</term>,
+      which gives the number of ways to choose <m>x</m> successes in <m>n</m> trials,
+      i.e. arrange <m>x</m> successes and <m>n - x</m> failures:
+      <md>
+        <mrow>{n \choose x} = \frac{n!}{x! (n - x)!}</mrow>
+      </md>
+    </p>
+    <p>
+      The quantity <m>{n \choose x}</m> is read
+      <term>n choose x</term>.<fn>
+      Other notations for <m>n</m> choose <m>x</m> includes <m>_nC_x</m>,
+      <m>C_n^x</m>, and <m>C(n,x)</m>.
+      </fn> The exclamation point notation (e.g.
+      <m>n!</m>) denotes a <term>factorial</term> expression.
+      <md>
+        <mrow>\amp  0! = 1</mrow>
+        <mrow>\amp  1! = 1</mrow>
+        <mrow>\amp  2! = 2\times1 = 2</mrow>
+        <mrow>\amp  3! = 3\times2\times1 = 6</mrow>
+        <mrow>\amp  4! = 4\times3\times2\times1 = 24</mrow>
+        <mrow>\amp  \vdots</mrow>
+        <mrow>\amp  n! = n\times(n-1)\times...\times3\times2\times1</mrow>
+      </md>
+    </p>
+    <p>
+      Using the formula,
+      we can compute the number of ways to choose <m>x = 3</m> successes in <m>n = 4</m> trials:
+      <md>
+        <mrow>{4 \choose 3} = \frac{4!}{3!(4-3)!} = \frac{4!}{3!1!} = \frac{4\times3\times2\times1}{(3\times2\times1) (1)} = 4</mrow>
+      </md>
+    </p>
+    <p>
+      This result is exactly what we found by carefully thinking of each possible scenario in <xref ref="insureOneOfFourExceedsDeductible">Example</xref>.
+    </p>
+    <p>
+      Substituting <m>n</m> choose <m>x</m> for the number of scenarios and
+      <m>p^x(1-p)^{n-x}</m> for the single scenario probability yields the
+      <term>binomial formula</term>.
+    </p>
+    <assemblage>
+      <title>Binomial formula</title>
+      <p>
+        Suppose the probability of a single trial being a success is <m>p</m>.
+        Then the probability of observing exactly <m>x</m> successes in <m>n</m> independent trials is given by
+        <md>
+          <mrow>P(X=x)={n\choose x}p^x(1-p)^{n-x} = \frac{n!}{x!(n-x)!}p^x(1-p)^{n-x}</mrow>
+        </md>
+      </p>
+    </assemblage>
+  </subsection>
+  <subsection xml:id="isItBinomialTipBox">
+    <title>When and how to apply the formula</title>
+    <assemblage>
+      <title>Is it binomial? Four conditions to check.</title>
+      <p>
+        <ol label="(1)">
+          <li>
+            <p>
+              The trials are independent.
+            </p>
+          </li>
+          <li>
+            <p>
+              The number of trials, <m>n</m>, is fixed.
+            </p>
+          </li>
+          <li>
+            <p>
+              Each trial outcome can be classified as a
+        <em>success</em> or <em>failure</em>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The probability of a success,
+        <m>p</m>, is the same for each trial.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </assemblage>
+    <example>
+      <statement>
+        <p>
+          What is the probability that 3 of 8 randomly selected individuals will have exceeded the insurance deductible,
+          i.e. that 5 of 8 will not exceed the deductible?
+          Recall that 70% of individuals will not exceed the deductible.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We would like to apply the binomial model,
+          so we check the conditions.
+          The number of trials is fixed (<m>n = 8</m>) (condition 2) and each trial outcome can be classified as a success or failure
+          (condition 3).
+          Because the sample is random,
+          the trials are independent (condition<nbsp/>1) and the probability of a success is the same for each trial
+          (condition<nbsp/>4).
+        </p>
+        <p>
+          In the outcome of interest,
+          there are <m>x = 5</m> successes in <m>n = 8</m> trials (recall that a success is an individual who does
+          <em>not</em> exceed the deductible,
+          and the probability of a success is <m>p = 0.7</m>.
+          So the probability that 5 of 8 will not exceed the deductible and 3 will exceed the deductible is given by
+          <md>
+            <mrow>{ 8 \choose 5}(0.7)^5 (1-0.7)^{8-5} \amp = \frac{8!}{5!(5-3)!} (0.7)^5(1-0.7)^{8-5}</mrow>
+            <mrow>\amp = \frac{8!}{5!3!} (0.7)^5(0.3)^3</mrow>
+          </md>
+        </p>
+        <p>
+          Dealing with the factorial part:
+          <md>
+            <mrow>\frac{8!}{5!3!} = \frac{8\times7\times6\times5\times4\times3\times2\times1} {(5\times4\times3\times2\times1)(3\times2\times1)} = \frac{8\times7\times6}{3\times2\times1} = 56</mrow>
+          </md>
+        </p>
+        <p>
+          Using <m>(0.7)^5(0.3)^3 \approx 0.00454</m>,
+          the final probability is about <m>56\times 0.00454 \approx 0.254</m>.
+        </p>
+      </solution>
+    </example>
+    <p>
+      If you must calculate the binomial coefficient by hand,
+      it's often useful to cancel out as many terms as possible in the top and bottom.
+      See <xref ref="calculatorBinomial">Section</xref>
+      for how to evaluate the binomial coefficient and the binomial formula using a calculator.
+    </p>
+    <assemblage>
+      <title>Computing binomial probabilities</title>
+      <p>
+        The first step in using the binomial model is to check that the model is appropriate.
+        The second step is to identify <m>n</m>, <m>p</m>, and <m>x</m>.
+        Finally, apply the binomial formula to determine the probability and interpret the results.
+      </p>
+    </assemblage>
+    <example>
+      <statement>
+        <p>
+          Approximately 35% of a population has blood type O+. Suppose four people show up at a hospital and we want to find the probability that exactly one of them has blood type O+. Can we use the binomial formula?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          To check if the binomial model is appropriate,
+          we must verify the conditions.
+          <ol>
+            <li>
+              <p>
+                We will suppose that these 4 people comprise a random sample,
+                then we can treat them as independent.
+                This seems reasonable,
+                since one person with a particular blood type showing up at a hospital seems unlikely to affect the chance that other people with that blood type would show up at the hospital.
+              </p>
+            </li>
+            <li>
+              <p>
+                We have a fixed number of trials
+                (<m>n=4</m>).
+              </p>
+            </li>
+            <li>
+              <p>
+                Each outcome is a success or failure
+                (blood type O+ or not blood type O+).
+              </p>
+            </li>
+            <li>
+              <p>
+                The probability of a success is the same for each trial since the individuals are like a random sample
+                (<m>p=0.35</m> if we say a
+                <q>success</q>
+                is someone having blood type O+).
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+
+    <assemblage>
+    <title>Sampling Without Replacement</title>
+      <p>
+        When randomly sampling without replacement, if the sample size is small relative to the population size (rule of thumb: sample size less than 1/10 of the population size), we will consider the observations to be independent.
+      </p>
+    </assemblage>
+
+    <example xml:id="bloodTypeOPos">
+      <statement>
+        <p>
+          Given that 35% of a population has blood type O+, what is the probabilty that in a random sample of 4 people:
+          <ol label="a">
+            <li>
+              <p>
+                none of them have blood type O+?
+              </p>
+            </li>
+            <li>
+              <p>
+                one will have blood type O+?
+              </p>
+            </li>
+            <li>
+              <p>
+                no more than one will have blood type O+?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Compute parts (a) and (b) using the binomial formula:
+          <ol label="a">
+            <li>
+              <p>
+                <m>P(X=0) = {4 \choose 0} (0.35)^0 (0.65)^4 = 1\times1\times 0.65^4 = 0.65^4 = 0.179</m> Note that we could have answered this question without the binomial formula,
+                using methods from the previous section.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>P(X=1) = {4 \choose 1} (0.35)^1(0.65)^{3} = 0.384</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                This can be computed as the sum of parts<nbsp/>(a) and<nbsp/>(b):
+                <m>P(X=0) + P(X=1) = 0.179 + 0.384 = 0.563</m>.
+                That is, there is about a 56.3% chance that no more than one of them will have blood type O+.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </solution>
+    </example>
+
+    <exercise>
+      <statement>
+        <p>
+          What is the probability that at least 3 of 4 people in a random sample will have blood type O+ if 35% of the population has blood type O+?
+          <fn><m>P(\text{at least 3 of 4 have blood type O+})=P(X=3)+P(X=4)={ 4 \choose 3}(0.35)^3(0.65)^1+(0.35)^4=0.111+0.015=0.126</m></fn>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          The probability that a random smoker will develop a severe lung condition in his or her lifetime is about <m>0.3</m>.
+          If you have 4 friends who smoke and you want to find the probability that 1 of them will develop a severe lung condition in his or her lifetime,
+          can you apply the binomial formula?
+          <fn>While conditions (2) and (3) are met,
+          most likely the friends know each other,
+          so the independence assumption (1) is probably not satisfied.
+          For example, acquaintances may have similar smoking habits,
+          or those friends might make a pact to quit together.
+          Condition (4) is also not satisfied since this is not a random sample of people.</fn>
+        </p>
+      </statement>
+    </exercise>
+
+    <example>
+      <statement>
+        <p>
+          There are 13 marbles in a bag. 4 are blue and 9 are red.
+          Randomly draw 5 marbles <em>without replacement</em>.
+          Find the probability you get exactly 3 blue marbles.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Because the probability of success <m>p</m> is not the same for each trial,
+          we cannot use the binomial formula.
+          However, we can use the same logic to arrive at the following answer.
+          <md>
+            <mrow>P(X = 3) \amp = (\text{number of combinations with 3 blue } )\times P(\text{3 blue and 2 red in a specific order})</mrow>
+            <mrow>\amp ={5\choose 3}\times P(\text{ BBBRR } )</mrow>
+            <mrow>\amp = {5\choose 3}\left(\frac{4}{13}\times \frac{3}{12}\times \frac{2}{11} \times \frac{9}{10} \times \frac{8}{9}\right)</mrow>
+            <mrow>\amp = 0.1119</mrow>
+          </md>
+        </p>
+      </solution>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          Draw 4 cards without replacement from a deck of 52 cards.
+          What is the probability that you get at least two hearts?
+          <fn><m>P(\text{at least 2 hearts in 4 draws from a deck})=1-[P(X=0)+P(X=1)]=1-[(\frac{39}{52}) (\frac{38}{51}) (\frac{37}{50}) (\frac{36}{49})+{4\choose 1}(\frac{13}{52}) (\frac{39}{51}) (\frac{38}{50}) (\frac{37}{49})]=1-[0.03038+0.4388]=0.2574</m></fn>
+        </p>
+      </statement>
+    </exercise>
+    <p>
+      Lastly, we consider the binomial coefficient,, <m>n</m> choose <m>x</m>,
+      under some special scenarios.
+    </p>
+    <exercise>
+      <statement>
+        <p>
+          Why is it true that <m>{n \choose 0}=1</m> and
+          <m>{n \choose n}=1</m> for any number <m>n</m>?
+          <fn>Frame these expressions into words.
+          How many different ways are there to arrange 0 successes and <m>n</m> failures in <m>n</m> trials? (1 way.) How many different ways are there to arrange <m>n</m> successes and 0 failures in <m>n</m> trials? (1 way.)</fn>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          How many ways can you arrange one success and <m>n-1</m> failures in <m>n</m> trials?
+          How many ways can you arrange <m>n-1</m> successes and one failure in <m>n</m> trials?
+          <fn>One success and <m>n-1</m> failures: there are exactly n unique places we can put the success, so there are <m>n</m> ways to arrange one success and <m>n-1</m> failures. A similar argument is used for the second question. Mathematically, we show these results by verifying the following two equations:<m>{n \choose 1}=n</m>, <m>{n \choose {n-1}}=n</m></fn>
+        </p>
+      </statement>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="calculatorBinomial">
+  <title>Technology: binomial probabilities</title>
+
+  TEXT PLUS IMAGE
+
+  <p>
+    Calculator instructions
+  </p>
+  
+  <assemblage xml:id="binomial_coefficient_ti">
+  <title>TI-83/84: Computing the binomial coefficient <m>{n\choose x}</m></title>
+    <p>
+      Use <c>MATH</c>, <c>PRB</c>, <c>nCr</c> to evaluate <m>n</m> choose <m>r</m>.
+      Here <m>r</m> and <m>x</m> are different letters for the same quantity.
+        <ol>
+          <li>
+            <p>
+              Type the value of <m>n</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Select <c>MATH</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Right arrow to <c>PRB</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose <c>3:nCr</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Type the value of <m>x</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Hit <c>ENTER</c>.
+            </p>
+          </li>
+        </ol>
+      </p>
+      <p>
+        Example: <c>5 nCr 3</c> means 5 choose 3.
+      </p>
+      <sidebyside>
+        <video width="60%" preview="generic" youtube="MgSitJ7Aqxg" />
+      </sidebyside>
+    </assemblage>
+    <assemblage xml:id="binomial_coefficient_casio">
+    <title>Casio fx-9750GII: Computing the binomial coefficient <m>{n\choose x}</m></title>
+      <p> 
+        <ol>
+          <li>
+            <p>
+              Navigate to the <c>RUN-MAT</c> section
+              (hit <c>MENU</c>,
+              then hit <c>1</c>).
+            </p>
+          </li>
+          <li>
+            <p>
+              Enter a value for <m>n</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Go to <c>CATALOG</c> (hit buttons <c>SHIFT</c> and then <c>7</c>).
+            </p>
+          </li>
+          <li>
+            <p>
+              Type <c>C</c> (hit the <c>ln</c> button),
+              then navigate down to the bolded <c>C</c> and hit <c>EXE</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Enter the value of <m>x</m>.
+              Example of what it should look like: <c>7C3</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Hit <c>EXE</c>.
+            </p>
+          </li>
+        </ol>
+      </p>
+      <sidebyside>
+        <video width="60%" preview="generic" youtube="hoPbQCcUyzU" />
+      </sidebyside>
+    </assemblage>
+    <assemblage xml:id="binomial_formula_ti">
+    <title>TI-84: Computing the binomial formula,
+        <m>P(X = {x)={n\choose x}p^x(1-p)^{n-x}}</m></title>
+      <p>
+        Use <c>2ND</c> <c>VARS</c>, <c>binompdf</c> to evaluate the probability of <em>exactly</em> <m>x</m> occurrences out of <m>n</m> independent trials of an event with probability <m>p</m>.
+        <ol>
+          <li>
+            <p>
+              Select <c>2ND</c> <c>VARS</c> (i.e. <c>DISTR</c>)
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose <c>A:binompdf</c> (use the down arrow to scroll down).
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <c>trials</c> be <m>n</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <c>p</c> be <m>p</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <c>x value</c> be <m>x</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Select <c>Paste</c> and hit <c>ENTER</c>.
+            </p>
+          </li>
+        </ol>
+      </p>
+      <p>
+        TI-83: Do step 1, choose <c>0:binompdf</c>,
+        then enter <m>n</m>,
+        <m>p</m>,
+        and <m>x</m> separated by commas:
+      </p>
+      <p>
+         <c>binompdf(n, p, x)</c>.
+        Then hit <c>ENTER</c>.
+      </p>
+      <sidebyside>
+        <video width="60%" preview="generic" youtube="F6JBimUE43U" />
+      </sidebyside>
+    </assemblage>
+    <assemblage xml:id="binomial_formula_cdf_ti">
+    <title>TI-84: Computing <m>P(X \le {x)= {n\choose 0}p^0(1-p)^{n-0} + ... + {n\choose x}p^x(1-p)^{n-x}}</m></title>
+      <p>
+        Use <c>2ND</c> <c>VARS</c>, <c>binomcdf</c> to evaluate the cumulative probability of <em>at most</em>
+        <m>x</m> occurrences out of <m>n</m> independent trials of an event with probability <m>p</m>.
+        <ol>
+          <li>
+            <p>
+              Select <c>2ND</c> <c>VARS</c> (i.e. <c>DISTR</c>)
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose <c>B:binomcdf</c> (use the down arrow).
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <c>trials</c> be <m>n</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <c>p</c> be <m>p</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <c>x value</c> be <m>x</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Select <c>Paste</c> and hit <c>ENTER</c>.
+            </p>
+          </li>
+        </ol>
+      </p>
+      <p>
+        TI-83: Do steps 1-2, then enter the values for <m>n</m>,
+        <m>p</m>,
+        and <m>x</m> separated by commas as follows: <c>binomcdf(n, p, x)</c>.
+        Then hit <c>ENTER</c>.
+      </p>
+      <sidebyside>
+        <video width="60%" preview="generic" youtube="bGxo7wqKyFY" />
+      </sidebyside>
+    </assemblage>
+    <assemblage xml:id="binomial_formula_pdf_cdf_casio">
+    <title>Casio fx-9750GII: Binomial calculations</title>
+      <p>
+      <ol>
+        <li>
+          <p>
+            Navigate to <c>STAT</c> (<c>MENU</c>,
+            then hit <c>2</c>).
+          </p>
+        </li>
+        <li>
+          <p>
+            Select <c>DIST</c> (<c>F5</c>), and then <c>BINM</c> (<c>F5</c>).
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose whether to calculate the binomial distribution for a specific number of successes,
+            <m>P(X = k)</m>,
+            or for a range <m>P(X \leq k)</m> of values (0 successes, 1 success, ..., <m>x</m> successes).
+            <ul>
+              <li>
+                <p>
+                  For a specific number of successes,
+                  choose <c>Bpd</c> (<c>F1</c>).
+                </p>
+              </li>
+              <li>
+                <p>
+                  To consider the range 0, 1, ..., <m>x</m> successes,
+                  choose <c>Bcd</c>(<c>F1</c>).
+                </p>
+              </li>
+            </ul>
+          </p>
+        </li>
+        <li>
+          <p>
+            If needed, set <c>Data</c> to <c>Variable</c> (<c>Var</c> option,
+            which is <c>F2</c>).
+          </p>
+        </li>
+        <li>
+          <p>
+            Enter the value for <c>x</c> (<m>x</m>), <c>Numtrial</c> (<m>n</m>),
+            and <c>p</c> (probability of a success).
+          </p>
+        </li>
+        <li>
+          <p>
+            Hit <c>EXE</c>.
+          </p>
+        </li>
+      </ol>
+    </p>
+      <sidebyside>
+        <video width="60%" preview="generic" youtube="nBAxIEmcL0Y" />
+      </sidebyside>
+    </assemblage>
+    <exercise>
+      <statement>
+        <p>
+          Find the number of ways of arranging 3 blue marbles and 2 red marbles.
+          <fn>Here <c>c</c><m>=5</m> and <c>x</c><m>=3</m>. Doing 5 <c>nCr</c> 3 gives the number of combinations as 10</fn>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          There are 13 marbles in a bag. 4 are blue and 9 are red.
+          Randomly draw 5 marbles <em>with replacement</em>.
+          Find the probability you get exactly 3 blue marbles.
+          <fn>Here, <m>n=5</m>, <m>p=4/13</m> and <m>x=3</m>, so set <c>trials</c><m>=5</m>, <c>p</c><m>=4/13</m> and <c>x value</c><m>=3</m>. The probability is 0.1396. </fn>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          There are 13 marbles in a bag. 4 are blue and 9 are red.
+          Randomly draw 5 marbles <em>with replacement</em>.
+          Find the probability you get <em>at most</em>
+          3 blue marbles (i.e. less than or equal to 3 blue marbles).
+          <fn>Similarly, set <c>trials</c><m>=5</m>, <c>p</c><m>=4/13</m> and <c>x value</c><m>=3</m>. The cumulative probability is 0.9662</fn>
+        </p>
+      </statement>
+    </exercise>
+  </subsection>
+
+  <subsection>
+    <title>An example of a binomial distribution</title>
+    <p>
+      In <xref ref="bloodTypeOPos"></xref>,
+      we asked various probability questions regarding the number of people out of 4 with blood type O+. We verified that the scenario was binomial and that each problem could be solved using the binomial formula.
+      Instead of looking at it piecewise,
+      we could describe the entire <em>distribution</em>
+      of possible values and their corresponding probabilities.
+      Since there are 4 people,
+      there are several possible outcomes for the number who might have blood type O+: 0, 1, 2, 3, 4.
+      We can make a distribution table with these outcomes.
+      Recall that the probability of a randomly sampled person being blood type O+ is about 0.35.
+    </p>
+    <p>
+      The <term>binomial distribution</term> is used to describe the number of successes in a fixed number of trials. This is different from the geometric distribution, which described the number of trials we must wait before we observe a success.
+    </p>
+    <figure xml:id="oPositive4">
+      <caption>Probability distribution for the number with blood type O+ in a random sample of 4 people. This is a binomial distribution. Correcting for rounding error, the probabilities add up to 1, as they must for any probability distribution.</caption>
+      <sidebyside widths="40% 50%">
+        <tabular>
+          <row bottom="minor">
+            <cell><m>x_i</m></cell>
+            <cell><m>P(x_i)</m></cell>
+          </row>
+          <row>
+            <cell>0</cell>
+            <cell><m>{4\choose 0}(0.35)^0(0.65)^{4} = 0.179</m></cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell><m>{4\choose 1}(0.35)^1(0.65)^{3} = 0.384</m></cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell><m>{4\choose 2}(0.35)^2(0.65)^{2} = 0.311</m></cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell><m>{4\choose 3}(0.35)^3(0.65)^{1} = 0.111</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell>4</cell>
+            <cell><m>{4\choose 4}(0.35)^4(0.65)^{0} = 0.015</m></cell>
+          </row>
+        </tabular>
+        <image source="images/distributions/oPositive4.png" />
+      </sidebyside>
+    </figure>
+  </subsection>
+  <subsection>
+    <title>The mean and standard deviation of a binomial distribution</title>
+    <p>
+      Since this is a probability distribution we could find its mean and standard deviation using the formulas from <xref ref="probability"></xref>.
+      Those formulas require a lot of calculations,
+      so it is fortunate there's an easier way to compute the mean and standard deviation for a binomial random variable.
+    </p>
+    <assemblage>
+      <title>Mean and standard deviation of the binomial distribution</title>
+      <p>
+        For a binomial distribution with parameters <m>n</m> and <m>p</m>,
+        where <m>n</m> is the number of trials and <m>p</m> is the probability of a success,
+        the mean and standard deviation of the number of observed successes are
+        <md>
+          <mrow>\mu_{x} \amp = np \amp \sigma_{x} \amp = \sqrt{np(1-p)}</mrow>
+        </md>
+      </p>
+    </assemblage>
+    <example>
+      <statement>
+        <p>
+          If the probability that a person has blood type O+ is 0.35 and you have 40 randomly selected people,
+          about how many would you expect to have blood type O+? What is the standard deviation of the number of people who would have blood type O+ among the 40 people?
+        </p>
+      </statement>
+        <solution>
+          <p>
+            We are asked to determine the expected number (the mean)
+            and the standard deviation,
+            both of which can be directly computed from the formulas above.
+          <md>
+            <mrow>\mu_{X}\amp =np = 40(0.35) = 14</mrow>
+            <mrow>\sigma_{X} \amp = \sqrt{np(1-p)} = \sqrt{40(0.35)(0.65)} = 3.0</mrow>
+          </md>
+          </p>
+        </solution>
+    </example>
+    <p>
+      The exact distribution is shown in <xref ref="oPositive40"></xref>.
+    </p>
+    <figure xml:id="oPositive40">
+      <caption>Distribution for the number of people with blood type O+ in a random sample of size 40, where <m>p=0.35</m>.  The distribution is binomial and is centered on 14 with a standard deviation of 3.</caption>
+      <image width="73%" source="images/distributions/oPositive40.png" />
+    </figure>
+  </subsection>
+  <subsection>
+    <title>Normal approximation to the binomial distribution</title>
+    <p>
+          <idx><h>distribution</h><h>binomial!normal approximation</h></idx>
+    </p>
+    <p>
+      The binomial formula is cumbersome when the sample size (<m>n</m>) is large,
+      particularly when we consider a range of observations.
+    </p>
+    <example xml:id="exactbin">
+      <statement>
+        <p>
+          Find the probability that fewer than 12 out of 40 randomly selected people would have blood type O+, where probability of blood type O+ is 0.35.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          This is equivalent to asking,
+          what is the probability of observing
+          <m>X=0, 1, 2, ..., \text{ or }  11</m> with blood type O+ in a sample of size 40 when <m>p=0.35</m>?
+          We previously verified that this scenario is binomial.
+          We can compute each of the 12 probabilities using the binomial formula and add them together to find the answer:
+          <md>
+            <mrow>\amp P(X=0\text{ or } X=1\text{ or } \cdots\text{ or }  X=11)</mrow>
+            <mrow>\amp \qquad = P(X=0) + P(X=1) + \cdots + P(X=11)</mrow>
+            <mrow>\amp \qquad = {40\choose 0}(0.35)^0(0.65)^{40} + {40\choose 1}(0.35)^1(0.65)^{39} + \cdots + {40\choose 11}(0.35)^{11}(0.65)^{29}</mrow>
+            <mrow>\amp \qquad = 0.21</mrow>
+          </md>
+        </p>
+        <p>
+          If the true proportion with blood type O+ in the population is <m>p = 0.35</m>,
+          then the probability of observing fewer than 12 in a sample of <m>n = 40</m> is 0.21.
+        </p>
+      </solution>
+    </example>
+    <p>
+      The computations in <xref ref="exactbin"></xref> are tedious and long.
+      In general, we should avoid such work if an alternative method exists that is faster,
+      easier, and still accurate.
+      Recall that calculating probabilities of a range of values is much easier in the normal model.
+      In some cases we may use the normal distribution to estimate binomial probabilities.
+      While a normal approximation for the distribution in <xref ref="oPositive4"></xref>
+      when the sample size was <m>n = 4</m> would not be appropriate,
+      it might not be too bad for the distribution in <xref ref="oPositive40"></xref> where <m>n = 40</m>.
+      We might wonder,
+      when is it reasonable to use the normal model to approximate a binomial distribution?
+    </p>
+    <exercise>
+      <statement>
+        <p>
+          Here we consider the binomial model when the probability of a success is <m>p=0.10</m>.
+          <xref ref="fourBinomialModelsShowingApproxToNormal"></xref>
+          shows four hollow histograms for simulated samples from the binomial distribution using four different sample sizes:
+          <m>n=10, 30, 100, 300</m>.
+          What happens to the shape of the distributions as the sample size increases?
+          How does the binomial distribution change as <m>n</m> gets larger?
+          <fn>The distribution is transformed from a blocky and skewed distribution into one that rather resembles the normal distribution in the last hollow histogram.</fn>
+        </p>
+      </statement>
+    </exercise>
+    <figure xml:id="fourBinomialModelsShowingApproxToNormal">
+      <caption>Hollow histograms of samples from the binomial model when <m>p=0.10</m>. The sample sizes for the four plots are <m>n=10</m>, 30, 100, and 300, respectively.</caption>
+      <image width="73%" source="images/distributions/fourBinomialModelsShowingApproxToNormal.png" />
+    </figure>
+    <p>
+      The shape of the binomial distribution depends upon both <m>n</m> and <m>p</m>.
+      Here we introduce a rule of thumb for when normal approximation of a binomial distribution is reasonable.
+      We will use this rule of thumb in many applications going forward.
+    </p>
+    <assemblage>
+      <title>Normal approximation of the binomial distribution</title>
+      <p>
+        The binomial distribution with probability of success <m>p</m> is nearly normal when the sample size <m>n</m> is sufficiently large that
+        <m>np\ge 10</m> and <m>n(1-p)\ge 10</m>.
+        The approximate normal distribution has parameters corresponding to the mean and standard deviation of the binomial distribution:
+        <md>
+          <mrow>\mu \amp = np \amp \amp \sigma= \sqrt{np(1-p)}</mrow>
+        </md>
+      </p>
+    </assemblage>
+    <p>
+      The normal approximation may be used when computing the range of many possible successes.
+      For instance,
+      we may apply the normal distribution to the setting described in <xref ref="oPositive40"></xref>.
+    </p>
+    <example xml:id="approxBinomialForN40P35OPosExample">
+      <statement>
+        <p>
+          Use the normal approximation to estimate the probability of observing fewer than 12 with blood type O+ in a random sample of 40,
+          if the true proportion with blood type O+ in the population is <m>p=0.35</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First we verify that <m>np</m> and <m>n(1-p)</m> are at least 10 so that we can apply the normal approximation to the binomial model:
+          <md>
+            <mrow>np\amp  = 40(0.35)=14\ge 10 \amp n(1-p)\amp  = 40(0.65) = 26\ge 10</mrow>
+          </md>
+        </p>
+        <p>
+          With these conditions checked,
+          we may use the normal distribution to approximate the binomial distribution with the following mean and standard deviation:
+          <md>
+            <mrow>\mu \amp = np = 40(0.35)=14</mrow>
+            <mrow>\sigma \amp = \sqrt{np(1-p)} = \sqrt{40(0.35)(0.65)} = 3.0</mrow>
+          </md>
+        </p>
+        <p>
+          We want to find the probability of observing fewer than 12 with blood type O+ using this model.
+          We note that 12 is less than 1 standard deviation below the mean:
+        </p>
+        <image width="65%" source="images/distributions/bloodtypeOpos40.png" />
+        <p>
+          Next,
+          we compute the Z-score as <m>Z=\frac{12 - 14}{3} = -0.67</m> to find the shaded area in the picture:
+          <m>P(Z \lt -0.67) = 0.25</m>.
+          This probability of 0.25 using the normal approximation is reasonably close to the true probability of 0.21 computed using the binomial distribution.
+        </p>
+      </solution>
+    </example>
+    <example xml:id="approxBinomialForN400P20SmokerExample">
+      <statement>
+        <p>
+          Use the normal approximation to estimate the probability of observing fewer than 120 people with blood type O+ in a random sample of 400,
+          if the true proportion with blood type O+ in the population is <m>p=0.35</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We have previously verified that the binomial model is reasonable for this context.
+          Now we will verify that both <m>np</m> and <m>n(1-p)</m> are at least 10 so we can apply the normal approximation to the binomial model:
+          <md>
+            <mrow>np\amp =400(0.35)=140\ge 10 \amp n(1-p)\amp =400(0.65)=260\ge 10</mrow>
+          </md>
+        </p>
+        <p>
+          With these conditions checked,
+          we may use the normal approximation in place of the binomial distribution with the following mean and standard deviation:
+          <md>
+            <mrow>\mu \amp = np = 400(0.35)=140</mrow>
+            <mrow>\sigma \amp = \sqrt{np(1-p)} = \sqrt{400(0.35)(0.65)}= 9.5</mrow>
+          </md>
+        </p>
+        <p>
+          We want to find the probability of observing fewer than 120 with blood type O+ using this model.
+          We note that 120 is just over 2<nbsp/>standard deviations below the mean:
+        </p>
+        <image width="65%" source="images/distributions/bloodtypeOpos400.png" />
+        <p>
+          Next,
+          we compute the Z-score as <m>Z=\frac{120 - 140}{9.5} = -2.1</m> to find the shaded area in the picture:
+          <m>P(Z \lt -2.1) = 0.0179</m>.
+          This probability of 0.0179 using the normal approximation is very close to the true probability of 0.0196 from the binomial distribution.
+        </p>
+      </solution>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          Use normal approximation, if applicable,
+          to estimate the probability of getting greater than 15 sixes in 100 rolls of a fair die.
+          <fn><m>np=100(1/6)=16.7 \ge 10</m> and <m>n(1-p)=100(5/6)=83.3 \ge 10</m> and <m>\mu=np=100(1/6) = 16.7 \text{ ; } \sigma = \sqrt{np(1-p)}= \sqrt{100(1/6)(5/6)}=3.7</m> and <m>Z=\frac{15-16.7}{3.7}=-0.46 \text{ ; } P(Z>-0.46)=0.677</m></fn>
+        </p>
+      </statement>
+    </exercise>
+  </subsection>
+  <subsection>
+    <title>Normal approximation breaks down on small intervals (special topic)</title>
+    <assemblage>
+      <title>The normal approximation may fail on small intervals</title>
+      <p>
+        The normal approximation to the binomial distribution tends to perform poorly when estimating the probability of a small range of counts,
+        even when the conditions are met.
+      </p>
+    </assemblage>
+    <p>
+      We consider again our example where 35% of people are blood type O+. Suppose we want to find the probability that between 129 and 131 people,
+      inclusive,
+      have blood type O+ in a random sample of 400 people.
+      We want to compute the probability of observing 129, 130,
+      or 131 people with blood type O+ when <m>p=0.20</m> and <m>n=400</m>.
+      With such a large sample,
+      we might be tempted to apply the normal approximation and use the range 129 to 131.
+      However, we would find that the binomial solution and the normal approximation notably differ:
+      <md>
+        <mrow>\text{ Binomial: } \amp \ 0.0732 \amp \text{ Normal: } \amp \ 0.0483</mrow>
+      </md>
+    </p>
+    <p>
+      We can identify the cause of this discrepancy using <xref ref="normApproxToBinomFail"></xref>,
+      which shows the areas representing the binomial probability (outlined) and normal approximation
+      (shaded).
+      Notice that the width of the area under the normal distribution is 0.5 units too slim on both sides of the interval.
+      The binomial distribution is a discrete distribution,
+      and the each bar is centered over an integer value.
+      Looking closely at <xref ref="normApproxToBinomFail"></xref>,
+      we can see that the bar corresponding to 129 begins at 128.5 and ends at 129.5, the bar corresponding to 131 begins at 130.5 and ends at 131.5, etc.
+    </p>
+    <figure xml:id="normApproxToBinomFail">
+      <caption>A normal curve with the area between 129 and 131 shaded. The outlined area from 128.5 to 131.5 represents the exact binomial probability.</caption>
+      <image width="73%" source="images/distributions/normApproxToBinomFail-n400-p35.png" />
+    </figure>
+    <assemblage>
+      <title>Improving accuracy of the normal approximation to the binomial distribution</title>
+      <p>
+        The normal approximation to the binomial distribution for intervals of values is usually improved if cutoff values for the lower end of a shaded region are reduced by 0.5 and the cutoff value for the upper end are increased by 0.5.
+        This correction is called the continuity correction and accounts for the fact that the binomial distribution is discrete.
+      </p>
+    </assemblage>
+    <example>
+      <statement>
+        <p>
+          Use the method described to find a more accurate estimate for the probability of observing 129, 130,
+          or 131 people with blood type O+ in 400 randomly selected people when <m>p=0.35</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Instead of standardizing 129 and 131,
+          we will standardize 128.5 and 131.5:
+          <md>
+            <mrow>Z_{left} \amp = \frac{128.5-140}{9.5} = -1.263</mrow>
+            <mrow>Z_{right} \amp = \frac{131.5-140}{9.5} = -0.895</mrow>
+            <mrow>P(-1.263 \amp \lt  Z \lt  -0.895) = 0.0772</mrow>
+          </md>
+        </p>
+        <p>
+          The probability 0.0772 is much closer to the true value of 0.0732 than the previous estimate of 0.0483 we calculated using normal approximation without the continuity correction.
+        </p>
+      </solution>
+    </example>
+    <p>
+      It is always possible to apply the continuity correction when finding a normal approximation to the binomial distribution.
+      However, when <m>n</m> is very large or when the interval is wide,
+      the benefit of the modification is limited since the added area becomes negligible compared to the overall area being calculated.
+    </p>
+<!--     <p>
+          <idx><h>distribution</h><h>binomial!normal approximation</h></idx>
+          <idx><h>distribution</h><h>binomial</h></idx>
+    </p> -->
+  </subsection>
+
+
+  <subsection>
+    <title>Section summary</title>
+    <p>
+    <ul>
+      <li>
+        <p>
+          <m>n\choose x</m>, the <term>binomial coefficient</term>,
+          describes the number of combinations for arranging <m>x</m> successes among <m>n</m> trials.
+          <m>n\choose x</m> <m>=\frac{n!}{x!(n-x)!}</m>,
+          where <m>n!=1\times 2\times 3\times...n</m>, and <m>0!=0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The <term>binomial formula</term>
+          can be used to find the probability that something happens
+          <em>exactly x times in n trials</em>.
+          Suppose the probability of a single trial being a success is <m>p</m>.
+          Then the probability of observing exactly <m>x</m> successes in <m>n</m> independent trials is given by
+          <md>
+            <mrow>{n\choose x}p^x(1-p)^{n-x}   =   \frac{n!}{x!(n-x)!}p^x(1-p)^{n-x}</mrow>
+          </md>
+        </p>
+      </li>
+      <li>
+        <p>
+          To apply the binomial formula,
+          the events must be <term>independent</term> from trial to trial.
+          Additionally, <m>n</m>,
+          the number of trials must be fixed in advance, and <m>p</m>,
+          the probability of the event occurring in a given trial,
+          must be the same for each trial.
+        </p>
+      </li>
+      <li>
+        <p>
+          To use the binomial formula,
+          first confirm that the binomial conditions are met.
+          Next, identify the number of trials <m>n</m>,
+          the number of times the event is to be a
+          <q>success</q>
+          <m>x</m>, and the probability that a single trial is a success <m>p</m>.
+          Finally, plug these three numbers into the formula to get the probability of exactly <m>x</m> successes in <m>n</m> trials.
+        </p>
+      </li>
+      <li>
+        <p>
+          To find a probability involving
+          <em>at least</em> or <em>at most</em>,
+          first determine if the scenario is binomial.
+          If so, apply the binomial formula as many times as needed and add up the results. e.g.
+          <m>P(\text{ at least 3 Heads in 5 tosses of a fair coin } )=P(\text{ exactly 3 Heads } )+P(\text{ exactly 4 Heads } )+P(\text{ exactly 5 Heads } )</m>,
+          where each probability can be found using the binomial formula.
+        </p>
+      </li>
+      <li>
+        <p>
+          The distribution of the <em>number of successes</em>
+          in <m>n</m> independent trials gives rise to a
+          <term>binomial distribution</term>.
+          If X has a binomial distribution with parameters <m>n</m> and <m>p</m>,
+          then <m>P(X=x) = {n\choose x}p^x(1-p)^n-x</m>,
+          where <m>x=0,1,2,3\dots,n</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          To write out a binomial probability
+          <em>distribution table</em>,
+          list all possible values for <m>x</m>, the number of successes,
+          then use the binomial formula to find the probability of each of those values.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <em>X</em> follows a binomial distribution with parameters <m>n</m> and <m>p</m>, then:
+        </p>
+        <p>
+        <ul>
+          <li>
+            <p>
+              The mean is given by <m>\mu_{\scriptscriptstyle{X}} = np</m>. (<em>center</em>)
+            </p>
+          </li>
+          <li>
+            <p>
+              The standard deviation is given by <m>\sigma_{\scriptscriptstyle{X}} = \sqrt{np(1-p)}</m>. (<em>spread</em>)
+            </p>
+          </li>
+          <li>
+            <p>
+              When <m>np\ge 10</m> and <m>n(1-p)\ge 10</m>,
+              the binomial distribution is approximately normal. (<em>shape</em>)
+            </p>
+          </li>
+        </ul>
+        </p>
+      </li>
+      <!-- <li>
+        <p>
+          The <m>p^x(1-p)^{n-x}</m> part of the binomial formula is the probability of just one combination.
+          Since there are <m>n\choose x</m> combinations,
+          we add <m>p^x(1-p)^{n-x}</m> up <m>n\choose x</m> times.
+          We can think of the binomial formula as:
+          <m>[\# \text{ of combinations } ] \times P(\text{ a single combination } )</m>.
+        </p>
+      </li> -->
+    </ul>
+	</p>
+  </subsection>
+
+  <exercises>
+  <title>Exercises</title>
+  <exercise>
+    <title>Exploring combinations</title><!--  #29 -->
+    <statement>
+      <p>
+        A coin is tossed 5 times.
+        How many sequences / combinations of Heads/Tails are there that have:
+        <ol>
+          <li>
+            <p>
+              Exactly 1 Tail?
+            </p>
+          </li>
+          <li>
+            <p>
+              Exactly 4 Tails?
+            </p>
+          </li>
+          <li>
+            <p>
+              Eactly 3 Tails?
+            </p>
+          </li>
+          <li>
+            <p>
+              At least 3 Tails?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>{5 \choose 1}=5</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>{5 \choose 4}=5</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>{5 \choose 3}=10</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>{5 \choose 3} +{5 \choose 4}+ {5 \choose 5}=10+5+1 =16</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+  <exercise>
+    <title>Political affiliation</title><!--  #30 -->
+    <statement>
+      <p>
+        Suppose that in a large population, 51% identify as Democrat.
+        A researcher takes a random sample of 3 people.
+        <ol>
+          <li>
+            <p>
+              Use the binomial model to calculate the probability that two of them identify as Democrat.
+            </p>
+          </li>
+          <li>
+            <p>
+              Write out all possible orderings of 3 people, 2 of whom identify as Democrat.
+              Use these scenarios to calculate the same probability from part (a) but using the Addition Rule for disjoint events.
+              Confirm that your answers from parts (a) and (b) match.
+            </p>
+          </li>
+          <li>
+            <p>
+              If we wanted to calculate the probability that a random sample of 8 people will have 3 that identify as Democrat,
+              briefly describe why the approach from part (b) would be more tedious than the approach from part (a).
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="underage_drinking_intro"><!--  #31 -->
+    <title>Underage drinking, Part I</title>
+    <statement>
+      <sidebyside>
+        <video width="60%" preview="generic" youtube="mCqvjDbZYPw" />
+      </sidebyside>
+      <p>
+        Data collected by the Substance Abuse and Mental Health Services Administration (SAMSHA) suggests that 69.7% of 18-20 year olds consumed alcoholic beverages in any given year.<fn>SAMHSA, Office of Applied Studies, <url href="http://www.samhsa.gov/data/">National Survey on Drug Use and Health, 2007 and 2008.</url></fn>
+        <ol>
+          <li>
+            <p>
+              Suppose a random sample of ten 18-20 year olds is taken.
+              Is the use of the binomial distribution appropriate for calculating the probability that exactly six consumed alcoholic beverages?
+              Explain.
+            </p>
+          </li>
+          <li>
+            <p>
+              Calculate the probability that exactly 6 out of 10 randomly sampled 18- 20 year olds consumed an alcoholic drink.
+            </p>
+          </li>
+          <li>
+            <p>
+              What is the probability that exactly four out of ten 18-20 year olds have <em>not</em>
+              consumed an alcoholic beverage?
+            </p>
+          </li>
+          <li>
+            <p>
+              What is the probability that at most 2 out of 5 randomly sampled 18-20 year olds have consumed alcoholic beverages?
+            </p>
+          </li>
+          <li>
+            <p>
+              What is the probability that at least 1 out of 5 randomly sampled 18-20 year olds have consumed alcoholic beverages?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Binomial conditions are met: (1) Independent trials: In a random sample, whether or not one 18-20 year old has consumed alcohol does not depend on whether or not another one has. (2) Fixed number of trials: <m>n=10</m>. (3) Only two outcomes at each trial: Consumed or did not consume alcohol. (4) Probability of a success is the same for each trial: <m>p=0.697</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              0.203.
+            </p>
+          </li>
+          <li>
+            <p>
+              0.203.
+            </p>
+          </li>
+          <li>
+            <p>
+              0.167.
+            </p>
+          </li>
+          <li>
+            <p>
+              0.997.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+  <exercise xml:id="chicken_pox_intro"><!--  #32 -->
+    <title>Chicken pox, Part I</title>
+    <statement>
+      <p>
+        The National Vaccine Information Center estimates that 90% of Americans have had chickenpox by the time they reach adulthood.<fn>National Vaccine Information Center, <url href="https://www.nvic.org/vaccines-and-diseases/Chickenpox.aspx">Chickenpox, The Disease &amp; The Vaccine Fact Sheet</url></fn>
+        <ol>
+          <li>
+            <p>
+              Suppose we take a random sample of 100 American adults.
+              Is the use of the binomial distribution appropriate for calculating the probability that exactly 97 out of 100 randomly sampled American adults had chickenpox during childhood?
+              Explain.
+            </p>
+          </li>
+          <li>
+            <p>
+              Calculate the probability that exactly 97 out of 100 randomly sampled American adults had chickenpox during childhood.
+            </p>
+          </li>
+          <li>
+            <p>
+              What is the probability that exactly 3 out of a new sample of 100 American adults have <em>not</em>
+              had chickenpox in their childhood?
+            </p>
+          </li>
+          <li>
+            <p>
+              What is the probability that at least 1 out of 10 randomly sampled American adults have had chickenpox?
+            </p>
+          </li>
+          <li>
+            <p>
+              What is the probability that at most 3 out of 10 randomly sampled American adults have
+              <em>not</em> had chickenpox?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="dreidel"><!--  #37 -->
+    <title>Game of dreidel</title>
+    <statement>
+      <p>
+        A dreidel is a four-sided spinning top with the Hebrew letters <em>nun</em>,
+        <em>gimel</em>, <em>hei</em>,
+        and <em>shin</em>, one on each side.
+        Each side is equally likely to come up in a single spin of the dreidel.
+        Suppose you spin a dreidel three times.
+        Calculate the probability of getting
+      </p>
+      <sidebyside widths="40% 50%">
+      <p>
+        <ol>
+          <li>
+            <p>
+              at least one <em>nun</em>?
+            </p>
+          </li>
+          <li>
+            <p>
+              exactly 2 <em>nun</em>s?
+            </p>
+          </li>
+          <li>
+            <p>
+              exactly 1 <em>hei</em>?
+            </p>
+          </li>
+          <li>
+            <p>
+              at most 2 <em>gimel</em>s?
+            </p>
+          </li>
+        </ol>
+        </p>
+        <figure>
+          <caption>Photo by Staccabees, cropped <url href="https://www.flickr.com/photos/44689913@N04/4116667696/">(http://flic.kr/p/7gLZTf)</url>, <url href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0 license</url></caption>
+          <image width="40%" source="images/distributions/dreidel.jpg" />
+        </figure>
+      </sidebyside>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>1-0.75^3=0.5781</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              0.1406.
+            </p>
+          </li>
+          <li>
+            <p>
+              0.4219.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>1-0.25^3=0.9844</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="sickle_cell_anemia"><!--  #38 -->
+    <title>Sickle cell anemia</title>
+    <statement>
+      <p>
+        Sickle cell anemia is a genetic blood disorder where red blood cells lose their flexibility and assume an abnormal, rigid,
+        <q>sickle</q>
+        shape, which results in a risk of various complications.
+        If both parents are carriers of the disease,
+        then a child has a 25% chance of having the disease, 50% chance of being a carrier,
+        and 25% chance of neither having the disease nor being a carrier.
+        If two parents who are carriers of the disease have 3 children,
+        what is the probability that
+        <ol>
+          <li>
+            <p>
+              two will have the disease?
+            </p>
+          </li>
+          <li>
+            <p>
+              none will have the disease?
+            </p>
+          </li>
+          <li>
+            <p>
+              at least one will neither have the disease nor be a carrier?
+            </p>
+          </li>
+          <li>
+            <p>
+              the first child with the disease will the be <m>3^{rd}</m> child?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="underage_drinking_normal_approx"><!--  #35 -->
+    <title>Underage drinking, Part II</title>
+    <statement>
+      <sidebyside>
+        <video width="60%" preview="generic" youtube="_PeEawIZqPE" />
+      </sidebyside>
+      <p>
+        We learned in <xref ref="underage_drinking_intro"></xref> that about 70% of 18-20 year olds consumed alcoholic beverages in any given year.
+        We now consider a random sample of fifty 18-20 year olds.
+        <ol>
+          <li>
+            <p>
+              How many people would you expect to have consumed alcoholic beverages?
+              And with what standard deviation?
+            </p>
+          </li>
+          <li>
+            <p>
+              Would you be surprised if there were 45 or more people who have consumed alcoholic beverages?
+            </p>
+          </li>
+          <li>
+            <p>
+              What is the probability that 45 or more people in this sample have consumed alcoholic beverages?
+              How does this probability relate to your answer to part (b)?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>\mu = 35</m>, <m>\sigma = 3.24</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Yes. <m>Z = \frac{45-35}{3.24}=3.09</m>. 45 is more than 3 standard deviations from the mean, we can assume that it is an unusual observation. Therefore yes, we would be surprised.
+            </p>
+          </li>
+          <li>
+            <p>
+              Using a normal model approximation, 0.0010. With a 0.5 correction, 0.0017.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+  
+  <exercise xml:id="chicken_pox_normal_approx"><!--  #36 -->
+    <title>Chickenpox, Part II</title>
+    <statement>
+      <p>
+        We learned in <xref ref="chicken_pox_intro"></xref>
+        that about 90% of American adults had chickenpox before adulthood.
+        We now consider a random sample of 120 American adults.
+        <ol>
+          <li>
+            <p>
+              How many people in this sample would you expect to have had chickenpox in their childhood?
+              And with what standard deviation?
+            </p>
+          </li>
+          <li>
+            <p>
+              Would you be surprised if there were 105 people who have had chickenpox in their childhood?
+            </p>
+          </li>
+          <li>
+            <p>
+              What is the probability that 105 or fewer people in this sample have had chickenpox in their childhood?
+              How does this probability relate to your answer to part (b)?
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+</exercises>
+<subsection>
+  <title>Chapter Highlights</title>
+  <p>
+    This chapter focused on understanding likelihood and chance variation,
+    first by solving individual probability questions and then by investigating probability distributions.
+  </p>
+  <p>
+    The main probability techniques covered in this chapter are as follows:
+    <ul>
+      <li>
+        <p>
+          The <term>General Multiplication Rule</term> for <em>and</em>
+          probabilities (intersection),
+          along with the special case when events are <term>independent</term>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The <term>General Addition Rule</term>
+          for <em>or</em> probabilities (union),
+          along with the special case when events are
+          <term>mutually exclusive</term>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The <term>Conditional Probability Rule</term>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Tree diagrams and <term>Bayes' Theorem</term>
+          to solve more complex conditional problems.
+        </p>
+      </li>
+      <li>
+        <p>
+          The <em>Binomial Formula</em>
+            <idx><h>binomial formula</h></idx>
+          for finding the probability of exactly <m>x</m> successes in <m>n</m> independent trials.
+        </p>
+      </li>
+      <li>
+        <p>
+          <em>Simulations</em>
+            <idx><h>simulation</h></idx>
+          and the use of random digits to estimate probabilities.
+        </p>
+      </li>
+    </ul>
+  </p>
+  <p>
+    Fundamental to all of these problems is understanding when events are independent and when they are mutually exclusive.
+    Two events are <term>independent</term>
+    when the outcome of one does not affect the outcome of the other, i.e.
+    <m>P(A | B) = P(A)</m>.
+    Two events are <term>mutually exclusive</term>
+    when they cannot both happen together, i.e.
+    <m>P(A \text{ and } B) = 0</m>.
+  </p>
+  <p>
+    Moving from solving individual probability questions to studying probability distributions helps us better understand chance processes and quantify expected chance variation.
+    <ul>
+      <li>
+        <p>
+          For a <term>discrete probability distribution</term>,
+          the <term>sum</term> of the probabilities must equal 1.
+          For a <term>continuous probability distribution</term>,
+          the <term>area under the curve</term>
+          represents a probability and the total area under the curve must equal<nbsp/>1.
+        </p>
+      </li>
+      <li>
+        <p>
+          As with any distribution,
+          one can calculate the mean and standard deviation of a probability distribution.
+          In the context of a probability distribution,
+          the <term>mean</term> and <term>standard deviation</term>
+          describe the average and the typical deviation from the average,
+          respectively,
+          after many, many repetitions of the chance process.
+        </p>
+      </li>
+      <li>
+        <p>
+          A probability distribution can be summarized by its
+          <term>center</term> (mean, median),
+          <term>spread</term> (SD, IQR), and <term>shape</term>
+          (right skewed, left skewed, approximately symmetric).
+        </p>
+      </li>
+      <li>
+        <p>
+          Adding a constant to every value in a probability distribution adds that value to the mean,
+          but it does not affect the standard deviation.
+          When multiplying every value by a constant,
+          this multiplies the mean by the constant and it multiplies the standard deviation by the absolute value of the constant.
+        </p>
+      </li>
+      <li>
+        <p>
+          The mean of the sum of two random variables equals the sum of the means.
+          However, this is not true for standard deviations.
+          Instead, when finding the standard deviation of a sum or difference of random variables,
+          take the square root of the sum of each of the standard deviations squared.
+        </p>
+      </li>
+    </ul>
+  </p>
+  <p>
+    The study of probability is useful for measuring uncertainty and assessing risk.
+    In addition,
+    probability serves as the foundation for inference,
+    providing a framework for evaluating when an outcome falls outside of the range of what would be expected by chance alone.
+  </p>
+</subsection>
+</section>

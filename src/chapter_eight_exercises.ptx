@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xml:id="chapter_eight_exercises">
+<title>Chapter exercises</title>
+
+<p></p> <!-- This makes the file schema compliant. Why? -->
+
+<exercises>
+  <exercise><!--  #39 -->
+  <title>True / False</title>
+    <statement>
+      <p>
+        Determine if the following statements are true or false. If false, explain why.
+        <ol>
+          <li>
+            <p>
+              A correlation coefficient of -0.90 indicates a stronger linear relationship than a correlation of 0.5.
+            </p>
+          </li>
+          <li>
+            <p>
+              Correlation is a measure of the association between any two variables.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              True.
+            </p>
+          </li>
+          <li>
+            <p>
+              False, correlation is a measure of the linear association between any two numerical variables.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise><!--  #40 -->
+  <title>Cats, Part II</title>
+    <statement>
+      <p>
+        <xref ref="cat_body_heart_reg"></xref> presents regression output from a model for predicting the heart weight (in g) of cats from their body weight (in kg). The coefficients are estimated using a dataset of 144 domestic cat. The model output is also provided below.
+      </p>
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor" halign="right">
+            <cell></cell>
+            <cell>Estimate</cell>
+            <cell>Std. Error</cell>
+            <cell>t value</cell>
+            <cell>Pr<m>(\gt|t|)</m></cell>
+          </row>
+          <row halign="right">
+            <cell>(Intercept)</cell>
+            <cell>-0.357</cell>
+            <cell>0.692</cell>
+            <cell>-0.515</cell>
+            <cell>0.607</cell>
+          </row>
+          <row bottom="minor" halign="right">
+            <cell>body wt</cell>
+            <cell>4.034</cell>
+            <cell>0.250</cell>
+            <cell>16.119</cell>
+            <cell>0.000</cell>
+          </row>
+          <row bottom="minor">
+            <cell><m>s = 1.452</m></cell>
+            <cell></cell>
+            <cell><m>R^2 = 64.66</m>%</cell>
+            <cell></cell>
+            <cell><m>R^2_{adj} = 64.41</m>%</cell>
+          </row>
+        </tabular>
+      <p>
+        <ol>
+          <li>
+            <p>
+              We see that the point estimate for the slope is positive. What are the hypotheses for evaluating whether body weight is positively associated with heart weight in cats?
+            </p>
+          </li>
+          <li>
+            <p>
+              State the conclusion of the hypothesis test from part (a) in context of the data.
+            </p>
+          </li>
+          <li>
+            <p>
+              Calculate a 95% confidence interval for the slope of body weight, and interpret it in context of the data.
+            </p>
+          </li>
+          <li>
+            <p>
+              Do your results from the hypothesis test and the confidence interval agree? Explain.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise><!--  #41 -->
+  <title>Nutrition at Starbucks, Part II</title>
+    <statement>
+      <p>
+        <xref ref="starbucks_cals_carbos"></xref> introduced a data set on nutrition information on Starbucks food menu items. Based on the scatterplot and the residual plot provided, describe the relationship between the protein content and calories of these menu items, and determine if a simple linear model is appropriate to predict amount of protein from the number of calories.
+      </p>
+      <image width="50%" source="images/regression/starbucks_cals_protein.png"/>
+    </statement>
+    <solution>
+      <p>
+        There is an upwards trend. However, the variability is higher for higher calorie counts, and it looks like there might be two clusters of observations above and below the line on the right, so we should be cautious about fitting a linear model to these data.
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise><!--  #42 -->
+  <title>Helmets and lunches</title>
+    <statement>
+      <p>
+        The scatterplot shows the relationship between socioeconomic status measured as the percentage of children in a neighborhood receiving reduced-fee lunches at school (<c>lunch</c>) and the percentage of bike riders in the neighborhood wearing helmets (<c>helmet</c>). The average percentage of children receiving reduced-fee lunches is 30.8% with a standard deviation of 26.7% and the average percentage of bike riders wearing helmets is 38.8% with a standard deviation of 16.9%.
+      </p>
+      <image width="50%" source="images/regression/helmet_lunch.png"/>
+      <p>
+        <ol>
+          <li>
+            <p>
+              If the <m>R^2</m> for the least-squares regression line for these data is 72%, what is the correlation between <c>lunch</c> and <c>helmet</c>?
+            </p>
+          </li>
+          <li>
+            <p>
+              Calculate the slope and intercept for the least-squares regression line for these data.
+            </p>
+          </li>
+          <li>
+            <p>
+              Interpret the intercept of the least-squares regression line in the context of the application.
+            </p>
+          </li>
+          <li>
+            <p>
+              Interpret the slope of the least-squares regression line in the context of the application.
+            </p>
+          </li>
+          <li>
+            <p>
+              What would the value of the residual be for a neighborhood where 40% of the children receive reduced-fee lunches and 40% of the bike riders wear helmets? Interpret the meaning of this residual in the context of the application.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+
+
+  <exercise><!--  #43 -->
+  <title>Match the correlation, Part III</title>
+    <statement>
+      <p>
+        Match each correlation to the corresponding scatterplot.
+      </p>
+      <sidebyside widths="40% 40%">
+        <image source="images/regression/scatter_1.png"/>
+        <image source="images/regression/scatter_2.png"/>
+      </sidebyside>
+      <sidebyside widths="40% 40%">
+        <image source="images/regression/scatter_3.png"/>
+        <image source="images/regression/scatter_4.png"/>
+      </sidebyside>
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>r=-0.72</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>r=0.07</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>r=0.86</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>r=0.99</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>r =-0.72 \rightarrow (2)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>r = 0.07 \rightarrow (4)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>r = 0.86 \rightarrow (1)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>r = 0.99 \rightarrow (3)</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+
+  <exercise><!--  #44 -->
+  <title>Rate my professor</title>
+    <statement>
+      <p>
+        Many college courses conclude by giving students the opportunity to evaluate the course and the instructor anonymously. However, the use of these student evaluations as an indicator of course quality and teaching effectiveness is often criticized because these measures may reflect the infuence of non-teaching related characteristics, such as the physical appearance of the instructor. Researchers at University of Texas, Austin collected data on teaching evaluation score (higher score means better) and standardized beauty score (a score of 0 means average, negative score means below average, and a positive score means above average) for a sample of 463 professors.<fn>Daniel S Hamermesh and Amy Parker. <q>Beauty in the classroom: Instructors' pulchritude and putative pedagogical productivity</q>. In: <em>Economics of Education Review</em> 24.4 (2005), pp. 369-376.</fn> The scatterplot below shows the relationship between these variables, and regression output is provided for predicting teaching evaluation score from beauty score.
+      </p>
+      <image width="50%" source="images/regression/rate_my_prof_eval_beauty.png"/>
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell>Estimate</cell>
+            <cell>Std. Error</cell>
+            <cell>t value</cell>
+            <cell>Pr<m>(\gt|t|)</m></cell>
+          </row>
+          <row>
+            <cell>(Intercept)</cell>
+            <cell halign="right" bottom="minor">4.010</cell>
+            <cell halign="right">0.0255</cell>
+            <cell halign="right">157.21</cell>
+            <cell halign="right">0.0000</cell>
+          </row>
+          <row bottom="minor">
+            <cell right="minor">beauty</cell>
+            <cell bottom="minor" right="minor"></cell>
+            <cell halign="right">0.0322</cell>
+            <cell halign="right">4.13</cell>
+            <cell halign="right">0.0000</cell>
+          </row>
+        </tabular>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Given that the average standardized beauty score is -0.0883 and average teaching evaluation score is 3.9983, calculate the slope. Alternatively, the slope may be computed using just the information provided in the model summary table.
+            </p>
+          </li>
+          <li>
+            <p>
+              Do these data provide convincing evidence that the slope of the relationship between teaching evaluation and beauty is positive? Explain your reasoning.
+            </p>
+          </li>
+          <li>
+            <p>
+              List the conditions required for linear regression and check if each one is satisfied for this model based on the following diagnostic plots.
+            </p>
+            <sidebyside>
+              <image width="30%" source="images/regression/beauty_eval_res.png"/>
+              <image width="30%" source="images/regression/beauty_eval_res_hist.png"/>
+              <image width="30%" source="images/regression/beauty_eval_res_order.png"/>
+            </sidebyside>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise><!--  #45 -->
+  <title>Trees</title>
+    <statement>
+      <p>
+        The scatterplots below show the relationship between height, diameter, and volume of timber in 31 felled black cherry trees. The diameter of the tree is measured 4.5 feet above the ground.<fn>Source: R Dataset, <url href="stat.ethz.ch/R-manual/R-patched/library/datasets/html/trees.html"> stat.ethz.ch/R-manual/R-patched/library/datasets/html/trees.html</url>.</fn>
+      </p>
+      <sidebyside>
+        <image width="80%" source="images/regression/trees_volume_height.png"/>
+        <image width="80%" source="images/regression/trees_volume_diameter.png"/>
+      </sidebyside>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Describe the relationship between volume and height of these trees.
+            </p>
+          </li>
+          <li>
+            <p>
+              Describe the relationship between volume and diameter of these trees.
+            </p>
+          </li>
+          <li>
+            <p>
+              Suppose you have height and diameter measurements for another black cherry tree. Which of these variables would be preferable to use to predict the volume of timber in this tree using a simple linear regression model? Explain your reasoning.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              There is a weak-to-moderate, positive, linear association between height and volume. There also appears to be some non-constant variance since the volume of trees is more variable for taller trees.
+            </p>
+          </li>
+          <li>
+            <p>
+              There is a very strong, positive association between diameter and volume. The relationship may include slight curvature.
+            </p>
+          </li>
+          <li>
+            <p>
+              Since the relationship is stronger between volume and diameter, using diameter would be preferred. However, as mentioned in part (b), the relationship between volume and diameter may not be, and so we may benefit from a model that properly accounts for nonlinearity.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+</exercises>
+</section>

@@ -1,0 +1,1714 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xml:id="oneWayChiSquare">
+  <title>Testing for goodness of fit using chi-square</title>
+  <introduction>
+    <p>
+      In this section,
+      we develop a method for assessing a null model when the data take on more than two categories,
+      such as yes/no/maybe instead of simply yes/no.
+      This allows us to answer questions such as the following:
+      <ul>
+        <li>
+          <p>
+            Are juries representative of the population in terms of race/ethnicity,
+            or is there a bias in jury selection?
+          </p>
+        </li>
+        <li>
+          <p>
+            Is the color distribution of actual M&amp;M's consistent with what was reported on the Mars website?
+          </p>
+        </li>
+        <li>
+          <p>
+            Do people choose rock, paper,
+            scissors with the same likelihood,
+            or is one choice favored over another?
+          </p>
+        </li>
+      </ul>
+    </p>
+  </introduction>
+  <subsection>
+    <objectives>
+    <title>Learning objectives</title>
+      <ol>
+        <li>
+          <p>
+            Calculate the expected counts and degrees of freedom for a one-way table.
+          </p>
+        </li>
+        <li>
+          <p>
+            Calculate and interpret the test statistic <m>\chi^2</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            State and verify whether or not the conditions for the chi-square goodness of fit are met.
+          </p>
+        </li>
+        <li>
+          <p>
+            Carry out a complete hypothesis test to evaluate if the distribution of a categorical variable follows a hypothesized distribution.
+          </p>
+        </li>
+        <li>
+          <p>
+            Understand how the degrees of freedom affect the shape of the chi-square curve.
+          </p>
+        </li>
+      </ol>
+    </objectives>
+  </subsection>
+  <subsection>
+    <title>Creating a test statistic for one-way tables</title>
+    <p>
+      Data is collected from a random sample of 275 jurors in a small county.
+      Jurors identified their racial group,
+      as shown in <xref ref="juryRepresentationAndCityRepresentationForRace"></xref>,
+      and we would like to determine if these jurors are racially representative of the population.
+      If the jury is representative of the population,
+      then the proportions in the sample should roughly reflect the population of eligible jurors,
+      i.e. registered voters.
+    </p>
+    <table xml:id="juryRepresentationAndCityRepresentationForRace">
+      <title>Representation by race in a city's juries and population.</title>
+      <tabular>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row bottom="minor">
+          <cell>Race/Ethnicity</cell>
+          <cell></cell>
+          <cell>White</cell>
+          <cell>Black</cell>
+          <cell>Hispanic</cell>
+          <cell>Other</cell>
+          <cell></cell>
+          <cell>Total</cell>
+        </row>
+        <row>
+          <cell>Representation in juries</cell>
+          <cell></cell>
+          <cell halign="center">205</cell>
+          <cell halign="center">26</cell>
+          <cell halign="center">25</cell>
+          <cell halign="center">19</cell>
+          <cell></cell>
+          <cell halign="center">275</cell>
+        </row>
+        <row bottom="minor">
+          <cell>Registered voters</cell>
+          <cell></cell>
+          <cell halign="center">0.72</cell>
+          <cell halign="center">0.07</cell>
+          <cell halign="center">0.12</cell>
+          <cell halign="center">0.09</cell>
+          <cell></cell>
+          <cell halign="center">1.00</cell>
+        </row>
+      </tabular>
+    </table>
+    <p>
+      While the proportions in the juries do not precisely represent the population proportions,
+      it is unclear whether these data provide convincing evidence that the sample is not representative.
+      If the jurors really were randomly sampled from the registered voters,
+      we might expect small differences due to chance.
+      However, unusually large differences may provide convincing evidence that the juries were not representative.
+    </p>
+    <example>
+      <statement>
+        <p>
+          Of the people in the city, 275 served on a jury.
+          If the individuals are randomly selected to serve on a jury,
+          about how many of the 275 people would we expect to be white?
+          How many would we expect to be black?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          About 72% of the population is white,
+          so we would expect about 72% of the jurors to be white:
+          <m>0.72\times 275 = 198</m>.
+        </p>
+        <p>
+          Similarly, we would expect about 7% of the jurors to be black,
+          which would correspond to about <m>0.07\times 275 = 19.25</m> black jurors.
+        </p>
+      </solution>
+    </example>
+    <exercise>
+      <statement>
+        <p>
+          Twelve percent of the population is Hispanic and 9% represent other races.
+          How many of the 275 jurors would we expect to be Hispanic or from another race?
+          Answers can be found in <xref ref="expectedJuryRepresentationIfNoBias"></xref>.
+        </p>
+      </statement>
+    </exercise>
+    <table xml:id="expectedJuryRepresentationIfNoBias">
+      <title>Actual and expected make-up of the jurors.</title>
+      <tabular>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row bottom="minor">
+          <cell>Race/Ethnicity</cell>
+          <cell></cell>
+          <cell halign="center">White</cell>
+          <cell halign="center">Black</cell>
+          <cell halign="center">Hispanic</cell>
+          <cell halign="center">Other</cell>
+          <cell></cell>
+          <cell>Total</cell>
+        </row>
+        <row>
+          <cell>Observed data</cell>
+          <cell></cell>
+          <cell halign="center">205</cell>
+          <cell halign="center">26</cell>
+          <cell halign="center">25</cell>
+          <cell halign="center">19</cell>
+          <cell></cell>
+          <cell>275</cell>
+        </row>
+        <row bottom="minor">
+          <cell>Expected counts</cell>
+          <cell></cell>
+          <cell halign="center">198</cell>
+          <cell halign="center">19.25</cell>
+          <cell halign="center">33</cell>
+          <cell halign="center">24.75</cell>
+          <cell></cell>
+          <cell>275</cell>
+        </row>
+      </tabular>
+    </table>
+    <p>
+      The sample proportion represented from each race among the 275 jurors was not a precise match for any ethnic group.
+      While some sampling variation is expected,
+      we would expect the sample proportions to be fairly similar to the population proportions if there is no bias on juries.
+      We need to test whether the differences are strong enough to provide convincing evidence that the jurors are not a random sample.
+      These ideas can be organized into hypotheses:
+      <ul>
+        <li>
+          <p>
+            <m>H_{0}</m>: The jurors are a random sample,
+            i.e. there is no racial/ethnic bias in who serves on a jury,
+            and the observed counts reflect natural sampling fluctuation.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>H_{A}</m>: The jurors are not randomly sampled,
+            i.e. there is racial/ethnic bias in juror selection.
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      To evaluate these hypotheses,
+      we quantify how different the observed counts are from the expected counts.
+      Strong evidence for the alternative hypothesis would come in the form of unusually large deviations in the groups from what would be expected based on sampling variation alone.
+    </p>
+  </subsection>
+  <subsection xml:id="chiSquareTestStatistic">
+    <title>The chi-square test statistic</title>
+    <p>
+      In previous hypothesis tests,
+      we constructed a test statistic of the following form:
+      <me>
+        Z = \frac{\text{ point estimate }  - \text{ null value } }{SE \text{ of point estimate } }
+      </me>
+    </p>
+    <p>
+      This construction was based on (1) identifying the difference between a point estimate and an expected value if the null hypothesis was true,
+      and (2) standardizing that difference using the standard error of the point estimate.
+      These two ideas will help in the construction of an appropriate test statistic for count data.
+    </p>
+    <p>
+      In this example we have four categories:
+      White, Black, Hispanic, and other.
+      Because we have four values rather than just one or two,
+      we need a new tool to analyze the data.
+      Our strategy will be to find a test statistic that measures the overall deviation between the observed and the expected counts.
+      We first find the difference between the observed and expected counts for the four groups:
+      <md>
+        <mrow>\amp \amp \text{ White }  \amp \amp  \text{ Black }  \amp \amp  \text{ Hispanic }  \amp \amp  \text{ Other }</mrow>
+        <mrow>\text{ observed - expected } \amp \amp  205-198 \amp \amp  26-19.25 \amp \amp  25-33 \amp \amp  19-24.75</mrow>
+      </md>
+    </p>
+    <p>
+      Next, we square the differences:
+      <md>
+        <mrow>\amp \amp \text{ White }  \amp \amp  \text{ Black }  \amp \amp  \text{ Hispanic }  \amp \amp  \text{ Other }</mrow>
+        <mrow>\text{ (observed - expected) } ^2 \amp \amp  (205-198)^2 \amp \amp  (26-19.25)^2 \amp \amp  (25-33)^2 \amp \amp  (19-24.75)^2</mrow>
+      </md>
+    </p>
+    <p>
+      We must standardize each term.
+      To know whether the squared difference is large,
+      we compare it to what was expected.
+      If the expected count was 5, a squared difference of 25 is very large.
+      However, if the expected count was 1,000,
+      a squared difference of 25 is very small.
+      We will divide each of the squared differences by the corresponding expected count.
+      <md>
+        <mrow>\amp \amp \text{ White }  \amp \amp  \text{ Black }  \amp \amp  \text{ Hispanic }  \amp \amp  \text{ Other }</mrow>
+        <mrow>\frac{\text{ (observed - expected) } ^2}{\text{ expected } } \amp \amp  \frac{(205-198)^2}{198} \amp \amp  \frac{(26-19.25)^2 }{19.25} \amp \amp  \frac{(25-33)^2}{33} \amp \amp  \frac{(19-24.75)^2}{24.75}</mrow>
+      </md>
+    </p>
+    <p>
+      Finally, to arrive at the overall measure of deviation between the observed counts and the expected counts,
+      we add up the terms.
+      <md>
+        <mrow>\chi^2 \amp = \sum{\frac{\text{ (observed - expected) } ^2}{\text{ expected } }}</mrow>
+        <mrow>\amp = \frac{(205-198)^2}{198} + \frac{(26-19.25)^2 }{19.25} + \frac{(25-33)^2}{33} + \frac{(19-24.75)^2}{24.75}</mrow>
+      </md>
+    </p>
+    <p>
+      We can write an equation for <m>\chi^2</m> using the observed counts and expected counts:
+      <idx><h>data</h><h>racial make-up of jury</h></idx>
+      <md>
+        <mrow>\chi^2 \amp = \frac {\text{\((\text{ observed count }_1 - \text{ expected count }_1)^2\)} } {\text{\(\text{ expected count }_1\)} } + \dots + \frac {\text{\((\text{ observed count }_4 - \text{ expected count }_4)^2\)} } {\text{\(\text{ expected count }_4\)} }</mrow>
+      </md>
+    </p>
+    <p>
+      The final number <m>\chi^2</m> summarizes how strongly the observed counts tend to deviate from the null counts.
+    </p>
+    <p>
+      In <xref ref="pValueForAChiSquareTest"></xref>,
+      we will see that if the null hypothesis is true,
+      then <m>\chi^2</m> follows a new distribution called a
+      <em>chi-square distribution</em>.
+      Using this distribution,
+      we will be able to obtain a p-value to evaluate whether there appears to be racial/ethnic bias in the juries for the city we are considering.
+    </p>
+  </subsection>
+  <subsection xml:id="chisqtail">
+    <title>The chi-square distribution and finding areas</title>
+    <p>
+      The <term>chi-square distribution</term>
+      is sometimes used to characterize data sets and statistics that are always positive and typically right skewed.
+      Recall a normal distribution had two parameters <mdash/> mean and standard deviation <mdash/> that could be used to describe its exact characteristics.
+      The chi-square distribution has just one parameter called
+      <term>degrees of freedom (df)</term>,
+          <idx><h>degrees of freedom (df)</h><h>chi-square</h></idx>
+      which influences the shape, center,
+      and spread of the distribution.
+    </p>
+    <exercise xml:id="exerChiSquareDistributionDescriptionWithMoreDOF">
+      <statement>
+        <p>
+          <xref ref="chiSquareDistributionWithInceasingDF"></xref>
+          shows three chi-square distributions. (a) How does the center of the distribution change when the degrees of freedom is larger? (b) What about the variability (spread)? (c) How does the shape change?
+          <fn>(a) The center becomes larger.
+            If we look carefully,
+            we can see that the center of each distribution is equal to the distribution's degrees of freedom.
+            (b) The variability increases as the degrees of freedom increases.
+            (c) The distribution is very strongly right skewed for <m>df=2</m>,
+            and then the distributions become more symmetric for the larger degrees of freedom <m>df=4</m> and <m>df=9</m>.
+            In fact, as the degrees of freedom increase,
+            the <m>\chi^2</m> distribution approaches a normal distribution.
+          </fn>
+        </p>
+      </statement>
+    </exercise>
+    <figure xml:id="chiSquareDistributionWithInceasingDF">
+      <caption>Three chi-square distributions with varying degrees of freedom.</caption>
+      <image width="60%" source="images/inference_props/chiSquareDistributionWithInceasingDF.png" />
+    </figure>
+    <p>
+      <xref ref="chiSquareDistributionWithInceasingDF"></xref>
+      and <xref ref="exerChiSquareDistributionDescriptionWithMoreDOF"></xref>
+      demonstrate three general properties of chi-square distributions as the degrees of freedom increases:
+      the distribution becomes more symmetric,
+      the center moves to the right,
+      and the variability inflates.
+    </p>
+    <p>
+      Our principal interest in the chi-square distribution is the calculation of p-values, which
+      (as we have seen before)
+      is related to finding the relevant area in the tail of a distribution.
+      To do so, a new table is needed:
+      the <term>chi-square table</term>,
+      partially shown in <xref ref="chiSquareProbabilityTableShort"></xref>.
+      A more complete table is presented in <xref ref="chiSquareProbabilityTable"></xref>.
+      This table is very similar to the <m>t</m>-table from <xref ref="oneSampleMeansWithTDistribution"></xref>
+      and <xref ref="theTDistributionForTheDifferenceOfTwoMeans"></xref>:
+      we identify a range for the area,
+      and we examine a particular row for distributions with different degrees of freedom.
+      One important difference from the <m>t</m>-table is that the chi-square table only provides upper tail values.
+    </p>
+    <table xml:id="chiSquareProbabilityTableShort">
+      <title>A section of the chi-square table. A complete table is in <xref ref="chiSquareProbabilityTable"></xref>.</title>
+      <tabular>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row bottom="minor">
+          <cell right="minor" colspan="2">Upper tail</cell>
+          <cell>0.3</cell>
+          <cell>0.2</cell>
+          <cell>0.1</cell>
+          <cell right="minor">0.05</cell>
+          <cell>0.02</cell>
+          <cell>0.01</cell>
+          <cell>0.005</cell>
+          <cell right="minor">0.001</cell>
+        </row>
+        <row>
+          <cell halign="left">df</cell>
+          <cell halign="right" right="minor">1</cell>
+          <cell>1.07</cell>
+          <cell>1.64</cell>
+          <cell>2.71</cell>
+          <cell right="minor">3.84</cell>
+          <cell>5.41</cell>
+          <cell>6.63</cell>
+          <cell>7.88</cell>
+          <cell right="minor">10.83</cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell halign="right" right="minor">2</cell>
+          <cell>2.41</cell>
+          <cell><em>3.22</em></cell>
+          <cell><em>4.61</em></cell>
+          <cell right="minor">5.99</cell>
+          <cell>7.82</cell>
+          <cell>9.21</cell>
+          <cell>10.60</cell>
+          <cell right="minor">13.82</cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell halign="right" right="minor"><em>3</em></cell>
+          <cell><em>3.66</em></cell>
+          <cell><em>4.64</em></cell>
+          <cell><alert><em>6.25</em></alert></cell>
+          <cell right="minor"><em>7.81</em></cell>
+          <cell><em>9.84</em></cell>
+          <cell><em>11.34</em></cell>
+          <cell><em>12.84</em></cell>
+          <cell right="minor"><em>16.27</em></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell halign="right" right="minor">4</cell>
+          <cell>4.88</cell>
+          <cell>5.99</cell>
+          <cell>7.78</cell>
+          <cell right="minor">9.49</cell>
+          <cell>11.67</cell>
+          <cell>13.28</cell>
+          <cell>14.86</cell>
+          <cell right="minor">18.47</cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell halign="right" right="minor">5</cell>
+          <cell>6.06</cell>
+          <cell>7.29</cell>
+          <cell>9.24</cell>
+          <cell right="minor">11.07</cell>
+          <cell>13.39</cell>
+          <cell>15.09</cell>
+          <cell>16.75</cell>
+          <cell right="minor">20.52</cell>
+        </row>
+        <row>
+       	  <cell></cell>
+          <cell halign="right" right="minor">6</cell>
+          <cell>7.23</cell>
+          <cell>8.56</cell>
+          <cell>10.64</cell>
+          <cell right="minor">12.59</cell>
+          <cell>15.03</cell>
+          <cell>16.81</cell>
+          <cell>18.55</cell>
+          <cell right="minor">22.46</cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell halign="right" right="minor">7</cell>
+          <cell>8.38</cell>
+          <cell>9.80</cell>
+          <cell>12.02</cell>
+          <cell right="minor">14.07</cell>
+          <cell>16.62</cell>
+          <cell>18.48</cell>
+          <cell>20.28</cell>
+          <cell right="minor">24.32</cell>
+        </row>
+      </tabular>
+    </table>
+    <example>
+      <statement>
+        <p>
+          <xref ref="chiSquareAreaAbove6Point25WithDF3"></xref>
+          shows a chi-square distribution with 3 degrees of freedom and an upper shaded tail starting at 6.25.
+          Use <xref ref="chiSquareProbabilityTableShort"></xref> to estimate the shaded area.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          This distribution has three degrees of freedom,
+          so only the row with 3 degrees of freedom (df) is relevant.
+          This row has been <em>italicized</em> in the table.
+          Next, we see that the value <mdash/> 6.25 <mdash/> falls in the column with upper tail area 0.1.
+          That is, the shaded upper tail of <xref ref="chiSquareAreaAbove6Point25WithDF3"></xref> has area 0.1.
+        </p>
+      </solution>
+    </example>
+    <figure xml:id="six_chi_square_areas">
+      <caption><xref ref="chiSquareAreaAbove6Point25WithDF3"></xref> is a Chi-square distribution with 3 degrees of freedom, area above 6.25 shaded. <xref ref="chiSquareAreaAbove4Point3WithDF2"></xref> is 2 degrees of freedom, area above 4.3 shaded. <xref ref="chiSquareAreaAbove5Point1WithDF5"></xref> is 5 degrees of freedom, area above 5.1 shaded. <xref ref="chiSquareAreaAbove11Point7WithDF7"></xref> is 7 degrees of freedom, area above 11.7 shaded. <xref ref="chiSquareAreaAbove10WithDF4"></xref> is 4 degrees of freedom, area above 10 shaded. <xref ref="chiSquareAreaAbove9Point21WithDF3"></xref> is 3 degrees of freedom, area above 9.21 shaded.</caption>
+      <sbsgroup>
+      	<sidebyside>
+      		<figure xml:id="chiSquareAreaAbove6Point25WithDF3">
+      			<caption></caption>
+      			<image width="47%" source="images/inference_props/chiSquareAreaAbove6Point25WithDF3.png" /> 
+      		</figure>
+      		<figure xml:id="chiSquareAreaAbove4Point3WithDF2">
+      			<caption></caption>
+      			<image width="47%" source="images/inference_props/chiSquareAreaAbove4Point3WithDF2.png" />
+      		</figure>
+      	</sidebyside>
+      	<sidebyside>
+      		<figure xml:id="chiSquareAreaAbove5Point1WithDF5">
+      			<caption></caption>
+      			<image width="47%" source="images/inference_props/chiSquareAreaAbove5Point1WithDF5.png" />
+      		</figure>
+      		<figure xml:id="chiSquareAreaAbove11Point7WithDF7">
+      			<caption></caption>
+      			<image width="47%" source="images/inference_props/chiSquareAreaAbove11Point7WithDF7.png" />
+      		</figure>
+      	</sidebyside>
+      	<sidebyside>
+      		<figure xml:id="chiSquareAreaAbove10WithDF4">
+      			<caption></caption>
+      			<image width="47%" source="images/inference_props/chiSquareAreaAbove10WithDF4.png" />
+      		</figure>
+      		<figure xml:id="chiSquareAreaAbove9Point21WithDF3">
+      			<caption></caption>
+      			<image width="47%" source="images/inference_props/chiSquareAreaAbove9Point21WithDF3.png" />
+      		</figure>
+      	</sidebyside>
+      </sbsgroup>
+    </figure>
+    <example>
+      <statement>
+        <p>
+          We rarely observe the <em>exact</em> value in the table.
+          For instance,
+          <xref ref="chiSquareAreaAbove4Point3WithDF2"></xref>
+          shows the upper tail of a chi-square distribution with 2 degrees of freedom.
+          The lower bound for this upper tail is at 4.3, which does not fall in <xref ref="chiSquareProbabilityTableShort"></xref>.
+          Find the approximate tail area.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The cutoff 4.3 falls between the second and third columns in the 2 degrees of freedom row.
+          Because these columns correspond to tail areas of 0.2 and 0.1, we can be certain that the area shaded in <xref ref="chiSquareAreaAbove4Point3WithDF2"></xref> is between 0.1 and 0.2.
+        </p>
+      </solution>
+    </example>
+    <p>
+      Using a calculator or statistical software allows us to get more precise areas under the chi-square curve than we can get from the table alone.
+    </p>
+    <assemblage xml:id="chi_upper_tail_prob_ti">
+      <title>TI-84: Finding an upper tail area under the chi-square curve</title>
+      <p>
+        Use the <m>\chi^2</m><c>cdf</c> command to find areas under the chi-square curve.
+        <ol>
+          <li>
+            <p>
+              Hit <c>2ND</c> <c>VARS</c> (i.e. <c>DISTR</c>).
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose <c>8:</c><m>\chi^2</m><c>cdf</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Enter the lower bound, which is generally the chi-square value.
+            </p>
+          </li>
+          <li>
+            <p>
+              Enter the upper bound.
+              Use a large number, such as 1000.
+            </p>
+          </li>
+          <li>
+            <p>
+              Enter the degrees of freedom.
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose <c>Paste</c> and hit <c>ENTER</c>.
+            </p>
+          </li>
+        </ol>
+      </p>
+      <p>
+        TI-83: Do steps 1-2, then type the lower bound,
+        upper bound, and degrees of freedom separated by commas. e.g.
+        <m>\chi^2</m><c>cdf(5, 1000, 3)</c>,
+        and hit <c>ENTER</c>.
+      </p>
+      <sidebyside>
+        <video width="60%" preview="generic" youtube="ne7gqnOult8" />
+      </sidebyside>
+    </assemblage>
+    <assemblage xml:id="chi_upper_tail_prob_casio">
+      <title>Casio fx-9750GII: Finding an upper tail area under the chi-sq. curve</title>
+      <p>
+      <ol>
+        <li>
+          <p>
+            Navigate to <c>STAT</c> (<c>MENU</c> button,
+            then hit the <c>2</c> button or select <c>STAT</c>).
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose the <c>DIST</c> option (<c>F5</c> button).
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose the <c>CHI</c> option (<c>F3</c> button).
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose the <c>Ccd</c> option (<c>F2</c> button).
+          </p>
+        </li>
+        <li>
+          <p>
+            If necessary,
+            select the <c>Var</c> option (<c>F2</c> button).
+          </p>
+        </li>
+        <li>
+          <p>
+            Enter the <c>Lower</c> bound
+            (generally the chi-square value).
+          </p>
+        </li>
+        <li>
+          <p>
+            Enter the <c>Upper</c> bound
+            (use a large number, such as 1000).
+          </p>
+        </li>
+        <li>
+          <p>
+            Enter the degrees of freedom, <c>df</c>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Hit the <c>EXE</c> button.
+          </p>
+        </li>
+      </ol>
+  	</p>
+    <sidebyside>
+      <video width="60%" preview="generic" youtube="RQGUJhDNKvU" />
+    </sidebyside>
+    
+    </assemblage>
+    <exercise>
+      <statement>
+        <p>
+          <xref ref="chiSquareAreaAbove5Point1WithDF5"></xref>
+          shows an upper tail for a chi-square distribution with 5 degrees of freedom and a cutoff of 5.1.
+          Find the tail area using a calculator.
+          <fn>Use a lower bound of <m>5.1</m>,
+          an upper bound of 1000, and <m>df = 5</m>.
+          The upper tail area is 0.4038.</fn>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <xref ref="chiSquareAreaAbove11Point7WithDF7"></xref>
+          shows a cutoff of 11.7 on a chi-square distribution with 7 degrees of freedom.
+          Find the area of the upper tail.
+          <fn>The area is 0.1109.</fn>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <xref ref="chiSquareAreaAbove10WithDF4"></xref>
+          shows a cutoff of 10 on a chi-square distribution with 4 degrees of freedom.
+          Find the area of the upper tail.
+          <fn>The area is 0.4043.</fn>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <xref ref="chiSquareAreaAbove9Point21WithDF3"></xref>
+          shows a cutoff of 9.21 with a chi-square distribution with 3 df.
+          Find the area of the upper tail.
+          <fn>The area is 0.0266.</fn>
+        </p>
+      </statement>
+    </exercise>
+  </subsection>
+  <subsection xml:id="pValueForAChiSquareTest">
+    <title>Finding a p-value for a chi-square distribution</title>
+    <p>
+          <idx><h>data</h><h>racial make-up of jury</h></idx>
+      In <xref ref="chiSquareTestStatistic"></xref>, we identified a new test statistic (<m>\chi^2</m>) within the context of assessing whether there was evidence of racial/ethnic bias in how jurors were sampled.
+      The null hypothesis represented the claim that jurors were randomly sampled and there was no racial/ethnic bias.
+      The alternative hypothesis was that there was racial/ethnic bias in how the jurors were sampled.
+    </p>
+    <p>
+      We determined that a large <m>\chi^2</m> value would suggest strong evidence favoring the alternative hypothesis:
+      that there was racial/ethnic bias.
+      However, we could not quantify what the chance was of observing such a large test statistic (<m>\chi^2=5.89</m>) if the null hypothesis actually was true.
+      This is where the chi-square distribution becomes useful.
+      If the null hypothesis was true and there was no racial/ethnic bias,
+      then <m>\chi^2</m> would follow a chi-square distribution,
+      with three degrees of freedom in this case.
+      Under certain conditions,
+      the statistic <m>\chi^2</m> follows a chi-square distribution with <m>k-1</m> degrees of freedom,
+      where <m>k</m> is the number of bins or categories of the variable.
+    </p>
+    <example>
+      <statement>
+        <p>
+          How many categories were there in the juror example?
+          How many degrees of freedom should be associated with the chi-square distribution used for <m>\chi^2</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          In the jurors example, there were <m>k=4</m> categories:
+          White, Black, Hispanic, and other.
+          According to the rule above,
+          the test statistic <m>\chi^2</m> should then follow a chi-square distribution with <m>k-1 = 3</m> degrees of freedom if <m>H_0</m> is true.
+        </p>
+      </solution>
+    </example>
+    <p>
+      Just like we checked sample size conditions to use the normal model in earlier sections,
+      we must also check a sample size condition to safely model <m>\chi^2</m> with a chi-square distribution.
+      Each expected count must be at least 5.
+      In the juror example, the expected counts were 198, 19.25, 33,
+      and 24.75, all easily above 5,
+      so we can model the <m>\chi^2</m> test statistic,
+      using a chi-square distribution.
+    </p>
+    <example>
+      <statement>
+        <p>
+          If the null hypothesis is true,
+          the test statistic <m>\chi^2=5.89</m> would be closely associated with a chi-square distribution with three degrees of freedom.
+          Using this distribution and test statistic,
+          identify the p-value and state whether or not there is evidence of racial/ethnic bias in the juror selection.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The chi-square distribution and p-value are shown in <xref ref="jurorHTPValueShown"></xref>.
+          Because larger chi-square values correspond to stronger evidence against the null hypothesis,
+          we shade the upper tail to represent the p-value.
+          Using a calculator,
+          we look at the chi-square curve with 3 degrees of freedom and find the area to the right of <m>\chi^2=5.89</m>.
+          This area, which corresponds to the p-value, is equal to 0.117.
+          This p-value is larger than the default significance level of 0.05,
+          so we reject the null hypothesis.
+          In other words,
+          the data do not provide convincing evidence of racial/ethnic bias in the juror selection.
+              <idx><h>data</h><h>racial make-up of jury</h></idx>
+        </p>
+      </solution>
+    </example>
+    <figure xml:id="jurorHTPValueShown">
+      <caption>The p-value for the juror hypothesis test is shaded in the chi-square distribution with <m>df=3</m>.</caption>
+      <image width="60%" source="images/inference_props/jurorHTPValueShown.png" />
+    </figure>
+    <p>
+      The test that we just carried out regarding jury selection is known as the
+      <em><m>\chi^2</m> goodness of fit test</em><idx><h>chi-square goodness of fit test@<m>\chi^2</m> goodness of fit test</h></idx>.
+      It is called
+      <q>goodness of fit</q>
+      because we test whether or not the proposed or expected distribution is a good fit for the observed data.
+    </p>
+    <assemblage>
+      <title>Chi-square goodness of fit test for one-way table</title>
+      <p>
+        Suppose we are to evaluate whether there is convincing evidence that a set of observed counts <m>O_1</m>,
+        <m>O_2</m>, ..., <m>O_k</m> in <m>k</m> categories are unusually different from what might be expected under a null hypothesis.
+        Calculate the <em>expected counts</em>
+        that are based on the null hypothesis <m>E_1</m>,
+        <m>E_2</m>, ..., <m>E_k</m>.
+        If each expected count is at least 5 and the null hypothesis is true,
+        then the test statistic below follows a chi-square distribution with <m>k-1</m> degrees of freedom:
+        <md>
+          <mrow>\chi^2 = \frac{(O_1 - E_1)^2}{E_1} + \frac{(O_2 - E_2)^2}{E_2} + \cdots + \frac{(O_k - E_k)^2}{E_k}</mrow>
+        </md>
+      </p>
+      <p>
+        The p-value for this test statistic is found by looking at the upper tail of this chi-square distribution.
+        We consider the upper tail because larger values of <m>\chi^2</m> would provide greater evidence against the null hypothesis.
+      </p>
+    </assemblage>
+    <assemblage>
+      <title>Conditions for the chi-square goodness of fit test</title>
+      <p>
+        The chi-square goodness of fit test requires two assumptions.
+        The assumptions and the conditions that we check are listed below.
+        If the conditions are not met,
+        this test should not be used.
+      </p>
+      <p>
+      	<alert>Independent.</alert> The observations can be considered independent if the data come from a random process.
+        If randomly sampling from a finite population,
+        the observations can be considered independent if sampling less than 10% of the population.
+       </p>
+       <p>
+       	<alert>Sampling distribution is chi-square.</alert> In order for the <m>\chi^2</m>-statistic to follow the chi-square distribution,
+       	each particular bin or category must have at least 5 expected cases under the assumption that the null hypothesis is true.
+       </p>
+    </assemblage>
+  </subsection>
+  <subsection>
+    <title>Evaluating goodness of fit for a distribution</title>
+    <assemblage>
+      <title>Goodness of fit test for a one-way table</title>
+      <p>
+        When there is one sample and we are comparing the distribution of a categorical variable to a specified or population distribution,
+        e.g. using sample values to determine if a machine is producing M&amp;M's with the specified distribution of color,
+      </p>
+      <p>
+        <em>Identify</em>: Identify the hypotheses and the significance level,
+        <m>\alpha</m>.
+        <ul>
+          <li>
+            <p>
+              <m>H_0</m>: The distribution of [...] matches the specified or population distribution.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>H_A</m>: The distribution of [...] doesn't match the specified or population distribution.
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        <em>Choose</em>: Choose the correct test procedure and identify it by name.
+        <ul>
+          <li>
+            <p>
+              Here we choose the <em><m>\chi^2</m> goodness of fit test</em><idx><h>chi-square goodness of fit test@<m>\chi^2</m> goodness of fit test</h></idx>.
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        <em>Check</em>: Check that the test statistic follows a chi-square distribution.
+        <ol label="1">
+          <li>
+            <p>
+              Independence: Data come from a random sample or random process. If sampling without replacement, check that the sample size is less than 10% of the population size.
+            </p>
+          </li>
+          <li>
+            <p>
+              All expected counts are <m>\ge</m> 5.
+            </p>
+          </li>
+        </ol>
+      </p>
+      <p>
+        <em>Calculate</em>: Calculate the <m>\chi^2</m>-statistic,
+        <m>df</m>,
+        and p-value.
+        <ul>
+          <li>
+            <p>
+              test statistic:
+              <m>\chi^2 =\sum{ \frac{\text{ (observed } - \text{ expected } )^2}{\text{ expected } }}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>df =</m> # of categories <m>-1</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              p-value = (area to the <em>right</em>
+              of <m>\chi^2</m>-statistic with the appropriate <m>df</m>)
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p>
+        <em>Conclude</em>: Compare the p-value to <m>\alpha</m>,
+        and draw a conclusion in context.
+        <ul>
+          <li>
+            <p>
+              If the p-value is <m>\lt \alpha</m>, reject <m>H_0</m>;
+              there is sufficient evidence that [<m>H_A</m> in context].
+            </p>
+          </li>
+          <li>
+            <p>
+              If the p-value is <m>> \alpha</m>, do not reject <m>H_0</m>;
+              there is not sufficient evidence that [<m>H_A</m> in context].
+            </p>
+          </li>
+        </ul>
+      </p>
+    </assemblage>
+    <p>
+      Have you ever wondered about the color distribution of M&amp;M's<copyright />?
+      If so, then you will be glad to know that Rick Wicklin,
+      a statistician working at the statistical software company SAS, wondered about this too.
+      But he did more than wonder;
+      he decided to collect data to test whether the distribution of M&amp;M colors was consistent with the stated distribution published on the Mars website in 2008.
+      Starting at end of 2016, over the course of several weeks,
+      he collected a sample of 712 candies, or about 1.5 pounds.
+      We will investigate his results in the next example.
+      You can read about his adventure in the Quartz article cited in the footnote below.<fn><url href="https://qz.com/918008/the-color-distribution-of-mms-as-determined-by-a-phd-in-statistics/">https://qz.com/918008/the-color-distribution-of-mms-as-determined-by-a-phd-in-statistics/</url></fn>
+    </p>
+    <example>
+      <statement>
+        <p>
+          The stated color distribution of M&amp;M's on the Mars website in 2008 is shown in the table below,
+          along with the observed percentages from Rick Wicklin's sample of size 712. (See the paragraph before this example for more background.)
+        </p>
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor" halign="center">
+            <cell></cell>
+            <cell></cell>
+            <cell>Blue</cell>
+            <cell>Orange</cell>
+            <cell>Green</cell>
+            <cell>Yellow</cell>
+            <cell>Red</cell>
+            <cell>Brown</cell>
+          </row>
+          <row>
+            <cell>website percentages (2008):</cell>
+            <cell></cell>
+            <cell halign="center">24%</cell>
+            <cell halign="center">20%</cell>
+            <cell halign="center">16%</cell>
+            <cell halign="center">14%</cell>
+            <cell halign="center">13%</cell>
+            <cell halign="center">13%</cell>
+          </row>
+          <row bottom="minor">
+            <cell>observed percentages:</cell>
+            <cell></cell>
+            <cell halign="center">18.7%</cell>
+            <cell halign="center">18.7%</cell>
+            <cell halign="center">19.5%</cell>
+            <cell halign="center">14.5%</cell>
+            <cell halign="center">15.1%</cell>
+            <cell halign="center">13.5%</cell>
+          </row>
+        </tabular>
+        <p>
+          Is there evidence at the 5% significance level that the distribution of M&amp;M's in 2016 were different from the stated distribution on the website in 2008?
+          Use the five step framework to organize your work.
+        </p>
+      </statement>
+        <solution>
+          <p>
+            <em>Identify</em>: We will test the following hypotheses at the <m>\alpha=0.05</m> significance level.
+          </p>
+          <p>
+            <m>H_0</m>: The distribution of M&amp;M colors is the same as the stated distribution in 2008.
+          </p>
+          <p>
+            <m>H_A</m>: The distribution of M&amp;M colors is different than the stated distribution in 2008.
+          </p>
+          <p>
+            <em>Choose</em>: Because we have one variable (color),
+            broken up into multiple categories,
+            we choose the chi-square goodness of fit test.
+          </p>
+          <p>
+            <em>Check</em>: We must verify that the test statistic follows a chi-square distribution.
+            Note that there is only one sample here.
+            The website percentages are considered fixed <mdash/> they are not the result of a sample and do not have sampling variability associated with them.
+            To carry out the chi-square goodness of fit test,
+            we will have to assume that Wicklin's sample can be considered a random sample of M&amp;M's. We note that the total population size of M&amp;M’s is much larger than 10 times the sample size of 712.
+            Next, we need to find the expected counts.
+            Here, <m>n=712</m>.
+            If <m>H_0</m> is true,
+            then we would expect 24% of the M&amp;M's to be Blue, 20% to be Orange, etc.
+            So the expected counts can be found as:
+          </p>
+          <tabular>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor" halign="center">
+              <cell></cell>
+              <cell></cell>
+              <cell>Blue</cell>
+              <cell>Orange</cell>
+              <cell>Green</cell>
+              <cell>Yellow</cell>
+              <cell>Red</cell>
+              <cell>Brown</cell>
+            </row>
+            <row>
+              <cell>expected counts:</cell>
+              <cell></cell>
+              <cell halign="center">0.24(712)</cell>
+              <cell halign="center">0.20(712)</cell>
+              <cell halign="center">0.16(712)</cell>
+              <cell halign="center">0.14(712)</cell>
+              <cell halign="center">0.13(712)</cell>
+              <cell halign="center">0.13(712)</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell halign="center">= 170.9</cell>
+              <cell halign="center">= 142.4</cell>
+              <cell halign="center">= 113.9</cell>
+              <cell halign="center">= 99.6</cell>
+              <cell halign="center">= 92.6</cell>
+              <cell halign="center">= 92.6</cell>
+            </row>
+          </tabular>
+          <p>
+            <em>Calculate</em>: We will calculate the chi-square statistic,
+            degrees of freedom, and the p-value.
+          </p>
+          <p>
+            To calculate the chi-square statistic,
+            we need the observed counts as well as the expected counts.
+            To find the observed counts, we use the observed percentages.
+            For example, 18.7% of <m>712 = 0.187(712)=133</m>.
+          </p>
+          <tabular>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor" halign="center">
+              <cell></cell>
+              <cell></cell>
+              <cell>Blue</cell>
+              <cell>Orange</cell>
+              <cell>Green</cell>
+              <cell>Yellow</cell>
+              <cell>Red</cell>
+              <cell>Brown</cell>
+            </row>
+            <row>
+              <cell>observed counts:</cell>
+              <cell></cell>
+              <cell halign="center">133</cell>
+              <cell halign="center">133</cell>
+              <cell halign="center">139</cell>
+              <cell halign="center">103</cell>
+              <cell halign="center">108</cell>
+              <cell halign="center">96</cell>
+            </row>
+            <row bottom="minor">
+              <cell>expected counts:</cell>
+              <cell></cell>
+              <cell halign="center">170.9</cell>
+              <cell halign="center">142.4</cell>
+              <cell halign="center">113.9</cell>
+              <cell halign="center">99.6</cell>
+              <cell halign="center">92.6</cell>
+              <cell halign="center">92.6</cell>
+            </row>
+          </tabular>
+          <p>
+          <md>
+            <mrow>\chi^2
+            =\amp  \sum{\frac{\text{ (observed }  - \text{ expected } )^2}
+            {\text{ expected } }}</mrow>
+            <mrow>=\amp  \frac{(133 - 170.9)^2}{170.9}
+            + \frac{(133 - 142.4)^2}{142.4}
+            + \cdots
+            + \frac{(108 - 92.6)^2}{92.6}
+            + \frac{(96 - 92.6)^2}{92.6}</mrow>
+            <mrow>=\amp 8.41+0.62+5.53+0.12+2.56+0.12</mrow>
+            <mrow>=\amp 17.36</mrow>
+          </md>
+          </p>
+          <p>
+            Because there are six colors,
+            the degrees of freedom is <m>6-1=5</m>.
+            In a chi-square test,
+            the p-value is always the area to the <em>right</em> of the chi-square statistic.
+            Here, the area to the right of 17.36 under the chi-square curve with 5 degrees of freedom is <m>0.004</m>.
+           </p>
+           <p>
+           	<em>Conclude</em>: The p-value of 0.004 is
+            <m>\lt 0.05</m>, so we reject <m>H_0</m>;
+            there is sufficient evidence that the distribution of M&amp;M's does not match the stated distribution on the website in 2008.
+          </p>
+        </solution>
+    </example>
+    <example>
+      <statement>
+        <p>
+          For Wicklin's sample,
+          which color showed the most prominent difference from the stated website distribution in 2008?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We can compare the website percentages with the observed percentages.
+          However, another approach is to look at the terms used when calculating the chi-square statistic.
+          We note that the largest term, 8.41, corresponds to Blue.
+          This means that the observed number for Blue was, relatively speaking,
+          the farthest from the expected number among all of the colors.
+          This is consistent with the observation that the largest difference in website percentage and observed percentage is for Blue (24% vs 18.7%).
+          Wicklin observed far fewer Blue M&amp;M's than would have been expected if the website percentages were still true.
+        </p>
+      </solution>
+    </example>
+  </subsection>
+  <subsection xml:id="GOF">
+    <title>Calculator: chi-square goodness of fit test</title>
+    <assemblage xml:id="gof_ti">
+      <title>TI-84: Chi-square goodness of fit test</title>
+      <p>
+        Use <c>STAT</c>, <c>TESTS</c>,
+        <m>\chi^2</m><c>GOF-Test</c>.
+        <ol>
+          <li>
+            <p>
+              Enter the observed counts into list <c>L1</c> and the expected counts into list <c>L2</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose <c>STAT</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Right arrow to <c>TESTS</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Down arrow and choose <c>D:</c><m>\chi^2</m><c>GOF-Test</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Leave <c>Observed: L1</c> and <c>Expected: L2</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Enter the degrees of freedom after <c>df</c>:
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose <c>Calculate</c> and hit <c>ENTER</c>,
+              which returns:
+            </p>
+            <tabular>
+              <row>
+                <cell><m>\chi^2</m></cell>
+                <cell>chi-square test statistic</cell>
+              </row>
+              <row>
+                <cell><c>p</c></cell>
+                <cell>p-value</cell>
+              </row>
+              <row>
+                <cell><c>df</c></cell>
+                <cell>degrees of freedom</cell>
+              </row>
+            </tabular>
+          </li>
+        </ol>
+      </p>
+      <p>
+        TI-83: Unfortunately the TI-83 does not have this test built in.
+        To carry out the test manually,
+        make list <c>L3 = (L1 - L2)</c><m>^2</m><c> / L2</c> and do <c>1-Var-Stats</c> on <c>L3</c>.
+        The sum of <c>L3</c> will correspond to the value of <m>\chi^2</m> for this test.
+      </p>
+      <sidebyside>
+        <video width="60%" preview="generic" youtube="jOgqD_MuDJs" />
+      </sidebyside>
+    </assemblage>
+    <assemblage xml:id="gof_casio">
+      <title>Casio fx-9750GII: Chi-square goodness of fit test</title>
+      <p>
+      <ol>
+        <li>
+          <p>
+            Navigate to <c>STAT</c> (<c>MENU</c> button,
+            then hit the <c>2</c> button or select <c>STAT</c>).
+          </p>
+        </li>
+        <li>
+          <p>
+            Enter the observed counts into a list (e.g. <c>List 1</c>) and the expected counts into list (e.g. <c>List 2</c>).
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose the <c>TEST</c> option (<c>F3</c> button).
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose the <c>CHI</c> option (<c>F3</c> button).
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose the <c>GOF</c> option (<c>F1</c> button).
+          </p>
+        </li>
+        <li>
+          <p>
+            Adjust the <c>Observed</c> and <c>Expected</c> lists to the corresponding list numbers from Step<nbsp/>2.
+          </p>
+        </li>
+        <li>
+          <p>
+            Enter the degrees of freedom, <c>df</c>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Specify a list where the contributions to the test statistic will be reported using <c>CNTRB</c>.
+            This list number should be different from the others.
+          </p>
+        </li>
+        <li>
+          <p>
+            Hit the <c>EXE</c> button,
+            which returns
+          </p>
+          <tabular>
+            <row>
+              <cell><m>\chi^2</m></cell>
+              <cell>chi-square test statistic</cell>
+            </row>
+            <row>
+              <cell><c>p</c></cell>
+              <cell>p-value</cell>
+            </row>
+            <row>
+              <cell><c>df</c></cell>
+              <cell>degrees of freedom</cell>
+            </row>
+            <row>
+              <cell><c>CNTRB</c></cell>
+              <cell>list showing the test statistic contributions</cell>
+            </row>
+          </tabular>
+        </li>
+      </ol>
+  	</p>
+      <sidebyside>
+        <video width="60%" preview="generic" youtube="GDDllVFrheg" />
+      </sidebyside>
+    </assemblage>
+    <exercise>
+      <statement>
+        <p>
+          Use the table below and a calculator to find the <m>\chi^2</m>-statistic and p-value for chi-square goodness of fit test.
+          <fn>Enter the observed counts into <c>L1</c> and the expected counts into <c>L2</c>. the <c>GOF</c> test. Make sure that <c>Observed</c>: is <c>L1</c> and <c>Expected</c>: is <c>L2</c>. Let <c>df</c>: be 5. You should find that <m>\chi^{2} = 17.36</m> and p-value <m>= 0.004</m>.</fn>
+        </p>
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor" halign="center">
+            <cell></cell>
+            <cell></cell>
+            <cell>Blue</cell>
+            <cell>Orange</cell>
+            <cell>Green</cell>
+            <cell>Yellow</cell>
+            <cell>Red</cell>
+            <cell>Brown</cell>
+          </row>
+          <row>
+            <cell>observed counts:</cell>
+            <cell halign="center"></cell>
+            <cell halign="center">133</cell>
+            <cell halign="center">133</cell>
+            <cell halign="center">139</cell>
+            <cell halign="center">103</cell>
+            <cell halign="center">108</cell>
+            <cell halign="center">96</cell>
+          </row>
+          <row bottom="minor">
+            <cell>expected counts:</cell>
+            <cell></cell>
+            <cell halign="center">170.9</cell>
+            <cell halign="center">142.4</cell>
+            <cell halign="center">113.9</cell>
+            <cell halign="center">99.6</cell>
+            <cell halign="center">92.6</cell>
+            <cell halign="center">92.6</cell>
+          </row>
+        </tabular>
+      </statement>
+    </exercise>
+  </subsection>
+  <subsection>
+    <title>Section summary</title>
+    <p>
+      The inferential procedures we saw in the first two sections of this chapter are based on the test statistic following a
+      <em>normal distribution</em>.
+      In this section,
+      we introduce a new distribution called the chi-square distribution.
+    </p>
+    <p>
+    <ul>
+      <li>
+        <p>
+          While a normal distribution is defined by its mean and standard deviation,
+          the chi-square distribution is defined by just one parameter called
+          <term>degrees of freedom</term>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For a chi-square distribution, as the degrees of freedom increases the center increases, the spread increases, and the shape becomes more symmetric and more normal.<fn>Technically, however, it is always right skewed.</fn>
+        </p>
+      </li>
+      <li>
+        <p>
+          When we want to see if a model is a good fit for observed data or if data is representative of a particular population,
+          we can use a <em><m>\chi^2</m> goodness of fit test</em><idx><h>chi-square goodness of fit test<m>\chi^2</m> goodness of fit test</h></idx>.
+          This test is used when there is one variable with multiple categories (bins) that can be arranged in a
+          <term>one-way table</term>.
+        </p>
+      </li>
+      <li>
+        <p>
+          In a chi-square goodness of fit test,
+          we calculate a <em><m>\chi^2</m>-statistic</em>,
+            <idx><h>chi-square statistic@<m>\chi^2</m>-statistic</h></idx>
+          which is a measure of how far the observed values in the sample are from the expected values under the null hypothesis.
+          <m>\chi^2 =\sum{ \frac{\text{ (observed } - \text{ expected } )^2}{\text{ expected } }}</m>
+          <ul>
+            <li>
+              <p>
+                Always use whole numbers (counts) for the observed values,
+                not proportions or percents.
+              </p>
+            </li>
+            <li>
+              <p>
+                For each category,
+                the expected counts can be found by multiplying the sample<nbsp/>size by the expected proportion under the null hypothesis.
+                Expected counts do <em>not</em> need to be integers.
+              </p>
+            </li>
+<!--             <li>
+              <p>
+                For each category,
+                find <m>\frac{\text{ (observed } - \text{ expected } )^2}{\text{ expected } }</m>,
+                then add them all together to get the <m>\chi^2</m>-statistic.
+              </p>
+            </li> -->
+          </ul>
+        </p>
+      </li>
+      <!-- <li>
+        <p>
+          When there is a random sample and all of the expected counts are at least 5, the <m>\chi^2</m>-statistic follows a
+          <term>chi-square distribution</term>
+          with degrees of freedom equal to number of categories <m>-</m> 1.
+        </p>
+      </li> -->
+    <!--   <li>
+        <p>
+          For a <m>\chi^2</m> test,
+          the p-value corresponds to the probability that observed sample values would differ from the expected values by <em>more than</em>
+          what we observed in this sample.
+          The p-value,
+          therefore, corresponds to the area <em>to the right</em>
+          of the calculated <m>\chi^2</m>-statistic
+          (the area in the upper tail).
+        </p>
+      </li> -->
+      <li>
+        <p>
+          A larger <m>\chi^2</m> represents greater deviation between the observed values and the expected values under the null hypothesis.
+          For a fixed degrees of freedom,
+          a larger <m>\chi^2</m> value leads to a smaller p-value,
+          providing greater evidence against <m>H_0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <em><m>\chi^2</m> tests for a one-way table</em><idx><h>chi-square tests for a one-way table@<m>\chi^2</m> tests for a one-way table</h></idx>.
+          When there is one sample and we are comparing the distribution of a categorical variable to a specified or population distribution,
+          e.g. using sample values to determine if a machine is producing M&amp;M's with the specified distribution of color,
+          the hypotheses can often be written as:
+          <ul>
+            <li>
+              <p>
+                <m>H_0</m>: The distribution of [...] matches the specified or population distribution.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>H_A</m>: The distribution of [...] doesn't match the specified or population distribution.
+              </p>
+            </li>
+            <p>
+              We test these hypotheses at the <m>\alpha</m> significance level using a <em><m>\chi^2</m> goodness of fit test</em><idx><h>chi-square goodness of fit test<m>\chi^2</m> goodness of fit test</h></idx>.
+            </p>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          For the <m>\chi^2</m> goodness of fit test, we check the following conditions to verify that the test statistic follows a chi-square distribution.
+          <ol label="1">
+            <li>
+              <p>
+                Independence: Data come from a random sample or random process. When sampling without replacement, check that sample size is less than 10% of the population size.
+              </p>
+            </li>
+            <li>
+              <p>
+                Expected counts: All expected counts are <m>\ge</m> 5.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          We calculate the test statistic as follows:
+          <ul>
+            <li>
+              <p>
+                test statistic:
+                <m>\chi^2 =\sum{ \frac{\text{ (observed} - \text{expected} )^2}{\text{ expected } }}</m>;
+                <m>df =</m> # of categories <m>-1</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+      </li>
+      <li>
+        <p>
+          The p-value is the area to the <em>right</em>
+          of the <m>\chi^2</m>-statistic under the chi-square curve with the appropriate <m>df</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For a <m>\chi^2</m> test, the p-value corresponds to the probability of getting a test statistic as large as we got or larger, assuming the null hypothesis is true and assuming the chi-square model holds.
+        </p>
+      </li>
+    </ul>
+  </p>
+  </subsection>
+  <exercises>
+    <exercise xml:id="tf_chisq_1"><!--  #31 -->
+    <title>True or false, Part I</title>
+    <statement>
+      <p>
+        Determine if the statements below are true or false.
+        For each false statement,
+        suggest an alternative wording to make it a true statement.
+        <ol>
+          <li>
+            <p>
+              The chi-square distribution,
+              just like the normal distribution,
+              has two parameters, mean and standard deviation.
+            </p>
+          </li>
+          <li>
+            <p>
+              The chi-square distribution is always right skewed,
+              regardless of the value of the degrees of freedom parameter.
+            </p>
+          </li>
+          <li>
+            <p>
+              The chi-square statistic is always positive.
+            </p>
+          </li>
+          <li>
+            <p>
+              As the degrees of freedom increases,
+              the shape of the chi-square distribution becomes more skewed.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              False. The chi-square distribution has one parameter called degrees of freedom.
+            </p>
+          </li>
+          <li>
+            <p>
+              True.
+            </p>
+          </li>
+          <li>
+            <p>
+              True.
+            </p>
+          </li>
+          <li>
+            <p>
+              False. As the degrees of freedom increases, the shape of the chi-square distribution becomes more symmetric.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+  <exercise xml:id="tf_chisq_2"><!--  #32 -->
+    <title>True or false, Part II</title>
+    <statement>
+      <p>
+        Determine if the statements below are true or false.
+        For each false statement,
+        suggest an alternative wording to make it a true statement.
+        <ol>
+          <li>
+            <p>
+              As the degrees of freedom increases,
+              the mean of the chi-square distribution increases.
+            </p>
+          </li>
+          <li>
+            <p>
+              If you found <m>\chi^2 = 10</m> with <m>df = 5</m> you would fail to reject <m>H_0</m> at the 5% significance level.
+            </p>
+          </li>
+          <li>
+            <p>
+              When finding the p-value of a chi-square test,
+              we always shade the tail areas in both tails.
+            </p>
+          </li>
+          <li>
+            <p>
+              As the degrees of freedom increases,
+              the variability of the chi-square distribution decreases.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="opensource_text_chisq_GOF"><!--  #33 -->
+    <title>Open source textbook</title>
+    <statement>
+      <sidebyside>
+        <video width="60%" preview="generic" youtube="CDg_vaQ_OCc" />
+      </sidebyside>
+      <p>
+        A professor using an open source introductory statistics book predicts that 60% of the students will purchase a hard copy of the book, 25% will print it out from the web,
+        and 15% will read it online.
+        At the end of the semester he asks his students to complete a survey where they indicate what format of the book they used.
+        Of the 126 students, 71 said they bought a hard copy of the book, 30 said they printed it out from the web,
+        and 25 said they read it online.
+        <ol>
+          <li>
+            <p>
+              State the hypotheses for testing if the professor's predictions were inaccurate.
+            </p>
+          </li>
+          <li>
+            <p>
+              How many students did the professor expect to buy the book,
+              print the book, and read the book exclusively online?
+            </p>
+          </li>
+          <li>
+            <p>
+              This is an appropriate setting for a chi-square test.
+              List the conditions required for a test and verify they are satisfied.
+            </p>
+          </li>
+          <li>
+            <p>
+              Calculate the chi-squared statistic,
+              the degrees of freedom associated with it, and the p-value.
+            </p>
+          </li>
+          <li>
+            <p>
+              Based on the p-value calculated in part (d),
+              what is the conclusion of the hypothesis test?
+              Interpret your conclusion in this context.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>H_{0}:</m> The distribution of the format of the book used by the students follows the professor's predictions. <m>H_{A}:</m> The distribution of the format of the book used by the students does not follow the professor's predictions.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>E_{hard copy} = 126 \times 0.60 = 75.6</m>. <m>E_{print} = 126 \times 0.25 = 31.5</m>. <m>E_{online} = 126 \times 0.15 = 18.9</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Independence: The sample is not random. However, if the professor has reason to believe that the proportions are stable from one term to the next and students are not affecting each other's study habits, independence is probably reasonable. Sample size: All expected counts are at least 5.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\chi^2 = 2.32, df = 2, \text{p-value } = 0.313.</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              Since the p-value is large, we fail to reject <m>H_{0}</m>. The data do not provide strong evidence indicating the professor's predictions were statistically inaccurate.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </exercise>
+  <exercise xml:id="barking_deer_chisq_GOF"><!--  #34 -->
+    <title>Barking deer</title>
+    <statement>
+      <p>
+        Microhabitat factors associated with forage and bed sites of barking deer in Hainan Island, China were examined.
+        In this region woods make up 4.8% of the land,
+        cultivated grass plot makes up 14.7%, and deciduous forests make up 39.6%. Of the 426 sites where the deer forage, 4 were categorized as woods, 16 as cultivated grassplot,
+        and 61 as deciduous forests.
+        The table below summarizes these data.<fn>Liwei Teng et al. <q>Forage and bed sites characteristics of Indian muntjac (Muntiacus muntjak) in Hainan Island, China</q>. In: <em>Ecological Research</em> 19.6 (2004), pp. 675-681.</fn>
+      </p>
+      <tabular bottom="minor" halign="center">
+        <row>
+          <cell>Woods</cell>
+          <cell>Cultivated grassplot</cell>
+          <cell>Deciduous forests</cell>
+          <cell>Other</cell>
+          <cell>Total</cell>
+        </row>
+        <row>
+          <cell>4</cell>
+          <cell>16</cell>
+          <cell>61</cell>
+          <cell>345</cell>
+          <cell>426</cell>
+        </row>
+      </tabular>
+  	  <p>
+        <ol>
+          <li>
+            <p>
+              Do these data provide convincing evidence that barking deer prefer to forage in certain habitats over others? Conduct an appropriate hypothesis test to answer this research question, and acknowledge any assumptions you had to make to carry out this test. Include all steps of the Identify, Choose, Check, Calculate, Conclude framework.
+            </p>
+          </li>
+          <li>
+            <p>
+              Interpret the calculated p-value in the context of the problem
+            </p>
+          </li>
+        </ol>
+    	</p>
+      <figure>
+        <caption>Photo by Shrikant Rao <url href="https://www.flickr.com/photos/9494793@N06/2595031089/">(http://ic.kr/p/4Xjdkk)</url> <url href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0 license</url></caption>
+        <image width="30%" source="images/inference_props/barking_deer.jpg" />
+      </figure>
+    </statement>
+  </exercise>
+</exercises>
+</section>
