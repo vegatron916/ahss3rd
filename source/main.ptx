@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
-  <docinfo>
-  	<brandlogo url="https://www.openintro.org/stat/textbook.php?stat_book=aps" source="images/AHSS_image.jpg" archive=".jpg" /><!-- add me gives cool image on HTML page put the image and and maybe it links to OPEN INTRO ahss -->
+  <!-- <docinfo>
+  	<brandlogo url="https://www.openintro.org/stat/textbook.php?stat_book=aps" source="images/AHSS_image.jpg" archive=".jpg" />
   	<initialism>AHSS</initialism>
-  	<document-id>OpenIntro-AHSS</document-id> <!-- page title hovers same as webpage -->
-  </docinfo>
+  	<document-id>OpenIntro-AHSS</document-id> 
+  </docinfo> -->
   
   <book>
   <title>Advanced High School Statistics</title>
   <subtitle>Third Edition, with updates based on AP<copyright /> Statistics Course Framework</subtitle>
-    <frontmatter>
+    <!-- <frontmatter>
       <titlepage>
       </titlepage>
-    </frontmatter>
+    </frontmatter> -->
   <xi:include href="./frontmatter.ptx" />
   
-  <part>
-  <title>MTH 243</title>
+  <!-- <part> -->
+  <!-- <title>MTH 243</title> -->
     <xi:include href="./introductionToData.ptx" />
     <xi:include href="./summarizingData.ptx" />
     <xi:include href="./probability.ptx" />
     <xi:include href="./ch_distributions.ptx" />
-    <xi:include href="./foundationsForInference.ptx" />
-  </part>
+    <!-- <xi:include href="./foundationsForInference.ptx" /> -->
+  <!-- </part>
 
-  <part>
-  <title>MTH 244</title>
+  <part> -->
+  <!-- <title>MTH 244</title> -->
     <xi:include href="./inferenceForCategoricalData.ptx" />
     <xi:include href="./inferenceForNumericalData.ptx" />
     <xi:include href="./linRegrForTwoVar.ptx" />
-  </part>
+  <!-- </part> -->
   <xi:include href="./backmatter.ptx" />
   </book>
 </pretext>
