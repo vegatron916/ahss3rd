@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.3.4</span><span class="period">.</span>
+</h4>
+<div class="para">An instructor decided to run two slight variations of the same exam. Prior to passing out the exams, she shuffled the exams together to ensure each student received a random version. Summary statistics for how students performed on these two exams are shown in <a href="theTDistributionForTheDifferenceOfTwoMeans.html#summaryStatsForTwoVersionsOfExams2nd" class="xref" data-knowl="./knowl/xref/summaryStatsForTwoVersionsOfExams2nd.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.3.4">Example 6.3.4</a>. Anticipating complaints from students who took Version B, she would like to evaluate whether the difference observed in the groups is so large that it provides convincing evidence that Version B was more difficult (on average) than Version A. Use a 95% confidence interval to estimate the difference in average score: version A - version B.</div> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines">Version</td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(n\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(\bar{x}\)</span></td>
+<td class="r m b1 r0 l0 t0 lines"><span class="process-math">\(s\)</span></td>
+<td class="r m b1 r0 l0 t0 lines">min</td>
+<td class="r m b1 r0 l0 t0 lines">max</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">A</td>
+<td class="r m b0 r0 l0 t0 lines">30</td>
+<td class="r m b0 r0 l0 t0 lines">79.4</td>
+<td class="r m b0 r0 l0 t0 lines">14</td>
+<td class="r m b0 r0 l0 t0 lines">45</td>
+<td class="r m b0 r0 l0 t0 lines">100</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines">B</td>
+<td class="r m b1 r0 l0 t0 lines">30</td>
+<td class="r m b1 r0 l0 t0 lines">74.1</td>
+<td class="r m b1 r0 l0 t0 lines">20</td>
+<td class="r m b1 r0 l0 t0 lines">32</td>
+<td class="r m b1 r0 l0 t0 lines">100</td>
+</tr>
+</table></div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para">
+<em class="alert">Identify</em>: The parameter we want to estimate is <span class="process-math">\(\mu_{1}-\mu_2\text{,}\)</span> which is the true average score under Version A <span class="process-math">\(-\)</span> the true average score under Version B. We will estimate this parameter at the 95% confidence level.</div> <div class="para">
+<em class="alert">Choose</em>: Because we are comparing two means, we will use a 2-sample <span class="process-math">\(t\)</span>-interval.</div> <div class="para">
+<em class="alert">Check</em>: The data was collected from a randomized experiment with two treatments: Version A and Version B of test. The 10% condition does not need to be checked here since we are not sampling from a population. There were 30 students in each group, so the condition that both group sizes are at least 30 is met.</div> <div class="para logical">
+<div class="para">
+<em class="alert">Calculate</em>: We will calculate the confidence interval as follows.</div>
+<div class="displaymath process-math">
+\begin{gather*}
+\text{ point estimate } \ \pm\ t^{\star} \times SE\ \text{ of estimate }
+\end{gather*}
+</div>
+</div> <div class="para logical">
+<div class="para">The point estimate is the difference of sample means:</div>
+<div class="displaymath process-math">
+\begin{gather*}
+\bar{x}_1-\bar{x}_2 = 79.4 - 74.1 = 5.3
+\end{gather*}
+</div>
+</div> <div class="para logical">
+<div class="para">The <span class="process-math">\(SE\)</span> of a difference of sample means is:</div>
+<div class="displaymath process-math">
+\begin{gather*}
+\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}} = \sqrt{\frac{14^2}{30} + \frac{20^2}{30}} = 4.46
+\end{gather*}
+</div>
+</div> <div class="para">In order to find the critical value <span class="process-math">\(t^{\star}\text{,}\)</span> we must first find the degrees of freedom. Using a calculator, we find <span class="process-math">\(df=51.9\text{.}\)</span> We round down to 50, and using a <span class="process-math">\(t\)</span>-table at row <span class="process-math">\(df = 50\)</span> and confidence level 95%, we get <span class="process-math">\(t^{\star} = 2.009\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">The 95% confidence interval is given by:</div>
+<div class="displaymath process-math">
+\begin{align*}
+(79.4 - 74.1) \ \pm\  \amp 2.009\times \sqrt{\frac{14^2}{30} + \frac{20^2}{30}}   \qquad df = 45.97\\
+5.3 \ \pm\  \amp 2.009\times 4.46\\
+=(-3\amp .66,\ 14.26)
+\end{align*}
+</div>
+</div> <div class="para">
+<em class="alert">Conclude</em>: We are 95% confident that the true difference in average score between Version A and Version B is between -2.5 and 13.1 points. Because the interval contains both positive and negative values, the data do not convincingly show that one exam version is more difficult than the other, and the teacher should not be convinced that she should add points to the Version B exam scores.</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="theTDistributionForTheDifferenceOfTwoMeans.html#summaryStatsForTwoVersionsOfExams2nd">in-context</a></span>
+</body>
+</html>

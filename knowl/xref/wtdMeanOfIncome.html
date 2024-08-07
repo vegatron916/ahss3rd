@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span>
+</h4>
+<div class="para">We might like to compute the average income per person in the US. To do so, we might first think to take the mean of the per capita incomes across the 3,142 counties in the <code class="code-inline tex2jax_ignore">county</code> data set. What would be a better approach?</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para">The <code class="code-inline tex2jax_ignore">county</code> data set is special in that each county actually represents many individual people. If we were to simply average across the <code class="code-inline tex2jax_ignore">income</code> variable, we would be treating counties with 5,000 and 5,000,000 residents equally in the calculations. Instead, we should compute the total income for each county, add up all the counties’ totals, and then divide by the number of people in all the counties. If we completed these steps with the <code class="code-inline tex2jax_ignore">county</code> data, we would find that the per capita income for the US is $27,348.43. Had we computed the <em class="emphasis">simple</em> mean of per capita income across counties, the result would have been just $22,504.70!</div></div></details></div></article><span class="incontext"><a class="internal" href="numericalSummariesAndBoxPlots.html#wtdMeanOfIncome">in-context</a></span>
+</body>
+</html>

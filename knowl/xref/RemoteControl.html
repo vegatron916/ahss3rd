@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span>
+</h4>
+<div class="para">A remote control car company is considering a new manufacturer for wheel gears. The new manufacturer would be more expensive but their higher quality gears are more reliable, resulting in happier customers and fewer warranty claims. However, management must be convinced that the more expensive gears are worth the conversion before they approve the switch. The quality control engineer collects a sample of gears, examining 1000 gears from each company and finds that 879 gears pass inspection from the current supplier and 958 pass inspection from the prospective supplier. Using these data, construct a 95% confidence interval for the difference in the proportion from each supplier that would pass inspection. Use the five step framework described above to organize your work.</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para">
+<em class="emphasis">Identify</em>: First we identify the parameter of interest. Here the parameter we wish to estimate is the true difference in the proportion of gears from each supplier that would pass inspection, <span class="process-math">\(p_1-p_2\text{.}\)</span> We will take the difference as: current <span class="process-math">\(-\)</span> prospective, so <span class="process-math">\(p_1\)</span> is the true proportion that would pass from the current supplier and <span class="process-math">\(p_2\)</span> is the true proportion that would pass from the prospective supplier. We will estimate the difference using a 95% confidence level.</div> <div class="para">
+<em class="emphasis">Choose</em>: Because the parameter to be estimated is a difference of proportions, we will use a 2-proportion Z-interval.</div> <div class="para logical">
+<div class="para">
+<em class="emphasis">Check</em>: The samples are independent, but not necessarily random, so to proceed we must assume the gears are all independent. For this sample we will suppose this assumption is reasonable, but the engineer would be more knowledgeable as to whether this assumption is appropriate. We also must verify the minimum sample size conditions:</div>
+<div class="displaymath process-math">
+\begin{align*}
+1000 \times \frac{879}{1000} \amp \ge 10 \amp 1000 \times \frac{121}{1000} \amp \ge 10 \amp 1000 \times \frac{958}{1000} \amp \ge 10 \amp 1000 \times \frac{42}{1000} \amp \ge 10
+\end{align*}
+</div>
+</div> <div class="para">The success-failure condition is met for both samples.</div> <div class="para logical">
+<div class="para">
+<em class="emphasis">Calculate</em>: We will calculate the interval:</div>
+<div class="displaymath process-math">
+\begin{gather*}
+\text{ point estimate } \pm\ z^{\star} \times SE \text{ of estimate }
+\end{gather*}
+</div>
+</div> <div class="para">The point estimate is the difference of sample proportions: <span class="process-math">\(\hat{p}_1-\hat{p}_2 = 0.879 - 0.958 = -0.079\text{.}\)</span>
+</div> <div class="para">The <span class="process-math">\(SE\)</span> of the difference of sample proportions is:</div> <div class="para"><span class="process-math">\(\sqrt{\frac{\ \hat{p}_1(1-\hat{p}_1)\ }{n_1}+ \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}\ } = \sqrt{\frac{0.879(1-0.879)}{1000} +\frac{0.958(1-0.958)}{1000}}= 0.0121\)</span></div> <div class="para logical">
+<div class="para">So the 95% confidence interval is given by:</div>
+<div class="displaymath process-math">
+\begin{align*}
+0.879 - 0.958 \ \pm \ \amp 1.96 \times  \sqrt{\frac{0.879(1-0.879)}{1000} +\frac{0.958(1-0.958)}{1000}}\\
+-0.079\ \pm\ \amp 1.96 \times 0.0121\\
+\amp (-0.103, -0.055)
+\end{align*}
+</div>
+</div> <div class="para">
+<em class="emphasis">Conclude</em>: We are 95% confident that the true difference (current <span class="process-math">\(-\)</span> prospective) in the proportion that would pass inspection is between -0.103 and -0.055, meaning that we are 95% confident that the prospective supplier would have between a 5.5% and 10.3% <em class="emphasis">greater</em> rate of passing inspection. Because the entire interval is below zero, the data provide sufficient evidence that the prospective gears pass inspection more often than the current gears. The remote control car company should go with the new manufacturer.</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="differenceOfTwoProportions.html#RemoteControl">in-context</a></span>
+</body>
+</html>

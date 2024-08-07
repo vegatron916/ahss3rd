@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exercise exercise-like"><h4 class="heading">
+<span class="type">Exercise</span><span class="space"> </span><span class="codenumber">11<span class="period">.</span></span><span class="space"> </span><span class="title">Friday the 13th, Part I.</span>
+</h4>
+<div class="para">In the early 1990’s, researchers in the UK collected data on traffic flow, number of shoppers, and traffic accident related emergency room admissions on Friday the <span class="process-math">\(13^{th}\)</span> and the previous Friday, Friday the <span class="process-math">\(6^{th}\text{.}\)</span> The histograms below show the distribution of number of cars passing by a specific intersection on Friday the <span class="process-math">\(6^{th}\)</span> and Friday the <span class="process-math">\(13^{th}\)</span> for many such date pairs. Also given are some sample statistics, where the difference is the number of cars on the 6th minus the number of cars on the 13th.<details class="ptx-footnote" aria-live="polite" id="friday_13th_traffic-2-1-5"><summary class="ptx-footnote__number" title="Footnote 6.4.3"><sup> 3 </sup></summary><div class="ptx-footnote__contents" id="friday_13th_traffic-2-1-5">T.J. Scanlon et al. <a class="external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1697765/pdf/bmj00052-0013.pdf" target="_blank">“Is Friday the 13th Bad For Your Health?”</a> In: <em class="emphasis">BMJ</em> 307 (1993), pp. 1584-1586.</div></details>
+</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/inference_means/friday_13th_traffic_hist.png" class="contained"></div></div></div> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="c m b1 r0 l0 t0 lines"></td>
+<td class="c m b1 r0 l0 t0 lines"></td>
+<td class="c m b1 r0 l0 t0 lines"></td>
+<td class="c m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(6^{th}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(13^{th}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines">Diff.</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\bar{x}\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">128,385</td>
+<td class="c m b0 r0 l0 t0 lines">126,550</td>
+<td class="c m b0 r0 l0 t0 lines">1,835</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><span class="process-math">\(s\)</span></td>
+<td class="c m b0 r0 l0 t0 lines">7,259</td>
+<td class="c m b0 r0 l0 t0 lines">7,664</td>
+<td class="c m b0 r0 l0 t0 lines">1,176</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(n\)</span></td>
+<td class="c m b1 r0 l0 t0 lines">10</td>
+<td class="c m b1 r0 l0 t0 lines">10</td>
+<td class="c m b1 r0 l0 t0 lines">10</td>
+</tr>
+</table></div> <div class="para logical"><ol class="lower-alpha" id="friday_13th_traffic-2-4-1">
+<li><div class="para">Are there any underlying structures in these data that should be considered in an analysis? Explain.</div></li>
+<li><div class="para">What are the hypotheses for evaluating whether the number of people out on Friday the <span class="process-math">\(6^{th}\)</span> is different than the number out on Friday the <span class="process-math">\(13^{th}\text{?}\)</span>
+</div></li>
+<li><div class="para">Check conditions to carry out the hypothesis test from part (b).</div></li>
+<li><div class="para">Calculate the test statistic and the p-value.</div></li>
+<li><div class="para">What is the conclusion of the hypothesis test?</div></li>
+<li><div class="para">Interpret the p-value in this context.</div></li>
+<li><div class="para">What type of error might have been made in the conclusion of your test? Explain.</div></li>
+</ol></div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical"><ol class="lower-alpha" id="friday_13th_traffic-3-1-1">
+<li><div class="para">These data are paired. For example, the Friday the 13th in say, September 1991, would probably be more similar to the Friday the 6th in September 1991 than to Friday the 6th in another month or year.</div></li>
+<li><div class="para">Let <span class="process-math">\(\mu_{diff} = \mu_{sixth} - \mu_{thirteenth}\text{.}\)</span> <span class="process-math">\(H_{0} : \mu_{diff} = 0\text{.}\)</span> <span class="process-math">\(H_{A} : \mu_{diff} \ne 0\text{.}\)</span>
+</div></li>
+<li><div class="para">Independence: The months selected are not random. However, if we think these dates are roughly equivalent to a simple random sample of all such Friday 6th/13th date pairs, then independence is reasonable. To proceed, we must make this strong assumption, though we should note this assumption in any reported results. Normality: With fewer than 10 observations, we would need to see clear outliers to be concerned. There is a borderline outlier on the right of the histogram of the differences, so we would want to report this in formal analysis results.</div></li>
+<li><div class="para">
+<span class="process-math">\(T = 4.93\)</span> for <span class="process-math">\(df = 10 - 1 = 9 \rightarrow  \text{p-value } = 0.001\text{.}\)</span>
+</div></li>
+<li><div class="para">Since <span class="process-math">\(\text{p-value } \lt 0.05\text{,}\)</span> reject <span class="process-math">\(H_{0}\text{.}\)</span> The data provide strong evidence that the average number of cars at the intersection is higher on Friday the <span class="process-math">\(6^{th}\)</span> than on Friday the <span class="process-math">\(13^{th}\text{.}\)</span> (We should exercise caution about generalizing the interpretation to all intersections or roads.)</div></li>
+<li><div class="para">If the average number of cars passing the intersection actually was the same on Friday the <span class="process-math">\(6^{th}\)</span> and <span class="process-math">\(13^{th}\text{,}\)</span> then the probability that we would observe a test statistic so far from zero is less than 0.01.</div></li>
+<li><div class="para">We might have made a Type 1 Error, i.e. incorrectly rejected the null hypothesis.</div></li>
+</ol></div></div></details></div></article><span class="incontext"><a class="internal" href="chapter_seven_exercises.html#friday_13th_traffic">in-context</a></span>
+</body>
+</html>
