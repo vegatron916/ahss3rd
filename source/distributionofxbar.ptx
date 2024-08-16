@@ -432,7 +432,7 @@
       <solution>
         <p>
           We should consider each of the required conditions.
-          <ol label="(1)">
+          <ol marker="(1)">
             <li>
               <p>
                 These are referred to as <term>time series data</term>,
@@ -676,11 +676,11 @@
           <em>normal approximation</em>
           problems involving a <em>sample mean</em>
           or a <em>sample sum</em>.
-          <ol label ="A">
+          <ol marker ="A">
             <li>
               <p>
                 <em>Find the probability that a sample average will be greater/less than a certain value</em>.
-                <ol label="1">
+                <ol marker="1">
                   <li>
                     <p>
                       Verify that the population is approximately normal or that <m>n \ge 30</m>.
@@ -704,7 +704,7 @@
             <li>
               <p>
                 <em>Find the probability that a sample sum/total will be greater/less than a certain value</em>.
-                <ol label="1">
+                <ol marker="1">
                   <li>
                     <p>
                       Convert the sample sum into a sample average,

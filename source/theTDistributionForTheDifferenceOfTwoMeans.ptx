@@ -66,7 +66,7 @@
   <subsection xml:id="differenceOfTwoMeans">
     <title>Sampling distribution for the difference of two means</title>
     <p>
-      In this section we are interested in comparing the means of two independent groups. We want to estimate how far apart <m>\mu_{1}</m> and <m>\mu_{2}</m> are and test whether their difference is zero or not. Before we perform inference for the difference of means, let’s review the sampling distribution for <m>\bar{x}_{1} - \bar{x}_{2}</m>, which will be used as the point estimate for <m>\mu_{1} - \mu_{2}</m>. We know from <xref ref="sampling_diff"></xref>Section 4.3 that when the independence condition is satisfied, the sampling distribution for <m>\bar{x}_{1} - \bar{x}_{2}</m> is centered on <m>\mu_{1} - \mu_{2}</m> and has standard deviation of
+      In this section we are interested in comparing the means of two independent groups. We want to estimate how far apart <m>\mu_{1}</m> and <m>\mu_{2}</m> are and test whether their difference is zero or not. Before we perform inference for the difference of means, let’s review the sampling distribution for <m>\bar{x}_{1} - \bar{x}_{2}</m>, which will be used as the point estimate for <m>\mu_{1} - \mu_{2}</m>. We know from <xref ref="samp_dist_difference"></xref> that when the independence condition is satisfied, the sampling distribution for <m>\bar{x}_{1} - \bar{x}_{2}</m> is centered on <m>\mu_{1} - \mu_{2}</m> and has standard deviation of
       <md>
         <mrow>
           \sigma_{\bar{x}_{1} -\bar{x}_{2}} =\sqrt{\frac{\sigma_{1}^2}{n_{1}} + \frac{\sigma_{2}^2}{n_{2}}}
@@ -352,7 +352,7 @@
       </p>
       <p>
         <alert>Check</alert>: Check conditions for the sampling distribution of <m>\bar{x}_1-\bar{x}_2</m> to be nearly normal.
-        <ol label="1">
+        <ol marker="1">
           <li>
             <p>
               Independence: Data come from 2 independent random samples or from a randomized experiment with 2 treatments. When sampling without replacement, check that the sample size is less than 10% of the population size for each sample.
@@ -1058,7 +1058,7 @@
       </p>
       <p>
         <alert>Check</alert>: Check conditions for the sampling distribution of <m>\bar{x}_1-\bar{x}_2</m> to be nearly normal.
-        <ol label="1">
+        <ol marker="1">
           <li>
             <p>
               Independence: Data come from 2 independent random samples or from a randomized experiment with 2 treatments. When sampling without replacement, check that the sample size is less than 10% of the population size for each sample.
@@ -1507,7 +1507,7 @@
       <li>
         <p>
           The 2-sample t-test and t-interval require the sampling distribution for <m>\bar{x}_{1}-\bar{x}_{2}</m> to be nearly normal. For this reason we must check that the following conditions are met.
-          <ol label="1">
+          <ol marker="1">
             <li>
               <p>
                 Independence: The data should come from 2 independent random samples or from a randomized experiment with 2 treatments. When sampling without replacement, check that the sample size is less than 10% of the population size for each sample.
@@ -1903,7 +1903,7 @@
         This score measures a person's need for control or their rebellion against control,
         and it is part of a commonly used mental health test called the Minnesota Multiphasic Personality Inventory (MMPI) test.
         The experiment had three treatment groups:
-        <ol label="1">
+        <ol marker="1">
           <li>
             <p>
               Four hours of sensory restriction plus a 15 minute

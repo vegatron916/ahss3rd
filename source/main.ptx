@@ -21,7 +21,7 @@
     <xi:include href="./summarizingData.ptx" />
     <xi:include href="./probability.ptx" />
     <xi:include href="./ch_distributions.ptx" />
-    <!-- <xi:include href="./foundationsForInference.ptx" /> -->
+    <xi:include href="./foundationsForInference.ptx" />
   <!-- </part>
 
   <part> -->

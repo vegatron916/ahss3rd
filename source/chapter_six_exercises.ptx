@@ -598,7 +598,7 @@
     <statement>
       <p>
         Consider each of the following planned studies. Determine (i) if a goodness of fit test, test for homogeneity, or test for independence is more appropriate, and (ii) how many degrees of freedom should be used for the test.
-        <ol label="a">
+        <ol marker="a">
           <li>
             <p>
               A state is conducting a study to better understand pay for tradespeople in the state’s three largest cities. In each city, the state will take a random sample of tradespeople and estimate the proportion who made at least $100,000 in each of the cities. In their final report, they would also like to note whether that proportion varies across the three cities.
@@ -619,7 +619,7 @@
     </statement>
     <solution>
       <p>
-        <ol label="a">
+        <ol marker="a">
           <li>
             <p>
               Since there are 3 independent random samples here, we do a test for homogeneity. <m>df=2</m>.

@@ -3,22 +3,280 @@
 <title>Normal Probability Table</title>
 
 <p>
-  The area to the left of <m>Z</m> represents the percentile of the observation. The normal probability table always lists percentiles.
+  A <term>normal probability table</term> may be used to find percentiles of a normal distribution using a Z-score, or vice-versa. Such a table lists Z-scores and the corresponding percentiles. An abbreviated probability table is provided in <xref ref="short_ztable"></xref> that we’ll use for the examples in this appendix. A full table may be found further below.
 </p>
-<sidebyside>
-<image width="50%" source="images/appendix/normalTails.png"/>
-</sidebyside>
+
+<table xml:id="short_ztable">
+<title>A section of the normal probability table. The percentile for a normal random variable with <m>Z = 1.00</m> has been <em>emphasized</em>, and the percentile closest to 0.8000 has also been <alert>bolded</alert></title>
+  <tabular>
+    <row>
+      <cell></cell>
+      <cell bottom="minor" colspan="10"></cell>
+    </row>
+    <row>
+      <cell right="minor"></cell>
+      <cell bottom="minor"></cell>
+      <cell bottom="minor"></cell>
+      <cell bottom="minor"></cell>
+      <cell bottom="minor" colspan="4">Second decimal place of <m>Z</m></cell>
+      <cell bottom="minor"></cell>
+      <cell bottom="minor"></cell>
+      <cell right="minor" bottom="minor"></cell>
+    </row>
+    <row bottom="minor">
+      <cell halign="center" right="minor"><m>Z</m></cell>
+      <cell halign="right"><em>0.00</em></cell>
+      <cell halign="right">0.01</cell>
+      <cell halign="right">0.02</cell>
+      <cell halign="right">0.03</cell>
+      <cell halign="right" right="minor"><alert>0.04</alert></cell>
+      <cell halign="right">0.05</cell>
+      <cell halign="right">0.06</cell>
+      <cell halign="right">0.07</cell>
+      <cell halign="right">0.08</cell>
+      <cell halign="right" right="minor">0.09</cell>
+    </row>
+    <row>
+      <cell right="minor">0.0</cell>
+      <cell>0.5000</cell>
+      <cell>0.5040</cell>
+      <cell>0.5080</cell>
+      <cell>0.5120</cell>
+      <cell right="minor">0.5160</cell>
+      <cell>0.5199</cell>
+      <cell>0.5239</cell>
+      <cell>0.5279</cell>
+      <cell>0.5319</cell>
+      <cell right="minor">0.5359</cell>
+    </row>
+    <row>
+      <cell right="minor">0.1</cell>
+      <cell>0.5398</cell>
+      <cell>0.5438</cell>
+      <cell>0.5478</cell>
+      <cell>0.5517</cell>
+      <cell right="minor">0.5557</cell>
+      <cell>0.5596</cell>
+      <cell>0.5636</cell>
+      <cell>0.5675</cell>
+      <cell>0.5714</cell>
+      <cell right="minor">0.5753</cell>
+    </row>
+    <row>
+      <cell right="minor">0.2</cell>
+      <cell>0.5793</cell>
+      <cell>0.5832</cell>
+      <cell>0.5871</cell>
+      <cell>0.5910</cell>
+      <cell right="minor">0.5948</cell>
+      <cell>0.5987</cell>
+      <cell>0.6026</cell>
+      <cell>0.6064</cell>
+      <cell>0.6103</cell>
+      <cell right="minor">0.6141</cell>
+    </row>
+    <row>
+      <cell right="minor">0.3</cell>
+      <cell>0.6179</cell>
+      <cell>0.6217</cell>
+      <cell>0.6255</cell>
+      <cell>0.6293</cell>
+      <cell right="minor">0.6331</cell>
+      <cell>0.6368</cell>
+      <cell>0.6406</cell>
+      <cell>0.6443</cell>
+      <cell>0.6480</cell>
+      <cell right="minor">0.6517</cell>
+    </row>
+    <row bottom="minor">
+      <cell right="minor">0.4</cell>
+      <cell>0.6554</cell>
+      <cell>0.6591</cell>
+      <cell>0.6628</cell>
+      <cell>0.6664</cell>
+      <cell right="minor">0.6700</cell>
+      <cell>0.6736</cell>
+      <cell>0.6772</cell>
+      <cell>0.6808</cell>
+      <cell>0.6844</cell>
+      <cell right="minor">0.6879</cell>
+    </row>
+    <row>
+      <cell right="minor">0.5</cell>
+      <cell>0.6915</cell>
+      <cell>0.6950</cell>
+      <cell>0.6985</cell>
+      <cell>0.7019</cell>
+      <cell right="minor">0.7054</cell>
+      <cell>0.7088</cell>
+      <cell>0.7123</cell>
+      <cell>0.7157</cell>
+      <cell>0.7190</cell>
+      <cell right="minor">0.7224</cell>
+    </row>
+    <row>
+      <cell right="minor">0.6</cell>
+      <cell>0.7257</cell>
+      <cell>0.7291</cell>
+      <cell>0.7324</cell>
+      <cell>0.7357</cell>
+      <cell right="minor">0.7389</cell>
+      <cell>0.7422</cell>
+      <cell>0.7454</cell>
+      <cell>0.7486</cell>
+      <cell>0.7517</cell>
+      <cell right="minor">0.7549</cell>
+    </row>
+    <row>
+      <cell right="minor">0.7</cell>
+      <cell>0.7580</cell>
+      <cell>0.7611</cell>
+      <cell>0.7642</cell>
+      <cell>0.7673</cell>
+      <cell right="minor">0.7704</cell>
+      <cell>0.7734</cell>
+      <cell>0.7764</cell>
+      <cell>0.7794</cell>
+      <cell>0.7823</cell>
+      <cell right="minor">0.7852</cell>
+    </row>
+    <row>
+      <cell right="minor"><alert>0.8</alert></cell>
+      <cell>0.7881</cell>
+      <cell>0.7910</cell>
+      <cell>0.7939</cell>
+      <cell>0.7967</cell>
+      <cell right="minor"><alert>0.7995</alert></cell>
+      <cell>0.8023</cell>
+      <cell>0.8051</cell>
+      <cell>0.8078</cell>
+      <cell>0.8106</cell>
+      <cell right="minor">0.8133</cell>
+    </row>
+    <row bottom="minor">
+      <cell right="minor">0.9</cell>
+      <cell>0.8159</cell>
+      <cell>0.8186</cell>
+      <cell>0.8212</cell>
+      <cell>0.8238</cell>
+      <cell right="minor">0.8264</cell>
+      <cell>0.8289</cell>
+      <cell>0.8315</cell>
+      <cell>0.8340</cell>
+      <cell>0.8365</cell>
+      <cell right="minor">0.8389</cell>
+    </row>
+    <row>
+      <cell right="minor"><em>1.0</em></cell>
+      <cell><em>0.8413</em></cell>
+      <cell>0.8438</cell>
+      <cell>0.8461</cell>
+      <cell>0.8485</cell>
+      <cell right="minor">0.8508</cell>
+      <cell>0.8531</cell>
+      <cell>0.8554</cell>
+      <cell>0.8577</cell>
+      <cell>0.8599</cell>
+      <cell right="minor">0.8621</cell>
+    </row>
+    <row>
+      <cell right="minor">1.1</cell>
+      <cell>0.8643</cell>
+      <cell>0.8665</cell>
+      <cell>0.8686</cell>
+      <cell>0.8708</cell>
+      <cell right="minor">0.8729</cell>
+      <cell>0.8749</cell>
+      <cell>0.8770</cell>
+      <cell>0.8790</cell>
+      <cell>0.8810</cell>
+      <cell right="minor">0.8830</cell>
+    </row>
+    <row bottom="minor">
+      <cell right="minor"><m>\vdots</m></cell>
+      <cell><m>\vdots</m></cell>
+      <cell><m>\vdots</m></cell>
+      <cell><m>\vdots</m></cell>
+      <cell><m>\vdots</m></cell>
+      <cell right="minor"><m>\vdots</m></cell>
+      <cell><m>\vdots</m></cell>
+      <cell><m>\vdots</m></cell>
+      <cell><m>\vdots</m></cell>
+      <cell><m>\vdots</m></cell>
+      <cell right="minor"><m>\vdots</m></cell>
+    </row>
+  </tabular>
+</table>
+
 <p>
-  To find the area to the right, calculate 1 minus the area to the left.
+  When using a normal probability table to find a percentile for <m>Z</m> (rounded to two decimals), identify the proper row in the normal probability table up through the first decimal, and then determine the column representing the second decimal value. The intersection of this row and column is the percentile of the observation. For instance, the percentile of <m>Z = 0.45</m> is shown in row 0.4 and column 0.05 in <xref ref="short_ztable"></xref>: 0.6736, or the 67.36th percentile.
 </p>
+
 <sidebyside>
-<image width="50%" source="images/appendix/subtractingArea.png"/>
+  <image source="images/appendix/negativepositive.png" />
 </sidebyside>
+
+<example>
+  <statement>
+    <p>
+      SAT scores follow a normal distribution, <m>N(1100, 200)</m>. Ann earned a score of 1300 on her SAT with a corresponding Z-score of <m>Z = 1</m>. She would like to know what percentile she falls in among all SAT test-takers.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      Ann’s <term>percentile</term> is the percentage of people who earned a lower SAT score than her. We shade the area representing those individuals in the following graph:
+    </p>
+    <sidebyside>
+      <image source="images/appendix/lessthan1.png" />
+    </sidebyside>
+    <p>
+      The total area under the normal curve is always equal to 1, and the proportion of people who scored below Ann on the SAT is equal to the <em>area</em> shaded in the graph. We find this area by looking in row 1.0 and column 0.00 in the normal probability table: 0.8413. In other words, Ann is in the 84th percentile of SAT takers.
+    </p>
+  </solution>
+</example>
+
+<example>
+  <statement>
+    <p>
+      How do we find an upper tail area?
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The normal probability table always gives the area to the left. This means that if we want the area to the right, we first find the lower tail and then subtract it from 1. For instance, 84.13% of SAT takers scored below Ann, which means 15.87% of test takers scored higher than Ann.
+    </p>
+  </solution>
+</example>
+
+<p>
+  We can also find the Z-score associated with a percentile. For example, to identify <m>Z</m> for the 80th percentile, we look for the value closest to 0.8000 in the middle portion of the table: 0.7995. We determine the Z-score for the 80th percentile by combining the row and column Z values: 0.84.
+</p>
+<example>
+  <statement>
+    <p>
+      Find the SAT score for the 80th percentile.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      We look for the are to the value in the table closest to 0.8000. The closest value is 0.7995, which corresponds to <m>Z = 0.84</m>, where 0.8 comes from the row value and 0.04 comes from the column value. Next, we set up the equation for the Z-score and the unknown value <m>x</m> as follows, and then we solve for <m>x</m>:
+      <md>
+        <mrow>
+          Z= 0.84 = \frac{x-1100}{200} \rightarrow x = 1268
+        </mrow>
+      </md>
+      The College Board scales scores to increments of 10, so the 80th percentile is 1270. (Reporting 1268 would have been perfectly okay for our purposes.)
+    </p>
+  </solution>
+</example>
+
 <p>
   For additional details about working with the normal distribution and the normal probability table, see <xref ref="normalDist"></xref>.
 </p>
 
-<image width="50%" source="images/appendix/normalTailLeft.png"/>
+<sidebyside>
+  <image width="50%" source="images/appendix/normalTailLeft.png"/>
+</sidebyside>
 
 <table xml:id="normal_prob_table">
   <title></title>
@@ -533,17 +791,17 @@
     <cell right="minor" bottom="minor"></cell>
   </row>
   <row bottom="minor">
-    <cell right="minor"><m>Z</m></cell>
-    <cell>0.00</cell>
-    <cell>0.01</cell>
-    <cell>0.02</cell>
-    <cell>0.03</cell>
-    <cell right="minor">0.04</cell>
-    <cell>0.05</cell>
-    <cell>0.06</cell>
-    <cell>0.07</cell>
-    <cell>0.08</cell>
-    <cell right="minor">0.09</cell>
+    <cell halign="center" right="minor"><m>Z</m></cell>
+    <cell halign="right">0.00</cell>
+    <cell halign="right">0.01</cell>
+    <cell halign="right">0.02</cell>
+    <cell halign="right">0.03</cell>
+    <cell halign="right" right="minor">0.04</cell>
+    <cell halign="right">0.05</cell>
+    <cell halign="right">0.06</cell>
+    <cell halign="right">0.07</cell>
+    <cell halign="right">0.08</cell>
+    <cell halign="right" right="minor">0.09</cell>
   </row>
 <row>
   <cell right="minor">0.0</cell>

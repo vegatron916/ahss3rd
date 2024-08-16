@@ -516,7 +516,7 @@
       </p>
       <p>
         <em>Check</em>: Check that the test statistic follows a chi-square distribution.
-        <ol label="1">
+        <ol marker="1">
           <li>
             <p>
               Independence: Data come from multiple random samples or from a randomized experiment with multiple treatments. When sampling without replacement, the sample size should be less than 10% of the population size for each sample.
@@ -972,7 +972,7 @@
       </p>
       <p>
         <em>Check</em>: Check that the test statistic follows a chi-square distribution.
-        <ol label="1">
+        <ol marker="1">
           <li>
             <p>
               Independence: Data come from one random sample. If sampling without replacement, check that the sample size is less than 10% of the population size.
@@ -1714,7 +1714,7 @@
             <p>
             	Answer each of the following questions under the null hypothesis that being part of a support group does not affect the ability of people to quit smoking,
             	and indicate whether the expected values are higher or lower than the observed values.
-            	<ol label="i">
+            	<ol marker="i">
               		<li>
               			<p>
               				How many subjects in the <q>patch + support</q> group would you expect to quit?
@@ -1772,7 +1772,7 @@
           </li>
           <li>
             <p>
-              <ol label="i">
+              <ol marker="i">
                 <li>
                   <p>
                     <m>E_{row_{1},col_{1}} = \frac{(\text{row 1 total})\times(\text{col 1 total})}{\text{table total}} = 35</m>. This is lower than the observed value.
@@ -1979,7 +1979,7 @@
     	then, 
     	to focus not on the calculations, 
     	but rather on
-	    <ol label="1">
+	    <ol marker="1">
 	    	<li>
 	        	<p>
 	        		choosing the correct procedure

@@ -366,7 +366,7 @@
       </p>
       <p>
         <em>Check</em>: Check conditions for the sampling distribution of <m>\bar{x}_{\text{diff}}</m> to be nearly normal.
-        <ol label="1">
+        <ol marker="1">
           <li>
             <p>
               Independence: Data come from one random sample (with paired data) or from a randomized matched pairs experiment. When sampling without replacement, check that the sample size is less than 10% of the population size.
@@ -757,7 +757,7 @@
       </p>
       <p>
         <em>Check</em>: Check conditions for the sampling distribution of <m>\bar{x}_{\text{diff}}</m> to be nearly normal.
-        <ol label="1">
+        <ol marker="1">
           <li>
             <p>
                Independence: Data come from one random sample (with paired data) or from a randomized matched pairs experiment. When sampling without replacement, check that the sample size is less than 10% of the population size.
@@ -1098,7 +1098,7 @@
       <li>
         <p>
           The one-sample <m>t</m>-interval and and <m>t</m>-test  with paired data require the sampling distribution for <m>\bar{x}_{diff}</m> to be nearly normal. For this reason, we must check that the following conditions are met.
-          <ol label="1">
+          <ol marker="1">
             <li>
               <p>
                 Independence: Data should come from one random sample (with paired observations) or from a randomized matched pairs experiment. If sampling without replacement, check that the sample size is less than 10% of the population size.

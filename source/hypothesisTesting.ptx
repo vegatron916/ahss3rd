@@ -1434,7 +1434,7 @@
       </p>
     </statement>
     <solution>
-      <ol label="a">
+      <ol marker="a">
         <li>
           <p>
             <m>H_{0}: p_{unemp}=p_{underemp}</m>: The proportions of unemployed and underemployed people whoare having relationship problems are equal. <m>H_{0}: p_{unemp} \neq p_{underemp}</m>: The proportions of unemployed and underemployed people who are having relationship problems are different.

@@ -613,7 +613,7 @@
     <p>
       Many analyses are motivated by a researcher looking for a relationship between two or more variables.
       A social scientist may like to answer some of the following questions:
-      <ol label="1.">
+      <ol marker="1.">
         <li xml:id="ownershipMultiUnitQuestion">
           <p>
             If homeownership is lower than the national average in one county,

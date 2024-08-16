@@ -203,7 +203,7 @@
         <p>
           Which of the following statements are true?
           There may be more than one.
-          <ol label="a">
+          <ol marker="a">
             <li>
               <p>
                 There is an apparent linear relationship between <m>x</m> and <m>y</m>.
@@ -341,7 +341,7 @@
     </statement>
     <solution>
       <p>
-        <ol label="a">
+        <ol marker="a">
           <li>
             <p>
               The relationship is positive, non-linear, and somewhat strong. Due to the non-linear form of the relationship and the clear non-constant variance in the residuals, a linear model is not appropriate for modeling the relationship between year and price.

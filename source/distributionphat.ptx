@@ -192,7 +192,11 @@
       An interesting question to answer is, <em>what happens when <m>np \lt 10</m> or <m>n(1-p) \lt 10</m></em>? We can simulate drawing samples of different sizes where, say, the true proportion is <m>p = 0.25</m>. Here’s a sample of size 10:
     </p>
 
-    <p> no, no, yes, yes, no, no, no, no, no, no CENTERED </p>
+    <sidebyside margins="auto" valign="middle">
+      <p>
+        \amp\amp no, no, yes, yes, no, no, no, no, no, no
+      </p>
+    </sidebyside>
 
     <p>
       In this sample, we observe a sample proportion of yeses of <m>\hat{p}=\frac{2}{10}=0.2</m>. We can simulate many such proportions to understand the sampling distribution for <m>\hat{p}</m> when <m>n = 10</m> and <m>p = 0.25</m>, which we’ve plotted in <xref ref="sampling_10_prop_25p"></xref> alongside a normal distribution with the same mean and variability. These distributions have a number of important differences.
@@ -232,7 +236,11 @@
       Notice that the success-failure condition was not satisfied when <m>n = 10</m> and <m>p = 0.25</m>:
     </p>
 
-    <p> <m>np = 10 \times 0.25 - 2.5</m> <m>n(1-p)=10 \times 0.75 = 7.5</m> CENTERED </p>
+    <sidebyside valign="middle">
+      <p>
+        <m>np = 10 \times 0.25 - 2.5</m> <m>n(1-p)=10 \times 0.75 = 7.5</m>
+      </p>
+    </sidebyside>
 
     <p>
       This single sampling distribution does not show that the success-failure condition is the perfect guideline, but we have found that the guideline did correctly identify that a normal distribution might not be appropriate.
@@ -245,7 +253,7 @@
 
     <p>
       We can complete several additional simulations, shown in <xref ref="clt_prop_grid_1"></xref> and <xref ref="clt_prop_grid_2"></xref>, and we can see some trends:
-      <ol label="1">
+      <ol marker="1">
         <li>
           <p>
             When either <m>np</m> or <m>n(1 − p)</m> is small, the distribution is more <term>discrete</term>, i.e. <em>not continuous</em>.
@@ -271,7 +279,7 @@
    
     <p>
       So far we’ve only focused on the skew and discreteness of the distributions. We haven’t considered how the mean and standard error of the distributions change. Take a moment to look back at the graphs, and pay attention to three things:
-      <ol label="1">
+      <ol marker="1">
         <li>
           <p>
             The centers of the distribution are always at the population proportion, <m>p</m>, that was used to generate the simulation. Because the sampling distribution for <m>\hat{p}</m> is always centered at the population parameter <m>p</m>, it means the sample proportion <m>\hat{p}</m> is <term>unbiased</term> when the data are independent and drawn from such a population.
@@ -298,7 +306,7 @@
   <title>Three Important Factors About The Distribution Of A Sample Proportion <m>\hat{p}</m></title>
     <p>
       When the observations can be considered independent, such as from a random sample of less than 10% of the population, the distribution of the sample proportion can be described as follows.
-      <ol label="1">
+      <ol marker="1">
         <li>
           <p>
             CENTER: The mean of a sample proportion is <m>p</m>.
@@ -520,7 +528,7 @@
         Suppose that 8% of college students are vegetarians.
         Determine if the following statements are true or false,
         and explain your reasoning.
-        <ol label="a">
+        <ol marker="a">
           <li>
             <p>
               The distribution of the sample proportions of vegetarians in random samples of size 60 is approximately normal since <m>n \ge 30</m>.

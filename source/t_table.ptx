@@ -2,319 +2,529 @@
 
 <section xml:id="tDistributionTable_section">
 <title><m>t</m> Probability Table</title>
-<p></p>
-  <figure>
-    <caption>Three <m>t</m> distributions</caption>
-    <image width="95%" source="images/appendix/tTails.png"/>
-  </figure>
-<table xml:id="tDistributionTable">
-<title></title>
-  <tabular>
-  <row bottom="minor" halign="right">
-    <cell right="minor" colspan="2">one tail</cell>
-    <cell>0.100</cell>
-    <cell>0.050</cell>
-    <cell>0.025</cell>
-    <cell>0.010</cell>
-    <cell>0.005</cell>
-  </row>
-  <row halign="right">
-  	<cell>df</cell>
-    <cell right="minor">1</cell>
-    <cell>3.08</cell>
-    <cell>6.31</cell>
-    <cell>12.71</cell>
-    <cell>31.82</cell>
-    <cell>63.66</cell>
-  </row>
-  <row halign="right">
-  	<cell></cell>
-    <cell right="minor">2</cell>
-    <cell>1.89</cell>
-    <cell>2.92</cell>
-    <cell>4.30</cell>
-    <cell>6.96</cell>
-    <cell>9.92</cell>
-  </row>
-  <row halign="right">
-  	<cell></cell>
-    <cell right="minor">3</cell>
-    <cell>1.64</cell>
-    <cell>2.35</cell>
-    <cell>3.18</cell>
-    <cell>4.54</cell>
-    <cell>5.84</cell>
-  </row>
-  <row halign="right">
-  	<cell></cell>
-    <cell right="minor">4</cell>
-    <cell>1.53</cell>
-    <cell>2.13</cell>
-    <cell>2.78</cell>
-    <cell>3.75</cell>
-    <cell>4.60</cell>
-  </row>
-  <row bottom="minor" halign="right">
-  	<cell></cell>
-    <cell right="minor">5</cell>
-    <cell>1.48</cell>
-    <cell>2.02</cell>
-    <cell>2.57</cell>
-    <cell>3.36</cell>
-    <cell>4.03</cell>
-  </row>
-  <row halign="right">
-  	<cell></cell>
-    <cell right="minor">6</cell>
-    <cell>1.44</cell>
-    <cell>1.94</cell>
-    <cell>2.45</cell>
-    <cell>3.14</cell>
-    <cell>3.71</cell>
-  </row>
-  <row halign="right">
-  	<cell></cell>
-    <cell right="minor">7</cell>
-    <cell>1.41</cell>
-    <cell>1.89</cell>
-    <cell>2.36</cell>
-    <cell>3.00</cell>
-    <cell>3.50</cell>
-  </row>
-  <row halign="right">
-  	<cell></cell>
-    <cell right="minor">8</cell>
-    <cell>1.40</cell>
-    <cell>1.86</cell>
-    <cell>2.31</cell>
-    <cell>2.90</cell>
-    <cell>3.36</cell>
-  </row>
-  <row halign="right">
-  	<cell></cell>
-    <cell right="minor">9</cell>
-    <cell>1.38</cell>
-    <cell>1.83</cell>
-    <cell>2.26</cell>
-    <cell>2.82</cell>
-    <cell>3.25</cell>
-  </row>
-  <row bottom="minor" halign="right">
-  	<cell></cell>
-    <cell right="minor">10</cell>
-    <cell>1.37</cell>
-    <cell>1.81</cell>
-    <cell>2.23</cell>
-    <cell>2.76</cell>
-    <cell>3.17</cell>
-  </row>
-  <row halign="right">
-  	<cell></cell>
-  	<cell right="minor">11</cell>
-  	<cell>1.36</cell>
-  	<cell>1.80</cell>
-  	<cell>2.20</cell>
-  	<cell>2.72</cell>
-  	<cell>3.11</cell>
-  </row>
-  <row halign="right">
-  	<cell></cell>
-    <cell right="minor">12</cell>
-    <cell>1.36</cell>
-    <cell>1.78</cell>
-    <cell>2.18</cell>
-    <cell>2.68</cell>
-    <cell>3.05</cell>
-  </row>
-  <row halign="right">
-  	<cell></cell>
-    <cell right="minor">13</cell>
-    <cell>1.35</cell>
-    <cell>1.77</cell>
-    <cell>2.16</cell>
-    <cell>2.65</cell>
-    <cell>3.01</cell>
-  </row>
-  <row halign="right">
-  	<cell></cell>
-    <cell right="minor">14</cell>
-    <cell>1.35</cell>
-    <cell>1.76</cell>
-    <cell>2.14</cell>
-    <cell>2.62</cell>
-    <cell>2.98</cell>
-  </row>
-  <row bottom="minor" halign="right">
-  	<cell></cell>
-    <cell right="minor">15</cell>
-    <cell>1.34</cell>
-    <cell>1.75</cell>
-    <cell>2.13</cell>
-    <cell>2.60</cell>
-    <cell>2.95</cell>
-  </row>
-  <row halign="right">
-  	<cell></cell>
-    <cell right="minor">16</cell>
-    <cell>1.34</cell>
-    <cell>1.75</cell>
-    <cell>2.12</cell>
-    <cell>2.58</cell>
-    <cell>2.92</cell>
-  </row>
-  <row halign="right">
-  	<cell></cell>
-    <cell right="minor">17</cell>
-    <cell>1.33</cell>
-    <cell>1.74</cell>
-    <cell>2.11</cell>
-    <cell>2.57</cell>
-    <cell>2.90</cell>
-  </row>
-  <row halign="right">
-  	<cell></cell>
-    <cell right="minor">18</cell>
-    <cell>1.33</cell>
-    <cell>1.73</cell>
-    <cell>2.10</cell>
-    <cell>2.55</cell>
-    <cell>2.88</cell>
-  </row>
-  <row halign="right">
-  	<cell></cell>
-    <cell right="minor">19</cell>
-    <cell>1.33</cell>
-    <cell>1.73</cell>
-    <cell>2.09</cell>
-    <cell>2.54</cell>
-    <cell>2.86</cell>
-  </row>
-  <row bottom="minor" halign="right">
-  	<cell></cell>
-    <cell right="minor">20</cell>
-    <cell>1.33</cell>
-    <cell>1.72</cell>
-    <cell>2.09</cell>
-    <cell>2.53</cell>
-    <cell>2.85</cell>
-  </row>
-  <row halign="right">
-  	<cell></cell>
-    <cell right="minor">21</cell>
-    <cell>1.32</cell>
-    <cell>1.72</cell>
-    <cell>2.08</cell>
-    <cell>2.52</cell>
-    <cell>2.83</cell>
-  </row>
-  <row halign="right">
-  	<cell></cell>
-    <cell right="minor">22</cell>
-    <cell>1.32</cell>
-    <cell>1.72</cell>
-    <cell>2.07</cell>
-    <cell>2.51</cell>
-    <cell>2.82</cell>
-  </row>
-  <row halign="right">
-  	<cell></cell>
-    <cell right="minor">23</cell>
-    <cell>1.32</cell>
-    <cell>1.71</cell>
-    <cell>2.07</cell>
-    <cell>2.50</cell>
-    <cell>2.81</cell>
-  </row>
-  <row halign="right">
-  	<cell></cell>
-    <cell right="minor">24</cell>
-    <cell>1.32</cell>
-    <cell>1.71</cell>
-    <cell>2.06</cell>
-    <cell>2.49</cell>
-    <cell>2.80</cell>
-  </row>
-  <row bottom="minor" halign="right">
-  	<cell></cell>
-    <cell right="minor">25</cell>
-    <cell>1.32</cell>
-    <cell>1.71</cell>
-    <cell>2.06</cell>
-    <cell>2.49</cell>
-    <cell>2.79</cell>
-  </row>
-  <row halign="right">
-  	<cell></cell>
-    <cell right="minor">26</cell>
-    <cell>1.31</cell>
-    <cell>1.71</cell>
-    <cell>2.06</cell>
-    <cell>2.48</cell>
-    <cell>2.78</cell>
-  </row>
-  <row halign="right">
-  	<cell></cell>
-    <cell right="minor">27</cell>
-    <cell>1.31</cell>
-    <cell>1.70</cell>
-    <cell>2.05</cell>
-    <cell>2.47</cell>
-    <cell>2.77</cell>
-  </row>
-  <row halign="right">
-  	<cell></cell>
-    <cell right="minor">28</cell>
-    <cell>1.31</cell>
-    <cell>1.70</cell>
-    <cell>2.05</cell>
-    <cell>2.47</cell>
-    <cell>2.76</cell>
-  </row>
-  <row halign="right">
-  	<cell></cell>
-    <cell right="minor">29</cell>
-    <cell>1.31</cell>
-    <cell>1.70</cell>
-    <cell>2.05</cell>
-    <cell>2.46</cell>
-    <cell>2.76</cell>
-  </row>
-  <row bottom="minor" halign="right">
-  	<cell></cell>
-    <cell right="minor">30</cell>
-    <cell>1.31</cell>
-    <cell>1.70</cell>
-    <cell>2.04</cell>
-    <cell>2.46</cell>
-    <cell>2.75</cell>
-  </row>
-    <row bottom="minor" halign="center">
-    	<cell></cell>
-      <cell right="minor">Confidence level C</cell>
-      <cell>80%</cell>
-      <cell>90%</cell>
-      <cell>95%</cell>
-      <cell>98%</cell>
-      <cell>99%</cell>
-    </row>
-  </tabular>
-</table>
 
-<figure>
-  <caption>Three <m>t</m> distributions</caption>
-  <image width="80%" source="images/appendix/tTails.png"/>
-</figure>
+<p>
+  A <term><m>t</m>-probability</term> table may be used to find tail areas of a t-distribution using a T-score, or vice-versa. Such a table lists T-scores and the corresponding percentiles. A partial t-table is shown in <xref ref="Tshort"></xref>, and the complete table starts further below. Each row in the t-table represents a t-distribution with different degrees of freedom. The columns correspond to tail probabilities. For instance, if we know we are working with the t-distribution with <m>df = 18</m>, we can examine row 18, which is highlighted in <xref ref="Tshort"></xref>. If we want the value in this row that identifies the T-score (cutoff) for an upper tail of 10%, we can look in the column where one tail is 0.100. This cutoff is 1.33. If we had wanted the cutoff for the lower 10%, we would use -1.33. Just like the normal distribution, all t-distributions are symmetric.
+</p>
 
-<table>
-<title></title>
+<table xml:id="Tshort">
+<title>An abbreviated look at the t-table. Each row represents a different t-distribution. The columns describe the cutoffs for specific tail areas. The row with <m>df = 18</m> has been <em>emphasized</em>.</title>>
   <tabular>
-    <row bottom="minor" halign="right">
+    <row halign="right">
       <cell right="minor" colspan="2">one tail</cell>
       <cell>0.100</cell>
       <cell>0.050</cell>
       <cell>0.025</cell>
       <cell>0.010</cell>
       <cell>0.005</cell>
+    </row>
+    <row bottom="minor" halign="right">
+      <cell right="minor" colspan="2">two tails</cell>
+      <cell>0.200</cell>
+      <cell>0.100</cell>
+      <cell>0.050</cell>
+      <cell>0.020</cell>
+      <cell>0.010</cell>
+    </row>
+    <row halign="right">
+      <cell>df</cell>
+      <cell right="minor">1</cell>
+      <cell>3.08</cell>
+      <cell>6.31</cell>
+      <cell>12.71</cell>
+      <cell>31.82</cell>
+      <cell>63.66</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">2</cell>
+      <cell>1.89</cell>
+      <cell>2.92</cell>
+      <cell>4.30</cell>
+      <cell>6.96</cell>
+      <cell>9.92</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">3</cell>
+      <cell>1.64</cell>
+      <cell>2.35</cell>
+      <cell>3.18</cell>
+      <cell>4.54</cell>
+      <cell>5.84</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor"><m>\vdots</m></cell>
+      <cell><m>\vdots</m></cell>
+      <cell><m>\vdots</m></cell>
+      <cell><m>\vdots</m></cell>
+      <cell><m>\vdots</m></cell>
+      <cell></cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">17</cell>
+      <cell>1.33</cell>
+      <cell>1.74</cell>
+      <cell>2.11</cell>
+      <cell>2.57</cell>
+      <cell>2.90</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor"><em>18</em></cell>
+      <cell><em>1.33</em></cell>
+      <cell><em>1.73</em></cell>
+      <cell><em>2.10</em></cell>
+      <cell><em>2.55</em></cell>
+      <cell><em>2.88</em></cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">19</cell>
+      <cell>1.33</cell>
+      <cell>1.73</cell>
+      <cell>2.09</cell>
+      <cell>2.54</cell>
+      <cell>2.86</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">20</cell>
+      <cell>1.33</cell>
+      <cell>1.72</cell>
+      <cell>2.09</cell>
+      <cell>2.53</cell>
+      <cell>2.85</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor"><m>\vdots</m></cell>
+      <cell><m>\vdots</m></cell>
+      <cell><m>\vdots</m></cell>
+      <cell><m>\vdots</m></cell>
+      <cell><m>\vdots</m></cell>
+      <cell></cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">400</cell>
+      <cell>1.28</cell>
+      <cell>1.65</cell>
+      <cell>1.97</cell>
+      <cell>2.34</cell>
+      <cell>2.59</cell>
+    </row>
+    <row bottom="minor" halign="right">
+      <cell></cell>
+      <cell right="minor">500</cell>
+      <cell>1.28</cell>
+      <cell>1.65</cell>
+      <cell>1.96</cell>
+      <cell>2.33</cell>
+      <cell>2.59</cell>
+    </row>
+    <row halign="center">
+      <cell></cell>
+      <cell right="minor"><m>\infty</m></cell>
+      <cell>1.28</cell>
+      <cell>1.64</cell>
+      <cell>1.96</cell>
+      <cell>2.33</cell>
+      <cell>2.58</cell>
+    </row>
+  </tabular>
+</table>
+
+<example>
+  <statement>
+    <p>
+      What proportion of the t-distribution with 18 degrees of freedom falls below -2.10?
+    </p>
+  </statement>
+  <solution>
+    <p>
+      Just like a normal probability problem, we first draw the picture and shade the area below -2.10:
+    </p>
+    <sidebyside>
+        <image width="50%" source="images/appendix/tleft.png"/>
+    </sidebyside>
+    <p>
+      To find this area, we first identify the appropriate row: df = 18. Then we identify the column containing the absolute value of -2.10; it is the third column. Because we are looking for just one tail, we examine the top line of the table, which shows that a one tail area for a value in the third row corresponds to 0.025. That is, 2.5% of the distribution falls below -2.10.
+    </p>
+    <p>
+      In the next example we encounter a case where the exact T-score is not listed in the table.
+    </p>
+  </solution>
+</example>
+
+<example>
+  <statement>
+    <p>
+      A t-distribution with 20 degrees of freedom is shown in the left panel of <xref ref="rightdoublesidet"></xref>. Estimate the proportion of the distribution falling above 1.65.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      We identify the row in the t-table using the degrees of freedom: <m>df = 20</m>. Then we look for 1.65; it is not listed. It falls between the first and second columns. Since these values bound 1.65, their tail areas will bound the tail area corresponding to 1.65. We identify the one tail area of the first and second columns, 0.050 and 0.10, and we conclude that between 5% and 10% of the distribution is more than 1.65 standard deviations above the mean. If we like, we can identify the precise area using statistical software: 0.0573.
+    </p>
+    <figure xml:id="rightdoublesidet">
+      <caption>Left: The t-distribution with 20 degrees of freedom, with the area above 1.65 shaded. Right: The t-distribution with 475 degrees of freedom, with the area further than 2 units from 0 shaded.</caption>
+        <image width="50%" source="images/appendix/rightandtwoside.png"/>
+    </figure>
+  </solution>
+</example>
+
+<example>
+  <statement>
+    <p>
+    A t-distribution with 475 degrees of freedom is shown in the right panel of <xref ref="rightdoublesidet"></xref>. Estimate the proportion of the distribution falling more than 2 units from the mean (above or below).
+    </p>
+  </statement>
+  <solution>
+    <p>
+      As before, first identify the appropriate row: <m>df = 475</m>. This row does not exist! When this happens, we use the next smaller row, which in this case is <m>df = 400</m>. Next, find the columns that capture 2.00; because <m>1.97 \lt 3 \lt 2.34</m>, we use the third and fourth columns. Finally, we find bounds for the tail areas by looking at the two tail values: 0.02 and 0.05. We use the two tail values because we are looking for two symmetric tails in the t-distribution.
+    </p>
+  </solution>
+</example>
+
+<exercise>
+  <p>
+    What proportion of the t-distribution with 19 degrees of freedom falls above -1.79 units?<fn>We find the shaded area <em>above</em> -1.79 (we leave the picture to you). The small left tail is between 0.025 and 0.05, so the larger upper region must have an area between 0.95 and 0.975.</fn>
+  </p>
+</exercise>
+
+<example>
+  <statement>
+    <p>
+      Find the value of <m>t^{*}_{18}</m> using the t-table, where <m>t^{*}_{18}</m> is the cutoff for the t-distribution with 18 degrees of freedom where 95% of the distribution lies between <m>-t^{*}_{18}</m> and <m>+t^{*}_{18}</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+    For a 95% confidence interval, we want to find the cutoff <m>t^{*}_{18}</m> such that 95% of the t-distribution is between <m>-t^{*}_{18}</m> and <m>+t^{*}_{18}</m>; this is the same as where the two tails have a total area of 0.05. We look at the full t-table below, find the column with area totaling 0.05 in the two tails (third column), and then the row with 18 degrees of freedom: <m>+t^{*}_{18}=2.10</m>.
+    </p>
+  </solution>
+</example>
+
+<figure>
+  <image width="95%" source="images/appendix/tTails.png"/>
+</figure>
+<table xml:id="tDistributionTable">
+<title></title>
+  <tabular>
+    <row halign="right">
+      <cell right="minor" colspan="2">one tail</cell>
+      <cell>0.100</cell>
+      <cell>0.050</cell>
+      <cell>0.025</cell>
+      <cell>0.010</cell>
+      <cell>0.005</cell>
+    </row>
+    <row halign="right">
+      <cell right="minor" colspan="2">two tail</cell>
+      <cell>0.200</cell>
+      <cell>0.100</cell>
+      <cell>0.050</cell>
+      <cell>0.020</cell>
+      <cell>0.010</cell>
+    </row>
+    <row halign="right">
+      <cell>df</cell>
+      <cell right="minor">1</cell>
+      <cell>3.08</cell>
+      <cell>6.31</cell>
+      <cell>12.71</cell>
+      <cell>31.82</cell>
+      <cell>63.66</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">2</cell>
+      <cell>1.89</cell>
+      <cell>2.92</cell>
+      <cell>4.30</cell>
+      <cell>6.96</cell>
+      <cell>9.92</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">3</cell>
+      <cell>1.64</cell>
+      <cell>2.35</cell>
+      <cell>3.18</cell>
+      <cell>4.54</cell>
+      <cell>5.84</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">4</cell>
+      <cell>1.53</cell>
+      <cell>2.13</cell>
+      <cell>2.78</cell>
+      <cell>3.75</cell>
+      <cell>4.60</cell>
+    </row>
+    <row bottom="minor" halign="right">
+      <cell></cell>
+      <cell right="minor">5</cell>
+      <cell>1.48</cell>
+      <cell>2.02</cell>
+      <cell>2.57</cell>
+      <cell>3.36</cell>
+      <cell>4.03</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">6</cell>
+      <cell>1.44</cell>
+      <cell>1.94</cell>
+      <cell>2.45</cell>
+      <cell>3.14</cell>
+      <cell>3.71</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">7</cell>
+      <cell>1.41</cell>
+      <cell>1.89</cell>
+      <cell>2.36</cell>
+      <cell>3.00</cell>
+      <cell>3.50</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">8</cell>
+      <cell>1.40</cell>
+      <cell>1.86</cell>
+      <cell>2.31</cell>
+      <cell>2.90</cell>
+      <cell>3.36</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">9</cell>
+      <cell>1.38</cell>
+      <cell>1.83</cell>
+      <cell>2.26</cell>
+      <cell>2.82</cell>
+      <cell>3.25</cell>
+    </row>
+    <row bottom="minor" halign="right">
+      <cell></cell>
+      <cell right="minor">10</cell>
+      <cell>1.37</cell>
+      <cell>1.81</cell>
+      <cell>2.23</cell>
+      <cell>2.76</cell>
+      <cell>3.17</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">11</cell>
+      <cell>1.36</cell>
+      <cell>1.80</cell>
+      <cell>2.20</cell>
+      <cell>2.72</cell>
+      <cell>3.11</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">12</cell>
+      <cell>1.36</cell>
+      <cell>1.78</cell>
+      <cell>2.18</cell>
+      <cell>2.68</cell>
+      <cell>3.05</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">13</cell>
+      <cell>1.35</cell>
+      <cell>1.77</cell>
+      <cell>2.16</cell>
+      <cell>2.65</cell>
+      <cell>3.01</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">14</cell>
+      <cell>1.35</cell>
+      <cell>1.76</cell>
+      <cell>2.14</cell>
+      <cell>2.62</cell>
+      <cell>2.98</cell>
+    </row>
+    <row bottom="minor" halign="right">
+      <cell></cell>
+      <cell right="minor">15</cell>
+      <cell>1.34</cell>
+      <cell>1.75</cell>
+      <cell>2.13</cell>
+      <cell>2.60</cell>
+      <cell>2.95</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">16</cell>
+      <cell>1.34</cell>
+      <cell>1.75</cell>
+      <cell>2.12</cell>
+      <cell>2.58</cell>
+      <cell>2.92</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">17</cell>
+      <cell>1.33</cell>
+      <cell>1.74</cell>
+      <cell>2.11</cell>
+      <cell>2.57</cell>
+      <cell>2.90</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">18</cell>
+      <cell>1.33</cell>
+      <cell>1.73</cell>
+      <cell>2.10</cell>
+      <cell>2.55</cell>
+      <cell>2.88</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">19</cell>
+      <cell>1.33</cell>
+      <cell>1.73</cell>
+      <cell>2.09</cell>
+      <cell>2.54</cell>
+      <cell>2.86</cell>
+    </row>
+    <row bottom="minor" halign="right">
+      <cell></cell>
+      <cell right="minor">20</cell>
+      <cell>1.33</cell>
+      <cell>1.72</cell>
+      <cell>2.09</cell>
+      <cell>2.53</cell>
+      <cell>2.85</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">21</cell>
+      <cell>1.32</cell>
+      <cell>1.72</cell>
+      <cell>2.08</cell>
+      <cell>2.52</cell>
+      <cell>2.83</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">22</cell>
+      <cell>1.32</cell>
+      <cell>1.72</cell>
+      <cell>2.07</cell>
+      <cell>2.51</cell>
+      <cell>2.82</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">23</cell>
+      <cell>1.32</cell>
+      <cell>1.71</cell>
+      <cell>2.07</cell>
+      <cell>2.50</cell>
+      <cell>2.81</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">24</cell>
+      <cell>1.32</cell>
+      <cell>1.71</cell>
+      <cell>2.06</cell>
+      <cell>2.49</cell>
+      <cell>2.80</cell>
+    </row>
+    <row bottom="minor" halign="right">
+      <cell></cell>
+      <cell right="minor">25</cell>
+      <cell>1.32</cell>
+      <cell>1.71</cell>
+      <cell>2.06</cell>
+      <cell>2.49</cell>
+      <cell>2.79</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">26</cell>
+      <cell>1.31</cell>
+      <cell>1.71</cell>
+      <cell>2.06</cell>
+      <cell>2.48</cell>
+      <cell>2.78</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">27</cell>
+      <cell>1.31</cell>
+      <cell>1.70</cell>
+      <cell>2.05</cell>
+      <cell>2.47</cell>
+      <cell>2.77</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">28</cell>
+      <cell>1.31</cell>
+      <cell>1.70</cell>
+      <cell>2.05</cell>
+      <cell>2.47</cell>
+      <cell>2.76</cell>
+    </row>
+    <row halign="right">
+      <cell></cell>
+      <cell right="minor">29</cell>
+      <cell>1.31</cell>
+      <cell>1.70</cell>
+      <cell>2.05</cell>
+      <cell>2.46</cell>
+      <cell>2.76</cell>
+    </row>
+    <row bottom="minor" halign="right">
+      <cell></cell>
+      <cell right="minor">30</cell>
+      <cell>1.31</cell>
+      <cell>1.70</cell>
+      <cell>2.04</cell>
+      <cell>2.46</cell>
+      <cell>2.75</cell>
+    </row>
+  </tabular>
+</table>
+
+<figure>
+  <image width="80%" source="images/appendix/tTails.png"/>
+</figure>
+
+<table>
+<title></title>
+  <tabular>
+    <row halign="right">
+      <cell right="minor" colspan="2">one tail</cell>
+      <cell>0.100</cell>
+      <cell>0.050</cell>
+      <cell>0.025</cell>
+      <cell>0.010</cell>
+      <cell>0.005</cell>
+    </row>
+    <row halign="right">
+      <cell right="minor" colspan="2">two tail</cell>
+      <cell>0.200</cell>
+      <cell>0.100</cell>
+      <cell>0.050</cell>
+      <cell>0.020</cell>
+      <cell>0.010</cell>
     </row>
     <row halign="right">
     	<cell>df</cell>
@@ -588,7 +798,7 @@
     </row>
     <row bottom="minor" halign="right">
     	<cell></cell>
-      <cell right="minor"><m>\infty</m></cell>
+      <cell right="minor"><m>\inf</m></cell>
       <cell>1.28</cell>
       <cell>1.65</cell>
       <cell>1.96</cell>
@@ -597,12 +807,12 @@
     </row>
     <row bottom="minor" halign="center">
       <cell></cell>
-      <cell right="minor">Confidence level C</cell>
-      <cell>80%</cell>
-      <cell>90%</cell>
-      <cell>95%</cell>
-      <cell>98%</cell>
-      <cell>99%</cell>
+      <cell right="minor"><m>\inf</m></cell>
+      <cell>1.28</cell>
+      <cell>1.65</cell>
+      <cell>1.96</cell>
+      <cell>2.33</cell>
+      <cell>2.58</cell>
     </row>
   </tabular>
 </table>

@@ -847,7 +847,7 @@
       </p>
       <p>
         <em>Check</em>: Check that the test statistic follows a chi-square distribution.
-        <ol label="1">
+        <ol marker="1">
           <li>
             <p>
               Independence: Data come from a random sample or random process. If sampling without replacement, check that the sample size is less than 10% of the population size.
@@ -1446,7 +1446,7 @@
       <li>
         <p>
           For the <m>\chi^2</m> goodness of fit test, we check the following conditions to verify that the test statistic follows a chi-square distribution.
-          <ol label="1">
+          <ol marker="1">
             <li>
               <p>
                 Independence: Data come from a random sample or random process. When sampling without replacement, check that sample size is less than 10% of the population size.

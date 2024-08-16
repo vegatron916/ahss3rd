@@ -789,7 +789,7 @@
       </p>
       <p>
         <em>Check</em>: Check conditions for the sampling distribution of <m>\bar{x}</m> to nearly normal.
-        <ol label="1">
+        <ol marker="1">
           <li>
             <p>
                Independence: Data come from a random sample or random process. When sampling without replacement, check that sample size is less than 10% of the population size.
@@ -1374,7 +1374,7 @@
       </p>
       <p>
         <em>Check</em>: Check conditions for the sampling distribution of <m>\bar{x}</m> to be nearly normal.
-        <ol label="1">
+        <ol marker="1">
           <li>
             <p>
                Independence: Data come from a random sample or random process. When sampling without replacement, check that sample size is less than 10% of the population size.
@@ -1777,7 +1777,7 @@
       <li>
         <p>
           The one-sample t-interval and t-test require that the sampling distribution for <m>\bar{x}</m> be nearly normal. For this reason we must check that the following conditions are met.
-          <ol label="1">
+          <ol marker="1">
             <li>
             <p>
               Independence: Data come from a random sample or random process. When sampling without replacement, check that sample size is less than 10% of the population size.

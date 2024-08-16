@@ -242,7 +242,7 @@
       </p>
       <p>
         <em>Check</em>: Check conditions for the sampling distribution of <m>\hat{p}_1-\hat{p}_2</m> to be nearly normal.
-        <ol label="1">
+        <ol marker="1">
           <li>
             <p>
                Independence: Data come from 2 independent random samples or from a randomized experiment with two treatments. When sampling without replacement, check that the sample size is less than 10% of the population size for both samples.
@@ -819,7 +819,7 @@
       </p>
       <p>
         <em>Check</em>: Check conditions for the sampling distribution for <m>\hat{p}_1-\hat{p}_2</m> to be nearly normal, assuming <m>H_{0}:p_{1}-p_{2}</m> is true.
-        <ol label="1">
+        <ol marker="1">
           <li>
             <p>
               Independence: Data come from 2 independent random samples or from a randomized experiment with two treatments. When sampling without replacement, check that the sample size is less than 10% of the population size for both samples.
@@ -1278,7 +1278,7 @@
       <li>
         <p>
           Verify the conditions for using a normal model:
-          <ol label="1">
+          <ol marker="1">
             <li>
               <p>
                 Data come from 2 independent random samples or 2 randomly assigned treatments.
@@ -1623,7 +1623,7 @@
     </statement>
     <solution>
       <p>
-        <ol label="a">
+        <ol marker="a">
           <li>
             <p>
               Subscript <em>C</em> means control group. Subscript <em>T</em> means truck drivers. <m>H_{0}: p_{C} = p_{T}</m>. <m>H_{A}: p_{C} \neq p_T</m>. <m>\alpha = 0.05</m>. Choose: 2-proportion Z-test. Check: Independence is satisfied (random samples, that are independent), as is the success-failure condition, which we would check using the pooled proportion <m>(\hat{p}_{pool}=70/495=0.141)</m>. Calculate <m>Z=-1.65 \rightarrow \text{p-value} = 0.0989</m>. Since the p-value is <m> \gt \alpha</m>, we fail to reject <m>H_{0}</m>. The data do not provide strong evidence that the rates of sleep deprivation are different for non-transportation workers and truck drivers.
@@ -2028,7 +2028,7 @@
     </statement>
     <solution>
       <p>
-        <ol label="a">
+        <ol marker="a">
           <li>
             <p>
               Subscript <em>V</em> means vitamin group. Subscript <em>NV</em> means vitamin group. <m>H_{0}: p_{V} = p_{NV}</m>. <m>H_{A}: p_{V} \neq p_{NV}</m>. Independence is satisfied (random samples, <m>\lt 10\%</m> of the population), as is the success-failure condition, which we would check using the pooled proportion <m>(\hat{p}_{pool}=254/483=0.53)</m>. <m>Z=2.99 \rightarrow \text{p-value} = 0.0028</m>. Since the p-value is low, we reject <m>H_{0}</m>. There is strong evidence of a difference in the rates of autism of children of mothers who did and did not use prenatal vitamins during the first three months before pregnancy.

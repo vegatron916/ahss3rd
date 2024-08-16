@@ -464,7 +464,7 @@
             If false, explain why.
             <em>Be careful:</em> The reasoning may be wrong even if the statement's conclusion is correct.
             In such cases, the statement should be considered false.
-            <ol label="i">
+            <ol marker="i">
               <li>
                 <p>
                   Since more patients on pioglitazone had cardiovascular problems (5,386 vs. 2,593), we can conclude that the rate of cardiovascular problems for those on a pioglitazone treatment is higher.
@@ -511,7 +511,7 @@
             then deal them into two groups of size 67,593 and 159,978.
             We repeat this simulation 1,000 times and each time record the number of people in the rosiglitazone group who had cardiovascular problems.
             Use the relative frequency histogram of these counts to answer (i)-(iii).
-            <ol label="i">
+            <ol marker="i">
               <li>
                 <p>
                   What are the claims being tested?
@@ -579,7 +579,7 @@
         <image width="60%" source="images/summarizing/randomization_heart_transplants_box.png" />
       </sidebyside>
         <p>
-        <ol label="a">
+        <ol marker="a">
           <li>
             <p>
               Based on the mosaic plot,
@@ -600,7 +600,7 @@
           <li>
             <p>
               One approach for investigating whether or not the treatment is effective is to use a randomization technique.
-              <ol label="i">
+              <ol marker="i">
                 <li>
                   <p>
                     What are the claims being tested?

@@ -340,7 +340,7 @@
     <assemblage>
     <title>Prediction interval for a response value</title>
       <p>
-        <ol label="1">
+        <ol marker="1">
           <li>
             <p>
               State the name of the CI being used.
@@ -419,7 +419,7 @@
     <assemblage>
     <title></title>
       <p>
-        <ol label="1">
+        <ol marker="1">
           <li>
             <p>
               State the name of the CI being used.
@@ -547,7 +547,7 @@
       </table>
       <p>
         Find a 95% prediction interval for the annual murders per million in a metropolitan area with
-        <ol label="a">
+        <ol marker="a">
           <li>
             <p>
               9% of the population living in poverty (like Washington, D.C.)<fn></fn>
@@ -568,7 +568,7 @@
     </statement>
   <solution>
     <p>
-      <ol label="a">
+      <ol marker="a">
         <li>
           <p>
             <md>
@@ -611,7 +611,7 @@
         Find a 95% confidence interval for the mean annual murders per million in a metropolitan area with
       </p>
       <p>
-        <ol label="a">
+        <ol marker="a">
           <li>
             <p>
               9% of the population living in poverty (like Washington, D.C.)
@@ -632,7 +632,7 @@
     </statement>
     <solution>
       <p>
-        <ol label="a">
+        <ol marker="a">
           <li>
             <p>
               <md>
@@ -675,7 +675,7 @@
         In 2014, there were 105 murders in Washington, D.C., or 165.7 murders per million.<fn>LINK</fn> Washington, D.C., has a low poverty rate of 9%.
       </p>
       <p>
-        <ol label="a">
+        <ol marker="a">
           <li>
             <p>
               Use the regression model to calculate the residual for Washington, D.C., in 2014. Describe the meaning of the residual.
@@ -701,7 +701,7 @@
     </statement>
     <solution>
       <p>
-        <ol label="a">
+        <ol marker="a">
           <li>
             <p>
               The residual calculation for Washington, D.C. is
@@ -780,7 +780,7 @@
         </tabular>
       </table>
       <p>
-        <ol label="a">
+        <ol marker="a">
           <li>
             <p>
               5.5 kg (the weight of this writer’s cat, Dale)
@@ -801,7 +801,7 @@
     </statement>
     <solution>
       <p>
-        <ol label="a">
+        <ol marker="a">
           <li>
             <p>
               <md>
@@ -844,7 +844,7 @@
         Refer again to the regression output for the model that predicts cats’ heart weights (in g) from the weights (in kg) provided above in LINK Exercise 0.4.
       </p>
       <p>
-        <ol label="a">
+        <ol marker="a">
           <li>
             <p>
               5.5 kg (the weight of this writer’s cat, Dale)
@@ -865,7 +865,7 @@
     </statement>
     <solution>
       <p>
-        <ol label="a">
+        <ol marker="a">
           <li>
             <p>
               <md>

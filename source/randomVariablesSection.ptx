@@ -279,11 +279,12 @@
       The probability distribution for the sum of two dice is shown in <xref ref="diceProb"></xref>
       and its histogram is plotted in <xref ref="diceSumDist"></xref>.
       The distribution of US household incomes is shown in <xref ref="usHouseholdIncomeDistBar"></xref> as a bar plot.
-      The presence of the 100+ category makes it difficult to represent it with a regular histogram.<fn>
-      It is also possible to construct a distribution plot when income is not artificially binned into four groups.
-      Density histograms for <em>continuous</em>
-      distributions are considered in <xref ref="contDist"></xref>.
-      </fn>
+      The presence of the 100+ category makes it difficult to represent it with a regular histogram.
+      <!-- <fn>
+        It is also possible to construct a distribution plot when income is not artificially binned into four groups.
+        Density histograms for <em>continuous</em>
+        distributions are considered in <xref ref="contDist"></xref>.
+        </fn> -->
     </p>
     <figure xml:id="diceSumDist">
       <caption>A histogram for the probability distribution of the sum of two dice.</caption>
@@ -398,8 +399,8 @@
       the average of many randomly selected students will be near $117.85.
     </p>
     <p>
-      It is also possible to compute the expected value of a continuous random variable
-      (see <xref ref="contDist"></xref>).
+      It is also possible to compute the expected value of a continuous random variable.
+      <!-- (see <xref ref="contDist"></xref>). -->
       However, it requires a little calculus and we save it for a later class.<fn>
       <m>\mu_{\scriptscriptstyle{X}} = \int xf(x)dx</m> where <m>f(x)</m> represents a function for the density curve.
       </fn>
@@ -583,7 +584,7 @@
           The bookstore also offers a chemistry textbook for $159 and a book supplement for $41.
           From past experience,
           they know about 25% of chemistry students just buy the textbook while 60% buy both the textbook and supplement.
-          <ol label="(a)">
+          <ol marker="(a)">
             <li>
               <p>
                 What proportion of students don't buy either book?
@@ -1411,7 +1412,7 @@
         </row>
       </tabular>
       <p>
-        <ol label="a">
+        <ol marker="a">
           <li>
             <p>
               Compute the average monthly contribution made to this creator.
@@ -1427,7 +1428,7 @@
     </statement>
     <solution>
       <p>
-        <ol label="a">
+        <ol marker="a">
           <li>
             <p>
               Mean: <m>$3 \times 0.5 + $5 \imes 0.3 + $10 \times 0.15 + $25 \times 0.05 = $5.75</m>.
@@ -1473,7 +1474,7 @@
         </row>
       </tabular>
       <p>
-        <ol label="a">
+        <ol marker="a">
           <li>
             <p>
               Compute the average impact for the experiments.

@@ -86,9 +86,9 @@
 	<p>
 		In <xref ref="randomVariablesSection"></xref>: <url href="https://www.openintro.org/data/index.php?data=stocks_18"><c>stocks_18</c></url> <m>\rightarrow</m> Monthly returns for Caterpillar, Exxon Mobil Corp, and Google for November 2015 to October 2018.
 	</p>
-	<p>
+	<!-- <p>
 		In <xref ref="contDist"></xref>: <url href="https://www.openintro.org/data/index.php?data=fcid"><c>fcid</c></url> <m>\rightarrow</m> This sample can be considered a simple random sample from the US population. It relies on the USDA Food Commodity Intake Database.
-	</p>
+	</p> -->
 </subsection>
 
 <subsection>

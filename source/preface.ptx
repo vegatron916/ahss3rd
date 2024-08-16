@@ -18,7 +18,7 @@
     </p>
     <p>
     We hope readers will take away three ideas from this book in addition to forming a foundation of statistical thinking and methods.
-    <ol label="1">
+    <ol marker="1">
       <li>
         <p>
           Statistics is an applied field with a wide range of practical applications.
@@ -43,7 +43,7 @@
   </p>
   <p>
     The chapters of this book are as follows:
-    <ol label="1">
+    <ol marker="1">
       <li>
         <p>
           Data collection.

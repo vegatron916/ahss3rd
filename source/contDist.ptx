@@ -133,7 +133,7 @@
         <p>
           Three US adults are randomly selected.
           The probability a single adult is between 180 and 185 cm is 0.1157.
-          <ol label="(a)">
+          <ol marker="(a)">
             <li>
               <p>
                 What is the probability that all three are between 180 and 185 cm tall?

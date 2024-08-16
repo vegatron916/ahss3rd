@@ -160,7 +160,7 @@
       Assuming that both the that both the SAT and ACT distributions are nearly normally distributed, what percent of test takers scored lower than Ann? What percent scored lower than Tom? To answer these question exactly, we would need all of the data. However, if we use the information that SAT and ACT distributions are nearly normal, we can estimate these percents. <xref ref="satActNormals"></xref> shows these distributions modeled with a normal curve. If we can find the percent of the normal curve that is to the left of Ann’s score, we could use that percent as our estimate of the percent of the data points that are smaller than Ann’s score. We call this process <em>normal approximation</em>. The steps are:
     </p>
     <p>
-      <ol label="1">
+      <ol marker="1">
         <li>
           <p>
             First verify that the distribution can be reasonably modeled with a normal distribution.
@@ -198,7 +198,7 @@
     </figure>
     <p>
       There are many techniques for finding this area, and we’ll discuss three of the options.
-      <ol label="1">
+      <ol marker="1">
         <li>
           <p>
             The most common approach in practice is to use statistical software. For example, in the program R, we could find the area shown in <xref ref="BelowOneZ"></xref> using the following command, which takes in the Z-score of 1 and returns the lower tail area:
@@ -1027,11 +1027,11 @@
       <li>
         <p>
           It is often useful to use the standard normal distribution, which has mean 0 and SD 1, to approximate a discrete histogram. There are two common types of <em>normal approximation problems</em>, and for each a key step is to find a <m>Z</m>-score.
-          <ol label="A">
+          <ol marker="A">
             <li>
               <p>
                 <em>Find the percent or probability of a value greater/less than a given <m>x</m>-value.</em>
-                <ol label="1">
+                <ol marker="1">
                   <li>
                     <p>
                       Verify that the distribution of interest is approximately normal.
@@ -1053,7 +1053,7 @@
             <li>
               <p>
                 <em>Find the <m>x</m>-value that corresponds to a given percentile.</em>
-                <ol label="1">
+                <ol marker="1">
                   <li>
                     <p>
                       Verify that the distribution of interest is approximately normal.

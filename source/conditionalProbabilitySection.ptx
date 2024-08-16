@@ -1121,7 +1121,7 @@
       </statement>
         <solution>
           <p>
-            <ol label="a">
+            <ol marker="a">
           		<li>
                 <p>
                   The tree diagram is shown below. <!-- to the right. -->
@@ -1466,7 +1466,7 @@
           <li>
             <p>
               Assuming that events <m>A</m> and <m>B</m> arise from independent random processes,
-                <ol label="i">
+                <ol marker="i">
                   <li>
                     <p>
                       what is <m>P(A \text{ and } B)</m>?

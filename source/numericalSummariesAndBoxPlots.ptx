@@ -570,7 +570,7 @@
           and suppose we observe <m>x=5.19</m>.
         </p>
         <p>
-          <ol label="a">
+          <ol marker="a">
             <li>
               <p>
                 Find the Z-score of <m>x</m>.
@@ -2302,10 +2302,10 @@
         Make sure to explain your reasoning.
        </p>
       <p>
-  	    <ol label="a)">
+  	    <ol marker="a)">
           <li>
           	<p>
-            		<ol label="1)">
+            		<ol marker="1)">
               		<li>
               			<p>
               				3, 5, 6, 7, 9
@@ -2321,7 +2321,7 @@
           </li>
           <li>
           	<p> 
-            		<ol label="1)">
+            		<ol marker="1)">
               		<li>
               			<p>
               				3, 5, 6, 7, 9
@@ -2337,7 +2337,7 @@
           </li>
           <li>
           	<p>
-          		<ol label="1)">
+          		<ol marker="1)">
           			<li>
           				<p>
           					1, 2, 3, 4, 5
@@ -2353,7 +2353,7 @@
           </li>
           <li>
           	<p>
-          		<ol label="1)">
+          		<ol marker="1)">
           			<li>
           				<p>
           					0, 10, 50, 60, 100
@@ -2381,10 +2381,10 @@
         simply state how the means and the standard deviations compare.
         Make sure to explain your reasoning.
         <em>Hint:</em> It may be useful to sketch dot plots of the distributions.
-        <ol label="a)">
+        <ol marker="a)">
             <li>
             	<p>
-              		<ol label="1)">
+              		<ol marker="1)">
                 		<li>
                 			<p>
                 				3, 5, 5, 5, 8, 11, 11, 11, 13
@@ -2400,7 +2400,7 @@
             </li>
             <li>
             	<p> 
-              		<ol label="1)">
+              		<ol marker="1)">
                 		<li>
                 			<p>
                 				-20, 0, 0, 0, 15, 25, 30, 30
@@ -2416,7 +2416,7 @@
             </li>
             <li>
             	<p>
-            		<ol label="1)">
+            		<ol marker="1)">
             			<li>
             				<p>
             					0, 2, 4, 6, 8, 10
@@ -2432,7 +2432,7 @@
             </li>
             <li>
             	<p>
-            		<ol label="1)">
+            		<ol marker="1)">
             			<li>
             				<p>
             					100, 200, 300, 400, 500

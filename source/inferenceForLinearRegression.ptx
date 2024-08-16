@@ -163,7 +163,7 @@
     <assemblage>
       <title>Conditions for inference on the slope of a regression line</title>
       <p>
-      <ol label="1">
+      <ol marker="1">
         <li>
           <p>
             The data is collected from a random sample or randomized experiment.
@@ -346,7 +346,7 @@
       </p>
       <p>
         <em>Check</em>: Check conditions for using a <m>t</m>-interval for the slope.
-        <ol label="1">
+        <ol marker="1">
           <li>
             <p>
               Independence: Data should come from a random sample or randomized experiment. If sampling without replacement, check that the sample size is less than 10% of the population size.
@@ -354,7 +354,7 @@
           </li>
           <li>
             <p>
-              Linearity: Check that the scatterplot does not show a curved trend and that the residual plot shows no <m>\cap</m> shape pattern
+              Linearity: Check that the scatterplot does not show a curved trend and that the residual plot shows no <m>\cup</m> shape pattern
             </p>
           </li>
           <li>
@@ -729,7 +729,7 @@
           <cell>Estimate</cell>
           <cell>Std. Error</cell>
           <cell>t value</cell>
-          <cell>Pr<m>(>|t|)</m></cell>
+          <cell>Pr<m>(\gt|t|)</m></cell>
         </row>
         <row>
           <cell>(Intercept)</cell>
@@ -861,7 +861,7 @@
       </p>
       <p>
         <em>Check</em>: Check conditions for using a <m>t</m>-test for the slope.
-        <ol label="1">
+        <ol marker="1">
           <li>
             <p>
               Independence: Data should come from a random sample or randomized experiment. If sampling without replacement, check that the sample size is less than 10% of the population size.
@@ -869,7 +869,7 @@
           </li>
           <li>
             <p>
-              Linearity: Check that the scatterplot does not show a curved trend and that the residual plot shows no <m>\cap</m> shape pattern
+              Linearity: Check that the scatterplot does not show a curved trend and that the residual plot shows no <m>\cup</m> shape pattern
             </p>
           </li>
           <li>
@@ -1024,10 +1024,10 @@
       We generally rely on regression output from statistical software programs to provide us with the necessary quantities: <m>b</m> and <m>SE</m> of <m>b</m>. However we can also find the test statistic, p-value, and confidence interval using Desmos or a handheld calculator.
     </p>
     <p>
-      Get started quickly with this Desmos T-Test/Interval Calculator (available at openintro.org/ahss/desmos).
+      Get started quickly with this Desmos <url href="https://www.desmos.com/calculator/tbazf5qewp/">T-Test/Interval Calculator</url> (available at <url href="openintro.org/ahss/desmos">openintro.org/ahss/desmos</url>).
     </p>
     <p>
-      For instructions on implementing the T-Test/Interval on the TI or Casio, see the Graphing Calculator Guides at openintro.org/ahss.
+      For instructions on implementing the T-Test/Interval on the TI or Casio, see the Graphing Calculator Guides at <url href="openintro.org/ahss">openintro.org/ahss</url>.
     </p>
 
     <!-- <assemblage xml:id="regression_t_test_ti">
@@ -1369,7 +1369,7 @@
       <li>
         <p>
           The conditions for the <m>t</m>-interval and <m>t</m>-test for the slope of a regression line are the same.
-          <ol label="1">
+          <ol marker="1">
             <li>
               <p>
                 Independence: Data should come from a random sample or randomized experiment. If sampling without replacement, check that the sample size is less than 10% of the population size.
@@ -1377,7 +1377,7 @@
             </li>
             <li>
               <p>
-                Linearity: Check that the scatterplot does not show a curved trend and that the residual plot shows no <m>\cap</m> shape pattern
+                Linearity: Check that the scatterplot does not show a curved trend and that the residual plot shows no <m>\cup</m> shape pattern
               </p>
             </li>
             <li>
@@ -1718,7 +1718,7 @@
           <cell>Estimate</cell>
           <cell>Std. Error</cell>
           <cell>t value</cell>
-          <cell>Pr<m>(>|t|)</m></cell>
+          <cell>Pr<m>(\gt|t|)</m></cell>
         </row>
         <row>
           <cell>(Intercept)</cell>
@@ -1825,7 +1825,7 @@
       </p>
       <image width="50%" source="images/regression/urbanOwner_withoutDC.png"/>
   	  <p>
-  	  	<ol label="a">
+  	  	<ol marker="a">
   	  		<li>
   	  			<p>
   	  				For these data, <m>R^2 = 0.28</m>. What is the correlation? How can you tell if it is positive or negative?
@@ -1889,7 +1889,7 @@
         </row>
       </tabular>
       <p>
-      <ol label="a">
+      <ol marker="a">
         <li>
           <p>
             What are the hypotheses for evaluating whether poverty percentage is a significant predictor of murder rate?

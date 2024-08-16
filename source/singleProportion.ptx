@@ -372,7 +372,7 @@
       </p>
       <p>
         <em>Check</em>: Check conditions for the sampling distribution of <m>\hat{p}</m> to be nearly normal.
-        <ol label="1">
+        <ol marker="1">
           <li>
             <p>
               Data come from a random sample or random process.
@@ -794,7 +794,7 @@
           A manager is about to oversee the mass production of a new tire model in her factory,
           and she would like to estimate the proportion of these tires that will be rejected through quality control.
           The quality control team has previously found that about 6.2% of tires fail inspection.
-          <ol label="a">
+          <ol marker="a">
             <li>
               <p>
                 How many tires should the manager examine to estimate the failure rate of the new tire model to within 2% with a 90% confidence level?<fn>The <m>z^{\star}</m> corresponding to a 90% confidence level is 1.645. Since we have an estimate for <m>p</m> of 6.2%, we use it. So we have: <m>1.645 \times \sqrt{\frac{(0.062)(1-0.062)}{n}} \le 0.02</m>. Rearranging for <m>n</m> gives: <m>n \ge 393.4</m>, so she should use <m>n = 394</m>.</fn>
@@ -827,7 +827,7 @@
           Deborah Toohey is running for Congress,
           and her campaign manager claims she has more than 50% support from the district's electorate.
           A newspaper collects a random sample of 500 likely voters in the district and estimates Toohey's support to be 52%.
-          <ol label="a">
+          <ol marker="a">
             <li>
               <p>
                 Identify the null and the alternative hypothesis.
@@ -1426,7 +1426,7 @@
         <p>
           !!!The first condition for the one proportion Z-interval and Z-test is the same.
           The second one is different because of the use of the null proportion for the test.
-          <ol label="1">
+          <ol marker="1">
             <li>
               <p>
                 Independence: The data should come from a random sample or random process. When  sampling without replacement, check that the sample size is less than 10% of the population size

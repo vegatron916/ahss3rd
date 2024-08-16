@@ -959,7 +959,7 @@
       </statement>
       <solution>
         <p>
-        <ol label="1">
+        <ol marker="1">
           <li>
             <p>
               There is one outlier far from the other points,
@@ -1322,7 +1322,7 @@
         For a regression line,
         the uncertainty associated with the slope estimate,
         <m>b_1</m>, is higher when
-        <ol label="I.">
+        <ol marker="I.">
           <li>
             <p>
               there is a lot of scatter around the regression line or

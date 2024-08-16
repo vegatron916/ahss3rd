@@ -409,13 +409,13 @@
     </example>
   </subsection>
   <subsection xml:id="bar_plots_subsection">
-    <title>Using a bar<nbsp/>chart with two variables</title>
+    <title>Using a bar chart with two variables</title>
     <p>
       Contingency tables using row or column proportions are especially useful for examining how two categorical variables are related.
-      Segmented bar<nbsp/>charts provide a way to visualize the information in these tables.
+      Segmented bar charts provide a way to visualize the information in these tables.
     </p>
     <p>
-      A <em>segmented bar<nbsp/>chart</em>,
+      A <em>segmented bar chart</em>,
           <idx><h>bar chart</h><h>segmented</h></idx>
       or stacked bar<nbsp/>chart,
       is a graphical display of contingency table information.
@@ -424,7 +424,7 @@
       where we have first created a bar chart using the <c>homeownership</c> variable and then divided each group by the levels of <c>app_type</c> .
     </p>
     <p>
-      One related visualization to the segmented bar chart is the <em>side-by-side bar<nbsp/>chart</em>,
+      One related visualization to the segmented bar chart is the <em>side-by-side bar chart</em>,
           <idx><h>bar chart</h><h>side-by-side</h></idx>
       where an example is shown in <xref ref="loan_app_type_home_sbs_bar"></xref>.
     </p>

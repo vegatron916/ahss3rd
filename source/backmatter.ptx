@@ -6,6 +6,6 @@
 	<xi:include href="./appendix_data_sets_in_text.ptx" />
 	<xi:include href="./appendix_distribution_tables.ptx" />
 	<xi:include href="./appendix_reference.ptx" />
-	<xi:include href="./appendix_inference_guide.ptx" />
+	<!-- <xi:include href="./appendix_inference_guide.ptx" /> -->
 
 </backmatter>

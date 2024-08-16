@@ -202,7 +202,7 @@
     <assemblage>
       <title>Is it binomial? Four conditions to check.</title>
       <p>
-        <ol label="(1)">
+        <ol marker="(1)">
           <li>
             <p>
               The trials are independent.
@@ -338,7 +338,7 @@
       <statement>
         <p>
           Given that 35% of a population has blood type O+, what is the probabilty that in a random sample of 4 people:
-          <ol label="a">
+          <ol marker="a">
             <li>
               <p>
                 none of them have blood type O+?
@@ -360,7 +360,7 @@
       <solution>
         <p>
           Compute parts (a) and (b) using the binomial formula:
-          <ol label="a">
+          <ol marker="a">
             <li>
               <p>
                 <m>P(X=0) = {4 \choose 0} (0.35)^0 (0.65)^4 = 1\times1\times 0.65^4 = 0.65^4 = 0.179</m> Note that we could have answered this question without the binomial formula,
