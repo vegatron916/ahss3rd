@@ -10,7 +10,7 @@
   <title>Advanced High School Statistics</title>
   <subtitle>Third Edition, with updates based on AP<copyright /> Statistics Course Framework</subtitle>
     <!-- <frontmatter>
-      <titlepage>
+       <titlepage>
       </titlepage>
     </frontmatter> -->
   <xi:include href="./frontmatter.ptx" />

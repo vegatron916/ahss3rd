@@ -171,7 +171,7 @@
     </p>
     <figure xml:id="rightdoublesidet">
       <caption>Left: The t-distribution with 20 degrees of freedom, with the area above 1.65 shaded. Right: The t-distribution with 475 degrees of freedom, with the area further than 2 units from 0 shaded.</caption>
-        <image width="50%" source="images/appendix/rightandtwoside.png"/>
+      <image source="images/appendix/rightandtwoside.png"/>
     </figure>
   </solution>
 </example>
@@ -214,6 +214,15 @@
 <table xml:id="tDistributionTable">
 <title></title>
   <tabular>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
     <row halign="right">
       <cell right="minor" colspan="2">one tail</cell>
       <cell>0.100</cell>
@@ -222,7 +231,7 @@
       <cell>0.010</cell>
       <cell>0.005</cell>
     </row>
-    <row halign="right">
+    <row bottom="minor" halign="right">
       <cell right="minor" colspan="2">two tail</cell>
       <cell>0.200</cell>
       <cell>0.100</cell>
@@ -504,12 +513,21 @@
 </table>
 
 <figure>
-  <image width="80%" source="images/appendix/tTails.png"/>
+  <image width="95%" source="images/appendix/tTails.png"/>
 </figure>
 
 <table>
 <title></title>
   <tabular>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
     <row halign="right">
       <cell right="minor" colspan="2">one tail</cell>
       <cell>0.100</cell>
@@ -518,7 +536,7 @@
       <cell>0.010</cell>
       <cell>0.005</cell>
     </row>
-    <row halign="right">
+    <row bottom="minor" halign="right">
       <cell right="minor" colspan="2">two tail</cell>
       <cell>0.200</cell>
       <cell>0.100</cell>
@@ -798,16 +816,7 @@
     </row>
     <row bottom="minor" halign="right">
     	<cell></cell>
-      <cell right="minor"><m>\inf</m></cell>
-      <cell>1.28</cell>
-      <cell>1.65</cell>
-      <cell>1.96</cell>
-      <cell>2.33</cell>
-      <cell>2.58</cell>
-    </row>
-    <row bottom="minor" halign="center">
-      <cell></cell>
-      <cell right="minor"><m>\inf</m></cell>
+      <cell right="minor"><m>\infty</m></cell>
       <cell>1.28</cell>
       <cell>1.65</cell>
       <cell>1.96</cell>

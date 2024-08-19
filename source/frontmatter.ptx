@@ -26,7 +26,7 @@
 
 <preface xml:id="preface">
 <title>Preface</title>
-  <!-- <paragraphs>
+  <paragraphs>
   <title></title>
     <p>
       <em>Advanced High School Statistics</em> covers a first course in statistics,
@@ -45,7 +45,7 @@
     </p>
     <p>
       We hope readers will take away three ideas from this book in addition to forming a foundation of statistical thinking and methods.
-      <ol label="1">
+      <ol marker="(1)">
         <li>
           <p>
             Statistics is an applied field with a wide range of practical applications.
@@ -60,87 +60,72 @@
           <p>
             Data are messy, and statistical tools are imperfect.
             But, when you understand the strengths and weaknesses of these tools,
-            you can use them to learn about the real<nbsp/>world.
-          </p>
-        </li>
-      </ol>
-    </p>
-  </paragraphs> -->
-</preface>
-<!-- 
-<preface>
-<title>Textbook overview</title>
-  <paragraphs>
-  <title></title>
-    <p>
-      The chapters of this book are as follows:
-      <ol label="1">
-        <li>
-          <p>
-            Data collection.
-            Data structures,
-            variables, 
-            and basic data collection techniques.
-          </p>
-        </li>
-        <li>
-          <p>
-            Summarizing data.
-            Data summaries and graphics.
-          </p>
-        </li>
-        <li>
-          <p>
-            Probability.
-            The basic principles of probability.
-          </p>
-        </li>
-        <li>
-          <p>
-            Distributions of random variables.
-            Introduction to key distributions,
-            and how the normal model applies to the sample mean and sample proportion.
-          </p>
-        </li>
-        <li>
-          <p>
-            Foundations for inference.
-            General ideas for statistical inference in the context of estimating the population proportion. 
-          </p>
-        </li>
-        <li>
-          <p>
-            Inference for categorical data.
-            Inference for proportions and contingency tables using the normal and chi-square distributions. 
-          </p>
-        </li>
-        <li>
-          <p>
-            Inference for numerical data.
-            Inference for one or two sample means using the <m>t</m>-distribution.
-          </p>
-        </li>
-        <li>
-          <p>
-            Introduction to linear regression.
-            An introduction to regression with two variables,
-            and inference on the slope of the regression line.
+            you can use them to learn about the real world.
           </p>
         </li>
       </ol>
     </p>
   </paragraphs>
-</preface>
-
-<preface>
-<title>Online Resources</title>
   <paragraphs>
-  <title></title>
+  <title>Textbook overview</title>
     <p>
-      OpenIntro is focused on increasing access to education by developing free,
-      high-quality education materials.
-      In addition to textbooks,
-      we provide the following accompanying resources to help teachers and students be successful.
+      The chapters of this book are as follows:
+      <ol marker="1.">
+        <li>
+          <p>
+            <alert>Data collection.</alert> Data structures, variables, and basic data collection techniques; experimental designs and sampling methods are presented and compared.
+          </p>
+        </li>
+        <li>
+          <p>
+            <alert>Summarizing data.</alert>
+            Data summaries and graphics; includes normal approximation for data.
+          </p>
+        </li>
+        <li>
+          <p>
+            <alert>Probability and probability distributions.</alert> The basic principles of probability and random variables, as well as an introduction to the geometric and binomial distributions.
+          </p>
+        </li>
+        <li>
+          <p>
+            <alert>Sampling distributions.</alert> Sampling distributions for a sample proportion and a sample mean; also includes distributions for a difference of sample means and a difference of sample proportions.
+          </p>
+        </li>
+        <li>
+          <p>
+            <alert>Foundations for inference.</alert>
+            General ideas for statistical inference in the context of estimating the population proportion. 
+          </p>
+        </li>
+        <li>
+          <p>
+            <alert>Inference for categorical data.</alert>
+            Inference for proportions and contingency tables using the normal and chi-square distributions. 
+          </p>
+        </li>
+        <li>
+          <p>
+            <alert>Inference for numerical data.</alert>
+            Inference for one or two sample means using the <m>t</m>-distribution.
+          </p>
+        </li>
+        <li>
+          <p>
+            <alert>Introduction to linear regression.</alert> An introduction to regression with two variables; includes inference on the slope of the regression line.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </paragraphs>
+
+<paragraphs>
+<title>Online Resources</title>
+  <p>
+    OpenIntro is focused on increasing access to education by developing free,
+    high-quality education materials.
+    In addition to textbooks,
+    we provide the following accompanying resources to help teachers and students be successful.
       <ul>
         <li>
           <p>
@@ -209,9 +194,8 @@
     Online guides to each of these data sets are also provided at <url href="https://www.openintro.org/data/">openintro.org/data/</url> and through a <url href="https://github.com/OpenIntroStat/openintro-r-package">companion R package</url>.
   </p>
 </paragraphs>
-</preface>
 
-<preface>
+<paragraphs>
 <title>Examples and exercises</title>
     <p>
       Many examples are provided to establish an understanding of how to apply methods.
@@ -243,28 +227,26 @@
       Exercises are also provided at the end of each section and each chapter for practice or homework assignments.
       Solutions are included at the end of each odd-numbered exercises.
     </p>
-</preface>
+</paragraphs>
 
-<preface>
+<paragraphs>
 <title>Getting involved</title>
-  <paragraphs>
-  <title></title>
-    <p>
-      We encourage anyone learning or teaching statistics to visit <url href="https://www.openintro.org/">openintro.org/</url> and get involved.
-      We value your feedback.
-      Please send any questions or comments to <c>leah@openintro.org</c>.
-      You can also provide feedback, report typos,
-      and review known typos at <url href="https://www.openintro.org/form/?f=stat_feedback">openintro.org/ahss/feedback</url>
-    </p>
-  </paragraphs>
-</preface>
-<preface>
+  <p>
+    We encourage anyone learning or teaching statistics to visit <url href="https://www.openintro.org/">openintro.org/</url> and get involved.
+    We value your feedback.
+    Please send any questions or comments to <c>leah@openintro.org</c>.
+    You can also provide feedback, report typos,
+    and review known typos at <url href="https://www.openintro.org/form/?f=stat_feedback">openintro.org/ahss/feedback</url>
+  </p>
+</paragraphs>
+<paragraphs>
 <title>Acknowledgement</title>
   <p>
     This project would not be possible without the passion and dedication of all those involved.
     The authors would like to thank the <url href="https://www.openintro.org/team/">OpenIntro Staff</url> for their involvement and ongoing contributions.
     We are also very grateful to the hundreds of students and instructors who have provided us with valuable feedback since we first started working on this project in 2009.
-    A special thank you to Catherine Ko for proofreading the second edition of AHSS.
+    A special thank you to Stephen Miller and Juan Gomez for reviewing and providing feedback on the third edition of AHSS.
   </p>
-</preface> -->
+</paragraphs>
+</preface>
 </frontmatter>

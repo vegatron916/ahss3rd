@@ -212,9 +212,10 @@
   When using a normal probability table to find a percentile for <m>Z</m> (rounded to two decimals), identify the proper row in the normal probability table up through the first decimal, and then determine the column representing the second decimal value. The intersection of this row and column is the percentile of the observation. For instance, the percentile of <m>Z = 0.45</m> is shown in row 0.4 and column 0.05 in <xref ref="short_ztable"></xref>: 0.6736, or the 67.36th percentile.
 </p>
 
-<sidebyside>
+<figure>
+  <caption>The area to the left of <m>Z</m> represents the percentile of the observation</caption>
   <image source="images/appendix/negativepositive.png" />
-</sidebyside>
+</figure>
 
 <example>
   <statement>
