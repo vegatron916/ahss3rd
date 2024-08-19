@@ -92,6 +92,12 @@ window.MathJax = {
 <link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
 <style>
+#preface-2-4-1 { counter-set: preface-2-4-1 0; }
+#preface-2-4-1 > li::marker { content: "("counter(preface-2-4-1,decimal)")"; }
+#preface-2-4-1 > li { counter-increment: preface-2-4-1; }
+#preface-3-2-1 { counter-set: preface-3-2-1 0; }
+#preface-3-2-1 > li::marker { content: ""counter(preface-3-2-1,decimal)"."; }
+#preface-3-2-1 > li { counter-increment: preface-3-2-1; }
 #introductionToData-2-1-4 { counter-set: introductionToData-2-1-4 0; }
 #introductionToData-2-1-4 > li::marker { content: ""counter(introductionToData-2-1-4,decimal)"."; }
 #introductionToData-2-1-4 > li { counter-increment: introductionToData-2-1-4; }
@@ -2482,18 +2488,18 @@ window.MathJax = {
 <td class="l m b1 r1 l0 t0 lines"><span class="process-math">\(\vdots\)</span></td>
 </tr>
 </table></div></figure><div class="para" id="z_table-4">When using a normal probability table to find a percentile for <span class="process-math">\(Z\)</span> (rounded to two decimals), identify the proper row in the normal probability table up through the first decimal, and then determine the column representing the second decimal value. The intersection of this row and column is the percentile of the observation. For instance, the percentile of <span class="process-math">\(Z = 0.45\)</span> is shown in row 0.4 and column 0.05 in <a href="z_table.html#short_ztable" class="xref" data-knowl="./knowl/xref/short_ztable.html" data-reveal-label="Reveal" data-close-label="Close" title="Table B.2.1: A section of the normal probability table. The percentile for a normal random variable with Z = 1.00 has been emphasized, and the percentile closest to 0.8000 has also been bolded">Table B.2.1</a>: 0.6736, or the 67.36th percentile.</div>
-<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/appendix/negativepositive.png" class="contained"></div></div></div>
-<details id="z_table-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">B.2.2</span><span class="period">.</span>
+<figure class="figure figure-like" id="z_table-5"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/appendix/negativepositive.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">B.2.2<span class="period">.</span></span><span class="space"> </span>The area to the left of <span class="process-math">\(Z\)</span> represents the percentile of the observation</figcaption></figure><details id="z_table-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">B.2.3</span><span class="period">.</span>
 </h3></summary><article class="example example-like knowl__content"><div class="para" id="z_table-6-1-1">SAT scores follow a normal distribution, <span class="process-math">\(N(1100, 200)\text{.}\)</span> Ann earned a score of 1300 on her SAT with a corresponding Z-score of <span class="process-math">\(Z = 1\text{.}\)</span> She would like to know what percentile she falls in among all SAT test-takers.</div>
 <div class="solutions"><details id="z_table-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para" id="z_table-6-2-1">Ann’s <dfn class="terminology">percentile</dfn> is the percentage of people who earned a lower SAT score than her. We shade the area representing those individuals in the following graph:</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/appendix/lessthan1.png" class="contained"></div></div></div> <div class="para" id="z_table-6-2-3">The total area under the normal curve is always equal to 1, and the proportion of people who scored below Ann on the SAT is equal to the <em class="emphasis">area</em> shaded in the graph. We find this area by looking in row 1.0 and column 0.00 in the normal probability table: 0.8413. In other words, Ann is in the 84th percentile of SAT takers.</div>
 </div></details></div></article></details><details id="z_table-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">B.2.3</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">B.2.4</span><span class="period">.</span>
 </h3></summary><article class="example example-like knowl__content"><div class="para" id="z_table-7-1-1">How do we find an upper tail area?</div>
 <div class="solutions"><details id="z_table-7-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="z_table-7-2-1">The normal probability table always gives the area to the left. This means that if we want the area to the right, we first find the lower tail and then subtract it from 1. For instance, 84.13% of SAT takers scored below Ann, which means 15.87% of test takers scored higher than Ann.</div></div></details></div></article></details><div class="para" id="z_table-8">We can also find the Z-score associated with a percentile. For example, to identify <span class="process-math">\(Z\)</span> for the 80th percentile, we look for the value closest to 0.8000 in the middle portion of the table: 0.7995. We determine the Z-score for the 80th percentile by combining the row and column Z values: 0.84.</div>
 <details id="z_table-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">B.2.4</span><span class="period">.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">B.2.5</span><span class="period">.</span>
 </h3></summary><article class="example example-like knowl__content"><div class="para" id="z_table-9-1-1">Find the SAT score for the 80th percentile.</div>
 <div class="solutions"><details id="z_table-9-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="z_table-9-2-1">
 <div class="para">We look for the are to the value in the table closest to 0.8000. The closest value is 0.7995, which corresponds to <span class="process-math">\(Z = 0.84\text{,}\)</span> where 0.8 comes from the row value and 0.04 comes from the column value. Next, we set up the equation for the Z-score and the unknown value <span class="process-math">\(x\)</span> as follows, and then we solve for <span class="process-math">\(x\text{:}\)</span>
@@ -2506,7 +2512,7 @@ Z= 0.84 = \frac{x-1100}{200} \rightarrow x = 1268
 <div class="para">The College Board scales scores to increments of 10, so the 80th percentile is 1270. (Reporting 1268 would have been perfectly okay for our purposes.)</div>
 </div></div></details></div></article></details><div class="para" id="z_table-10">For additional details about working with the normal distribution and the normal probability table, see <a href="normalDist.html" class="internal" title="Section 2.3: Normal distribution">Section 2.3</a>.</div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/appendix/normalTailLeft.png" class="contained"></div></div></div>
-<figure class="table table-like" id="normal_prob_table"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">B.2.5<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<figure class="table table-like" id="normal_prob_table"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">B.2.6<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines" colspan="10"></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
@@ -2994,7 +3000,7 @@ Z= 0.84 = \frac{x-1100}{200} \rightarrow x = 1268
 <span class="process-math">\(^*\)</span>For <span class="process-math">\(Z \leq -3.50\text{,}\)</span> the probability is less than or equal to <span class="process-math">\(0.0002\text{.}\)</span>
 </td></tr>
 </table></div></figure><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel top" style="width:100%;"><img src="external/images/appendix/normalTailRight.png" class="contained"></div></div></div>
-<figure class="table table-like" id="z_table-14"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">B.2.6<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<figure class="table table-like" id="z_table-14"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">B.2.7<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b1 r0 l0 t0 lines" colspan="10"></td>

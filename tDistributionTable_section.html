@@ -92,6 +92,12 @@ window.MathJax = {
 <link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
 <style>
+#preface-2-4-1 { counter-set: preface-2-4-1 0; }
+#preface-2-4-1 > li::marker { content: "("counter(preface-2-4-1,decimal)")"; }
+#preface-2-4-1 > li { counter-increment: preface-2-4-1; }
+#preface-3-2-1 { counter-set: preface-3-2-1 0; }
+#preface-3-2-1 > li::marker { content: ""counter(preface-3-2-1,decimal)"."; }
+#preface-3-2-1 > li { counter-increment: preface-3-2-1; }
 #introductionToData-2-1-4 { counter-set: introductionToData-2-1-4 0; }
 #introductionToData-2-1-4 > li::marker { content: ""counter(introductionToData-2-1-4,decimal)"."; }
 #introductionToData-2-1-4 > li { counter-increment: introductionToData-2-1-4; }
@@ -2417,7 +2423,7 @@ window.MathJax = {
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.3.3</span><span class="period">.</span>
 </h3></summary><article class="example example-like knowl__content"><div class="para" id="tDistributionTable_section-5-1-1">A t-distribution with 20 degrees of freedom is shown in the left panel of <a href="tDistributionTable_section.html#rightdoublesidet" class="xref" data-knowl="./knowl/xref/rightdoublesidet.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure B.3.4">Figure B.3.4</a>. Estimate the proportion of the distribution falling above 1.65.</div>
 <div class="solutions"><details id="tDistributionTable_section-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="tDistributionTable_section-5-2-1">We identify the row in the t-table using the degrees of freedom: <span class="process-math">\(df = 20\text{.}\)</span> Then we look for 1.65; it is not listed. It falls between the first and second columns. Since these values bound 1.65, their tail areas will bound the tail area corresponding to 1.65. We identify the one tail area of the first and second columns, 0.050 and 0.10, and we conclude that between 5% and 10% of the distribution is more than 1.65 standard deviations above the mean. If we like, we can identify the precise area using statistical software: 0.0573.</div> <figure class="figure figure-like" id="rightdoublesidet"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/images/appendix/rightandtwoside.png" class="contained"></div>
+<div class="para" id="tDistributionTable_section-5-2-1">We identify the row in the t-table using the degrees of freedom: <span class="process-math">\(df = 20\text{.}\)</span> Then we look for 1.65; it is not listed. It falls between the first and second columns. Since these values bound 1.65, their tail areas will bound the tail area corresponding to 1.65. We identify the one tail area of the first and second columns, 0.050 and 0.10, and we conclude that between 5% and 10% of the distribution is more than 1.65 standard deviations above the mean. If we like, we can identify the precise area using statistical software: 0.0573.</div> <figure class="figure figure-like" id="rightdoublesidet"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/images/appendix/rightandtwoside.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">B.3.4<span class="period">.</span></span><span class="space"> </span>Left: The t-distribution with 20 degrees of freedom, with the area above 1.65 shaded. Right: The t-distribution with 475 degrees of freedom, with the area further than 2 units from 0 shaded.</figcaption></figure>
 </div></details></div></article></details><details id="tDistributionTable_section-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">B.3.5</span><span class="period">.</span>
@@ -2433,6 +2439,15 @@ window.MathJax = {
 </div></div></details></div></article></details><figure class="figure figure-like" id="tDistributionTable_section-9"><div class="image-box" style="width: 95%; margin-left: 2.5%; margin-right: 2.5%;"><img src="external/images/appendix/tTails.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">B.3.8<span class="period">.</span></span><span class="space"> </span></figcaption></figure><figure class="table table-like" id="tDistributionTable"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">B.3.9<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
 <td class="r m b0 r1 l0 t0 lines" colspan="2">one tail</td>
 <td class="r m b0 r0 l0 t0 lines">0.100</td>
 <td class="r m b0 r0 l0 t0 lines">0.050</td>
@@ -2441,12 +2456,12 @@ window.MathJax = {
 <td class="r m b0 r0 l0 t0 lines">0.005</td>
 </tr>
 <tr>
-<td class="r m b0 r1 l0 t0 lines" colspan="2">two tail</td>
-<td class="r m b0 r0 l0 t0 lines">0.200</td>
-<td class="r m b0 r0 l0 t0 lines">0.100</td>
-<td class="r m b0 r0 l0 t0 lines">0.050</td>
-<td class="r m b0 r0 l0 t0 lines">0.020</td>
-<td class="r m b0 r0 l0 t0 lines">0.010</td>
+<td class="r m b1 r1 l0 t0 lines" colspan="2">two tail</td>
+<td class="r m b1 r0 l0 t0 lines">0.200</td>
+<td class="r m b1 r0 l0 t0 lines">0.100</td>
+<td class="r m b1 r0 l0 t0 lines">0.050</td>
+<td class="r m b1 r0 l0 t0 lines">0.020</td>
+<td class="r m b1 r0 l0 t0 lines">0.010</td>
 </tr>
 <tr>
 <td class="r m b0 r0 l0 t0 lines">df</td>
@@ -2718,8 +2733,17 @@ window.MathJax = {
 <td class="r m b1 r0 l0 t0 lines">2.46</td>
 <td class="r m b1 r0 l0 t0 lines">2.75</td>
 </tr>
-</table></div></figure><figure class="figure figure-like" id="tDistributionTable_section-11"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/images/appendix/tTails.png" class="contained"></div>
+</table></div></figure><figure class="figure figure-like" id="tDistributionTable_section-11"><div class="image-box" style="width: 95%; margin-left: 2.5%; margin-right: 2.5%;"><img src="external/images/appendix/tTails.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">B.3.10<span class="period">.</span></span><span class="space"> </span></figcaption></figure><figure class="table table-like" id="tDistributionTable_section-12"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">B.3.11<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
 <tr>
 <td class="r m b0 r1 l0 t0 lines" colspan="2">one tail</td>
 <td class="r m b0 r0 l0 t0 lines">0.100</td>
@@ -2729,12 +2753,12 @@ window.MathJax = {
 <td class="r m b0 r0 l0 t0 lines">0.005</td>
 </tr>
 <tr>
-<td class="r m b0 r1 l0 t0 lines" colspan="2">two tail</td>
-<td class="r m b0 r0 l0 t0 lines">0.200</td>
-<td class="r m b0 r0 l0 t0 lines">0.100</td>
-<td class="r m b0 r0 l0 t0 lines">0.050</td>
-<td class="r m b0 r0 l0 t0 lines">0.020</td>
-<td class="r m b0 r0 l0 t0 lines">0.010</td>
+<td class="r m b1 r1 l0 t0 lines" colspan="2">two tail</td>
+<td class="r m b1 r0 l0 t0 lines">0.200</td>
+<td class="r m b1 r0 l0 t0 lines">0.100</td>
+<td class="r m b1 r0 l0 t0 lines">0.050</td>
+<td class="r m b1 r0 l0 t0 lines">0.020</td>
+<td class="r m b1 r0 l0 t0 lines">0.010</td>
 </tr>
 <tr>
 <td class="r m b0 r0 l0 t0 lines">df</td>
@@ -3008,21 +3032,12 @@ window.MathJax = {
 </tr>
 <tr>
 <td class="r m b1 r0 l0 t0 lines"></td>
-<td class="r m b1 r1 l0 t0 lines"><span class="process-math">\(\inf\)</span></td>
+<td class="r m b1 r1 l0 t0 lines"><span class="process-math">\(\infty\)</span></td>
 <td class="r m b1 r0 l0 t0 lines">1.28</td>
 <td class="r m b1 r0 l0 t0 lines">1.65</td>
 <td class="r m b1 r0 l0 t0 lines">1.96</td>
 <td class="r m b1 r0 l0 t0 lines">2.33</td>
 <td class="r m b1 r0 l0 t0 lines">2.58</td>
-</tr>
-<tr>
-<td class="c m b1 r0 l0 t0 lines"></td>
-<td class="c m b1 r1 l0 t0 lines"><span class="process-math">\(\inf\)</span></td>
-<td class="c m b1 r0 l0 t0 lines">1.28</td>
-<td class="c m b1 r0 l0 t0 lines">1.65</td>
-<td class="c m b1 r0 l0 t0 lines">1.96</td>
-<td class="c m b1 r0 l0 t0 lines">2.33</td>
-<td class="c m b1 r0 l0 t0 lines">2.58</td>
 </tr>
 </table></div></figure></section></div>
 <div class="ptx-content-footer">
