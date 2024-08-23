@@ -689,9 +689,9 @@ window.MathJax = {
 #randomVariablesSection-5-3-2-1 { counter-set: randomVariablesSection-5-3-2-1 0; }
 #randomVariablesSection-5-3-2-1 > li::marker { content: ""counter(randomVariablesSection-5-3-2-1,decimal)"."; }
 #randomVariablesSection-5-3-2-1 > li { counter-increment: randomVariablesSection-5-3-2-1; }
-#randomVariablesSection-7-7-1-1-1 { counter-set: randomVariablesSection-7-7-1-1-1 0; }
-#randomVariablesSection-7-7-1-1-1 > li::marker { content: "("counter(randomVariablesSection-7-7-1-1-1,lower-alpha)")"; }
-#randomVariablesSection-7-7-1-1-1 > li { counter-increment: randomVariablesSection-7-7-1-1-1; }
+#randomVariablesSection-7-7-1-1-2 { counter-set: randomVariablesSection-7-7-1-1-2 0; }
+#randomVariablesSection-7-7-1-1-2 > li::marker { content: "("counter(randomVariablesSection-7-7-1-1-2,lower-alpha)")"; }
+#randomVariablesSection-7-7-1-1-2 > li { counter-increment: randomVariablesSection-7-7-1-1-2; }
 #randomVariablesSection-13-2-2-3-1 { counter-set: randomVariablesSection-13-2-2-3-1 0; }
 #randomVariablesSection-13-2-2-3-1 > li::marker { content: ""counter(randomVariablesSection-13-2-2-3-1,lower-alpha)""; }
 #randomVariablesSection-13-2-2-3-1 > li { counter-increment: randomVariablesSection-13-2-2-3-1; }
@@ -1708,10 +1708,10 @@ window.MathJax = {
 #chapter_eight_exercises-3-7-3-1-1 > li { counter-increment: chapter_eight_exercises-3-7-3-1-1; }
 </style>
 </head>
-<body class="pretext book ignore-math">
+<body id="changeme" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
-<h1 class="heading"><a href="root-1-1.html"><span class="title">Advanced High School Statistics:</span> <span class="subtitle">Third Edition, with updates based on AP© Statistics Course Framework</span></a></h1>
+<h1 class="heading"><a href="root-1-2.html"><span class="title">Advanced High School Statistics:</span> <span class="subtitle">Third Edition, with updates based on AP© Statistics Course Framework</span></a></h1>
 <p class="byline">David M Diez, Mine Çetinkaya-Rundel, Leah Dorazio, Christopher D Barr</p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
@@ -1725,7 +1725,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch_distributions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch_distributions.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="distributionofxbar.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch_distributions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch_distributions.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="distributionofxbar.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -2467,7 +2467,7 @@ P(\amp Z \lt  -2.1) = 0.0179
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.8</span><span class="period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para" id="distributionphat-6-3-1-1">The probability 0.0179 is the same probability we calculated when we found the probability of getting fewer than 120 with blood type O+ out of 400! Why is this?</div>
 <div class="solutions"><details id="distributionphat-6-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="distributionphat-6-3-2-1">Notice that <span class="process-math">\(120/400=0.30\text{.}\)</span> Using the binomial distribution to find the probability of fewer than 120 with blood type O+ in the sample is equivalent to using the distribution of <span class="process-math">\(\hat{p}\)</span> to find the probability of a sample proportion less than 0.30.</div></div></details></div></article></details><details id="distributionphat-6-4" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">4.1.9</span><span class="period">.</span>
+<span class="type">Guided Practice</span><span class="space"> </span><span class="codenumber">4.1.9</span><span class="period">.</span>
 </h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="distributionphat-6-4-1-1">Given a population that is 50% male, what is the probability that a sample of size 200 would have greater than 55% males? Remember to verify that conditions for normal approximation are met. <details class="ptx-footnote" aria-live="polite" id="distributionphat-6-4-1-1-1"><summary class="ptx-footnote__number" title="Footnote 4.1.2"><sup> 2 </sup></summary><div class="ptx-footnote__contents" id="distributionphat-6-4-1-1-1">First, verify the conditions: There is a random sample, and the sample size is much smaller than the population size, so observations can be considered independent. Also, <span class="process-math">\(np = 200(0.5) = 100 \ge 10\)</span> and <span class="process-math">\(n(1- p) = 200(0.5) = 100 \ge 10\text{,}\)</span> so the normal approximation is reasonable. Next we find the mean and standard deviation of <span class="process-math">\(\hat{p}\text{:}\)</span> <span class="process-math">\(\mu_{\hat{p}} = p =0.50\)</span> and<span class="process-math">\(\sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}} =\sqrt{\frac{0.5(0.5)}{200}} = 0.0354\text{.}\)</span> Then we find the <span class="process-math">\(Z\)</span>-score and find the upper tail of the normal distribution: <span class="process-math">\(Z=\frac{\hat{p}-\mu_{\hat{p}}}{\sigma_{\hat{p}}}= \frac{0.55-0.5}{0.0354}1.412 \rightarrow P(Z&gt;1.412)=0.07\text{.}\)</span> The probability of getting a sample proportion of 55% or greater is about 0.07.</div></details>
 </div></article></details></section><section class="subsection" id="distributionphat-7"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">4.1.5</span><span class="space"> </span><span class="title">Section summary</span>

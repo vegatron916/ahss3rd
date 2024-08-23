@@ -689,9 +689,9 @@ window.MathJax = {
 #randomVariablesSection-5-3-2-1 { counter-set: randomVariablesSection-5-3-2-1 0; }
 #randomVariablesSection-5-3-2-1 > li::marker { content: ""counter(randomVariablesSection-5-3-2-1,decimal)"."; }
 #randomVariablesSection-5-3-2-1 > li { counter-increment: randomVariablesSection-5-3-2-1; }
-#randomVariablesSection-7-7-1-1-1 { counter-set: randomVariablesSection-7-7-1-1-1 0; }
-#randomVariablesSection-7-7-1-1-1 > li::marker { content: "("counter(randomVariablesSection-7-7-1-1-1,lower-alpha)")"; }
-#randomVariablesSection-7-7-1-1-1 > li { counter-increment: randomVariablesSection-7-7-1-1-1; }
+#randomVariablesSection-7-7-1-1-2 { counter-set: randomVariablesSection-7-7-1-1-2 0; }
+#randomVariablesSection-7-7-1-1-2 > li::marker { content: "("counter(randomVariablesSection-7-7-1-1-2,lower-alpha)")"; }
+#randomVariablesSection-7-7-1-1-2 > li { counter-increment: randomVariablesSection-7-7-1-1-2; }
 #randomVariablesSection-13-2-2-3-1 { counter-set: randomVariablesSection-13-2-2-3-1 0; }
 #randomVariablesSection-13-2-2-3-1 > li::marker { content: ""counter(randomVariablesSection-13-2-2-3-1,lower-alpha)""; }
 #randomVariablesSection-13-2-2-3-1 > li { counter-increment: randomVariablesSection-13-2-2-3-1; }
@@ -1708,10 +1708,10 @@ window.MathJax = {
 #chapter_eight_exercises-3-7-3-1-1 > li { counter-increment: chapter_eight_exercises-3-7-3-1-1; }
 </style>
 </head>
-<body class="pretext book ignore-math">
+<body id="changeme" class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
-<h1 class="heading"><a href="root-1-1.html"><span class="title">Advanced High School Statistics:</span> <span class="subtitle">Third Edition, with updates based on AP© Statistics Course Framework</span></a></h1>
+<h1 class="heading"><a href="root-1-2.html"><span class="title">Advanced High School Statistics:</span> <span class="subtitle">Third Edition, with updates based on AP© Statistics Course Framework</span></a></h1>
 <p class="byline">David M Diez, Mine Çetinkaya-Rundel, Leah Dorazio, Christopher D Barr</p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
@@ -1725,7 +1725,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="pairedData.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="inferenceForNumericalData.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chapter_seven_exercises.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="pairedData.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="inferenceForNumericalData.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="chapter_seven_exercises.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -2323,18 +2323,18 @@ window.MathJax = {
 <div class="para">When the individual population standard deviations are unknown, we estimate the standard deviation of <span class="process-math">\(\bar{x}_{1} - \bar{x}_{2}\)</span> using the Standard Error, abbreviated <em class="emphasis">SE</em>, by plugging in the sample standard deviations as our best guesses of the population standard deviations:</div>
 <div class="displaymath process-math" id="differenceOfTwoMeans-3-3">
 \begin{gather*}
-SE_{\bar{x}_{1} - \bar{x}_{2}} = \sqrt{\frac{s_{1}^2}{n_{1}} + \frac{\s_{2}^2}{n_{2}}}
+SE_{\bar{x}_{1} - \bar{x}_{2}} = \sqrt{\frac{s_{1}^2}{n_{1}} + \frac{s_{2}^2}{n_{2}}}
 \end{gather*}
 </div>
 </div>
 <div class="para" id="differenceOfTwoMeans-4">The difference of two sample means <span class="process-math">\(\bar{x}_{1} - \bar{x}_{2}\)</span> follows a nearly normal distribution when certain conditions are met. First, the sampling distribution for each sample mean must be nearly normal, and second, the observations must be independent, both within and between groups. Under these two conditions, the sampling distribution for <span class="process-math">\(\bar{x}_{1} - \bar{x}_{2}\)</span> may be well approximated using the normal model.</div></section><section class="subsection" id="theTDistributionForTheDifferenceOfTwoMeans-5"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.3.3</span><span class="space"> </span><span class="title">Checking conditions for inference on a difference of means</span>
 </h3>
-<div class="para" id="theTDistributionForTheDifferenceOfTwoMeans-5-2">When comparing two means, we carry out inference on a difference of means, <span class="process-math">\(\mu_1-\mu_2\text{.}\)</span> We will use the <span class="process-math">\(t\)</span>-distribution just as we did when carrying out inference on a single mean. The assumptions are that the observations are independent, both between groups and within groups and that the sampling distribution of <span class="process-math">\(\bar{x}_1-\bar{x}_2\)</span> is nearly normal. We check whether these assumptions are reasonable by verifying the following conditions.</div>
+<div class="para" id="theTDistributionForTheDifferenceOfTwoMeans-5-2">When comparing two means, we carry out inference on a difference of means, <span class="process-math">\(\mu_{1}-\mu_{2}\text{.}\)</span> We will use the <span class="process-math">\(t\)</span>-distribution just as we did when carrying out inference on a single mean. The assumptions are that the observations are independent, both between groups and within groups and that the sampling distribution of <span class="process-math">\(\bar{x}_{1}-\bar{x}_{2}\)</span> is nearly normal. We check whether these assumptions are reasonable by verifying the following conditions.</div>
 <div class="para" id="theTDistributionForTheDifferenceOfTwoMeans-5-3">
 <em class="alert">Independent.</em> Observations can be considered independent when the data are collected from two independent random samples or, in the context of experiments, from two randomly assigned treatments. Randomly assigning subjects to treatments is equivalent to randomly assigning treatments to subjects.</div>
 <div class="para" id="theTDistributionForTheDifferenceOfTwoMeans-5-4">
-<em class="alert">Nearly normal sampling distribution.</em> The sampling distribution of <span class="process-math">\(\bar{x}_1-\bar{x}_2\)</span> will be nearly normal when the sampling distribution of <span class="process-math">\(\bar{x}_1\)</span> and of <span class="process-math">\(\bar{x}_2\)</span> are nearly normal, that is when both population distributions are nearly normal or both sample sizes are at least 30.</div>
+<em class="alert">Nearly normal sampling distribution.</em> The sampling distribution of <span class="process-math">\(\bar{x}_{1}-\bar{x}_{2}\)</span> will be nearly normal when the sampling distribution of <span class="process-math">\(\bar{x}_{1}\)</span> and of <span class="process-math">\(\bar{x}_{2}\)</span> are nearly normal, that is when both population distributions are nearly normal or both sample sizes are at least 30.</div>
 <div class="para" id="theTDistributionForTheDifferenceOfTwoMeans-5-5">As before, if the sample sizes are small and the population distributions are not known to be nearly normal, we look at the data for excessive skew or outliers. If we do no find excessive skew or outliers in either group, we consider the assumption that the populations are nearly normal to be reasonable.</div></section><section class="subsection" id="summaryStatsForJohnJenniferStudy"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">7.3.4</span><span class="space"> </span><span class="title">Confidence intervals for a difference of means</span>
 </h3>
@@ -2344,12 +2344,12 @@ SE_{\bar{x}_{1} - \bar{x}_{2}} = \sqrt{\frac{s_{1}^2}{n_{1}} + \frac{\s_{2}^2}{n
 <div class="para">Unlike in the matched pairs scenario, each faculty member received only one resume. We are interested in comparing the mean salary offered to John relative to the mean salary offered to Jennifer. Instead of taking the average of a set of paired differences, we find the average of each group separately and take their difference. Let</div>
 <div class="displaymath process-math" id="summaryStatsForJohnJenniferStudy-4-1">
 \begin{align*}
-\bar{x}_1:\amp  \text{ mean salary offered to John }\\
-\bar{x}_2: \amp \text{ mean salary offered to Jennifer }
+\bar{x}_{1}:\amp  \text{ mean salary offered to John }\\
+\bar{x}_{2}: \amp \text{ mean salary offered to Jennifer }
 \end{align*}
 </div>
 </div>
-<div class="para" id="summaryStatsForJohnJenniferStudy-5">We will use <span class="process-math">\(\bar{x}_1 - \bar{x}_2\)</span> as our point estimate for <span class="process-math">\(\mu_1-\mu_2\text{.}\)</span> The data is given in the table below.</div>
+<div class="para" id="summaryStatsForJohnJenniferStudy-5">We will use <span class="process-math">\(\bar{x}_{1} - \bar{x}_{2}\)</span> as our point estimate for <span class="process-math">\(\mu_{1}-\mu_{2}\text{.}\)</span> The data is given in the table below.</div>
 <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines"></td>
@@ -2380,7 +2380,7 @@ SE_{\bar{x}_{1} - \bar{x}_{2}} = \sqrt{\frac{s_{1}^2}{n_{1}} + \frac{\s_{2}^2}{n
 <div class="para">We can calculate the difference as</div>
 <div class="displaymath process-math" id="summaryStatsForJohnJenniferStudy-7-1">
 \begin{gather*}
-\bar{x}_1-\bar{x}_2 = 30238 - 26508 = 3730\text{.}
+\bar{x}_{1}-\bar{x}_{2} = 30238 - 26508 = 3730\text{.}
 \end{gather*}
 </div>
 </div>
@@ -2395,12 +2395,12 @@ SE_{\bar{x}_{1} - \bar{x}_{2}} = \sqrt{\frac{s_{1}^2}{n_{1}} + \frac{\s_{2}^2}{n
 \begin{gather*}
 SE = \sqrt{\frac{s_{1}^2}{n_{1}} + \frac{s_{2}^2}{n_{2}}} = \sqrt{\frac{(5567)^2}{63} + \frac{(7247)^2}{64}} = 1151
 \end{gather*}
-</div></div> <div class="para" id="summaryStatsForJohnJenniferStudy-9-2-2">Using samples of size <span class="process-math">\(n_{1}\)</span> and <span class="process-math">\(n_{2}\text{,}\)</span> the typical error when using <span class="process-math">\(\bar{x}_{1}-\bar_{x}_{2}\)</span> to estimate <span class="process-math">\(\mu_1-\mu_2\text{,}\)</span> the real difference in mean salary that the faculty would offer John versus Jennifer, is $1151.</div>
+</div></div> <div class="para" id="summaryStatsForJohnJenniferStudy-9-2-2">Using samples of size <span class="process-math">\(n_{1}\)</span> and <span class="process-math">\(n_{2}\text{,}\)</span> the typical error when using <span class="process-math">\(\bar{x}_{1}-\bar{x}_{2}\)</span> to estimate <span class="process-math">\(\mu_{1}-\mu_{2}\text{,}\)</span> the real difference in mean salary that the faculty would offer John versus Jennifer, is $1151.</div>
 </div></details></div></article></details><div class="para" id="summaryStatsForJohnJenniferStudy-10">We see that the difference of sample means of $3,730 is more than 3 <span class="process-math">\(SE\)</span> above 0, which makes us think that the difference being 0 is unreasonable. We would like to construct a 95% confidence interval for the theoretical difference in mean salary that would be offered to John versus Jennifer. For this, we need the degrees of freedom associated with a two-sample <span class="process-math">\(t\)</span>-interval.</div>
-<div class="para" id="summaryStatsForJohnJenniferStudy-11">For the one-sample <span class="process-math">\(t\)</span>-procedure, the degrees of freedom is given by the simple expression <span class="process-math">\(n-1\text{,}\)</span> where <span class="process-math">\(n\)</span> is the sample size. For the two-sample <span class="process-math">\(t\)</span>-procedures, however, there is a complex formula for calculating the degrees of freedom, which is based on the two sample sizes and the two sample standard deviations. In practice, we find the degrees of freedom using software or a calculator (see <a href="theTDistributionForTheDifferenceOfTwoMeans.html#x2SampTint" class="internal" title="Subsection 7.3.5: Technology: the 2-sample t-interval">Subsection 7.3.5</a>). If this is not possible, the alternative is to use the smaller of <span class="process-math">\(n_1-1\)</span> and <span class="process-math">\(n_2-1\text{.}\)</span>
+<div class="para" id="summaryStatsForJohnJenniferStudy-11">For the one-sample <span class="process-math">\(t\)</span>-procedure, the degrees of freedom is given by the simple expression <span class="process-math">\(n-1\text{,}\)</span> where <span class="process-math">\(n\)</span> is the sample size. For the two-sample <span class="process-math">\(t\)</span>-procedures, however, there is a complex formula for calculating the degrees of freedom, which is based on the two sample sizes and the two sample standard deviations. In practice, we find the degrees of freedom using software or a calculator (see <a href="theTDistributionForTheDifferenceOfTwoMeans.html#x2SampTint" class="internal" title="Subsection 7.3.5: Technology: the 2-sample t-interval">Subsection 7.3.5</a>). If this is not possible, the alternative is to use the smaller of <span class="process-math">\(n_{1}-1\)</span> and <span class="process-math">\(n_{2}-1\text{.}\)</span>
 </div>
 <article class="assemblage assemblage-like" id="summaryStatsForJohnJenniferStudy-12"><h4 class="heading"><span class="title">Degrees of freedom for two-sample T-procedures.</span></h4>
-<div class="para" id="summaryStatsForJohnJenniferStudy-12-2">Use statistical software or a calculator to compute the degrees of freedom for two-sample <span class="process-math">\(t\)</span>-procedures . If this is not possible, use the smaller of <span class="process-math">\(n_1-1\)</span> and <span class="process-math">\(n_2-1\text{.}\)</span>
+<div class="para" id="summaryStatsForJohnJenniferStudy-12-2">Use statistical software or a calculator to compute the degrees of freedom for two-sample <span class="process-math">\(t\)</span>-procedures . If this is not possible, use the smaller of <span class="process-math">\(n_{1}-1\)</span> and <span class="process-math">\(n_{2}-1\text{.}\)</span>
 </div></article><details id="summaryStatsForJohnJenniferStudy-13" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.3.3</span><span class="period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para" id="summaryStatsForJohnJenniferStudy-13-1-1">Verify that conditions are met for a two-sample <span class="process-math">\(t\)</span>-test. Then, construct the 95% confidence interval for the difference of means.</div>
@@ -2528,7 +2528,7 @@ SE = \sqrt{\frac{s_{1}^2}{n_{1}} + \frac{s_{2}^2}{n_{2}}} = \sqrt{\frac{(5567)^2
 \begin{align*}
 (79.4 - 74.1) \ \pm\  \amp 2.009\times \sqrt{\frac{14^2}{30} + \frac{20^2}{30}}   \qquad df = 45.97\\
 5.3 \ \pm\  \amp 2.009\times 4.46\\
-=(-3\amp .66,\ 14.26)
+=(-3.66, 14.26)
 \end{align*}
 </div>
 </div> <div class="para" id="summaryStatsForTwoVersionsOfExams2nd-2-9">
@@ -2643,7 +2643,7 @@ SE = \sqrt{\frac{s_{1}^2}{n_{1}} + \frac{s_{2}^2}{n_{2}}} = \sqrt{\frac{(5567)^2
 <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 14 96 68" style="cursor:pointer; position: absolute; top: 0; left: 0; width: 100%; height: 100%;" preserveAspectRatio="none"><path fill="#e62117" d="M94.98,28.84c0,0-0.94-6.6-3.81-9.5c-3.64-3.81-7.72-3.83-9.59-4.05c-13.4-0.97-33.52-0.85-33.52-0.85s-20.12-0.12-33.52,0.85c-1.87,0.22-5.95,0.24-9.59,4.05c-2.87,2.9-3.81,9.5-3.81,9.5S0.18,36.58,0,44.33v7.26c0.18,7.75,1.14,15.49,1.14,15.49s0.93,6.6,3.81,9.5c3.64,3.81,8.43,3.69,10.56,4.09c7.53,0.72,31.7,0.89,32.54,0.9c0.01,0,20.14,0.03,33.54-0.94c1.87-0.22,5.95-0.24,9.59-4.05c2.87-2.9,3.81-9.5,3.81-9.5s0.96-7.75,1.02-15.49v-7.26C95.94,36.58,94.98,28.84,94.98,28.84z M38.28,61.41v-27l25.74,13.5L38.28,61.41z"></path></svg></div>
 <div class="hidden-content"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/g_ullo550lg?&amp;modestbranding=1&amp;rel=0" id="two_means_ci_casio-3-1"></iframe></div>
 </div></div></div></div></article><details id="x2SampTint-4" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">7.3.5</span><span class="period">.</span>
+<span class="type">Guided Practice</span><span class="space"> </span><span class="codenumber">7.3.5</span><span class="period">.</span>
 </h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="x2SampTint-4-1-1">Use the data below and a calculator to find a 95% confidence interval for the difference in average scores between Version A and Version B of the exam from the previous example.<details class="ptx-footnote" aria-live="polite" id="x2SampTint-4-1-1-1"><summary class="ptx-footnote__number" title="Footnote 7.3.4"><sup> 4 </sup></summary><div class="ptx-footnote__contents" id="x2SampTint-4-1-1-1">Choose <code class="code-inline tex2jax_ignore">2-SampTInt</code> or equivalent. Because we have the summary statistics rather than all of the data, choose <code class="code-inline tex2jax_ignore">Stats</code>. Let <code class="code-inline tex2jax_ignore">x1</code><span class="process-math">\(=79.41\text{,}\)</span> <code class="code-inline tex2jax_ignore">Sx1</code><span class="process-math">\(=14\text{,}\)</span> <code class="code-inline tex2jax_ignore">n1</code><span class="process-math">\(=30\text{,}\)</span> <code class="code-inline tex2jax_ignore">x2</code><span class="process-math">\(=74.1\text{,}\)</span> <code class="code-inline tex2jax_ignore">Sx2</code><span class="process-math">\(= 20\text{,}\)</span> and <code class="code-inline tex2jax_ignore">n2</code> <span class="process-math">\(= 30\text{.}\)</span> The interval is (-3.6, 14.2) with <span class="process-math">\(df = 51.9\text{.}\)</span>
 </div></details>
 </div> <div class="tabular-box natural-width"><table class="tabular">
@@ -2816,10 +2816,10 @@ T = \frac{\text{ point estimate }  - \text{ null value } }{SE \text{ of estimate
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">7.3.14</span><span class="period">.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para" id="theTDistributionForTheDifferenceOfTwoMeans-8-13-1-1">Does the conclusion to <a href="theTDistributionForTheDifferenceOfTwoMeans.html#babySmokeHTForWeightComputePValueAndEvalHT" class="xref" data-knowl="./knowl/xref/babySmokeHTForWeightComputePValueAndEvalHT.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 7.3.11">Example 7.3.11</a> mean that smoking and average birth weight are unrelated?</div>
 <div class="solutions"><details id="theTDistributionForTheDifferenceOfTwoMeans-8-13-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="theTDistributionForTheDifferenceOfTwoMeans-8-13-2-1">Not necessarily. It is possible that there is some difference but that we did not detect it. The result must be considered in light of other evidence and research. In fact, larger data sets do tend to show that women who smoke during pregnancy have smaller newborns.</div></div></details></div></article></details><details id="theTDistributionForTheDifferenceOfTwoMeans-8-14" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">7.3.15</span><span class="period">.</span>
+<span class="type">Guided Practice</span><span class="space"> </span><span class="codenumber">7.3.15</span><span class="period">.</span>
 </h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="theTDistributionForTheDifferenceOfTwoMeans-8-14-1-1">If we made an error in our conclusion, which type of error could we have made: Type I or Type II? <details class="ptx-footnote" aria-live="polite" id="theTDistributionForTheDifferenceOfTwoMeans-8-14-1-1-1"><summary class="ptx-footnote__number" title="Footnote 7.3.5"><sup> 5 </sup></summary><div class="ptx-footnote__contents" id="theTDistributionForTheDifferenceOfTwoMeans-8-14-1-1-1">Since we did not reject <span class="process-math">\(H_0\text{,}\)</span> it is possible that we made a Type II Error. It is possible that there is some difference but that we did not detect it.</div></details>
 </div></article></details><details id="babySmokeHTIDingHowToDetectDifferences" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">7.3.16</span><span class="period">.</span>
+<span class="type">Guided Practice</span><span class="space"> </span><span class="codenumber">7.3.16</span><span class="period">.</span>
 </h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="babySmokeHTIDingHowToDetectDifferences-1-1">If we made a Type II Error and there is a difference, what could we have done differently in data collection to be more likely to detect the difference?<details class="ptx-footnote" aria-live="polite" id="babySmokeHTIDingHowToDetectDifferences-1-1-1"><summary class="ptx-footnote__number" title="Footnote 7.3.6"><sup> 6 </sup></summary><div class="ptx-footnote__contents" id="babySmokeHTIDingHowToDetectDifferences-1-1-1">We could have collected more data. If the sample sizes are larger, we tend to have a better shot at finding a difference if one exists. In other words, increasing the sample size increases the power of the test.</div></details>
 </div></article></details><div class="para" id="theTDistributionForTheDifferenceOfTwoMeans-8-16"></div>
 <article class="assemblage assemblage-like" id="theTDistributionForTheDifferenceOfTwoMeans-8-17"><h4 class="heading"><span class="title">Hypothesis test for the difference of two means.</span></h4>
@@ -3052,7 +3052,7 @@ T = \frac{3.50 - (-4.33) - 0}{\sqrt{\frac{(5.17)^2}{9} + \frac{(2.76)^2}{9}} } =
 <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 14 96 68" style="cursor:pointer; position: absolute; top: 0; left: 0; width: 100%; height: 100%;" preserveAspectRatio="none"><path fill="#e62117" d="M94.98,28.84c0,0-0.94-6.6-3.81-9.5c-3.64-3.81-7.72-3.83-9.59-4.05c-13.4-0.97-33.52-0.85-33.52-0.85s-20.12-0.12-33.52,0.85c-1.87,0.22-5.95,0.24-9.59,4.05c-2.87,2.9-3.81,9.5-3.81,9.5S0.18,36.58,0,44.33v7.26c0.18,7.75,1.14,15.49,1.14,15.49s0.93,6.6,3.81,9.5c3.64,3.81,8.43,3.69,10.56,4.09c7.53,0.72,31.7,0.89,32.54,0.9c0.01,0,20.14,0.03,33.54-0.94c1.87-0.22,5.95-0.24,9.59-4.05c2.87-2.9,3.81-9.5,3.81-9.5s0.96-7.75,1.02-15.49v-7.26C95.94,36.58,94.98,28.84,94.98,28.84z M38.28,61.41v-27l25.74,13.5L38.28,61.41z"></path></svg></div>
 <div class="hidden-content"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/g_ullo550lg?&amp;modestbranding=1&amp;rel=0" id="two_means_ht_casio-3-1"></iframe></div>
 </div></div></div></div></article><details id="x2SampTtest-4" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">7.3.18</span><span class="period">.</span>
+<span class="type">Guided Practice</span><span class="space"> </span><span class="codenumber">7.3.18</span><span class="period">.</span>
 </h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="x2SampTtest-4-1-1">Use the data below and a calculator to find the test statistics and p-value for a one-sided test, testing whether there is evidence that embryonic stem cells (ESCs) help improve heart function for sheep that have experienced a heart attack.<details class="ptx-footnote" aria-live="polite" id="x2SampTtest-4-1-1-1"><summary class="ptx-footnote__number" title="Footnote 7.3.7"><sup> 7 </sup></summary><div class="ptx-footnote__contents" id="x2SampTtest-4-1-1-1">Choose <code class="code-inline tex2jax_ignore">2-SampTTest</code> or equivalent. Because we have the summary statistics rather than all of the data, choose <code class="code-inline tex2jax_ignore">Stats</code>. Let <code class="code-inline tex2jax_ignore">x1</code><span class="process-math">\(=3.50\text{,}\)</span> <code class="code-inline tex2jax_ignore">Sx1</code><span class="process-math">\(=5.17\text{,}\)</span> <code class="code-inline tex2jax_ignore">n1</code><span class="process-math">\(=9\text{,}\)</span> <code class="code-inline tex2jax_ignore">x2</code><span class="process-math">\(=-4.33\text{,}\)</span> <code class="code-inline tex2jax_ignore">Sx2</code><span class="process-math">\(= 2.76\text{,}\)</span> and <code class="code-inline tex2jax_ignore">n2</code><span class="process-math">\(= 9\text{.}\)</span> We get <code class="code-inline tex2jax_ignore">t</code><span class="process-math">\(= 4.01\text{,}\)</span> and the p-value <code class="code-inline tex2jax_ignore">p</code> <span class="process-math">\(= 8.4 \times 10^{-4}= 0.00084\text{.}\)</span> The degrees of freedom for the test is <code class="code-inline tex2jax_ignore">df</code> <span class="process-math">\(= 12.2\text{.}\)</span>
 </div></details>
 </div> <div class="tabular-box natural-width"><table class="tabular">
