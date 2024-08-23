@@ -1198,7 +1198,7 @@
       </li>
       <li>
         <p>
-           A small percent of the time (<m>\alpha</m>), a significant result will not be a real result. If many tests are run, a small percent of them will produce significant results due to chance alone.<fn>Similarly, if many confidence intervals are constructed, a small percent <m>(100 - C%)</m> of them will fail to capture a true value due to chance alone. A value outside the confidence interval is not an <em>impossible value</em>.</fn>
+           A small percent of the time (<m>\alpha</m>), a significant result will not be a real result. If many tests are run, a small percent of them will produce significant results due to chance alone.<fn>Similarly, if many confidence intervals are constructed, a small percent <m>(100 - C\%)</m> of them will fail to capture a true value due to chance alone. A value outside the confidence interval is not an <em>impossible value</em>.</fn>
         </p>
       </li>
       <li>
@@ -1291,16 +1291,16 @@
     <title>Online communication</title>
     <statement>
       <p>
-        A study suggests that 60% of college student spend 10<nbsp/>or more hours per week communicating with others online.
+        A study suggests that 60% of college student spend 10 or more hours per week communicating with others online.
         You believe that this is incorrect and decide to collect your own sample for a hypothesis test.
-        You randomly sample 160 students from your dorm and find that 70% spent 10<nbsp/>or more hours a week communicating with others online.
-        A<nbsp/>friend of yours,
+        You randomly sample 160 students from your dorm and find that 70% spent 10 or more hours a week communicating with others online.
+        A friend of yours,
         who offers to help you with the hypothesis test,
         comes up with the following set of hypotheses.
         Indicate any errors you see.
         <md>
           <mrow>H_0\amp : \hat{p} \lt  0.6</mrow>
-          <mrow>H_A\amp : \hat{p} > 0.7</mrow>
+          <mrow>H_A\amp : \hat{p} \gt 0.7</mrow>
         </md>
       </p>
     </statement>

@@ -232,7 +232,6 @@
   <title>Section Summary</title>
     <p>
       <ul>
-        \mu_{\bar{x}_{1}-\bar{x}_{2}} = \mu_{1}-\mu_{2}
         <li>
           <p>
             When two random variables each follow a nearly normal distribution, the distribution of their difference also follows a nearly normal distribution.

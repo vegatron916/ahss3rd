@@ -590,15 +590,15 @@
   </subsection> -->
   <subsection>
     <title>Midterm elections and unemployment</title>
-    <p>
+<!--     <p>
           <idx><h>data</h><h>midterm elections</h></idx>
-    </p>
+    </p> -->
     <p>
       Elections for members of the United States House of Representatives occur every two years,
       coinciding every four years with the U.S. Presidential election.
       The set of House elections occurring during the middle of a Presidential term are called midterm elections.
-          <idx><h>midterm election</h></idx>
-      In America's two-party system,
+<!--           <idx><h>midterm election</h></idx>
+ -->      In America's two-party system,
       one political theory suggests the higher the unemployment rate,
       the worse the President's party will do in the midterm elections.
     </p>
@@ -610,7 +610,7 @@
       <xref ref="unemploymentAndChangeInHouse"></xref>
       shows these data and the least-squares regression line:
       <md>
-        <mrow>\amp \text{ % change in House seats for President's party }</mrow>
+        <mrow>\amp \%\text{ change in House seats for President's party }</mrow>
         <mrow>\amp \qquad \qquad= -7.36 - 0.89\times \text{ (unemployment rate) }</mrow>
       </md>
     </p>
@@ -1555,7 +1555,7 @@
       <p>
         The Marvel Comic Universe movies were an international movie sensation, containing 23 movies at the time of this writing. Here we consider a model predicting an MCU film’s gross theater sales in the US based on the first weekend sales performance in the US. The data are presented below in both a scatterplot and the model in a regression table. Scientific notation is used below, e.g. 42.5e6 corresponds to <m>42.5 \times 10^{6}</m>.
       </p>
-      <image width="50%" source="images/regression/.png" />
+      <image width="50%" source="images/regression/mcu_box_office_us_predict.png" />
         <tabular>
             <row bottom="minor">
               <cell></cell>
@@ -1786,7 +1786,7 @@
           </li>
           <li>
             <p>
-              <m>\widehat{\text{height}}_{S} = 43.5755 + 0.2863 \times \text{height}_W</m>.
+              <m>\widehat{\text{height}}_{S} = 43.5755 + 0.2863 \times \text{height}_{W}</m>.
             </p>
           </li>
           <li>

@@ -584,6 +584,62 @@
           The bookstore also offers a chemistry textbook for $159 and a book supplement for $41.
           From past experience,
           they know about 25% of chemistry students just buy the textbook while 60% buy both the textbook and supplement.
+          <fn>
+            <p>
+          (a) <m>100\%- 25\% - 60\% = 15\%</m> of students do not buy any books for the class. Part (b) is represented by the first two lines in the table below. The expectation for part (c) is given as the total on the line <m>y_{i}\cdot P(y_{i})</m>. The result of part (d) is the square-root of the variance listed on in the total on the last line: <m>\sigma_{Y}= \sqrt{Var(Y)}=\sqrt{4800}=69.28</m>
+        </p>
+          <tabular>
+            <row bottom="minor" halign="right">
+              <cell><m>i</m> (scenario)</cell>
+              <cell>1 (<c>noBook</c>)</cell>
+              <cell>2 (<c>notebook</c>)</cell>
+              <cell>3 (<c>both</c>)</cell>
+              <cell>Total</cell>
+            </row>
+            <row halign="right">
+              <cell><m>y_{i}</m></cell>
+              <cell>0.00</cell>
+              <cell>159.00</cell>
+              <cell>200.00</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor" halign="right">
+              <cell><m>P(y_{i})</m></cell>
+              <cell>0.15</cell>
+              <cell>0.25</cell>
+              <cell>0.60</cell>
+              <cell></cell>
+            </row>
+            <row halign="right">
+              <cell><m>y_{i} \cdot P(y_{i})</m></cell>
+              <cell>0/00</cell>
+              <cell>39.75</cell>
+              <cell>120.00</cell>
+              <cell><m>E(Y)=159.75</m></cell>
+            </row>
+            <row halign="right">
+              <cell><m>y_{i}- \mu_{Y}</m></cell>
+              <cell>-159.75</cell>
+              <cell>-0.75</cell>
+              <cell>40.25</cell>
+              <cell></cell>
+            </row>
+            <row halign="right">
+              <cell><m>(y_{i}-\mu_{Y})^2</m></cell>
+              <cell>25520.06</cell>
+              <cell>0.56</cell>
+              <cell>1620.06</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor" halign="right">
+              <cell><m>(y_{i}-\mu_{Y})^2 \cdot P(y_{i})</m></cell>
+              <cell>3828.0</cell>
+              <cell>0.1</cell>
+              <cell>972.0</cell>
+              <cell><m>Var(Y) \approx 4800</m></cell>
+            </row>
+          </tabular>
+          </fn>
           <ol marker="(a)">
             <li>
               <p>
@@ -1431,7 +1487,7 @@
         <ol marker="a">
           <li>
             <p>
-              Mean: <m>$3 \times 0.5 + $5 \imes 0.3 + $10 \times 0.15 + $25 \times 0.05 = $5.75</m>.
+              Mean: <m>\$3 \times 0.5 + \$5 \times 0.3 + \$10 \times 0.15 + \$25 \times 0.05 = \$5.75</m>.
             </p>
           </li>
           <li>

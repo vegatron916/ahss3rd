@@ -209,7 +209,7 @@
       We are 90% confident that the true difference in the survival rate
       (treatment <m>-</m> control)
       lies between -0.027 and 0.095.
-      That is, we are 90% confident that the treatment of blood thinners changes survival rate for patients like those in the study by <m>-2.7%</m> to <m>+28.7%</m> percentage points.
+      That is, we are 90% confident that the treatment of blood thinners changes survival rate for patients like those in the study by <m>-2.7\%</m> to <m>+28.7\%</m> percentage points.
       Because this interval contains both negative and positive values,
       we do not have enough information to say with confidence whether blood thinners harm or help heart attack patients who have been admitted after they have undergone CPR.
     </p>

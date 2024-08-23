@@ -181,7 +181,7 @@
     All of these resources can be found at: XXoiRedirect{ahss}{**}XX
   </p>
   <p>
-    We also have improved the ability to access data in this book through the addition of <xref ref="appendix_data_sets_in_text"></xref>,
+    We also have improved the ability to access data in this book through the addition of <!-- <xref ref="appendix_data_sets_in_text"></xref>, -->
     which provides additional information for each of the data sets used in the main text and is new in the Second Edition.
     Online guides to each of these data sets are also provided at XXoiRedirect{data}{**}XX and through a XXoiRedirect{textbook-github_openintro}{**}XX .
   </p>

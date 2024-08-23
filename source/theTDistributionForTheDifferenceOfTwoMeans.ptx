@@ -77,7 +77,7 @@
       When the individual population standard deviations are unknown, we estimate the standard deviation of <m>\bar{x}_{1} - \bar{x}_{2}</m> using the Standard Error, abbreviated <em>SE</em>, by plugging in the sample standard deviations as our best guesses of the population standard deviations:
       <md>
         <mrow>
-          SE_{\bar{x}_{1} - \bar{x}_{2}} = \sqrt{\frac{s_{1}^2}{n_{1}} + \frac{\s_{2}^2}{n_{2}}}
+          SE_{\bar{x}_{1} - \bar{x}_{2}} = \sqrt{\frac{s_{1}^2}{n_{1}} + \frac{s_{2}^2}{n_{2}}}
         </mrow>
       </md>
     </p>
@@ -106,10 +106,10 @@
     <title>Checking conditions for inference on a difference of means</title>
     <p>
       When comparing two means,
-      we carry out inference on a difference of means, <m>\mu_1-\mu_2</m>.
+      we carry out inference on a difference of means, <m>\mu_{1}-\mu_{2}</m>.
       We will use the <m>t</m>-distribution just as we did when carrying out inference on a single mean.
       The assumptions are that the observations are independent,
-      both between groups and within groups and that the sampling distribution of <m>\bar{x}_1-\bar{x}_2</m> is nearly normal.
+      both between groups and within groups and that the sampling distribution of <m>\bar{x}_{1}-\bar{x}_{2}</m> is nearly normal.
       We check whether these assumptions are reasonable by verifying the following conditions.
     </p>
     <p>
@@ -120,7 +120,7 @@
     </p>
     <p>
       <alert>Nearly normal sampling distribution.</alert>
-      The sampling distribution of <m>\bar{x}_1-\bar{x}_2</m> will be nearly normal when the sampling distribution of <m>\bar{x}_1</m> and of <m>\bar{x}_2</m> are nearly normal,
+      The sampling distribution of <m>\bar{x}_{1}-\bar{x}_{2}</m> will be nearly normal when the sampling distribution of <m>\bar{x}_{1}</m> and of <m>\bar{x}_{2}</m> are nearly normal,
       that is when both population distributions are nearly normal or both sample sizes are at least 30.
     </p>
     <p>
@@ -161,12 +161,12 @@
       we find the average of each group separately and take their difference.
       Let
       <md>
-        <mrow>\bar{x}_1:\amp  \text{ mean salary offered to John }</mrow>
-        <mrow>\bar{x}_2: \amp \text{ mean salary offered to Jennifer }</mrow>
+        <mrow>\bar{x}_{1}:\amp  \text{ mean salary offered to John }</mrow>
+        <mrow>\bar{x}_{2}: \amp \text{ mean salary offered to Jennifer }</mrow>
       </md>
     </p>
     <p>
-      We will use <m>\bar{x}_1 - \bar{x}_2</m> as our point estimate for <m>\mu_1-\mu_2</m>.
+      We will use <m>\bar{x}_{1} - \bar{x}_{2}</m> as our point estimate for <m>\mu_{1}-\mu_{2}</m>.
       The data is given in the table below.
     </p>
     <tabular>
@@ -198,7 +198,7 @@
     <p>
       We can calculate the difference as
       <md>
-        <mrow>\bar{x}_1-\bar{x}_2 = 30238 - 26508 = 3730</mrow>
+        <mrow>\bar{x}_{1}-\bar{x}_{2} = 30238 - 26508 = 3730</mrow>
       </md>.
     </p>
     <example>
@@ -231,7 +231,7 @@
         </md>
         </p>
         <p>
-          Using samples of size <m>n_{1}</m> and <m>n_{2}</m>, the typical error when using <m>\bar{x}_{1}-\bar_{x}_{2}</m> to estimate <m>\mu_1-\mu_2</m>,
+          Using samples of size <m>n_{1}</m> and <m>n_{2}</m>, the typical error when using <m>\bar{x}_{1}-\bar{x}_{2}</m> to estimate <m>\mu_{1}-\mu_{2}</m>,
           the real difference in mean salary that the faculty would offer John versus Jennifer,
           is $1151.
         </p>
@@ -253,13 +253,13 @@
       we find the degrees of freedom using software or a calculator
       (see <xref ref="x2SampTint"></xref>).
       If this is not possible,
-      the alternative is to use the smaller of <m>n_1-1</m> and <m>n_2-1</m>.
+      the alternative is to use the smaller of <m>n_{1}-1</m> and <m>n_{2}-1</m>.
     </p>
     <assemblage>
       <title>Degrees of freedom for two-sample T-procedures</title>
       <p>
         Use statistical software or a calculator to compute the degrees of freedom for two-sample <m>t</m>-procedures . If this is not possible,
-        use the smaller of <m>n_1-1</m> and <m>n_2-1</m>.
+        use the smaller of <m>n_{1}-1</m> and <m>n_{2}-1</m>.
       </p>
     </assemblage>
     <example>
@@ -510,7 +510,7 @@
             <md>
               <mrow>(79.4 - 74.1) \ \pm\  \amp 2.009\times \sqrt{\frac{14^2}{30} + \frac{20^2}{30}}   \qquad df = 45.97</mrow>
               <mrow>5.3 \ \pm\  \amp 2.009\times 4.46</mrow>
-              <mrow>=(-3\amp .66,\ 14.26)</mrow>
+              <mrow>=(-3.66, 14.26)</mrow>
             </md>
           </p>
           <p>

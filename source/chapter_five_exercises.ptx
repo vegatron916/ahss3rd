@@ -91,7 +91,7 @@
           </li>
           <li>
             <p>
-              True. The 95% confidence interval is given by: <m>(42.6\%, 47.4\%),\</m>, and we can see that 50% is outside of this interval. This means that in a hypothesis test, we would reject the null hypothesis that the proportion is 0.
+              True. The 95% confidence interval is given by: <m>(42.6\%, 47.4\%)</m>, and we can see that 50% is outside of this interval. This means that in a hypothesis test, we would reject the null hypothesis that the proportion is 0.
             </p>
           </li>
           <li>

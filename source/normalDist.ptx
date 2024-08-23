@@ -116,13 +116,13 @@
           As we saw in <xref ref="z_scores"></xref>, we can use Z-scores to compare observations from diferent distributions. Using Ann's SAT score, 1300, along with the SAT mean and SD, we can find Ann's Z-scores.
         </p>
         <p>
-          <m>Z_{\text{Ann} = \frac{x_{\text{Ann}}-\mu_{\text{SAT}}}{\sigma_{\text{SAT}}} = \frac{1300-1100}{200} = 1</m>
+          <m>Z_{\text{Ann}} = \frac{x_{\text{Ann}}-\mu_{\text{SAT}}}{\sigma_{\text{SAT}}} = \frac{1300-1100}{200} = 1</m>
         </p>
         <p>
           Similarly, using Tom's ACT score, 24, along with the ACT mean and SD we can find his Z-scores.
         </p>
         <p>
-          <m>Z_{\text{Tom} = \frac{x_{\text{Tom}}-\mu_{\text{ACT}}}{\sigma_{\text{ACT}}} = \frac{24-21}{6} = 5</m>
+          <m>Z_{\text{Tom}} = \frac{x_{\text{Tom}}-\mu_{\text{ACT}}}{\sigma_{\text{ACT}}} = \frac{24-21}{6} = 5</m>
         </p>
         <p>
           Because Ann's score was 1 standard deviation above the mean, while Tom's score was 0.5 standard deviations above the mean, we can say that Ann did better than Tom.
@@ -391,7 +391,7 @@
         <p>
           SAT scores closely follow the normal model with mean <m>\mu = 1100</m> and standard deviation <m>\sigma= 200</m>. (a) About what percent of test takers score 700 to 1500? (b) What percent score between 1100 and 1500?
           <fn>
-            (a) 700 and 1500 represent two standard deviations above and below the mean, which means about 95% of test takers will score between 700 and 1500. (b) Since the normal model is symmetric, then half of the test takers from part (a) (<m>\frac{95%}{2} = 47.5%</m> of all test takers) will score 700 to 1500 while 47.5% score between 1100 and 1500.
+            (a) 700 and 1500 represent two standard deviations above and below the mean, which means about 95% of test takers will score between 700 and 1500. (b) Since the normal model is symmetric, then half of the test takers from part (a) (<m>\frac{95\%}{2} = 47.5\%</m> of all test takers) will score 700 to 1500 while 47.5% score between 1100 and 1500.
           </fn>
         </p>
         </statement>
@@ -1077,7 +1077,8 @@
       </li>    
     </ul>
   </p>
-  </subsection>
+</subsection>
+
 <exercises>
 <title>Exercises</title>
   <exercise xml:id="area_under_curve_1"><!--  #1 -->
@@ -1559,7 +1560,7 @@
     </statement>
     <solution>
       <p>
-        <m>14/20 = 70%</m> are within 1 SD. Within 2 SD: <m>19/20 = 95%</m>. Within 3 SD: <m>20/20 = 100%</m>. They follow this rule closely.
+        <m>14/20 = 70\%</m> are within 1 SD. Within 2 SD: <m>19/20 = 95\%</m>. Within 3 SD: <m>20/20 = 100\%</m>. They follow this rule closely.
       </p>
     </solution>
   </exercise>

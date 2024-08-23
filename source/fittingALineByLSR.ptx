@@ -1597,7 +1597,7 @@
           </li>
           <li>
             <p>
-              The student from part<nbsp/>(d) is 160 cm tall.
+              The student from part (d) is 160 cm tall.
               Calculate the residual, and explain what this residual means.
             </p>
           </li>
@@ -1693,12 +1693,12 @@
         <ol>
           <li>
             <p>
-              <m>\widehat{murder} = -29.901 + 2.559 \times \text{poverty%}</m>.
+              <m>\widehat{murder} = -29.901 + 2.559 \times \text{poverty}\%</m>.
             </p>
           </li>
           <li>
             <p>
-              Expected murder rate in metropolitan areas with no poverty is -29.901 per million. This is obviously not a meaningful value, it just serves to adjust the height of the regression line.
+              Expected murder rate in metropolitan areas with no poverty is <m>-29.901</m> per million. This is obviously not a meaningful value, it just serves to adjust the height of the regression line.
             </p>
           </li>
           <li>
