@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.7</span><span class="period">.</span>
+</h4>
+<div class="para">A February 2018 Marist Poll reports: “Many Americans (68%) think there is intelligent life on other planets.” The results were based on a random sample of 1,033 adults in the U.S. Does this poll provide evidence at the 95% confidence level that greater than half of all U.S. adults think there is intelligent life on other planets? Carry out a confidence interval procedure to answer this question. Use the five step framework to organize your work.</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para">
+<em class="emphasis">Identify</em>: First we identify the parameter of interest. Here the parameter is the true proportion of U.S. adults that think there is intelligent life on other planets. We will estimate this at the 95% confidence level.</div> <div class="para">
+<em class="emphasis">Choose</em>: Because the parameter to be estimated is a single proportion, we will use a 1-proportion Z-interval.</div> <div class="para">
+<em class="emphasis">Check</em>: We must check that a Z-interval is appropriate, meaning that the sample proportion can be modeled using a normal distribution. The problem states that the data come from a random sample. Also, we must check the success-failure condition. Here, we have that <span class="process-math">\(1033(0.68)\ge 10\)</span> and <span class="process-math">\(1033(1-0.68)\ge 10\text{.}\)</span> Both conditions are met so we can proceed with a 1-proportion Z-interval.</div> <div class="para logical">
+<div class="para">
+<em class="emphasis">Calculate</em>: We will calculate the interval:</div>
+<div class="displaymath process-math">
+\begin{gather*}
+\text{ point estimate } \ \pm\ z^{\star} \times SE\ \text{ of estimate }
+\end{gather*}
+</div>
+</div> <div class="para">The point estimate is the sample proportion: <span class="process-math">\(\hat{p} = 0.68\)</span>
+</div> <div class="para">The <span class="process-math">\(SE\)</span> of the sample proportion is: <span class="process-math">\(\sqrt{\frac{\hat{p}(1-\hat{p})}{n}} = \sqrt{\frac{0.68(1-0.68)}{1033}}=0.015\text{.}\)</span>
+</div> <div class="para">
+<span class="process-math">\(z^{\star}\)</span> is found using the <span class="process-math">\(t\)</span>-table at row <span class="process-math">\(\infty\)</span> and confidence level C%.</div> <div class="para">For a 95% confidence level, <span class="process-math">\(z^{\star}\)</span> = 1.96.</div> <div class="para logical">
+<div class="para">The 95% confidence interval is given by:</div>
+<div class="displaymath process-math">
+\begin{align*}
+0.68 \pm\  \amp 1.96 \times \sqrt{\frac{0.68(1-0.68)}{1033}}\\
+0.68 \pm\  \amp 1.96 \times 0.015\\
+\amp = (0.651, 0.709)
+\end{align*}
+</div>
+</div> <div class="para">
+<em class="emphasis">Conclude</em>: We are 95% confident that the true <em class="emphasis">proportion</em> of U.S. adults that think there is intelligent life on other planets is between 0.651 and 0.709. Because the entire interval is above 0.5 we have evidence that greater than half of all U.S. adults think there is intelligent life on other planets.</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="singleProportion.html#IntelligentLife">in-context</a></span>
+</body>
+</html>

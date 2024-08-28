@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.6.18</span><span class="period">.</span>
+</h4>
+<div class="para">Find the probability that fewer than 12 out of 40 randomly selected people would have blood type O+, where probability of blood type O+ is 0.35.</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">This is equivalent to asking, what is the probability of observing <span class="process-math">\(X=0, 1, 2, ..., \text{ or }  11\)</span> with blood type O+ in a sample of size 40 when <span class="process-math">\(p=0.35\text{?}\)</span> We previously verified that this scenario is binomial. We can compute each of the 12 probabilities using the binomial formula and add them together to find the answer:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\amp P(X=0\text{ or } X=1\text{ or } \cdots\text{ or }  X=11)\\
+\amp \qquad = P(X=0) + P(X=1) + \cdots + P(X=11)\\
+\amp \qquad = {40\choose 0}(0.35)^0(0.65)^{40} + {40\choose 1}(0.35)^1(0.65)^{39} + \cdots + {40\choose 11}(0.35)^{11}(0.65)^{29}\\
+\amp \qquad = 0.21
+\end{align*}
+</div>
+</div> <div class="para">If the true proportion with blood type O+ in the population is <span class="process-math">\(p = 0.35\text{,}\)</span> then the probability of observing fewer than 12 in a sample of <span class="process-math">\(n = 40\)</span> is 0.21.</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="binomialForm.html#exactbin">in-context</a></span>
+</body>
+</html>

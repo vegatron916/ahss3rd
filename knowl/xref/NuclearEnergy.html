@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.18</span><span class="period">.</span>
+</h4>
+<div class="para">A Gallup poll conducted in March of 2016 found that 54% of respondents oppose nuclear energy<details class="ptx-footnote" aria-live="polite" id="NuclearEnergy-1-1-1"><summary class="ptx-footnote__number" title="Footnote 6.1.9"><sup> 9 </sup></summary><div class="ptx-footnote__contents" id="NuclearEnergy-1-1-1"><a class="external" href="https://news.gallup.com/poll/190064/first-time-majority-oppose-nuclear-energy.aspx" target="_blank">https://news.gallup.com/poll/190064/first-time-majority-oppose-nuclear-energy.aspx</a></div></details>. This was the first time since Gallup first asked the question in 1994 that a majority of respondents said they oppose nuclear energy. The survey was based on telephone interviews from a random sample of 1,019 adults in the United States. Does this poll provide evidence that greater than half of U.S. adults oppose nuclear energy? Carry out an appropriate test at the 0.10 significance level. Use the five step framework to organize your work.</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para">
+<em class="emphasis">Identify</em>: We will test the following hypotheses at the <span class="process-math">\(\alpha=10\%\)</span> significance level.</div> <div class="para">
+<span class="process-math">\(H_0\text{:}\)</span> <span class="process-math">\(p = 0.5\)</span>
+</div> <div class="para">
+<span class="process-math">\(H_A\text{:}\)</span> <span class="process-math">\(p &gt; 0.5\)</span> Greater than half of all U.S. adults oppose nuclear energy.</div> <div class="para">Note: <span class="process-math">\(p&gt;0.5\)</span> is what we want to find evidence for; this bears the burden of proof, so this corresponds to <span class="process-math">\(H_A\text{.}\)</span>
+</div> <div class="para">
+<em class="emphasis">Choose</em>: Because the hypotheses are about a single proportion, we choose the 1-proportion Z-test.</div> <div class="para">
+<em class="emphasis">Check</em>: We must verify that the sample proportion can be modeled using a normal distribution. The problem states that the data come from a random sample. Also, <span class="process-math">\(1019(0.5)\geq10\)</span> and <span class="process-math">\(1019(1-0.5)\geq10\)</span> so both conditions are met. (Remember to use the hypothesized proportion, not the sample proportion, when checking the conditions for this test.)</div> <div class="para logical">
+<div class="para">
+<em class="emphasis">Calculate</em>: We will calculate the Z-statistic and the p-value.</div>
+<div class="displaymath process-math">
+\begin{gather*}
+Z = \frac{\text{ point estimate }  - \text{ null value } }{SE \text{ of estimate } }
+\end{gather*}
+</div>
+</div> <div class="para">The point estimate is the sample proportion: <span class="process-math">\(\hat{p} = 0.54\text{.}\)</span>
+</div> <div class="para">The value hypothesized for the parameter in <span class="process-math">\(H_0\)</span> is the null value: <span class="process-math">\(p_0 = 0.5\)</span>
+</div> <div class="para logical">
+<div class="para">The <span class="process-math">\(SE\)</span> of the sample proportion, assuming <span class="process-math">\(H_0\)</span> is true, is: <span class="process-math">\(\sqrt{\frac{p_0(1-p_0)}{n}}= \sqrt{\frac{0.5(1-0.5)}{1019}}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{gather*}
+Z = \frac{0.54 - 0.5}{\sqrt{\frac{0.5(1-0.5)}{1019}}} = 2.5
+\end{gather*}
+</div>
+</div> <div class="para">Because <span class="process-math">\(H_A\)</span> uses a greater than sign (<span class="process-math">\(&gt;\)</span>), meaning that it is an upper-tail test, the p-value is the area to the <em class="emphasis">right</em> of <span class="process-math">\(Z=2.5\)</span> under the standard normal curve. This area can be found using a normal table or a calculator. The area or p-value = <span class="process-math">\(0.006\text{.}\)</span>
+</div> <div class="para">
+<em class="emphasis">Conclude</em>: The p-value of 0.006 is <span class="process-math">\(\lt 0.10\text{,}\)</span> so we reject <span class="process-math">\(H_0\text{;}\)</span> there is sufficient evidence that greater than half of U.S. adults oppose nuclear energy (as of March 2016).</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="singleProportion.html#NuclearEnergy">in-context</a></span>
+</body>
+</html>
