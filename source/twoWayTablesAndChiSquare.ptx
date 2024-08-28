@@ -1535,9 +1535,9 @@
           reproduced below,
           and a calculator to find the expected values and the <m>\chi^2</m>-statistic,
           <m>df</m>,
-          and p-value for the chi-square test for independence.<fn>
-          <solution>
-            <p>
+          and p-value for the chi-square test for independence. <fn>
+<!--           <solution>
+ -->            <p>
               First create a 2 × 3 matrix with the data. The final summaries should be <m>\chi^2 = 106.4</m>, p-value is <m>p = 8.06 \times 10^{−24} \approx 0</m>, and <m>df = 2</m>. Below is the matrix of expected values:
             </p>
             <tabular>
@@ -1563,8 +1563,8 @@
                 <cell halign="center">689.04</cell>
               </row>
             </tabular>
-          </solution>
-          </fn>
+<!--           </solution>
+ -->          </fn>
         </p>
         <tabular>
         <row>

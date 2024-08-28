@@ -4,7 +4,7 @@
 <title><m>t</m> Probability Table</title>
 
 <p>
-  A <term><m>t</m>-probability</term> table may be used to find tail areas of a t-distribution using a T-score, or vice-versa. Such a table lists T-scores and the corresponding percentiles. A partial t-table is shown in <xref ref="Tshort"></xref>, and the complete table starts further below. Each row in the t-table represents a t-distribution with different degrees of freedom. The columns correspond to tail probabilities. For instance, if we know we are working with the t-distribution with <m>df = 18</m>, we can examine row 18, which is highlighted in <xref ref="Tshort"></xref>. If we want the value in this row that identifies the T-score (cutoff) for an upper tail of 10%, we can look in the column where one tail is 0.100. This cutoff is 1.33. If we had wanted the cutoff for the lower 10%, we would use -1.33. Just like the normal distribution, all t-distributions are symmetric.
+  A <term><m>t</m>-probability table</term> may be used to find tail areas of a t-distribution using a T-score, or vice-versa. Such a table lists T-scores and the corresponding percentiles. A partial t-table is shown in <xref ref="Tshort"></xref>, and the complete table starts further below. Each row in the t-table represents a t-distribution with different degrees of freedom. The columns correspond to tail probabilities. For instance, if we know we are working with the t-distribution with <m>df = 18</m>, we can examine row 18, which is highlighted in <xref ref="Tshort"></xref>. If we want the value in this row that identifies the T-score (cutoff) for an upper tail of 10%, we can look in the column where one tail is 0.100. This cutoff is 1.33. If we had wanted the cutoff for the lower 10%, we would use -1.33. Just like the normal distribution, all t-distributions are symmetric.
 </p>
 
 <table xml:id="Tshort">
@@ -125,7 +125,7 @@
       <cell>2.33</cell>
       <cell>2.59</cell>
     </row>
-    <row halign="center">
+    <row halign="right">
       <cell></cell>
       <cell right="minor"><m>\infty</m></cell>
       <cell>1.28</cell>

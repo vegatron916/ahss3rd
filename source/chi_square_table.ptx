@@ -5,11 +5,11 @@
 
 
 <p>
-  A <term>chi-square probability table</term> may be used to find tail areas of a chi-square distribution. The chi-square table is partially shown in <xref ref="smallChi"></xref>, and the complete table may be found further below. When using a chi-square table, we examine a particular row for distributions with different degrees of freedom, and we identify a range for the area (e.g. 0.025 to 0.05). Note that the chi-square table provides upper tail values, which is different than the normal and t-distribution tables.
+  A <term>chi-square probability table</term> may be used to find tail areas of a chi-square distribution. The <term>chi-square table</term> is partially shown in <xref ref="smallChi"></xref>, and the complete table may be found further below. When using a chi-square table, we examine a particular row for distributions with different degrees of freedom, and we identify a range for the area (e.g. 0.025 to 0.05). Note that the chi-square table provides upper tail values, which is different than the normal and t-distribution tables.
 </p>
 
 <figure xml:id="smallChi">
-<caption>A section of the chi-square table.</caption>
+<caption>A section of the chi-square table. A complete table is further below.</caption>
   <table>
   <title></title>
     <tabular>
