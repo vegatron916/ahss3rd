@@ -26,7 +26,7 @@
   </introduction>
   <objectives>
     <title>Learning objectives</title>
-    <ul>
+    <ol marker="1.">
       <li>
         <p>
           Identify possible confounding factors in a study and explain,
@@ -61,7 +61,7 @@
           Understand when it valid to generalize and to what population that generalization can be made.
         </p>
       </li>
-    </ul>
+    </ol>
   </objectives>
   <subsection>
     <title>Observational studies</title>
@@ -198,9 +198,9 @@
       One example of such a study is The Nurses' Health Study,
       started in 1976 and expanded in 1989.<fn><url href="https://www.nurseshealthstudy.org">www.channing.harvard.edu/nhs</url>
       </fn> This prospective study recruits registered nurses and then collects data from them using questionnaires.
-      <em>Retrospective studies</em>
-          <idx><h>retrospective studies</h></idx>
-      collect data after events have taken place,
+      <term>Retrospective studies</term>
+<!--           <idx><h>retrospective studies</h></idx>
+ -->      collect data after events have taken place,
       e.g. researchers may review past events in medical records.
       Some data sets,
       such as <c>county</c>,
@@ -210,16 +210,16 @@
   </subsection>
   <subsection>
     <title>Sampling from a population</title>
-    <p>
+<!--     <p>
           <idx><h>sample</h><h>random sample</h></idx>
-    </p>
+    </p> -->
     <p>
       We might try to estimate the time to graduation for Duke undergraduates in the last 5 years by collecting a sample of students.
       All graduates in the last 5 years represent the <em>population</em>,
-          <idx><h>population</h></idx>
-      and graduates who are selected for review are collectively called the <em>sample</em>.
-          <idx><h>sample</h></idx>
-      The goal is to use information from the sample to generalize or make an inference to the population.
+<!--           <idx><h>population</h></idx>
+ -->      and graduates who are selected for review are collectively called the <em>sample</em>.
+<!--           <idx><h>sample</h></idx>
+ -->      The goal is to use information from the sample to generalize or make an inference to the population.
       In order to be able to generalize,
       we must <em>randomly</em> select a sample from the population of interest.
       The most basic type of random selection is equivalent to how raffles are conducted.
@@ -261,9 +261,9 @@
     <p>
       If the student majoring in nutrition picked a disproportionate number of graduates from health-related fields,
       this would introduce undercoverage bias into the sample.
-      <em>Undercoverage bias</em>
-          <idx><h>undercoverage bias</h></idx>
-      occurs when some individuals of the population are inherently less likely to be included in the sample than others,
+      <term>Undercoverage bias</term>
+<!--           <idx><h>undercoverage bias</h></idx>
+ -->      occurs when some individuals of the population are inherently less likely to be included in the sample than others,
       making the sample not representative of the population.
       In the example,
       this bias creates a problem because a degree in health-related fields might take more or less time to complete than a degree in other fields.
@@ -343,9 +343,9 @@
       Even if a sample has no undercoverage bias and no non-response bias,
       there is an additional type of bias that often crops up and undermines the validity of results,
       known as response bias.
-      <em>Response bias</em>
-          <idx><h>response bias</h></idx>
-      refers to a broad range of factors that influence how a person responds,
+      <term>Response bias</term>
+<!--           <idx><h>response bias</h></idx>
+ -->      refers to a broad range of factors that influence how a person responds,
       such as question wording, question order,
       and influence of the interviewer.
       This type of bias can be present even when we collect data from an entire population in what is called a <term>census</term>.
@@ -433,7 +433,7 @@
       <image source="images/data_collection/simple_systematic.png"/>
     </figure>
     <p>
-      <em>Simple random sampling</em><idx><h>sample</h><h>simple random sampling</h></idx> is probably the most intuitive form of random sampling.
+      <term>Simple random sampling</term><idx><h>sample</h><h>simple random sampling</h></idx> is probably the most intuitive form of random sampling.
       Consider the salaries of Major League Baseball (MLB) players,
       where each player is a member of one of the league's 30 teams.
       For the 2019 season, <m>N</m>, the population size or total number of players, is 750.
@@ -469,7 +469,7 @@
     </p>
     <p>
       Though less common than simple random sampling,
-      <em>systematic sampling</em><idx><h>sample</h><h>systematic sampling</h></idx> is sometimes used when there exists a convenient list of all of the individuals of the population.
+      <term>systematic sampling</term><!-- <idx><h>sample</h><h>systematic sampling</h></idx>  -->is sometimes used when there exists a convenient list of all of the individuals of the population.
       Suppose we have a roster with the names of all the MLB players from the 2019 season.
       To take a systematic random sample,
       number them from 1 to 750.
@@ -502,10 +502,10 @@
     <p>
       Sometimes there is a variable that is known to be associated with the quantity we want to estimate.
       In this case, a stratified random sample might be selected.
-      <em>Stratified sampling</em><idx><h>sample</h><h>stratified sampling</h></idx> is a divide-and-conquer sampling strategy.
+      <term>Stratified sampling</term><!-- <idx><h>sample</h><h>stratified sampling</h></idx> --> is a divide-and-conquer sampling strategy.
       The population is divided into groups called <term>strata</term>.
-          <idx><h>sample</h><h>strata</h></idx>
-      The strata are chosen so that similar cases are grouped together and a sampling method,
+<!--           <idx><h>sample</h><h>strata</h></idx>
+ -->      The strata are chosen so that similar cases are grouped together and a sampling method,
       usually simple random sampling,
       is employed to select a certain number or a certain proportion of the whole within each stratum.
       In the baseball salary example,
@@ -558,12 +558,12 @@
     </example>
     <p>
       Next, let's consider a sampling technique that randomly selects groups of people.
-      <em>Cluster sampling</em><idx><h>sample</h><h>cluster sampling</h></idx> is much like simple random sampling,
+      <term>Cluster sampling</term><!-- <idx><h>sample</h><h>cluster sampling</h></idx> --> is much like simple random sampling,
       but instead of randomly selecting <em>individuals</em>,
       we randomly select groups or <term>clusters</term>.
       Unlike stratified sampling,
       cluster sampling is most helpful when there is a lot of case-to-case variability within a cluster but the clusters themselves don't look very different from one another.
-      That<nbsp/>is, we expect individual strata to be
+      That is, we expect individual strata to be
       <term>homogeneous</term> (self-similar),
       while we expect individual clusters to be
       <term>heterogeneous</term>
@@ -579,11 +579,11 @@
       in order to collect a useful sample.
     </p>
     <p>
-      <em>Multistage sampling</em>,
-          <idx><h>sample</h><h>multistage sampling</h></idx>
-      also called <em>multistage cluster sampling</em>,
-          <idx><h>sample</h><h>multistage cluster sampling</h></idx>
-      is a two (or more) step strategy.
+      <term>Multistage sampling</term>,
+<!--           <idx><h>sample</h><h>multistage sampling</h></idx>
+ -->      also called <term>multistage cluster sampling</term>,
+<!--           <idx><h>sample</h><h>multistage cluster sampling</h></idx>
+ -->      is a two (or more) step strategy.
       The first step is to take a cluster sample, as described above.
       Then, instead of including all of the individuals in these clusters in our sample,
       a second sampling method,
@@ -671,8 +671,8 @@
         <p>
           In an <term>observational study</term>,
           one must always consider the existence of
-          <em>confounding factors</em>.
-            <idx><h>confounding factor</h></idx>
+          <term>confounding factors</term>.
+            <!-- <idx><h>confounding factor</h></idx> -->
         A confounding factor is a
           <q>spoiler variable</q>
           that could explain an observed relationship between the explanatory variable and the response.
@@ -683,9 +683,9 @@
       <li>
         <p>
           When taking a sample from a population,
-          avoid <em>convenience samples</em>
+          avoid <term>convenience samples</term>
             <idx><h>convenience sample</h></idx>
-          and <em>volunteer samples</em>,
+          and <term>volunteer samples</term>,
             <idx><h>volunteer sample</h></idx>
           which likely introduce bias.
           Instead, use a <term>random</term> sampling method.
@@ -792,7 +792,7 @@
     </statement>
     <solution>
       <p>
-        <ol marker="a">
+        <ol>
           <li>
             <p>
               Observational.
@@ -861,7 +861,7 @@
     </statement>
     <solution>
       <p>
-        <ol marker="a">
+        <ol>
           <li>
             <p>
               Positive, non-linear, somewhat strong. Countries in which a higher percentage of the population have access to the internet also tend to have higher average life expectancies, however rise in life expectancy trails off before around 80 years old.
@@ -937,7 +937,7 @@
     </statement>
     <solution>
       <p>
-        <ol marker="a">
+        <ol>
           <li>
             <p>
               Simple random sampling is okay. In fact, it's rare for simple random sampling to not be a reasonable sampling method!
@@ -1028,7 +1028,7 @@
     </statement>
     <solution>
       <p>
-        <ol marker="a">
+        <ol>
           <li>
             <p>
               The cases are 200 randomly sampled men and women.
@@ -1119,7 +1119,7 @@
     </statement>
     <solution>
       <p>
-        <ol marker="a">
+        <ol>
           <li>
             <p>
               Simple random sample. Non-response bias, if only those people who have strong opinions about the survey responds his sample may not be representative of the population.

@@ -33,7 +33,7 @@
   </introduction>
   <objectives>
     <title>Learning objectives</title>
-      <ul>
+      <ol marker="1.">
         <li>
           <p>
             Understand the four steps of a statistical investigation (identify a question, collect data, analyze data, form a conclusion) in the context of a real-world example.
@@ -44,7 +44,7 @@
             Consider the concept of statistical significance.
           </p>
         </li>
-      </ul>
+      </ol>
   </objectives>
   <subsection>
   <title>Case study</title>
@@ -242,14 +242,14 @@
       </li>
       <li>
         <p>
-          Researchers compare the relevant <em>summary statistics</em>
+          Researchers compare the relevant <term>summary statistics</term>
             <!-- <idx><h>summary statistic</h></idx> -->
           to get a sense of whether the treatment group did better, on average, than the control group.
         </p>
       </li>
       <li>
         <p>
-          Ultimately, researchers want to know whether the difference between the two groups is <em>significant</em><!-- <idx><h>summary statistic</h></idx> -->, that is, larger than what would be expected by chance alone.
+          Ultimately, researchers want to know whether the difference between the two groups is <term>significant</term><!-- <idx><h>summary statistic</h></idx> -->, that is, larger than what would be expected by chance alone.
         </p>
       </li>
     </ul>

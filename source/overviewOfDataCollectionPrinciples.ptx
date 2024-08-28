@@ -18,7 +18,7 @@
   </introduction>
   <objectives>
     <title>Learning objectives</title>
-    <ul>
+    <ol marker="1.">
       <li>
         <p>
           Distinguish between the population and a sample and between the parameter and a statistic.
@@ -46,7 +46,7 @@
           and determine when a study's results can be generalized to the population and when a causal relationship can be drawn.
         </p>
       </li>
-    </ul>
+    </ol>
   </objectives>
   <subsection xml:id="populationsAndSamples">
     <title>Populations and samples</title>
@@ -99,7 +99,7 @@
       A <term>variable</term> is a characteristic we measure for each individual or case.
       The overall quantity of interest may be the mean,
       median, proportion, or some other summary of a population.
-      These population values are called <em>parameters</em>.
+      These population values are called <term>parameters</term>.
 <!--           <idx><h>parameter</h></idx>
  -->      We estimate the value of a parameter by taking a sample and computing a numerical summary called a
       <term>statistic</term> based on that sample.
@@ -266,9 +266,9 @@
       we are asking whether one variable affects another.
       If this is our underlying belief,
       then <em>median household income</em>
-      is the <em>explanatory</em>
+      is the <term>explanatory</term>
           <!-- <idx><h>explanatory variable</h></idx> -->
-      variable and the <em>population change</em> is the <em>response</em>
+      variable and the <em>population change</em> is the <term>response</term>
           <!-- <idx><h>response variable</h></idx> -->
       variable in the hypothesized relationship.<fn>
       Sometimes the explanatory variable is called the <term>independent</term>
@@ -543,7 +543,7 @@
         <ol>
           <li>
             <p>
-              Population: all asthma patients aged 18-69who rely on medication for asthma treatment. Sample: 600 such patients.
+              Population: all asthma patients aged 18-69 who rely on medication for asthma treatment. Sample: 600 such patients.
             </p>
           </li>
           <li>

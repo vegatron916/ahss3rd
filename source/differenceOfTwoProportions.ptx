@@ -1231,12 +1231,9 @@
       </li>
       <li>
         <p>
-          The sampling distribution of
-          <m>\hat{p}_1-\hat{p}_2</m> is nearly normal when the success-failure condition is met for <em>both</em>
-          groups and when the data is collected using 2 independent random samples or 2 randomly assigned treatments.
+          The sampling distribution for <m>\hat{p}_1-\hat{p}_2</m> is nearly normal when the success-failure condition is met for <em>both</em> groups and when the when the observations are independent between and within groups.
           When the sampling distribution of <m>\hat{p}_1-\hat{p}_2</m> is nearly normal,
-          the standardized test statistic also follows a
-          <term>normal</term> distribution.
+          the standardized test statistic also follows a normal distribution.
         </p>
       </li>
       <li>
@@ -1245,7 +1242,7 @@
           <em>equal</em> to each other,
           use the <term>pooled sample proportion</term>
           <m>\hat{p}_c=\frac{x_1+x_2}{n_1+n_2}</m>,
-          i.e. the combined number of yeses over the combined sample<nbsp/>sizes,
+          i.e. the combined number of yeses over the combined sample sizes,
           when verifying the success-failure condition and when finding the <m>SE</m>.
           For the confidence interval, do not use the pooled sample proportion;
           use the separate values of
@@ -1267,8 +1264,7 @@
           </li>
           <li>
             <p>
-              Test <m>H_0</m>: <m>p_1-p_2=0</m> (i.e.
-              <m>p_1=p_2</m>) at the <m>\alpha</m> significance level using a
+              Test <m>H_{0}: p_1-p_2=0</m> at the <m>\alpha</m> significance level using a
               <term>2-proportion Z-test</term>.
             </p>
           </li>
@@ -1277,21 +1273,21 @@
       </li>
       <li>
         <p>
-          Verify the conditions for using a normal model:
+          The two proportion Z-interval and Z-test require the sampling distribution for <m>\hat{p}_1-\hat{p}_2</m> to be nearly normal. For this reason we must check that the following conditions are met.
           <ol marker="1">
             <li>
               <p>
-                Data come from 2 independent random samples or 2 randomly assigned treatments.
+                Independence: Data come from 2 independent random samples or from a randomized experiment with 2 treatments. When sampling without replacement, check that the sample size is less than 10% of the population size for both samples.
               </p>
             </li>
             <li>
               <p>
-                CI: <m>n_1\hat{p}_1\ge 10</m>,
+                Success-failure for CI: <m>n_1\hat{p}_1\ge 10</m>,
                 <m>n_1(1-\hat{p}_1)\ge 10</m>,
                 <m>n_2\hat{p}_2\ge 10</m>, and <m>n_2(1-\hat{p}_2)\ge 10</m>
               </p>
               <p>
-                Test: <m>n_1\hat{p}_c\ge 10</m>,
+                Success-failure for Test: <m>n_1\hat{p}_c\ge 10</m>,
                 <m>n_1(1-\hat{p}_c)\ge 10</m>,
                 <m>n_2\hat{p}_c\ge 10</m>, and <m>n_2(1-\hat{p}_c)\ge 10</m>
               </p>
@@ -1322,18 +1318,20 @@
         </p>
         <p>
         	The <m>SE</m> of estimate is the <m>SE</m> of a difference of sample proportions.
-        </p>
-      </li>
-      <li>
-        <p>
-          For a CI, use:
-          <m>SE = \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}</m>.
-        </p>
-      </li>
-      <li>
-        <p>
-          For a Test, use:
-          <m>SE = \sqrt{\hat{p}_c(1-\hat{p}_c)}\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}</m>.
+          <ul>
+            <li>
+              <p>
+                For a CI, use:
+                <m>SE = \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                For a Test, use:
+                <m>SE = \sqrt{\hat{p}_c(1-\hat{p}_c)}\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}</m>.
+              </p>
+            </li>
+          </ul>
         </p>
       </li>
     </ul>

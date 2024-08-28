@@ -26,7 +26,6 @@
       </ul>
     </p>
   </introduction>
-  <subsection>
     <objectives>
     <title>Learning objectives</title>
       <ol>
@@ -57,7 +56,6 @@
         </li>
       </ol>
     </objectives>
-  </subsection>
   <subsection>
     <title>Fitting a line to data</title>
     <p>
@@ -565,7 +563,7 @@
       </li>
       <li>
         <p>
-          The <term>residual</term> is the <em>error</em>
+          The <term>residual</term> is the <term>error</term>
           between the true value and the modeled value,
           computed as <m>y - \hat{y}</m>.
           The order of the difference matters,
@@ -1211,7 +1209,7 @@
     <solution>
       <p>
         In each part, we can write the woman's age as a linear function of the spouse's age.
-        <ol marker="a">
+        <ol>
           <li>
             <p>
               <m>age_{W}=age_{S}+3</m>.

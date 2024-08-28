@@ -10,9 +10,9 @@
       we will see the power of transformations for very skewed data.
     </p>
   </introduction>
-  <subsection>
+    
+  <objectives>
     <title>Learning objectives</title>
-    <objectives>
       <ol>
         <li>
           <p>
@@ -32,7 +32,6 @@
         </li>
       </ol>
     </objectives>
-  </subsection>
   <subsection>
     <title>Introduction to transformations</title>
     <example>
@@ -203,7 +202,7 @@
         <p>
           Which of the following statements are true?
           There may be more than one.
-          <ol marker="a">
+          <ol marker="(a)">
             <li>
               <p>
                 There is an apparent linear relationship between <m>x</m> and <m>y</m>.
@@ -216,12 +215,12 @@
             </li>
             <li>
               <p>
-                The model provided by Regression I (<m>\hat{y} = -52.3564 + 2.7842 x</m>) yields a better<nbsp/>fit.
+                The model provided by Regression I <m>(\hat{y} = -52.3564 + 2.7842 x)</m> yields a better fit.
               </p>
             </li>
             <li>
               <p>
-                The model provided by Regression II (<m>\widehat{\text{ log } (y)} = 1.723 +0.053 x</m>) yields a better<nbsp/>fit.<fn>Part (a) is <em>false</em> since there is a nonlinear (curved) trend in the data. Part (b) is true. Since the transformed data shows a stronger linear trend, it is a better fit, i.e. Part (c) is <em>false</em>, and Part (d) is true.</fn>
+                The model provided by Regression II <m>(\widehat{\text{ log } (y)} = 1.723 +0.053 x)</m> yields a better fit.<fn>Part (a) is <em>false</em> since there is a nonlinear (curved) trend in the data. Part (b) is true. Since the transformed data shows a stronger linear trend, it is a better fit, i.e. Part (c) is <em>false</em>, and Part (d) is true.</fn>
               </p>
             </li>
           </ol>
@@ -252,7 +251,7 @@
       </li>
       <li>
         <p>
-          To assess the model, we look at the <em>residual plot</em>
+          To assess the model, we look at the <term>residual plot</term>
           of the <em>transformed</em> data.
           If the residual plot of the original data has a pattern,
           but the residual plot of the transformed data has no pattern,
@@ -341,7 +340,7 @@
     </statement>
     <solution>
       <p>
-        <ol marker="a">
+        <ol>
           <li>
             <p>
               The relationship is positive, non-linear, and somewhat strong. Due to the non-linear form of the relationship and the clear non-constant variance in the residuals, a linear model is not appropriate for modeling the relationship between year and price.

@@ -29,7 +29,6 @@
       </ul>
     </p>
   </introduction>
-  <subsection>
     <objectives>
     <title>Learning objectives</title>
     <ol>
@@ -61,7 +60,6 @@
       </li>
     </ol>
     </objectives>
-  </subsection>
   <subsection>
     <title>An objective measure for finding the best line</title>
     <p>
@@ -874,9 +872,7 @@
           A subset of the data matrix is shown in <xref ref="data_for_regr_calc_exercise_loan50"></xref>.
           Use a calculator to find the equation of the least squares regression line for predicting loan amount from total income.<fn><c>a</c><m>= 6497</m> and <c>b</c><m> = 0.0774</m>, therefore <m>\hat{y}=6497+0.0774x</m></fn>
         </p>
-      </statement>
-    </exercise>
-    <table xml:id="data_for_regr_calc_exercise_loan50">
+        <table xml:id="data_for_regr_calc_exercise_loan50">
       <title>Sample of data from <c>loan50</c>.</title>
       <tabular>
         <row bottom="minor">
@@ -926,6 +922,8 @@
         </row>
       </tabular>
     </table>
+      </statement>
+    </exercise>
     <!-- <example>
       <statement>
         <p>
@@ -959,7 +957,7 @@
       </statement>
       <solution>
         <p>
-        <ol marker="1">
+        <ol marker="(1)">
           <li>
             <p>
               There is one outlier far from the other points,

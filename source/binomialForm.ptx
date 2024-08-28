@@ -8,9 +8,8 @@
       If the probability of a defective part is 1%, how many defective items would we expect in a random shipment of 200 of those parts? We can model these scenarios and answer these questions using the binomial distribution.
     </p>
   </introduction>
-  <subsection>
-    <title>Learning objectives</title>
-    <p>
+  <objectives>
+  <title>Learning objectives</title>
     <ol>
       <li>
         <p>
@@ -51,8 +50,7 @@
         </p>
       </li>
     </ol>
-	</p>
-  </subsection>
+  </objectives>
   <subsection>
     <title>Introducing the binomial formula</title>
     <!-- <p>
@@ -338,7 +336,7 @@
       <statement>
         <p>
           Given that 35% of a population has blood type O+, what is the probabilty that in a random sample of 4 people:
-          <ol marker="a">
+          <ol marker="(a)">
             <li>
               <p>
                 none of them have blood type O+?
@@ -360,7 +358,7 @@
       <solution>
         <p>
           Compute parts (a) and (b) using the binomial formula:
-          <ol marker="a">
+          <ol marker="(a)">
             <li>
               <p>
                 <m>P(X=0) = {4 \choose 0} (0.35)^0 (0.65)^4 = 1\times1\times 0.65^4 = 0.65^4 = 0.179</m> Note that we could have answered this question without the binomial formula,
@@ -468,11 +466,15 @@
   <subsection xml:id="calculatorBinomial">
   <title>Technology: binomial probabilities</title>
 
-  TEXT PLUS IMAGE
+    <p>
+      Get started quickly with this <url href="https://www.desmos.com/calculator/xwe9ywwjik">Desmos Binomial Calculator</url> (available at <url href="openintro.org/ahss/desmos">openintro.org/ahss/desmos</url>).
+    </p>
 
-  <p>
-    Calculator instructions
-  </p>
+    <image source="images/distributions/desmosBinomial.png" />
+
+    <p>
+      Calculator instructions
+    </p>
   
   <assemblage xml:id="binomial_coefficient_ti">
   <title>TI-83/84: Computing the binomial coefficient <m>{n\choose x}</m></title>
@@ -1141,7 +1143,16 @@
           <em>at least</em> or <em>at most</em>,
           first determine if the scenario is binomial.
           If so, apply the binomial formula as many times as needed and add up the results. e.g.
-          <m>P(\text{ at least 3 Heads in 5 tosses of a fair coin } )=P(\text{ exactly 3 Heads } )+P(\text{ exactly 4 Heads } )+P(\text{ exactly 5 Heads } )</m>,
+          <md>
+            <mrow>
+              P(\text{ at least 3 Heads in 5 tosses of a fair coin } )
+            </mrow>
+            <mrow>
+              =P(\text{ exactly 3 Heads } )+P(\text{ exactly 4 Heads } )+P(\text{ exactly 5 Heads } )
+            </mrow>
+          </md>
+        </p>
+        <p>
           where each probability can be found using the binomial formula.
         </p>
       </li>
@@ -1158,7 +1169,7 @@
       <li>
         <p>
           To write out a binomial probability
-          <em>distribution table</em>,
+          <term>distribution table</term>,
           list all possible values for <m>x</m>, the number of successes,
           then use the binomial formula to find the probability of each of those values.
         </p>
@@ -1627,16 +1638,16 @@
           to solve more complex conditional problems.
         </p>
       </li>
-      <li>
+<!--       <li>
         <p>
           The <em>Binomial Formula</em>
             <idx><h>binomial formula</h></idx>
           for finding the probability of exactly <m>x</m> successes in <m>n</m> independent trials.
         </p>
-      </li>
+      </li> -->
       <li>
         <p>
-          <em>Simulations</em>
+          <term>Simulations</term>
             <idx><h>simulation</h></idx>
           and the use of random digits to estimate probabilities.
         </p>
@@ -1659,9 +1670,9 @@
         <p>
           For a <term>discrete probability distribution</term>,
           the <term>sum</term> of the probabilities must equal 1.
-          For a <term>continuous probability distribution</term>,
+          <!-- For a <term>continuous probability distribution</term>,
           the <term>area under the curve</term>
-          represents a probability and the total area under the curve must equal<nbsp/>1.
+          represents a probability and the total area under the curve must equal<nbsp/>1. -->
         </p>
       </li>
       <li>
@@ -1697,6 +1708,21 @@
           However, this is not true for standard deviations.
           Instead, when finding the standard deviation of a sum or difference of random variables,
           take the square root of the sum of each of the standard deviations squared.
+        </p>
+      </li>
+      <li>
+        <p>
+          The <term>geometric distribution</term> provides a model for the number of trials until the first success, when the trials are independent.
+        </p>
+      </li>
+      <li>
+        <p>
+           The <term>binomial distribution</term> provides a model for the number of successes in n independent trials.
+        </p>
+      </li>
+      <li>
+        <p>
+          The geometric distribution is always right skewed. However, when the success-failure rule is met (at least 10 success and 10 failures), the binomial distribution can be modeled using a normal distribution with <m>\text{mean} = np</m> and standard deviation <m>\sqrt{np(1-p)}</m>.
         </p>
       </li>
     </ul>

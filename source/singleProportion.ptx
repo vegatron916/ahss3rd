@@ -37,8 +37,7 @@
       </ul>
     </p>
   </introduction>
-  <subsection>
-    <objectives>
+  <objectives>
     <title>Learning objectives</title>
       <ol>
         <li>
@@ -69,7 +68,6 @@
         </li>
       </ol>
     </objectives>
-  </subsection>
   <subsection>
     <title>Distribution of a sample proportion (review)</title>
     <p>
@@ -114,8 +112,7 @@
   <subsection>
     <title>Checking conditions for inference using a normal distribution</title>
     <p>
-      We can use a normal model for inference for a proportion when the observations are independent and the sampling distribution of the sample proportion is nearly normal.
-      We check that these assumptions are reasonable by verifying the following conditions.
+      We can use a normal model for inference for a proportion when the <alert>sampling distribution for the sample proportion is nearly normal.</alert> We check that this assumption is reasonable by assessing the independence assumption and verifying that the success-failure condition is met.
     </p>
     <p>
       <ul>
@@ -280,11 +277,11 @@
           <md>
             <mrow>\text{ point estimate } \pm\amp  z^{\star} \times SE\ \text{ of estimate }</mrow>
             <mrow>0.53 \pm\amp  1.65 \times 0.016</mrow>
-            <mrow>= (0.504, 0.556)</mrow>
+            <mrow>\amp = (0.504, 0.556)</mrow>
           </md>
         </p>
         <p>
-          We are 90% confident that the true proportion of U.S. adults who approve of the job the Supreme Court is doing is between 0.504 and .556.
+          We are 90% confident that the true proportion of U.S. adults who approve of the job the Supreme Court is doing is between 0.504 and 0.556.
         </p>
       </solution>
     </example>
@@ -461,7 +458,7 @@
           meaning that the sample proportion can be modeled using a normal distribution.
           The problem states that the data come from a random sample.
           Also, we must check the success-failure condition.
-          Here, we have that <m>1033(.68)\ge 10</m> and <m>1033(1-0.68)\ge 10</m>.
+          Here, we have that <m>1033(0.68)\ge 10</m> and <m>1033(1-0.68)\ge 10</m>.
           Both conditions are met so we can proceed with a 1-proportion Z-interval.
         </p>
         <p>
@@ -489,7 +486,7 @@
           <md>
             <mrow>0.68 \pm\  \amp 1.96 \times \sqrt{\frac{0.68(1-0.68)}{1033}}</mrow>
             <mrow>0.68 \pm\  \amp 1.96 \times 0.015</mrow>
-            <mrow>= (0.651, 0.709)</mrow>
+            <mrow>\amp = (0.651, 0.709)</mrow>
           </md>
         </p>
         <p>
@@ -794,7 +791,7 @@
           A manager is about to oversee the mass production of a new tire model in her factory,
           and she would like to estimate the proportion of these tires that will be rejected through quality control.
           The quality control team has previously found that about 6.2% of tires fail inspection.
-          <ol marker="a">
+          <ol marker="(a)">
             <li>
               <p>
                 How many tires should the manager examine to estimate the failure rate of the new tire model to within 2% with a 90% confidence level?<fn>The <m>z^{\star}</m> corresponding to a 90% confidence level is 1.645. Since we have an estimate for <m>p</m> of 6.2%, we use it. So we have: <m>1.645 \times \sqrt{\frac{(0.062)(1-0.062)}{n}} \le 0.02</m>. Rearranging for <m>n</m> gives: <m>n \ge 393.4</m>, so she should use <m>n = 394</m>.</fn>
@@ -827,7 +824,7 @@
           Deborah Toohey is running for Congress,
           and her campaign manager claims she has more than 50% support from the district's electorate.
           A newspaper collects a random sample of 500 likely voters in the district and estimates Toohey's support to be 52%.
-          <ol marker="a">
+          <ol marker="(a)">
             <li>
               <p>
                 Identify the null and the alternative hypothesis.
@@ -1375,8 +1372,6 @@
           We use the sample proportion <m>\hat{p}</m> as the <em>point estimate</em>
           for the unknown population proportion <m>p</m>.
           The sampling distribution of <m>\hat{p}</m> is approximately normal when the success-failure condition is met and the observations are independent.
-          The observations can generally be considered independent when the data is collected from a random sample or come from a stable,
-          random process analogous to flipping a coin.
           When the sampling distribution of <m>\hat{p}</m> is normal,
           the standardized test statistic also follows a
           <term>normal</term> distribution.
@@ -1424,12 +1419,13 @@
       </li>
       <li>
         <p>
-          !!!The first condition for the one proportion Z-interval and Z-test is the same.
-          The second one is different because of the use of the null proportion for the test.
-          <ol marker="1">
+          The one proportion Z-test and Z-interval require the sampling distribution for <m>\hat{p}</m> to be nearly normal. For this reason we must check that the following conditions are met.
+          <!-- The first condition for the one proportion Z-interval and Z-test is the same.
+          The second one is different because of the use of the null proportion for the test. -->
+          <ol marker="1.">
             <li>
               <p>
-                Independence: The data should come from a random sample or random process. When  sampling without replacement, check that the sample size is less than 10% of the population size
+                Independence: The data should come from a random sample or random process. When  sampling without replacement, check that the sample size is less than 10% of the population size.
               </p>
             </li>
             <li>
@@ -2086,7 +2082,7 @@
         <ol>
           <li>
             <p>
-              Identify: <m>H_{0} : p = 0.5</m>. <m>H_{A} : p \ne 0.5</m>. Choose: 1-proportionZ-test. Check: Independence (random sample, <m>\lt \%</m> of population) is satisfied, as is the success-failure conditions (using <m>p_{0} = 0.5</m>, we expect 40 successes and 40 failures). <m>Z = 2.91 \rightarrow \text{p-value} = 0.0018</m>. Conlcude: Since the p-value <m>\lt 0.05</m>, we reject the null hypothesis. The data provide strong evidence that the rate of correctly identifying a soda for these people is significantly better than just by random guessing.
+              Identify: <m>H_{0} : p = 0.5</m>. <m>H_{A} : p \ne 0.5</m>. Choose: 1-proportionZ-test. Check: Independence (random sample, <m>\lt 10\%</m> of population) is satisfied, as is the success-failure conditions (using <m>p_{0} = 0.5</m>, we expect 40 successes and 40 failures). <m>Z = 2.91 \rightarrow \text{p-value} = 0.0018</m>. Conlcude: Since the p-value <m>\lt 0.05</m>, we reject the null hypothesis. The data provide strong evidence that the rate of correctly identifying a soda for these people is significantly better than just by random guessing.
             </p>
           </li>
           <li>

@@ -37,8 +37,7 @@
       </ul>
     </p>
   </introduction>
-  <subsection>
-    <objectives>
+  <objectives>
     <title>Learning objectives</title>
       <ol>
         <li>
@@ -75,7 +74,6 @@
         </li>
       </ol>
     </objectives>
-  </subsection>
   <subsection xml:id="nearlyNormalPopWithKnownSD">
     <title>Using a normal distribution for inference when <m>\sigma</m> is known</title>
     <p>
@@ -169,7 +167,7 @@
     <p>
       The <m>t</m>-distribution,
       always centered at zero, has a single parameter: degrees of freedom.
-      The <em>degrees of freedom (df)</em><idx><h>degrees of freedom (df)</h><h><m>t</m>-distribution</h></idx> describes the precise form of the bell-shaped <m>t</m>-distribution.
+      The <term>degrees of freedom (df)</term><idx><h>degrees of freedom (df)</h><h><m>t</m>-distribution</h></idx> describes the precise form of the bell-shaped <m>t</m>-distribution.
       Several <m>t</m>-distributions are shown in <xref ref="tDistConvergeToNormalDist"></xref>.
       When there are more degrees of freedom,
       the <m>t</m>-distribution looks more like the standard normal distribution.
@@ -426,7 +424,7 @@
     </p>
   </subsection>
   <subsection>
-    <title>Calculator: finding area under the <m>t</m>-distribution</title>
+    <title>Technology: finding area under the <m>t</m>-distribution</title>
     <p>
       It is possible to find areas under a <m>t</m>-distribution on a calculator.
     </p>
@@ -565,8 +563,7 @@
   <subsection xml:id="tDistSolutionToSEProblem">
     <title>Checking conditions for inference on a mean using the <m>t</m>-distribution</title>
     <p>
-      Using the <m>t</m>-distribution for inference on a mean requires two assumptions,
-      namely that the observations are independent and that the theoretical sampling distribution of the sample mean <m>\bar{x}</m> is nearly normal.
+      Using the <m>t</m>-distribution for inference on a mean requires that the theoretical <em>sampling distribution for the sample mean <m>\bar{x}</m> is nearly normal.</em>.
       In practice,
       we check whether these assumptions are reasonable by verifying that certain conditions are met.
     </p>
@@ -735,8 +732,8 @@
           <md>
             <mrow>\text{ point estimate }  \ \amp \pm\  \text{ critical value }  \times SE \ \text{ of estimate }</mrow>
             <mrow>\bar{x} \ \amp \pm\  t^{\star}\times \frac{s}{\sqrt{n}} \qquad df=n-1</mrow>
-            <mrow>4.4 \ \amp \pm\  2.10 \times  \frac{2.3}{\sqrt{19}}  df=18</mrow>
-            <mrow>= \amp \ (3.29 \text{ , }  5.51)</mrow>
+            <mrow>4.4 \ \amp \pm\  2.10 \times  \frac{2.3}{\sqrt{19}} \qquad df=18</mrow>
+            <mrow>= \amp \ (3.29, 5.51)</mrow>
           </md>
         </p>
       </solution>
@@ -789,7 +786,7 @@
       </p>
       <p>
         <em>Check</em>: Check conditions for the sampling distribution of <m>\bar{x}</m> to nearly normal.
-        <ol marker="1">
+        <ol marker="1.">
           <li>
             <p>
                Independence: Data come from a random sample or random process. When sampling without replacement, check that sample size is less than 10% of the population size.
@@ -945,7 +942,7 @@
     </example>
   </subsection>
   <subsection xml:id="x1SampTint">
-    <title>Calculator: the 1-sample <m>t</m>-interval</title>
+    <title>Technologu: the 1-sample <m>t</m>-interval</title>
     <assemblage xml:id="one_mean_ci_ti">
       <title>TI-83/84: 1-sample T-interval</title>
       <p>
@@ -1374,7 +1371,7 @@
       </p>
       <p>
         <em>Check</em>: Check conditions for the sampling distribution of <m>\bar{x}</m> to be nearly normal.
-        <ol marker="1">
+        <ol marker="1.">
           <li>
             <p>
                Independence: Data come from a random sample or random process. When sampling without replacement, check that sample size is less than 10% of the population size.
@@ -1523,7 +1520,7 @@
     </exercise>
   </subsection>
   <subsection xml:id="x1SampTtest">
-    <title>Calculator: 1-sample <m>t</m>-test</title>
+    <title>Technology: 1-sample <m>t</m>-test</title>
     <assemblage xml:id="one_mean_ht_ti">
       <title>TI-83/84: 1-sample T-test</title>
       <p>
@@ -1711,7 +1708,7 @@
           The average time for all runners who finished the Cherry Blossom Run in 2006 was 93.3 minutes.
           In 2017, the average time for 100 randomly selected participants was 97.3, with a standard deviation of 17.0 minutes.
           Use a calculator to find the <m>T</m>-statistic and p-value for the appropriate test to see if the average time for the participants in 2017 is different than it was in 2006.
-          <fn>Choose <c>T-Test</c> or equivalent. Let <m>\mu{0}</m> be 93.3. <c>x</c> is 97.3, <m>S_{x}</m> is 17.0 and <c>n</c> <m>=100</m>. Choose <m>\ne</m> to correspond to <m>H_{A}</m>. We get <c>t</c><m>=2.353</m> and the p-value <c>p</c><m>=0.021</m></fn>
+          <fn>Choose <c>T-Test</c> or equivalent. Let <m>\mu_{0}</m> be 93.3. <c>x</c> is 97.3, <m>S_{x}</m> is 17.0 and <c>n</c> <m>=100</m>. Choose <m>\ne</m> to correspond to <m>H_{A}</m>. We get <c>t</c><m>=2.353</m> and the p-value <c>p</c><m>=0.021</m></fn>
         </p>
       </statement>
     </exercise>
@@ -1777,7 +1774,7 @@
       <li>
         <p>
           The one-sample t-interval and t-test require that the sampling distribution for <m>\bar{x}</m> be nearly normal. For this reason we must check that the following conditions are met.
-          <ol marker="1">
+          <ol marker="1.">
             <li>
             <p>
               Independence: Data come from a random sample or random process. When sampling without replacement, check that sample size is less than 10% of the population size.

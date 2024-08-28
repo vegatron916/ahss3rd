@@ -13,9 +13,8 @@
       play in answering these questions?
     </p>
   </introduction>
-  <subsection>
-    <objectives>
-    <title>Learning objectives</title>
+  <objectives>
+  <title>Learning objectives</title>
       <ol>
         <li>
           <p>
@@ -44,7 +43,6 @@
         </li>
       </ol>
     </objectives>
-  </subsection>
   <subsection>
     <title>Point estimates</title>
     <p>
@@ -73,7 +71,7 @@
       we compute the observed proportion in the sample and we denote this sample proportion as <m>\hat{p}</m>.
       Unless we collect responses from every individual in the sample,
       <m>p</m> remains unknown,
-      and we use <m>\hat{p}</m> as our point estimate for<nbsp/><m>p</m>.
+      and we use <m>\hat{p}</m> as our point estimate for <m>p</m>.
     </p>
     <p>
       The difference we observe from the poll versus the parameter is called the
@@ -82,7 +80,7 @@
       sampling error and bias.
     </p>
     <p>
-      <em>Bias</em>
+      <term>Bias</term>
           <idx><h>bias</h></idx>
       describes a systematic tendency to over- or under-estimate the true population value.
       For instance,
@@ -92,7 +90,7 @@
       However, as we saw in <xref ref="introductionToData"></xref>,
       even with a random sample,
       various types of response bias can still be present.
-      For<nbsp/>example,
+      For example,
       if we were taking a student poll asking about support for a new college stadium,
       we'd probably get a biased estimate of the stadium's level of student support by wording the question as,
       <em>Do you support your school by supporting funding for the new stadium?</em>
@@ -100,7 +98,7 @@
       but bias can creep into our estimates without us even <!-- be "typo" --> being aware.
     </p>
     <p>
-      <em>Sampling error</em>
+      <term>Sampling error</term>
           <idx><h>sampling error</h></idx>
       is uncertainty in a point estimate that happens naturally from one sample to the next.
       Much of statistics, including much of this book,
@@ -223,7 +221,7 @@
         possible_entries &lt;- c(rep("support", 0.88 * pop_size), rep("not", 0.12 * pop_size))
 
         # 2. Sample 1000 entries without replacement.
-        sampled_entries \lt- sample(possible_entries, size = 1000)
+        sampled_entries &lt;- sample(possible_entries, size = 1000)
 
         # 3. Compute p-hat: count the number that are "support", then divide by
         #    the sample size.
@@ -235,7 +233,7 @@
       One simulation isn't enough to get a great sense of the distribution of estimates we might expect in the simulation,
       so we should run more simulations.
       In a second simulation, we get <m>\hat{p}_2 = 0.885</m>,
-      which has an error of<nbsp/>+0.005.
+      which has an error of +0.005.
       In another, <m>\hat{p}_3 = 0.878</m> for an error of -0.002.
       And in another, an estimate of
       <m>\hat{p}_4 = 0.859</m> with an error of -0.021.
@@ -728,7 +726,7 @@
           </li>
           <li>
             <p>
-              Estimate the parameter using the data: <m>\hat{p} = \frac{27}{21} = 0.127</m>.
+              Estimate the parameter using the data: <m>\hat{p} = \frac{27}{212} = 0.127</m>.
             </p>
           </li>
           <li>

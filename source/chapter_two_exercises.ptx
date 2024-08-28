@@ -65,7 +65,7 @@
       </p>
       <sidebyside widths="50% 40%">
         <p>
-          <ol marker="a)">
+          <ol>
             <li>
               <p>
                 Estimate Q1, the median, and Q3 from the histogram.
@@ -294,7 +294,7 @@
         the weights of 23,419 newborn boys were recorded.
         The distribution of weights was approximately normal with a mean of 7.44 lbs (3376 grams) and a standard deviation of 1.33 lbs (603 grams).
         The government classifies a newborn as having low birth weight if the weight is less than 5.5 pounds.<fn><url href="www.biomedcentral.com/1471-2393/8/5">www.biomedcentral.com/1471-2393/8/5</url></fn>
-        <ol marker="a">
+        <ol>
           <li>
             <p>
               What percent of these newborns had a low birth weight?
@@ -320,7 +320,7 @@
     </statement>
     <solution>
       <p>
-        <ol marker="a">
+        <ol>
             <li>
               <p>
                 <m>Z=\frac{5.5-7.44}{1.33}= -1.49</m>; <m>P(Z \lt -1.49) = 0.068</m>. Approximately 6.8% of the newborns were of low birth weight.
@@ -424,7 +424,7 @@
       </statement>
       <solution>
         <p>
-          <ol marker="a">
+          <ol>
             <li>
               <p>
                 93.94%.

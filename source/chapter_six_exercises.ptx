@@ -25,8 +25,13 @@
       <p>
       	The OpenIntro website occasionally experiments with design and link placement. We conducted one experiment testing three different placements of a download link for this textbook on the book's main page to see which location, if any, led to the most downloads. The number of site visitors included in the experiment was 701 and is captured in one of the response combinations in the following table:
       </p>
-    	<tabular halign="center" bottom="minor" top="minor">
-    		<row>
+    	<tabular halign="center">
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+    		<row bottom="minor">
     			<cell></cell>
     			<cell>Download</cell>
     			<cell>No Download</cell>
@@ -41,7 +46,7 @@
     			<cell>14.6%</cell>
     			<cell>18.5%</cell>
     		</row>
-    		<row>
+    		<row bottom="minor">
     			<cell>Postion 3</cell>
     			<cell>12.1%</cell>
     			<cell>22.7%</cell>
@@ -488,6 +493,7 @@
   <title>Which chi-square test? Part 1</title>
     <statement>
       <p>
+        Consider each of the following tables. Determine (i) if a goodness of fit test, test for homogeneity, or test for independence is more appropriate, and (ii) how many degrees of freedom should be used for the test.
       </p>
       <sidebyside>
         <tabular halign="left">
@@ -598,7 +604,7 @@
     <statement>
       <p>
         Consider each of the following planned studies. Determine (i) if a goodness of fit test, test for homogeneity, or test for independence is more appropriate, and (ii) how many degrees of freedom should be used for the test.
-        <ol marker="a">
+        <ol>
           <li>
             <p>
               A state is conducting a study to better understand pay for tradespeople in the state’s three largest cities. In each city, the state will take a random sample of tradespeople and estimate the proportion who made at least $100,000 in each of the cities. In their final report, they would also like to note whether that proportion varies across the three cities.
@@ -619,7 +625,7 @@
     </statement>
     <solution>
       <p>
-        <ol marker="a">
+        <ol>
           <li>
             <p>
               Since there are 3 independent random samples here, we do a test for homogeneity. <m>df=2</m>.

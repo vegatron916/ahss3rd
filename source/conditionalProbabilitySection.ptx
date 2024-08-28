@@ -24,7 +24,7 @@
       </ul>
     </p>
   </introduction>
-  <subsection>
+  <objectives>
     <title>Learning objectives</title>
     <p>
     <ol>
@@ -62,7 +62,7 @@
       </li>
     </ol>
     </p>
-  </subsection>
+  </objectives>
   <subsection>
     <title>Exploring probabilities with a contingency table</title>
     <p>
@@ -729,7 +729,7 @@
           Thus, we can use the Multiplication Rule for independent processes.
           <md>
             <mrow> P(\text{ not picked in 3 questions } )</mrow>
-            <mrow>\amp = P(\text{Q1} = \text{not picked,} \text{Q2} = \text{not picked,} \text{Q3}  = \text{not picked.} )</mrow>
+            <mrow> =P(\text{Q1} = \text{not picked,} \text{Q2} = \text{not picked,} \text{Q3}  = \text{not picked.} )</mrow>
             <mrow> = \frac{14}{15}\times\frac{14}{15}\times\frac{14}{15} = 0.813</mrow>
           </md>
         </p>
@@ -1047,7 +1047,7 @@
   <subsection>
     <title>Tree diagrams</title>
     <p>
-      <em>Tree diagrams</em> are a tool to organize outcomes and probabilities around the structure of the data.
+      <term>Tree diagrams</term> are a tool to organize outcomes and probabilities around the structure of the data.
       They are most useful when two or more processes occur in a sequence and each process is conditioned on its predecessors.
     </p>
     <p>
@@ -1111,7 +1111,7 @@
         </p>
       </solution>
     </example>
-    <exercise>
+    <example>
       <statement>
         <p>
           After an introductory statistics course, 78% of students can successfully construct tree diagrams.
@@ -1121,7 +1121,7 @@
       </statement>
         <solution>
           <p>
-            <ol marker="a">
+            <ol marker="(a)">
           		<li>
                 <p>
                   The tree diagram is shown below. <!-- to the right. -->
@@ -1150,7 +1150,7 @@
             </ol>
           </p>
       	</solution>
-    </exercise>
+    </example>
   </subsection>
   <subsection xml:id="bayesTheoremSubsection">
     <title>Bayes' Theorem</title>
@@ -1429,7 +1429,7 @@
         <p>
           When sampling <term>without replacement</term>,
           such as drawing cards from a deck,
-          make sure to use <em>conditional probabilities</em>
+          make sure to use <term>conditional probabilities</term>
             <idx><h>conditional probability</h></idx>
           when solving <em>and</em> problems.
         </p>

@@ -29,8 +29,7 @@
       </ul>
     </p>
   </introduction>
-  <subsection>
-    <objectives>
+  <objectives>
     <title>Learning objectives</title>
       <ol>
         <li>
@@ -57,7 +56,6 @@
         </li>
       </ol>
     </objectives>
-  </subsection>
   <subsection>
     <title>Paired observations and samples</title>
     <p>
@@ -1098,7 +1096,7 @@
       <li>
         <p>
           The one-sample <m>t</m>-interval and and <m>t</m>-test  with paired data require the sampling distribution for <m>\bar{x}_{diff}</m> to be nearly normal. For this reason, we must check that the following conditions are met.
-          <ol marker="1">
+          <ol marker="1.">
             <li>
               <p>
                 Independence: Data should come from one random sample (with paired observations) or from a randomized matched pairs experiment. If sampling without replacement, check that the sample size is less than 10% of the population size.

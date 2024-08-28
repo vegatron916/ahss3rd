@@ -6,10 +6,9 @@
       In this section, we consider the case where instead of having one random sample from a population of interest, we have two independent random samples and we are interested in how far the sample values might be from one another. We describe the sampling distribution for the difference of sample proportions and the difference of sample means, and we find the probability that the difference would be greater than or less than a certain amount.
     </p>
   </introduction>
-  <subsection>
-    <objectives>
+  <objectives>
     <title>Learning objectives</title>
-      <ol marker="1">
+      <ol marker="1.">
         <li>
           <p>
             Describe the center, spread, and shape of the sampling distribution for a difference of sample proportions.
@@ -27,7 +26,6 @@
         </li>
       </ol>
     </objectives>
-  </subsection>
 
   <subsection xml:id="mean_SD_diff_review">
   <title>The mean and SD for a difference of two random variables (review)</title>
@@ -79,12 +77,12 @@
     </p>
 
     <assemblage>
-    <title></title>
+    <title>Mean and standard deviation of a difference of sample proportions</title>
       <p>
         The mean and standard deviation of the difference of sample proportions describe the center and spread of the distribution of all possible differences <m>\hat{p}_{1}-\hat{p}_{2}</m>. Given population proportions <m>p_{1}</m> and <m>p_{2}</m> and random samples of size <m>n_{1}</m> and <m>n_{2}</m> where the independence condition is satisfied, we have the following.
         <md>
           <mrow>
-            \mu_{\hat{p}_{1}-\hat{p}_{2}}=p_{1}-p_{2} \amp \amp \sigma{\hat{p}_{1}-\hat{p}_{2}}=\sqrt{\frac{p_{1}(1-p_{1})}{n_{1}}+\frac{p_{2}(1-p_{2})}{n_{2}}}
+            \mu_{\hat{p}_{1}-\hat{p}_{2}}=p_{1}-p_{2} \amp \amp \sigma_{\hat{p}_{1}-\hat{p}_{2}}=\sqrt{\frac{p_{1}(1-p_{1})}{n_{1}}+\frac{p_{2}(1-p_{2})}{n_{2}}}
           </mrow>
         </md>
       </p>
@@ -127,7 +125,7 @@
               \mu_{\hat{p}_{1}-\hat{p}_{2}}=p_{1}-p_{2} = 0.35-0.30 = 0.05
             </mrow>
             <mrow>
-              \sigma{\hat{p}_{1}-\hat{p}_{2}}=
+              \sigma_{\hat{p}_{1}-\hat{p}_{2}}=
 
               \sqrt{\frac{p_{1}(1-p_{1})}{n_{1}}+\frac{p_{2}(1-p_{2})}{n_{2}}} = \sqrt{\frac{0.35(1-0.35)}{50}+\frac{0.30(1-0.30)}{50}} = 0.0935
             </mrow>
@@ -176,7 +174,7 @@
     </p>
 
     <assemblage>
-    <title></title>
+    <title>Mean and standard deviation of a difference of sample means</title>
       <p>
         The mean and standard deviation of the difference of sample means describe the center and spread of the distribution of all possible differences <m>\bar{x}_{1}-\bar{x}_{2}</m>. Given population means <m>\mu_{1}</m> and <m>\mu_{2}</m>, individual population standard deviations <m>\sigma_{1}</m> and <m>\sigma_{2}</m>, and two random samples of size <m>n_{1}</m> and <m>n_{2}</m>, then if the <em>independence</em> condition is satisfied, we have the following:
         <md>
@@ -318,7 +316,7 @@
         </table>
         <p>
           Now suppose that we plan a study to survey 1000 people from each state, and we will compute the sample proportions <m>\hat{p}_{NE}</m> for Nebraska and <m>\hat{p}_{NY}</m> for New York.
-          <ol marker="a">
+          <ol>
             <li>
               <p>
                 What is the associated mean and standard deviation of <m>\hat{p}_{NE}</m>?
@@ -344,7 +342,7 @@
       </statement>
       <solution>
         <p>
-          <ol marker="a">
+          <ol>
             <li>
               <p>
                 <m>mu_{\hat{p}_{NE}= 0.01}</m>. <m>\sigma_{\hat{p}_{NE}}=0.0031</m>.
@@ -399,7 +397,7 @@
         </table>
         <p>
           Now suppose that we plan a study to survey 1000 people from each state, and we will compute the sample proportions <m>\hat{p}_{NE}</m> for Nebraska and <m>\hat{p}_{NY}</m> for New York.
-          <ol marker="a">
+          <ol>
             <li>
               <p>
                 What distribution is associated with the difference <m>\hat{p}_{NE}-\hat{p}_{NY}</m>? Justify your answer.
@@ -450,7 +448,7 @@
         </table>
         <p>
           In each of the parts below, consider the sample means <m>\bar{x}_{1}</m> and <m>\bar{x}_{2}</m> that we might observe from these two samples.
-          <ol marker="a">
+          <ol>
             <li>
               <p>
                 What is the associated mean and standard deviation of <m>\bar{x}_{1}</m>?
@@ -476,20 +474,20 @@
       </statement>
       <solution>
         <p>
-          <ol marker="a">
+          <ol>
             <li>
               <p>
-                <m>\mu_{\bar{x}_{1}} = 15</m>. <m>\sigma_{\bar{x}_{1}} = 20/sqrt{50}=2.8284</m>.
+                <m>\mu_{\bar{x}_{1}} = 15</m>. <m>\sigma_{\bar{x}_{1}} = 20/ \sqrt{50}=2.8284</m>.
               </p>
             </li>
             <li>
               <p>
-                <m>\mu_{\bar{x}_{2}} =20</m>. <m>\sigma_{\bar{x}_{2}} = 10/sqrt{30}=1.8257</m>.
+                <m>\mu_{\bar{x}_{2}} =20</m>. <m>\sigma_{\bar{x}_{2}} = 10/ \sqrt{30}=1.8257</m>.
               </p>
             </li>
             <li>
               <p>
-                <m>\mu_{\bar{x}_{2}-\bar{x}_{1}}=20-15=5</m>. <m>\sigma_{\bar{x}_{2}-\bar{x}_{1}} =sqrt{(20/sqrt{50})^2+(10/sqrt{30})^2}=3.3665</m>
+                <m>\mu_{\bar{x}_{2}-\bar{x}_{1}}=20-15=5</m>. <m>\sigma_{\bar{x}_{2}-\bar{x}_{1}} =sqrt{(20/ \sqrt{50})^2+(10/ \sqrt{30})^2}=3.3665</m>
               </p>
             </li>
             <li>
@@ -537,7 +535,7 @@
         </table>
         <p>
           In each of the parts below, consider the sample means <m>\bar{x}_{1}</m> and <m>\bar{x}_{2}</m> that we might observe from these two samples.
-          <ol marker="a">
+          <ol>
             <li>
               <p>
                 What distribution is associated with the difference <m>\bar{x}_{2}-\bar{x}_{1}</m>? Justify your answer.
@@ -571,7 +569,7 @@
     </p>
     <p>
       The key steps are included for each of the normal approximation scenarios below. To verify that observations can be considered independent, verify that you have one of the following: a random process, a random sample with replacement, or a random sample without replacement of less than 10% of the population. To satisfy the independence condition when working with two groups, we require 2 independent random samples with replacement, 2 independent samples without replacement of less than 10% of their populations, or an experiment with 2 randomly assigned treatments. For completion and comparison purposes, we include cases introduced in earlier chapters as well in the overview below.
-      <ol marker="a">
+      <ol marker="1.">
         <li>
           <p>
             Normal approximation for numerical <term>data</term>: (introduced in <xref ref="normalDist"></xref>).
@@ -600,7 +598,7 @@
               </li>
               <li>
                 <p>
-                  Use a normal model with mean <m>\mu_{\hat{p}}=p</m> and SD <m>\sigma_{\hat{p}}= \frac{p(1-p)}{n}</m>.
+                  Use a normal model with mean <m>\mu_{\hat{p}}=p</m> and SD <m>\sigma_{\hat{p}}= \sqrt{\frac{p(1-p)}{n}}</m>.
                 </p>
               </li>
             </ul>
@@ -608,7 +606,7 @@
         </li>
         <li>
           <p>
-            Normal approximation for a <m>sample mean</m> (with numerical data):
+            Normal approximation for a <em>sample mean</em> (with numerical data):
             <ul>
               <li>
                 <p>
@@ -629,12 +627,12 @@
             <ul>
               <li>
                 <p>
-                  Verify that observations can be treated as independent and that
+                  Verify that observations can be treated as independent and that <m>n_{1}p_{1} \ge 10</m>, <m>n_{1}(1-p_{1}) \ge 10</m>, <m>n_{2}p_{2} \ge 10</m>, and <m>n_{2}(1-p_{2}) \ge 10</m>.
                 </p>
               </li>
               <li>
                 <p>
-                  Use a normal model with mean <m>\mu_{\hat{p}_{1}-\hat{p}_{2}} =p_{1}-p_{2} </m> and <m>\sigma{\hat{p}_{1}-\hat{p}_{2}}=\sqrt{\frac{p_{1}(1-p_{1})}{n_{1}}+\frac{p_{2}(1-p_{2})}{n_{2}}}</m>
+                  Use a normal model with mean <m>\mu_{\hat{p}_{1}-\hat{p}_{2}} =p_{1}-p_{2} </m> and <m>\sigma_{\hat{p}_{1}-\hat{p}_{2}}=\sqrt{\frac{p_{1}(1-p_{1})}{n_{1}}+\frac{p_{2}(1-p_{2})}{n_{2}}}</m>
                 </p>
               </li>
             </ul>

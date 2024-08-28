@@ -15,8 +15,7 @@
       and how do we interpret them?
     </p>
   </introduction>
-  <subsection>
-    <objectives>
+  <objectives>
     <title>Learning objectives</title>
       <ol>
         <li>
@@ -57,7 +56,6 @@
         </li>
       </ol>
     </objectives>
-  </subsection>
   <subsection>
     <title>Capturing the population parameter</title>
     <p>
@@ -118,7 +116,7 @@
         </men>
       </p>
       <p>
-        We can be <em>95% confident</em>
+        We can be <alert>95% confident</alert>
         that this interval captures the true value.
       </p>
     </assemblage>
@@ -672,14 +670,14 @@
     </ul>
     </p>
     <p>
-      Interpreting <em>confidence intervals</em>
+      Interpreting <term>confidence intervals</term>
           <idx><h>confidence interval</h></idx>
-      and <em>confidence levels</em>
+      and <term>confidence levels</term>
           <idx><h>confidence level</h></idx>
       <ul>
         <li>
           <p>
-            68% and 95% are examples of <em>confidence levels</em>.
+            68% and 95% are examples of <term>confidence levels</term>.
               <idx><h>confidence level</h></idx>
           The confidence level tells us the
             <em>capture rate</em> with repeated sampling.
@@ -703,7 +701,7 @@
       </ul>
     </p>
     <p>
-      <em>Margin of error</em>
+      <term>Margin of error</term>
           <idx><h>margin of error</h></idx>
       <ul>
         <li>

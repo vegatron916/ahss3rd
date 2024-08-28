@@ -11,10 +11,9 @@
       This section can be covered now or in tandem with <xref ref="foundationsForInference"></xref>: Foundations for Inference.
     </p>
   </introduction>
-  <subsection>
-    <objectives>
+  <objectives>
     <title>Learning objectives</title>
-      <ul>
+      <ol marker="1.">
         <li>
           <p>
             Recognize that an observed difference in sample statistics may be due to random chance and that we use hypothesis testing to determine if this is difference statistically significant (i.e. too large to be attributed to random chance).
@@ -25,9 +24,8 @@
             Set up competing hypotheses and use the results of a simulation to evaluate the degree of support the data provide against the null hypothesis and for the alternative hypothesis.
           </p>
         </li>
-      </ul>
+      </ol>
     </objectives>
-  </subsection>
   <subsection xml:id="variabilityWithinData">
     <title>Variability within data</title>
     <p>
@@ -166,7 +164,7 @@
       <ul>
         <li>
           <p>
-            <m>H_0</m>: <em>Independence model.</em>
+            <m>H_0</m>: <term>Independence model.</term>
             The variables <c>treatment</c> and <c>outcome</c> are independent.
             They have no relationship,
             and the observed difference between the proportion of patients who developed an infection in the two groups,
@@ -175,7 +173,7 @@
         </li>
         <li>
           <p>
-            <m>H_A</m>: <em>Alternative model.</em>
+            <m>H_A</m>: <term>Alternative model.</term>
             The variables are <em>not</em> independent.
             The difference in infection rates of 64.3% was not due to chance,
             and the vaccine affected the rate of infection.
@@ -209,7 +207,7 @@
   <subsection xml:id="simulatingTheStudy">
     <title>Simulating the study</title>
     <p>
-      We're going to implement <em>simulations</em>,
+      We're going to implement <term>simulations</term>,
           <idx><h>simulation</h></idx>
       where we will pretend we know that the malaria vaccine being tested does <em>not</em> work.
       Ultimately, we want to understand if the large difference we observed is common in these simulations.
@@ -353,14 +351,14 @@
       <ul>
         <li>
           <p>
-            <m>H_0</m>: <em>Independence model.</em>
+            <m>H_0</m>: <term>Independence model.</term>
             The vaccine has no effect on infection rate,
             and we just happened to observe a rare event.
           </p>
         </li>
         <li>
           <p>
-            <m>H_A</m>: <em>Alternative model.</em>
+            <m>H_A</m>: <term>Alternative model.</term>
             The vaccine has an effect on infection rate,
             and the difference we observed was actually due to the vaccine being effective at combatting malaria,
             which explains the large difference of 64.3%.
@@ -464,7 +462,7 @@
             If false, explain why.
             <em>Be careful:</em> The reasoning may be wrong even if the statement's conclusion is correct.
             In such cases, the statement should be considered false.
-            <ol marker="i">
+            <ol marker="i.">
               <li>
                 <p>
                   Since more patients on pioglitazone had cardiovascular problems (5,386 vs. 2,593), we can conclude that the rate of cardiovascular problems for those on a pioglitazone treatment is higher.
@@ -511,7 +509,7 @@
             then deal them into two groups of size 67,593 and 159,978.
             We repeat this simulation 1,000 times and each time record the number of people in the rosiglitazone group who had cardiovascular problems.
             Use the relative frequency histogram of these counts to answer (i)-(iii).
-            <ol marker="i">
+            <ol marker="i.">
               <li>
                 <p>
                   What are the claims being tested?
@@ -579,7 +577,7 @@
         <image width="60%" source="images/summarizing/randomization_heart_transplants_box.png" />
       </sidebyside>
         <p>
-        <ol marker="a">
+        <ol>
           <li>
             <p>
               Based on the mosaic plot,
@@ -600,7 +598,7 @@
           <li>
             <p>
               One approach for investigating whether or not the treatment is effective is to use a randomization technique.
-              <ol marker="i">
+              <ol marker="i.">
                 <li>
                   <p>
                     What are the claims being tested?
@@ -637,30 +635,30 @@
     <term>numerically</term>, and <term>verbally</term>.
   </p>
   <p>
-    <em>Categorical data</em>
+    <term>Categorical data</term>
         <idx><h>categorical</h></idx>
     <ul>
       <li>
         <p>
           A single <term>categorical variable</term>
-          is summarized with <term>counts</term> or <em>proportions</em>
+          is summarized with <term>counts</term> or <term>proportions</term>
             <idx><h>proportion</h></idx>
           in a <term>one-way table</term>.
-          A <term>bar<nbsp/>chart</term> is used to show the frequency or relative frequency of the categories that the variable takes on.
+          A <term>bar chart</term> is used to show the frequency or relative frequency of the categories that the variable takes on.
         </p>
       </li>
       <li>
         <p>
           Two categorical variables can be summarized in a
           <term>two-way table</term>
-          and with a <term>side-by-side bar<nbsp/>chart</term>
-          or a <term>segmented bar<nbsp/>chart</term>.
+          and with a <term>side-by-side bar chart</term>
+          or a <term>segmented bar chart</term>.
         </p>
       </li>
     </ul>
   </p>
   <p>
-    <em>Numerical data</em>
+    <term>Numerical data</term>
         <idx><h>numerical data</h></idx>
     <ul>
       <li>
@@ -685,16 +683,21 @@
       </li>
       <li>
         <p>
-          <em>Z-scores</em>
+          <term>Z-scores</term>
             <idx><h>Z-score</h></idx>
-          and <em>percentiles</em>
+          and <term>percentiles</term>
             <idx><h>percentile</h></idx>
           are useful for identifying a data point's relative position within a data set.
         </p>
       </li>
       <li>
         <p>
-          <em>Outliers</em>
+          When a distribution is nearly normal, we can use the <term>empirical rule</term> (68-95-99.7 rule), and we can use a normal model to approximate the histogram.
+        </p>
+      </li>
+      <li>
+        <p>
+          <term>Outliers</term>
             <idx><h>outlier</h></idx>
           are values that appear extreme relative to the rest of the data.
           Investigating outliers can provide insight into properties of the data or may reveal data collection/entry errors.
@@ -702,7 +705,7 @@
       </li>
       <li>
         <p>
-          When <em>comparing the distribution</em>
+          When <term>comparing the distribution</term>
             <idx><h>comparing distributions</h></idx>
           of two variables, use two dot plots, two histograms,
           a back-to-back stem-and-leaf, or parallel box plots.

@@ -20,9 +20,8 @@
       </ul>
     </p>
   </introduction>
-  <subsection>
     <objectives>
-    <title>Learning</title>
+    <title>Learning objectives</title>
       <ol>
         <li>
           <p>
@@ -58,7 +57,6 @@
         </li>
       </ol>
     </objectives>
-  </subsection>
   <subsection>
     <title>The role of inference for regression parameters</title>
     <p>
@@ -163,7 +161,7 @@
     <assemblage>
       <title>Conditions for inference on the slope of a regression line</title>
       <p>
-      <ol marker="1">
+      <ol marker="1.">
         <li>
           <p>
             The data is collected from a random sample or randomized experiment.
@@ -346,7 +344,7 @@
       </p>
       <p>
         <em>Check</em>: Check conditions for using a <m>t</m>-interval for the slope.
-        <ol marker="1">
+        <ol marker="1.">
           <li>
             <p>
               Independence: Data should come from a random sample or randomized experiment. If sampling without replacement, check that the sample size is less than 10% of the population size.
@@ -393,7 +391,7 @@
             </li>
             <li>
               <p>
-                <m>t^{\star}</m>: use a <m>t</m>-distribution with <m>df = n-2</m> and confidence level C
+                <m>t^{\star}</m>: use a <m>t</m>-distribution with <m>df = n-2</m> and confidence level C%
               </p>
             </li>
             <li>
@@ -861,7 +859,7 @@
       </p>
       <p>
         <em>Check</em>: Check conditions for using a <m>t</m>-test for the slope.
-        <ol marker="1">
+        <ol marker="1.">
           <li>
             <p>
               Independence: Data should come from a random sample or randomized experiment. If sampling without replacement, check that the sample size is less than 10% of the population size.
@@ -1017,6 +1015,13 @@
             </p>
         </solution>
     </example>
+    <exercise>
+      <statement>
+        <p>
+          In context, interpret the p-value from the previous example.<fn>Assuming that the probability model is true and assuming that the null hypothesis is true, i.e. there really is no linear relationship between family income and gift aid at Elmhurst College, there is only a 0.0001 chance of getting a test statistic this small or smaller (<m>H_{A}</m> uses a &lt;, so the p-value represents the area in the left tail). Because this value is so small, we reject the null hypothesis.</fn>
+        </p>
+      </statement>
+    </exercise>
   </subsection>
   <subsection xml:id="LinRegtest">
     <title>Technology: the <m>t</m>-test for the slope</title>
@@ -1369,7 +1374,7 @@
       <li>
         <p>
           The conditions for the <m>t</m>-interval and <m>t</m>-test for the slope of a regression line are the same.
-          <ol marker="1">
+          <ol marker="1.">
             <li>
               <p>
                 Independence: Data should come from a random sample or randomized experiment. If sampling without replacement, check that the sample size is less than 10% of the population size.
@@ -1786,7 +1791,7 @@
           </li>
           <li>
             <p>
-              <m>\widehat{\text{height}}_{S} = 43.5755 + 0.2863 \times \text{height}_{W}</m>.
+              <m>\widehat{\text{height}_{S}} = 43.5755 + 0.2863 \times \text{height}_{W}</m>.
             </p>
           </li>
           <li>
@@ -1825,7 +1830,7 @@
       </p>
       <image width="50%" source="images/regression/urbanOwner_withoutDC.png"/>
   	  <p>
-  	  	<ol marker="a">
+  	  	<ol>
   	  		<li>
   	  			<p>
   	  				For these data, <m>R^2 = 0.28</m>. What is the correlation? How can you tell if it is positive or negative?
@@ -1864,7 +1869,7 @@
           <cell>Estimate</cell>
           <cell>Std. Error</cell>
           <cell>t value</cell>
-          <cell>Pr<m>(>|t|)</m></cell>
+          <cell>Pr<m>(\gt|t|)</m></cell>
         </row>
         <row halign="right">
           <cell>(Intercept)</cell>
@@ -2003,13 +2008,13 @@
           the data using a <term>scatterplot</term>
           in order to see the association and any deviations from the trend
           (outliers or influential values).
-          A <em>residual plot</em> helps us better see patterns in the data.
+          A <term>residual plot</term> helps us better see patterns in the data.
         </p>
       </li>
       <li>
         <p>
           When the data show a linear trend,
-          we fit a <em>least squares regression line</em> of the form:
+          we fit a <term>least squares regression line</term> of the form:
           <m>\hat{y} = a+bx</m>,
           where <m>a</m> is the <m>y</m>-intercept and <m>b</m> is the slope.
           It is important to be able to <em>calculate</em>
@@ -2019,7 +2024,7 @@
       </li>
       <li>
         <p>
-          A <em>residual</em>, <m>y-\hat{y}</m>,
+          A <term>residual</term>, <m>y-\hat{y}</m>,
           measures the error for an <em>individual point</em>.
           The <em>standard deviation of the residuals</em>,
           <m>s</m>, measures the typical size of the residuals.

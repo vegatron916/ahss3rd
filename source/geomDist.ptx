@@ -5,13 +5,10 @@
     <p>
       How many times should we expect to roll a die until we get a <c>1</c>?
       How many people should we expect to see at a hospital until we get someone with blood type O+? These questions can be answered using the geometric distribution.
-      We will see that unlike with the distribution of a sample mean,
-      the shape of the geometric distribution is never normal.
     </p>
   </introduction>
-  <subsection>
-    <title>Learning objectives</title>
-    <p>
+  <objectives>
+  <title>Learning objectives</title>
     <ol>
       <li>
         <p>
@@ -36,18 +33,17 @@
         </p>
       </li>
     </ol>
-    </p>
-  </subsection>
+  </objectives>
   <subsection xml:id="bernoulli">
     <title>Bernoulli distribution</title>
-    <p>
+<!--     <p>
           <idx><h>distribution</h><h>Bernoulli</h></idx>
     </p>
     <p>
       We begin by revisiting a scenario encountered when studying the binomial formula
       (<xref ref="binomialForm"></xref>),
       and we formalize the notion of a yes/no variable.
-    </p>
+    </p> -->
     <p>
       Many health insurance plans in the United States have a deductible,
       where the insured individual is responsible for costs up to the deductible,
@@ -69,7 +65,7 @@
     <p>
       When an individual trial only has two possible outcomes,
       often labeled as <c>success</c> or <c>failure</c>,
-      it is called a <em>Bernoulli random variable</em>.
+      it is called a <term>Bernoulli random variable</term>.
       We chose to label a person who does not exceed her deductible as a <q>success</q> and all others as <q>failures</q>.
       However, we could just as easily have reversed these labels.
       The mathematical framework we will build does not depend on which outcome is labeled a success and which a failure,
@@ -79,22 +75,29 @@
       Bernoulli random variables are often denoted as <c>1</c> for a success and <c>0</c> for a failure.
       In addition to being convenient in entering data,
       it is also mathematically handy.
-      Suppose we observe ten trials: <c>1</c> <c>1</c> <c>1</c> <c>0</c> <c>1</c> <c>0</c> <c>0</c> <c>1</c> <c>1</c> <c>0</c> Then the
-      <term>sample proportion</term>,
+      Suppose we observe ten trials:
+    </p>
+    <p>
+      <c>1</c> <c>1</c> <c>1</c> <c>0</c> <c>1</c> <c>0</c> <c>0</c> <c>1</c> <c>1</c> <c>0</c>
+    </p>
+    <p>
+      Then the <term>sample proportion</term>,
       <m>\hat{p}</m>, is the sample mean of these observations:
       <md>
-        <mrow>\hat{p} = \frac{\text{ number of successes } }{\text{ number of trials } } = \frac{1+1+1+0+1+0+0+1+1+0}{10} = 0.6</mrow>
+        <mrow>
+          \hat{p} = \frac{\text{ number of successes } }{\text{ number of trials } } = \frac{1+1+1+0+1+0+0+1+1+0}{10} = 0.6
+        </mrow>
       </md>
     </p>
     <p>
       This mathematical inquiry of Bernoulli random variables can be extended even further.
       Because <c>0</c> and <c>1</c> are numerical outcomes,
-      we can define the mean and standard deviation of a Bernoulli random variable.<!-- <fn> -->
+      we can define the mean and standard deviation of a Bernoulli random variable.<fn>See <xref ref="bernoulli_mean_derivation"></xref> and <xref ref="bernoulli_sd_derivation"></xref>.</fn>
     </p>
-    <p>
+<!--     <p>
       If <m>p</m> is the true probability of a success,
-      then the mean of a Bernoulli random variable <m>X</m> is given by<!-- <fn><solution> -->
-      <!-- <p> -->
+      then the mean of a Bernoulli random variable <m>X</m> is given by
+      
         <md>
           <mrow>\mu = E(X) \amp =  0\cdot P(X = 0) +  1\cdot P(X=1)</mrow>
           <mrow>\amp =   0\cdot (1 - p) +  1\cdot p = 0 + p = p</mrow>
@@ -104,10 +107,9 @@
           <mrow>\sigma^2 \amp = {(0-p)^2\cdot P(X=0) + (1-p)^2\cdot P(X=1)}</mrow>
           <mrow>\amp = {p^2\cdot (1-p) + (1-p)^2\cdot p} = {p(1-p)}</mrow>
         </md>
-        The standard deviation is <m>\sigma=\sqrt{p(1-p)}</m>.
+        The standard deviation is <m>\sigma=\sqrt{p(1-p)}</m>. -->
     <!--   </p>
     </solution></fn> -->
-    </p>
     <assemblage>
       <title>Bernoulli random variable</title>
       <p>
@@ -128,7 +130,7 @@
   <subsection>
     <title>Geometric distribution</title>
     <p>
-      The <em>geometric distribution</em><idx><h>distribution</h><h>geometric</h></idx> is used to describe how many trials it takes to observe a success.
+      The <term>geometric distribution</term><idx><h>distribution</h><h>geometric</h></idx> is used to describe how many trials it takes to observe a success.
       Let's first look at an example.
     </p>
     <example xml:id="waitForDeductible">
@@ -151,7 +153,7 @@
         <p>
           The probability of stopping after the first person is just the chance the first person will not exceed her
           (or his)
-          deductible:<nbsp/>0.7.
+          deductible: 0.7.
           The probability the second person is the first to exceed her deductible is
           <md>
             <mrow>\amp P(\text{ second person is the first to exceed deductible } )</mrow>
@@ -171,7 +173,7 @@
     </example>
     <p>
       <xref ref="waitForDeductible"></xref>
-      illustrates what the <em>geometric distribution</em>,
+      illustrates what the <term>geometric distribution</term>,
       which describes the waiting time until a success for
       <term>independent and identically distributed (iid)</term>
       Bernoulli random variables.
@@ -236,13 +238,13 @@
         </p>
       </statement>
     </exercise>
-    <example>
+    <example xml:id="insureFirstSuccessInLT4">
       <statement>
         <p>
           What is the chance that we would find the first success within the first 3 cases?
         </p>
       </statement>
-      <solution xml:id="insureFirstSuccessInLT4">
+      <solution>
         <p>
           This is the chance the first (<m>X=1</m>), second (<m>X=2</m>),
           or third (<m>X=3</m>) case is the first success,
@@ -371,7 +373,7 @@
           Even though the geometric distribution has an infinite number of values,
           it has a well-defined <em>mean</em>:
           <m>\mu_{X}=\frac{1}{p}</m> and
-          <em>standard deviation</em>:
+          <term>standard deviation</term>:
           <m>\sigma_{X} = \frac{\sqrt{1-p \ }}{p}</m>.
           If the probability of success is <m>\frac{1}{10}</m>,
           then <em>on average</em> it takes 10 trials until we see the first success.

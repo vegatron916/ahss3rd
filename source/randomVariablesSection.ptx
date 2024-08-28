@@ -19,9 +19,8 @@
       and we look at some of their properties.
     </p>
   </introduction>
-  <subsection>
-    <title>Learning objectives</title>
-    <p>
+  <objectives>
+  <title>Learning objectives</title>
     <ol>
       <li>
         <p>
@@ -57,8 +56,7 @@
         </p>
       </li>
     </ol>
-	</p>
-  </subsection>
+  </objectives>
   <subsection>
     <title>Introduction to expected value</title>
     <example>
@@ -108,7 +106,7 @@
         <p>
           The roughly 25 students who buy both the textbook and the study guide would pay a total of
           <md>
-            <mrow>(\$137 + \$33) \times  25 = \$ \times  25 = \$4,250</mrow>
+            <mrow>(\$137 + \$33) \times  25 = \$170 \times  25 = \$4,250</mrow>
           </md>
         </p>
         <p>
@@ -1135,7 +1133,7 @@
       <md>
         <mrow>SD_{6000X + 2000Y} \amp = \sqrt{(6000\times SD_X)^2 + (2000\times SD_Y)^2}</mrow>
         <mrow>\amp = \sqrt{(6000\times 0.0849)^2 + (2000\times .0520)^2}</mrow>
-        <mrow>\amp = \sqrt{270304} = 520</mrow>
+        <mrow>\amp = \sqrt{270,304} = 520</mrow>
       </md>
     </p>
     <p>
@@ -1373,7 +1371,7 @@
       </li>
       <li>
         <p>
-          <em>Linear transformations</em>.
+          <term>Linear transformations</term>.
           Adding a constant to every value in a probability distribution adds that value to the mean,
           but it does not affect the standard deviation.
           When multiplying every value by a constant,
@@ -1426,6 +1424,35 @@
           </ul>
         </p>
       </li>
+      <li>
+        <p>
+          Because the sum or difference of two normally distributed variables is itself a normally distributed variable, the normal approximation is also used in the following type of problem.
+        </p>
+        <p>
+          <em>Find the probability that a sum <m>X + Y</m> or a difference <m>X − Y</m> is greater/less than some value.</em>
+          <ol marker="1.">
+            <li>
+              <p>
+                Verify that the distribution of <m>X</m> and the distribution of <m>Y</m> are approximately normal.
+              </p>
+            </li>
+            <li>
+              <p>Find the mean of the sum or difference. Recall: the mean of a sum is the sum of the means. The mean of a difference is the difference of the means. Find the SD of the sum or difference using: <m>SD(X+Y)= SD(X-Y) = \sqrt{(SD(X))^2+(SD(Y))^2}</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                Calculate the Z-score. Use the calculated mean and SD to standardize the given sum or difference.
+              </p>
+            </li>
+            <li>
+              <p>
+                Find the appropriate area under the normal curve.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </li>
     </ul>
 	</p>
     <p>
@@ -1468,7 +1495,7 @@
         </row>
       </tabular>
       <p>
-        <ol marker="a">
+        <ol>
           <li>
             <p>
               Compute the average monthly contribution made to this creator.
@@ -1484,7 +1511,7 @@
     </statement>
     <solution>
       <p>
-        <ol marker="a">
+        <ol>
           <li>
             <p>
               Mean: <m>\$3 \times 0.5 + \$5 \times 0.3 + \$10 \times 0.15 + \$25 \times 0.05 = \$5.75</m>.
@@ -1530,7 +1557,7 @@
         </row>
       </tabular>
       <p>
-        <ol marker="a">
+        <ol>
           <li>
             <p>
               Compute the average impact for the experiments.
@@ -1717,7 +1744,7 @@
     </statement>
     <solution>
       <p>
-        <m>E = -0.0526</m>. <m>SD = 0.9986</m>.
+        <m>E(X) = -0.0526</m>. <m>SD = 0.9986</m>.
       </p>
     </solution>
   </exercise>

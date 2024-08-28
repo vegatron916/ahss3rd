@@ -12,7 +12,7 @@
   </introduction>
   <objectives>
     <title>Learning objectives</title>
-    <ul>
+    <ol marker="1.">
       <li>
         <p>
           Identify the individuals and the variables of a study.
@@ -29,7 +29,7 @@
           Understand what it means for two variables to be associated.
         </p>
       </li>
-    </ul>
+    </ol>
   </objectives>
   <subsection>
     <title>Observations, variables, and data matrices</title>
@@ -43,11 +43,11 @@
       Each row in the table represents a single loan.
       The formal name for a row is a <term>case</term>
       or <term>observational unit</term>.
-          <idx><h>unit of observation</h></idx>
-      The columns represent characteristics,
-      called <em>variables</em>,
-          <idx><h>variable</h></idx>
-      for each of the loans.
+<!--           <idx><h>unit of observation</h></idx>
+ -->      The columns represent characteristics,
+      called <term>variables</term>,
+<!--           <idx><h>variable</h></idx>
+ -->      for each of the loans.
       For example,
       the first row represents a loan of $7,500 with an interest rate of 7.34%, where the borrower is based in Maryland (MD) and has an income of $70,000.
     </p>
@@ -613,7 +613,7 @@
     <p>
       Many analyses are motivated by a researcher looking for a relationship between two or more variables.
       A social scientist may like to answer some of the following questions:
-      <ol marker="1.">
+      <ol marker="(1)">
         <li xml:id="ownershipMultiUnitQuestion">
           <p>
             If homeownership is lower than the national average in one county,
@@ -705,7 +705,7 @@
     <p>
       Because there is a downward trend in <xref ref="multiunitsVsOwnership"></xref>
       <mdash/> counties with more units in multi-unit structures are associated with lower homeownership <mdash/> these variables are said to be
-      <em>negatively associated</em>.
+      <term>negatively associated</term>.
          <!--  <idx><h>negative association</h></idx> -->
       A<nbsp/><term>positive association</term>
       is shown in the relationship between the <c>median_hh_income</c> and <c>pop_change</c> in <xref ref="pop_change_v_med_income"></xref>,
@@ -724,9 +724,9 @@
         No pair of variables is both associated and independent.
       </p>
     </assemblage>
-    <p>
+<!--     <p>
           <idx><h>data</h><h>county</h></idx>
-    </p>
+    </p> -->
   </subsection>
   <subsection>
     <title>Section summary</title>
@@ -736,9 +736,9 @@
         <p>
           Researchers often summarize data in a table,
           where the rows correspond to individuals or <term>cases</term>
-          and the columns correspond to the <em>variables</em>,
-            <idx><h>variable</h></idx>
-          the values of which are recorded for each individual.
+          and the columns correspond to the <term>variables</term>,
+<!--             <idx><h>variable</h></idx>
+ -->          the values of which are recorded for each individual.
         </p>
       </li>
       <li>
@@ -775,7 +775,7 @@
         Specifically,
         levels of carbon monoxide were recorded in parts per million,
         nitrogen dioxide and ozone in parts per hundred million,
-        and coarse particulate matter (PM<m>_{10}</m>) in <m>\mu g/m^3</m>.
+        and coarse particulate matter <m>(\text{PM}_{10})</m> in <m>\mu g/m^3</m>.
         Length of gestation data were collected on 143,196 births between the years 1989 and 1993,
         and air pollution exposure during gestation was calculated for each birth.
         The analysis suggested that increased ambient PM<m>_{10}</m> and,
@@ -1003,7 +1003,7 @@
         (<em>setosa</em>, <em>versicolor</em> and <em>virginica</em>).
         There were 50 flowers from each species in the data set.<fn>R.A Fisher.<url href="https://onlinelibrary.wiley.com/store/10.1111/j.1469-1809.1936.tb02137.x/asset/j.1469-1809.1936.tb02137.x.pdf"><q>The Use of Multiple Measurements in Taxonomic Problems</q>.</url> In: Annals of Eugenics 7 (1936), pp. 179-188.</fn>
       </p>
-      <sidebyside widths="50% 15%">
+      <sidebyside widths="40% 40%">
       <p>
         <ol>
           <li>

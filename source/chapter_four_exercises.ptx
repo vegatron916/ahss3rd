@@ -135,7 +135,7 @@
     </statement>
     <solution>
       <p>
-        <m>Z=1.56</m>, <m>P(Z > 1.56)= 0.0594</m>, i.e. 6%.
+        <m>Z=1.56</m>, <m>P(Z \gt 1.56)= 0.0594</m>, i.e. 6%.
       </p>
     </solution>
   </exercise>
@@ -333,7 +333,7 @@
     </statement>
     <solution>
       <p>
-        This is the same as checking that the average bag weight of the 10 bags is greater than 46 lbs. <m>SD_{\bar{x}}= \frac{3.2}{\sqrt{10}} = 1.012</m>; <m>z=\frac{46-45}{1.012} = 0.988</m>; <m>P(z > 0.988) = 0.162 = 16.2\%</m>.
+        This is the same as checking that the average bag weight of the 10 bags is greater than 46 lbs. <m>SD_{\bar{x}}= \frac{3.2}{\sqrt{10}} = 1.012</m>; <m>z=\frac{46-45}{1.012} = 0.988</m>; <m>P(z \gt 0.988) = 0.162 = 16.2\%</m>.
       </p>
     </solution>
   </exercise>
@@ -373,7 +373,7 @@
     </statement>
     <solution>
       <p>
-        First we need to check that the necessary conditions are met. There are <m>100 \times 0.360 = 36.0</m> expected successes and <m>100 \times (1 -0.360) = 64.0</m> expected failures, therefore the success-failure condition is met. Calculate using either (1) the normal approximation to the binomial distribution or (2) the sampling distribution of <m>\hat{p}</m>. (1) The binomial distribution can be approximated by <m>N(\mu = 0.360, \sigma = 4.8)</m>. <m>P( \gt 35) = P(Z > -0.208 = 0.5823</m>. (2) The sampling distribution of <m>\hat{p} ~ N(\mu = 0.360, \sigma = 0.048</m>. <m>P(\hat{p} \gt 0.35)=P(Z \gt -0.208) = 0.5823</m>.
+        First we need to check that the necessary conditions are met. There are <m>100 \times 0.360 = 36.0</m> expected successes and <m>100 \times (1 -0.360) = 64.0</m> expected failures, therefore the success-failure condition is met. Calculate using either (1) the normal approximation to the binomial distribution or (2) the sampling distribution of <m>\hat{p}</m>. (1) The binomial distribution can be approximated by <m>N(\mu = 0.360, \sigma = 4.8)</m>. <m>P(X \ge 35) = P(Z \gt -0.208) = 0.5823</m>. (2) The sampling distribution of <m>\hat{p} ~ N(\mu = 0.360, \sigma = 0.048</m>. <m>P(\hat{p} \gt 0.35)=P(Z \gt -0.208) = 0.5823</m>.
       </p>
     </solution>
   </exercise>

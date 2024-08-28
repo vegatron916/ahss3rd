@@ -9,19 +9,13 @@
       <em>sampling distribution</em> for a sample mean.
     </p>
   </introduction>
-  <subsection>
     <objectives>
     <title>Learning objectives</title>
       <ol>
         <li>
           <p>
-            Understand the concept of a sampling distribution.
-          </p>
-        </li>
-        <li>
-          <p>
             Describe the center, spread,
-            and shape of the sampling distribution of a sample mean.
+            and shape of the sampling distribution for a sample mean.
           </p>
         </li>
         <li>
@@ -41,12 +35,11 @@
         </li>
         <li>
           <p>
-            Verify that the conditions for normal approximation are met and carry out normal approximation involving a sample mean or sample sum.
+            Check the appropriate conditions and, when met, carry out normal approximation involving a sample mean or sample sum.
           </p>
         </li>
       </ol>
     </objectives>
-  </subsection>
   <subsection>
     <title>The mean and standard deviation of <m>\bar{x}</m></title>
     <p>
@@ -264,16 +257,18 @@
     <exercise>
       <statement>
         <p>
-          (a) Would you rather use a small sample or a large sample when estimating a parameter?
-          Why? (b) Using your reasoning from (a),
-          would you expect a point estimate based on a small sample to have smaller or larger standard deviation than a point estimate based on a larger sample?
-          <fn>(a) Consider two random samples:
-          one of size 10 and one of size 1000.
-          Individual observations in the small sample are highly influential on the estimate while in larger samples these individual observations would more often average each other out.
-          The larger sample would tend to provide a more accurate estimate. (b) If we think an estimate is better,
-          we probably mean it typically has less error.
-          Based on (a),
-          our intuition suggests that a larger sample size corresponds to a smaller standard deviation.</fn>
+          <ol marker="(a)">
+            <li>
+              <p>
+                Would you rather use a small sample or a large sample when estimating a parameter?  Why?
+              </p>
+            </li> 
+            <li>
+              <p>
+                Using your reasoning from (a), would you expect a point estimate based on a small sample to have smaller or larger standard deviation than a point estimate based on a larger sample?<fn>(a) Consider two random samples: one of size 10 and one of size 1000. Individual observations in the small sample are highly influential on the estimate while in larger samples these individual observations would more often average each other out. The larger sample would tend to provide a more accurate estimate. (b) If we think an estimate is better, we probably mean it typically has less error. Based on (a), our intuition suggests that a larger sample size corresponds to a smaller standard deviation.</fn>
+              </p>
+            </li>
+          </ol>
         </p>
       </statement>
     </exercise>
@@ -315,7 +310,7 @@
         <p>
           The average of the runners' ages is 35.05 years with a standard deviation of <m>\sigma = 8.97</m>.
           A simple random sample of 100 runners is taken. (a)<nbsp/>What is the standard deviation of the sample mean? (b)<nbsp/>Would you be surprised to get a sample of size 100 with an average of 36<nbsp/>years?
-          <fn>Use <xref ref="sd_sample_mean"></xref> with the population standard deviation to compute the standard deviation of the sample mean: <m>SD_{y}=8.97 \sqrt{100}=0.90</m> years. (b) It would not be surprising. 36 years is about 1 standard deviation from the true mean of 35.05. Based on the 68, 95 rule, we would get a sample mean at least this far away from the true mean approximately 100%-68% = 32% of the time.</fn>
+          <fn>Use <xref ref="sd_sample_mean"></xref> with the population standard deviation to compute the standard deviation of the sample mean: <m>SD_{y}=8.97 \sqrt{100}=0.90</m> years. (b) It would not be surprising. 36 years is about 1 standard deviation from the true mean of 35.05. Based on the 68, 95 rule, we would get a sample mean at least this far away from the true mean approximately <m>100\%-68\% = 32\%</m> of the time.</fn>
         </p>
       </statement>
     </exercise>
@@ -673,14 +668,14 @@
       <li>
         <p>
           These facts are used when solving the following two types of
-          <em>normal approximation</em>
+          <term>normal approximation</term>
           problems involving a <em>sample mean</em>
           or a <em>sample sum</em>.
-          <ol marker ="A">
+          <ol marker ="A:">
             <li>
               <p>
                 <em>Find the probability that a sample average will be greater/less than a certain value</em>.
-                <ol marker="1">
+                <ol marker="1.">
                   <li>
                     <p>
                       Verify that the population is approximately normal or that <m>n \ge 30</m>.
@@ -704,7 +699,7 @@
             <li>
               <p>
                 <em>Find the probability that a sample sum/total will be greater/less than a certain value</em>.
-                <ol marker="1">
+                <ol marker="1.">
                   <li>
                     <p>
                       Convert the sample sum into a sample average,

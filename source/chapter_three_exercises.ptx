@@ -166,7 +166,7 @@
         </row>
       </tabular>
       <p>
-        <ol marker="a)">
+        <ol>
           <li>
             <p>
               If we draw one individual at random, what is the probability that the respondent has excellent health and doesn't have health coverage?
@@ -210,7 +210,7 @@
     <statement>
       <p>
         Sally gets a cup of coffee and a muffin every day for breakfast from one of the many coffee shops in her neighborhood. She picks a coffee shop each morning at random and independently of previous days. The average price of a cup of coffee is $1.40 with a standard deviation of 30¢ ($0.30), the average price of a muffin is $2.50 with a standard deviation of 15¢, and the two prices are independent of each other.
-        <ol marker="a">
+        <ol>
           <li>
             <p>
               What is the mean and standard deviation of the amount she spends on breakfast daily?
@@ -229,12 +229,12 @@
         <ol>
           <li>
             <p>
-              <m>E = \$3.90</m>. <m>SD = \$0.34</m>.
+              <m>E(X) = \$3.90</m>. <m>SD = \$0.34</m>.
             </p>
           </li>
           <li>
             <p>
-              <m>E = \$27.30</m>. <m>SD = \$0.89</m>.
+              <m>E(X) = \$27.30</m>. <m>SD = \$0.89</m>.
             </p>
           </li>
         </ol>
@@ -268,7 +268,7 @@
         </row>            
       </tabular>
       <p>
-        <ol marker="a">
+        <ol>
           <li>
             <p>
               An entire box of ice cream, plus 3 scoops from a second box is served at a party. How much ice cream do you expect to have been served at this party? What is the standard deviation of the amount of ice cream served?
@@ -358,7 +358,7 @@
       </statement>
       <solution>
         <p>
-          0 wins (-$3): 0.1458. 1 win (-1$): 0.3936. 2 wins (+1$): 0.3543. 3 wins (+$3): 0.1063.
+          0 wins (-$3): 0.1458. 1 win (-$1): 0.3936. 2 wins (+$1): 0.3543. 3 wins (+$3): 0.1063.
         </p>
       </solution>
     </exercise>

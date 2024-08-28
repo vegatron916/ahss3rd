@@ -18,7 +18,7 @@
   </introduction>
   <objectives>
     <title>Learning objectives</title>
-    <ul>
+    <ol marker="1.">
       <li>
         <p>
           Use Z-scores and the standard normal model to approximate a distribution where appropriate.
@@ -34,7 +34,7 @@
           Find the value that corresponds to a given percentile when the distribution is approximately normal.
         </p>
       </li>
-    </ul>
+    </ol>
   </objectives>
   <subsection>
     <title>Normal distribution model</title>
@@ -45,7 +45,7 @@
       unimodal, bell curve is ubiquitous throughout statistics.
       Indeed it is so common,
       that people often know it as the <term>normal curve</term>
-      or <em>normal distribution</em>.
+      or <term>normal distribution</term>.
           <idx><h>distribution</h><h>normal</h></idx>
       <fn>
       It is also introduced as the Gaussian distribution after Frederic Gauss,
@@ -82,7 +82,7 @@
     </figure>
     <p>
       Because the mean and standard deviation describe a normal distribution exactly,
-      they are called the distribution's <em>parameters</em>.
+      they are called the distribution's <term>parameters</term>.
           <idx><h>parameter</h></idx>
       The normal distribution with mean <m>\mu=0</m> and standard deviation <m>\sigma = 1</m> is called the
       <term>standard normal distribution</term>..
@@ -122,7 +122,7 @@
           Similarly, using Tom's ACT score, 24, along with the ACT mean and SD we can find his Z-scores.
         </p>
         <p>
-          <m>Z_{\text{Tom}} = \frac{x_{\text{Tom}}-\mu_{\text{ACT}}}{\sigma_{\text{ACT}}} = \frac{24-21}{6} = 5</m>
+          <m>Z_{\text{Tom}} = \frac{x_{\text{Tom}}-\mu_{\text{ACT}}}{\sigma_{\text{ACT}}} = \frac{24-21}{6} = 0.5</m>
         </p>
         <p>
           Because Ann's score was 1 standard deviation above the mean, while Tom's score was 0.5 standard deviations above the mean, we can say that Ann did better than Tom.
@@ -160,7 +160,7 @@
       Assuming that both the that both the SAT and ACT distributions are nearly normally distributed, what percent of test takers scored lower than Ann? What percent scored lower than Tom? To answer these question exactly, we would need all of the data. However, if we use the information that SAT and ACT distributions are nearly normal, we can estimate these percents. <xref ref="satActNormals"></xref> shows these distributions modeled with a normal curve. If we can find the percent of the normal curve that is to the left of Ann’s score, we could use that percent as our estimate of the percent of the data points that are smaller than Ann’s score. We call this process <em>normal approximation</em>. The steps are:
     </p>
     <p>
-      <ol marker="1">
+      <ol marker="1.">
         <li>
           <p>
             First verify that the distribution can be reasonably modeled with a normal distribution.
@@ -198,7 +198,7 @@
     </figure>
     <p>
       There are many techniques for finding this area, and we’ll discuss three of the options.
-      <ol marker="1">
+      <ol marker="1.">
         <li>
           <p>
             The most common approach in practice is to use statistical software. For example, in the program R, we could find the area shown in <xref ref="BelowOneZ"></xref> using the following command, which takes in the Z-score of 1 and returns the lower tail area:
@@ -208,7 +208,7 @@
             </pre>
         </p>
         <p>
-          Using the online Desmos calculator, we could do: normaldist( ), check the <q>Find Cumulative Probability (CDF)</q> box and set Max to 1.
+          Using the online Desmos calculator, we could do: <c>normaldist( )</c>, check the <q>Find Cumulative Probability (CDF)</q> box and set Max to 1.
         </p>
         <p>
           According to these calculation, the area shaded that is below <m>Z = 1</m> is 0.841, so we estimate that 84.1% of SAT test takers score below 1300 and that Ann is at the 84th percentile. There are many other software options, such as Pythn or SAS; even spreadsheet programs such as Excel and Google Sheets support these calculations.
@@ -888,7 +888,7 @@
       <solution>
         <image width="90%" source="images/summarizing/zscoreleftof1point5.png" />
         <p>
-          To find an area under the normal curve using a calculator, first identify a lower bound and an upper bound. We want all of the area to the left of 1.5, so the lower bound should be <m>-\inf</m>. However, the area under the curve is negligible when Z is smaller than -5, so we will use -5 as the lower bound. Using a lower bound of -5 and an upper bound of 1.5, we get <m>P(Z \lt 1.5) = 0.933</m>.
+          To find an area under the normal curve using a calculator, first identify a lower bound and an upper bound. We want all of the area to the left of 1.5, so the lower bound should be <m>-\infty</m>. However, the area under the curve is negligible when Z is smaller than -5, so we will use -5 as the lower bound. Using a lower bound of -5 and an upper bound of 1.5, we get <m>P(Z \lt 1.5) = 0.933</m>.
         </p>
       </solution>
     </example>
@@ -1026,12 +1026,12 @@
       </li>
       <li>
         <p>
-          It is often useful to use the standard normal distribution, which has mean 0 and SD 1, to approximate a discrete histogram. There are two common types of <em>normal approximation problems</em>, and for each a key step is to find a <m>Z</m>-score.
-          <ol marker="A">
+          It is often useful to use the standard normal distribution, which has mean 0 and SD 1, to approximate a discrete histogram. There are two common types of <term>normal approximation problems</term>, and for each a key step is to find a <m>Z</m>-score.
+          <ol marker="A:">
             <li>
               <p>
                 <em>Find the percent or probability of a value greater/less than a given <m>x</m>-value.</em>
-                <ol marker="1">
+                <ol marker="1.">
                   <li>
                     <p>
                       Verify that the distribution of interest is approximately normal.
@@ -1053,7 +1053,7 @@
             <li>
               <p>
                 <em>Find the <m>x</m>-value that corresponds to a given percentile.</em>
-                <ol marker="1">
+                <ol marker="1.">
                   <li>
                     <p>
                       Verify that the distribution of interest is approximately normal.

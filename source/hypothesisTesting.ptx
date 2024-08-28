@@ -12,8 +12,7 @@
       we will set up a framework for answering questions such as this and will look at the different types of decision errors that researcher can make when drawing conclusions based on data.
     </p>
   </introduction>
-  <subsection>
-    <objectives>
+  <objectives>
     <title>Learning objectives</title>
       <ol>
         <li>
@@ -55,7 +54,6 @@
         </li>
       </ol>
     </objectives>
-  </subsection>
   <subsection>
     <title>Case study: medical consultant</title>
     <p>
@@ -336,7 +334,7 @@
     </example>
     <p>
       The consultant's complication rate for her 142 clients was 0.063
-      (<m>0.063 \times 142 \approx 9</m>).
+      <m>(0.063 \times 142 \approx 9)</m>.
       What is the probability that a sample would produce a number of complications this far from the expected value of 14.2,
       <em>if her true complication rate were</em> 0.10,
       that<nbsp/>is, if <m>H_0</m> were true?
@@ -931,7 +929,7 @@
   <subsection>
   <title>Statistical significance versus a real difference</title>
     <p>
-      When a result is statistically significant at the <m>\alpha= 0.05</m> level, we have evidence that the result is real. However, when there is no difference or effect, we can expect that 5% of the time the test conclusion will lead to a Type I Error and incorrectly reject the null hypothesis. Therefore we must beware of what is called p-hacking, in which researchers may test many, many hypotheses and then publish the ones that come out statistically significant. As we noted, we can expect 5% of the results to be significant when the null hypothesis is true and there really is no difference or effect.<fn>The problem is even greater than p-hacking. In what has been called the <q>reproducibility crisis</q>, researchers have failed to reproduce a large proportion of results that were found significant and were published in scientific journals. This problem highlights the importance of research that reproduces earlier work rather than taking the word of a single study.</fn>
+      When a result is statistically significant at the <m>\alpha= 0.05</m> level, we have evidence that the result is real. However, when there is no difference or effect, we can expect that 5% of the time the test conclusion will lead to a Type I Error and incorrectly reject the null hypothesis. Therefore we must beware of what is called p-hacking, in which researchers may test many, many hypotheses and then publish the ones that come out statistically significant. As we noted, we can expect 5% of the results to be significant when the null hypothesis is true and there really is no difference or effect.<fn>The problem is even greater than p-hacking. In what has been called the <q>reproducibility crisis</q>, researchers have failed to reproduce a large proportion of results that were found significant and were published in scientific journals. This problem highlights the importance of research that reproduces earlier work rather than taking the word of a single study. Also keep in mind that the probability that a difference will be found to be significant given that there is no real difference is not the same as the probability that a difference is not real, given that it was found significant. Depending upon the veracity of the hypotheses tested, the latter can be upwards of 80%, leading some to assert that <q>most published research is false</q>. <url href="https://www.economist.com/briefing/2013/10/18/trouble-at-the-lab">https://www.economist.com/briefing/2013/10/18/trouble-at-the-lab</url></fn>
     </p>
 
   </subsection>
@@ -943,12 +941,12 @@
       <ul>
         <li>
           <p>
-            <em>The individual observations must be independent.</em> A random sample from less than 10% of the population ensures the observations are independent. In experiments, we generally require that subjects are randomized into groups. If independence fails, then advanced techniques must be used, and in some such cases, inference may not be possible.
+            <alert>The individual observations must be independent.</alert> A random sample from less than 10% of the population ensures the observations are independent. In experiments, we generally require that subjects are randomized into groups. If independence fails, then advanced techniques must be used, and in some such cases, inference may not be possible.
           </p>
         </li>
         <li>
           <p>
-            Other conditions focus on sample size and skew. For example, in <xref ref="foundationsForInference"></xref> we looked at the success-failure condition and sample size condition for when <m>\hat{p}</m> and <m>\bar{x}</m> will follow a nearly normal distribution.
+            <alert>Other conditions focus on sample size and skew.</alert> For example, in <xref ref="foundationsForInference"></xref> we looked at the success-failure condition and sample size condition for when <m>\hat{p}</m> and <m>\bar{x}</m> will follow a nearly normal distribution.
           </p>
         </li>
       </ul>
@@ -1121,7 +1119,7 @@
       </li> -->
       <li>
         <p>
-          <em>Decision errors</em>.
+          <term>Decision errors</term>.
             <idx><h>decision errors</h></idx>
         In a hypothesis test,
           there are two types of decision errors that could be made.
@@ -1517,7 +1515,7 @@
         <ol>
           <li>
             <p>
-              <m>H_{0}</m>: Anti-depressants do not affect the symptoms of Fibromyalgia. <m>HA</m>: Anti-depressants do affect the symptoms of Fibromyalgia (either helping or harming).
+              <m>H_{0}</m>: Anti-depressants do not affect the symptoms of Fibromyalgia. <m>H_{A}</m>: Anti-depressants do affect the symptoms of Fibromyalgia (either helping or harming).
             </p>
           </li>
           <li>
@@ -1541,9 +1539,9 @@
   <p>
     Statistical inference is the practice of making decisions from data in the context of uncertainty.
     In this chapter, we introduced two frameworks for inference:
-    <em>confidence intervals</em>
+    <term>confidence intervals</term>
         <idx><h>confidence interval</h></idx>
-    and <em>hypothesis tests</em>.
+    and <term>hypothesis tests</term>.
         <idx><h>hypothesis test</h></idx>
   </p>
   <p>

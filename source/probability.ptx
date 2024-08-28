@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="probability">
-  <title>Probability</title>
+  <title>Probability and probability distributions</title>
   <introduction>
     <p>
           <idx><h>probability</h></idx>

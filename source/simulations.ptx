@@ -12,9 +12,8 @@
       we will look at the concepts that underlie simulations.
     </p>
   </introduction>
-  <subsection>
-    <title>Learning objectives</title>
-    <p>
+  <objectives>
+  <title>Learning objectives</title>
     <ol>
       <li>
         <p>
@@ -33,8 +32,7 @@
         </p>
       </li>
     </ol>
-    </p>
-  </subsection>
+  </objectives>
   <subsection>
     <title>Setting up and carrying out simulations</title>
     <p>
@@ -42,7 +40,7 @@
       Sometimes we have a problem we want to solve but we don't know the appropriate formula,
       or even worse, a formula may not exist.
       In this case,
-      one common approach is to estimate the probability using <em>simulations</em>.
+      one common approach is to estimate the probability using <term>simulations</term>.
     </p>
     <p>
       You may already be familiar with simulations.

@@ -12,10 +12,9 @@
       We will continue with the <c>email50</c> data set and investigate multiple quantitative summarizes for numerical data.
     </p>
   </introduction>
-  <subsection>
-    <objectives>
+  <objectives>
     <title>Learning objectives</title>
-      <ul>
+      <ol marker="1.">
         <li>
           <p>
             Calculate, interpret, and compare the two measures of center
@@ -70,15 +69,14 @@
             spread, shape, and outliers.
           </p>
         </li>
-      </ul>
+      </ol>
     </objectives>
-  </subsection>
   <subsection xml:id="center">
     <title>Measures of center</title>
     <p>
       In the previous section,
       we saw that modes can occur anywhere in a data set.
-      Therefore, mode is not a measure of <term>center</term>.
+      Therefore, mode is not a measure of center.
       We understand the term <em>center</em> intuitively,
       but quantifying what is the center can be a little more challenging.
       This is because there are different definitions of center.
@@ -378,6 +376,7 @@
         </md>
       </p>
     </assemblage>
+
     <p>
       The variance is useful for mathematical reasons,
       but the standard deviation is easier to interpret because it has the same units as the data set.
@@ -399,6 +398,25 @@
         distance that observations fall from the mean.
       </p>
     </assemblage>
+
+    <example>
+      <statement>
+        <p>
+          Earlier we reported that the mean family income in the U.S. in 2017 was $99,114.
+          Estimating the standard deviation of income as approximately $50,000,
+          is a family income of $60,000 far from the mean or relatively close to the mean?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Because $60,000 is less that one standard deviation from the mean,
+          it is relatively close to the mean.
+          If the value were more than 2 standard deviations away from the mean,
+          we would consider it far from the mean.
+        </p>
+      </solution>
+    </example>
+
     <p>
       In <xref ref="ch_distributions"></xref>, we encounter a bell-shaped distribution known as the
       <em>normal distribution</em>.
@@ -430,23 +448,7 @@
         </p>
       </statement>
     </exercise>
-    <example>
-      <statement>
-        <p>
-          Earlier we reported that the mean family income in the U.S. in 2017 was $99,114.
-          Estimating the standard deviation of income as approximately $50,000,
-          is a family income of $60,000 far from the mean or relatively close to the mean?
-        </p>
-      </statement>
-      <solution>
-        <p>
-          Because $60,000 is less that one standard deviation from the mean,
-          it is relatively close to the mean.
-          If the value were more than 2 standard deviations away from the mean,
-          we would consider it far from the mean.
-        </p>
-      </solution>
-    </example>
+
     <p>
       When describing any distribution,
       comment on the three important characteristics of center, spread,
@@ -473,7 +475,7 @@
     </example>
     <p>
       In this chapter we use standard deviation as a descriptive statistic to describe the variability in a given data set.
-      In <xref ref="foundationsForInference"></xref>
+      In <xref ref="ch_distributions"></xref>
       we will use the standard deviation to assess how close a sample mean is to the population mean.
     </p>
   </subsection>
@@ -570,7 +572,7 @@
           and suppose we observe <m>x=5.19</m>.
         </p>
         <p>
-          <ol marker="a">
+          <ol marker="(a)">
             <li>
               <p>
                 Find the Z-score of <m>x</m>.
@@ -625,8 +627,7 @@
       The five summary statistics used in a box plot are known as the
       <term>five-number summary</term>,
       which consists of the minimum, the maximum,
-      and the three quartiles (<m>Q_1</m>,
-      <m>Q_2</m>, <m>Q_3</m>) of the data set being studied.
+      and the three quartiles <m>(Q_1, Q_2, Q_3)</m> of the data set being studied.
     </p>
     <p>
       <m>Q_2</m>
@@ -654,7 +655,7 @@
     <p>
       We calculate the variability in the data using the range of the middle 50% of the data:
       <m>Q_3 - Q_1 = 13,375</m>.
-      This quantity is called the <em>interquartile range</em><idx><h>interquartile range (IQR)</h></idx> (IQR, for short).
+      This quantity is called the <term>interquartile range</term><idx><h>interquartile range (IQR)</h></idx> (IQR, for short).
       It, like the standard deviation,
       is a measure of variability
           <idx><h>variability</h></idx>
@@ -667,9 +668,14 @@
       <p>
         The IQR<idx><h>interquartile range (IQR)</h></idx> is the length of the box in a box plot.
         It is computed as
-        <men>
+        <!-- <men>
           IQR = Q_3 - Q_1
-        </men>
+        </men> -->
+        <md>
+          <mrow>
+            IQR = Q_3 - Q_1
+          </mrow>
+        </md>
         where <m>Q_1</m> and <m>Q_3</m> are the <m>25^{th}</m> and <m>75^{th}</m> percentiles.
       </p>
     </assemblage>
@@ -817,17 +823,19 @@
     </example>
   </subsection>
   <subsection xml:id="summarizedata">
-    <title>Calculator/Desmos: summarizing 1-variable statistics</title>
+    <title>Technology: summarizing 1-variable statistics</title>
     <p>
-      One can use a handheld calculator or online software such as Desmos to calculate summary statistics.
-      More advanced statistical software packages include R
-      (in which most of the graphs in this text were made),
-      Python, SAS, and STATA.
+      ine calculators such as Desmos or a handheld calculator can be used to calculate summary statistics. More advanced statistical software packages include R (which was used for most of the graphs in this text), Python, SAS, and STATA.
     </p>
-    <figure xml:id="desmos1VarStats">
-      <caption>Use this <url href="https://teacher.desmos.com/activitybuilder/custom/5cba84e635d2100c8d47c684">1-Var Stats calculator</url>(openintro.org/ahss/desmos) to graph and find summary statistics for a single variable in Desmos, as shown in the figure.</caption>
-      <image width="80%" source="images/summarizing/email50Desmos.png" />
-    </figure>
+    <p>
+      Get started quickly with this <url href="https://www.desmos.com/calculator/4yfmnfirsb">Desmos 1-VarStats Calculator</url> (available at <url href="openintro.org/ahss/desmos">openintro.org/ahss/desmos</url>).
+    </p>
+    <sidebyside>
+      <image width="80%" source="images/summarizing/desmos1VarStats.png" />
+    </sidebyside>
+    <p>
+      Calculator instructions
+    </p>
     <assemblage xml:id="entering_data_ti">
       <title>TI-83/84: Entering data</title>
       <p>
@@ -1021,6 +1029,31 @@
       <video preview="generic" youtube="VvCw5MRo1P4" />
     </sidebyside>
     </assemblage>
+
+    <assemblage>
+      <title>TI-83/84: What to do if you cannot find <c>L1</c> or another list Restore lists <c>L1</c>-<c>L6</c> using the following steps:</title>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Press <c>STAT</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Choose <c>5:SetUpEditor</c>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Hit <c>ENTER</c>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </assemblage>
+
+
     <assemblage xml:id="summary_stats_and_boxplot_casio">
       <title>Casio fx-9750GII: Drawing a box plot and 1-variable statistics</title>
       <p>
@@ -1088,64 +1121,7 @@
       <video preview="generic" youtube="bHoe3w78r7w" />
     </sidebyside>
     </assemblage>
-    <example>
-      <statement>
-        <p>
-          Enter the following 10 data points into a calculator or into this <url href="https://teacher.desmos.com/activitybuilder/custom/5cba84e635d2100c8d47c684">1-Var Stats calculator</url> (openintro.org/ahss/desmos):
-        </p>
-        <tabular>
-          <row>
-            <cell>5</cell>
-            <cell>8</cell>
-            <cell>1</cell>
-            <cell>19</cell>
-            <cell>3</cell>
-            <cell>1</cell>
-            <cell>11</cell>
-            <cell>18</cell>
-            <cell>20</cell>
-            <cell>5</cell>
-          </row>
-        </tabular>
-        <p>
-          Find the summary statistics and make a box plot of the data.
-        </p>
-      </statement>
-      <solution>
-        <p>
-          The summary statistics should be <m>\bar{x} = 9.1</m>,
-          <m>S_{x} = 7.48</m>,
-          <m>Q_{1} = 3</m>, etc.
-          The box plot should be as follows.
-        </p>
-          <sidebyside widths="30% 50%">
-          <image source="images/summarizing/TI83_box_plot_A.png" />
-          <image source="images/summarizing/1VarStatsDesmos.png" />
-          </sidebyside>
-      </solution>
-    </example>
-    <assemblage>
-      <title>TI-83/84: What to do if you cannot find <c>L1</c> or another list Restore lists <c>L1</c>-<c>L6</c> using the following steps:</title>
-      <p>
-        <ol>
-          <li>
-            <p>
-              Press <c>STAT</c>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Choose <c>5:SetUpEditor</c>.
-            </p>
-          </li>
-          <li>
-            <p>
-              Hit <c>ENTER</c>.
-            </p>
-          </li>
-        </ol>
-      </p>
-    </assemblage>
+
     <assemblage>
       <title>Casio fx-9750GII: Deleting a data list</title>
       <p>
@@ -1177,6 +1153,59 @@
       <video preview="generic" youtube="bHoe3w78r7w" />
     </sidebyside>
     </assemblage>
+
+    <exercise>
+      <statement>
+        <p>
+          Enter the following 10 data points into a calculator.
+        </p>
+        <tabular>
+          <row>
+            <cell>5</cell>
+            <cell>8</cell>
+            <cell>1</cell>
+            <cell>19</cell>
+            <cell>3</cell>
+            <cell>1</cell>
+            <cell>11</cell>
+            <cell>18</cell>
+            <cell>20</cell>
+            <cell>5</cell>
+          </row>
+        </tabular>
+        <p>
+          Find the summary statistics and make a box plot of the data.<fn>The summary statistics should be <m>\bar{x} = 9.1</m>,
+          <m>S_{x} = 7.48</m>,
+          <m>Q_{1} = 3</m>, etc.
+          The box plot should be as follows.
+          <image source="images/summarizing/TI83_box_plot_A.png" />
+          </fn>
+        </p>
+      </statement>
+<!--       <solution>
+        <p>
+          The summary statistics should be <m>\bar{x} = 9.1</m>,
+          <m>S_{x} = 7.48</m>,
+          <m>Q_{1} = 3</m>, etc.
+          The box plot should be as follows.
+        </p>
+          <sidebyside widths="30% 50%">
+          <image source="images/summarizing/TI83_box_plot_A.png" />
+          <image source="images/summarizing/1VarStatsDesmos.png" />
+          </sidebyside>
+      </solution> -->
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Use the <c>email50</c> data set at <url href="openintro.org/data">openintro.org/data</url>data and Screen 2 of this Desmos 1-Var Stats Calculator to summarize the num char variable (number of characters in an email).<fn>Remember, the Desmos Calculators and Activities in this book can be found at <url href="openintro.org/ahss/desmos">openintro.org/ahss/desmos</url>. Down the <c>email50</c> CSV file and open it. Copy and paste the num char column into the Desmos calculator, replacing the data currently in x1. Adjust window as needed and you should get the following
+            <image source="images/summarizing/1VarStatsDesmosExercise2.png" />
+          </fn>
+        </p>
+      </statement>
+    </exercise>    
+    
   </subsection>
   <subsection>
     <title>Outliers and robust statistics</title>
@@ -1746,7 +1775,7 @@
     </figure>
     <p>
       Another useful plotting method uses
-      <em>hollow histograms</em>
+      <term>hollow histograms</term>
           <idx><h>hollow histogram</h></idx>
       to compare numerical data across groups.
       These are just the outlines of histograms of each group put on the same plot,
@@ -1946,7 +1975,7 @@
       </li>
       <li>
         <p>
-          <em>Mean</em>
+          <term>Mean</term>
             <idx><h>mean</h></idx>
           and <term>median</term> are measures of center. (A common mistake is to report
           <term>mode</term> as a measure of center.
@@ -1986,9 +2015,9 @@
       </li>
       <li>
         <p>
-          <em>Standard deviation (SD)</em>
+          <term>Standard deviation (SD)</term>
             <idx><h>standard deviation</h></idx>
-          and <em>Interquartile range (IQR)</em><idx><h>interquartile range (IQR)</h></idx> are measures of spread.
+          and <term>Interquartile range (IQR)</term><idx><h>interquartile range (IQR)</h></idx> are measures of spread.
           SD measures the typical spread from the mean,
           whereas IQR measures the spread of the middle 50% of the data.
           <ul>
@@ -2022,7 +2051,7 @@
       </li>
       <li>
         <p>
-          <em>Range</em>
+          <term>Range</term>
             <idx><h>range</h></idx>
           is also sometimes used as a measure of spread.
           The range of a data set is defined as the difference between the maximum value and the minimum value, i.e.
@@ -2031,7 +2060,7 @@
       </li>
       <li>
         <p>
-          <em>Outliers</em>
+          <term>Outliers</term>
             <idx><h>outlier</h></idx>
           are observations that are extreme relative to the rest of the data.
           Two rules of thumb for identifying observations as outliers are:
@@ -2056,34 +2085,39 @@
           Median and IQR are more robust and less sensitive to outliers.
         </p>
       </li>
-      <li>
+<!--       <li>
         <p>
           The <term>empirical rule</term> states that for normal distributions,
           about 68% of the data will be within one standard deviation of the mean,
           about 95% will be within two standard deviations of the mean,
           and about 99.7% will be within three standard deviations of the mean.
         </p>
-      </li>
+      </li> -->
       <li>
         <p>
-          <em>Linear transformations of data</em>.
-            <idx><h>linear transformations of data</h></idx>
-        Adding a constant to every value in a data set shifts the mean but does not affect the standard deviation.
-          Multiplying the values in a data set by a constant will multiply the mean and the standard deviation by that constant,
-          except that the standard deviation must always remain positive.
+          A <term>Z-score</term> represents the number of standard deviations a value in a data set is above or below the mean. To calculate a Z-score use: <m>Z=\frac{x-mean}{SD}</m>.
         </p>
       </li>
       <li>
         <p>
-          <em>Box plots</em>
+          <em>Z-scores do not depend on units</em>. When looking at distributions with different units or different standard deviations, Z-scores are useful for comparing how far values are away from the mean (relative to the distribution of the data)
+        </p>
+      </li>
+      <li>
+        <p>
+          <term>Linear transformations of data</term>.
+            <idx><h>linear transformations of data</h></idx> Adding a constant to every value in a data set shifts the mean but does not affect the standard deviation. Multiplying the values in a data set by a constant will multiply the mean and the standard deviation by that constant, except that the standard deviation must always remain positive.
+        </p>
+      </li>
+      <li>
+        <p>
+          <term>Box plots</term>
             <idx><h>box plot</h></idx>
           do not show the <em>distribution</em>
           of a data set in the way that histograms do.
           Rather, they provide a visual depiction of the
           <term>5-number summary</term>, which consists of:
-          <m>min</m>, <m>Q_1</m>, <m>Q_2</m>, <m>Q_3</m>, <m>max</m>.
-          It is important to be able to identify the median, <m>IQR</m>,
-          and direction of skew from a box plot.
+          <m>min</m>, <m>Q_1</m>, <m>Q_2</m>, <m>Q_3</m>, <m>max</m>. While a box plot does not indicate modes, it can show skew and outliers.
         </p>
       </li>
     </ul>
@@ -2454,12 +2488,12 @@
         <ol>
           <li>
             <p>
-              Dist 2 has a higher mean since 20 > 13, and a higher standard deviation since 20 is further from the rest of the data than 13.
+              Dist 2 has a higher mean since <m>20 \gt 13</m>, and a higher standard deviation since 20 is further from the rest of the data than 13.
             </p>
           </li>
           <li>
             <p>
-              Dist 1 has a higher mean since <m>-20 > -40</m>, and Dist 2 has a higher standard deviation since -40 is farther away from the rest of the data than -20.
+              Dist 1 has a higher mean since <m>-20 \gt -40</m>, and Dist 2 has a higher standard deviation since -40 is farther away from the rest of the data than -20.
             </p>
           </li>
           <li>

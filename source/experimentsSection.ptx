@@ -16,7 +16,7 @@
   </introduction>
   <objectives>
   <title>Learning objectives</title>
-    <ul>
+    <ol marker="1.">
       <li>
         <p>
           Identify the subjects/experimental units,
@@ -63,7 +63,7 @@
           the number of levels for each factor and the total number of treatments.
         </p>
       </li>
-    </ul>
+    </ol>
   </objectives>
   <subsection xml:id="biasInHumanExperiments">
   <title>Reducing bias in human experiments</title>
@@ -178,7 +178,7 @@
       <ul>
         <li>
           <p>
-            <em>Direct Control.</em>
+            Direct Control.
             <idx><h>direct control</h></idx>
             Researchers assign treatments to cases,
             and they do their best to <term>control</term> any other differences in the groups.
@@ -384,7 +384,7 @@
       (soft and loud)
       and that <c>type</c> has three levels
       (dance, classical, and punk).
-      Then, we would want to carry out the experiment at each of the six (<m>2 \times 3 = 6</m>) combinations:
+      Then, we would want to carry out the experiment at each of the six <m>(2 \times 3 = 6)</m> combinations:
       soft dance, soft classical, soft punk,
       loud dance, loud classical, loud punk.
       Each of the these combinations is a <term>treatment</term>.
@@ -443,7 +443,7 @@
       </li>
       <li>
         <p>
-          <em>Replication</em>,
+          <term>Replication</term>,
             <idx><h>replication</h></idx>
           or imposing the treatments on many subjects,
           gives more data and decreases the likelihood that the treatment groups differ on some characteristic due to chance alone (i.e. in spite of the randomization).
@@ -451,9 +451,9 @@
       </li>
       <li>
         <p>
-          An ideal experiment is <term>randomized</term>, <em>controlled</em>,
+          An ideal experiment is randomized, controlled,
             <idx><h>control</h></idx>
-          and <term>double-blind</term>.
+          and double-blind.
         </p>
       </li>
       <li>

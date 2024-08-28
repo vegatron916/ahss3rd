@@ -24,8 +24,7 @@
       </ul>
     </p>
   </introduction>
-  <subsection>
-    <objectives>
+  <objectives>
     <title>Learning objectives</title>
       <ol>
         <li>
@@ -50,7 +49,6 @@
         </li>
       </ol>
     </objectives>
-  </subsection>
   <subsection>
     <title>Introduction</title>
     <p>
@@ -340,7 +338,7 @@
       </md>
     </p>
     <p>
-      Looking back to how the fraction 0.7078 was computed <mdash/> as the fraction of users who did not perform a new search (<m>7078/10000</m>) <mdash/> these three expected counts could have been computed as
+      Looking back to how the fraction 0.7078 was computed <mdash/> as the fraction of users who did not perform a new search <m>(7078/10000)</m> <mdash/> these three expected counts could have been computed as
       <md>
         <mrow>\left(\frac{\text{ row 1 total } }{\text{ table total } }\right)\text{ (column 1 total) }  \amp = 3539</mrow>
         <mrow>\left(\frac{\text{ row 1 total } }{\text{ table total } }\right)\text{ (column 2 total) }  \amp = 1769.5</mrow>
@@ -1306,7 +1304,7 @@
     </exercise> -->
   </subsection>
   <subsection xml:id="calcchisq2way">
-    <title>Calculator: chi-square test for two-way tables</title>
+    <title>Technology: chi-square test for two-way tables</title>
     <assemblage xml:id="chi_entering_data_ti">
       <title>TI-83/84: Entering data into a two-way table</title>
       <p>
@@ -1343,7 +1341,7 @@
     </sidebyside>
     </assemblage>
     <assemblage xml:id="chi_homog_ind_ti">
-      <title>Chi-square test of homogeneity and independence</title>
+      <title>TI-83/84: Chi-square test of homogeneity and independence</title>
       <p>
         Use <c>STAT</c>, <c>TESTS</c>,
         <m>\chi^2</m><c>-Test</c>.
@@ -1396,7 +1394,7 @@
       </sidebyside>
     </assemblage>
     <assemblage xml:id="chi_expected_counts_homog_ind_ti">
-      <title>Chi-square test of homogeneity and independence</title>
+      <title>TI-83/84: Chi-square test of homogeneity and independence</title>
       <p>
         TI-83/84: Finding the expected counts
         <ol>
@@ -1537,7 +1535,36 @@
           reproduced below,
           and a calculator to find the expected values and the <m>\chi^2</m>-statistic,
           <m>df</m>,
-          and p-value for the chi-square test for independence.
+          and p-value for the chi-square test for independence.<fn>
+          <solution>
+            <p>
+              First create a 2 × 3 matrix with the data. The final summaries should be <m>\chi^2 = 106.4</m>, p-value is <m>p = 8.06 \times 10^{−24} \approx 0</m>, and <m>df = 2</m>. Below is the matrix of expected values:
+            </p>
+            <tabular>
+              <row bottom="minor">
+                <cell></cell>
+                <cell></cell>
+                <cell halign="center">Obama</cell>
+                <cell halign="center">Congr. Dem</cell>
+                <cell halign="center">Congr. Rep</cell>
+              </row>
+              <row>
+                <cell>Approve</cell>
+                <cell></cell>
+                <cell halign="center">731.59</cell>
+                <cell halign="center">693.45</cell>
+                <cell halign="center">693.96</cell>
+              </row>
+              <row bottom="minor">
+                <cell>Disapprove</cell>
+                <cell></cell>
+                <cell halign="center">726.41</cell>
+                <cell halign="center">688.55</cell>
+                <cell halign="center">689.04</cell>
+              </row>
+            </tabular>
+          </solution>
+          </fn>
         </p>
         <tabular>
         <row>
@@ -1622,7 +1649,7 @@
       </li>
       <li>
         <p>
-          When there are <em>multiple samples or treatments</em>
+          When there are <alert>multiple samples or treatments</alert>
           and we are comparing the distribution of a categorical variable across several groups,
           e.g. comparing the distribution of rural/urban/suburban dwellers among 4 states,
           the hypotheses can often be written as follows:
@@ -1643,7 +1670,7 @@
       </li>
       <li>
         <p>
-          When there is <em>one random sample</em>
+          When there is <alert>one random sample</alert>
           and we are looking for association or dependence between two categorical variables,
           e.g. testing for an association between gender and political party,
           the hypotheses can be written as:
@@ -1714,7 +1741,7 @@
             <p>
             	Answer each of the following questions under the null hypothesis that being part of a support group does not affect the ability of people to quit smoking,
             	and indicate whether the expected values are higher or lower than the observed values.
-            	<ol marker="i">
+            	<ol marker="i.">
               		<li>
               			<p>
               				How many subjects in the <q>patch + support</q> group would you expect to quit?
@@ -1772,7 +1799,7 @@
           </li>
           <li>
             <p>
-              <ol marker="i">
+              <ol marker="i.">
                 <li>
                   <p>
                     <m>E_{row_{1},col_{1}} = \frac{(\text{row 1 total})\times(\text{col 1 total})}{\text{table total}} = 35</m>. This is lower than the observed value.
@@ -1979,7 +2006,7 @@
     	then, 
     	to focus not on the calculations, 
     	but rather on
-	    <ol marker="1">
+	    <ol marker="1.">
 	    	<li>
 	        	<p>
 	        		choosing the correct procedure

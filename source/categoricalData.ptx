@@ -9,7 +9,7 @@
       How do we visualize and summarize categorical data?
       In this section,
       we will introduce tables and other basic tools for categorical data that are used throughout this book and will answer the following questions:
-      <ul>
+      <ol marker="1.">
         <li>
           <p>
             Based on the <c>loan50</c> data,
@@ -22,13 +22,12 @@
             does email type provide any useful value in classifying email as spam or not spam?
           </p>
         </li>
-      </ul>
+      </ol>
     </p>
   </introduction>
-  <subsection>
-    <objectives>
+  <objectives>
     <title>Learning objectives</title>
-      <ul>
+      <ol>
         <li>
           <p>
             Use a one-way table and a bar chart to summarize a categorical variable.
@@ -47,9 +46,8 @@
             Calculate marginal and joint frequencies for two-way tables.
           </p>
         </li>
-      </ul>
+      </ol>
     </objectives>
-  </subsection>
   <subsection>
     <title>Contingency tables and bar charts</title>
     <p>
@@ -167,7 +165,7 @@
       Sometimes it is useful to understand the fractional breakdown of one variable in another,
       and we can modify our contingency table to provide such a view.
       <xref ref="rowPropAppTypeHomeownership"></xref>
-      shows the <em>row proportions</em><idx><h>contingency table</h><h>row proportions</h></idx> for <xref ref="loan_home_app_type_totals"></xref>,
+      shows the <term>row proportions</term><idx><h>contingency table</h><h>row proportions</h></idx> for <xref ref="loan_home_app_type_totals"></xref>,
       which are computed as the counts divided by their row totals.
       The value 3496 at the intersection of <c>individual</c> and <c>rent</c> is replaced by <m>3496/8505=0.411</m>,
       i.e. 3496 divided by its row total, 8505.
@@ -218,7 +216,7 @@
     </table>
     <p>
       A contingency table of the column proportions is computed in a similar way,
-      where each <em>column proportion</em><idx><h>contingency table</h><h>column proportion</h></idx> is computed as the count divided by the corresponding column total.
+      where each <term>column proportion</term><idx><h>contingency table</h><h>column proportion</h></idx> is computed as the count divided by the corresponding column total.
       <xref ref="colPropAppTypeHomeownership"></xref> shows such a table,
       and here the value 0.906 indicates that 90.6% of renters applied as individuals for the loan.
       This rate is higher compared to loans from people with mortgages (80.2%) or who own their home (85.1%).
@@ -275,7 +273,7 @@
     <exercise>
       <statement>
         <p>
-          <ol>
+          <ol marker="(a)">
             <li>
               <p>
                 What does 0.451 represent in <xref ref="rowPropAppTypeHomeownership"></xref>?
@@ -293,7 +291,7 @@
     <exercise>
       <statement>
         <p>
-          <ol>
+          <ol marker="(a)">
             <li>
               <p>
                 What does 0.122 at the intersection of <c>joint</c> and <c>own</c> represent in <xref ref="rowPropAppTypeHomeownership"></xref>?
@@ -415,7 +413,7 @@
       Segmented bar charts provide a way to visualize the information in these tables.
     </p>
     <p>
-      A <em>segmented bar chart</em>,
+      A <term>segmented bar chart</term>,
           <idx><h>bar chart</h><h>segmented</h></idx>
       or stacked bar<nbsp/>chart,
       is a graphical display of contingency table information.
@@ -424,7 +422,7 @@
       where we have first created a bar chart using the <c>homeownership</c> variable and then divided each group by the levels of <c>app_type</c> .
     </p>
     <p>
-      One related visualization to the segmented bar chart is the <em>side-by-side bar chart</em>,
+      One related visualization to the segmented bar chart is the <term>side-by-side bar chart</term>,
           <idx><h>bar chart</h><h>side-by-side</h></idx>
       where an example is shown in <xref ref="loan_app_type_home_sbs_bar"></xref>.
     </p>
@@ -588,11 +586,11 @@
     <ul>
       <li>
         <p>
-          <em>Categorical variables</em>,
+          <term>Categorical variables</term>,
             <idx><h>categorical variable</h></idx>
           unlike numerical variables, are simply summarized by <term>counts</term>
           (how many)
-          and <em>proportions</em>.
+          and <term>proportions</term>.
             <idx><h>proportion</h></idx>
         These are referred to as frequency and relative frequency,
           respectively.
@@ -619,7 +617,7 @@
       </li>
       <li>
         <p>
-          <em>Pie charts</em>
+          <term>Pie charts</term>
             <idx><h>pie chart</h></idx>
           are another option for summarizing categorical data,
           but they are more difficult to read and bar<nbsp/>charts are generally a better option.
