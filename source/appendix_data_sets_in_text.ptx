@@ -5,32 +5,7 @@
 <title>Data sets within the text</title>
 <introduction>
 	<p>
-		Each data set within the text is described in this appendix, and there is a corresponding page for each of these data sets at <url href="openintro.org/data">openintro.org/data</url>. This page also includes additional data sets that can be used for honing your skills. Each data set has its own page with the following information:
-		<ul>
-			<li>
-				<p>
-					Description of each data set.
-				</p>
-			</li>
-			<li>
-				<p>
-					Detailed overview of each data set's variables.
-				</p>
-			</li>
-			<li>
-				<p>
-					CSV download.
-				</p>
-			</li>
-			<li>
-				<p>
-					R object file download.
-				</p>
-			</li>
-		</ul>
-	</p>
-	<p>
-		Over time we will also expand the information available below.
+		Each data set within the text is described in this appendix. For those data sets that are in multiple sections in a chapter, only the first section is listed in that chapter. If a data set is not listed here, e.g. Chapter 3 Bayes' Theorem lists imagined probabilities for whether a parking garage will fill up and whether there is a sporting event that same evening for an unnamed college, it may not be listed in this data appendix. When a raw data set is available vs just a description, there is a corresponding page for the data set at <url href="openintro.org/data">openintro.org/data</url>. That webpage also includes many more data sets than are covered in this textbook, and each data set on the website includes a description, it’s source, a detailed overview of each data set’s variables, and download options.
 	</p>
 </introduction>
 
@@ -46,6 +21,9 @@
 		In <xref ref="dataBasics"></xref>: <url href="https://www.openintro.org/data/index.php?data=county"><c>county</c></url>, <url href="https://www.openintro.org/data/index.php?data=county_complete"><c>county_complete</c></url> <m>\rightarrow</m> These data come from several government sources. For those variables included in the county data set, only the most recent data is reported, as of what was available in late 2018. Data prior to 2011 is all from <url href="https://www.census.gov/">census.gov</url>, where the specific Quick Facts page providing the data is no longer available. The more recent data comes from <url href="https://www.ers.usda.gov/data-products/county-level-data-sets/download-data/">USDA (ers.usda.gov)</url>, <url href="https://www.bls.gov/lau/">Bureau of Labor Statistics (bls.gov/lau)</url>, <url href="https://www.census.gov/programs-surveys/saipe.html">SAIPE (census.gov/did/www/saipe)</url>, and <url href="https://www.census.gov/programs-surveys/acs/">American Community Survey (census.gov/programs-surveys/acs)</url>.
 	</p>
 	<p>
+		In <xref ref="section_obs_data_sampling"></xref> The study in mind regarding chocolate and heart attack patients: Janszky et al. 2009. <url href="https://onlinelibrary.wiley.com/doi/full/10.1111/j.1365-2796.2009.02088.x/">Chocolate consumption and mortality following a first acute myocardial infarction: the Stockholm Heart Epidemiology Program</url>. Journal of Internal Medicine 266:3, p248-257.
+	</p>
+	<p>
 		In <xref ref="section_obs_data_sampling"></xref>: The Nurses' Health Study was mentioned. For more information on this data set, see <url href="https://www.nurseshealthstudy.org/">www.channing.harvard.edu/nhs</url>
 	</p>
 	<p>
@@ -56,11 +34,30 @@
 <subsection>
 <title>Chapter 2: Summarizing Data</title>
 	<p>
-		In <xref ref="numericalData"></xref>: <url href="https://www.openintro.org/data/index.php?data=loan50"><c>loan50</c></url>, <url href="https://www.openintro.org/data/index.php?data=county"><c>county</c></url> <m>\rightarrow</m>. These data sets are described in the data for <xref ref="introductionToData"></xref>.
+		In <xref ref="numericalData"></xref>: <url href="https://www.openintro.org/data/index.php?data=county"><c>county</c></url> <m>\rightarrow</m> This data set is described in the data for <xref ref="introductionToData"></xref>.
 	</p>
 	<p>
-		In <xref ref="categoricalData"></xref>: <url href="https://www.openintro.org/data/index.php?data=loan50"><c>loan50</c></url>, <url href="https://www.openintro.org/data/index.php?data=county"><c>county</c></url> <m>\rightarrow</m> These data sets are described in the data for <xref ref="introductionToData"></xref>.
+		In <xref ref="numericalData"></xref>: <url href="https://www.openintro.org/data/index.php?data=email50"><c>email50</c></url>, <url href="https://www.openintro.org/data/index.php?data=email"><c>email</c></url> <m>\rightarrow</m>. These data represent emails sent to David Diez. Each data set includes 21 variables. The <c>email50</c> data set is a random sample of 50 emails from <c>email</c>. 
 	</p>
+	<p>
+		In <xref ref="numericalSummariesAndBoxPlots"></xref>: <url href="https://www.openintro.org/data/index.php?data=loan50"><c>loan50</c></url>, <url href="https://www.openintro.org/data/index.php?data=county"><c>county</c></url> <m>\rightarrow</m> These data sets are described in the data for <xref ref="introductionToData"></xref>. <url href="https://www.openintro.org/data/index.php?data=email50"><c>email50</c></url>, <url href="https://www.openintro.org/data/index.php?data=email"><c>email</c></url> <m>\rightarrow</m> These data sets are described in the data for <xref ref="numericalData"></xref>.
+	</p>
+	<p>
+		In <xref ref="numericalSummariesAndBoxPlots"></xref>: 2019 mean and median income <url href="https://data.census.gov/table/ACSST1Y2019.S1901?hidePreview=true">https://data.census.gov/table/ACSST1Y2019.S1901?hidePreview=true</url>
+	</p>
+	<p>
+		In <xref ref="numericalSummariesAndBoxPlots"></xref>: <url href="https://www.openintro.org/data/index.php?data=possum"><c>possum</c></url> <m>\rightarrow</m> The brushtail possum statistics are based on a sample of possums from Australia and New Guinea. The original source of this data is as follows: Lindenmayer DB, et al. 1995. <em>Morphological variation among columns of the mountain brushtail possum, Trichosurus caninus Ogilby (Phalangeridae: Marsupiala)</em>. Australian Journal of Zoology 43: 449-458.
+	</p>
+	<p>
+		In <xref ref="normalDist"></xref>: SAT and ACT score distributions <m>\rightarrow</m> The SAT score data comes from the 2018 distribution, which is provided at <url href="https://reports.collegeboard.org/pdf/2018-total-group-sat-suite-assessments-annual-report.pdf#page=4&amp;zoom=auto,-63,775">https://reports.collegeboard.org/pdf/2018-total-group-sat-suite-assessments-annual-report.pdf#page=4&amp;zoom=auto,-63,775</url>. The ACT score data is available at   <url href="https://www.act.org/content/dam/act/unsecured/documents/cccr2018/P_99_999999_N_S_N00_ACT-GCPR_National.pdf#page=15">https://www.act.org/content/dam/act/unsecured/documents/cccr2018/P_99_999999_N_S_N00_ACT-GCPR_National.pdf#page=15</url>. We also acknowledge that the actual ACT score distribution is <em>not</em> nearly normal. However, since the topic is very accessible, we decided to keep the context and examples.
+	</p>
+	<p>
+		In <xref ref="normalDist"></xref>: <url href="https://www.openintro.org/data/index.php?data=nba_players_19"><c>nba_players_19</c></url> <m>\rightarrow</m> Summary information from the NBA players for the 2018-2019 season. Data were retrieved from <url href="www.nba.com/players">www.nba.com/players</url>.
+	</p>
+	<p>
+		In <xref ref="categoricalData"></xref>: <url href="https://www.openintro.org/data/index.php?data=loans_full_schema"><c>loans_full_schema</c></url> <m>\rightarrow</m> This data set is described in the data for <xref ref="introductionToData"></xref>.
+	</p>
+	
 	<p>
 		In <xref ref="caseStudyMalariaVaccine"></xref>: <url href="https://www.openintro.org/data/index.php?data=malaria"><c>malaria</c></url> <m>\rightarrow</m> Lyke et al. 2017. PfSPZ vaccine induces strain-transcending T cells and durable protection against heterologous controlled human malaria infection. PNAS 114(10):2711-2716. <url href="https://www.pnas.org/content/114/10/2711">www.pnas.org/content/114/10/2711</url>
 	</p>
@@ -69,22 +66,31 @@
 <subsection>
 <title>Chapter 3: Probability</title>
 	<p>
-		In <xref ref="basicsOfProbability"></xref>: <url href="https://www.openintro.org/data/index.php?data=loan50"><c>loan50</c></url>, <url href="https://www.openintro.org/data/index.php?data=county"><c>county</c></url> <m>\rightarrow</m> These data sets are described in the data for <xref ref="introductionToData"></xref>.
+		In <xref ref="basicsOfProbability"></xref>: <url href="https://www.openintro.org/data/index.php?data=email"><c>email</c></url> <m>\rightarrow</m> This data set is described in the data for <xref ref="summarizingData"></xref>.
 	</p>
 	<p>
 		In <xref ref="basicsOfProbability"></xref>: <url href="https://www.openintro.org/data/index.php?data=playing_cards"><c>playing_cards</c></url> <m>\rightarrow</m> A table of the 52 cards in a standard deck.
 	</p>
 	<p>
-		In <xref ref="conditionalProbabilitySection"></xref>: <url href="https://www.openintro.org/data/index.php?data=family_college"><c>family_college</c></url> <m>\rightarrow</m> A simulated data set based on real population summaries at <url href="https://nces.ed.gov/pubs2001/2001126.pdf">nces.ed.gov/pubs2001/2001126.pdf</url>.
+		In <xref ref="conditionalProbabilitySection"></xref>: Machine learning on fashion. <m>\rightarrow</m> This is a simulated data set, not based on any specific machine learning classifier.
 	</p>
 	<p>
 		In <xref ref="conditionalProbabilitySection"></xref>: <url href="https://www.openintro.org/data/index.php?data=smallpox"><c>smallpox</c></url> <m>\rightarrow</m> Fenner F. 1988. Smallpox and Its Eradication (History of International Public Health, No. 6). Geneva: World Health Organization. ISBN 92-4-156110-6.
+	</p>
+	<p>
+		In <xref ref="conditionalProbabilitySection"></xref>: <url href="https://www.openintro.org/data/index.php?data=family_college"><c>family_college</c></url> <m>\rightarrow</m> A simulated data set based on real population summaries at <url href="https://nces.ed.gov/pubs2001/2001126.pdf">nces.ed.gov/pubs2001/2001126.pdf</url>.
 	</p>
 	<p>
 		In <xref ref="conditionalProbabilitySection"></xref>: Mammogram screening, probabilities. <m>\rightarrow</m> The probabilities reported were obtained using studies reported at <url href="https://www.breastcancer.org/">www.breastcancer.org</url> and <url href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1173421/">www.ncbi.nlm.nih.gov/pmc/articles/PMC1173421</url>.
 	</p>
 	<p>
 		In <xref ref="randomVariablesSection"></xref>: <url href="https://www.openintro.org/data/index.php?data=stocks_18"><c>stocks_18</c></url> <m>\rightarrow</m> Monthly returns for Caterpillar, Exxon Mobil Corp, and Google for November 2015 to October 2018.
+	</p>
+	<p>
+		In <xref ref="randomVariablesSection"></xref>: <url href="https://www.openintro.org/data/index.php?data=stocks_18"><c>stocks_18</c></url> <m>\rightarrow</m>
+	</p>
+	<p>
+		In <xref ref="geomDist"></xref>: Blood type prevalence. <m>\rightarrow</m> The fraction of people with O+ blood is about 38% according to <url href="https://www.redcrossblood.org/donate-blood/blood-types/o-blood-type.html">https://www.redcrossblood.org/donate-blood/blood-types/o-blood-type.html</url>  We used 35% for simplicity in the examples.
 	</p>
 	<!-- <p>
 		In <xref ref="contDist"></xref>: <url href="https://www.openintro.org/data/index.php?data=fcid"><c>fcid</c></url> <m>\rightarrow</m> This sample can be considered a simple random sample from the US population. It relies on the USDA Food Commodity Intake Database.
@@ -94,46 +100,51 @@
 <subsection>
 <title>Chapter 4: Distributions of random variables</title>
 	<p>
-		In <xref ref="normalDist"></xref>: SAT and ACT score distributions <m>\rightarrow</m> The SAT score data comes from the 2018 distribution, which is provided at <url href="https://reports.collegeboard.org/pdf/2018-total-group-sat-suite-assessments-annual-report.pdf#page=4&amp;zoom=auto,-63,775">reports.collegeboard.org/pdf/2018-total-group-sat-suite-assessments-annual-report.pdf</url>. The ACT score data is available at <url href="https://www.act.org/content/dam/act/unsecured/documents/cccr2018/P_99_999999_N_S_N00_ACT-GCPR_National.pdf#page=15">act.org/content/dam/act/unsecured/documents/cccr2018/P 99 999999 N S N00 ACT-GCPR National.pdf</url> We also acknowledge that the actual ACT score distribution is not nearly normal. However, since the topic is very accessible, we decided to keep the context and examples.
+		In <xref ref="distributionphat"></xref>: Blood type prevalence. <m>\rightarrow</m> This data set is described in the data for <xref ref="probability"></xref>.
 	</p>
-	<p>
-		In <xref ref="normalDist"></xref>: <url href="https://www.openintro.org/data/index.php?data=possum"><c>possum</c></url> <m>\rightarrow</m> The distribution parameters are based on a sample of possums from Australia and New Guinea. The original source of this data is as follows. Lindenmayer DB, et al. 1995. <em>Morphological variation among columns of the mountain brushtail possum, Trichosurus caninus Ogilby (Phalangeridae: Marsupiala)</em>. Australian Journal of Zoology 43: 449-458.
-	</p>
-	<p>
+	
+	
+	<!-- <p>
 		In <xref ref="normalDist"></xref>: <url href="https://www.openintro.org/data/index.php?data=male_heights_fcid"><c>male_heights_fcid</c></url> <m>\rightarrow</m> This sample can be considered a simple random sample from the US population. It relies on the USDA Food Commodity Intake Database.
 	</p>
 	<p>
 		In <xref ref="normalDist"></xref>: <url href="https://www.openintro.org/data/index.php?data=nba_players_19"><c>nba_platers_19</c></url> <m>\rightarrow</m> Summary information from the NBA players for the 2018-2019 season. Data were retrieved from <url href="www.nba.com/players">www.nba.com/players</url>.
+	</p> -->
+	<p>
+		In <xref ref="distributionofxbar"></xref>: <url href="https://www.openintro.org/data/index.php?data=run17"><c>run17</c></url>, <url href="https://www.openintro.org/data/index.php?data=run17samp"><c>run17samp</c></url> <m>\rightarrow</m> These data set represent the full population and a sample of the runners and their run times in the 2017 Cherry Blossom Run in Washington, DC. For more details, see <url href="www.cherryblossom.org">www.cherryblossom.org</url>
 	</p>
 	<p>
-		In <xref ref="normalDist"></xref>: <url href="https://www.openintro.org/data/index.php?data=poker"><c>poker</c></url> <m>\rightarrow</m> Poker winnings (and losses) for 50 days by a professional poker player, which represents their first 50 days trying to play for a living. Anonymity has been requested by the player.
-	</p>
-	<p>
-		In <xref ref="distributionofxbar"></xref>: <url href="https://www.openintro.org/data/index.php?data=run17"><c>run17</c></url>, <url href="https://www.openintro.org/data/index.php?data=run17samp"><c>run17samp</c></url> <m>\rightarrow</m> <url href="www.cherryblossom.org">www.cherryblossom.org</url>
+		In <xref ref="distributionofxbar"></xref>: <url href="https://www.openintro.org/data/index.php?data=poker"><c>poker</c></url> <m>\rightarrow</m> The full data set includes poker winnings (and losses) for 50 days by a professional poker player, which represents their first 50 days trying to play for a living. Anonymity has been requested by the player.
 	</p>
 </subsection>
 
 <subsection>
 <title>Chapter 5: Foundations for inference</title>
 	<p>
-		In <xref ref="pointEstimates"></xref>: <url href="https://www.openintro.org/data/index.php?data=pew_energy_2018"><c>pew_energy_2018</c></url> <m>\rightarrow</m> The actual data has more observations than were referenced in this chapter. That is, we used a subsample since it helped smooth some of the examples to have a bit more variability. The pew energy 2018 data set represents the full data set for each of the different energy source questions, which covers solar, wind, offshore drilling, hydrolic fracturing, and nuclear energy. The statistics used to construct the data are from the following page: <url href="https://www.pewresearch.org/science/2018/05/14/majorities-see-government-efforts-to-protect-the-environment-as-insufficient/">www.pewinternet.org/2018/05/14/majorities-see-government-efforts-to-protect-the-environment-as-insufficient/</url>
+		In <xref ref="pointEstimates"></xref>: <url href="https://www.openintro.org/data/index.php?data=email"><c>email</c></url> <m>\rightarrow</m> This data set is described in the data for <xref ref="summarizingData"></xref>.
 	</p>
 	<p>
-		In <xref ref="ConfidenceIntervals"></xref>: <url href="https://www.openintro.org/data/index.php?data=pew_energy_2018"><c>pew_energy_2018</c></url> <m>\rightarrow</m> See the details for this data set above in <xref ref="pointEstimates"></xref>.
+		In <xref ref="pointEstimates"></xref>: <url href="https://www.openintro.org/data/index.php?data=pew_energy_2018"><c>pew_energy_2018</c></url> <m>\rightarrow</m> The actual data has more observations than were referenced in this chapter. That is, we used a subsample since it helped smooth some of the examples to have a bit more variability. The <c>pew_energy_2018</c> data set represents the full data set for each of the different energy source questions, which covers solar, wind, offshore drilling, hydrolic fracturing, and nuclear energy. The statistics used to construct the data are from the following page: <url href="https://www.pewresearch.org/science/2018/05/14/majorities-see-government-efforts-to-protect-the-environment-as-insufficient/">www.pewinternet.org/2018/05/14/majorities-see-government-efforts-to-protect-the-environment-as-insufficient/</url> 
+	</p>
+	<p>
+		In <xref ref="ConfidenceIntervals"></xref>: <url href="https://www.openintro.org/data/index.php?data=pew_energy_2018"><c>pew_energy_2018</c></url> <m>\rightarrow</m> See the details for this data set above in <xref ref="pointEstimates"></xref> data section.
 	</p>
 	<p>
 		In <xref ref="ConfidenceIntervals"></xref>: <url href="https://www.openintro.org/data/index.php?data=ebola_survey"><c>ebola_survey</c></url> <m>\rightarrow</m> In New York City on October 23rd, 2014, a doctor who had recently been treating Ebola patients in Guinea went to the hospital with a slight fever and was subsequently diagnosed with Ebola. Soon thereafter, an NBC 4 New York/The Wall Street Journal/Marist Poll found that 82% of New Yorkers favored a <q>mandatory 21-day quarantine for anyone who has come in contact with an Ebola patient</q>. This poll included responses of 1,042 New York adults between Oct 26th and 28th, 2014. <url href="http://maristpoll.marist.edu/wp-content/misc/nyspolls/NY141026/Cuomo/Complete%20NBC%204%20NY_WSJ_Marist%20Poll%20New%20York%20State%20Release%20and%20Tables_October%202014.pdf">Poll ID NY141026 on maristpoll.marist.edu</url>.
 	</p>
 	<p>
-		In <xref ref="hypothesisTesting"></xref>: <url href="https://www.openintro.org/data/index.php?data=pew_energy_2018"><c>pew_energy_2018</c></url> <m>\rightarrow</m> See the details for this data set above in <xref ref="pointEstimates"></xref>.
+		In <xref ref="hypothesisTesting"></xref>: <url href="https://www.openintro.org/data/index.php?data=transplant"><c>transplant</c></url> <m>\rightarrow</m> This is a made up data set about the health outcomes for a hypothetical medical consultant. Note that the data set on the website has 62 patients, not 142 patients, so there will a difference for what is covered in this book vs the data set on the website.
+	</p>
+	<p>
+		In <xref ref="hypothesisTesting"></xref>: Alaska residents under 5 years old. <m>\rightarrow</m> The 2010 statistic comes from the US census: <url href="https://data.census.gov/table/DECENNIALDPCD1132010.113DP1?q=alaska%20age%202010%20census&amp;hidePreview=false">https://data.census.gov</url>.
 	</p>
 </subsection>
 
 <subsection>
 <title>Chapter 6: Inference for categorical data</title>
-	<p>
+	<!-- <p>
 		In <xref ref="singleProportion"></xref>: Nuclear energy <m>\rightarrow</m> A Gallup poll of 1,019 adults in the US, conducted in March of 2016, found that 54% of respondents oppose nuclear energy. This was the first time since Gallup first asked the question in 1994 that a majority of respondents said they oppose nuclear energy. <url href="https://news.gallup.com/poll/190064/first-time-majority-oppose-nuclear-energy.aspx">https://news.gallup.com/poll/190064/first-time-majority-oppose-nuclear-energy.aspx</url>
-	</p>
+	</p> -->
 	<p>
 		In <xref ref="singleProportion"></xref>: Supreme Court <m>\rightarrow</m> The Gallup organization began measuring the public's view of the Supreme Court's job performance in 2000, and has measured it every year since then with the question: <q>Do you approve or disapprove of the way the Supreme Court is handling its job?</q>. In 2018, the Gallup poll randomly sampled 1,033 adults in the U.S. and found that 53% of them approved.
 		<url href="https://news.gallup.com/poll/237269/supreme-court-approval-highest-2009.aspx">https://news.gallup.com/poll/237269/supreme-court-approval-highest-2009.aspx</url>
@@ -142,9 +153,30 @@
 		In <xref ref="singleProportion"></xref>: Life on other planets <m>\rightarrow</m> A February 2018 Marist Poll reported: <q>Many Americans (68%) think there is intelligent life on other planets</q>. The results were based on a random sample of 1,033 adults in the U.S. <url href="http://maristpoll.marist.edu/212-are-americans-poised-for-an-alien-invasion/#sthash.VrjaqJNS.Pyp2lgqf.dpbs">http://maristpoll.marist.edu/212-are-americans-poised-for-an-alien-invasion</url>
 	</p>
 	<p>
+		In <xref ref="singleProportion"></xref>: Congressional approval rating. <m>\rightarrow</m> This survey data is from <url href="https://news.gallup.com/poll/237176/snapshot-congressional-job-approval-july.aspx">https://news.gallup.com/poll/237176/snapshot-congressional-job-approval-july.aspx</url>
+	</p>
+	<p>
+		In <xref ref="singleProportion"></xref>: Tire inspection. <m>\rightarrow</m> This is a hypothetical scenario not based on real data.
+	</p>
+	<p>
+		In <xref ref="singleProportion"></xref>: Toohey poll. <m>\rightarrow</m> This is a hypothetical scenario not based on a real person or real data.
+	</p>
+	<p>
+		In <xref ref="singleProportion"></xref>: Support for nuclear energy. <m>\rightarrow</m> The results are from the following Gallup poll: <url href="https://news.gallup.com/poll/190064/first-time-majority-oppose-nuclear-energy.aspx">https://news.gallup.com/poll/190064/first-time-majority-oppose-nuclear-energy.aspx</url>
+	</p>
+	<p>
 		In <xref ref="differenceOfTwoProportions"></xref>: <url href="https://www.openintro.org/data/index.php?data=cpr"><c>cpr</c></url> <m>\rightarrow</m> Böttiger et al. <em>Efficacy and safety of thrombolytic therapy after initially unsuccessful cardiopulmonary resuscitation: a prospective clinical trial</em>. The Lancet, 2001.
 	</p>
 	<p>
+		In <xref ref="differenceOfTwoProportions"></xref>: <url href="https://www.openintro.org/data/index.php?data=gear_company"><c>gear_company</c></url> <m>\rightarrow</m> This is a hypothetical scenario not based on real data.
+	</p>
+	<p>
+		In <xref ref="differenceOfTwoProportions"></xref>: <url href="https://www.openintro.org/data/index.php?data=healthcare_law_survey"><c>healthcare_law_survey</c></url> <m>\rightarrow</m> Pew research survey on the Affordable Care Act (aka Obamacare) that ran the survey question with two variants. <url href="https://www.pewresearch.org/politics/2012/03/26/public-remains-split-on-health-care-bill-opposed-to-mandate/">https://www.pewresearch.org/politics/2012/03/26/public-remains-split-on-health-care-bill-opposed-to-mandate/</url>
+	</p>
+	<p>
+		In <xref ref="differenceOfTwoProportions"></xref>: <url href="https://www.openintro.org/data/index.php?data=fish_oil_18"><c>fish_oil_18</c></url> <m>\rightarrow</m> Manson JE, et al. 2018. Marine n-3 Fatty Acids and Prevention of Cardiovascular Disease and Cancer. NEJMoa1811403.
+	</p>
+<!-- 	<p>
 		In <xref ref="differenceOfTwoProportions"></xref>: <url href="https://www.openintro.org/data/index.php?data=fish_oil_18"><c>fish_oil_18</c></url> <m>\rightarrow</m> Manson JE, et al. 2018. Marine n-3 Fatty Acids and Prevention of Cardiovascular Disease and Cancer. NEJMoa1811403.
 	</p>
 	<p>
@@ -152,40 +184,62 @@
 	</p>
 	<p>
 		In <xref ref="differenceOfTwoProportions"></xref>: <url href="https://www.openintro.org/data/index.php?data=drone_blades"><c>drone_blades</c></url> <m>\rightarrow</m> The quality control data set for quadcopter drone blades is a made-up data set for an example. We provide the simulated data in the <c>drone_blades</c> data set.
+	</p> -->
+	<p>
+		In <xref ref="oneWayChiSquare"></xref>: <url href="https://www.openintro.org/data/index.php?data=jury"><c>jury</c></url> <m>\rightarrow</m> Simulated data set of registered voter proportions and representation on juries from a population. 
 	</p>
 	<p>
-		In <xref ref="oneWayChiSquare"></xref>: M&amp;Ms <m>\rightarrow</m> Starting at the end of 2016, Rick Wicklin, a statistician working at the statistical software company SAS, collected a sample of 712 candies, or about 1.5 pounds, and counted how many there were of each color. <url href="https://qz.com/918008/the-color-distribution-of-mms-as-determined-by-a-phd-in-statistics/">https://qz.com/918008/the-color-distribution-of-mms-as-determined-by-a-phd-in-statistics</url>
+		In <xref ref="oneWayChiSquare"></xref>: M&amp;Ms <m>\rightarrow</m> Rick Wicklin collected a sample of 712 candies, or about 1.5 pounds, and counted how many there were of each color. <url href="https://qz.com/918008/the-color-distribution-of-mms-as-determined-by-a-phd-in-statistics/">https://qz.com/918008/the-color-distribution-of-mms-as-determined-by-a-phd-in-statistics</url>
 	</p>
 	<p>
-		In <xref ref="oneWayChiSquare"></xref>: <url href="https://www.openintro.org/data/index.php?data=ask"><c>ask</c></url> <m>\rightarrow</m> Minson JA, Ruedy NE, Schweitzer ME. <em>There is such a thing as a stupid question: Question disclosure in strategic communication.</em> <url href="https://www.acrwebsite.org/volumes/1012889/volumes/v40/NA-40">opim.wharton.upenn.edu/DPlab/papers/workingPapers/Minson working Ask%20(the%20Right%20Way)%20and%20You%20Shall%20Receive.pdf</url>
+		In <xref ref="twoWayTablesAndChiSquare"></xref>: <url href="https://www.openintro.org/data/index.php?data=gsearch"><c>gsearch</c></url> <m>\rightarrow</m> Simulated (fake) data set for Google search experiment.
 	</p>
 	<p>
+		In <xref ref="twoWayTablesAndChiSquare"></xref>: <url href="https://www.openintro.org/data/index.php?data=ask"><c>ask</c></url> <m>\rightarrow</m> Experiment results from asking about iPods, where the original source is: Minson JA, Ruedy NE, Schweitzer ME. <em>There is such a thing as a stupid question: Question disclosure in strategic communication.</em> <url href="https://www.acrwebsite.org/volumes/1012889/volumes/v40/NA-40">opim.wharton.upenn.edu/DPlab/papers/workingPapers/Minson working Ask%20(the%20Right%20Way)%20and%20You%20Shall%20Receive.pdf</url>
+	</p>
+
+	<p>
+		In <xref ref="twoWayTablesAndChiSquare"></xref>: Obama and Congressional approval by political affiliation <m>\rightarrow</m> This survey was completed by Pew Research and the full results may be found at: <url href="https://www.pewresearch.org/politics/2012/03/14/romney-leads-gop-contest-trails-in-matchup-with-obama/">https://www.pewresearch.org/politics/2012/03/14/romney-leads-gop-contest-trails-in-matchup-with-obama/</url>
+	</p>
+	<p>
+		In <xref ref="twoWayTablesAndChiSquare"></xref>: Attitudes on climate change <m>\rightarrow</m> A Pew Research poll published in May of 2021 looks at how Americans’ attitudes about climate change differ by generation, party and other factors <url href="https://www.pewresearch.org/short-reads/2021/05/26/key-findings-how-americans-attitudes-about-climate-change-differ-by-generation-party-and-other-factors/">https://www.pewresearch.org/short-reads/2021/05/26/key-findings-how-americans-attitudes-about-climate-change-differ-by-generation-party-and-other-factors/</url>
+	</p>
+<!-- 	<p>
 		In <xref ref="twoWayTablesAndChiSquare"></xref>: <url href="https://www.openintro.org/data/index.php?data=diabetes2"><c>diabetes2</c></url> <m>\rightarrow</m> Zeitler P, et al. 2012. A Clinical Trial to Maintain Glycemic Control in Youth with Type 2 Diabetes. N Engl J Med.
-	</p>
+	</p> -->
 </subsection>
 
 <subsection>
 <title>Chapter 7: Inference for numerical data</title>
 	<p>
-		In <xref ref="oneSampleMeansWithTDistribution"></xref>: Risso's dolphins <m>\rightarrow</m> Endo T and Haraguchi K. 2009. High mercury levels in hair samples from residents of Taiji, a Japanese whaling town. Marine Pollution Bulletin 60(5):743-747.
-	</p>
-	<p>
-		Taiji was featured in the movie The Cove, and it is a significant source of dolphin and whale meat in Japan. Thousands of dolphins pass through the Taiji area annually, and we will assume these 19 dolphins represent a simple random sample from those dolphins.
+		In <xref ref="oneSampleMeansWithTDistribution"></xref>: Risso's dolphins <m>\rightarrow</m> Endo T and Haraguchi K. 2009. High mercury levels in hair samples from residents of Taiji, a Japanese whaling town. Marine Pollution Bulletin 60(5):743-747. Taiji was featured in the movie The Cove, and it is a significant source of dolphin and whale meat in Japan. Thousands of dolphins pass through the Taiji area annually, and we will assume these 19 dolphins represent a simple random sample from those dolphins.
 	</p>
 	<p>
 		In <xref ref="oneSampleMeansWithTDistribution"></xref>: Croaker white fish <m>\rightarrow</m> <url href="https://www.fda.gov/food/metals/mercury-levels-commercial-fish-and-shellfish-1990-2012">www.fda.gov/food/foodborneillnesscontaminants/metals/ucm115644.htm</url>
 	</p>
 	<p>
-		In <xref ref="oneSampleMeansWithTDistribution"></xref>: <url href="https://www.openintro.org/data/index.php?data=run17"><c>run17</c></url>, <url href="https://www.openintro.org/data/index.php?data=run17samp"><c>run17samp</c></url> <m>\rightarrow</m> <url href="http://www.cherryblossom.org/">www.cherryblossom.org/</url>
+		In <xref ref="oneSampleMeansWithTDistribution"></xref>: <url href="https://www.openintro.org/data/index.php?data=run17samp"><c>run17samp</c></url> <m>\rightarrow</m> This data set is described in the data for <xref ref="outlierPlotsExample">ch_distributions</xref>.
 	</p>
 	<p>
 		In <xref ref="pairedData"></xref>: <url href="https://www.openintro.org/data/index.php?data=textbooks"><c>textbooks</c></url>, <url href="https://www.openintro.org/data/index.php?data=ucla_textbooks_f18"><c>ucla_textbooks_f18</c></url> <m>\rightarrow</m> Data were collected by OpenIntro staff in 2010 and again in 2018. For the 2018 sample, we sampled 201 UCLA courses. Of those, 68 required books that could be found on Amazon. The websites where information was retrieved: <url href="https://sa.ucla.edu/ro/public/soc">sa.ucla.edu/ro/public/soc</url>, <url href="https://ucla.verbacompare.com/">ucla.verbacompare.com</url> and <url href="https://www.amazon.com/">amazon.com</url>.
 	</p>
+
+	<p>
+		In <xref ref="pairedData"></xref>: <url href="https://www.openintro.org/data/index.php?data=sat_improve"><c>sat_improve</c></url> <m>\rightarrow</m> This is a hypothetical (fake) data set for SAT improvement from an SAT preparation company.
+	</p>
+
 	<p>
 		In <xref ref="theTDistributionForTheDifferenceOfTwoMeans"></xref>: Jennifer-John <m>\rightarrow</m> Bertrand M, Mullainathan S. 2004. <em>Science faculty's subtle gender biases favor male students</em>. PNAS October 9, 2012 109 (41) 16474-16479. <url href="https://www.pnas.org/content/109/41/16474">https://www.pnas.org/content/109/41/16474</url>
 	</p>
 	<p>
 		In <xref ref="theTDistributionForTheDifferenceOfTwoMeans"></xref>: <url href="https://www.openintro.org/data/index.php?data=resume"><c>resume</c></url> <m>\rightarrow</m> Bertrand M, Mullainathan S. 2004. <em>Are Emily and Greg More Employable than Lakisha and Jamal? A Field Experiment on Labor Market Discrimination</em>. The American Economic Review 94:4 (991-1013). <url href="https://www.nber.org/papers/w9873">www.nber.org/papers/w9873</url>
+	</p>
+	<p>
+		In <xref ref="theTDistributionForTheDifferenceOfTwoMeans"></xref>: Exams variants. <m>\rightarrow</m> This is a simulated (fake) data set for exam performance of students for two different exam variations.  
+	</p>
+	<p>
+		In <xref ref="theTDistributionForTheDifferenceOfTwoMeans"></xref>: <url href="https://www.openintro.org/data/index.php?data=ncbirths"><c>ncbirths</c></url> <m>\rightarrow</m> A random sample of 1000 NC births. A sample of that random sample was used for the example in the section.
+ 
 	</p>
 	<p>
 		In <xref ref="theTDistributionForTheDifferenceOfTwoMeans"></xref>: <url href="https://www.openintro.org/data/index.php?data=stem_cell"><c>stem_cells</c></url> <m>\rightarrow</m> Menard C, et al. 2005. Transplantation of cardiac-committed mouse embryonic stem cells to infarcted sheep myocardium: a preclinical study. The Lancet: 366:9490, p1005-1012. <url href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(05)67380-1/fulltext">https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(05)67380-1/fulltext</url>
@@ -198,13 +252,19 @@
 		In <xref ref="lineFittingResidualsCorrelation"></xref>: <url href="https://www.openintro.org/data/index.php?data=simulated_scatter"><c>simulated_scatter</c></url> <m>\rightarrow</m> Fake data used for the first three plots. The perfect linear plot uses group 4 data, where group variable in the data set (<xref ref="perfLinearModel"></xref>). The group of 3 imperfect linear plots use groups 1-3 (<xref ref="imperfLinearModel"></xref>). The sinusoidal curve uses group 5 data (<xref ref="notGoodAtAllForALinearModel"></xref>). The group of 3 scatterplots with residual plots use groups 6-8 (<xref ref="sampleLinesAndResPlots"></xref>). The correlation plots uses groups 9-19 data (<xref ref="posNegCorPlots"></xref> and <xref ref="corForNonLinearPlots"></xref>).
 	</p>
 	<p>
-		In <xref ref="lineFittingResidualsCorrelation"></xref>: <url href="https://www.openintro.org/data/index.php?data=possum"><c>possum</c></url> <m>\rightarrow</m> The data is described in the data for <xref ref="ch_distributions"></xref>
+		In <xref ref="lineFittingResidualsCorrelation"></xref>: <url href="https://www.openintro.org/data/index.php?data=possum"><c>possum</c></url> <m>\rightarrow</m> The data is described in the data for <xref ref="summarizingData"></xref>
+	</p>
+	<p>
+		In <xref ref="lineFittingResidualsCorrelation"></xref>: <url href="https://www.openintro.org/data/index.php?data=simulated_scatter"><c>simulated_scatter</c></url> <m>\rightarrow</m> The plots for things that can go wrong uses groups 20-23 <xref ref="whatCanGoWrongWithLinearModel"></xref>
 	</p>
 	<p>
 		In <xref ref="fittingALineByLSR"></xref>: <url href="https://www.openintro.org/data/index.php?data=elmhurst"><c>elmhurst</c></url> <m>\rightarrow</m> These data were sampled from a table of data for all freshman from the 2011 class at Elmhurst College that accompanied an article titled <em>What Students Really Pay to Go to College published online by The Chronicle of Higher Education</em>: <url href="https://www.chronicle.com/article/What-Students-Really-Pay-to-Go/131435">chronicle.com/article/What-Students-Really-Pay-to-Go/131435</url>.
 	</p>
 	<p>
-		In <xref ref="fittingALineByLSR"></xref>: <url href="https://www.openintro.org/data/index.php?data=simulated_scatter"><c>simulated_scatter</c></url> <m>\rightarrow</m> The plots for things that can go wrong uses groups 20-23 from <xref ref="whatCanGoWrongWithLinearModel"></xref>.
+		In <xref ref="fittingALineByLSR"></xref>: <url href="https://www.openintro.org/data/index.php?data=textbooks"><c>textbooks</c></url>, <url href="https://www.openintro.org/data/index.php?data=ucla_textbooks_f18"><c>ucla_textbooks_f18</c></url> <m>\rightarrow</m> This data is described in the data for <xref ref="inferenceForNumericalData"></xref>. 
+	</p>
+	<p>
+		In <xref ref="fittingALineByLSR"></xref>: <url href="https://www.openintro.org/data/index.php?data=loan50"><c>loan50</c></url> <m>\rightarrow</m> This data is described in the data for <xref ref="introductionToData"></xref>. 
 	</p>
 	<p>
 		In <xref ref="fittingALineByLSR"></xref>: <url href="https://www.openintro.org/data/index.php?data=mariokart"><c>mariokart</c></url> <m>\rightarrow</m> Auction data from Ebay (ebay.com) for the game Mario Kart for the Nintendo Wii. This data set was collected in early October, 2009.
@@ -213,10 +273,10 @@
 		In <xref ref="fittingALineByLSR"></xref>: <url href="https://www.openintro.org/data/index.php?data=simulated_scatter"><c>simulated_scatter</c></url> <m>\rightarrow</m> The plots for types of outliers uses groups 24-29 from <xref ref="outlierPlotsExample"></xref>.
 	</p>
 	<p>
-		In <xref ref="inferenceForLinearRegression"></xref>: <url href="https://www.openintro.org/data/index.php?data=midterms_house"><c>midterms_house</c></url> <m>\rightarrow</m> Data was retrieved from Wikipedia.
+		In <xref ref="transformationForNonlinearData"></xref>: <url href="https://www.openintro.org/data/index.php?data=county"><c>county</c></url>, <url href="https://www.openintro.org/data/index.php?data=county_complete"><c>county_complete</c></url> <m>\rightarrow</m> These data sets are described in the data for <xref ref="introductionToData"></xref>
 	</p>
 	<p>
-		In <xref ref="transformationForNonlinearData"></xref>: <url href="https://www.openintro.org/data/index.php?data=county"><c>county</c></url>, <url href="https://www.openintro.org/data/index.php?data=county_complete"><c>county_complete</c></url> <m>\rightarrow</m> The data is described in the data for <xref ref="introductionToData"></xref>
+		In <xref ref="inferenceForLinearRegression"></xref>: <url href="https://www.openintro.org/data/index.php?data=county"><c>midterms_house</c></url> <m>\rightarrow</m> Data was retrieved from Wikipedia.
 	</p>
 </subsection>
 </section>
